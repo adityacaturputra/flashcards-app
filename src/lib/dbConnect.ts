@@ -1,11 +1,17 @@
-import mongoose from 'mongoose';
+import mongoose, { Mongoose } from 'mongoose';
 
-const MONGODB_URI = process?.env?.MONGODB_URI || '';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
-  throw new Error(
-    'Please define the MONGODB_URI environment variable inside .env.local',
-  );
+  throw new Error('Define the MONGODB_URI environmental variable');
+}
+
+// Extend the NodeJS.Global type to include mongoose
+declare global {
+  var mongoose: {
+    conn: Mongoose | null;
+    promise: Promise<Mongoose> | null;
+  };
 }
 
 let cached = global.mongoose;
@@ -21,24 +27,15 @@ async function dbConnect() {
 
   if (!cached.promise) {
     const opts = {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      return mongoose;
-    });
+    cached.promise = mongoose
+      .connect(MONGODB_URI!, opts)
+      .then((mongoose) => mongoose);
   }
 
-  try {
-    cached.conn = await cached.promise;
-  } catch (e) {
-    console.log('-------ERROR MONGO: ', e);
-    cached.promise = null;
-    throw e;
-  }
-
+  cached.conn = await cached.promise;
   return cached.conn;
 }
 
