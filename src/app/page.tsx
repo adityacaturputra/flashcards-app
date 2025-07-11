@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 import React, { useState } from 'react';
 import FlashcardForm from '@/components/molecules/FlashcardForm';
@@ -6,11 +5,17 @@ import FlashcardList from '@/components/organisms/FlashcardList';
 import { useAppContext } from '@/context/appContext';
 import { Flashcard } from '@/types/flashcard';
 import { motion } from 'framer-motion';
-import Modal from '@/components/atoms/Modal'; // New import for Modal component
+import Modal from '@/components/atoms/Modal';
+import SkeletonLoader from '@/components/atoms/SkeletonLoader';
 
 const Home: React.FC = () => {
-  const { flashcards, addFlashcard, updateFlashcard, deleteFlashcard } =
-    useAppContext();
+  const {
+    flashcards,
+    addFlashcard,
+    updateFlashcard,
+    deleteFlashcard,
+    loading,
+  } = useAppContext();
   const [selectedFlashcard, setSelectedFlashcard] = useState<Flashcard | null>(
     null,
   );
@@ -18,17 +23,23 @@ const Home: React.FC = () => {
 
   const handleAddFlashcard = async (newFlashcard: Flashcard) => {
     addFlashcard(newFlashcard);
-    setIsModalOpen(false); // Close the modal after adding flashcard
+    setIsModalOpen(false);
   };
 
   return (
     <div className='p-10'>
       <h1 className='mb-6 text-3xl font-bold'>Flashcard App</h1>
-      <FlashcardList
-        flashcards={flashcards}
-        onUpdate={updateFlashcard}
-        onDelete={deleteFlashcard}
-      />
+
+      {/* Render Skeleton Loader or Flashcard List based on loading state */}
+      {loading ? (
+        <SkeletonLoader count={5} />
+      ) : (
+        <FlashcardList
+          flashcards={flashcards}
+          onUpdate={updateFlashcard}
+          onDelete={deleteFlashcard}
+        />
+      )}
 
       {/* Floating Button to Open Modal */}
       <motion.button
