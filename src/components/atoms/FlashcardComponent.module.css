@@ -1,0 +1,13 @@
+/* FlashcardComponent.module.css */
+.content {
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.content.visible {
+  max-height: 500px; /* Adjust the max-height as needed */
+}
+
+.content.hidden {
+  max-height: 0;
+}
