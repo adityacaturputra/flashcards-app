@@ -1,8 +1,11 @@
+// src/components/molecules/FlashcardForm.tsx
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Flashcard, Progression } from '@/types/flashcard';
 import InputField from '../atoms/InputField';
 import Button from '../atoms/Button';
+import { FaTrashAlt } from 'react-icons/fa';
+import newKeyGen from '@/utils/keyGenIterator';
 
 type FlashcardFormProps = {
   addFlashcard: (flashcard: Flashcard) => Promise<void>;
@@ -20,8 +23,10 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({
   const [dynamicFields, setDynamicFields] = useState<Record<string, string>>(
     selectedFlashcard?.dynamicFields || {},
   );
-  const [fieldCount, setFieldCount] = useState(
-    Object.keys(selectedFlashcard?.dynamicFields || {}).length,
+
+  // Maintain order using an array of keys
+  const [fieldKeys, setFieldKeys] = useState<string[]>(
+    Object.keys(selectedFlashcard?.dynamicFields || {}),
   );
 
   useEffect(() => {
@@ -29,48 +34,72 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({
       setQuestion(selectedFlashcard.question);
       setAnswer(selectedFlashcard.answer);
       setDynamicFields(selectedFlashcard.dynamicFields || {});
-      setFieldCount(Object.keys(selectedFlashcard.dynamicFields || {}).length);
+      setFieldKeys(Object.keys(selectedFlashcard.dynamicFields || {}));
     } else {
       setQuestion('');
       setAnswer('');
       setDynamicFields({});
-      setFieldCount(0);
+      setFieldKeys([]);
     }
   }, [selectedFlashcard]);
 
   const handleAddFlashcard = async () => {
-    console.log({ question, answer });
     if (question && answer) {
+      const formattedDynamicFields = fieldKeys.reduce(
+        (acc, key) => {
+          if (dynamicFields[key]) {
+            acc[key] = dynamicFields[key];
+          }
+          return acc;
+        },
+        {} as Record<string, string>,
+      );
+
       await addFlashcard({
         question,
         answer,
         progression: Progression.New,
         nextReviewDate: new Date(),
-        dynamicFields,
+        dynamicFields: formattedDynamicFields,
       });
+
       setSelectedFlashcard(null);
       setQuestion('');
       setAnswer('');
       setDynamicFields({});
-      setFieldCount(0);
+      setFieldKeys([]);
     }
   };
 
   const handleFieldChange =
-    (index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    (key: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
       setDynamicFields((prevFields) => ({
         ...prevFields,
-        [`v${index + 1}`]: e.target.value,
+        [key]: e.target.value,
       }));
     };
 
   const addDynamicField = () => {
-    setFieldCount((prevCount) => prevCount + 1);
+    const newKey = newKeyGen(0, dynamicFields);
+    setFieldKeys((prevKeys) => [...prevKeys, newKey]);
+    setDynamicFields((prevFields) => ({
+      ...prevFields,
+      [newKey]: '',
+    }));
+  };
+
+  const deleteDynamicField = (key: string) => {
+    setFieldKeys((prevKeys) => prevKeys.filter((k) => k !== key));
+    setDynamicFields((prevFields) => {
+      const newFields = { ...prevFields };
+      delete newFields[key];
+      return newFields;
+    });
   };
 
   return (
     <div className='mb-8'>
-      <h2 className='text-xl font-bold'>Add New Flashcard</h2>
+      <h2 className='text-xl font-bold'>Add</h2>
       <div className='mt-4'>
         <InputField
           placeholder={'Enter Question'}
@@ -85,19 +114,25 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setAnswer(e.target.value)
           }
-          className={'w-full'}
+          className={'mb-4 w-full'}
           value={answer}
         />
       </div>
       <div className='mt-4'>
-        {[...Array(fieldCount)].map((_, index) => (
+        {fieldKeys.map((key, index) => (
           <div key={index} className='mb-4 flex w-full items-center'>
             <InputField
-              placeholder={`Enter Field v${index + 1}`}
-              onChange={handleFieldChange(index)}
+              placeholder={`Enter Field ${key}`}
+              onChange={handleFieldChange(key)}
               className='mr-4 w-full'
-              value={dynamicFields[`v${index + 1}`] || ''}
+              value={dynamicFields[key] || ''}
             />
+            <Button
+              onClick={() => deleteDynamicField(key)}
+              className='bg-red-500 text-white hover:bg-red-600 focus:outline-none'
+            >
+              <FaTrashAlt />
+            </Button>
           </div>
         ))}
       </div>
@@ -106,7 +141,9 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({
           <Button onClick={addDynamicField}>Add Custom Field</Button>
         </div>
         <div>
-          <Button onClick={handleAddFlashcard}>Add Flashcard</Button>
+          <Button onClick={handleAddFlashcard}>
+            {selectedFlashcard ? 'Update Flashcard' : 'Add Flashcard'}
+          </Button>
         </div>
       </div>
     </div>

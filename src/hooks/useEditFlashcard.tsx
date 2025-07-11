@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Flashcard } from '@/types/flashcard';
+import newKeyGen from '@/utils/keyGenIterator';
 
 type UseEditFlashcardProps = {
   flashcard: Flashcard;
@@ -42,14 +43,7 @@ const useEditFlashcard = ({
     position: 'start' | 'end' | 'before' | 'after',
     referenceKey?: string,
   ) => {
-    const newKeyGen = (i: number) => {
-      const generatedKey = `v${Object.keys(dynamicFields).length + i + 1}`;
-      if (dynamicFields[generatedKey]) {
-        return newKeyGen(i + 1);
-      }
-      return generatedKey;
-    };
-    const newKey = newKeyGen(0);
+    const newKey = newKeyGen(0, dynamicFields);
     const dynamicFieldEntries = Object.entries(dynamicFields);
     const newFields: { [key: string]: string } = {};
 
