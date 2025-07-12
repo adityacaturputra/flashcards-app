@@ -2,21 +2,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import FlashcardComponent from '../atoms/FlashcardComponent';
-import { Flashcard, progressionOrder } from '../../types/flashcard';
+import {
+  Flashcard,
+  progressionOrder,
+  Progression,
+} from '../../types/flashcard';
 
 type FlashcardListProps = {
   flashcards: Flashcard[];
   onUpdate: (id: string, flashcard: Partial<Flashcard>) => void;
   onDelete: (id: string) => Promise<void>;
+  selectedProgression: Progression | null;
 };
 
 const FlashcardList: React.FC<FlashcardListProps> = ({
   flashcards,
   onUpdate,
   onDelete,
+  selectedProgression,
 }) => {
-  // Sort flashcards based on the progression order and nextReviewDate
-  const sortedFlashcards = [...flashcards].sort((a, b) => {
+  // Filter flashcards based on the selected progression
+  const filteredFlashcards = selectedProgression
+    ? flashcards.filter(
+        (flashcard) => flashcard.progression === selectedProgression,
+      )
+    : flashcards;
+
+  // Sort the filtered flashcards based on the progression order and nextReviewDate
+  const sortedFlashcards = [...filteredFlashcards].sort((a, b) => {
     const progressionComparison =
       progressionOrder[a.progression] - progressionOrder[b.progression];
     if (progressionComparison === 0) {

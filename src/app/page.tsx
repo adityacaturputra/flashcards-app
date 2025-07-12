@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import FlashcardForm from '@/components/molecules/FlashcardForm';
 import FlashcardList from '@/components/organisms/FlashcardList';
 import { useAppContext } from '@/context/appContext';
-import { Flashcard } from '@/types/flashcard';
+import { Flashcard, Progression } from '@/types/flashcard';
 import { motion } from 'framer-motion';
 import Modal from '@/components/atoms/Modal';
 import SkeletonLoader from '@/components/atoms/SkeletonLoader';
@@ -20,15 +20,48 @@ const Home: React.FC = () => {
     null,
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProgression, setSelectedProgression] =
+    useState<Progression | null>(null);
 
   const handleAddFlashcard = async (newFlashcard: Flashcard) => {
     addFlashcard(newFlashcard);
     setIsModalOpen(false);
   };
 
+  const handleFilterChange = (progression: Progression | null) => {
+    setSelectedProgression(progression);
+  };
+
   return (
     <div className='p-10'>
       <h1 className='mb-6 text-3xl font-bold'>Flashcard App</h1>
+
+      {/* Tabs for Progression Filtering */}
+      <div className='mb-4 flex space-x-4'>
+        {Object.values(Progression).map((progression) => (
+          <button
+            key={progression}
+            className={`rounded px-4 py-2 ${
+              selectedProgression === progression
+                ? 'bg-blue-500 text-white'
+                : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+            }`}
+            onClick={() => handleFilterChange(progression)}
+          >
+            {progression.charAt(0).toUpperCase() + progression.slice(1)}
+          </button>
+        ))}
+        <button
+          className={`rounded px-4 py-2 ${
+            selectedProgression === null
+              ? 'bg-blue-500 text-white'
+              : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+          }`}
+          onClick={() => handleFilterChange(null)}
+        >
+          All
+        </button>
+      </div>
 
       {/* Render Skeleton Loader or Flashcard List based on loading state */}
       {loading ? (
@@ -38,6 +71,7 @@ const Home: React.FC = () => {
           flashcards={flashcards}
           onUpdate={updateFlashcard}
           onDelete={deleteFlashcard}
+          selectedProgression={selectedProgression}
         />
       )}
 

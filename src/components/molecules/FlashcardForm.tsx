@@ -1,4 +1,3 @@
-// src/components/molecules/FlashcardForm.tsx
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Flashcard, Progression } from '@/types/flashcard';
@@ -6,7 +5,7 @@ import InputField from '../atoms/InputField';
 import Button from '../atoms/Button';
 import { FaTrashAlt } from 'react-icons/fa';
 import newKeyGen from '@/utils/keyGenIterator';
-import { useRouter } from 'next/navigation';
+import useGenerateFlashcards from '@/hooks/useGenerateFlashcards';
 
 type FlashcardFormProps = {
   addFlashcard: (flashcard: Flashcard) => Promise<void>;
@@ -19,7 +18,6 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({
   selectedFlashcard,
   setSelectedFlashcard,
 }) => {
-  const router = useRouter();
   const [question, setQuestion] = useState(selectedFlashcard?.question || '');
   const [answer, setAnswer] = useState(selectedFlashcard?.answer || '');
   const [dynamicFields, setDynamicFields] = useState<Record<string, string>>(
@@ -29,12 +27,15 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({
     Object.keys(selectedFlashcard?.dynamicFields || {}),
   );
   const [prompt, setPrompt] = useState('');
-  const [aiGeneratedFlashcards, setAiGeneratedFlashcards] = useState<
-    Flashcard[]
-  >([]);
-  const [selectedAiFlashcards, setSelectedAiFlashcards] = useState<string[]>(
-    [],
-  );
+  const {
+    aiGeneratedFlashcards,
+    selectedAiFlashcards,
+    isLoading,
+    error,
+    handleGenerateFlashcards,
+    handleToggleAiFlashcardSelection,
+    handleSaveSelectedAiFlashcards,
+  } = useGenerateFlashcards(addFlashcard);
 
   useEffect(() => {
     if (selectedFlashcard) {
@@ -76,8 +77,6 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({
       setDynamicFields({});
       setFieldKeys([]);
       setPrompt('');
-      setAiGeneratedFlashcards([]);
-      setSelectedAiFlashcards([]);
     }
   };
 
@@ -107,101 +106,128 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({
     });
   };
 
-  const handleGenerateFlashcards = async () => {
-    if (!prompt) {
-      alert('Please enter a prompt.');
-      return;
-    }
-
-    try {
-      const response = await fetch('/api/generateFlashcards', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ prompt }),
-      });
-
-      const data: Flashcard[] = await response.json();
-      const dataWithKeys = data.map((e) => ({
-        ...e,
-        key: crypto.randomUUID(),
-      }));
-      const keys = dataWithKeys.map((e) => e.key);
-
-      setAiGeneratedFlashcards(dataWithKeys);
-      setSelectedAiFlashcards(keys);
-    } catch (error) {
-      console.error(error);
-      alert('Error generating flashcards. Please try again later.');
-    }
-  };
-
-  const handleToggleAiFlashcardSelection = (key: string) => {
-    setSelectedAiFlashcards((prevSelected) =>
-      prevSelected.includes(key)
-        ? prevSelected.filter((selectedKey) => selectedKey !== key)
-        : [...prevSelected, key],
-    );
-  };
-
-  const handleSaveSelectedAiFlashcards = async () => {
-    const selectedFlashcards = aiGeneratedFlashcards.filter((flashcard) =>
-      selectedAiFlashcards.includes(flashcard.key!),
-    );
-
-    try {
-      const responses = await Promise.all(
-        selectedFlashcards.map(async (flashcard) => {
-          await addFlashcard({
-            question: flashcard.question,
-            answer: flashcard.answer,
-            progression: flashcard.progression || Progression.New,
-            nextReviewDate: flashcard.nextReviewDate || new Date(),
-            dynamicFields: flashcard.dynamicFields || {},
-          });
-        }),
-      );
-
-      if (responses) {
-        setSelectedFlashcard(null);
-        setQuestion('');
-        setAnswer('');
-        setDynamicFields({});
-        setFieldKeys([]);
-        setPrompt('');
-        setAiGeneratedFlashcards([]);
-        setSelectedAiFlashcards([]);
-        router.refresh(); // Refresh the page to reflect new flashcards
-      }
-    } catch (error) {
-      console.error(error);
-      alert('Error saving flashcards. Please try again later.');
-    }
-  };
-
   return (
-    <div className='mb-8'>
-      <h2 className='text-xl font-bold'>
-        {selectedFlashcard ? 'Edit Flashcard' : 'Add New Flashcard'}
-      </h2>
-      <div className='mt-4'>
-        <InputField
-          placeholder={'Enter Question'}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setQuestion(e.target.value)
-          }
-          className={'mb-4 w-full'}
-          value={question}
-        />
-        <InputField
-          placeholder={'Enter Answer'}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setAnswer(e.target.value)
-          }
-          className={'mb-4 w-full'}
-          value={answer}
-        />
+    <div className='mb-8 flex h-full flex-col justify-between'>
+      <div>
+        <h2 className='text-xl font-bold'>
+          {selectedFlashcard ? 'Edit Flashcard' : 'Add New Flashcard'}
+        </h2>
+        <div className='mt-4'>
+          <InputField
+            placeholder={'Enter Question'}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setQuestion(e.target.value)
+            }
+            className={'mb-4 w-full'}
+            value={question}
+          />
+          <InputField
+            placeholder={'Enter Answer'}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setAnswer(e.target.value)
+            }
+            className={'mb-4 w-full'}
+            value={answer}
+          />
+        </div>
+        <div className='mt-4'>
+          {fieldKeys.map((key, index) => (
+            <div key={index} className='mb-4 flex w-full items-center'>
+              <InputField
+                placeholder={`Enter Field ${key}`}
+                onChange={handleFieldChange(key)}
+                className='mr-4 w-full'
+                value={dynamicFields[key] || ''}
+              />
+              <Button
+                onClick={() => deleteDynamicField(key)}
+                className='bg-red-500 text-white hover:bg-red-600 focus:outline-none'
+              >
+                <FaTrashAlt />
+              </Button>
+            </div>
+          ))}
+        </div>
+        <div className='mt-4 flex items-center'>
+          <div className='mr-4'>
+            <Button onClick={addDynamicField}>Add Custom Field</Button>
+          </div>
+          <div>
+            <Button onClick={handleAddFlashcard}>
+              {selectedFlashcard ? 'Update Flashcard' : 'Add Flashcard'}
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        {/* Display AI Generated Flashcards */}
+        {aiGeneratedFlashcards.length > 0 && (
+          <>
+            <div className='max-h-[30vh] overflow-scroll'>
+              <h3 className='mt-8 text-lg font-bold'>
+                AI Generated Flashcards
+              </h3>
+              <div className=''>
+                <div className='mt-4 space-y-4'>
+                  {aiGeneratedFlashcards.map((flashcard) => (
+                    <div
+                      key={flashcard.key}
+                      className='flex items-center rounded bg-gray-100 p-4 shadow-sm'
+                    >
+                      <label className='flex flex-grow items-center'>
+                        <input
+                          type='checkbox'
+                          checked={selectedAiFlashcards.includes(
+                            flashcard.key!,
+                          )}
+                          onChange={() =>
+                            handleToggleAiFlashcardSelection(flashcard.key!)
+                          }
+                          className='mr-2'
+                        />
+                        <div className='flex-grow'>
+                          <p className='font-semibold'>
+                            Question: {flashcard.question}
+                          </p>
+                          <p>Answer: {flashcard.answer}</p>
+                          {flashcard.dynamicFields && (
+                            <div>
+                              {Object.entries(flashcard.dynamicFields).map(
+                                ([key, value]) => (
+                                  <p key={key}>
+                                    {key}: {value}
+                                  </p>
+                                ),
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </label>
+                      <Button
+                        onClick={() =>
+                          handleToggleAiFlashcardSelection(flashcard.key!)
+                        }
+                        className={
+                          selectedAiFlashcards.includes(flashcard.key!)
+                            ? 'bg-green-500 text-white hover:bg-green-600'
+                            : 'bg-blue-500 text-white hover:bg-blue-600'
+                        }
+                      >
+                        {selectedAiFlashcards.includes(flashcard.key!)
+                          ? 'Selected'
+                          : 'Select'}
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+        {/* Display Error Message */}
+        {error && <div className='mt-4 text-red-500'>{error}</div>}
+
         <InputField
           placeholder={'Enter AI Prompt'}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -210,104 +236,23 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({
           className={'mb-4 w-full'}
           value={prompt}
         />
-        <Button onClick={handleGenerateFlashcards}>
-          Generate Flashcards with AI
-        </Button>
-      </div>
-      <div className='mt-4'>
-        {fieldKeys.map((key, index) => (
-          <div key={index} className='mb-4 flex w-full items-center'>
-            <InputField
-              placeholder={`Enter Field ${key}`}
-              onChange={handleFieldChange(key)}
-              className='mr-4 w-full'
-              value={dynamicFields[key] || ''}
-            />
-            <Button
-              onClick={() => deleteDynamicField(key)}
-              className='bg-red-500 text-white hover:bg-red-600 focus:outline-none'
-            >
-              <FaTrashAlt />
-            </Button>
-          </div>
-        ))}
-      </div>
-      <div className='mt-4 flex items-center'>
-        <div className='mr-4'>
-          <Button onClick={addDynamicField}>Add Custom Field</Button>
-        </div>
-        <div>
-          <Button onClick={handleAddFlashcard}>
-            {selectedFlashcard ? 'Update Flashcard' : 'Add Flashcard'}
+        <div className='mb-4 flex justify-between'>
+          <Button
+            onClick={() => handleGenerateFlashcards(prompt)}
+            disabled={isLoading}
+          >
+            {isLoading ? 'Generating...' : 'Generate Flashcards with AI'}
           </Button>
-        </div>
-      </div>
 
-      {/* Display AI Generated Flashcards */}
-      <h3 className='mt-8 text-lg font-bold'>AI Generated Flashcards</h3>
-      <div className='max-h-[30vh] overflow-scroll'>
-        {aiGeneratedFlashcards.length > 0 && (
-          <div className=''>
-            <div className='mt-4 space-y-4'>
-              {aiGeneratedFlashcards.map((flashcard) => (
-                <div
-                  key={flashcard.key}
-                  className='flex items-center rounded bg-gray-100 p-4 shadow-sm'
-                >
-                  <label className='flex flex-grow items-center'>
-                    <input
-                      type='checkbox'
-                      checked={selectedAiFlashcards.includes(flashcard.key!)}
-                      onChange={() =>
-                        handleToggleAiFlashcardSelection(flashcard.key!)
-                      }
-                      className='mr-2'
-                    />
-                    <div className='flex-grow'>
-                      <p className='font-semibold'>
-                        Question: {flashcard.question}
-                      </p>
-                      <p>Answer: {flashcard.answer}</p>
-                      {flashcard.dynamicFields && (
-                        <div>
-                          {Object.entries(flashcard.dynamicFields).map(
-                            ([key, value]) => (
-                              <p key={key}>
-                                {key}: {value}
-                              </p>
-                            ),
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </label>
-                  <Button
-                    onClick={() =>
-                      handleToggleAiFlashcardSelection(flashcard.key!)
-                    }
-                    className={
-                      selectedAiFlashcards.includes(flashcard.key!)
-                        ? 'bg-green-500 text-white hover:bg-green-600'
-                        : 'bg-blue-500 text-white hover:bg-blue-600'
-                    }
-                  >
-                    {selectedAiFlashcards.includes(flashcard.key!)
-                      ? 'Selected'
-                      : 'Select'}
-                  </Button>
-                </div>
-              ))}
-            </div>
-            <div className='mt-4'>
-              <Button
-                onClick={handleSaveSelectedAiFlashcards}
-                disabled={selectedAiFlashcards.length === 0}
-              >
-                Save Selected Flashcards
-              </Button>
-            </div>
-          </div>
-        )}
+          {aiGeneratedFlashcards.length > 0 && (
+            <Button
+              onClick={handleSaveSelectedAiFlashcards}
+              disabled={selectedAiFlashcards.length === 0}
+            >
+              Save Selected Flashcards
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   );
