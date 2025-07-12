@@ -5,15 +5,27 @@ import { motion } from 'framer-motion';
 type ModalProps = {
   children: React.ReactNode;
   onClose: () => void;
+  isOpen: boolean;
 };
 
-const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
+const Modal: React.FC<ModalProps> = ({ children, onClose, isOpen }) => {
+  // Animation variants
+  const variants = {
+    open: {
+      height: 'auto',
+      opacity: 1,
+      translateY: 0,
+      transition: { staggerChildren: 0.1 },
+    },
+    closed: { height: 0, opacity: 0, translateY: '100vh' }, // Move away from screen
+  };
+
   return (
     <motion.div
       className='bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-white'
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      animate={isOpen ? 'open' : 'closed'}
+      initial='closed'
+      variants={variants}
       transition={{ duration: 0.3 }}
       onClick={onClose}
     >
@@ -27,7 +39,7 @@ const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
       >
         {/* Close Button */}
         <button
-          className='absolute top-6 right-10 text-2xl text-gray-600 hover:text-gray-800'
+          className='absolute top-6 right-10 z-20 text-2xl text-gray-600 hover:text-gray-800'
           onClick={onClose}
         >
           &times;

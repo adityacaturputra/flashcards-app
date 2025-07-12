@@ -65,7 +65,7 @@ const Home: React.FC = () => {
 
         {/* Modal */}
         {isModalOpen && (
-          <Modal onClose={() => setIsModalOpen(false)}>
+          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
             <FlashcardForm
               addFlashcard={handleAddFlashcard}
               selectedFlashcard={selectedFlashcard}

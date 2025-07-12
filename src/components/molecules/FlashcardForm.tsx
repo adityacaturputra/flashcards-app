@@ -5,6 +5,9 @@ import Button from '../atoms/Button';
 import { FaTrashAlt } from 'react-icons/fa';
 import useGenerateFlashcards from '@/hooks/useGenerateFlashcards';
 import { LuLoaderPinwheel } from 'react-icons/lu';
+import { useState } from 'react';
+import styles from './FlashcardForm.module.css'; // Import the CSS module for styles
+import { motion } from 'framer-motion'; // Import framer-motion
 
 type FlashcardFormProps = {
   addFlashcard: (flashcard: Flashcard) => Promise<void>;
@@ -36,56 +39,109 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
     prompt,
   } = useGenerateFlashcards(addFlashcard);
 
+  // State to manage accordion open/close
+  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+
+  // Animation variants
+  const variants = {
+    open: {
+      height: 'auto',
+      opacity: 1,
+      translateY: 0,
+      transition: { staggerChildren: 0.1 },
+    },
+    closed: { height: 0, opacity: 0, translateY: '-40vh' }, // Move away from screen
+  };
+
   return (
-    <div className='mb-8 flex h-full flex-col justify-between'>
+    <div className='relative mb-8 flex h-full flex-col justify-between'>
       <div>
         <h2 className='text-xl font-bold'>Add New Flashcard</h2>
-        <div className='max-h-[22vh] overflow-scroll'>
-          <div className='mt-4'>
-            <InputField
-              placeholder={'Enter Question'}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setQuestion(e.target.value)
-              }
-              className={'mb-4 w-full'}
-              value={question}
-            />
-            <InputField
-              placeholder={'Enter Answer'}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setAnswer(e.target.value)
-              }
-              className={'mb-4 w-full'}
-              value={answer}
-            />
-          </div>
-          <div className='mt-4'>
-            {fieldKeys.map((key, index) => (
-              <div key={index} className='mb-4 flex w-full items-center'>
-                <InputField
-                  placeholder={`Enter Field ${key}`}
-                  onChange={handleFieldChange(key)}
-                  className='mr-4 w-full'
-                  value={dynamicFields[key] || ''}
-                />
+        {/* Accordion Header */}
+        <div
+          className='mt-4 flex cursor-pointer items-center justify-between rounded bg-gray-200 p-3 hover:bg-gray-300'
+          onClick={() => setIsAccordionOpen(!isAccordionOpen)}
+        >
+          <span>Manual Add Form</span>
+          <Button
+            className={`${styles.toggleButton} ${isAccordionOpen ? styles.open : ''}`}
+            onClick={() => setIsAccordionOpen(!isAccordionOpen)}
+          >
+            <svg
+              className='h-5 w-5'
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+              strokeWidth='2'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M19 9l-7 7-7-7'
+              />
+            </svg>
+          </Button>
+        </div>
+        {/* Accordion Content */}
+        {isAccordionOpen && (
+          <motion.div
+            animate={isAccordionOpen ? 'open' : 'closed'}
+            initial='closed'
+            variants={variants}
+            className='mt-4'
+          >
+            <div className='absolute max-h-[80vh] w-full overflow-scroll bg-white pb-8'>
+              <InputField
+                placeholder={'Enter Question'}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setQuestion(e.target.value)
+                }
+                className={'mb-4 w-full'}
+                value={question}
+              />
+              <InputField
+                placeholder={'Enter Answer'}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setAnswer(e.target.value)
+                }
+                className={'mb-4 w-full'}
+                value={answer}
+              />
+              <div className='mt-4'>
+                {fieldKeys.map((key, index) => (
+                  <div key={index} className='mb-4 flex w-full items-center'>
+                    <InputField
+                      placeholder={`Enter Field ${key}`}
+                      onChange={handleFieldChange(key)}
+                      className='mr-4 w-full'
+                      value={dynamicFields[key] || ''}
+                    />
+                    <Button
+                      onClick={() => deleteDynamicField(key)}
+                      className='bg-red-500 text-white hover:bg-red-600 focus:outline-none'
+                    >
+                      <FaTrashAlt />
+                    </Button>
+                  </div>
+                ))}
+              </div>
+              <div className='mt-1 flex items-center'>
+                <Button onClick={addDynamicField} className='mr-1'>
+                  Add Custom Field
+                </Button>
                 <Button
-                  onClick={() => deleteDynamicField(key)}
-                  className='bg-red-500 text-white hover:bg-red-600 focus:outline-none'
+                  onClick={() => {
+                    handleAddFlashcardToList();
+                    setIsAccordionOpen(false);
+                  }}
                 >
-                  <FaTrashAlt />
+                  Add Flashcard
                 </Button>
               </div>
-            ))}
-          </div>
-          <div className='mt-1 flex items-center'>
-            <div className='mr-1'>
-              <Button onClick={addDynamicField}>Add Custom Field</Button>
             </div>
-            <div>
-              <Button onClick={handleAddFlashcardToList}>Add Flashcard</Button>
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        )}
         {flashCards.length > 0 && (
           <>
             <div className='h-[60vh] overflow-scroll'>
@@ -144,46 +200,45 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
             </div>
           </>
         )}
-      </div>
+        <div className='absolute bottom-0 w-full'>
+          {/* Display Error Message */}
+          {error && <div className='mt-4 text-red-500'>{error}</div>}
 
-      <div>
-        {/* Display Error Message */}
-        {error && <div className='mt-4 text-red-500'>{error}</div>}
-
-        <InputField
-          placeholder={'Enter AI Prompt'}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setPrompt(e.target.value)
-          }
-          className={'mb-4 w-full'}
-          value={prompt}
-        />
-        <div className='mb-4 flex justify-between gap-2'>
-          <Button
-            onClick={() => handleGenerateFlashcards(prompt)}
-            disabled={isLoading}
-          >
-            {isLoading ? (
-              <>
-                <LuLoaderPinwheel className='animate-spin' />
-                Creating magics
-              </>
-            ) : (
-              <>
-                <LuLoaderPinwheel />
-                Generate by Magic
-              </>
-            )}
-          </Button>
-
-          {flashCards.length > 0 && (
+          <InputField
+            placeholder={'Enter Prompt'}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setPrompt(e.target.value)
+            }
+            className={'mb-4 w-full'}
+            value={prompt}
+          />
+          <div className='mb-4 flex justify-between gap-2'>
             <Button
-              onClick={handleSaveSelectedFlashcards}
-              disabled={selectedFlashcards.length === 0}
+              onClick={() => handleGenerateFlashcards(prompt)}
+              disabled={isLoading}
             >
-              Save
+              {isLoading ? (
+                <>
+                  <LuLoaderPinwheel className='animate-spin' />
+                  Creating magics...
+                </>
+              ) : (
+                <>
+                  <LuLoaderPinwheel />
+                  Generate by Magic
+                </>
+              )}
             </Button>
-          )}
+
+            {flashCards.length > 0 && (
+              <Button
+                onClick={handleSaveSelectedFlashcards}
+                disabled={selectedFlashcards.length === 0}
+              >
+                Save
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </div>

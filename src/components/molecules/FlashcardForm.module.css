@@ -1,0 +1,7 @@
+.toggleButton {
+  transition: transform 0.3s ease;
+}
+
+.open {
+  transform: rotate(180deg);
+}
