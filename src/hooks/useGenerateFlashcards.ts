@@ -73,8 +73,8 @@ const useGenerateFlashcards = (
       }));
       const keys = dataWithKeys.map((e) => e.key);
 
-      setFlashCards(dataWithKeys);
-      setSelectedFlashcards(keys);
+      setFlashCards((prev) => [...prev, ...dataWithKeys]);
+      setSelectedFlashcards((prev) => [...prev, ...keys]);
     } catch (err) {
       const error = err as Error;
       setError(error.message);
