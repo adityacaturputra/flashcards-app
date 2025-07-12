@@ -24,4 +24,5 @@ export type Flashcard = {
   progression: Progression; // Use the enum here
   nextReviewDate: Date;
   dynamicFields?: Record<string, string>; // Added to store dynamic fields
+  key?: string;
 };

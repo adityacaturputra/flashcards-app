@@ -43,7 +43,7 @@ const Home: React.FC = () => {
 
       {/* Floating Button to Open Modal */}
       <motion.button
-        className='absolute right-5 bottom-5 z-10 rounded-full bg-blue-500 px-4 py-2 text-white shadow-lg hover:bg-blue-600 focus:outline-none'
+        className='fixed right-5 bottom-5 z-10 rounded-full bg-blue-500 px-4 py-2 text-white shadow-lg hover:bg-blue-600 focus:outline-none'
         onClick={() => setIsModalOpen(true)}
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}

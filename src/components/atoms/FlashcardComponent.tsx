@@ -58,18 +58,12 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
   };
 
   const renderViewModeDynamicFields = () => {
-    const length = Object.entries(flashcard.dynamicFields || {}).length;
-    return Object.entries(flashcard.dynamicFields || {}).map(
-      ([key, value], index) => (
-        <div key={key} className='flex items-center space-x-2'>
-          <strong className='font-medium'>{key}:</strong>
-          <span>{value}</span>
-          {index < length - 1 && (
-            <div className='divider mx-2 h-full w-px bg-gray-300'>|</div>
-          )}
-        </div>
-      ),
-    );
+    return Object.entries(flashcard.dynamicFields || {}).map(([key, value]) => (
+      <div key={key} className='items-center space-x-2'>
+        <strong className='font-medium'>{key}:</strong>
+        <span>{value}</span>
+      </div>
+    ));
   };
 
   return (
@@ -104,7 +98,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
           <p className='mt-2'>{flashcard.answer}</p>
 
           {flashcard.dynamicFields && (
-            <div className='mt-4 flex flex-wrap items-center'>
+            <div className='mt-4 items-center'>
               {renderViewModeDynamicFields()}
             </div>
           )}

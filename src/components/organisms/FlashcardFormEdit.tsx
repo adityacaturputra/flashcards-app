@@ -41,7 +41,7 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
   const renderDynamicFields = () => {
     const length = Object.entries(dynamicFields).length;
     return Object.entries(dynamicFields).map(([key, value], index) => (
-      <div key={key} className='flex items-center space-x-2'>
+      <div key={key} className='space-x-2'>
         <button
           className='text-green-500 hover:text-green-700'
           onClick={() => addDynamicField('before', key)}
@@ -75,9 +75,6 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
         >
           <FaMinusCircle />
         </button>
-        {index < length - 1 && (
-          <div className='divider mx-2 h-full w-px bg-gray-300'>|</div>
-        )}
       </div>
     ));
   };
@@ -96,7 +93,7 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
         className='mt-2 rounded border border-gray-300 p-2'
       />
 
-      <div className='mt-2 flex flex-wrap items-center'>
+      <div className='mt-2 items-center'>
         {renderDynamicFields()}
         <div className='flex items-center space-x-2'>
           <button
