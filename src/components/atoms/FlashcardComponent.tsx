@@ -71,48 +71,48 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
       className={`relative p-4 ${className}`}
       onClick={toggleAnswerVisibility}
     >
-      <button className='absolute top-2 right-18 text-blue-500 hover:text-blue-700'>
-        {isAnswerHidden ? <FaEye /> : <FaEyeSlash />}
-      </button>
-      <button
-        className='absolute top-2 right-2 text-red-500 hover:text-red-700'
-        onClick={handleDelete}
-      >
-        <FaTrashAlt />
-      </button>
-
-      <button
-        className='absolute top-2 right-10 text-blue-500 hover:text-blue-700'
-        onClick={handleEdit}
-      >
-        <FaPenToSquare />
-      </button>
-
-      <p className='absolute top-2 right-10 mt-4'>{remainingTime}</p>
-
-      <h3 className='text-xl font-bold'>{flashcard.question}</h3>
-
       {!isEditing && (
-        <div
-          className={`${styles.content} ${isAnswerHidden ? styles.hidden : styles.visible}`}
-        >
-          <p className='mt-2'>{flashcard.answer}</p>
+        <>
+          <button className='absolute top-4 right-22 text-blue-500 hover:text-blue-700'>
+            {isAnswerHidden ? <FaEye /> : <FaEyeSlash />}
+          </button>
+          <button
+            className='absolute top-4 right-6 text-red-500 hover:text-red-700'
+            onClick={handleDelete}
+          >
+            <FaTrashAlt />
+          </button>
 
-          {flashcard.dynamicFields && (
-            <div className='mt-4 items-center'>
-              {renderViewModeDynamicFields()}
+          <button
+            className='absolute top-4 right-14 text-blue-500 hover:text-blue-700'
+            onClick={handleEdit}
+          >
+            <FaPenToSquare />
+          </button>
+
+          <p className='absolute -top-1 left-6 mt-4'>{remainingTime}</p>
+          <h3 className='mt-4 text-xl font-bold'>{flashcard.question}</h3>
+          <div
+            className={`${styles.content} ${isAnswerHidden ? styles.hidden : styles.visible}`}
+          >
+            <p className='mt-2'>{flashcard.answer}</p>
+
+            {flashcard.dynamicFields && (
+              <div className='mt-4 items-center'>
+                {renderViewModeDynamicFields()}
+              </div>
+            )}
+
+            <div className='mt-4 flex items-center space-x-4'>
+              <label className='font-medium text-gray-700'>Progression:</label>
+              <ProgressionSelector
+                value={flashcard.progression}
+                onChange={handleProgressionChange}
+                className='rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus:outline-none'
+              />
             </div>
-          )}
-
-          <div className='mt-4 flex items-center space-x-4'>
-            <label className='font-medium text-gray-700'>Progression:</label>
-            <ProgressionSelector
-              value={flashcard.progression}
-              onChange={handleProgressionChange}
-              className='rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus:outline-none'
-            />
           </div>
-        </div>
+        </>
       )}
 
       {isEditing ? (

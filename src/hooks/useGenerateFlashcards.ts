@@ -1,25 +1,46 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { Flashcard, Progression } from '@/types/flashcard';
+import newKeyGen from '@/utils/keyGenIterator';
 
 interface UseGenerateFlashcardsResult {
-  aiGeneratedFlashcards: Flashcard[];
-  selectedAiFlashcards: string[];
+  flashCards: Flashcard[];
+  selectedFlashcards: string[];
   isLoading: boolean;
   error: string | null;
   handleGenerateFlashcards: (prompt: string) => void;
-  handleToggleAiFlashcardSelection: (key: string) => void;
-  handleSaveSelectedAiFlashcards: () => void;
+  handleToggleFlashcardSelection: (key: string) => void;
+  handleSaveSelectedFlashcards: () => void;
+
+  setQuestion: Dispatch<SetStateAction<string>>;
+  question: string;
+  setAnswer: Dispatch<SetStateAction<string>>;
+  answer: string;
+  fieldKeys: string[];
+  handleFieldChange: (
+    key: string,
+  ) => (e: React.ChangeEvent<HTMLInputElement>) => void;
+  dynamicFields: Record<string, string>;
+  deleteDynamicField: (key: string) => void;
+  addDynamicField: () => void;
+  handleAddFlashcardToList: () => void;
+  setPrompt: Dispatch<SetStateAction<string>>;
+  prompt: string;
 }
 
 const useGenerateFlashcards = (
   addFlashcard: (flashcard: Flashcard) => Promise<void>,
 ): UseGenerateFlashcardsResult => {
-  const [aiGeneratedFlashcards, setAiGeneratedFlashcards] = useState<
-    Flashcard[]
-  >([]);
-  const [selectedAiFlashcards, setSelectedAiFlashcards] = useState<string[]>(
-    [],
+  const [flashCards, setFlashCards] = useState<Flashcard[]>([]);
+  const [selectedFlashcards, setSelectedFlashcards] = useState<string[]>([]);
+
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
+  const [fieldKeys, setFieldKeys] = useState<string[]>(Object.keys({}));
+  const [dynamicFields, setDynamicFields] = useState<Record<string, string>>(
+    {},
   );
+
+  const [prompt, setPrompt] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -52,8 +73,8 @@ const useGenerateFlashcards = (
       }));
       const keys = dataWithKeys.map((e) => e.key);
 
-      setAiGeneratedFlashcards(dataWithKeys);
-      setSelectedAiFlashcards(keys);
+      setFlashCards(dataWithKeys);
+      setSelectedFlashcards(keys);
     } catch (err) {
       const error = err as Error;
       setError(error.message);
@@ -64,22 +85,22 @@ const useGenerateFlashcards = (
     }
   };
 
-  const handleToggleAiFlashcardSelection = (key: string) => {
-    setSelectedAiFlashcards((prevSelected) =>
+  const handleToggleFlashcardSelection = (key: string) => {
+    setSelectedFlashcards((prevSelected) =>
       prevSelected.includes(key)
         ? prevSelected.filter((selectedKey) => selectedKey !== key)
         : [...prevSelected, key],
     );
   };
 
-  const handleSaveSelectedAiFlashcards = async () => {
-    const selectedFlashcards = aiGeneratedFlashcards.filter((flashcard) =>
-      selectedAiFlashcards.includes(flashcard.key!),
+  const handleSaveSelectedFlashcards = async () => {
+    const selectedFlashcardsTemp = flashCards.filter((flashcard) =>
+      selectedFlashcards.includes(flashcard.key!),
     );
 
     try {
       const responses = await Promise.all(
-        selectedFlashcards.map(async (flashcard) => {
+        selectedFlashcardsTemp.map(async (flashcard) => {
           await addFlashcard({
             question: flashcard.question,
             answer: flashcard.answer,
@@ -91,8 +112,8 @@ const useGenerateFlashcards = (
       );
 
       if (responses) {
-        setAiGeneratedFlashcards([]);
-        setSelectedAiFlashcards([]);
+        setFlashCards([]);
+        setSelectedFlashcards([]);
       }
     } catch (err) {
       const error = err as Error;
@@ -102,14 +123,87 @@ const useGenerateFlashcards = (
     }
   };
 
+  const handleAddFlashcardToList = () => {
+    if (question && answer) {
+      const formattedDynamicFields = fieldKeys.reduce(
+        (acc, key) => {
+          if (dynamicFields[key]) {
+            acc[key] = dynamicFields[key];
+          }
+          return acc;
+        },
+        {} as Record<string, string>,
+      );
+
+      const key = crypto.randomUUID();
+      setFlashCards((prev) => [
+        ...prev,
+        {
+          question,
+          answer,
+          progression: Progression.New,
+          nextReviewDate: new Date(),
+          dynamicFields: formattedDynamicFields,
+          key,
+        },
+      ]);
+      setSelectedFlashcards((prev) => [...prev, key]);
+
+      setQuestion('');
+      setAnswer('');
+      setDynamicFields({});
+      setFieldKeys([]);
+      setPrompt('');
+    }
+  };
+
+  const handleFieldChange =
+    (key: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      setDynamicFields((prevFields) => ({
+        ...prevFields,
+        [key]: e.target.value,
+      }));
+    };
+
+  const addDynamicField = () => {
+    const newKey = newKeyGen(0, dynamicFields);
+    setFieldKeys((prevKeys) => [...prevKeys, newKey]);
+    setDynamicFields((prevFields) => ({
+      ...prevFields,
+      [newKey]: '',
+    }));
+  };
+
+  const deleteDynamicField = (key: string) => {
+    setFieldKeys((prevKeys) => prevKeys.filter((k) => k !== key));
+    setDynamicFields((prevFields) => {
+      const newFields = { ...prevFields };
+      delete newFields[key];
+      return newFields;
+    });
+  };
+
   return {
-    aiGeneratedFlashcards,
-    selectedAiFlashcards,
+    flashCards,
+    selectedFlashcards,
     isLoading,
     error,
     handleGenerateFlashcards,
-    handleToggleAiFlashcardSelection,
-    handleSaveSelectedAiFlashcards,
+    handleToggleFlashcardSelection,
+    handleSaveSelectedFlashcards,
+
+    setQuestion,
+    question,
+    setAnswer,
+    answer,
+    fieldKeys,
+    handleFieldChange,
+    dynamicFields,
+    deleteDynamicField,
+    addDynamicField,
+    handleAddFlashcardToList,
+    setPrompt,
+    prompt,
   };
 };
 

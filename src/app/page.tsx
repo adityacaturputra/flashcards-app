@@ -33,72 +33,76 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className='p-10'>
-      <h1 className='mb-6 text-3xl font-bold'>Flashcard App</h1>
+    <>
+      <div className='relative h-screen p-10'>
+        <h1 className='mb-6 text-3xl font-bold'>Flashcard App</h1>
 
+        {/* Render Skeleton Loader or Flashcard List based on loading state */}
+        {loading ? (
+          <SkeletonLoader count={5} />
+        ) : (
+          <FlashcardList
+            flashcards={flashcards}
+            onUpdate={updateFlashcard}
+            onDelete={deleteFlashcard}
+            selectedProgression={selectedProgression}
+          />
+        )}
+        <div className='h-[120px]' />
+
+        {/* Floating Button to Open Modal */}
+        <motion.button
+          className='fixed right-5 bottom-20 z-10 rounded-full bg-blue-500 px-4 py-2 text-white shadow-lg hover:bg-blue-600 focus:outline-none'
+          onClick={() => setIsModalOpen(true)}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          whileTap={{ scale: 0.9 }}
+        >
+          + Add Flashcard
+        </motion.button>
+
+        {/* Modal */}
+        {isModalOpen && (
+          <Modal onClose={() => setIsModalOpen(false)}>
+            <FlashcardForm
+              addFlashcard={handleAddFlashcard}
+              selectedFlashcard={selectedFlashcard}
+              setSelectedFlashcard={setSelectedFlashcard}
+            />
+          </Modal>
+        )}
+      </div>
       {/* Tabs for Progression Filtering */}
-      <div className='mb-4 flex space-x-4'>
-        {Object.values(Progression).map((progression) => (
+      <div className='bg-opacity-90 fixed right-0 bottom-0 left-0 z-10 flex items-center overflow-x-auto bg-white whitespace-nowrap'>
+        <div className='flex space-x-4 p-4'>
+          {Object.values(Progression).map((progression) => (
+            <button
+              key={progression}
+              className={`rounded px-4 py-2 ${
+                selectedProgression === progression
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+              }`}
+              onClick={() => handleFilterChange(progression)}
+            >
+              {progression.charAt(0).toUpperCase() + progression.slice(1)}
+            </button>
+          ))}
           <button
-            key={progression}
             className={`rounded px-4 py-2 ${
-              selectedProgression === progression
+              selectedProgression === null
                 ? 'bg-blue-500 text-white'
                 : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
             }`}
-            onClick={() => handleFilterChange(progression)}
+            onClick={() => handleFilterChange(null)}
           >
-            {progression.charAt(0).toUpperCase() + progression.slice(1)}
+            All
           </button>
-        ))}
-        <button
-          className={`rounded px-4 py-2 ${
-            selectedProgression === null
-              ? 'bg-blue-500 text-white'
-              : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
-          }`}
-          onClick={() => handleFilterChange(null)}
-        >
-          All
-        </button>
+        </div>
       </div>
-
-      {/* Render Skeleton Loader or Flashcard List based on loading state */}
-      {loading ? (
-        <SkeletonLoader count={5} />
-      ) : (
-        <FlashcardList
-          flashcards={flashcards}
-          onUpdate={updateFlashcard}
-          onDelete={deleteFlashcard}
-          selectedProgression={selectedProgression}
-        />
-      )}
-
-      {/* Floating Button to Open Modal */}
-      <motion.button
-        className='fixed right-5 bottom-5 z-10 rounded-full bg-blue-500 px-4 py-2 text-white shadow-lg hover:bg-blue-600 focus:outline-none'
-        onClick={() => setIsModalOpen(true)}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0 }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-        whileTap={{ scale: 0.9 }}
-      >
-        + Add Flashcard
-      </motion.button>
-
-      {/* Modal */}
-      {isModalOpen && (
-        <Modal onClose={() => setIsModalOpen(false)}>
-          <FlashcardForm
-            addFlashcard={handleAddFlashcard}
-            selectedFlashcard={selectedFlashcard}
-            setSelectedFlashcard={setSelectedFlashcard}
-          />
-        </Modal>
-      )}
-    </div>
+    </>
   );
 };
 

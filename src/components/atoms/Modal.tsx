@@ -27,10 +27,10 @@ const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
       >
         {/* Close Button */}
         <button
-          className='absolute right-5 bottom-5 text-gray-600 hover:text-gray-800'
+          className='absolute top-6 right-10 text-2xl text-gray-600 hover:text-gray-800'
           onClick={onClose}
         >
-          &times; Close
+          &times;
         </button>
         {children}
       </motion.div>
