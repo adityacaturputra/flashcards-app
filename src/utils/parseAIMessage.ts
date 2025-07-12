@@ -18,7 +18,8 @@ function parseAIMessage(message: string): any[] | null {
   } catch (error) {
     // Handle JSON parsing errors
     console.error(`Error decoding JSON: ${error}`);
-    return null;
+    const result = JSON.parse(message);
+    return result;
   }
 }
 
