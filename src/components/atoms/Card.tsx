@@ -1,11 +1,12 @@
 type CardProps = {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 };
 
-const Card: React.FC<CardProps> = ({ children, className = '' }) => {
+const Card: React.FC<CardProps> = ({ children, className = '', onClick }) => {
   return (
-    <div className={`card ${className}`}>
+    <div className={`card ${className}`} onClick={onClick}>
       {children}
     </div>
   );

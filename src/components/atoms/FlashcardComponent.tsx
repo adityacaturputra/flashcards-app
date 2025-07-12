@@ -67,7 +67,13 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
   };
 
   return (
-    <Card className={`relative p-4 ${className}`}>
+    <Card
+      className={`relative p-4 ${className}`}
+      onClick={toggleAnswerVisibility}
+    >
+      <button className='absolute top-2 right-18 text-blue-500 hover:text-blue-700'>
+        {isAnswerHidden ? <FaEye /> : <FaEyeSlash />}
+      </button>
       <button
         className='absolute top-2 right-2 text-red-500 hover:text-red-700'
         onClick={handleDelete}
@@ -82,14 +88,9 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
         <FaPenToSquare />
       </button>
 
-      <h3 className='text-xl font-bold'>{flashcard.question}</h3>
+      <p className='absolute top-2 right-10 mt-4'>{remainingTime}</p>
 
-      <button
-        onClick={toggleAnswerVisibility}
-        className='ml-2 text-blue-500 hover:text-blue-700'
-      >
-        {isAnswerHidden ? <FaEye /> : <FaEyeSlash />}
-      </button>
+      <h3 className='text-xl font-bold'>{flashcard.question}</h3>
 
       {!isEditing && (
         <div
@@ -102,8 +103,6 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
               {renderViewModeDynamicFields()}
             </div>
           )}
-
-          <p className='mt-4'>Next Review: {remainingTime}</p>
 
           <div className='mt-4 flex items-center space-x-4'>
             <label className='font-medium text-gray-700'>Progression:</label>
