@@ -37,6 +37,7 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
     handleAddFlashcardToList,
     setPrompt,
     prompt,
+    handleFileUpload,
   } = useGenerateFlashcards(addFlashcard);
 
   // State to manage accordion open/close
@@ -57,6 +58,15 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
     <div className='relative mb-8 flex h-full flex-col justify-between'>
       <div>
         <h2 className='text-xl font-bold'>Add New Flashcard</h2>
+        {/* Upload Input */}
+        <div className='mt-4'>
+          <input
+            type='file'
+            accept='.xml'
+            onChange={handleFileUpload}
+            className='mb-4 border p-2'
+          />
+        </div>
         {/* Accordion Header */}
         <div
           className='mt-4 flex cursor-pointer items-center justify-between rounded bg-gray-200 p-3 hover:bg-gray-300'

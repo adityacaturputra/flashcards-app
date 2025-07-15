@@ -1,6 +1,8 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import { Flashcard, Progression } from '@/types/flashcard';
 import newKeyGen from '@/utils/keyGenIterator';
+import convertXmlToObject from '@/utils/convertXmlToObject';
+import { useAppContext } from '@/context/appContext';
 
 interface UseGenerateFlashcardsResult {
   flashCards: Flashcard[];
@@ -23,6 +25,9 @@ interface UseGenerateFlashcardsResult {
   deleteDynamicField: (key: string) => void;
   addDynamicField: () => void;
   handleAddFlashcardToList: () => void;
+  handleFileUpload: (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => Promise<void>;
   setPrompt: Dispatch<SetStateAction<string>>;
   prompt: string;
 }
@@ -30,6 +35,7 @@ interface UseGenerateFlashcardsResult {
 const useGenerateFlashcards = (
   addFlashcard: (flashcard: Flashcard) => Promise<void>,
 ): UseGenerateFlashcardsResult => {
+  const { flashcards: savedFlashcards } = useAppContext();
   const [flashCards, setFlashCards] = useState<Flashcard[]>([]);
   const [selectedFlashcards, setSelectedFlashcards] = useState<string[]>([]);
 
@@ -183,6 +189,48 @@ const useGenerateFlashcards = (
     });
   };
 
+  const handleFileUpload = async (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const xmlData = e.target?.result as string;
+      const processedData = convertXmlToObject(xmlData);
+      const keys: string[] = [];
+      const mapAlreadySavedCards = savedFlashcards.reduce(
+        (map, e) => map.set(`${e.question}|${e.answer}`, true),
+        new Map(),
+      );
+      const flashcards: Flashcard[] = [];
+      const unSelectedFlashcards: Flashcard[] = [];
+      processedData.forEach((e) => {
+        const key = crypto.randomUUID();
+        const flashcard = {
+          question: e.frontMatch,
+          answer: e.backMatch,
+          key: key,
+        } as Flashcard;
+        const keyMap = `${flashcard.question}|${flashcard.answer}`;
+        if (!mapAlreadySavedCards.get(keyMap)) {
+          flashCards.push(flashcard);
+          keys.push(key);
+        } else {
+          unSelectedFlashcards.push(flashcard);
+        }
+      });
+      setFlashCards((prev) => [
+        ...flashcards,
+        ...prev,
+        ...unSelectedFlashcards,
+      ]);
+      setSelectedFlashcards((prev) => [...keys, ...prev]);
+    };
+    reader.readAsText(file);
+  };
+
   return {
     flashCards,
     selectedFlashcards,
@@ -204,6 +252,8 @@ const useGenerateFlashcards = (
     handleAddFlashcardToList,
     setPrompt,
     prompt,
+
+    handleFileUpload,
   };
 };
 
