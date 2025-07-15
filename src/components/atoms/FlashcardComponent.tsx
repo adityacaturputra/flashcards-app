@@ -136,7 +136,6 @@ type FlashcardProps = {
   flashcard: Flashcard;
   onUpdate: (id: string, flashcard: Partial<Flashcard>) => void;
   onDelete: (id: string) => Promise<void>;
-  onRefresh: () => void;
   className?: string;
 };
 
