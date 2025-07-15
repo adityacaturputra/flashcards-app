@@ -1,13 +1,20 @@
-"use client"
-// context/appContext.tsx
-import React, { createContext, useContext, useState, useEffect, useRef, PropsWithChildren } from 'react';
-
+// src/context/appContext.tsx
+'use client';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  PropsWithChildren,
+} from 'react';
 import { Flashcard } from '../types/flashcard';
 import useFlashcards from '@/hooks/useFlashcards';
 
 type AppContextType = {
   flashcards: Flashcard[];
   loadFlashcards: () => Promise<void>;
+  handleRefetchFlashCards: () => Promise<void>;
   addFlashcard: (flashcard: Flashcard) => Promise<void>;
   updateFlashcard: (id: string, flashcard: Partial<Flashcard>) => Promise<void>;
   deleteFlashcard: (id: string) => Promise<void>;
@@ -26,29 +33,63 @@ export const useAppContext = () => {
 
 export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [flashcards, setFlashcards] = useState<Flashcard[]>([]);
-  const { loadFlashcards, addFlashcard, updateFlashcard, deleteFlashcard } = useFlashcards(setFlashcards);
+  const { loadFlashcards, addFlashcard, updateFlashcard, deleteFlashcard } =
+    useFlashcards(setFlashcards);
   const [loading, setLoading] = useState<boolean>(true);
-
-  // Create a ref for the loadFlashcards function
   const loadFlashcardsRef = useRef(loadFlashcards);
 
   useEffect(() => {
-    // Update the ref whenever the loadFlashcards function changes
     loadFlashcardsRef.current = loadFlashcards;
   }, [loadFlashcards]);
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
-      await loadFlashcardsRef.current(); // Use the ref to call the function
-      setLoading(false);
+      const localFlashcards = JSON.parse(
+        localStorage.getItem('flashcards') || '[]',
+      );
+
+      if (localFlashcards.length > 0) {
+        setFlashcards(localFlashcards);
+        setLoading(false);
+      } else {
+        setLoading(true);
+        await loadFlashcardsRef.current(); // Use the ref to call the function
+        setLoading(false);
+      }
     };
 
     fetchData();
+
+    // Cleanup to save flashcards to localStorage on component unmount
+    return () => {
+      localStorage.setItem('flashcards', JSON.stringify(flashcards));
+    };
   }, []); // Empty dependency array to run only once
 
+  useEffect(() => {
+    // Save flashcards to localStorage whenever they change
+    localStorage.setItem('flashcards', JSON.stringify(flashcards));
+  }, [flashcards]);
+
+  const handleRefetchFlashCards = async () => {
+    setLoading(true);
+    await loadFlashcardsRef.current(); // Use the ref to call the function
+    setLoading(false);
+    localStorage.setItem('flashcards', JSON.stringify(flashcards));
+  };
+
   return (
-    <AppContext.Provider value={{ flashcards, loadFlashcards, addFlashcard, updateFlashcard, deleteFlashcard, loading }}>
+    <AppContext.Provider
+      value={{
+        flashcards,
+        loadFlashcards,
+        addFlashcard,
+        updateFlashcard,
+        deleteFlashcard,
+        loading,
+        handleRefetchFlashCards,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

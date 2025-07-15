@@ -8,7 +8,8 @@ import {
   Progression,
 } from '../../types/flashcard';
 import usePagination from '../../hooks/usePagination';
-import { HiExclamationCircle } from 'react-icons/hi'; // Import the empty state icon
+import { HiExclamationCircle, HiRefresh } from 'react-icons/hi'; // Import the empty state icon and refresh icon
+import { useAppContext } from '@/context/appContext';
 
 type FlashcardListProps = {
   flashcards: Flashcard[];
@@ -25,6 +26,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
   selectedProgression,
   isReviewMode,
 }) => {
+  const { handleRefetchFlashCards } = useAppContext();
   const [searchQuery, setSearchQuery] = useState('');
   const pageSize = isReviewMode ? 1 : 10; // Set page size based on mode
 
@@ -45,9 +47,10 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
 
   // Filter flashcards based on the selected progression and search query
   let filteredFlashcards = isReviewMode ? randomizedFlashcards : flashcards;
-  filteredFlashcards = flashcards.filter(
+  filteredFlashcards = filteredFlashcards.filter(
     (flashcard) =>
-      flashcard.progression === selectedProgression &&
+      (selectedProgression === null ||
+        flashcard.progression === selectedProgression) &&
       (flashcard.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
         flashcard.answer.toLowerCase().includes(searchQuery.toLowerCase())),
   );
@@ -78,23 +81,34 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
 
   return (
     <div className={`space-y-4`}>
-      {/* Search Bar */}
+      {/* Search Bar and Refetch Icon */}
       {!isReviewMode && (
-        <div className='mb-4'>
+        <div className='relative mb-4'>
           <input
             type='text'
             placeholder='Search by question or answer'
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className='w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none'
+            className='w-full rounded border border-gray-300 px-4 py-2 pr-10 focus:border-blue-500 focus:outline-none' // Added pr-10 to make space for the icon
           />
+          <motion.button
+            className='absolute -top-11 right-0 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
+            onClick={handleRefetchFlashCards}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <HiRefresh className='text-xl' />
+          </motion.button>
         </div>
       )}
 
       {/* Flashcard List */}
       {currentItems.length > 0 ? (
         <motion.div
-          className='space-y-4'
+          className={`space-y-4`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
