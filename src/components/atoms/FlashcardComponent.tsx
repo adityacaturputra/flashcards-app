@@ -1,17 +1,15 @@
-// components/atoms/Flashcard.tsx
 import React, { useState } from 'react';
-import { Flashcard } from '@/types/flashcard';
+import { Flashcard, Progression } from '@/types/flashcard';
 import Card from './Card';
-import ProgressionSelector from '../molecules/ProgressionSelector';
 import calculateNextReviewDate from '@/utils/calculateNextReviewDate';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { formatRemainingTime } from '@/utils/formatRemainingTime';
-import { FaTrashAlt } from 'react-icons/fa';
 import { FaEye, FaEyeSlash, FaPenToSquare } from 'react-icons/fa6';
 import useEditFlashcard from '@/hooks/useEditFlashcard';
 import FlashcardFormEdit from '../organisms/FlashcardFormEdit';
 import styles from './FlashcardComponent.module.css';
+import { FaTrashAlt } from 'react-icons/fa';
 
 dayjs.extend(relativeTime);
 
@@ -33,8 +31,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
 
   const remainingTime = formatRemainingTime(flashcard.nextReviewDate);
 
-  const handleProgressionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const progression = e.target.value as Flashcard['progression'];
+  const handleProgressionChange = (progression: Flashcard['progression']) => {
     const nextReviewDate = calculateNextReviewDate(progression);
     onUpdate(flashcard._id!, { progression, nextReviewDate });
   };
@@ -65,6 +62,8 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
       </div>
     ));
   };
+
+  const progressionOptions = Object.values(Progression);
 
   return (
     <Card
@@ -103,13 +102,20 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
               </div>
             )}
 
-            <div className='mt-4 flex items-center space-x-4'>
-              <label className='font-medium text-gray-700'>Progression:</label>
-              <ProgressionSelector
-                value={flashcard.progression}
-                onChange={handleProgressionChange}
-                className='rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus:outline-none'
-              />
+            <div className='mt-4 flex items-center space-x-4 overflow-x-scroll'>
+              {progressionOptions.map((progression) => (
+                <button
+                  key={progression}
+                  className={`rounded px-2 py-1 text-white ${
+                    flashcard.progression === progression
+                      ? 'bg-blue-500'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  onClick={() => handleProgressionChange(progression)}
+                >
+                  {progression.charAt(0).toUpperCase() + progression.slice(1)}
+                </button>
+              ))}
             </div>
           </div>
         </>
@@ -130,6 +136,7 @@ type FlashcardProps = {
   flashcard: Flashcard;
   onUpdate: (id: string, flashcard: Partial<Flashcard>) => void;
   onDelete: (id: string) => Promise<void>;
+  onRefresh: () => void;
   className?: string;
 };
 
