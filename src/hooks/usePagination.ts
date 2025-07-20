@@ -26,12 +26,14 @@ const usePagination = <T>({
   const totalPages = Math.ceil(items.length / pageSize);
 
   const handleNextPage = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (currentPage < totalPages - 1) {
       setCurrentPage((prev) => prev + 1);
     }
   };
 
   const handlePreviousPage = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     if (currentPage > 0) {
       setCurrentPage((prev) => prev - 1);
     }

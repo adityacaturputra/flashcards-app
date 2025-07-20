@@ -8,7 +8,12 @@ import {
   Progression,
 } from '../../types/flashcard';
 import usePagination from '../../hooks/usePagination';
-import { HiExclamationCircle, HiRefresh } from 'react-icons/hi'; // Import the empty state icon and refresh icon
+import {
+  HiExclamationCircle,
+  HiRefresh,
+  HiSwitchHorizontal,
+  HiXCircle,
+} from 'react-icons/hi'; // Import the empty state icon and refresh icon
 import { useAppContext } from '@/context/appContext';
 
 type FlashcardListProps = {
@@ -28,6 +33,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
 }) => {
   const { handleRefetchFlashCards } = useAppContext();
   const [searchQuery, setSearchQuery] = useState('');
+  const [showQuestionAsAnswer, setShowQuestionAsAnswer] = useState(false); // New state to track toggle
   const pageSize = isReviewMode ? 1 : 10; // Set page size based on mode
 
   // State to hold randomized flashcards
@@ -84,15 +90,41 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
       {/* Search Bar and Refetch Icon */}
       {!isReviewMode && (
         <div className='relative mb-4'>
-          <input
-            type='text'
-            placeholder='Search by question or answer'
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className='w-full rounded border border-gray-300 px-4 py-2 pr-10 focus:border-blue-500 focus:outline-none' // Added pr-10 to make space for the icon
-          />
+          <div className='flex items-center gap-2'>
+            <input
+              type='text'
+              placeholder='Search by question or answer'
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={`w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none`}
+            />
+            {searchQuery && (
+              <motion.button
+                className='transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
+                onClick={() => setSearchQuery('')}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <HiXCircle className='text-xl' />
+              </motion.button>
+            )}
+          </div>
           <motion.button
-            className='absolute -top-11 right-0 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
+            className='absolute -top-11 right-9 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
+            onClick={() => setShowQuestionAsAnswer(!showQuestionAsAnswer)}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <HiSwitchHorizontal className='text-xl' />
+          </motion.button>
+          <motion.button
+            className='absolute -top-11 -right-3 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
             onClick={handleRefetchFlashCards}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -121,14 +153,21 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                dragConstraints={{ top: 0, bottom: 0 }}
                 style={{
                   position: 'relative',
                   zIndex: 1,
                 }}
               >
                 <FlashcardComponent
-                  flashcard={flashcard}
+                  flashcard={{
+                    ...flashcard,
+                    question: showQuestionAsAnswer
+                      ? flashcard.answer
+                      : flashcard.question,
+                    answer: showQuestionAsAnswer
+                      ? flashcard.question
+                      : flashcard.answer,
+                  }}
                   onUpdate={onUpdate}
                   onDelete={onDelete}
                 />
