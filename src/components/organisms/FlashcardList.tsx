@@ -106,38 +106,42 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
       )}
 
       {/* Flashcard List */}
-      {currentItems.length > 0 ? (
-        <motion.div
-          className={`space-y-4`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          {currentItems.map((flashcard, index) => (
-            <motion.div
-              key={flashcard._id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-              dragConstraints={{ top: 0, bottom: 0 }}
-              style={{
-                position: 'relative',
-                zIndex: 1,
-              }}
-            >
-              <FlashcardComponent
-                flashcard={flashcard}
-                onUpdate={onUpdate}
-                onDelete={onDelete}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-      ) : (
-        <div className='mt-16 flex flex-col items-center justify-center'>
-          <HiExclamationCircle className='mb-4 text-8xl text-gray-400' />
-          <p className='text-2xl text-gray-600'>No flashcards found</p>
-        </div>
-      )}
+      <div
+        className={`${isReviewMode ? `absolute bottom-40 max-w-[80vw]` : ''}`}
+      >
+        {currentItems.length > 0 ? (
+          <motion.div
+            className={'space-y-4'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            {currentItems.map((flashcard, index) => (
+              <motion.div
+                key={flashcard._id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                dragConstraints={{ top: 0, bottom: 0 }}
+                style={{
+                  position: 'relative',
+                  zIndex: 1,
+                }}
+              >
+                <FlashcardComponent
+                  flashcard={flashcard}
+                  onUpdate={onUpdate}
+                  onDelete={onDelete}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        ) : (
+          <div className='mt-16 flex flex-col items-center justify-center'>
+            <HiExclamationCircle className='mb-4 text-8xl text-gray-400' />
+            <p className='text-2xl text-gray-600'>No flashcards found</p>
+          </div>
+        )}
+      </div>
 
       {/* Pagination Controls */}
       {!isReviewMode && currentItems.length > 0 && totalPages > 1 && (
