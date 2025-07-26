@@ -3,7 +3,10 @@ import { Flashcard } from '../types/flashcard';
 
 type UpdateFlashcards = React.Dispatch<React.SetStateAction<Flashcard[]>>;
 
-const useFlashcards = (updateFlashcards: UpdateFlashcards) => {
+const useFlashcards = (
+  updateFlashcards: UpdateFlashcards,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
+) => {
   const loadFlashcards = async () => {
     try {
       const response = await fetch('/api/flashcards');
@@ -20,6 +23,7 @@ const useFlashcards = (updateFlashcards: UpdateFlashcards) => {
 
   const addFlashcard = async (flashcard: Flashcard) => {
     try {
+      setLoading(false);
       const response = await fetch('/api/flashcards', {
         method: 'POST',
         headers: {
@@ -34,11 +38,14 @@ const useFlashcards = (updateFlashcards: UpdateFlashcards) => {
       updateFlashcards((prev) => [...prev, newFlashcard]);
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
   const updateFlashcard = async (id: string, flashcard: Partial<Flashcard>) => {
     try {
+      setLoading(true);
       const response = await fetch(`/api/flashcards?id=${id}`, {
         method: 'PUT',
         headers: {
@@ -55,10 +62,13 @@ const useFlashcards = (updateFlashcards: UpdateFlashcards) => {
       );
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
   const deleteFlashcard = async (id: string) => {
     try {
+      setLoading(true);
       const response = await fetch(`/api/flashcards?id=${id}`, {
         method: 'DELETE',
         headers: {
@@ -78,6 +88,8 @@ const useFlashcards = (updateFlashcards: UpdateFlashcards) => {
       }
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 

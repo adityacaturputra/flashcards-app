@@ -59,17 +59,28 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
   return (
     <div className='relative mb-8 flex h-full flex-col justify-between'>
       <div>
-        <h2 className='text-xl font-bold'>Add New Flashcard</h2>
-        {/* Upload Input */}
-        <div className='mt-4 mb-4 flex items-center justify-between'>
-          <div className='flex items-center justify-center gap-2 border p-2'>
-            <CiImport />
-            <input type='file' accept='.xml' onChange={handleFileUpload} />
+        <div className=''>
+          <div className='flex items-center'>
+            <h2 className='text-xl font-bold'>Add New Flashcard</h2>
+            <div>
+              {flashCards.length > 0 && (
+                <span className='ml-2 text-sm text-gray-600'>
+                  ({selectedFlashcards.length} / {flashCards.length} selected)
+                </span>
+              )}
+            </div>
           </div>
-          {/* Export saved flashcards button */}
-          <Button onClick={handleDownloadXml}>
-            <CiExport />
-          </Button>
+          {/* Upload Input */}
+          <div className='mt-4 mb-4 flex items-center justify-between'>
+            <div className='flex items-center justify-center gap-2 border p-2'>
+              <CiImport />
+              <input type='file' accept='.xml' onChange={handleFileUpload} />
+            </div>
+            {/* Export saved flashcards button */}
+            <Button onClick={handleDownloadXml}>
+              <CiExport />
+            </Button>
+          </div>
         </div>
         {/* Accordion Header */}
         <div

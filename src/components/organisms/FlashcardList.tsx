@@ -31,7 +31,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
   selectedProgression,
   isReviewMode,
 }) => {
-  const { handleRefetchFlashCards } = useAppContext();
+  const { handleRefetchFlashCards, loadingAction } = useAppContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [showQuestionAsAnswer, setShowQuestionAsAnswer] = useState(false); // New state to track toggle
   const pageSize = isReviewMode ? 1 : 10; // Set page size based on mode
@@ -83,7 +83,13 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
     totalPages,
     handleNextPage,
     handlePreviousPage,
+    setCurrentPage, // Add setCurrentPage to control the page manually
   } = usePagination<Flashcard>({ items: sortedFlashcards, pageSize });
+
+  // Effect to reset page to 1 when search query changes
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [searchQuery, setCurrentPage]);
 
   return (
     <div className={`space-y-4`}>
@@ -204,6 +210,36 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
           >
             Next
           </button>
+        </div>
+      )}
+
+      {loadingAction && (
+        <div className='flex items-center justify-between'>
+          <div className='flex items-center text-gray-500'>
+            <span>Loading...</span>
+            <div className='ml-2'>
+              <svg
+                className='h-5 w-5 animate-spin'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+              >
+                <circle
+                  className='opacity-25'
+                  cx='12'
+                  cy='12'
+                  r='10'
+                  stroke='currentColor'
+                  strokeWidth='4'
+                ></circle>
+                <path
+                  className='opacity-75'
+                  fill='currentColor'
+                  d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 0012 20c4.411 0 8-3.589 8-8s-3.589-8-8-8S4 7.589 4 12h4.188c0 2.434.63 4.685 1.645 6.291z'
+                ></path>
+              </svg>
+            </div>
+          </div>
         </div>
       )}
     </div>

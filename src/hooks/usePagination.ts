@@ -1,5 +1,5 @@
 // src/hooks/usePagination.ts
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 
 interface UsePaginationProps<T> {
   items: T[];
@@ -12,6 +12,7 @@ interface UsePaginationResult<T> {
   totalPages: number;
   handleNextPage: () => void;
   handlePreviousPage: () => void;
+  setCurrentPage: (value: SetStateAction<number>) => void;
 }
 
 const usePagination = <T>({
@@ -45,6 +46,7 @@ const usePagination = <T>({
     totalPages,
     handleNextPage,
     handlePreviousPage,
+    setCurrentPage,
   };
 };
 

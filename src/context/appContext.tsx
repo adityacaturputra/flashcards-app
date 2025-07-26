@@ -19,6 +19,7 @@ type AppContextType = {
   updateFlashcard: (id: string, flashcard: Partial<Flashcard>) => Promise<void>;
   deleteFlashcard: (id: string) => Promise<void>;
   loading: boolean;
+  loadingAction: boolean;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -33,9 +34,10 @@ export const useAppContext = () => {
 
 export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [flashcards, setFlashcards] = useState<Flashcard[]>([]);
-  const { loadFlashcards, addFlashcard, updateFlashcard, deleteFlashcard } =
-    useFlashcards(setFlashcards);
   const [loading, setLoading] = useState<boolean>(true);
+  const [loadingAction, setLoadingAction] = useState<boolean>(true);
+  const { loadFlashcards, addFlashcard, updateFlashcard, deleteFlashcard } =
+    useFlashcards(setFlashcards, setLoadingAction);
   const loadFlashcardsRef = useRef(loadFlashcards);
 
   useEffect(() => {
@@ -88,6 +90,7 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
         deleteFlashcard,
         loading,
         handleRefetchFlashCards,
+        loadingAction,
       }}
     >
       {children}

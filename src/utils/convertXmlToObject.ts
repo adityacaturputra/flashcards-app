@@ -3,17 +3,20 @@ export default function convertXmlToObject(
 ): { frontMatch: string; backMatch: string }[] {
   const output: { frontMatch: string; backMatch: string }[] = [];
 
-  const cardRegex = /<card>([\s\S]*?)<\/card>/g; // Use [\s\S] instead of .
+  // Match all <card>...</card> blocks even within other XML structure
+  const cardRegex = /<card>([\s\S]*?)<\/card>/g;
   let match: RegExpExecArray | null;
-
-  console.log({ xmlData });
 
   while ((match = cardRegex.exec(xmlData)) !== null) {
     const cardContent = match[1];
+
+    // Match <text name="Front">...</text> or <text name='Front'>...</text>
     const frontMatch = cardContent.match(
-      /<text name="Front">([\s\S]*?)<\/text>/,
-    ); // Use [\s\S] instead of .
-    const backMatch = cardContent.match(/<text name="Back">([\s\S]*?)<\/text>/); // Use [\s\S] instead of .
+      /<text name=["']Front["']>([\s\S]*?)<\/text>/,
+    );
+    const backMatch = cardContent.match(
+      /<text name=["']Back["']>([\s\S]*?)<\/text>/,
+    );
 
     if (frontMatch && backMatch) {
       output.push({
@@ -22,6 +25,6 @@ export default function convertXmlToObject(
       });
     }
   }
-  console.log({ output });
+
   return output;
 }
