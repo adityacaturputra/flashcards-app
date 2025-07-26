@@ -8,6 +8,7 @@ import { LuLoaderPinwheel } from 'react-icons/lu';
 import { useState } from 'react';
 import styles from './FlashcardForm.module.css'; // Import the CSS module for styles
 import { motion } from 'framer-motion'; // Import framer-motion
+import { CiExport, CiImport } from 'react-icons/ci';
 
 type FlashcardFormProps = {
   addFlashcard: (flashcard: Flashcard) => Promise<void>;
@@ -38,6 +39,7 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
     setPrompt,
     prompt,
     handleFileUpload,
+    handleDownloadXml,
   } = useGenerateFlashcards(addFlashcard);
 
   // State to manage accordion open/close
@@ -59,13 +61,15 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
       <div>
         <h2 className='text-xl font-bold'>Add New Flashcard</h2>
         {/* Upload Input */}
-        <div className='mt-4'>
-          <input
-            type='file'
-            accept='.xml'
-            onChange={handleFileUpload}
-            className='mb-4 border p-2'
-          />
+        <div className='mt-4 mb-4 flex items-center justify-between'>
+          <div className='flex items-center justify-center gap-2 border p-2'>
+            <CiImport />
+            <input type='file' accept='.xml' onChange={handleFileUpload} />
+          </div>
+          {/* Export saved flashcards button */}
+          <Button onClick={handleDownloadXml}>
+            <CiExport />
+          </Button>
         </div>
         {/* Accordion Header */}
         <div
