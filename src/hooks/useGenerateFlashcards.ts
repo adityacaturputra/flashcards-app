@@ -13,6 +13,8 @@ interface UseGenerateFlashcardsResult {
   handleGenerateFlashcards: (prompt: string) => void;
   handleToggleFlashcardSelection: (key: string) => void;
   handleSaveSelectedFlashcards: () => void;
+  setSelectedCategories: Dispatch<SetStateAction<string[]>>;
+  selectedCategories: string[];
 
   setQuestion: Dispatch<SetStateAction<string>>;
   question: string;
@@ -40,6 +42,7 @@ const useGenerateFlashcards = (
   const { flashcards: savedFlashcards } = useAppContext();
   const [flashCards, setFlashCards] = useState<Flashcard[]>([]);
   const [selectedFlashcards, setSelectedFlashcards] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
@@ -115,6 +118,7 @@ const useGenerateFlashcards = (
             progression: flashcard.progression || Progression.New,
             nextReviewDate: flashcard.nextReviewDate || new Date(),
             dynamicFields: flashcard.dynamicFields || {},
+            categories: selectedCategories,
           });
         }),
       );
@@ -282,6 +286,9 @@ const useGenerateFlashcards = (
 
     handleFileUpload,
     handleDownloadXml,
+
+    setSelectedCategories,
+    selectedCategories,
   };
 };
 

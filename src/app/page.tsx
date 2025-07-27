@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import FlashcardForm from '@/components/molecules/FlashcardForm';
 import FlashcardList from '@/components/organisms/FlashcardList';
+import CategoryForm from '@/components/molecules/CategoryForm';
 import { useAppContext } from '@/context/appContext';
 import { Flashcard, Progression } from '@/types/flashcard';
 import { motion } from 'framer-motion';
@@ -16,10 +17,12 @@ const Home: React.FC = () => {
     deleteFlashcard,
     loading,
   } = useAppContext();
+
   const [selectedFlashcard, setSelectedFlashcard] = useState<Flashcard | null>(
     null,
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [selectedProgression, setSelectedProgression] =
     useState<Progression | null>(null);
@@ -31,6 +34,18 @@ const Home: React.FC = () => {
 
   const handleFilterChange = (progression: Progression | null) => {
     setSelectedProgression(progression);
+  };
+
+  const handleOpenCategoryModal = () => {
+    setIsCategoryModalOpen(true);
+  };
+
+  const handleCloseCategoryModal = () => {
+    setIsCategoryModalOpen(false);
+  };
+
+  const handleSaveCategory = () => {
+    setIsCategoryModalOpen(false);
   };
 
   return (
@@ -64,7 +79,7 @@ const Home: React.FC = () => {
           {isReviewMode ? 'Exit Review Mode' : 'Enter Review Mode'}
         </motion.button>
 
-        {/* Floating Button to Open Modal */}
+        {/* Floating Button to Open Flashcard Modal */}
         {!isReviewMode && (
           <motion.button
             className='fixed right-5 bottom-20 z-10 rounded-full bg-blue-500 px-4 py-2 text-white shadow-lg hover:bg-blue-600 focus:outline-none'
@@ -79,17 +94,43 @@ const Home: React.FC = () => {
           </motion.button>
         )}
 
-        {/* Modal */}
-        {isModalOpen && (
-          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <FlashcardForm
-              addFlashcard={handleAddFlashcard}
-              selectedFlashcard={selectedFlashcard}
-              setSelectedFlashcard={setSelectedFlashcard}
-            />
-          </Modal>
+        {/* Floating Button to Open Category Modal */}
+        {!isReviewMode && (
+          <motion.button
+            className='fixed right-5 bottom-40 z-10 rounded-full bg-green-500 px-4 py-2 text-white shadow-lg hover:bg-green-600 focus:outline-none'
+            onClick={() => handleOpenCategoryModal()}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            whileTap={{ scale: 0.9 }}
+          >
+            + Manage Categories
+          </motion.button>
         )}
       </div>
+
+      {/* Modal for Flashcard Form */}
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <FlashcardForm
+            addFlashcard={handleAddFlashcard}
+            selectedFlashcard={selectedFlashcard}
+            setSelectedFlashcard={setSelectedFlashcard}
+          />
+        </Modal>
+      )}
+
+      {/* Modal for Category Form */}
+      {isCategoryModalOpen && (
+        <Modal isOpen={isCategoryModalOpen} onClose={handleCloseCategoryModal}>
+          <CategoryForm
+            onClose={handleCloseCategoryModal}
+            onSave={handleSaveCategory}
+          />
+        </Modal>
+      )}
+
       {/* Tabs for Progression Filtering */}
       {!isReviewMode && (
         <div className='bg-opacity-90 fixed right-0 bottom-0 left-0 z-10 flex items-center overflow-x-auto bg-white whitespace-nowrap'>

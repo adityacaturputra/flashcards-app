@@ -13,8 +13,7 @@ const useFlashcards = (
       if (!response.ok) {
         throw new Error('Failed to fetch flashcards');
       }
-      const flashcards = await response.json();
-
+      const flashcards: Flashcard[] = await response.json();
       updateFlashcards(flashcards);
     } catch (error) {
       console.error(error);
@@ -23,7 +22,7 @@ const useFlashcards = (
 
   const addFlashcard = async (flashcard: Flashcard) => {
     try {
-      setLoading(false);
+      setLoading(true);
       const response = await fetch('/api/flashcards', {
         method: 'POST',
         headers: {
@@ -66,6 +65,7 @@ const useFlashcards = (
       setLoading(false);
     }
   };
+
   const deleteFlashcard = async (id: string) => {
     try {
       setLoading(true);
@@ -80,7 +80,6 @@ const useFlashcards = (
         throw new Error('Failed to delete flashcard');
       }
       const deletedFlashcard = await response.json();
-      console.log({ deletedFlashcard });
       if (deletedFlashcard) {
         updateFlashcards((prev: Flashcard[]) =>
           prev.filter((f) => f._id !== id),
@@ -93,7 +92,12 @@ const useFlashcards = (
     }
   };
 
-  return { loadFlashcards, addFlashcard, updateFlashcard, deleteFlashcard };
+  return {
+    loadFlashcards,
+    addFlashcard,
+    updateFlashcard,
+    deleteFlashcard,
+  };
 };
 
 export default useFlashcards;

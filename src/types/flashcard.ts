@@ -1,3 +1,4 @@
+// src/types/flashcard.ts
 export enum Progression {
   Perfect = 'perfect',
   Good = 'good',
@@ -17,7 +18,7 @@ export const progressionOrder: { [key in Progression]: number } = {
   [Progression.Perfect]: 5,
 };
 
-export type Flashcard = {
+export interface Flashcard {
   _id?: string;
   question: string;
   answer: string;
@@ -25,4 +26,11 @@ export type Flashcard = {
   nextReviewDate: Date;
   dynamicFields?: Record<string, string>; // Added to store dynamic fields
   key?: string;
-};
+  categories?: string[]; // Many-to-many relationship, references FlashcardCategory _id
+}
+
+export interface FlashcardCategory {
+  _id?: string;
+  name: string;
+  description?: string;
+}

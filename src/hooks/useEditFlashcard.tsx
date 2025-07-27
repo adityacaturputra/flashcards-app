@@ -16,12 +16,20 @@ const useEditFlashcard = ({
 }: UseEditFlashcardProps) => {
   const [question, setQuestion] = useState(flashcard.question);
   const [answer, setAnswer] = useState(flashcard.answer);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(
+    flashcard.categories || [],
+  );
   const [dynamicFields, setDynamicFields] = useState<{ [key: string]: string }>(
     flashcard.dynamicFields || {},
   );
 
   const handleSave = () => {
-    onUpdate(flashcard._id!, { question, answer, dynamicFields });
+    onUpdate(flashcard._id!, {
+      question,
+      answer,
+      categories: selectedCategories,
+      dynamicFields,
+    });
     setIsEditing(false);
   };
 
@@ -120,6 +128,8 @@ const useEditFlashcard = ({
     addDynamicField,
     deleteDynamicField,
     moveDynamicField,
+    setSelectedCategories,
+    selectedCategories,
   };
 };
 

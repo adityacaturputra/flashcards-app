@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Flashcard, Progression } from '@/types/flashcard';
+import { Flashcard, FlashcardCategory, Progression } from '@/types/flashcard';
 import Card from './Card';
 import calculateNextReviewDate from '@/utils/calculateNextReviewDate';
 import dayjs from 'dayjs';
@@ -137,6 +137,7 @@ type FlashcardProps = {
   onUpdate: (id: string, flashcard: Partial<Flashcard>) => void;
   onDelete: (id: string) => Promise<void>;
   className?: string;
+  categories?: FlashcardCategory[];
 };
 
 export default FlashcardComponent;

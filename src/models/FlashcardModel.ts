@@ -1,6 +1,6 @@
 // models/FlashcardModel.ts
 import { Flashcard, Progression } from '@/types/flashcard';
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const FlashcardSchema = new mongoose.Schema<Flashcard>(
   {
@@ -13,6 +13,7 @@ const FlashcardSchema = new mongoose.Schema<Flashcard>(
     },
     nextReviewDate: { type: Date, required: true },
     dynamicFields: Object, // Added to store dynamic fields
+    categories: [{ type: Schema.Types.ObjectId, ref: 'FlashcardCategory' }], // Many-to-many relationship
   },
   { collection: 'flashcards' },
 );

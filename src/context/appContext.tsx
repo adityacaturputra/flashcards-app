@@ -8,8 +8,9 @@ import React, {
   useRef,
   PropsWithChildren,
 } from 'react';
-import { Flashcard } from '../types/flashcard';
+import { Flashcard, FlashcardCategory } from '../types/flashcard';
 import useFlashcards from '@/hooks/useFlashcards';
+import { useFlashcardCategories } from '@/hooks/useFlashcardCategories';
 
 type AppContextType = {
   flashcards: Flashcard[];
@@ -20,6 +21,8 @@ type AppContextType = {
   deleteFlashcard: (id: string) => Promise<void>;
   loading: boolean;
   loadingAction: boolean;
+  categories: FlashcardCategory[];
+  loadingCategories: boolean;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -35,9 +38,10 @@ export const useAppContext = () => {
 export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [flashcards, setFlashcards] = useState<Flashcard[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [loadingAction, setLoadingAction] = useState<boolean>(true);
+  const [loadingAction, setLoadingAction] = useState<boolean>(false);
   const { loadFlashcards, addFlashcard, updateFlashcard, deleteFlashcard } =
     useFlashcards(setFlashcards, setLoadingAction);
+  const { categories, loading: loadingCategories } = useFlashcardCategories();
   const loadFlashcardsRef = useRef(loadFlashcards);
 
   useEffect(() => {
@@ -85,12 +89,14 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
       value={{
         flashcards,
         loadFlashcards,
+        handleRefetchFlashCards,
         addFlashcard,
         updateFlashcard,
         deleteFlashcard,
         loading,
-        handleRefetchFlashCards,
         loadingAction,
+        categories,
+        loadingCategories,
       }}
     >
       {children}

@@ -15,6 +15,8 @@ import {
   HiXCircle,
 } from 'react-icons/hi'; // Import the empty state icon and refresh icon
 import { useAppContext } from '@/context/appContext';
+import Select from '../atoms/Select';
+import { FiLoader } from 'react-icons/fi';
 
 type FlashcardListProps = {
   flashcards: Flashcard[];
@@ -31,10 +33,16 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
   selectedProgression,
   isReviewMode,
 }) => {
-  const { handleRefetchFlashCards, loadingAction } = useAppContext();
+  const {
+    handleRefetchFlashCards,
+    loadingAction,
+    categories,
+    loadingCategories,
+  } = useAppContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [showQuestionAsAnswer, setShowQuestionAsAnswer] = useState(false); // New state to track toggle
   const pageSize = isReviewMode ? 1 : 10; // Set page size based on mode
+  const [selectedCategoryId, setSelectedCategoryId] = useState('');
 
   // State to hold randomized flashcards
   const [randomizedFlashcards, setRandomizedFlashcards] = useState<Flashcard[]>(
@@ -51,15 +59,22 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
     }
   }, [flashcards, isReviewMode]);
 
-  // Filter flashcards based on the selected progression and search query
+  // Filter flashcards based on the selected progression, category, and search query
   let filteredFlashcards = isReviewMode ? randomizedFlashcards : flashcards;
-  filteredFlashcards = filteredFlashcards.filter(
-    (flashcard) =>
-      (selectedProgression === null ||
-        flashcard.progression === selectedProgression) &&
-      (flashcard.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        flashcard.answer.toLowerCase().includes(searchQuery.toLowerCase())),
-  );
+  filteredFlashcards = filteredFlashcards.filter((flashcard) => {
+    const progressionMatch =
+      selectedProgression === null ||
+      flashcard.progression === selectedProgression;
+    const categoryMatch =
+      selectedCategoryId === '' ||
+      (flashcard.categories &&
+        flashcard.categories.includes(selectedCategoryId));
+    const searchMatch =
+      flashcard.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      flashcard.answer.toLowerCase().includes(searchQuery.toLowerCase());
+
+    return progressionMatch && categoryMatch && searchMatch;
+  });
 
   // Sort the filtered flashcards based on the progression order and nextReviewDate if not in review mode
   const sortedFlashcards = isReviewMode
@@ -95,52 +110,77 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
     <div className={`space-y-4`}>
       {/* Search Bar and Refetch Icon */}
       {!isReviewMode && (
-        <div className='relative mb-4'>
-          <div className='flex items-center gap-2'>
-            <input
-              type='text'
-              placeholder='Search by question or answer'
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className={`w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none`}
-            />
-            {searchQuery && (
-              <motion.button
-                className='transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
-                onClick={() => setSearchQuery('')}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <HiXCircle className='text-xl' />
-              </motion.button>
-            )}
+        <>
+          {/* Category Filter */}
+          {loadingCategories && !isReviewMode && (
+            <div className='flex items-center justify-center'>
+              <FiLoader />
+            </div>
+          )}
+          {!isReviewMode && (
+            <div className='mt-4'>
+              <Select
+                label='Filter by Category'
+                options={[
+                  { _id: '', name: 'All Categories' },
+                  ...categories,
+                ].map((cat) => ({
+                  value: cat._id!,
+                  label: cat.name,
+                }))}
+                value={selectedCategoryId}
+                onChange={(e) => setSelectedCategoryId(e.target.value)}
+                className='w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none'
+              />
+            </div>
+          )}
+          <div className='relative mb-4'>
+            <div className='flex items-center gap-2'>
+              <input
+                type='text'
+                placeholder='Search by question or answer'
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={`w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none`}
+              />
+              {searchQuery && (
+                <motion.button
+                  className='transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
+                  onClick={() => setSearchQuery('')}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <HiXCircle className='text-xl' />
+                </motion.button>
+              )}
+            </div>
+            <motion.button
+              className='absolute -top-24 right-9 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
+              onClick={() => setShowQuestionAsAnswer(!showQuestionAsAnswer)}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <HiSwitchHorizontal className='text-xl' />
+            </motion.button>
+            <motion.button
+              className='absolute -top-24 -right-3 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
+              onClick={handleRefetchFlashCards}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <HiRefresh className='text-xl' />
+            </motion.button>
           </div>
-          <motion.button
-            className='absolute -top-11 right-9 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
-            onClick={() => setShowQuestionAsAnswer(!showQuestionAsAnswer)}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <HiSwitchHorizontal className='text-xl' />
-          </motion.button>
-          <motion.button
-            className='absolute -top-11 -right-3 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
-            onClick={handleRefetchFlashCards}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <HiRefresh className='text-xl' />
-          </motion.button>
-        </div>
+        </>
       )}
 
       {/* Flashcard List */}
@@ -176,6 +216,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                   }}
                   onUpdate={onUpdate}
                   onDelete={onDelete}
+                  categories={categories}
                 />
               </motion.div>
             ))}

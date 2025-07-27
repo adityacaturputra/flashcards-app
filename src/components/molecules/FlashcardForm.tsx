@@ -9,6 +9,8 @@ import { useState } from 'react';
 import styles from './FlashcardForm.module.css'; // Import the CSS module for styles
 import { motion } from 'framer-motion'; // Import framer-motion
 import { CiExport, CiImport } from 'react-icons/ci';
+import { useAppContext } from '@/context/appContext';
+import { FiLoader } from 'react-icons/fi';
 
 type FlashcardFormProps = {
   addFlashcard: (flashcard: Flashcard) => Promise<void>;
@@ -40,10 +42,23 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
     prompt,
     handleFileUpload,
     handleDownloadXml,
+    setSelectedCategories,
+    selectedCategories,
   } = useGenerateFlashcards(addFlashcard);
+  const { categories, loadingCategories } = useAppContext();
 
   // State to manage accordion open/close
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+
+  const handleCategoryChange = (category_id: string, isChecked: boolean) => {
+    if (isChecked) {
+      setSelectedCategories([...selectedCategories, category_id]);
+    } else {
+      setSelectedCategories(
+        selectedCategories.filter((id) => id !== category_id),
+      );
+    }
+  };
 
   // Animation variants
   const variants = {
@@ -167,6 +182,28 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
             </div>
           </motion.div>
         )}
+        {/* Category Selection */}
+        <div className='mt-2'>
+          <h3 className='mb-2'>Select Categories</h3>
+          <div className='flex gap-2'>
+            {loadingCategories && <FiLoader />}
+            {categories.map((category) => (
+              <div key={category._id} className='mb-1 flex items-center'>
+                <input
+                  type='checkbox'
+                  id={category._id}
+                  value={category._id}
+                  checked={selectedCategories.includes(category._id!)}
+                  onChange={(e) =>
+                    handleCategoryChange(category._id!, e.target.checked)
+                  }
+                  className='mr-2'
+                />
+                <label htmlFor={category._id}>{category.name}</label>
+              </div>
+            ))}
+          </div>
+        </div>
         {flashCards.length > 0 && (
           <>
             <div className='h-[60vh] overflow-scroll'>

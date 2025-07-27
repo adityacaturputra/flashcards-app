@@ -1,5 +1,4 @@
 // components/organisms/FlashcardFormEdit.tsx
-import React from 'react';
 import {
   FaPlusCircle,
   FaMinusCircle,
@@ -8,6 +7,7 @@ import {
 } from 'react-icons/fa';
 import { Flashcard } from '@/types/flashcard';
 import useEditFlashcard from '@/hooks/useEditFlashcard';
+import { useAppContext } from '@/context/appContext';
 
 type FlashcardFormEditProps = {
   flashcard: Flashcard;
@@ -31,12 +31,15 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
     addDynamicField,
     deleteDynamicField,
     moveDynamicField,
+    setSelectedCategories,
+    selectedCategories,
   } = useEditFlashcard({
     flashcard,
     onUpdate,
     isEditing: false,
     setIsEditing: onCancel,
   });
+  const { categories } = useAppContext();
 
   const renderDynamicFields = () => {
     const length = Object.entries(dynamicFields).length;
@@ -79,6 +82,16 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
     ));
   };
 
+  const handleCategoryChange = (category_id: string, isChecked: boolean) => {
+    if (isChecked) {
+      setSelectedCategories([...selectedCategories, category_id]);
+    } else {
+      setSelectedCategories(
+        selectedCategories.filter((id) => id !== category_id),
+      );
+    }
+  };
+
   return (
     <div>
       <input
@@ -92,6 +105,26 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
         onChange={(e) => setAnswer(e.target.value)}
         className='mt-2 rounded border border-gray-300 p-2'
       />
+
+      {/* Category Selection */}
+      <div className='mt-2'>
+        <h3 className='mb-2'>Select Categories</h3>
+        {categories.map((category) => (
+          <div key={category._id} className='mb-1 flex items-center'>
+            <input
+              type='checkbox'
+              id={category._id}
+              value={category._id}
+              checked={selectedCategories.includes(category._id!)}
+              onChange={(e) =>
+                handleCategoryChange(category._id!, e.target.checked)
+              }
+              className='mr-2'
+            />
+            <label htmlFor={category._id}>{category.name}</label>
+          </div>
+        ))}
+      </div>
 
       <div className='mt-2 items-center'>
         {renderDynamicFields()}
