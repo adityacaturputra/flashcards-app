@@ -5,7 +5,12 @@ import calculateNextReviewDate from '@/utils/calculateNextReviewDate';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { formatRemainingTime } from '@/utils/formatRemainingTime';
-import { FaEye, FaEyeSlash, FaPenToSquare } from 'react-icons/fa6';
+import {
+  FaEye,
+  FaEyeSlash,
+  FaPenToSquare,
+  FaVolumeHigh,
+} from 'react-icons/fa6';
 import useEditFlashcard from '@/hooks/useEditFlashcard';
 import FlashcardFormEdit from '../organisms/FlashcardFormEdit';
 import styles from './FlashcardComponent.module.css';
@@ -63,6 +68,18 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
     ));
   };
 
+  // Function to open TTS in a new tab without referrer
+  const openTTSInNewTab = (text: string) => {
+    const ttsUrl = `https://translate.google.com.vn/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=en&client=tw-ob`;
+    const link = document.createElement('a');
+    link.href = ttsUrl;
+    link.rel = 'noopener noreferrer'; // Set rel attribute to avoid referrer issues
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const progressionOptions = Object.values(Progression);
 
   return (
@@ -90,11 +107,32 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
           </button>
 
           <p className='absolute -top-1 left-6 mt-4'>{remainingTime}</p>
-          <h3 className='mt-4 text-xl font-bold'>{flashcard.question}</h3>
+
+          <div className='flex items-center gap-2'>
+            <h3 className='mt-4 text-xl font-bold'>{flashcard.question}</h3>
+            {!isAnswerHidden && (
+              <button
+                className='text-blue-500 hover:text-blue-700'
+                onClick={() => openTTSInNewTab(flashcard.question)}
+              >
+                <FaVolumeHigh />
+              </button>
+            )}
+          </div>
           <div
             className={`${styles.content} ${isAnswerHidden ? styles.hidden : styles.visible}`}
           >
-            <p className='mt-2'>{flashcard.answer}</p>
+            <div className='flex items-center gap-2'>
+              <p className='mt-2'>{flashcard.answer}</p>
+              {!isAnswerHidden && (
+                <button
+                  className='text-blue-500 hover:text-blue-700'
+                  onClick={() => openTTSInNewTab(flashcard.answer)}
+                >
+                  <FaVolumeHigh />
+                </button>
+              )}
+            </div>
 
             {flashcard.dynamicFields && (
               <div className='mt-4 items-center'>
