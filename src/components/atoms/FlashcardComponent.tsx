@@ -8,6 +8,7 @@ import { formatRemainingTime } from '@/utils/formatRemainingTime';
 import {
   FaEye,
   FaEyeSlash,
+  FaMagnifyingGlass,
   FaPenToSquare,
   FaVolumeHigh,
 } from 'react-icons/fa6';
@@ -80,6 +81,18 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
     document.body.removeChild(link);
   };
 
+  // Function to open Google search in a new tab
+  const openGoogleSearchInNewTab = (query: string) => {
+    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    const link = document.createElement('a');
+    link.href = searchUrl;
+    link.rel = 'noopener noreferrer'; // Set rel attribute to avoid referrer issues
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const progressionOptions = Object.values(Progression);
 
   return (
@@ -111,12 +124,32 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
           <div className='flex items-center gap-2'>
             <h3 className='mt-4 text-xl font-bold'>{flashcard.question}</h3>
             {!isAnswerHidden && (
-              <button
-                className='text-blue-500 hover:text-blue-700'
-                onClick={() => openTTSInNewTab(flashcard.question)}
-              >
-                <FaVolumeHigh />
-              </button>
+              <div className='flex items-center justify-center gap-2'>
+                <button
+                  className='text-blue-500 hover:text-blue-700'
+                  onClick={() => openTTSInNewTab(flashcard.question)}
+                >
+                  <FaVolumeHigh />
+                </button>
+                <button
+                  className='text-blue-500 hover:text-blue-700'
+                  onClick={() =>
+                    openGoogleSearchInNewTab(
+                      'apa itu ' + flashcard.question,
+                      // +
+                      //   ' ' +
+                      //   flashcard.answer,
+                      // +
+                      // ' ' +
+                      // Object.keys(flashcard.dynamicFields || {}).map(
+                      //   (key) => `${key} ${flashcard.dynamicFields?.[key]} `,
+                      // ),
+                    )
+                  }
+                >
+                  <FaMagnifyingGlass />
+                </button>
+              </div>
             )}
           </div>
           <div
@@ -125,12 +158,22 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
             <div className='flex items-center gap-2'>
               <p className='mt-2'>{flashcard.answer}</p>
               {!isAnswerHidden && (
-                <button
-                  className='text-blue-500 hover:text-blue-700'
-                  onClick={() => openTTSInNewTab(flashcard.answer)}
-                >
-                  <FaVolumeHigh />
-                </button>
+                <div className='flex items-center justify-center gap-2'>
+                  <button
+                    className='text-blue-500 hover:text-blue-700'
+                    onClick={() => openTTSInNewTab(flashcard.answer)}
+                  >
+                    <FaVolumeHigh />
+                  </button>
+                  <button
+                    className='text-blue-500 hover:text-blue-700'
+                    onClick={() =>
+                      openGoogleSearchInNewTab('apa itu ' + flashcard.answer)
+                    }
+                  >
+                    <FaMagnifyingGlass />
+                  </button>
+                </div>
               )}
             </div>
 
