@@ -11,6 +11,7 @@ import { motion } from 'framer-motion'; // Import framer-motion
 import { CiExport, CiImport } from 'react-icons/ci';
 import { useAppContext } from '@/context/appContext';
 import { FiLoader } from 'react-icons/fi';
+import OcrUpload from '../atoms/OcrUpload';
 
 type FlashcardFormProps = {
   addFlashcard: (flashcard: Flashcard) => Promise<void>;
@@ -58,6 +59,10 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
         selectedCategories.filter((id) => id !== category_id),
       );
     }
+  };
+
+  const onHandleOctUpload = (text: string) => {
+    handleGenerateFlashcards(text);
   };
 
   // Animation variants
@@ -274,23 +279,26 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
             className={'mb-4 w-full'}
             value={prompt}
           />
-          <div className='mb-4 flex justify-between gap-2'>
-            <Button
-              onClick={() => handleGenerateFlashcards(prompt)}
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <>
-                  <LuLoaderPinwheel className='animate-spin' />
-                  Creating magics...
-                </>
-              ) : (
-                <>
-                  <LuLoaderPinwheel />
-                  Generate by Magic
-                </>
-              )}
-            </Button>
+          <div className='mb-4 flex items-center justify-between gap-2'>
+            <div className='flex items-center justify-between gap-2'>
+              <Button
+                onClick={() => handleGenerateFlashcards(prompt)}
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <LuLoaderPinwheel className='animate-spin' />
+                    Creating magics...
+                  </>
+                ) : (
+                  <>
+                    <LuLoaderPinwheel />
+                    Generate by Magic
+                  </>
+                )}
+              </Button>
+              {!isLoading && <OcrUpload onHandle={onHandleOctUpload} />}
+            </div>
 
             {flashCards.length > 0 && (
               <Button
