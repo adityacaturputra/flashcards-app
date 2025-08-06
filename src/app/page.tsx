@@ -22,7 +22,7 @@ const Home: React.FC = () => {
     null,
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
+
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [selectedProgression, setSelectedProgression] =
     useState<Progression | null>(null);
@@ -36,6 +36,7 @@ const Home: React.FC = () => {
     setSelectedProgression(progression);
   };
 
+  const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
   const handleOpenCategoryModal = () => {
     setIsCategoryModalOpen(true);
   };
@@ -63,6 +64,7 @@ const Home: React.FC = () => {
             onDelete={deleteFlashcard}
             selectedProgression={selectedProgression}
             isReviewMode={isReviewMode}
+            handleOpenCategoryModal={handleOpenCategoryModal}
           />
         )}
         <div className='h-[120px]' />
@@ -91,21 +93,6 @@ const Home: React.FC = () => {
             whileTap={{ scale: 0.9 }}
           >
             + Add Flashcard
-          </motion.button>
-        )}
-
-        {/* Floating Button to Open Category Modal */}
-        {!isReviewMode && (
-          <motion.button
-            className='fixed right-5 bottom-40 z-10 rounded-full bg-green-500 px-4 py-2 text-white shadow-lg hover:bg-green-600 focus:outline-none'
-            onClick={() => handleOpenCategoryModal()}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            whileTap={{ scale: 0.9 }}
-          >
-            + Manage Categories
           </motion.button>
         )}
       </div>

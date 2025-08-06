@@ -21,6 +21,7 @@ import { FiLoader } from 'react-icons/fi';
 type FlashcardListProps = {
   flashcards: Flashcard[];
   onUpdate: (id: string, flashcard: Partial<Flashcard>) => void;
+  handleOpenCategoryModal: () => void;
   onDelete: (id: string) => Promise<void>;
   selectedProgression: Progression | null;
   isReviewMode: boolean; // Adding isReviewMode prop
@@ -32,6 +33,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
   onDelete,
   selectedProgression,
   isReviewMode,
+  handleOpenCategoryModal,
 }) => {
   const {
     handleRefetchFlashCards,
@@ -118,20 +120,33 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
             </div>
           )}
           {!isReviewMode && (
-            <div className='mt-4'>
-              <Select
-                label='Filter by Category'
-                options={[
-                  { _id: '', name: 'All Categories' },
-                  ...categories,
-                ].map((cat) => ({
-                  value: cat._id!,
-                  label: cat.name,
-                }))}
-                value={selectedCategoryId}
-                onChange={(e) => setSelectedCategoryId(e.target.value)}
-                className='w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none'
-              />
+            <div className='mt-4 flex items-center'>
+              <div className='flex-grow'>
+                <Select
+                  label='Filter by Category'
+                  options={[
+                    { _id: '', name: 'All Categories' },
+                    ...categories,
+                  ].map((cat) => ({
+                    value: cat._id!,
+                    label: cat.name,
+                  }))}
+                  value={selectedCategoryId}
+                  onChange={(e) => setSelectedCategoryId(e.target.value)}
+                  className='w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none'
+                />
+              </div>
+              <motion.button
+                className='mt-6 ml-2 rounded-full bg-green-500 px-4 py-2 text-white shadow-lg hover:bg-green-600 focus:outline-none'
+                onClick={handleOpenCategoryModal}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                whileTap={{ scale: 0.9 }}
+              >
+                + Manage Categories
+              </motion.button>
             </div>
           )}
           <div className='relative mb-4'>
