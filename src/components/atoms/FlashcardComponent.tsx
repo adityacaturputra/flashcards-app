@@ -135,7 +135,9 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
                   className='text-blue-500 hover:text-blue-700'
                   onClick={() =>
                     openGoogleSearchInNewTab(
-                      'apa itu ' + flashcard.question,
+                      'apa itu ' +
+                        flashcard.question +
+                        ' dan artinya serta berikan contohnya',
                       // +
                       //   ' ' +
                       //   flashcard.answer,
@@ -168,7 +170,11 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
                   <button
                     className='text-blue-500 hover:text-blue-700'
                     onClick={() =>
-                      openGoogleSearchInNewTab('apa itu ' + flashcard.answer)
+                      openGoogleSearchInNewTab(
+                        'apa itu ' +
+                          flashcard.answer +
+                          ' dan artinya serta berikan contohnya',
+                      )
                     }
                   >
                     <FaMagnifyingGlass />
