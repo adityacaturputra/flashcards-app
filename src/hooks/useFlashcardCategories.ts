@@ -1,4 +1,5 @@
 // src/hooks/useFlashcardCategories.ts
+'use client';
 import { useState, useEffect } from 'react';
 import { FlashcardCategory } from '@/types/flashcard';
 
@@ -17,10 +18,19 @@ type UseFlashcardCategoriesReturnType = {
   deleteCategory: (id: string) => Promise<void>;
 };
 
+const STORAGE_KEY = 'flashcardCategories';
+
 export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
   const [categories, setCategories] = useState<FlashcardCategory[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingAction, setLoadingAction] = useState<boolean>(false);
+
+  // Save to localStorage whenever categories change
+  useEffect(() => {
+    if (categories.length > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(categories));
+    }
+  }, [categories]);
 
   const loadCategories = async () => {
     try {
@@ -31,6 +41,9 @@ export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
       }
       const categoriesData: FlashcardCategory[] = await response.json();
       setCategories(categoriesData);
+
+      // store latest in localStorage
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(categoriesData));
     } catch (error) {
       console.error(error);
     } finally {
@@ -52,8 +65,11 @@ export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
         throw new Error('Failed to add category');
       }
       const newCategory: FlashcardCategory = await response.json();
-      setCategories((prev) => [...prev, newCategory]);
-
+      setCategories((prev) => {
+        const updated = [...prev, newCategory];
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+        return updated;
+      });
       return newCategory;
     } catch (error) {
       console.error(error);
@@ -79,9 +95,13 @@ export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
         throw new Error('Failed to update category');
       }
       const updatedCategory: FlashcardCategory = await response.json();
-      setCategories((prev) =>
-        prev.map((c) => (c._id === updatedCategory._id ? updatedCategory : c)),
-      );
+      setCategories((prev) => {
+        const updated = prev.map((c) =>
+          c._id === updatedCategory._id ? updatedCategory : c,
+        );
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+        return updated;
+      });
       return updatedCategory;
     } catch (error) {
       console.error(error);
@@ -105,9 +125,11 @@ export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
       }
       const deletedCategory: FlashcardCategory = await response.json();
       if (deletedCategory) {
-        setCategories((prev) =>
-          prev.filter((c) => c._id !== deletedCategory._id),
-        );
+        setCategories((prev) => {
+          const updated = prev.filter((c) => c._id !== deletedCategory._id);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+          return updated;
+        });
       }
     } catch (error) {
       console.error(error);
@@ -117,7 +139,17 @@ export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
   };
 
   useEffect(() => {
-    loadCategories();
+    // Load from localStorage first (fast render)
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        setCategories(JSON.parse(stored));
+      } catch (e) {
+        console.error('Failed to parse stored categories', e);
+      }
+    } else {
+      loadCategories();
+    }
   }, []);
 
   return {

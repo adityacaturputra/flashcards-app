@@ -41,7 +41,11 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [loadingAction, setLoadingAction] = useState<boolean>(false);
   const { loadFlashcards, addFlashcard, updateFlashcard, deleteFlashcard } =
     useFlashcards(setFlashcards, setLoadingAction);
-  const { categories, loading: loadingCategories } = useFlashcardCategories();
+  const {
+    categories,
+    loading: loadingCategories,
+    loadCategories,
+  } = useFlashcardCategories();
   const loadFlashcardsRef = useRef(loadFlashcards);
 
   useEffect(() => {
@@ -82,6 +86,7 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     await loadFlashcardsRef.current(); // Use the ref to call the function
     setLoading(false);
     localStorage.setItem('flashcards', JSON.stringify(flashcards));
+    loadCategories();
   };
 
   return (
