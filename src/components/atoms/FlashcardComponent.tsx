@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Flashcard, FlashcardCategory, Progression } from '@/types/flashcard';
 import calculateNextReviewDate from '@/utils/calculateNextReviewDate';
 import dayjs from 'dayjs';
@@ -10,6 +11,7 @@ import {
   FaMagnifyingGlass,
   FaPenToSquare,
   FaVolumeHigh,
+  FaEllipsisVertical,
 } from 'react-icons/fa6';
 import useEditFlashcard from '@/hooks/useEditFlashcard';
 import FlashcardFormEdit from '../organisms/FlashcardFormEdit';
@@ -26,6 +28,11 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
 }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [isAnswerHidden, setIsAnswerHidden] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const { handleCancel } = useEditFlashcard({
     flashcard,
@@ -34,11 +41,39 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
     setIsEditing,
   });
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   const remainingTime = formatRemainingTime(flashcard.nextReviewDate);
 
-  const handleProgressionChange = (progression: Flashcard['progression']) => {
-    const nextReviewDate = calculateNextReviewDate(progression);
-    onUpdate(flashcard._id!, { progression, nextReviewDate });
+  const handleProgressionChange = async (
+    progression: Flashcard['progression'],
+  ) => {
+    setIsUpdating(true);
+    try {
+      const nextReviewDate = calculateNextReviewDate(progression);
+      await onUpdate(flashcard._id!, { progression, nextReviewDate });
+      // Add a small delay to ensure loading indicator is visible
+      await new Promise(resolve => setTimeout(resolve, 300));
+    } catch (error) {
+      console.error('Error updating flashcard:', error);
+    } finally {
+      setIsUpdating(false);
+    }
   };
 
   const handleDelete = () => {
@@ -96,7 +131,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
 
   return (
     <div
-      className={`group relative bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-700 overflow-hidden cursor-pointer ${className}`}
+      className={`group relative cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white shadow-md transition-all duration-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800 ${className}`}
       style={{
         background: 'var(--card)',
         borderColor: 'var(--border)',
@@ -107,10 +142,10 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
       {!isEditing && (
         <>
           {/* Header with time and actions */}
-          <div className="flex items-center justify-between p-4 pb-2">
-            <div className="flex items-center gap-2">
-              <span 
-                className="text-xs font-medium px-2 py-1 rounded-full"
+          <div className='flex items-center justify-between p-4 pb-2'>
+            <div className='flex items-center gap-2'>
+              <span
+                className='rounded-full px-2 py-1 text-xs font-medium'
                 style={{
                   background: 'var(--secondary)',
                   color: 'var(--secondary-foreground)',
@@ -119,84 +154,147 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
                 {remainingTime}
               </span>
             </div>
-            
-            <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <button 
-                className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleAnswerVisibility();
-                }}
-                title={isAnswerHidden ? 'Show answer' : 'Hide answer'}
+
+            <div className='flex items-center gap-2'>
+              {/* Loading Progress Indicator */}
+              {isUpdating && (
+                <div className={`${styles.loadingIndicator}`}>
+                  <div className={`${styles.spinner}`}></div>
+                </div>
+              )}
+
+              {/* Triple Dots Menu */}
+              <div
+                ref={menuRef}
+                className='relative opacity-0 transition-opacity duration-200 group-hover:opacity-100'
               >
-                {isAnswerHidden ? (
-                  <FaEye className="w-4 h-4" style={{ color: 'var(--primary)' }} />
-                ) : (
-                  <FaEyeSlash className="w-4 h-4" style={{ color: 'var(--primary)' }} />
+                <button
+                  ref={buttonRef}
+                  className='rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (!isMenuOpen && buttonRef.current) {
+                      const rect = buttonRef.current.getBoundingClientRect();
+                      const menuHeight = 120; // Approximate height of 3 menu items
+                      const spaceBelow = window.innerHeight - rect.bottom;
+                      const spaceAbove = rect.top;
+                      
+                      // Position menu above if not enough space below
+                      const shouldPositionAbove = spaceBelow < menuHeight && spaceAbove > menuHeight;
+                      
+                      setMenuPosition({
+                        top: shouldPositionAbove ? rect.top - menuHeight - 4 : rect.bottom + 4,
+                        left: rect.right - 160 // 160px is the min-width of dropdown
+                      });
+                    }
+                    setIsMenuOpen(!isMenuOpen);
+                  }}
+                  title='Actions'
+                >
+                  <FaEllipsisVertical
+                    className='h-4 w-4'
+                    style={{ color: 'var(--primary)' }}
+                  />
+                </button>
+
+                {/* Dropdown Menu - Rendered as Portal */}
+                {isMenuOpen && typeof window !== 'undefined' && createPortal(
+                  <div 
+                    className={`${styles.dropdownMenu}`}
+                    style={{
+                      top: `${menuPosition.top}px`,
+                      left: `${menuPosition.left}px`
+                    }}
+                  >
+                    <button
+                      className='flex w-full items-center gap-2 px-3 py-2 text-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleAnswerVisibility();
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      {isAnswerHidden ? (
+                        <FaEye className='h-4 w-4' style={{ color: 'var(--primary)' }} />
+                      ) : (
+                        <FaEyeSlash className='h-4 w-4' style={{ color: 'var(--primary)' }} />
+                      )}
+                      <span>{isAnswerHidden ? 'Show answer' : 'Hide answer'}</span>
+                    </button>
+
+                    <button
+                      className='flex w-full items-center gap-2 px-3 py-2 text-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleEdit();
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      <FaPenToSquare className='h-4 w-4' style={{ color: 'var(--primary)' }} />
+                      <span>Edit flashcard</span>
+                    </button>
+
+                    <button
+                      className='flex w-full items-center gap-2 px-3 py-2 text-sm transition-colors hover:bg-red-50 dark:hover:bg-red-900/20'
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDelete();
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      <FaTrashAlt className='h-4 w-4' style={{ color: 'var(--destructive)' }} />
+                      <span>Delete flashcard</span>
+                    </button>
+                  </div>,
+                  document.body
                 )}
-              </button>
-              
-              <button 
-                className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleEdit();
-                }}
-                title="Edit flashcard"
-              >
-                <FaPenToSquare className="w-4 h-4" style={{ color: 'var(--primary)' }} />
-              </button>
-              
-              <button 
-                className="p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleDelete();
-                }}
-                title="Delete flashcard"
-              >
-                <FaTrashAlt className="w-4 h-4" style={{ color: 'var(--destructive)' }} />
-              </button>
+              </div>
             </div>
           </div>
 
           {/* Question Section */}
-          <div className="px-4 pb-3">
-            <div className="flex items-start gap-3">
-              <div className="flex-1">
-                <h3 
-                  className="text-lg font-semibold leading-tight"
+          <div className='px-4 pb-3'>
+            <div className='flex items-start gap-3'>
+              <div className='flex-1'>
+                <h3
+                  className='text-lg leading-tight font-semibold'
                   style={{ color: 'var(--card-foreground)' }}
                 >
                   {flashcard.question}
                 </h3>
               </div>
-              
+
               {!isAnswerHidden && (
-                <div className="flex items-center gap-2 ml-2">
+                <div className='ml-2 flex items-center gap-2'>
                   <button
-                    className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                    className='rounded-md p-1.5 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                     onClick={(e) => {
                       e.stopPropagation();
                       openTTSInNewTab(flashcard.question);
                     }}
-                    title="Listen to question"
+                    title='Listen to question'
                   >
-                    <FaVolumeHigh className="w-3.5 h-3.5" style={{ color: 'var(--primary)' }} />
+                    <FaVolumeHigh
+                      className='h-3.5 w-3.5'
+                      style={{ color: 'var(--primary)' }}
+                    />
                   </button>
                   <button
-                    className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                    className='rounded-md p-1.5 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                     onClick={(e) => {
                       e.stopPropagation();
                       openGoogleSearchInNewTab(
                         'apa itu ' +
                           flashcard.question +
-                          ' dan artinya serta berikan contohnya dalam percakapan bahasa inggris'
+                          ' dan artinya serta berikan contohnya dalam percakapan bahasa inggris',
                       );
                     }}
-                    title="Search question"
+                    title='Search question'
                   >
-                    <FaMagnifyingGlass className="w-3.5 h-3.5" style={{ color: 'var(--primary)' }} />
+                    <FaMagnifyingGlass
+                      className='h-3.5 w-3.5'
+                      style={{ color: 'var(--primary)' }}
+                    />
                   </button>
                 </div>
               )}
@@ -207,48 +305,54 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
           <div
             className={`${styles.content} ${isAnswerHidden ? styles.hidden : styles.visible}`}
           >
-            <div 
-              className="mx-4 mb-4 p-4 rounded-lg"
+            <div
+              className='mx-4 mb-4 rounded-lg p-4'
               style={{
                 background: 'var(--muted)',
                 borderLeft: '4px solid var(--primary)',
               }}
             >
-              <div className="flex items-start gap-3">
-                <div className="flex-1">
-                  <p 
-                    className="text-base leading-relaxed"
+              <div className='flex items-start gap-3'>
+                <div className='flex-1'>
+                  <p
+                    className='text-base leading-relaxed'
                     style={{ color: 'var(--muted-foreground)' }}
                   >
                     {flashcard.answer}
                   </p>
                 </div>
-                
+
                 {!isAnswerHidden && (
-                  <div className="flex items-center gap-2 ml-2">
+                  <div className='ml-2 flex items-center gap-2'>
                     <button
-                      className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                      className='rounded-md p-1.5 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                       onClick={(e) => {
                         e.stopPropagation();
                         openTTSInNewTab(flashcard.answer);
                       }}
-                      title="Listen to answer"
+                      title='Listen to answer'
                     >
-                      <FaVolumeHigh className="w-3.5 h-3.5" style={{ color: 'var(--primary)' }} />
+                      <FaVolumeHigh
+                        className='h-3.5 w-3.5'
+                        style={{ color: 'var(--primary)' }}
+                      />
                     </button>
                     <button
-                      className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                      className='rounded-md p-1.5 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                       onClick={(e) => {
                         e.stopPropagation();
                         openGoogleSearchInNewTab(
                           'apa itu ' +
                             flashcard.answer +
-                            ' dan artinya serta berikan contohnya dalam percakapan bahasa inggris'
+                            ' dan artinya serta berikan contohnya dalam percakapan bahasa inggris',
                         );
                       }}
-                      title="Search answer"
+                      title='Search answer'
                     >
-                      <FaMagnifyingGlass className="w-3.5 h-3.5" style={{ color: 'var(--primary)' }} />
+                      <FaMagnifyingGlass
+                        className='h-3.5 w-3.5'
+                        style={{ color: 'var(--primary)' }}
+                      />
                     </button>
                   </div>
                 )}
@@ -256,35 +360,40 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
 
               {/* Dynamic Fields */}
               {flashcard.dynamicFields && (
-                <div className="mt-4 space-y-2">
+                <div className='mt-4 space-y-2'>
                   {renderViewModeDynamicFields()}
                 </div>
               )}
             </div>
 
             {/* Progression Buttons */}
-            <div className="px-4 pb-4">
-              <div className="flex flex-wrap gap-2">
+            <div className='px-4 pb-4'>
+              <div className='flex flex-wrap gap-2'>
                 {progressionOptions.map((progression) => {
                   const isActive = flashcard.progression === progression;
                   return (
                     <button
                       key={progression}
-                      className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-200 ${
                         isActive
-                          ? 'shadow-sm transform scale-105'
-                          : 'hover:shadow-sm hover:transform hover:scale-105'
+                          ? 'scale-105 transform shadow-sm'
+                          : 'hover:scale-105 hover:transform hover:shadow-sm'
                       }`}
                       style={{
-                        background: isActive ? 'var(--primary)' : 'var(--secondary)',
-                        color: isActive ? 'var(--primary-foreground)' : 'var(--secondary-foreground)',
+                        background: isActive
+                          ? 'var(--primary)'
+                          : 'var(--secondary)',
+                        color: isActive
+                          ? 'var(--primary-foreground)'
+                          : 'var(--secondary-foreground)',
                       }}
                       onClick={(e) => {
                         e.stopPropagation();
                         handleProgressionChange(progression);
                       }}
                     >
-                      {progression.charAt(0).toUpperCase() + progression.slice(1)}
+                      {progression.charAt(0).toUpperCase() +
+                        progression.slice(1)}
                     </button>
                   );
                 })}
@@ -307,7 +416,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
 
 type FlashcardProps = {
   flashcard: Flashcard;
-  onUpdate: (id: string, flashcard: Partial<Flashcard>) => void;
+  onUpdate: (id: string, flashcard: Partial<Flashcard>) => Promise<void>;
   onDelete: (id: string) => Promise<void>;
   className?: string;
   categories?: FlashcardCategory[];
