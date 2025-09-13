@@ -78,19 +78,20 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
 
   return (
     <div 
-      className={`relative mb-8 flex h-full flex-col justify-between rounded-xl p-6 shadow-lg backdrop-blur-sm ${styles.cardContainer} ${styles.glassMorphism}`}
+      className={`relative mb-4 sm:mb-8 flex h-full flex-col justify-between rounded-xl p-3 sm:p-6 shadow-lg backdrop-blur-sm ${styles.cardContainer} ${styles.glassMorphism}`}
       style={{
         background: 'var(--card)',
         border: '1px solid var(--border)',
       }}
     >
       <div>
-        <div className='mb-6'>
-          <div className='flex items-center justify-between mb-4'>
+        <div className='mb-4 sm:mb-6'>
+          <div className='flex items-center justify-between mb-3 sm:mb-4'>
             <h2 
-              className='text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'
+              className='text-lg sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'
             >
-              Add New Flashcard
+              <span className='hidden sm:inline'>Add New Flashcard</span>
+              <span className='sm:hidden'>Add Flashcard</span>
             </h2>
             {flashCards.length > 0 && (
               <div 
@@ -105,35 +106,35 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
             )}
           </div>
           {/* Upload Input */}
-          <div className='flex items-center justify-between gap-4'>
+          <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4'>
             <div 
-              className='flex items-center gap-3 px-4 py-3 rounded-lg border-2 border-dashed transition-colors hover:border-blue-400'
+              className='flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border-2 border-dashed transition-colors hover:border-blue-400 flex-1'
               style={{
                 background: 'var(--input)',
                 borderColor: 'var(--border)',
               }}
             >
-              <CiImport className='text-xl' style={{ color: 'var(--muted-foreground)' }} />
+              <CiImport className='text-lg sm:text-xl flex-shrink-0' style={{ color: 'var(--muted-foreground)' }} />
               <input 
                 type='file' 
                 accept='.xml' 
                 onChange={handleFileUpload}
-                className='text-sm'
+                className='text-xs sm:text-sm min-w-0 flex-1'
                 style={{ color: 'var(--foreground)' }}
               />
             </div>
             {/* Export saved flashcards button */}
             <Button 
               onClick={handleDownloadXml}
-              className={`px-4 py-3 rounded-lg transition-all hover:scale-105 ${styles.modernButton} ${styles.floatingElement}`}
+              className={`px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all hover:scale-105 ${styles.modernButton} ${styles.floatingElement} flex-shrink-0`}
             >
-              <CiExport className='text-xl' />
+              <CiExport className='text-lg sm:text-xl' />
             </Button>
           </div>
         </div>
         {/* Accordion Header */}
         <div
-          className={`mt-6 flex cursor-pointer items-center justify-between rounded-lg p-4 transition-all hover:shadow-md ${styles.modernButton}`}
+          className={`mt-6 flex cursor-pointer items-center justify-between rounded-lg p-3 sm:p-4 transition-all hover:shadow-md ${styles.modernButton}`}
           style={{
             background: 'var(--muted)',
             border: '1px solid var(--border)',
@@ -141,12 +142,12 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
           onClick={() => setIsAccordionOpen(!isAccordionOpen)}
         >
           <span 
-            className={`font-semibold text-lg ${styles.gradientText}`}
+            className={`font-semibold text-base sm:text-lg ${styles.gradientText}`}
           >
             Manual Add Form
           </span>
           <button
-            className={`${styles.toggleButton} ${isAccordionOpen ? styles.open : ''} p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center`}
+            className={`${styles.toggleButton} ${isAccordionOpen ? styles.open : ''} p-1.5 sm:p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center`}
             onClick={() => setIsAccordionOpen(!isAccordionOpen)}
             style={{
               background: 'var(--primary)',
@@ -154,7 +155,7 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
             }}
           >
             <svg
-              className='h-5 w-5'
+              className='h-4 w-4 sm:h-5 sm:w-5'
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
@@ -184,11 +185,11 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                 border: '1px solid var(--border)',
               }}
             >
-              <div className='p-6 space-y-6'>
-                <div className='space-y-4'>
+              <div className='p-4 sm:p-6 space-y-4 sm:space-y-6'>
+                <div className='space-y-3 sm:space-y-4'>
                   <div>
                     <label 
-                      className='block text-sm font-medium mb-2'
+                      className='block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2'
                       style={{ color: 'var(--foreground)' }}
                     >
                       Question
@@ -198,13 +199,13 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setQuestion(e.target.value)
                       }
-                      className={`w-full rounded-lg border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus}`}
+                      className={`w-full rounded-lg border-2 px-3 sm:px-4 py-2.5 sm:py-3 transition-colors focus:border-blue-500 ${styles.inputFocus} text-sm sm:text-base`}
                       value={question}
                     />
                   </div>
                   <div>
                     <label 
-                      className='block text-sm font-medium mb-2'
+                      className='block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2'
                       style={{ color: 'var(--foreground)' }}
                     >
                       Answer
@@ -214,23 +215,23 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setAnswer(e.target.value)
                       }
-                      className={`w-full rounded-lg border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus}`}
+                      className={`w-full rounded-lg border-2 px-3 sm:px-4 py-2.5 sm:py-3 transition-colors focus:border-blue-500 ${styles.inputFocus} text-sm sm:text-base`}
                       value={answer}
                     />
                   </div>
                 </div>
-                <div className='space-y-4'>
+                <div className='space-y-3 sm:space-y-4'>
                   <h3 
-                    className='text-lg font-semibold'
+                    className='text-base sm:text-lg font-semibold'
                     style={{ color: 'var(--foreground)' }}
                   >
                     Custom Fields
                   </h3>
                   {fieldKeys.map((key, index) => (
-                    <div key={index} className='flex items-end gap-3'>
+                    <div key={index} className='flex items-end gap-2 sm:gap-3'>
                       <div className='flex-1'>
                         <label 
-                          className='block text-sm font-medium mb-2'
+                          className='block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2'
                           style={{ color: 'var(--foreground)' }}
                         >
                           {key}
@@ -238,27 +239,27 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                         <InputField
                           placeholder={`Enter ${key}...`}
                           onChange={handleFieldChange(key)}
-                          className={`w-full rounded-lg border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus}`}
+                          className={`w-full rounded-lg border-2 px-3 sm:px-4 py-2.5 sm:py-3 transition-colors focus:border-blue-500 ${styles.inputFocus} text-sm sm:text-base`}
                           value={dynamicFields[key] || ''}
                         />
                       </div>
                       <button
                         onClick={() => deleteDynamicField(key)}
-                        className='p-3 rounded-lg transition-all hover:scale-105'
+                        className='p-2.5 sm:p-3 rounded-lg transition-all hover:scale-105'
                         style={{
                           background: 'var(--destructive)',
                           color: 'var(--destructive-foreground)',
                         }}
                       >
-                        <FaTrashAlt />
+                        <FaTrashAlt className='text-sm sm:text-base' />
                       </button>
                     </div>
                   ))}
                 </div>
-                <div className='flex gap-3 pt-4'>
+                <div className='flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 sm:pt-4'>
                   <Button 
                     onClick={addDynamicField} 
-                    className={`flex-1 py-3 rounded-lg transition-all hover:scale-105 ${styles.modernButton}`}
+                    className={`flex-1 py-2.5 sm:py-3 rounded-lg transition-all hover:scale-105 ${styles.modernButton} text-sm sm:text-base`}
                   >
                     Add Custom Field
                   </Button>
@@ -267,7 +268,7 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                       handleAddFlashcardToList();
                       setIsAccordionOpen(false);
                     }}
-                    className={`flex-1 py-3 rounded-lg transition-all hover:scale-105 ${styles.modernButton}`}
+                    className={`flex-1 py-2.5 sm:py-3 rounded-lg transition-all hover:scale-105 ${styles.modernButton} text-sm sm:text-base`}
                   >
                     Add Flashcard
                   </Button>
@@ -277,14 +278,13 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
           </motion.div>
         )}
         {/* Category Selection */}
-        <div className='mt-6'>
+        <div className='mt-6 sm:mt-8'>
           <h3 
-            className='text-lg font-semibold mb-4'
-            style={{ color: 'var(--foreground)' }}
+            className='text-lg sm:text-xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent'
           >
             Select Categories
           </h3>
-          <div className='flex flex-wrap gap-3'>
+          <div className='flex flex-wrap gap-2 sm:gap-3'>
             {loadingCategories && (
               <div className={`flex items-center gap-2 ${styles.pulseAnimation}`}>
                 <FiLoader className='animate-spin' />
@@ -294,7 +294,7 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
             {categories.map((category) => (
               <label 
                 key={category._id} 
-                className='flex items-center gap-2 px-4 py-2 rounded-lg border cursor-pointer transition-all hover:shadow-md'
+                className='flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border cursor-pointer transition-all hover:shadow-md hover:scale-105'
                 style={{
                   background: selectedCategories.includes(category._id!) ? 'var(--primary)' : 'var(--muted)',
                   borderColor: 'var(--border)',
@@ -311,7 +311,7 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                   }
                   className='sr-only'
                 />
-                <span className='font-medium'>{category.name}</span>
+                <span className='text-xs sm:text-sm font-medium'>{category.name}</span>
               </label>
             ))}
           </div>

@@ -58,28 +58,29 @@ const Home: React.FC = () => {
           borderColor: 'var(--border)',
         }}
       >
-        <div className='max-w-7xl mx-auto px-6 py-4'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4'>
           <div className='flex items-center justify-between'>
-            <div className='flex items-center gap-4'>
+            <div className='flex items-center gap-2 sm:gap-4'>
               <h1 
-                className='text-3xl font-bold gradient-text-accent'
+                className='text-xl sm:text-2xl lg:text-3xl font-bold gradient-text-accent'
               >
-                Flashcard App
+                <span className='hidden sm:inline'>Flashcard App</span>
+                <span className='sm:hidden'>Flashcards</span>
               </h1>
               <div 
-                className='px-3 py-1 rounded-full text-sm font-medium'
+                className='px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium'
                 style={{
                   background: 'var(--accent)',
                   color: 'var(--accent-foreground)',
                 }}
               >
-                {flashcards.length} cards
+                {flashcards.length}
               </div>
             </div>
             
-            <div className='flex items-center gap-3'>
+            <div className='flex items-center gap-2 sm:gap-3'>
               <motion.button
-                className='px-4 py-2 rounded-lg font-medium transition-all hover:scale-105'
+                className='px-2 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105'
                 style={{
                   background: isReviewMode ? 'var(--destructive)' : 'var(--secondary)',
                   color: isReviewMode ? 'var(--destructive-foreground)' : 'var(--secondary-foreground)',
@@ -87,12 +88,13 @@ const Home: React.FC = () => {
                 onClick={() => setIsReviewMode((prev) => !prev)}
                 whileTap={{ scale: 0.95 }}
               >
-                {isReviewMode ? 'Exit Review' : 'Review Mode'}
+                <span className='hidden sm:inline'>{isReviewMode ? 'Exit Review' : 'Review Mode'}</span>
+                <span className='sm:hidden'>{isReviewMode ? 'Exit' : 'Review'}</span>
               </motion.button>
               
               {!isReviewMode && (
                 <motion.button
-                  className='px-4 py-2 rounded-lg font-medium transition-all hover:scale-105'
+                  className='px-2 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105'
                   style={{
                     background: 'var(--primary)',
                     color: 'var(--primary-foreground)',
@@ -100,7 +102,8 @@ const Home: React.FC = () => {
                   onClick={() => setIsModalOpen(true)}
                   whileTap={{ scale: 0.95 }}
                 >
-                  + Add Flashcard
+                  <span className='hidden sm:inline'>+ Add Flashcard</span>
+                  <span className='sm:hidden'>+</span>
                 </motion.button>
               )}
             </div>
@@ -115,7 +118,7 @@ const Home: React.FC = () => {
           background: 'var(--background)',
         }}
       >
-        <div className='max-w-7xl mx-auto px-6 py-8 fade-in-up'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-8 fade-in-up'>
           {/* Render Skeleton Loader or Flashcard List based on loading state */}
           {loading ? (
             <SkeletonLoader count={5} />
@@ -162,10 +165,10 @@ const Home: React.FC = () => {
             borderColor: 'var(--border)',
           }}
         >
-          <div className='max-w-7xl mx-auto px-6 py-4'>
-            <div className='flex items-center gap-2 overflow-x-auto'>
+          <div className='max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-4'>
+            <div className='flex items-center gap-1 sm:gap-2 overflow-x-auto'>
               <span 
-                className='text-sm font-medium mr-3 whitespace-nowrap'
+                className='hidden sm:inline text-sm font-medium mr-3 whitespace-nowrap'
                 style={{ color: 'var(--muted-foreground)' }}
               >
                 Filter by progress:
@@ -173,7 +176,7 @@ const Home: React.FC = () => {
               {Object.values(Progression).map((progression) => (
                 <motion.button
                   key={progression}
-                  className='px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap hover:scale-105'
+                  className='px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap hover:scale-105'
                   style={{
                     background: selectedProgression === progression 
                       ? 'var(--primary)' 
@@ -185,11 +188,18 @@ const Home: React.FC = () => {
                   onClick={() => handleFilterChange(progression)}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {progression.charAt(0).toUpperCase() + progression.slice(1)}
+                  <span className='hidden sm:inline'>{progression.charAt(0).toUpperCase() + progression.slice(1)}</span>
+                  <span className='sm:hidden'>
+                    {progression === 'perfect' ? 'Perf' : 
+                     progression === 'good' ? 'Good' :
+                     progression === 'normal' ? 'Norm' :
+                     progression === 'hard' ? 'Hard' :
+                     progression === 'retry' ? 'Retry' : 'New'}
+                  </span>
                 </motion.button>
               ))}
               <motion.button
-                className='px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap hover:scale-105'
+                className='px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap hover:scale-105'
                 style={{
                   background: selectedProgression === null 
                     ? 'var(--primary)' 

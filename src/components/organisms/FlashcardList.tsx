@@ -122,11 +122,11 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
               />
             </div>
           ) : (
-            <div className='flex flex-col items-start gap-4 sm:flex-row sm:items-end'>
-              <div className='min-w-0 flex-1'>
+            <div className='flex flex-col items-start gap-3 sm:gap-4 sm:flex-row sm:items-end'>
+              <div className='min-w-0 flex-1 w-full'>
                 <div className='w-full'>
                   <label
-                    className='mb-2 block text-sm font-medium'
+                    className='mb-2 block text-xs sm:text-sm font-medium'
                     style={{ color: 'var(--foreground)' }}
                   >
                     Filter by Category
@@ -134,7 +134,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                   <select
                     value={selectedCategoryId}
                     onChange={(e) => setSelectedCategoryId(e.target.value)}
-                    className='w-full rounded-lg border px-4 py-3 text-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none'
+                    className='w-full rounded-lg border px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none'
                     style={{
                       background: 'var(--input)',
                       borderColor: 'var(--border)',
@@ -151,7 +151,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                 </div>
               </div>
               <motion.button
-                className='rounded-lg px-6 py-3 text-sm font-medium transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none'
+                className='w-full sm:w-auto rounded-lg px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-medium transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none'
                 style={{
                   background: 'var(--primary)',
                   color: 'var(--primary-foreground)',
@@ -163,7 +163,8 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                + Manage Categories
+                <span className='hidden sm:inline'>+ Manage Categories</span>
+                <span className='sm:hidden'>+ Categories</span>
               </motion.button>
             </div>
           )}
@@ -174,10 +175,10 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
               <div className='relative flex-1'>
                 <input
                   type='text'
-                  placeholder='Search by question or answer...'
+                  placeholder='Search flashcards...'
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className='w-full rounded-lg border px-4 py-3 pr-12 text-sm transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none'
+                  className='w-full rounded-lg border px-3 sm:px-4 py-2 sm:py-3 pr-10 sm:pr-12 text-xs sm:text-sm transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none'
                   style={{
                     background: 'var(--input)',
                     borderColor: 'var(--border)',
