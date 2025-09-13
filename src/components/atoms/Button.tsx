@@ -6,6 +6,7 @@ type ButtonProps = {
   onClick: () => void;
   className?: string;
   disabled?: boolean;
+  style?: React.CSSProperties;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -13,12 +14,14 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   className = '',
   disabled = false,
+  style,
 }) => {
   return (
     <button
       className={`flex items-center gap-2 rounded bg-blue-500 ${disabled ? 'bg-gray-300' : ''} px-4 py-2 text-white ${className}`}
       onClick={onClick}
-      disabled={disabled} // Apply disabled prop
+      disabled={disabled}
+      style={style}
     >
       {children}
     </button>

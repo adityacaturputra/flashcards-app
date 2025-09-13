@@ -96,6 +96,8 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
     totalPages,
     handleNextPage,
     handlePreviousPage,
+    handleFirstPage,
+    handleLastPage,
     setCurrentPage, // Add setCurrentPage to control the page manually
   } = usePagination<Flashcard>({ items: sortedFlashcards, pageSize });
 
@@ -211,7 +213,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                   placeholder='Search flashcards...'
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className='w-full rounded-lg border px-3 py-2 pr-10 text-xs transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none sm:px-4 sm:py-3 sm:pr-12 sm:text-sm'
+                  className='w-full rounded-lg border-2 px-4 py-3 pr-10 text-base transition-colors focus:border-blue-500 focus:outline-none'
                   style={{
                     background: 'var(--input)',
                     borderColor: 'var(--border)',
@@ -336,28 +338,194 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
         )}
       </div>
 
-      {/* Pagination Controls */}
+      {/* Modern Pagination Controls */}
       {!isReviewMode && currentItems.length > 0 && totalPages > 1 && (
-        <div className='mt-8 mb-8 flex justify-center'>
-          <button
-            className='mr-2 rounded bg-blue-500 px-6 py-3 text-white hover:bg-blue-600 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500'
-            onClick={handlePreviousPage}
-            disabled={currentPage === 0}
-          >
-            Previous
-          </button>
-          <div className='flex items-center'>
-            <span className='px-6 py-3 text-lg text-gray-700'>
-              {currentPage + 1} / {totalPages}
-            </span>
+        <div className='mt-6 mb-6 flex flex-col items-center gap-3'>
+          {/* Page Info */}
+          <div className='text-center'>
+            <p
+              className='text-xs font-medium sm:text-sm'
+              style={{ color: 'var(--muted-foreground)' }}
+            >
+              <span className='hidden sm:inline'>
+                Showing {currentPage * pageSize + 1} to{' '}
+                {Math.min(
+                  (currentPage + 1) * pageSize,
+                  sortedFlashcards.length,
+                )}{' '}
+                of {sortedFlashcards.length} flashcards
+              </span>
+              <span className='sm:hidden'>
+                {currentPage + 1} / {totalPages}
+              </span>
+            </p>
           </div>
-          <button
-            className='ml-2 rounded bg-blue-500 px-6 py-3 text-white hover:bg-blue-600 focus:outline-none disabled:bg-gray-300 disabled:text-gray-500'
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages - 1}
-          >
-            Next
-          </button>
+
+          {/* Pagination Buttons */}
+          <div className='flex items-center gap-1'>
+            {/* First Page Button */}
+            <button
+              className='flex items-center justify-center rounded-md p-1.5 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 sm:p-2'
+              style={{
+                background:
+                  currentPage === 0 ? 'var(--muted)' : 'var(--primary)',
+                color:
+                  currentPage === 0
+                    ? 'var(--muted-foreground)'
+                    : 'var(--primary-foreground)',
+              }}
+              onClick={handleFirstPage}
+              disabled={currentPage === 0}
+              title='First page'
+            >
+              <svg
+                className='h-3 w-3 sm:h-4 sm:w-4'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M11 19l-7-7 7-7m8 14l-7-7 7-7'
+                />
+              </svg>
+            </button>
+
+            {/* Previous Page Button */}
+            <button
+              className='flex items-center justify-center rounded-md p-1.5 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 sm:p-2'
+              style={{
+                background:
+                  currentPage === 0 ? 'var(--muted)' : 'var(--primary)',
+                color:
+                  currentPage === 0
+                    ? 'var(--muted-foreground)'
+                    : 'var(--primary-foreground)',
+              }}
+              onClick={handlePreviousPage}
+              disabled={currentPage === 0}
+              title='Previous page'
+            >
+              <svg
+                className='h-3 w-3 sm:h-4 sm:w-4'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M15 19l-7-7 7-7'
+                />
+              </svg>
+            </button>
+
+            {/* Page Numbers */}
+            <div className='flex items-center gap-0.5'>
+              {Array.from({ length: Math.min(3, totalPages) }, (_, i) => {
+                let pageNumber;
+                if (totalPages <= 3) {
+                  pageNumber = i;
+                } else if (currentPage < 2) {
+                  pageNumber = i;
+                } else if (currentPage >= totalPages - 2) {
+                  pageNumber = totalPages - 3 + i;
+                } else {
+                  pageNumber = currentPage - 1 + i;
+                }
+
+                return (
+                  <button
+                    key={pageNumber}
+                    className='flex h-6 w-6 items-center justify-center rounded-md text-xs font-medium transition-all hover:scale-105 sm:h-7 sm:w-7 sm:text-sm'
+                    style={{
+                      background:
+                        currentPage === pageNumber
+                          ? 'var(--primary)'
+                          : 'var(--muted)',
+                      color:
+                        currentPage === pageNumber
+                          ? 'var(--primary-foreground)'
+                          : 'var(--foreground)',
+                    }}
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      setCurrentPage(pageNumber);
+                    }}
+                  >
+                    {pageNumber + 1}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Next Page Button */}
+            <button
+              className='flex items-center justify-center rounded-md p-1.5 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 sm:p-2'
+              style={{
+                background:
+                  currentPage === totalPages - 1
+                    ? 'var(--muted)'
+                    : 'var(--primary)',
+                color:
+                  currentPage === totalPages - 1
+                    ? 'var(--muted-foreground)'
+                    : 'var(--primary-foreground)',
+              }}
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages - 1}
+              title='Next page'
+            >
+              <svg
+                className='h-3 w-3 sm:h-4 sm:w-4'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M9 5l7 7-7 7'
+                />
+              </svg>
+            </button>
+
+            {/* Last Page Button */}
+            <button
+              className='flex items-center justify-center rounded-md p-1.5 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 sm:p-2'
+              style={{
+                background:
+                  currentPage === totalPages - 1
+                    ? 'var(--muted)'
+                    : 'var(--primary)',
+                color:
+                  currentPage === totalPages - 1
+                    ? 'var(--muted-foreground)'
+                    : 'var(--primary-foreground)',
+              }}
+              onClick={handleLastPage}
+              disabled={currentPage === totalPages - 1}
+              title='Last page'
+            >
+              <svg
+                className='h-3 w-3 sm:h-4 sm:w-4'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M13 5l7 7-7 7M5 5l7 7-7 7'
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       )}
     </div>

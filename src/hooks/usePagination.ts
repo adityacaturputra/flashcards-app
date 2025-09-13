@@ -12,6 +12,8 @@ interface UsePaginationResult<T> {
   totalPages: number;
   handleNextPage: () => void;
   handlePreviousPage: () => void;
+  handleFirstPage: () => void;
+  handleLastPage: () => void;
   setCurrentPage: (value: SetStateAction<number>) => void;
 }
 
@@ -40,12 +42,24 @@ const usePagination = <T>({
     }
   };
 
+  const handleFirstPage = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setCurrentPage(0);
+  };
+
+  const handleLastPage = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setCurrentPage(totalPages - 1);
+  };
+
   return {
     currentItems,
     currentPage,
     totalPages,
     handleNextPage,
     handlePreviousPage,
+    handleFirstPage,
+    handleLastPage,
     setCurrentPage,
   };
 };
