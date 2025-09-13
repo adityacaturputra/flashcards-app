@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { createPortal } from 'react-dom';
 import { Flashcard, FlashcardCategory, Progression } from '@/types/flashcard';
 import calculateNextReviewDate from '@/utils/calculateNextReviewDate';
 import dayjs from 'dayjs';
@@ -30,7 +29,6 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
   const [isAnswerHidden, setIsAnswerHidden] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
-  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -50,6 +48,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
     };
 
     if (isMenuOpen) {
+      setIsAnswerHidden(false);
       document.addEventListener('mousedown', handleClickOutside);
     }
 
@@ -68,7 +67,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
       const nextReviewDate = calculateNextReviewDate(progression);
       await onUpdate(flashcard._id!, { progression, nextReviewDate });
       // Add a small delay to ensure loading indicator is visible
-      await new Promise(resolve => setTimeout(resolve, 300));
+      await new Promise((resolve) => setTimeout(resolve, 300));
     } catch (error) {
       console.error('Error updating flashcard:', error);
     } finally {
@@ -137,13 +136,41 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
         borderColor: 'var(--border)',
         boxShadow: 'var(--shadow)',
       }}
-      onClick={toggleAnswerVisibility}
+      onClick={(e) => {
+        // Only toggle answer if the click is not on the menu button or dropdown
+        if (
+          !menuRef.current?.contains(e.target as Node) &&
+          !buttonRef.current?.contains(e.target as Node)
+        ) {
+          toggleAnswerVisibility();
+        }
+      }}
     >
       {!isEditing && (
         <>
           {/* Header with time and actions */}
           <div className='flex items-center justify-between p-4 pb-2'>
             <div className='flex items-center gap-2'>
+              <button
+                className='rounded-full px-2 py-1 text-xs font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleAnswerVisibility();
+                }}
+                title={isAnswerHidden ? 'Show answer' : 'Hide answer'}
+              >
+                {isAnswerHidden ? (
+                  <FaEye
+                    className='h-3 w-3'
+                    style={{ color: 'var(--primary)' }}
+                  />
+                ) : (
+                  <FaEyeSlash
+                    className='h-3 w-3'
+                    style={{ color: 'var(--primary)' }}
+                  />
+                )}
+              </button>
               <span
                 className='rounded-full px-2 py-1 text-xs font-medium'
                 style={{
@@ -164,29 +191,12 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
               )}
 
               {/* Triple Dots Menu */}
-              <div
-                ref={menuRef}
-                className='relative opacity-0 transition-opacity duration-200 group-hover:opacity-100'
-              >
+              <div ref={menuRef} className='relative'>
                 <button
                   ref={buttonRef}
                   className='rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                   onClick={(e) => {
                     e.stopPropagation();
-                    if (!isMenuOpen && buttonRef.current) {
-                      const rect = buttonRef.current.getBoundingClientRect();
-                      const menuHeight = 120; // Approximate height of 3 menu items
-                      const spaceBelow = window.innerHeight - rect.bottom;
-                      const spaceAbove = rect.top;
-                      
-                      // Position menu above if not enough space below
-                      const shouldPositionAbove = spaceBelow < menuHeight && spaceAbove > menuHeight;
-                      
-                      setMenuPosition({
-                        top: shouldPositionAbove ? rect.top - menuHeight - 4 : rect.bottom + 4,
-                        left: rect.right - 160 // 160px is the min-width of dropdown
-                      });
-                    }
                     setIsMenuOpen(!isMenuOpen);
                   }}
                   title='Actions'
@@ -197,56 +207,50 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
                   />
                 </button>
 
-                {/* Dropdown Menu - Rendered as Portal */}
-                {isMenuOpen && typeof window !== 'undefined' && createPortal(
-                  <div 
+                {/* Dropdown Menu */}
+                {isMenuOpen && (
+                  <div
                     className={`${styles.dropdownMenu}`}
                     style={{
-                      top: `${menuPosition.top}px`,
-                      left: `${menuPosition.left}px`
+                      position: 'absolute',
+                      top: '100%',
+                      right: '0',
+                      zIndex: 9999,
                     }}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <button
                       className='flex w-full items-center gap-2 px-3 py-2 text-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                       onClick={(e) => {
-                        e.stopPropagation();
-                        toggleAnswerVisibility();
-                        setIsMenuOpen(false);
-                      }}
-                    >
-                      {isAnswerHidden ? (
-                        <FaEye className='h-4 w-4' style={{ color: 'var(--primary)' }} />
-                      ) : (
-                        <FaEyeSlash className='h-4 w-4' style={{ color: 'var(--primary)' }} />
-                      )}
-                      <span>{isAnswerHidden ? 'Show answer' : 'Hide answer'}</span>
-                    </button>
-
-                    <button
-                      className='flex w-full items-center gap-2 px-3 py-2 text-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
-                      onClick={(e) => {
+                        e.preventDefault();
                         e.stopPropagation();
                         handleEdit();
                         setIsMenuOpen(false);
                       }}
                     >
-                      <FaPenToSquare className='h-4 w-4' style={{ color: 'var(--primary)' }} />
+                      <FaPenToSquare
+                        className='h-4 w-4'
+                        style={{ color: 'var(--primary)' }}
+                      />
                       <span>Edit flashcard</span>
                     </button>
 
                     <button
                       className='flex w-full items-center gap-2 px-3 py-2 text-sm transition-colors hover:bg-red-50 dark:hover:bg-red-900/20'
                       onClick={(e) => {
+                        e.preventDefault();
                         e.stopPropagation();
                         handleDelete();
                         setIsMenuOpen(false);
                       }}
                     >
-                      <FaTrashAlt className='h-4 w-4' style={{ color: 'var(--destructive)' }} />
+                      <FaTrashAlt
+                        className='h-4 w-4'
+                        style={{ color: 'var(--destructive)' }}
+                      />
                       <span>Delete flashcard</span>
                     </button>
-                  </div>,
-                  document.body
+                  </div>
                 )}
               </div>
             </div>

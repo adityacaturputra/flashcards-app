@@ -1,74 +1,45 @@
 'use client';
 import React, { useState } from 'react';
-import FlashcardForm from '@/components/molecules/FlashcardForm';
 import FlashcardList from '@/components/organisms/FlashcardList';
-import CategoryForm from '@/components/molecules/CategoryForm';
 import { useAppContext } from '@/context/appContext';
-import { Flashcard, Progression } from '@/types/flashcard';
+import { Progression } from '@/types/flashcard';
 import { motion } from 'framer-motion';
-import Modal from '@/components/atoms/Modal';
 import SkeletonLoader from '@/components/atoms/SkeletonLoader';
 
 const Home: React.FC = () => {
-  const {
-    flashcards,
-    addFlashcard,
-    updateFlashcard,
-    deleteFlashcard,
-    loading,
-  } = useAppContext();
-
-  const [selectedFlashcard, setSelectedFlashcard] = useState<Flashcard | null>(
-    null,
-  );
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { flashcards, updateFlashcard, deleteFlashcard, loading } =
+    useAppContext();
 
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [selectedProgression, setSelectedProgression] =
     useState<Progression | null>(null);
 
-  const handleAddFlashcard = async (newFlashcard: Flashcard) => {
-    addFlashcard(newFlashcard);
-    setIsModalOpen(false);
-  };
-
   const handleFilterChange = (progression: Progression | null) => {
     setSelectedProgression(progression);
   };
 
-  const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
-  const handleOpenCategoryModal = () => {
-    setIsCategoryModalOpen(true);
-  };
-
-  const handleCloseCategoryModal = () => {
-    setIsCategoryModalOpen(false);
-  };
-
-  const handleSaveCategory = () => {
-    setIsCategoryModalOpen(false);
+  const handleNavigateToCategoryPage = () => {
+    window.location.href = '/add-category';
   };
 
   return (
     <>
       {/* Modern Header */}
-      <header 
-        className='sticky top-0 z-50 backdrop-blur-glass border-b'
+      <header
+        className='backdrop-blur-glass sticky top-0 z-50 border-b'
         style={{
           borderColor: 'var(--border)',
         }}
       >
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4'>
+        <div className='mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4'>
           <div className='flex items-center justify-between'>
             <div className='flex items-center gap-2 sm:gap-4'>
-              <h1 
-                className='text-xl sm:text-2xl lg:text-3xl font-bold gradient-text-accent'
-              >
+              <h1 className='gradient-text-accent text-xl font-bold sm:text-2xl lg:text-3xl'>
                 <span className='hidden sm:inline'>Flashcard App</span>
                 <span className='sm:hidden'>Flashcards</span>
               </h1>
-              <div 
-                className='px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium'
+              <div
+                className='rounded-full px-2 py-1 text-xs font-medium sm:px-3 sm:text-sm'
                 style={{
                   background: 'var(--accent)',
                   color: 'var(--accent-foreground)',
@@ -77,29 +48,37 @@ const Home: React.FC = () => {
                 {flashcards.length}
               </div>
             </div>
-            
+
             <div className='flex items-center gap-2 sm:gap-3'>
               <motion.button
-                className='px-2 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105'
+                className='rounded-lg px-2 py-2 text-xs font-medium transition-all hover:scale-105 sm:px-4 sm:text-sm'
                 style={{
-                  background: isReviewMode ? 'var(--destructive)' : 'var(--secondary)',
-                  color: isReviewMode ? 'var(--destructive-foreground)' : 'var(--secondary-foreground)',
+                  background: isReviewMode
+                    ? 'var(--destructive)'
+                    : 'var(--secondary)',
+                  color: isReviewMode
+                    ? 'var(--destructive-foreground)'
+                    : 'var(--secondary-foreground)',
                 }}
                 onClick={() => setIsReviewMode((prev) => !prev)}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className='hidden sm:inline'>{isReviewMode ? 'Exit Review' : 'Review Mode'}</span>
-                <span className='sm:hidden'>{isReviewMode ? 'Exit' : 'Review'}</span>
+                <span className='hidden sm:inline'>
+                  {isReviewMode ? 'Exit Review' : 'Review Mode'}
+                </span>
+                <span className='sm:hidden'>
+                  {isReviewMode ? 'Exit' : 'Review'}
+                </span>
               </motion.button>
-              
+
               {!isReviewMode && (
                 <motion.button
-                  className='px-2 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all hover:scale-105'
+                  className='rounded-lg px-2 py-2 text-xs font-medium transition-all hover:scale-105 sm:px-4 sm:text-sm'
                   style={{
                     background: 'var(--primary)',
                     color: 'var(--primary-foreground)',
                   }}
-                  onClick={() => setIsModalOpen(true)}
+                  onClick={() => (window.location.href = '/add-flashcard')}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className='hidden sm:inline'>+ Add Flashcard</span>
@@ -112,13 +91,13 @@ const Home: React.FC = () => {
       </header>
 
       {/* Main Content */}
-      <main 
+      <main
         className='min-h-screen'
         style={{
           background: 'var(--background)',
         }}
       >
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-8 fade-in-up'>
+        <div className='fade-in-up mx-auto max-w-7xl px-4 py-4 sm:px-6 sm:py-8'>
           {/* Render Skeleton Loader or Flashcard List based on loading state */}
           {loading ? (
             <SkeletonLoader count={5} />
@@ -129,46 +108,25 @@ const Home: React.FC = () => {
               onDelete={deleteFlashcard}
               selectedProgression={selectedProgression}
               isReviewMode={isReviewMode}
-              handleOpenCategoryModal={handleOpenCategoryModal}
+              handleOpenCategoryModal={handleNavigateToCategoryPage}
             />
           )}
           <div className='h-[120px]' />
         </div>
       </main>
 
-      {/* Modal for Flashcard Form */}
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <FlashcardForm
-            addFlashcard={handleAddFlashcard}
-            selectedFlashcard={selectedFlashcard}
-            setSelectedFlashcard={setSelectedFlashcard}
-          />
-        </Modal>
-      )}
-
-      {/* Modal for Category Form */}
-      {isCategoryModalOpen && (
-        <Modal isOpen={isCategoryModalOpen} onClose={handleCloseCategoryModal}>
-          <CategoryForm
-            onClose={handleCloseCategoryModal}
-            onSave={handleSaveCategory}
-          />
-        </Modal>
-      )}
-
       {/* Modern Progression Filter Tabs */}
       {!isReviewMode && (
-        <div 
-          className='fixed bottom-0 left-0 right-0 z-40 backdrop-blur-glass border-t card-shadow'
+        <div
+          className='backdrop-blur-glass card-shadow fixed right-0 bottom-0 left-0 z-40 border-t'
           style={{
             borderColor: 'var(--border)',
           }}
         >
-          <div className='max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-4'>
-            <div className='flex items-center gap-1 sm:gap-2 overflow-x-auto'>
-              <span 
-                className='hidden sm:inline text-sm font-medium mr-3 whitespace-nowrap'
+          <div className='mx-auto max-w-7xl px-3 py-2 sm:px-6 sm:py-4'>
+            <div className='flex items-center gap-1 overflow-x-auto sm:gap-2'>
+              <span
+                className='mr-3 hidden text-sm font-medium whitespace-nowrap sm:inline'
                 style={{ color: 'var(--muted-foreground)' }}
               >
                 Filter by progress:
@@ -176,37 +134,49 @@ const Home: React.FC = () => {
               {Object.values(Progression).map((progression) => (
                 <motion.button
                   key={progression}
-                  className='px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap hover:scale-105'
+                  className='rounded-md px-2 py-1 text-xs font-medium whitespace-nowrap transition-all hover:scale-105 sm:rounded-lg sm:px-4 sm:py-2 sm:text-sm'
                   style={{
-                    background: selectedProgression === progression 
-                      ? 'var(--primary)' 
-                      : 'var(--secondary)',
-                    color: selectedProgression === progression 
-                      ? 'var(--primary-foreground)' 
-                      : 'var(--secondary-foreground)',
+                    background:
+                      selectedProgression === progression
+                        ? 'var(--primary)'
+                        : 'var(--secondary)',
+                    color:
+                      selectedProgression === progression
+                        ? 'var(--primary-foreground)'
+                        : 'var(--secondary-foreground)',
                   }}
                   onClick={() => handleFilterChange(progression)}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className='hidden sm:inline'>{progression.charAt(0).toUpperCase() + progression.slice(1)}</span>
+                  <span className='hidden sm:inline'>
+                    {progression.charAt(0).toUpperCase() + progression.slice(1)}
+                  </span>
                   <span className='sm:hidden'>
-                    {progression === 'perfect' ? 'Perf' : 
-                     progression === 'good' ? 'Good' :
-                     progression === 'normal' ? 'Norm' :
-                     progression === 'hard' ? 'Hard' :
-                     progression === 'retry' ? 'Retry' : 'New'}
+                    {progression === 'perfect'
+                      ? 'Perf'
+                      : progression === 'good'
+                        ? 'Good'
+                        : progression === 'normal'
+                          ? 'Norm'
+                          : progression === 'hard'
+                            ? 'Hard'
+                            : progression === 'retry'
+                              ? 'Retry'
+                              : 'New'}
                   </span>
                 </motion.button>
               ))}
               <motion.button
-                className='px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap hover:scale-105'
+                className='rounded-md px-2 py-1 text-xs font-medium whitespace-nowrap transition-all hover:scale-105 sm:rounded-lg sm:px-4 sm:py-2 sm:text-sm'
                 style={{
-                  background: selectedProgression === null 
-                    ? 'var(--primary)' 
-                    : 'var(--secondary)',
-                  color: selectedProgression === null 
-                    ? 'var(--primary-foreground)' 
-                    : 'var(--secondary-foreground)',
+                  background:
+                    selectedProgression === null
+                      ? 'var(--primary)'
+                      : 'var(--secondary)',
+                  color:
+                    selectedProgression === null
+                      ? 'var(--primary-foreground)'
+                      : 'var(--secondary-foreground)',
                 }}
                 onClick={() => handleFilterChange(null)}
                 whileTap={{ scale: 0.95 }}

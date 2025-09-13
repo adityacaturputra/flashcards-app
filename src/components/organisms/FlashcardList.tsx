@@ -110,60 +110,97 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
       {!isReviewMode && (
         <div className='mb-8 space-y-6'>
           {/* Category Filter and Management */}
-          {loadingCategories ? (
-            <div className='flex items-center justify-center py-4'>
-              <FiLoader
-                className='h-6 w-6 animate-spin'
-                style={{ color: 'var(--primary)' }}
-              />
-            </div>
-          ) : (
-            <div className='flex flex-col items-start gap-3 sm:flex-row sm:items-end sm:gap-4'>
-              <div className='w-full min-w-0 flex-1'>
-                <div className='w-full'>
+          <div className='mb-3 sm:mb-4'>
+            <h3 className='mb-2 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-sm font-semibold text-transparent sm:mb-3 sm:text-base'>
+              Filter by Category
+            </h3>
+
+            {loadingCategories ? (
+              <div className='flex items-center justify-center py-4'>
+                <FiLoader
+                  className='h-6 w-6 animate-spin'
+                  style={{ color: 'var(--primary)' }}
+                />
+              </div>
+            ) : (
+              <>
+                {/* Category Tags */}
+                <div className='mb-3 flex flex-wrap gap-1 sm:gap-2'>
                   <label
-                    className='mb-2 block text-xs font-medium sm:text-sm'
-                    style={{ color: 'var(--foreground)' }}
-                  >
-                    Filter by Category
-                  </label>
-                  <select
-                    value={selectedCategoryId}
-                    onChange={(e) => setSelectedCategoryId(e.target.value)}
-                    className='w-full rounded-lg border px-3 py-2 text-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none sm:px-4 sm:py-3 sm:text-sm'
+                    className='flex cursor-pointer items-center gap-1 rounded-full border px-2 py-1 transition-all hover:scale-105 hover:shadow-md sm:px-3 sm:py-1.5'
                     style={{
-                      background: 'var(--input)',
+                      background:
+                        selectedCategoryId === ''
+                          ? 'var(--primary)'
+                          : 'var(--muted)',
                       borderColor: 'var(--border)',
-                      color: 'var(--foreground)',
+                      color:
+                        selectedCategoryId === ''
+                          ? 'var(--primary-foreground)'
+                          : 'var(--foreground)',
                     }}
                   >
-                    <option value=''>All Categories</option>
-                    {categories.map((cat) => (
-                      <option key={cat._id} value={cat._id!}>
-                        {cat.name}
-                      </option>
-                    ))}
-                  </select>
+                    <input
+                      type='radio'
+                      name='categoryFilter'
+                      value=''
+                      checked={selectedCategoryId === ''}
+                      onChange={(e) => setSelectedCategoryId(e.target.value)}
+                      className='sr-only'
+                    />
+                    <span className='text-xs font-medium'>All Categories</span>
+                  </label>
+                  {categories.map((category) => (
+                    <label
+                      key={category._id}
+                      className='flex cursor-pointer items-center gap-1 rounded-full border px-2 py-1 transition-all hover:scale-105 hover:shadow-md sm:px-3 sm:py-1.5'
+                      style={{
+                        background:
+                          selectedCategoryId === category._id
+                            ? 'var(--primary)'
+                            : 'var(--muted)',
+                        borderColor: 'var(--border)',
+                        color:
+                          selectedCategoryId === category._id
+                            ? 'var(--primary-foreground)'
+                            : 'var(--foreground)',
+                      }}
+                    >
+                      <input
+                        type='radio'
+                        name='categoryFilter'
+                        value={category._id}
+                        checked={selectedCategoryId === category._id}
+                        onChange={(e) => setSelectedCategoryId(e.target.value)}
+                        className='sr-only'
+                      />
+                      <span className='text-xs font-medium'>
+                        {category.name}
+                      </span>
+                    </label>
+                  ))}
                 </div>
-              </div>
-              <motion.button
-                className='w-full rounded-lg px-4 py-2 text-xs font-medium transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none sm:w-auto sm:px-6 sm:py-3 sm:text-sm'
-                style={{
-                  background: 'var(--primary)',
-                  color: 'var(--primary-foreground)',
-                }}
-                onClick={handleOpenCategoryModal}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className='hidden sm:inline'>+ Manage Categories</span>
-                <span className='sm:hidden'>+ Categories</span>
-              </motion.button>
-            </div>
-          )}
+
+                {/* Manage Categories Button */}
+                <motion.button
+                  className='rounded-lg px-3 py-1.5 text-xs font-medium transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none sm:px-4 sm:py-2 sm:text-sm'
+                  style={{
+                    background: 'var(--primary)',
+                    color: 'var(--primary-foreground)',
+                  }}
+                  onClick={handleOpenCategoryModal}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className='hidden sm:inline'>+ Manage Categories</span>
+                  <span className='sm:hidden'>+ Manage</span>
+                </motion.button>
+              </>
+            )}
+          </div>
 
           {/* Search and Action Controls */}
           <div className='relative'>
