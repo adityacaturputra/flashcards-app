@@ -77,40 +77,81 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
   };
 
   return (
-    <div className='relative mb-8 flex h-full flex-col justify-between'>
+    <div 
+      className={`relative mb-8 flex h-full flex-col justify-between rounded-xl p-6 shadow-lg backdrop-blur-sm ${styles.cardContainer} ${styles.glassMorphism}`}
+      style={{
+        background: 'var(--card)',
+        border: '1px solid var(--border)',
+      }}
+    >
       <div>
-        <div className=''>
-          <div className='flex items-center'>
-            <h2 className='text-xl font-bold'>Add New Flashcard</h2>
-            <div>
-              {flashCards.length > 0 && (
-                <span className='ml-2 text-sm text-gray-600'>
-                  ({selectedFlashcards.length} / {flashCards.length} selected)
-                </span>
-              )}
-            </div>
+        <div className='mb-6'>
+          <div className='flex items-center justify-between mb-4'>
+            <h2 
+              className='text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'
+            >
+              Add New Flashcard
+            </h2>
+            {flashCards.length > 0 && (
+              <div 
+                className='px-3 py-1 rounded-full text-sm font-medium'
+                style={{
+                  background: 'var(--accent)',
+                  color: 'var(--accent-foreground)',
+                }}
+              >
+                {selectedFlashcards.length} / {flashCards.length} selected
+              </div>
+            )}
           </div>
           {/* Upload Input */}
-          <div className='mt-4 mb-4 flex items-center justify-between'>
-            <div className='flex items-center justify-center gap-2 border p-2'>
-              <CiImport />
-              <input type='file' accept='.xml' onChange={handleFileUpload} />
+          <div className='flex items-center justify-between gap-4'>
+            <div 
+              className='flex items-center gap-3 px-4 py-3 rounded-lg border-2 border-dashed transition-colors hover:border-blue-400'
+              style={{
+                background: 'var(--input)',
+                borderColor: 'var(--border)',
+              }}
+            >
+              <CiImport className='text-xl' style={{ color: 'var(--muted-foreground)' }} />
+              <input 
+                type='file' 
+                accept='.xml' 
+                onChange={handleFileUpload}
+                className='text-sm'
+                style={{ color: 'var(--foreground)' }}
+              />
             </div>
             {/* Export saved flashcards button */}
-            <Button onClick={handleDownloadXml}>
-              <CiExport />
+            <Button 
+              onClick={handleDownloadXml}
+              className={`px-4 py-3 rounded-lg transition-all hover:scale-105 ${styles.modernButton} ${styles.floatingElement}`}
+            >
+              <CiExport className='text-xl' />
             </Button>
           </div>
         </div>
         {/* Accordion Header */}
         <div
-          className='mt-4 flex cursor-pointer items-center justify-between rounded bg-gray-200 p-3 hover:bg-gray-300'
+          className={`mt-6 flex cursor-pointer items-center justify-between rounded-lg p-4 transition-all hover:shadow-md ${styles.modernButton}`}
+          style={{
+            background: 'var(--muted)',
+            border: '1px solid var(--border)',
+          }}
           onClick={() => setIsAccordionOpen(!isAccordionOpen)}
         >
-          <span>Manual Add Form</span>
-          <Button
-            className={`${styles.toggleButton} ${isAccordionOpen ? styles.open : ''}`}
+          <span 
+            className={`font-semibold text-lg ${styles.gradientText}`}
+          >
+            Manual Add Form
+          </span>
+          <button
+            className={`${styles.toggleButton} ${isAccordionOpen ? styles.open : ''} p-2 rounded-full transition-all hover:scale-110 flex items-center justify-center`}
             onClick={() => setIsAccordionOpen(!isAccordionOpen)}
+            style={{
+              background: 'var(--primary)',
+              color: 'var(--primary-foreground)',
+            }}
           >
             <svg
               className='h-5 w-5'
@@ -126,7 +167,7 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                 d='M19 9l-7 7-7-7'
               />
             </svg>
-          </Button>
+          </button>
         </div>
         {/* Accordion Content */}
         {isAccordionOpen && (
@@ -136,64 +177,130 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
             variants={variants}
             className='mt-4'
           >
-            <div className='absolute max-h-[80vh] w-full overflow-scroll bg-white pb-8'>
-              <InputField
-                placeholder={'Enter Question'}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setQuestion(e.target.value)
-                }
-                className={'mb-4 w-full'}
-                value={question}
-              />
-              <InputField
-                placeholder={'Enter Answer'}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setAnswer(e.target.value)
-                }
-                className={'mb-4 w-full'}
-                value={answer}
-              />
-              <div className='mt-4'>
-                {fieldKeys.map((key, index) => (
-                  <div key={index} className='mb-4 flex w-full items-center'>
-                    <InputField
-                      placeholder={`Enter Field ${key}`}
-                      onChange={handleFieldChange(key)}
-                      className='mr-4 w-full'
-                      value={dynamicFields[key] || ''}
-                    />
-                    <Button
-                      onClick={() => deleteDynamicField(key)}
-                      className='bg-red-500 text-white hover:bg-red-600 focus:outline-none'
+            <div 
+              className={`absolute max-h-[80vh] w-full overflow-scroll pb-8 rounded-lg ${styles.slideIn}`}
+              style={{
+                background: 'var(--card)',
+                border: '1px solid var(--border)',
+              }}
+            >
+              <div className='p-6 space-y-6'>
+                <div className='space-y-4'>
+                  <div>
+                    <label 
+                      className='block text-sm font-medium mb-2'
+                      style={{ color: 'var(--foreground)' }}
                     >
-                      <FaTrashAlt />
-                    </Button>
+                      Question
+                    </label>
+                    <InputField
+                      placeholder={'Enter your question here...'}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setQuestion(e.target.value)
+                      }
+                      className={`w-full rounded-lg border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus}`}
+                      value={question}
+                    />
                   </div>
-                ))}
-              </div>
-              <div className='mt-1 flex items-center'>
-                <Button onClick={addDynamicField} className='mr-1'>
-                  Add Custom Field
-                </Button>
-                <Button
-                  onClick={() => {
-                    handleAddFlashcardToList();
-                    setIsAccordionOpen(false);
-                  }}
-                >
-                  Add Flashcard
-                </Button>
+                  <div>
+                    <label 
+                      className='block text-sm font-medium mb-2'
+                      style={{ color: 'var(--foreground)' }}
+                    >
+                      Answer
+                    </label>
+                    <InputField
+                      placeholder={'Enter the answer here...'}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setAnswer(e.target.value)
+                      }
+                      className={`w-full rounded-lg border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus}`}
+                      value={answer}
+                    />
+                  </div>
+                </div>
+                <div className='space-y-4'>
+                  <h3 
+                    className='text-lg font-semibold'
+                    style={{ color: 'var(--foreground)' }}
+                  >
+                    Custom Fields
+                  </h3>
+                  {fieldKeys.map((key, index) => (
+                    <div key={index} className='flex items-end gap-3'>
+                      <div className='flex-1'>
+                        <label 
+                          className='block text-sm font-medium mb-2'
+                          style={{ color: 'var(--foreground)' }}
+                        >
+                          {key}
+                        </label>
+                        <InputField
+                          placeholder={`Enter ${key}...`}
+                          onChange={handleFieldChange(key)}
+                          className={`w-full rounded-lg border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus}`}
+                          value={dynamicFields[key] || ''}
+                        />
+                      </div>
+                      <button
+                        onClick={() => deleteDynamicField(key)}
+                        className='p-3 rounded-lg transition-all hover:scale-105'
+                        style={{
+                          background: 'var(--destructive)',
+                          color: 'var(--destructive-foreground)',
+                        }}
+                      >
+                        <FaTrashAlt />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <div className='flex gap-3 pt-4'>
+                  <Button 
+                    onClick={addDynamicField} 
+                    className={`flex-1 py-3 rounded-lg transition-all hover:scale-105 ${styles.modernButton}`}
+                  >
+                    Add Custom Field
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      handleAddFlashcardToList();
+                      setIsAccordionOpen(false);
+                    }}
+                    className={`flex-1 py-3 rounded-lg transition-all hover:scale-105 ${styles.modernButton}`}
+                  >
+                    Add Flashcard
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>
         )}
         {/* Category Selection */}
-        <div className='mt-2'>
-          <h3 className='mb-2'>Select Categories</h3>
-          <div className='flex gap-2'>
-            {loadingCategories && <FiLoader />}
+        <div className='mt-6'>
+          <h3 
+            className='text-lg font-semibold mb-4'
+            style={{ color: 'var(--foreground)' }}
+          >
+            Select Categories
+          </h3>
+          <div className='flex flex-wrap gap-3'>
+            {loadingCategories && (
+              <div className={`flex items-center gap-2 ${styles.pulseAnimation}`}>
+                <FiLoader className='animate-spin' />
+                <span style={{ color: 'var(--muted-foreground)' }}>Loading categories...</span>
+              </div>
+            )}
             {categories.map((category) => (
-              <div key={category._id} className='mb-1 flex items-center'>
+              <label 
+                key={category._id} 
+                className='flex items-center gap-2 px-4 py-2 rounded-lg border cursor-pointer transition-all hover:shadow-md'
+                style={{
+                  background: selectedCategories.includes(category._id!) ? 'var(--primary)' : 'var(--muted)',
+                  borderColor: 'var(--border)',
+                  color: selectedCategories.includes(category._id!) ? 'var(--primary-foreground)' : 'var(--foreground)',
+                }}
+              >
                 <input
                   type='checkbox'
                   id={category._id}
@@ -202,112 +309,172 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                   onChange={(e) =>
                     handleCategoryChange(category._id!, e.target.checked)
                   }
-                  className='mr-2'
+                  className='sr-only'
                 />
-                <label htmlFor={category._id}>{category.name}</label>
-              </div>
+                <span className='font-medium'>{category.name}</span>
+              </label>
             ))}
           </div>
         </div>
         {flashCards.length > 0 && (
-          <>
-            <div className='h-[60vh] overflow-scroll'>
-              <div className=''>
-                <div className='mt-4 space-y-4'>
-                  {flashCards.map((flashcard) => (
-                    <div
-                      key={flashcard.key}
-                      className='flex items-center rounded bg-gray-100 p-4 shadow-sm'
-                    >
-                      <label className='flex flex-grow items-center'>
-                        <input
-                          type='checkbox'
-                          checked={selectedFlashcards.includes(flashcard.key!)}
-                          onChange={() =>
-                            handleToggleFlashcardSelection(flashcard.key!)
-                          }
-                          className='mr-2'
-                        />
-                        <div className='flex-grow'>
-                          <p className='font-semibold'>
-                            Question: {flashcard.question}
-                          </p>
-                          <p>Answer: {flashcard.answer}</p>
-                          {flashcard.dynamicFields && (
-                            <div>
-                              {Object.entries(flashcard.dynamicFields).map(
-                                ([key, value]) => (
-                                  <p key={key}>
-                                    {key}: {value}
-                                  </p>
-                                ),
-                              )}
-                            </div>
+          <div className='mt-6'>
+            <h3 
+              className='text-lg font-semibold mb-4'
+              style={{ color: 'var(--foreground)' }}
+            >
+              Generated Flashcards
+            </h3>
+            <div className={`h-[60vh] overflow-scroll space-y-4 pr-2 ${styles.slideIn}`}>
+              {flashCards.map((flashcard) => (
+                <div
+                  key={flashcard.key}
+                  className={`rounded-lg border p-4 transition-all hover:shadow-md hover:scale-[1.02] ${styles.floatingElement}`}
+                  style={{
+                    background: selectedFlashcards.includes(flashcard.key!) ? 'var(--accent)' : 'var(--card)',
+                    borderColor: selectedFlashcards.includes(flashcard.key!) ? 'var(--primary)' : 'var(--border)',
+                  }}
+                >
+                  <label className='flex items-start gap-4 cursor-pointer'>
+                    <input
+                      type='checkbox'
+                      checked={selectedFlashcards.includes(flashcard.key!)}
+                      onChange={() =>
+                        handleToggleFlashcardSelection(flashcard.key!)
+                      }
+                      className='mt-1 w-4 h-4 rounded border-2 transition-colors'
+                      style={{
+                        accentColor: 'var(--primary)',
+                      }}
+                    />
+                    <div className='flex-grow space-y-2'>
+                      <div>
+                        <span 
+                          className='text-sm font-medium'
+                          style={{ color: 'var(--muted-foreground)' }}
+                        >
+                          Question:
+                        </span>
+                        <p 
+                          className='font-semibold mt-1'
+                          style={{ color: 'var(--foreground)' }}
+                        >
+                          {flashcard.question}
+                        </p>
+                      </div>
+                      <div>
+                        <span 
+                          className='text-sm font-medium'
+                          style={{ color: 'var(--muted-foreground)' }}
+                        >
+                          Answer:
+                        </span>
+                        <p 
+                          className='mt-1'
+                          style={{ color: 'var(--foreground)' }}
+                        >
+                          {flashcard.answer}
+                        </p>
+                      </div>
+                      {flashcard.dynamicFields && (
+                        <div className='space-y-1'>
+                          {Object.entries(flashcard.dynamicFields).map(
+                            ([key, value]) => (
+                              <div key={key}>
+                                <span 
+                                  className='text-sm font-medium'
+                                  style={{ color: 'var(--muted-foreground)' }}
+                                >
+                                  {key}:
+                                </span>
+                                <p 
+                                  className='mt-1'
+                                  style={{ color: 'var(--foreground)' }}
+                                >
+                                  {value}
+                                </p>
+                              </div>
+                            ),
                           )}
                         </div>
-                      </label>
-                      <Button
-                        onClick={() =>
-                          handleToggleFlashcardSelection(flashcard.key!)
-                        }
-                        className={
-                          selectedFlashcards.includes(flashcard.key!)
-                            ? 'bg-green-500 text-white hover:bg-green-600'
-                            : 'bg-blue-500 text-white hover:bg-blue-600'
-                        }
-                      >
-                        {selectedFlashcards.includes(flashcard.key!)
-                          ? 'Selected'
-                          : 'Select'}
-                      </Button>
+                      )}
                     </div>
-                  ))}
+                  </label>
                 </div>
-              </div>
+              ))}
             </div>
-          </>
+          </div>
         )}
-        <div className='absolute bottom-0 w-full'>
+        <div 
+          className='absolute bottom-0 w-full p-6 rounded-b-xl'
+          style={{
+            background: 'var(--card)',
+            borderTop: '1px solid var(--border)',
+          }}
+        >
           {/* Display Error Message */}
-          {error && <div className='mt-4 text-red-500'>{error}</div>}
-
-          <InputField
-            placeholder={'Enter Prompt'}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setPrompt(e.target.value)
-            }
-            className={'mb-4 w-full'}
-            value={prompt}
-          />
-          <div className='mb-4 flex items-center justify-between gap-2'>
-            <div className='flex items-center justify-between gap-2'>
-              <Button
-                onClick={() => handleGenerateFlashcards(prompt)}
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <>
-                    <LuLoaderPinwheel className='animate-spin' />
-                    Creating magics...
-                  </>
-                ) : (
-                  <>
-                    <LuLoaderPinwheel />
-                    Generate by Magic
-                  </>
-                )}
-              </Button>
-              {!isLoading && <OcrUpload onHandle={onHandleOctUpload} />}
+          {error && (
+            <div 
+              className='mb-4 p-3 rounded-lg border'
+              style={{
+                background: 'var(--destructive)',
+                color: 'var(--destructive-foreground)',
+                borderColor: 'var(--destructive)',
+              }}
+            >
+              {error}
             </div>
+          )}
 
-            {flashCards.length > 0 && (
-              <Button
-                onClick={handleSaveSelectedFlashcards}
-                disabled={selectedFlashcards.length === 0}
+          <div className='space-y-4'>
+            <div>
+              <label 
+                className='block text-sm font-medium mb-2'
+                style={{ color: 'var(--foreground)' }}
               >
-                Save
-              </Button>
-            )}
+                AI Prompt
+              </label>
+              <InputField
+                placeholder={'Describe what you want to learn about...'}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setPrompt(e.target.value)
+                }
+                className={`w-full rounded-lg border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus}`}
+                value={prompt}
+              />
+            </div>
+            
+            <div className='flex items-center justify-between gap-4'>
+              <div className='flex items-center gap-3'>
+                <Button
+                  onClick={() => handleGenerateFlashcards(prompt)}
+                  disabled={isLoading}
+                  className={`px-6 py-3 rounded-lg transition-all hover:scale-105 disabled:opacity-50 ${styles.modernButton}`}
+                >
+                  {isLoading ? (
+                    <>
+                      <LuLoaderPinwheel className={`animate-spin mr-2 ${styles.pulseAnimation}`} />
+                      Creating magics...
+                    </>
+                  ) : (
+                    <>
+                      <LuLoaderPinwheel className='mr-2' />
+                      Generate by Magic
+                    </>
+                  )}
+                </Button>
+                {!isLoading && <OcrUpload onHandle={onHandleOctUpload} />}
+              </div>
+
+              {flashCards.length > 0 && (
+                <Button
+                  onClick={handleSaveSelectedFlashcards}
+                  disabled={selectedFlashcards.length === 0}
+                  className={`px-6 py-3 rounded-lg transition-all hover:scale-105 disabled:opacity-50 ${styles.modernButton}`}
+                >
+                  Save Selected ({selectedFlashcards.length})
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </div>

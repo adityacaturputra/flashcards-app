@@ -15,7 +15,7 @@ import {
   HiXCircle,
 } from 'react-icons/hi'; // Import the empty state icon and refresh icon
 import { useAppContext } from '@/context/appContext';
-import Select from '../atoms/Select';
+
 import { FiLoader } from 'react-icons/fi';
 
 type FlashcardListProps = {
@@ -109,93 +109,133 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
   }, [searchQuery, setCurrentPage]);
 
   return (
-    <div className={`space-y-4`}>
-      {/* Search Bar and Refetch Icon */}
+    <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
+      {/* Controls Section */}
       {!isReviewMode && (
-        <>
-          {/* Category Filter */}
-          {loadingCategories && !isReviewMode && (
-            <div className='flex items-center justify-center'>
-              <FiLoader />
+        <div className='mb-8 space-y-6'>
+          {/* Category Filter and Management */}
+          {loadingCategories ? (
+            <div className='flex items-center justify-center py-4'>
+              <FiLoader
+                className='h-6 w-6 animate-spin'
+                style={{ color: 'var(--primary)' }}
+              />
             </div>
-          )}
-          {!isReviewMode && (
-            <div className='mt-4 flex items-center'>
-              <div className='flex-grow'>
-                <Select
-                  label='Filter by Category'
-                  options={[
-                    { _id: '', name: 'All Categories' },
-                    ...categories,
-                  ].map((cat) => ({
-                    value: cat._id!,
-                    label: cat.name,
-                  }))}
-                  value={selectedCategoryId}
-                  onChange={(e) => setSelectedCategoryId(e.target.value)}
-                  className='w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none'
-                />
+          ) : (
+            <div className='flex flex-col items-start gap-4 sm:flex-row sm:items-end'>
+              <div className='min-w-0 flex-1'>
+                <div className='w-full'>
+                  <label
+                    className='mb-2 block text-sm font-medium'
+                    style={{ color: 'var(--foreground)' }}
+                  >
+                    Filter by Category
+                  </label>
+                  <select
+                    value={selectedCategoryId}
+                    onChange={(e) => setSelectedCategoryId(e.target.value)}
+                    className='w-full rounded-lg border px-4 py-3 text-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none'
+                    style={{
+                      background: 'var(--input)',
+                      borderColor: 'var(--border)',
+                      color: 'var(--foreground)',
+                    }}
+                  >
+                    <option value=''>All Categories</option>
+                    {categories.map((cat) => (
+                      <option key={cat._id} value={cat._id!}>
+                        {cat.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
               <motion.button
-                className='mt-6 ml-2 rounded-full bg-green-500 px-4 py-2 text-white shadow-lg hover:bg-green-600 focus:outline-none'
+                className='rounded-lg px-6 py-3 text-sm font-medium transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none'
+                style={{
+                  background: 'var(--primary)',
+                  color: 'var(--primary-foreground)',
+                }}
                 onClick={handleOpenCategoryModal}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 + Manage Categories
               </motion.button>
             </div>
           )}
-          <div className='relative mb-4'>
-            <div className='flex items-center gap-2'>
-              <input
-                type='text'
-                placeholder='Search by question or answer'
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className={`w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none`}
-              />
-              {searchQuery && (
+
+          {/* Search and Action Controls */}
+          <div className='relative'>
+            <div className='flex flex-col gap-3 sm:flex-row'>
+              <div className='relative flex-1'>
+                <input
+                  type='text'
+                  placeholder='Search by question or answer...'
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className='w-full rounded-lg border px-4 py-3 pr-12 text-sm transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none'
+                  style={{
+                    background: 'var(--input)',
+                    borderColor: 'var(--border)',
+                    color: 'var(--foreground)',
+                  }}
+                />
+                {searchQuery && (
+                  <motion.button
+                    className='hover:bg-opacity-10 absolute top-1/2 right-3 -translate-y-1/2 rounded-md p-1 transition-colors'
+                    onClick={() => setSearchQuery('')}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <HiXCircle
+                      className='h-5 w-5'
+                      style={{ color: 'var(--muted-foreground)' }}
+                    />
+                  </motion.button>
+                )}
+              </div>
+
+              <div className='flex gap-2'>
                 <motion.button
-                  className='transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
-                  onClick={() => setSearchQuery('')}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0 }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  whileTap={{ scale: 0.9 }}
+                  className='rounded-lg p-3 transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none'
+                  style={{
+                    background: showQuestionAsAnswer
+                      ? 'var(--primary)'
+                      : 'var(--secondary)',
+                    color: showQuestionAsAnswer
+                      ? 'var(--primary-foreground)'
+                      : 'var(--secondary-foreground)',
+                  }}
+                  onClick={() => setShowQuestionAsAnswer(!showQuestionAsAnswer)}
+                  title='Toggle Question/Answer'
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <HiXCircle className='text-xl' />
+                  <HiSwitchHorizontal className='h-5 w-5' />
                 </motion.button>
-              )}
+
+                <motion.button
+                  className='rounded-lg p-3 transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none'
+                  style={{
+                    background: 'var(--secondary)',
+                    color: 'var(--secondary-foreground)',
+                  }}
+                  onClick={handleRefetchFlashCards}
+                  title='Refresh Flashcards'
+                  whileHover={{ scale: 1.05, rotate: 180 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <HiRefresh className='h-5 w-5' />
+                </motion.button>
+              </div>
             </div>
-            <motion.button
-              className='absolute -top-24 right-9 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
-              onClick={() => setShowQuestionAsAnswer(!showQuestionAsAnswer)}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <HiSwitchHorizontal className='text-xl' />
-            </motion.button>
-            <motion.button
-              className='absolute -top-24 -right-3 -translate-y-1/2 transform rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none'
-              onClick={handleRefetchFlashCards}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <HiRefresh className='text-xl' />
-            </motion.button>
           </div>
-        </>
+        </div>
       )}
 
       {/* Flashcard List */}
@@ -229,7 +269,25 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                       ? flashcard.question
                       : flashcard.answer,
                   }}
-                  onUpdate={onUpdate}
+                  onUpdate={(id: string, updates: Partial<Flashcard>) => {
+                    console.log({ updates });
+                    // If the card is reversed, we need to swap the question/answer back
+                    if (
+                      showQuestionAsAnswer &&
+                      (updates.question || updates.answer)
+                    ) {
+                      const correctedUpdates = { ...updates };
+                      if (updates.question) {
+                        correctedUpdates.answer = updates.question;
+                      }
+                      if (updates.answer) {
+                        correctedUpdates.question = updates.answer;
+                      }
+                      onUpdate(id, correctedUpdates);
+                    } else {
+                      onUpdate(id, updates);
+                    }
+                  }}
                   onDelete={onDelete}
                   categories={categories}
                 />

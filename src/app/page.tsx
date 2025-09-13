@@ -51,51 +51,87 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <div className='relative h-screen p-10'>
-        <h1 className='mb-6 text-3xl font-bold'>Flashcard App</h1>
+      {/* Modern Header */}
+      <header 
+        className='sticky top-0 z-50 backdrop-blur-glass border-b'
+        style={{
+          borderColor: 'var(--border)',
+        }}
+      >
+        <div className='max-w-7xl mx-auto px-6 py-4'>
+          <div className='flex items-center justify-between'>
+            <div className='flex items-center gap-4'>
+              <h1 
+                className='text-3xl font-bold gradient-text-accent'
+              >
+                Flashcard App
+              </h1>
+              <div 
+                className='px-3 py-1 rounded-full text-sm font-medium'
+                style={{
+                  background: 'var(--accent)',
+                  color: 'var(--accent-foreground)',
+                }}
+              >
+                {flashcards.length} cards
+              </div>
+            </div>
+            
+            <div className='flex items-center gap-3'>
+              <motion.button
+                className='px-4 py-2 rounded-lg font-medium transition-all hover:scale-105'
+                style={{
+                  background: isReviewMode ? 'var(--destructive)' : 'var(--secondary)',
+                  color: isReviewMode ? 'var(--destructive-foreground)' : 'var(--secondary-foreground)',
+                }}
+                onClick={() => setIsReviewMode((prev) => !prev)}
+                whileTap={{ scale: 0.95 }}
+              >
+                {isReviewMode ? 'Exit Review' : 'Review Mode'}
+              </motion.button>
+              
+              {!isReviewMode && (
+                <motion.button
+                  className='px-4 py-2 rounded-lg font-medium transition-all hover:scale-105'
+                  style={{
+                    background: 'var(--primary)',
+                    color: 'var(--primary-foreground)',
+                  }}
+                  onClick={() => setIsModalOpen(true)}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  + Add Flashcard
+                </motion.button>
+              )}
+            </div>
+          </div>
+        </div>
+      </header>
 
-        {/* Render Skeleton Loader or Flashcard List based on loading state */}
-        {loading ? (
-          <SkeletonLoader count={5} />
-        ) : (
-          <FlashcardList
-            flashcards={flashcards}
-            onUpdate={updateFlashcard}
-            onDelete={deleteFlashcard}
-            selectedProgression={selectedProgression}
-            isReviewMode={isReviewMode}
-            handleOpenCategoryModal={handleOpenCategoryModal}
-          />
-        )}
-        <div className='h-[120px]' />
-
-        <motion.button
-          className='fixed bottom-20 left-5 z-10 rounded-full bg-blue-500 px-4 py-2 text-white shadow-lg hover:bg-blue-600 focus:outline-none'
-          onClick={() => setIsReviewMode((prev) => !prev)}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          whileTap={{ scale: 0.9 }}
-        >
-          {isReviewMode ? 'Exit Review Mode' : 'Enter Review Mode'}
-        </motion.button>
-
-        {/* Floating Button to Open Flashcard Modal */}
-        {!isReviewMode && (
-          <motion.button
-            className='fixed right-5 bottom-20 z-10 rounded-full bg-blue-500 px-4 py-2 text-white shadow-lg hover:bg-blue-600 focus:outline-none'
-            onClick={() => setIsModalOpen(true)}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            whileTap={{ scale: 0.9 }}
-          >
-            + Add Flashcard
-          </motion.button>
-        )}
-      </div>
+      {/* Main Content */}
+      <main 
+        className='min-h-screen'
+        style={{
+          background: 'var(--background)',
+        }}
+      >
+        <div className='max-w-7xl mx-auto px-6 py-8 fade-in-up'>
+          {/* Render Skeleton Loader or Flashcard List based on loading state */}
+          {loading ? (
+            <SkeletonLoader count={5} />
+          ) : (
+            <FlashcardList
+              flashcards={flashcards}
+              onUpdate={updateFlashcard}
+              onDelete={deleteFlashcard}
+              selectedProgression={selectedProgression}
+              isReviewMode={isReviewMode}
+              handleOpenCategoryModal={handleOpenCategoryModal}
+            />
+          )}
+          <div className='h-[120px]' />
+        </div>
+      </main>
 
       {/* Modal for Flashcard Form */}
       {isModalOpen && (
@@ -118,33 +154,56 @@ const Home: React.FC = () => {
         </Modal>
       )}
 
-      {/* Tabs for Progression Filtering */}
+      {/* Modern Progression Filter Tabs */}
       {!isReviewMode && (
-        <div className='bg-opacity-90 fixed right-0 bottom-0 left-0 z-10 flex items-center overflow-x-auto bg-white whitespace-nowrap'>
-          <div className='flex space-x-4 p-4'>
-            {Object.values(Progression).map((progression) => (
-              <button
-                key={progression}
-                className={`rounded px-4 py-2 ${
-                  selectedProgression === progression
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
-                }`}
-                onClick={() => handleFilterChange(progression)}
+        <div 
+          className='fixed bottom-0 left-0 right-0 z-40 backdrop-blur-glass border-t card-shadow'
+          style={{
+            borderColor: 'var(--border)',
+          }}
+        >
+          <div className='max-w-7xl mx-auto px-6 py-4'>
+            <div className='flex items-center gap-2 overflow-x-auto'>
+              <span 
+                className='text-sm font-medium mr-3 whitespace-nowrap'
+                style={{ color: 'var(--muted-foreground)' }}
               >
-                {progression.charAt(0).toUpperCase() + progression.slice(1)}
-              </button>
-            ))}
-            <button
-              className={`rounded px-4 py-2 ${
-                selectedProgression === null
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
-              }`}
-              onClick={() => handleFilterChange(null)}
-            >
-              All
-            </button>
+                Filter by progress:
+              </span>
+              {Object.values(Progression).map((progression) => (
+                <motion.button
+                  key={progression}
+                  className='px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap hover:scale-105'
+                  style={{
+                    background: selectedProgression === progression 
+                      ? 'var(--primary)' 
+                      : 'var(--secondary)',
+                    color: selectedProgression === progression 
+                      ? 'var(--primary-foreground)' 
+                      : 'var(--secondary-foreground)',
+                  }}
+                  onClick={() => handleFilterChange(progression)}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {progression.charAt(0).toUpperCase() + progression.slice(1)}
+                </motion.button>
+              ))}
+              <motion.button
+                className='px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap hover:scale-105'
+                style={{
+                  background: selectedProgression === null 
+                    ? 'var(--primary)' 
+                    : 'var(--secondary)',
+                  color: selectedProgression === null 
+                    ? 'var(--primary-foreground)' 
+                    : 'var(--secondary-foreground)',
+                }}
+                onClick={() => handleFilterChange(null)}
+                whileTap={{ scale: 0.95 }}
+              >
+                All
+              </motion.button>
+            </div>
           </div>
         </div>
       )}
