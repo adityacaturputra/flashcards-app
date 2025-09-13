@@ -137,7 +137,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
                     openGoogleSearchInNewTab(
                       'apa itu ' +
                         flashcard.question +
-                        ' dan artinya serta berikan contohnya',
+                        ' dan artinya serta berikan contohnya dalam percakapan bahasa inggris',
                       // +
                       //   ' ' +
                       //   flashcard.answer,
@@ -173,7 +173,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
                       openGoogleSearchInNewTab(
                         'apa itu ' +
                           flashcard.answer +
-                          ' dan artinya serta berikan contohnya',
+                          ' dan artinya serta berikan contohnya dalam percakapan bahasa inggris',
                       )
                     }
                   >
