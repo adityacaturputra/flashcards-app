@@ -101,10 +101,10 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
     setCurrentPage, // Add setCurrentPage to control the page manually
   } = usePagination<Flashcard>({ items: sortedFlashcards, pageSize });
 
-  // Effect to reset page to 1 when search query changes
+  // Effect to reset page to 1 when search query, category filter, or progression filter changes
   useEffect(() => {
     setCurrentPage(0);
-  }, [searchQuery, setCurrentPage]);
+  }, [searchQuery, selectedCategoryId, selectedProgression, setCurrentPage]);
 
   return (
     <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
