@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Button from '../atoms/Button';
 import { useFlashcardCategories } from '@/hooks/useFlashcardCategories';
-import Select from '../atoms/Select';
 import { LuLoader, LuPlus, LuPencil, LuTrash2 } from 'react-icons/lu';
 import { motion } from 'framer-motion';
 import InputField from '../atoms/InputField';
@@ -39,36 +38,6 @@ const CategoryForm: React.FC<CategoryFormProps> = ({
     }
     onSave();
     onClose();
-  };
-
-  const handleCategorySelect = (
-    event: React.ChangeEvent<HTMLSelectElement>,
-  ) => {
-    const { value } = event.target;
-    if (value === '') {
-      setName('');
-      setDescription('');
-      setSelectedCategoryId('');
-    } else {
-      const selectedCategory = categories.find((cat) => cat._id === value);
-      if (selectedCategory) {
-        setName(selectedCategory.name);
-        setDescription(selectedCategory.description || '');
-        setSelectedCategoryId(selectedCategory._id!);
-      }
-    }
-  };
-
-  const handleDeleteCategory = async () => {
-    if (selectedCategoryId) {
-      await deleteCategory(selectedCategoryId);
-      setName('');
-      setDescription('');
-      setSelectedCategoryId('');
-      onSelectCategory?.('');
-      onSave();
-      onClose();
-    }
   };
 
   return (

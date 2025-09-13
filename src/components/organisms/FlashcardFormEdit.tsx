@@ -1,7 +1,6 @@
 // components/organisms/FlashcardFormEdit.tsx
 import {
   FaPlusCircle,
-  FaMinusCircle,
   FaArrowDown,
   FaArrowUp,
   FaTrashAlt,
