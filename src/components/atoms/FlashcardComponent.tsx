@@ -21,7 +21,15 @@ import { FaTrashAlt } from 'react-icons/fa';
 dayjs.extend(relativeTime);
 
 const FlashcardComponent: React.FC<FlashcardProps> = memo(
-  ({ flashcard, onUpdate, onDelete, className = '' }) => {
+  ({
+    flashcard,
+    onUpdate,
+    onDelete,
+    className = '',
+    isBulkMode = false,
+    isSelected = false,
+    onToggleSelection,
+  }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [isAnswerHidden, setIsAnswerHidden] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -159,6 +167,16 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
             {/* Header with time and actions */}
             <div className='flex items-center justify-between p-4 pb-2'>
               <div className='flex items-center gap-2'>
+                {/* Bulk Selection Checkbox */}
+                {isBulkMode && (
+                  <input
+                    type='checkbox'
+                    checked={isSelected}
+                    onChange={() => onToggleSelection?.(flashcard._id || '')}
+                    className='h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500'
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                )}
                 <button
                   className='rounded-full px-2 py-1 text-xs font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                   onClick={(e) => {
@@ -425,6 +443,10 @@ type FlashcardProps = {
   onDelete: (id: string) => Promise<void>;
   className?: string;
   categories?: FlashcardCategory[];
+  // Bulk selection props
+  isBulkMode?: boolean;
+  isSelected?: boolean;
+  onToggleSelection?: (id: string) => void;
 };
 
 FlashcardComponent.displayName = 'FlashcardComponent';
