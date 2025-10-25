@@ -15,8 +15,9 @@ import {
   HiXCircle,
 } from 'react-icons/hi'; // Import the empty state icon and refresh icon
 import { useAppContext } from '@/context/appContext';
-
+import { useSearchTemplateContext } from '@/context/searchTemplateContext';
 import { FiLoader } from 'react-icons/fi';
+import { FaGoogle } from 'react-icons/fa';
 
 type FlashcardListProps = {
   flashcards: Flashcard[];
@@ -37,6 +38,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
 }) => {
   const { handleRefetchFlashCards, categories, loadingCategories } =
     useAppContext();
+  const { openModal } = useSearchTemplateContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [showQuestionAsAnswer, setShowQuestionAsAnswer] = useState(false); // New state to track toggle
   const pageSize = isReviewMode ? 1 : 10; // Set page size based on mode
@@ -207,36 +209,51 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
           {/* Search and Action Controls */}
           <div className='relative'>
             <div className='flex flex-col gap-3 sm:flex-row'>
-              <div className='relative flex-1'>
-                <input
-                  type='text'
-                  placeholder='Search flashcards...'
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className='w-full rounded-lg border-2 px-4 py-3 pr-10 text-base transition-colors focus:border-blue-500 focus:outline-none'
-                  style={{
-                    background: 'var(--input)',
-                    borderColor: 'var(--border)',
-                    color: 'var(--foreground)',
-                  }}
-                />
-                {searchQuery && (
-                  <motion.button
-                    className='hover:bg-opacity-10 absolute top-1/2 right-3 -translate-y-1/2 rounded-md p-1 transition-colors'
-                    onClick={() => setSearchQuery('')}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <HiXCircle
-                      className='h-5 w-5'
-                      style={{ color: 'var(--muted-foreground)' }}
-                    />
-                  </motion.button>
-                )}
+              <div className='flex flex-1 gap-2'>
+                <div className='relative flex-1'>
+                  <input
+                    type='text'
+                    placeholder='Search flashcards...'
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className='w-full rounded-lg border-2 px-4 py-3 pr-10 text-base transition-colors focus:border-blue-500 focus:outline-none'
+                    style={{
+                      background: 'var(--input)',
+                      borderColor: 'var(--border)',
+                      color: 'var(--foreground)',
+                    }}
+                  />
+                  {searchQuery && (
+                    <motion.button
+                      className='hover:bg-opacity-10 absolute top-1/2 right-3 -translate-y-1/2 rounded-md p-1 transition-colors'
+                      onClick={() => setSearchQuery('')}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <HiXCircle
+                        className='h-5 w-5'
+                        style={{ color: 'var(--muted-foreground)' }}
+                      />
+                    </motion.button>
+                  )}
+                </div>
               </div>
 
               <div className='flex gap-2'>
+                <motion.button
+                  className='rounded-lg p-3 transition-all hover:scale-105 hover:shadow-md'
+                  style={{
+                    background: 'var(--background)',
+                    color: '#4285f4', // Google Blue
+                    border: '1px solid var(--border)',
+                  }}
+                  onClick={openModal}
+                  whileTap={{ scale: 0.95 }}
+                  title='Search Template Settings'
+                >
+                  <FaGoogle className='h-5 w-5' />
+                </motion.button>
                 <motion.button
                   className='rounded-lg p-3 transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none'
                   style={{
