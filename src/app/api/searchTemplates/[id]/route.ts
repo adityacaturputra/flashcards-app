@@ -8,13 +8,14 @@ import {
 // GET /api/searchTemplates/[id] - Get a single search template
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
     const { searchParams } = new URL(request.url);
     const userId = searchParams.get('userId') || undefined;
+    const { id } = await params;
 
-    const template = await getSearchTemplateById(params.id, userId);
+    const template = await getSearchTemplateById(id, userId);
 
     if (!template) {
       return NextResponse.json(
@@ -48,11 +49,12 @@ export async function GET(
 // PUT /api/searchTemplates/[id] - Update a search template
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
     const body = await request.json();
     const { name, template, isDefault, userId } = body;
+    const { id } = await params;
 
     if (!name || !template) {
       return NextResponse.json(
@@ -76,7 +78,7 @@ export async function PUT(
     }
 
     const updatedTemplate = await updateSearchTemplate(
-      params.id,
+      id,
       { name, template, isDefault },
       userId,
     );
@@ -113,13 +115,14 @@ export async function PUT(
 // DELETE /api/searchTemplates/[id] - Delete a search template
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
     const { searchParams } = new URL(request.url);
     const userId = searchParams.get('userId') || undefined;
+    const { id } = await params;
 
-    const deleted = await deleteSearchTemplate(params.id, userId);
+    const deleted = await deleteSearchTemplate(id, userId);
 
     if (!deleted) {
       return NextResponse.json(

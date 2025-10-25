@@ -6,7 +6,6 @@ import { FaArrowLeft, FaPlus, FaTrash } from 'react-icons/fa6';
 import { FaEdit, FaCog, FaSync } from 'react-icons/fa';
 import { SearchTemplate } from '@/models/SearchTemplateModel';
 import useSearchTemplates from '@/hooks/useSearchTemplates';
-import styles from '@/components/molecules/FlashcardForm.module.css';
 
 const SearchTemplatesPage: React.FC = () => {
   const router = useRouter();
@@ -371,7 +370,8 @@ const SearchTemplatesPage: React.FC = () => {
                   className='mt-1 text-xs'
                   style={{ color: 'var(--muted-foreground)' }}
                 >
-                  Example: "What is {`{x}`}?" or "Explain {`{x}`} in detail"
+                  Example: &quot;What is {`{x}`}?&quot; or &quot;Explain {`{x}`}{' '}
+                  in detail&quot;
                 </p>
               </div>
             </div>

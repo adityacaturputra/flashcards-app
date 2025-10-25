@@ -1,35 +1,36 @@
 'use client';
-import React, { useState } from 'react';
-import FlashcardList from '@/components/organisms/FlashcardList';
+import React, { useState, memo, useCallback, lazy, Suspense } from 'react';
 import { useAppContext } from '@/context/appContext';
 import { useSearchTemplateContext } from '@/context/searchTemplateContext';
-import SearchTemplateModal from '@/components/organisms/SearchTemplateModal';
 import { Progression } from '@/types/flashcard';
 import { motion } from 'framer-motion';
 import SkeletonLoader from '@/components/atoms/SkeletonLoader';
 
-const Home: React.FC = () => {
+// Lazy load heavy components
+const FlashcardList = lazy(
+  () => import('@/components/organisms/FlashcardList'),
+);
+const SearchTemplateModal = lazy(
+  () => import('@/components/organisms/SearchTemplateModal'),
+);
+
+const Home: React.FC = memo(() => {
   const { flashcards, updateFlashcard, deleteFlashcard, loading } =
     useAppContext();
-  const {
-    isModalOpen,
-    closeModal,
-    selectedTemplate,
-    setSelectedTemplate,
-    openModal,
-  } = useSearchTemplateContext();
+  const { isModalOpen, closeModal, selectedTemplate, setSelectedTemplate } =
+    useSearchTemplateContext();
 
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [selectedProgression, setSelectedProgression] =
     useState<Progression | null>(null);
 
-  const handleFilterChange = (progression: Progression | null) => {
+  const handleFilterChange = useCallback((progression: Progression | null) => {
     setSelectedProgression(progression);
-  };
+  }, []);
 
-  const handleNavigateToCategoryPage = () => {
+  const handleNavigateToCategoryPage = useCallback(() => {
     window.location.href = '/add-category';
-  };
+  }, []);
 
   return (
     <>
@@ -72,12 +73,7 @@ const Home: React.FC = () => {
                 onClick={() => setIsReviewMode((prev) => !prev)}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className='hidden sm:inline'>
-                  {isReviewMode ? 'Exit Review' : 'Review Mode'}
-                </span>
-                <span className='sm:hidden'>
-                  {isReviewMode ? 'Exit' : 'Review'}
-                </span>
+                {isReviewMode ? 'Exit Review' : 'Review Mode'}
               </motion.button>
 
               {!isReviewMode && (
@@ -91,8 +87,7 @@ const Home: React.FC = () => {
                     onClick={() => (window.location.href = '/search-templates')}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className='hidden sm:inline'>Search Templates</span>
-                    <span className='sm:hidden'>Templates</span>
+                    Search Templates
                   </motion.button>
 
                   <motion.button
@@ -104,8 +99,7 @@ const Home: React.FC = () => {
                     onClick={() => (window.location.href = '/add-flashcard')}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className='hidden sm:inline'>+ Add Flashcard</span>
-                    <span className='sm:hidden'>+</span>
+                    + Add Flashcard
                   </motion.button>
                 </>
               )}
@@ -126,14 +120,16 @@ const Home: React.FC = () => {
           {loading ? (
             <SkeletonLoader count={5} />
           ) : (
-            <FlashcardList
-              flashcards={flashcards}
-              onUpdate={updateFlashcard}
-              onDelete={deleteFlashcard}
-              selectedProgression={selectedProgression}
-              isReviewMode={isReviewMode}
-              handleOpenCategoryModal={handleNavigateToCategoryPage}
-            />
+            <Suspense fallback={<SkeletonLoader count={5} />}>
+              <FlashcardList
+                flashcards={flashcards}
+                onUpdate={updateFlashcard}
+                onDelete={deleteFlashcard}
+                selectedProgression={selectedProgression}
+                isReviewMode={isReviewMode}
+                handleOpenCategoryModal={handleNavigateToCategoryPage}
+              />
+            </Suspense>
           )}
           <div className='h-[120px]' />
         </div>
@@ -213,14 +209,18 @@ const Home: React.FC = () => {
       )}
 
       {/* Search Template Modal */}
-      <SearchTemplateModal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        selectedTemplate={selectedTemplate}
-        onSelectTemplate={setSelectedTemplate}
-      />
+      <Suspense fallback={null}>
+        <SearchTemplateModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          selectedTemplate={selectedTemplate}
+          onSelectTemplate={setSelectedTemplate}
+        />
+      </Suspense>
     </>
   );
-};
+});
+
+Home.displayName = 'Home';
 
 export default Home;

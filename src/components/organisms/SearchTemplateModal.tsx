@@ -1,10 +1,9 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaTimes, FaPlus, FaTrash, FaSync } from 'react-icons/fa';
 import { SearchTemplate } from '@/models/SearchTemplateModel';
 import useSearchTemplates from '@/hooks/useSearchTemplates';
-import styles from '@/components/molecules/FlashcardForm.module.css';
 import { FaGears, FaPencil } from 'react-icons/fa6';
 
 interface SearchTemplateModalProps {
@@ -35,7 +34,7 @@ const SearchTemplateModal: React.FC<SearchTemplateModalProps> = ({
     name: '',
     template: '',
   });
-  const [forceUpdate, setForceUpdate] = useState(0);
+  const [forceUpdate] = useState(0);
 
   // Search template CRUD functions
   const addSearchTemplate = () => {
@@ -434,7 +433,8 @@ const SearchTemplateModal: React.FC<SearchTemplateModalProps> = ({
                   className='mt-1 text-xs'
                   style={{ color: 'var(--muted-foreground)' }}
                 >
-                  Example: "What is {`{x}`}?" or "Explain {`{x}`} in detail"
+                  Example: &quot;What is {`{x}`}?&quot; or &quot;Explain {`{x}`}{' '}
+                  in detail&quot;
                 </p>
               </div>
             </div>
