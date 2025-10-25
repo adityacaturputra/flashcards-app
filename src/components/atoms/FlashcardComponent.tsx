@@ -11,8 +11,13 @@ import {
   FaPenToSquare,
   FaVolumeHigh,
   FaEllipsisVertical,
+  FaGear,
+  FaPlus,
+  FaPencil,
+  FaTrash,
 } from 'react-icons/fa6';
 import useEditFlashcard from '@/hooks/useEditFlashcard';
+import { useSearchTemplateContext } from '@/context/searchTemplateContext';
 import FlashcardFormEdit from '../organisms/FlashcardFormEdit';
 import styles from './FlashcardComponent.module.css';
 import { FaTrashAlt } from 'react-icons/fa';
@@ -31,6 +36,9 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
   const [isUpdating, setIsUpdating] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  // Use the global search template context
+  const { generateSearchQuery } = useSearchTemplateContext();
 
   const { handleCancel } = useEditFlashcard({
     flashcard,
@@ -115,7 +123,8 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
   };
 
   // Function to open Google search in a new tab
-  const openGoogleSearchInNewTab = (query: string) => {
+  const openGoogleSearchInNewTab = (text: string) => {
+    const query = generateSearchQuery(text);
     const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
     const link = document.createElement('a');
     link.href = searchUrl;
@@ -287,11 +296,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
                     className='rounded-md p-1.5 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                     onClick={(e) => {
                       e.stopPropagation();
-                      openGoogleSearchInNewTab(
-                        'apa itu ' +
-                          flashcard.question +
-                          ' dan artinya serta berikan contohnya dalam percakapan bahasa inggris',
-                      );
+                      openGoogleSearchInNewTab(flashcard.question);
                     }}
                     title='Search question'
                   >
@@ -345,11 +350,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = ({
                       className='rounded-md p-1.5 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                       onClick={(e) => {
                         e.stopPropagation();
-                        openGoogleSearchInNewTab(
-                          'apa itu ' +
-                            flashcard.answer +
-                            ' dan artinya serta berikan contohnya dalam percakapan bahasa inggris',
-                        );
+                        openGoogleSearchInNewTab(flashcard.answer);
                       }}
                       title='Search answer'
                     >

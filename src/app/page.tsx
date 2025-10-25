@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import FlashcardList from '@/components/organisms/FlashcardList';
 import { useAppContext } from '@/context/appContext';
+import { useSearchTemplateContext } from '@/context/searchTemplateContext';
+import SearchTemplateModal from '@/components/organisms/SearchTemplateModal';
 import { Progression } from '@/types/flashcard';
 import { motion } from 'framer-motion';
 import SkeletonLoader from '@/components/atoms/SkeletonLoader';
@@ -9,6 +11,13 @@ import SkeletonLoader from '@/components/atoms/SkeletonLoader';
 const Home: React.FC = () => {
   const { flashcards, updateFlashcard, deleteFlashcard, loading } =
     useAppContext();
+  const {
+    isModalOpen,
+    closeModal,
+    selectedTemplate,
+    setSelectedTemplate,
+    openModal,
+  } = useSearchTemplateContext();
 
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [selectedProgression, setSelectedProgression] =
@@ -72,18 +81,33 @@ const Home: React.FC = () => {
               </motion.button>
 
               {!isReviewMode && (
-                <motion.button
-                  className='rounded-lg px-2 py-2 text-xs font-medium transition-all hover:scale-105 sm:px-4 sm:text-sm'
-                  style={{
-                    background: 'var(--primary)',
-                    color: 'var(--primary-foreground)',
-                  }}
-                  onClick={() => (window.location.href = '/add-flashcard')}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className='hidden sm:inline'>+ Add Flashcard</span>
-                  <span className='sm:hidden'>+</span>
-                </motion.button>
+                <>
+                  <motion.button
+                    className='rounded-lg px-2 py-2 text-xs font-medium transition-all hover:scale-105 sm:px-4 sm:text-sm'
+                    style={{
+                      background: 'var(--secondary)',
+                      color: 'var(--secondary-foreground)',
+                    }}
+                    onClick={() => (window.location.href = '/search-templates')}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className='hidden sm:inline'>Search Templates</span>
+                    <span className='sm:hidden'>Templates</span>
+                  </motion.button>
+
+                  <motion.button
+                    className='rounded-lg px-2 py-2 text-xs font-medium transition-all hover:scale-105 sm:px-4 sm:text-sm'
+                    style={{
+                      background: 'var(--primary)',
+                      color: 'var(--primary-foreground)',
+                    }}
+                    onClick={() => (window.location.href = '/add-flashcard')}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className='hidden sm:inline'>+ Add Flashcard</span>
+                    <span className='sm:hidden'>+</span>
+                  </motion.button>
+                </>
               )}
             </div>
           </div>
@@ -187,6 +211,14 @@ const Home: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Search Template Modal */}
+      <SearchTemplateModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        selectedTemplate={selectedTemplate}
+        onSelectTemplate={setSelectedTemplate}
+      />
     </>
   );
 };
