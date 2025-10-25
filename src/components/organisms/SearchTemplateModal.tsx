@@ -123,7 +123,14 @@ const SearchTemplateModal: React.FC<SearchTemplateModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className='bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black p-2 sm:p-4'>
+    <div
+      className='fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-2 backdrop-blur-sm sm:p-4'
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
+    >
       <motion.div
         className='flex max-h-[90vh] w-full max-w-4xl flex-col rounded-lg border shadow-lg'
         style={{
@@ -346,7 +353,15 @@ const SearchTemplateModal: React.FC<SearchTemplateModalProps> = ({
 
       {/* Template Editing Modal */}
       {isEditingTemplate && (
-        <div className='bg-opacity-50 fixed inset-0 z-60 flex items-center justify-center bg-black p-4'>
+        <div
+          className='fixed inset-0 z-60 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm'
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setIsEditingTemplate(false);
+              setEditingTemplate({ id: '', name: '', template: '' });
+            }
+          }}
+        >
           <motion.div
             className='max-h-[90vh] w-full max-w-md overflow-y-auto rounded-lg border p-4 sm:p-6'
             style={{
