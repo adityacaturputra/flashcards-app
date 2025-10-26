@@ -1,5 +1,12 @@
 'use client';
-import React, { useState, memo, useCallback, lazy, Suspense } from 'react';
+import React, {
+  useState,
+  memo,
+  useCallback,
+  lazy,
+  Suspense,
+  useEffect,
+} from 'react';
 import { useAppContext } from '@/context/appContext';
 import { useSearchTemplateContext } from '@/context/searchTemplateContext';
 import { Progression } from '@/types/flashcard';
@@ -25,6 +32,12 @@ const Home: React.FC = memo(() => {
   const [selectedProgression, setSelectedProgression] =
     useState<Progression | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // Prevent hydration mismatch by only rendering client-side elements after mount
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleFilterChange = useCallback((progression: Progression | null) => {
     setSelectedProgression(progression);
@@ -128,7 +141,7 @@ const Home: React.FC = memo(() => {
               )}
 
               {/* Mobile Hamburger Menu - Only show on mobile when not in review mode */}
-              {!isReviewMode && (
+              {isClient && !isReviewMode && (
                 <div className='mobile-menu sm:hidden'>
                   <motion.button
                     className='rounded-lg p-2 transition-all hover:scale-105'
@@ -153,7 +166,7 @@ const Home: React.FC = memo(() => {
       </header>
 
       {/* Mobile Menu Dropdown */}
-      {isMobileMenuOpen && !isReviewMode && (
+      {isClient && isMobileMenuOpen && !isReviewMode && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
