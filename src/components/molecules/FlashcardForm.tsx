@@ -15,11 +15,15 @@ import OcrUpload from '../atoms/OcrUpload';
 
 type FlashcardFormProps = {
   addFlashcard: (flashcard: Flashcard) => Promise<void>;
+  addBulkFlashcards?: (flashcards: Flashcard[]) => Promise<void>;
   selectedFlashcard?: Flashcard | null;
   setSelectedFlashcard: (flashcard: Flashcard | null) => void;
 };
 
-const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
+const FlashcardForm: React.FC<FlashcardFormProps> = ({
+  addFlashcard,
+  addBulkFlashcards,
+}) => {
   const {
     flashCards,
     selectedFlashcards,
@@ -45,7 +49,7 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
     handleDownloadXml,
     setSelectedCategories,
     selectedCategories,
-  } = useGenerateFlashcards(addFlashcard);
+  } = useGenerateFlashcards(addFlashcard, addBulkFlashcards);
   const { categories, loadingCategories } = useAppContext();
 
   // State to manage accordion open/close

@@ -27,6 +27,12 @@ class FlashcardService {
     return newFlashcard;
   }
 
+  public async addFlashcards(flashcards: Flashcard[]): Promise<Flashcard[]> {
+    const newFlashcards = await FlashcardModel.insertMany(flashcards);
+    this._observer.notify();
+    return newFlashcards;
+  }
+
   public async updateFlashcard(
     id: string,
     flashcard: Partial<Flashcard>,

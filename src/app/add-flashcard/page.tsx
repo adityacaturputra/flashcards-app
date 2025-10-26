@@ -22,6 +22,31 @@ const AddFlashcardPage: React.FC = () => {
     router.back(); // Go back to the previous page
   };
 
+  const handleBulkAddFlashcards = async (flashcards: Flashcard[]) => {
+    try {
+      const response = await fetch('/api/flashcards', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(flashcards),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to save flashcards');
+      }
+
+      const savedFlashcards = await response.json();
+
+      if (savedFlashcards) {
+        router.back(); // Go back to the previous page
+      }
+    } catch (error) {
+      console.error('Error saving flashcards:', error);
+      alert('Error saving flashcards. Please try again later.');
+    }
+  };
+
   const handleGoBack = () => {
     router.back();
   };
@@ -76,6 +101,7 @@ const AddFlashcardPage: React.FC = () => {
           >
             <FlashcardForm
               addFlashcard={handleAddFlashcard}
+              addBulkFlashcards={handleBulkAddFlashcards}
               selectedFlashcard={null}
               setSelectedFlashcard={() => {}}
             />

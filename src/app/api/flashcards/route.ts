@@ -22,14 +22,23 @@ export async function GET() {
 
 export async function POST(request: Request) {
   await dbConnect();
-  const body: Flashcard = await request.json();
+  const body = await request.json();
+
   try {
-    const flashcard = await flashcardService.addFlashcard(body);
-    return NextResponse.json(flashcard, { status: 201 });
+    // Check if it's a single flashcard or array of flashcards
+    if (Array.isArray(body)) {
+      // Bulk create flashcards
+      const flashcards = await flashcardService.addFlashcards(body);
+      return NextResponse.json(flashcards, { status: 201 });
+    } else {
+      // Single flashcard
+      const flashcard = await flashcardService.addFlashcard(body);
+      return NextResponse.json(flashcard, { status: 201 });
+    }
   } catch (error) {
     console.error(error);
     return NextResponse.json(
-      { message: 'Error adding flashcard' },
+      { message: 'Error adding flashcard(s)' },
       { status: 500 },
     );
   }

@@ -38,6 +38,7 @@ interface UseGenerateFlashcardsResult {
 
 const useGenerateFlashcards = (
   addFlashcard: (flashcard: Flashcard) => Promise<void>,
+  addBulkFlashcards?: (flashcards: Flashcard[]) => Promise<void>,
 ): UseGenerateFlashcardsResult => {
   const { flashcards: savedFlashcards } = useAppContext();
   const [flashCards, setFlashCards] = useState<Flashcard[]>([]);
@@ -110,22 +111,39 @@ const useGenerateFlashcards = (
     );
 
     try {
-      const responses = await Promise.all(
-        selectedFlashcardsTemp.map(async (flashcard) => {
-          await addFlashcard({
-            question: flashcard.question,
-            answer: flashcard.answer,
-            progression: flashcard.progression || Progression.New,
-            nextReviewDate: flashcard.nextReviewDate || new Date(),
-            dynamicFields: flashcard.dynamicFields || {},
-            categories: selectedCategories,
-          });
-        }),
-      );
+      // Prepare flashcards for bulk save
+      const flashcardsToSave = selectedFlashcardsTemp.map((flashcard) => ({
+        question: flashcard.question,
+        answer: flashcard.answer,
+        progression: flashcard.progression || Progression.New,
+        nextReviewDate: flashcard.nextReviewDate || new Date(),
+        dynamicFields: flashcard.dynamicFields || {},
+        categories: selectedCategories,
+      }));
 
-      if (responses) {
-        setFlashCards([]);
-        setSelectedFlashcards([]);
+      // Use bulk save function if available, otherwise use individual saves
+      if (addBulkFlashcards) {
+        await addBulkFlashcards(flashcardsToSave);
+      } else {
+        // Make bulk API call
+        const response = await fetch('/api/flashcards', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(flashcardsToSave),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to save flashcards');
+        }
+
+        const savedFlashcards = await response.json();
+
+        if (savedFlashcards) {
+          setFlashCards([]);
+          setSelectedFlashcards([]);
+        }
       }
     } catch (err) {
       const error = err as Error;
