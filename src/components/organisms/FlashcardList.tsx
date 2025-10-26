@@ -15,8 +15,11 @@ import {
   HiXCircle,
 } from 'react-icons/hi'; // Import the empty state icon and refresh icon
 import { useAppContext } from '@/context/appContext';
-
+import { useSearchTemplateContext } from '@/context/searchTemplateContext';
 import { FiLoader } from 'react-icons/fi';
+import { FaGoogle } from 'react-icons/fa';
+import { useBulkFlashcards } from '@/hooks/useBulkFlashcards';
+import BulkActionButtons from '../atoms/BulkActionButtons';
 
 type FlashcardListProps = {
   flashcards: Flashcard[];
@@ -37,10 +40,31 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
 }) => {
   const { handleRefetchFlashCards, categories, loadingCategories } =
     useAppContext();
+  const { openModal } = useSearchTemplateContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [showQuestionAsAnswer, setShowQuestionAsAnswer] = useState(false); // New state to track toggle
   const pageSize = isReviewMode ? 1 : 10; // Set page size based on mode
   const [selectedCategoryId, setSelectedCategoryId] = useState('');
+  const [lastBulkResult, setLastBulkResult] = useState<{
+    changed: number;
+    noChange: number;
+    failed: number;
+    action: string;
+  } | null>(null);
+
+  // Bulk selection hook
+  const {
+    isUpdating,
+    isBulkModeEnabled,
+    toggleSelection,
+    selectAll,
+    clearSelection,
+    bulkUpdateProgression,
+    isSelected,
+    getSelectedCount,
+    enableBulkMode,
+    disableBulkMode,
+  } = useBulkFlashcards();
 
   // State to hold randomized flashcards
   const [randomizedFlashcards, setRandomizedFlashcards] = useState<Flashcard[]>(
@@ -105,6 +129,62 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
   useEffect(() => {
     setCurrentPage(0);
   }, [searchQuery, selectedCategoryId, selectedProgression, setCurrentPage]);
+
+  // Bulk action handlers
+  const handleBulkIncrease = async () => {
+    try {
+      const result = await bulkUpdateProgression('increase');
+      handleRefetchFlashCards();
+      if (result) {
+        setLastBulkResult({
+          changed: result.changed || 0,
+          noChange: result.noChange || 0,
+          failed: result.failed || 0,
+          action: 'increase',
+        });
+      }
+    } catch (error) {
+      console.error('Failed to increase progression:', error);
+    }
+  };
+
+  const handleBulkCurrent = async () => {
+    try {
+      const result = await bulkUpdateProgression('current');
+      handleRefetchFlashCards();
+      if (result) {
+        setLastBulkResult({
+          changed: result.changed || 0,
+          noChange: result.noChange || 0,
+          failed: result.failed || 0,
+          action: 'current',
+        });
+      }
+    } catch (error) {
+      console.error('Failed to set current progression:', error);
+    }
+  };
+
+  const handleBulkDecrease = async () => {
+    try {
+      const result = await bulkUpdateProgression('decrease');
+      handleRefetchFlashCards();
+      if (result) {
+        setLastBulkResult({
+          changed: result.changed || 0,
+          noChange: result.noChange || 0,
+          failed: result.failed || 0,
+          action: 'decrease',
+        });
+      }
+    } catch (error) {
+      console.error('Failed to decrease progression:', error);
+    }
+  };
+
+  const handleBulkCancel = () => {
+    clearSelection();
+  };
 
   return (
     <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -181,25 +261,23 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                       </span>
                     </label>
                   ))}
+                  {/* Manage Categories Button */}
+                  <motion.button
+                    className='rounded-lg px-3 py-1.5 text-xs font-medium transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none sm:px-4 sm:py-2 sm:text-sm'
+                    style={{
+                      background: 'var(--primary)',
+                      color: 'var(--primary-foreground)',
+                    }}
+                    onClick={handleOpenCategoryModal}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span className='inline'>+</span>
+                  </motion.button>
                 </div>
-
-                {/* Manage Categories Button */}
-                <motion.button
-                  className='rounded-lg px-3 py-1.5 text-xs font-medium transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none sm:px-4 sm:py-2 sm:text-sm'
-                  style={{
-                    background: 'var(--primary)',
-                    color: 'var(--primary-foreground)',
-                  }}
-                  onClick={handleOpenCategoryModal}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span className='hidden sm:inline'>+ Manage Categories</span>
-                  <span className='sm:hidden'>+ Manage</span>
-                </motion.button>
               </>
             )}
           </div>
@@ -207,36 +285,89 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
           {/* Search and Action Controls */}
           <div className='relative'>
             <div className='flex flex-col gap-3 sm:flex-row'>
-              <div className='relative flex-1'>
-                <input
-                  type='text'
-                  placeholder='Search flashcards...'
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className='w-full rounded-lg border-2 px-4 py-3 pr-10 text-base transition-colors focus:border-blue-500 focus:outline-none'
-                  style={{
-                    background: 'var(--input)',
-                    borderColor: 'var(--border)',
-                    color: 'var(--foreground)',
-                  }}
-                />
-                {searchQuery && (
-                  <motion.button
-                    className='hover:bg-opacity-10 absolute top-1/2 right-3 -translate-y-1/2 rounded-md p-1 transition-colors'
-                    onClick={() => setSearchQuery('')}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <HiXCircle
-                      className='h-5 w-5'
-                      style={{ color: 'var(--muted-foreground)' }}
-                    />
-                  </motion.button>
-                )}
+              <div className='flex flex-1 gap-2'>
+                <div className='relative flex-1'>
+                  <input
+                    type='text'
+                    placeholder='Search flashcards...'
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className='w-full rounded-lg border-2 px-4 py-3 pr-10 text-base transition-colors focus:border-blue-500 focus:outline-none'
+                    style={{
+                      background: 'var(--input)',
+                      borderColor: 'var(--border)',
+                      color: 'var(--foreground)',
+                    }}
+                  />
+                  {searchQuery && (
+                    <motion.button
+                      className='hover:bg-opacity-10 absolute top-1/2 right-3 -translate-y-1/2 rounded-md p-1 transition-colors'
+                      onClick={() => setSearchQuery('')}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <HiXCircle
+                        className='h-5 w-5'
+                        style={{ color: 'var(--muted-foreground)' }}
+                      />
+                    </motion.button>
+                  )}
+                </div>
               </div>
 
               <div className='flex gap-2'>
+                <motion.button
+                  className='rounded-lg p-3 transition-all hover:scale-105 hover:shadow-md'
+                  style={{
+                    background: 'var(--background)',
+                    color: '#4285f4', // Google Blue
+                    border: '1px solid var(--border)',
+                  }}
+                  onClick={openModal}
+                  whileTap={{ scale: 0.95 }}
+                  title='Search Template Settings'
+                >
+                  <FaGoogle className='h-5 w-5' />
+                </motion.button>
+
+                {/* Bulk Selection Toggle */}
+                <motion.button
+                  className='rounded-lg p-3 transition-all hover:scale-105 hover:shadow-md'
+                  style={{
+                    background: isBulkModeEnabled
+                      ? getSelectedCount() > 0
+                        ? 'var(--destructive)'
+                        : 'var(--primary)'
+                      : 'var(--background)',
+                    color: isBulkModeEnabled
+                      ? getSelectedCount() > 0
+                        ? 'var(--destructive-foreground)'
+                        : 'var(--primary-foreground)'
+                      : 'var(--foreground)',
+                    border: '1px solid var(--border)',
+                  }}
+                  onClick={() => {
+                    if (isBulkModeEnabled) {
+                      disableBulkMode();
+                    } else {
+                      enableBulkMode();
+                    }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  title={
+                    isBulkModeEnabled ? 'Disable Bulk Mode' : 'Enable Bulk Mode'
+                  }
+                >
+                  {isBulkModeEnabled ? (
+                    <span className='text-xs font-bold'>
+                      {getSelectedCount() > 0 ? getSelectedCount() : '✓'}
+                    </span>
+                  ) : (
+                    <span className='text-xs font-bold'>⚡</span>
+                  )}
+                </motion.button>
+
                 <motion.button
                   className='rounded-lg p-3 transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none'
                   style={{
@@ -326,6 +457,9 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                   }}
                   onDelete={onDelete}
                   categories={categories}
+                  isBulkMode={isBulkModeEnabled}
+                  isSelected={isSelected(flashcard._id || '')}
+                  onToggleSelection={toggleSelection}
                 />
               </motion.div>
             ))}
@@ -528,6 +662,25 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
           </div>
         </div>
       )}
+
+      {/* Bulk Action Buttons */}
+      <BulkActionButtons
+        isVisible={isBulkModeEnabled && getSelectedCount() > 0}
+        selectedCount={getSelectedCount()}
+        isUpdating={isUpdating}
+        onIncrease={handleBulkIncrease}
+        onCurrent={handleBulkCurrent}
+        onDecrease={handleBulkDecrease}
+        onCancel={handleBulkCancel}
+        onSelectAll={() => {
+          selectAll(
+            currentItems
+              .map((f) => f._id)
+              .filter((id) => id !== undefined) as string[],
+          );
+        }}
+        lastResult={lastBulkResult}
+      />
     </div>
   );
 };

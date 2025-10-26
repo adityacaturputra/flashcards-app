@@ -1,29 +1,64 @@
 'use client';
-import React, { useState } from 'react';
-import FlashcardList from '@/components/organisms/FlashcardList';
+import React, {
+  useState,
+  memo,
+  useCallback,
+  lazy,
+  Suspense,
+  useEffect,
+} from 'react';
 import { useAppContext } from '@/context/appContext';
+import { useSearchTemplateContext } from '@/context/searchTemplateContext';
 import { Progression } from '@/types/flashcard';
 import { motion } from 'framer-motion';
+import { FaBars, FaTimes, FaPlay, FaStop, FaCog, FaPlus } from 'react-icons/fa';
 import SkeletonLoader from '@/components/atoms/SkeletonLoader';
 
-const Home: React.FC = () => {
+// Lazy load heavy components
+const FlashcardList = lazy(
+  () => import('@/components/organisms/FlashcardList'),
+);
+const SearchTemplateModal = lazy(
+  () => import('@/components/organisms/SearchTemplateModal'),
+);
+
+const Home: React.FC = memo(() => {
   const { flashcards, updateFlashcard, deleteFlashcard, loading } =
     useAppContext();
+  const { isModalOpen, closeModal, selectedTemplate, setSelectedTemplate } =
+    useSearchTemplateContext();
 
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [selectedProgression, setSelectedProgression] =
     useState<Progression | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
-  const handleFilterChange = (progression: Progression | null) => {
+  // Prevent hydration mismatch by only rendering client-side elements after mount
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const handleFilterChange = useCallback((progression: Progression | null) => {
     setSelectedProgression(progression);
-  };
+  }, []);
 
-  const handleNavigateToCategoryPage = () => {
+  const handleNavigateToCategoryPage = useCallback(() => {
     window.location.href = '/add-category';
-  };
+  }, []);
+
+  // Close mobile menu when clicking outside
+  const handleClickOutside = useCallback(
+    (e: React.MouseEvent) => {
+      if (isMobileMenuOpen && !(e.target as Element).closest('.mobile-menu')) {
+        setIsMobileMenuOpen(false);
+      }
+    },
+    [isMobileMenuOpen],
+  );
 
   return (
-    <>
+    <div onClick={handleClickOutside}>
       {/* Modern Header */}
       <header
         className='backdrop-blur-glass sticky top-0 z-50 border-b'
@@ -50,6 +85,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className='flex items-center gap-2 sm:gap-3'>
+              {/* Review Mode Button - Always visible */}
               <motion.button
                 className='rounded-lg px-2 py-2 text-xs font-medium transition-all hover:scale-105 sm:px-4 sm:text-sm'
                 style={{
@@ -63,32 +99,111 @@ const Home: React.FC = () => {
                 onClick={() => setIsReviewMode((prev) => !prev)}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className='hidden sm:inline'>
-                  {isReviewMode ? 'Exit Review' : 'Review Mode'}
-                </span>
-                <span className='sm:hidden'>
-                  {isReviewMode ? 'Exit' : 'Review'}
-                </span>
+                <div className='flex items-center gap-1'>
+                  {isReviewMode ? (
+                    <FaStop className='h-3 w-3' />
+                  ) : (
+                    <FaPlay className='h-3 w-3' />
+                  )}
+                  <span className='hidden sm:inline'>
+                    {isReviewMode ? 'Exit Review' : 'Review Mode'}
+                  </span>
+                </div>
               </motion.button>
 
+              {/* Desktop Menu - Hidden on mobile */}
               {!isReviewMode && (
-                <motion.button
-                  className='rounded-lg px-2 py-2 text-xs font-medium transition-all hover:scale-105 sm:px-4 sm:text-sm'
-                  style={{
-                    background: 'var(--primary)',
-                    color: 'var(--primary-foreground)',
-                  }}
-                  onClick={() => (window.location.href = '/add-flashcard')}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className='hidden sm:inline'>+ Add Flashcard</span>
-                  <span className='sm:hidden'>+</span>
-                </motion.button>
+                <div className='hidden items-center gap-2 sm:flex'>
+                  <motion.button
+                    className='rounded-lg px-4 py-2 text-sm font-medium transition-all hover:scale-105'
+                    style={{
+                      background: 'var(--secondary)',
+                      color: 'var(--secondary-foreground)',
+                    }}
+                    onClick={() => (window.location.href = '/search-templates')}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Search Templates
+                  </motion.button>
+
+                  <motion.button
+                    className='rounded-lg px-4 py-2 text-sm font-medium transition-all hover:scale-105'
+                    style={{
+                      background: 'var(--primary)',
+                      color: 'var(--primary-foreground)',
+                    }}
+                    onClick={() => (window.location.href = '/add-flashcard')}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    + Add Flashcard
+                  </motion.button>
+                </div>
+              )}
+
+              {/* Mobile Hamburger Menu - Only show on mobile when not in review mode */}
+              {isClient && !isReviewMode && (
+                <div className='mobile-menu sm:hidden'>
+                  <motion.button
+                    className='rounded-lg p-2 transition-all hover:scale-105'
+                    style={{
+                      background: 'var(--secondary)',
+                      color: 'var(--secondary-foreground)',
+                    }}
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {isMobileMenuOpen ? (
+                      <FaTimes className='h-4 w-4' />
+                    ) : (
+                      <FaBars className='h-4 w-4' />
+                    )}
+                  </motion.button>
+                </div>
               )}
             </div>
           </div>
         </div>
       </header>
+
+      {/* Mobile Menu Dropdown */}
+      {isClient && isMobileMenuOpen && !isReviewMode && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className='mobile-menu sm:hidden'
+        >
+          <div className='border-b border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-gray-800'>
+            <div className='flex flex-col gap-2'>
+              <motion.button
+                className='flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700'
+                style={{ color: 'white' }}
+                onClick={() => {
+                  window.location.href = '/search-templates';
+                  setIsMobileMenuOpen(false);
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaCog className='h-4 w-4' style={{ color: '#94a3b8' }} />
+                Search Templates
+              </motion.button>
+
+              <motion.button
+                className='flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700'
+                style={{ color: 'white' }}
+                onClick={() => {
+                  window.location.href = '/add-flashcard';
+                  setIsMobileMenuOpen(false);
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaPlus className='h-4 w-4' style={{ color: '#94a3b8' }} />
+                Add Flashcard
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
+      )}
 
       {/* Main Content */}
       <main
@@ -102,14 +217,16 @@ const Home: React.FC = () => {
           {loading ? (
             <SkeletonLoader count={5} />
           ) : (
-            <FlashcardList
-              flashcards={flashcards}
-              onUpdate={updateFlashcard}
-              onDelete={deleteFlashcard}
-              selectedProgression={selectedProgression}
-              isReviewMode={isReviewMode}
-              handleOpenCategoryModal={handleNavigateToCategoryPage}
-            />
+            <Suspense fallback={<SkeletonLoader count={5} />}>
+              <FlashcardList
+                flashcards={flashcards}
+                onUpdate={updateFlashcard}
+                onDelete={deleteFlashcard}
+                selectedProgression={selectedProgression}
+                isReviewMode={isReviewMode}
+                handleOpenCategoryModal={handleNavigateToCategoryPage}
+              />
+            </Suspense>
           )}
           <div className='h-[120px]' />
         </div>
@@ -187,8 +304,20 @@ const Home: React.FC = () => {
           </div>
         </div>
       )}
-    </>
+
+      {/* Search Template Modal */}
+      <Suspense fallback={null}>
+        <SearchTemplateModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          selectedTemplate={selectedTemplate}
+          onSelectTemplate={setSelectedTemplate}
+        />
+      </Suspense>
+    </div>
   );
-};
+});
+
+Home.displayName = 'Home';
 
 export default Home;
