@@ -164,10 +164,15 @@ export async function initializeDefaultTemplates(): Promise<void> {
     for (const templateData of defaultTemplates) {
       const existingTemplate = await SearchTemplate.findOne({
         name: templateData.name,
-        isDefault: true,
       });
 
-      if (!existingTemplate) {
+      if (existingTemplate) {
+        // Update existing template with correct isDefault value
+        await SearchTemplate.findByIdAndUpdate(existingTemplate._id, {
+          isDefault: templateData.isDefault,
+        });
+      } else {
+        // Create new template
         await SearchTemplate.create(templateData);
       }
     }
