@@ -147,17 +147,17 @@ export async function initializeDefaultTemplates(): Promise<void> {
       {
         name: 'Simple Definition',
         template: 'What is {x}?',
-        isDefault: true,
+        isDefault: false,
       },
       {
         name: 'Detailed Explanation',
         template: 'Explain {x} in detail with examples',
-        isDefault: true,
+        isDefault: false,
       },
       {
         name: 'Translation',
         template: 'Translate {x} to English',
-        isDefault: true,
+        isDefault: false,
       },
     ];
 
