@@ -137,45 +137,52 @@ export async function initializeDefaultTemplates(): Promise<void> {
   try {
     await dbConnect();
 
-    const defaultTemplates = [
-      {
-        name: 'Indonesian Learning',
-        template:
-          'Apa itu {x} dan artinya serta berikan contohnya dalam percakapan bahasa inggris',
-        isDefault: true,
-      },
-      {
-        name: 'Simple Definition',
-        template: 'What is {x}?',
-        isDefault: false,
-      },
-      {
-        name: 'Detailed Explanation',
-        template: 'Explain {x} in detail with examples',
-        isDefault: false,
-      },
-      {
-        name: 'Translation',
-        template: 'Translate {x} to English',
-        isDefault: false,
-      },
+    // Delete old default templates that are no longer needed
+    const templatesToDelete = [
+      'Simple Definition',
+      'Detailed Explanation',
+      'Translation',
     ];
+    await SearchTemplate.deleteMany({
+      name: { $in: templatesToDelete },
+      userId: { $exists: false }, // Only delete system templates
+    });
 
-    for (const templateData of defaultTemplates) {
-      const existingTemplate = await SearchTemplate.findOne({
-        name: templateData.name,
-      });
+    // Only one default template
+    const defaultTemplate = {
+      name: 'Indonesian Learning',
+      template:
+        'Apa itu {x} dan artinya serta berikan contohnya dalam percakapan bahasa inggris',
+      isDefault: true,
+    };
 
-      if (existingTemplate) {
-        // Update existing template with correct isDefault value
-        await SearchTemplate.findByIdAndUpdate(existingTemplate._id, {
-          isDefault: templateData.isDefault,
-        });
-      } else {
-        // Create new template
-        await SearchTemplate.create(templateData);
-      }
+    // First, cleanup any duplicates (keep only the first one)
+    const existingTemplates = await SearchTemplate.find({
+      name: defaultTemplate.name,
+      userId: { $exists: false },
+    }).sort({ createdAt: 1 });
+
+    // If there are duplicates, delete all except the first one
+    if (existingTemplates.length > 1) {
+      const idsToDelete = existingTemplates.slice(1).map((t) => t._id);
+      await SearchTemplate.deleteMany({ _id: { $in: idsToDelete } });
     }
+
+    // Use findOneAndUpdate with upsert to prevent race conditions
+    // This atomically finds and updates, or creates if not exists
+    await SearchTemplate.findOneAndUpdate(
+      {
+        name: defaultTemplate.name,
+        userId: { $exists: false },
+      },
+      {
+        $setOnInsert: defaultTemplate,
+      },
+      {
+        upsert: true,
+        new: true,
+      },
+    );
   } catch (error) {
     console.error('Error initializing default templates:', error);
     throw new Error('Failed to initialize default templates');
