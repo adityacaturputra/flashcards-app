@@ -1,6 +1,7 @@
 'use client';
 import { Flashcard } from '@/types/flashcard';
 import InputField from '../atoms/InputField';
+import TextArea from '../atoms/TextArea';
 import Button from '../atoms/Button';
 import { FaTrashAlt } from 'react-icons/fa';
 import useGenerateFlashcards from '@/hooks/useGenerateFlashcards';
@@ -283,7 +284,7 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                         </Button>
                       </div>
                       {fieldKeys.map((key, index) => (
-                        <div key={index} className='flex items-end gap-3'>
+                        <div key={index} className='flex items-start gap-3'>
                           <div className='flex-1'>
                             <label
                               className='mb-2 block text-sm font-semibold'
@@ -291,16 +292,19 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                             >
                               {key}
                             </label>
-                            <InputField
+                            <TextArea
                               placeholder={`Enter ${key}...`}
-                              onChange={handleFieldChange(key)}
-                              className={`w-full rounded-lg border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus} text-base`}
+                              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                                handleFieldChange(key)(e as unknown as React.ChangeEvent<HTMLInputElement>)
+                              }
+                              className={`w-full border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus} text-base`}
                               value={dynamicFields[key] || ''}
+                              rows={3}
                             />
                           </div>
                           <button
                             onClick={() => deleteDynamicField(key)}
-                            className='rounded-lg p-3 transition-all hover:scale-105'
+                            className='mt-8 rounded-lg p-3 transition-all hover:scale-105'
                             style={{
                               background: 'var(--destructive)',
                               color: 'var(--destructive-foreground)',

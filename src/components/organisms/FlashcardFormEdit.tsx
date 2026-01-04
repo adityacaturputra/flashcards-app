@@ -9,6 +9,7 @@ import { Flashcard } from '@/types/flashcard';
 import useEditFlashcard from '@/hooks/useEditFlashcard';
 import { useAppContext } from '@/context/appContext';
 import InputField from '../atoms/InputField';
+import TextArea from '../atoms/TextArea';
 import Button from '../atoms/Button';
 import { motion } from 'framer-motion';
 import styles from '../molecules/FlashcardForm.module.css';
@@ -48,7 +49,7 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
   const renderDynamicFields = () => {
     const length = Object.entries(dynamicFields).length;
     return Object.entries(dynamicFields).map(([key, value], index) => (
-      <div key={key} className='flex items-end gap-3'>
+      <div key={key} className='flex items-start gap-3'>
         <div className='flex-1'>
           <label
             className='mb-2 block text-sm font-semibold'
@@ -56,13 +57,14 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
           >
             {key}
           </label>
-          <InputField
+          <TextArea
             placeholder={`Enter ${key}...`}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
               handleDynamicFieldChange(key, e.target.value)
             }
-            className={`w-full rounded-lg border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus} text-base`}
+            className={`w-full border-2 px-4 py-3 transition-colors focus:border-blue-500 ${styles.inputFocus} text-base`}
             value={value}
+            rows={3}
           />
         </div>
         <div className='flex flex-col gap-1'>

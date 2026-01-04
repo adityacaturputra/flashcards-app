@@ -109,9 +109,11 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
     const renderViewModeDynamicFields = () => {
       return Object.entries(flashcard.dynamicFields || {}).map(
         ([key, value]) => (
-          <div key={key} className='items-center space-x-2'>
+          <div key={key} className='mt-2'>
             <strong className='font-medium'>{key}:</strong>
-            <span>{value}</span>
+            <div className='mt-1 whitespace-pre-wrap'>
+              {renderFormattedText(value)}
+            </div>
           </div>
         ),
       );
@@ -143,6 +145,61 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
     };
 
     const progressionOptions = Object.values(Progression);
+
+    // Function to render markdown-like text (bold, bullets, newlines)
+    const renderFormattedText = (text: string) => {
+      if (!text) return null;
+
+      // Split by newlines first
+      const lines = text.split('\n');
+
+      return lines.map((line, lineIndex) => {
+        // Check if line starts with bullet point
+        const isBullet = line.trim().startsWith('•') || line.trim().startsWith('- ');
+        const isNumbered = /^\d+\.\s/.test(line.trim());
+        
+        // Process bold text (**text**)
+        const parts = line.split(/(\*\*[^*]+\*\*)/g);
+        const formattedParts = parts.map((part, partIndex) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return (
+              <strong key={partIndex} className='font-bold'>
+                {part.slice(2, -2)}
+              </strong>
+            );
+          }
+          return part;
+        });
+
+        if (isBullet) {
+          return (
+            <div key={lineIndex} className='flex items-start gap-2 pl-2'>
+              <span className='text-primary'>•</span>
+              <span>{formattedParts.slice(1)}</span>
+            </div>
+          );
+        }
+
+        if (isNumbered) {
+          const match = line.trim().match(/^(\d+\.)\s(.*)$/);
+          if (match) {
+            return (
+              <div key={lineIndex} className='flex items-start gap-2 pl-2'>
+                <span className='font-medium'>{match[1]}</span>
+                <span>{formattedParts}</span>
+              </div>
+            );
+          }
+        }
+
+        return (
+          <span key={lineIndex}>
+            {formattedParts}
+            {lineIndex < lines.length - 1 && <br />}
+          </span>
+        );
+      });
+    };
 
     return (
       <div
