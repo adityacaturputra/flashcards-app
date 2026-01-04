@@ -274,13 +274,13 @@ const FlashcardForm: React.FC<FlashcardFormProps> = ({ addFlashcard }) => {
                           className='text-lg font-semibold'
                           style={{ color: 'var(--foreground)' }}
                         >
-                          Custom Fields
+                          Explanations
                         </h3>
                         <Button
                           onClick={addDynamicField}
                           className={`rounded-lg px-4 py-2 transition-all hover:scale-105 ${styles.modernButton} text-sm`}
                         >
-                          + Add Field
+                          + Add Explanation
                         </Button>
                       </div>
                       {fieldKeys.map((key, index) => (

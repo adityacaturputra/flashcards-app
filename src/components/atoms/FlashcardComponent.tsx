@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
+import { createPortal } from 'react-dom';
 import { Flashcard, FlashcardCategory, Progression } from '@/types/flashcard';
 import calculateNextReviewDate from '@/utils/calculateNextReviewDate';
 import dayjs from 'dayjs';
@@ -11,12 +12,14 @@ import {
   FaPenToSquare,
   FaVolumeHigh,
   FaEllipsisVertical,
+  FaPlus,
 } from 'react-icons/fa6';
 import useEditFlashcard from '@/hooks/useEditFlashcard';
 import { useSearchTemplateContext } from '@/context/searchTemplateContext';
 import FlashcardFormEdit from '../organisms/FlashcardFormEdit';
 import styles from './FlashcardComponent.module.css';
 import { FaTrashAlt } from 'react-icons/fa';
+import TextArea from './TextArea';
 
 dayjs.extend(relativeTime);
 
@@ -34,6 +37,9 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
     const [isAnswerHidden, setIsAnswerHidden] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isUpdating, setIsUpdating] = useState(false);
+    const [isAddExplanationOpen, setIsAddExplanationOpen] = useState(false);
+    const [newExplanationTitle, setNewExplanationTitle] = useState('');
+    const [newExplanationContent, setNewExplanationContent] = useState('');
     const menuRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -146,6 +152,61 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
 
     const progressionOptions = Object.values(Progression);
 
+    // Get next available version number for explanation title
+    const getNextVersionTitle = () => {
+      const currentFields = flashcard.dynamicFields || {};
+      const existingKeys = Object.keys(currentFields);
+
+      // Find all existing version numbers (v1, v2, v3, etc.)
+      const versionNumbers = existingKeys
+        .filter((key) => /^v\d+$/i.test(key))
+        .map((key) => parseInt(key.slice(1), 10));
+
+      // Find the next available version number
+      let nextVersion = 1;
+      while (versionNumbers.includes(nextVersion)) {
+        nextVersion++;
+      }
+
+      return `v${nextVersion}`;
+    };
+
+    // Handle opening the add explanation modal
+    const handleOpenAddExplanation = () => {
+      setNewExplanationTitle(getNextVersionTitle());
+      setNewExplanationContent('');
+      setIsAddExplanationOpen(true);
+      setIsAnswerHidden(false);
+    };
+
+    // Handle quick add explanation
+    const handleSaveExplanation = async () => {
+      if (!newExplanationTitle.trim() || !newExplanationContent.trim()) return;
+
+      setIsUpdating(true);
+      try {
+        const currentFields = flashcard.dynamicFields || {};
+        const updatedFields = {
+          ...currentFields,
+          [newExplanationTitle.trim()]: newExplanationContent.trim(),
+        };
+        await onUpdate(flashcard._id!, { dynamicFields: updatedFields });
+        setNewExplanationTitle('');
+        setNewExplanationContent('');
+        setIsAddExplanationOpen(false);
+      } catch (error) {
+        console.error('Error adding explanation:', error);
+      } finally {
+        setIsUpdating(false);
+      }
+    };
+
+    const handleCancelExplanation = () => {
+      setNewExplanationTitle('');
+      setNewExplanationContent('');
+      setIsAddExplanationOpen(false);
+    };
+
     // Function to render markdown-like text (bold, bullets, newlines)
     const renderFormattedText = (text: string) => {
       if (!text) return null;
@@ -155,9 +216,10 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
 
       return lines.map((line, lineIndex) => {
         // Check if line starts with bullet point
-        const isBullet = line.trim().startsWith('•') || line.trim().startsWith('- ');
+        const isBullet =
+          line.trim().startsWith('•') || line.trim().startsWith('- ');
         const isNumbered = /^\d+\.\s/.test(line.trim());
-        
+
         // Process bold text (**text**)
         const parts = line.split(/(\*\*[^*]+\*\*)/g);
         const formattedParts = parts.map((part, partIndex) => {
@@ -272,6 +334,21 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
                     <div className={`${styles.spinner}`}></div>
                   </div>
                 )}
+
+                {/* Quick Add Explanation Button */}
+                <button
+                  className='rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOpenAddExplanation();
+                  }}
+                  title='Add Explanation'
+                >
+                  <FaPlus
+                    className='h-4 w-4'
+                    style={{ color: 'var(--primary)' }}
+                  />
+                </button>
 
                 {/* Triple Dots Menu */}
                 <div ref={menuRef} className='relative'>
@@ -489,6 +566,104 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
             onCancel={handleCancel}
           />
         ) : null}
+
+        {/* Quick Add Explanation Modal - Rendered via Portal */}
+        {isAddExplanationOpen &&
+          createPortal(
+            <div
+              className='flex flex-col'
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                width: '100vw',
+                height: '100vh',
+                zIndex: 99999,
+                background: 'var(--card)',
+                padding: '1rem',
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3
+                className='mb-4 text-lg font-semibold'
+                style={{ color: 'var(--foreground)' }}
+              >
+                Add Explanation
+              </h3>
+
+              {/* Title Input */}
+              <div className='mb-4'>
+                <label
+                  className='mb-2 block text-sm font-medium'
+                  style={{ color: 'var(--foreground)' }}
+                >
+                  Title
+                </label>
+                <input
+                  type='text'
+                  value={newExplanationTitle}
+                  onChange={(e) => setNewExplanationTitle(e.target.value)}
+                  placeholder='e.g., Example, Note, Hint...'
+                  className='w-full rounded-lg border px-4 py-2 focus:border-blue-500 focus:outline-none'
+                  style={{
+                    background: 'var(--input)',
+                    color: 'var(--foreground)',
+                    borderColor: 'var(--border)',
+                  }}
+                  autoFocus
+                />
+              </div>
+
+              {/* Content TextArea with RTE */}
+              <div className='mb-4 flex flex-1 flex-col'>
+                <label
+                  className='mb-2 block text-sm font-medium'
+                  style={{ color: 'var(--foreground)' }}
+                >
+                  Content
+                </label>
+                <TextArea
+                  value={newExplanationContent}
+                  onChange={(e) => setNewExplanationContent(e.target.value)}
+                  placeholder='Enter explanation content...'
+                  className='w-full flex-1'
+                  rows={10}
+                />
+              </div>
+
+              {/* Action Buttons */}
+              <div className='flex gap-3'>
+                <button
+                  onClick={handleSaveExplanation}
+                  disabled={
+                    !newExplanationTitle.trim() ||
+                    !newExplanationContent.trim() ||
+                    isUpdating
+                  }
+                  className='flex-1 rounded-lg px-4 py-2 font-medium transition-all hover:scale-105 disabled:opacity-50'
+                  style={{
+                    background: 'var(--primary)',
+                    color: 'var(--primary-foreground)',
+                  }}
+                >
+                  {isUpdating ? 'Saving...' : 'Save'}
+                </button>
+                <button
+                  onClick={handleCancelExplanation}
+                  className='flex-1 rounded-lg px-4 py-2 font-medium transition-all hover:scale-105'
+                  style={{
+                    background: 'var(--secondary)',
+                    color: 'var(--secondary-foreground)',
+                  }}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>,
+            document.body,
+          )}
       </div>
     );
   },

@@ -89,10 +89,10 @@ const TextArea: React.FC<TextAreaProps> = ({
   };
 
   return (
-    <div className='w-full'>
+    <div className={`flex w-full flex-col ${className}`}>
       {showToolbar && (
         <div
-          className='mb-1 flex items-center gap-1 rounded-t-lg border border-b-0 px-2 py-1'
+          className='flex items-center gap-1 rounded-t-lg border border-b-0 px-2 py-1'
           style={{
             background: 'var(--muted)',
             borderColor: 'var(--border)',
@@ -138,9 +138,9 @@ const TextArea: React.FC<TextAreaProps> = ({
       )}
       <textarea
         ref={textareaRef}
-        className={`resize-none border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none ${
+        className={`flex-1 resize-none border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none ${
           showToolbar ? 'rounded-b-lg rounded-t-none' : 'rounded-lg'
-        } ${className}`}
+        }`}
         placeholder={placeholder}
         onChange={onChange}
         onKeyDown={handleKeyDown}
@@ -150,6 +150,7 @@ const TextArea: React.FC<TextAreaProps> = ({
           background: 'var(--input)',
           color: 'var(--foreground)',
           borderColor: 'var(--border)',
+          minHeight: rows ? `${rows * 1.5}rem` : undefined,
         }}
       />
     </div>
