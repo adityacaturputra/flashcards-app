@@ -16,7 +16,7 @@ import styles from '../molecules/FlashcardForm.module.css';
 
 type FlashcardFormEditProps = {
   flashcard: Flashcard;
-  onUpdate: (id: string, flashcard: Partial<Flashcard>) => void;
+  onUpdate: (id: string, flashcard: Partial<Flashcard>) => Promise<void>;
   onCancel: () => void;
 };
 
@@ -38,6 +38,7 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
     moveDynamicField,
     setSelectedCategories,
     selectedCategories,
+    isSaving,
   } = useEditFlashcard({
     flashcard,
     onUpdate,
@@ -243,13 +244,22 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
         <div className='flex gap-3'>
           <Button
             onClick={handleSave}
-            className={`flex-1 rounded-lg py-3 transition-all hover:scale-105 ${styles.modernButton} text-base font-semibold`}
+            disabled={isSaving}
+            className={`flex flex-1 items-center justify-center gap-2 rounded-lg py-3 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 ${styles.modernButton} text-base font-semibold`}
           >
-            Save Changes
+            {isSaving ? (
+              <>
+                <div className='h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent' />
+                Saving...
+              </>
+            ) : (
+              'Save Changes'
+            )}
           </Button>
           <Button
             onClick={onCancel}
-            className={`flex-1 rounded-lg py-3 transition-all hover:scale-105 ${styles.modernButton} text-base font-semibold`}
+            disabled={isSaving}
+            className={`flex-1 rounded-lg py-3 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 ${styles.modernButton} text-base font-semibold`}
             style={{
               background: 'var(--secondary)',
               color: 'var(--secondary-foreground)',

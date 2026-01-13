@@ -39,7 +39,7 @@ const PendingUpdatesIndicator: React.FC<PendingUpdatesIndicatorProps> = ({
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className='fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg'
+        className='fixed bottom-20 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg sm:bottom-4'
         style={{
           background: 'var(--destructive)',
           color: 'var(--destructive-foreground)',
@@ -71,21 +71,22 @@ const PendingUpdatesIndicator: React.FC<PendingUpdatesIndicatorProps> = ({
 
             {/* Panel */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className='fixed bottom-20 right-4 z-50 w-80 max-w-[calc(100vw-2rem)] rounded-xl shadow-2xl'
+              className='fixed left-4 right-4 z-50 mx-auto max-w-md rounded-xl shadow-2xl sm:left-auto sm:right-4 sm:w-80 sm:max-w-none'
               style={{
                 background: 'var(--card)',
                 borderColor: 'var(--border)',
+                bottom: 'calc(var(--filter-height, 80px) + 1rem)',
               }}
             >
               {/* Header */}
-              <div className='flex items-center justify-between border-b p-4' style={{ borderColor: 'var(--border)' }}>
+              <div className='flex items-center justify-between border-b p-3 sm:p-4' style={{ borderColor: 'var(--border)' }}>
                 <div className='flex items-center gap-2'>
-                  <FaExclamationTriangle className='text-orange-500' />
-                  <h3 className='font-semibold' style={{ color: 'var(--foreground)' }}>
+                  <FaExclamationTriangle className='text-sm text-orange-500 sm:text-base' />
+                  <h3 className='text-sm font-semibold sm:text-base' style={{ color: 'var(--foreground)' }}>
                     Pending Updates
                   </h3>
                 </div>
@@ -94,41 +95,41 @@ const PendingUpdatesIndicator: React.FC<PendingUpdatesIndicatorProps> = ({
                   className='rounded-lg p-1 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700'
                   style={{ color: 'var(--muted-foreground)' }}
                 >
-                  <FaTimes />
+                  <FaTimes className='text-sm' />
                 </button>
               </div>
 
               {/* Content */}
-              <div className='max-h-60 overflow-y-auto p-4'>
-                <p className='mb-4 text-sm' style={{ color: 'var(--muted-foreground)' }}>
+              <div className='max-h-48 overflow-y-auto p-3 sm:max-h-60 sm:p-4'>
+                <p className='mb-3 text-xs sm:mb-4 sm:text-sm' style={{ color: 'var(--muted-foreground)' }}>
                   {pendingCount} update{pendingCount > 1 ? 's' : ''} waiting to be synced.
-                  {pendingUpdates.some((u) => u.retryCount > 0) && ' Some updates failed and will be retried.'}
+                  {pendingUpdates.some((u) => u.retryCount > 0) && ' Some failed and will be retried.'}
                 </p>
 
                 <div className='space-y-2'>
                   {pendingUpdates.slice(0, 5).map((update) => (
                     <div
                       key={update.id}
-                      className='flex items-center gap-2 rounded-lg border p-2 text-xs'
+                      className='flex items-start gap-2 rounded-lg border p-2 text-xs'
                       style={{
                         background: 'var(--muted)',
                         borderColor: 'var(--border)',
                       }}
                     >
                       {update.retryCount > 0 ? (
-                        <FaExclamationTriangle className='text-orange-500' />
+                        <FaExclamationTriangle className='mt-0.5 text-orange-500' />
                       ) : (
-                        <FaSync className='text-gray-400' />
+                        <FaSync className='mt-0.5 flex-shrink-0 text-gray-400' />
                       )}
-                      <div className='flex-1 min-w-0'>
+                      <div className='min-w-0 flex-1'>
                         <span className='block font-medium truncate'>{update.flashcardQuestion}</span>
-                        {update.retryCount > 0 && (
-                          <span className='text-xs text-orange-500'>(Retry {update.retryCount})</span>
-                        )}
+                        <div className='mt-0.5 flex items-center gap-2'>
+                          <span className='text-gray-400'>{Object.keys(update.updates).join(', ')}</span>
+                          {update.retryCount > 0 && (
+                            <span className='flex-shrink-0 text-orange-500'>(R{update.retryCount})</span>
+                          )}
+                        </div>
                       </div>
-                      <span className='text-gray-400'>
-                        {Object.keys(update.updates).join(', ')}
-                      </span>
                     </div>
                   ))}
 
@@ -141,7 +142,7 @@ const PendingUpdatesIndicator: React.FC<PendingUpdatesIndicatorProps> = ({
               </div>
 
               {/* Footer */}
-              <div className='flex gap-2 border-t p-4' style={{ borderColor: 'var(--border)' }}>
+              <div className='flex gap-2 border-t p-3 sm:p-4' style={{ borderColor: 'var(--border)' }}>
                 <button
                   onClick={() => {
                     onRetry();
@@ -150,21 +151,21 @@ const PendingUpdatesIndicator: React.FC<PendingUpdatesIndicatorProps> = ({
                     }
                   }}
                   disabled={isProcessing}
-                  className='flex flex-1 items-center justify-center gap-2 rounded-lg px-4 py-2 font-medium transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50'
+                  className='flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-medium transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50 sm:px-4 sm:text-sm'
                   style={{
                     background: 'var(--primary)',
                     color: 'var(--primary-foreground)',
                   }}
                 >
-                  <FaSync className={isProcessing ? 'animate-spin' : ''} />
-                  Retry Now
+                  <FaSync className={`text-xs sm:text-sm ${isProcessing ? 'animate-spin' : ''}`} />
+                  Retry
                 </button>
                 <button
                   onClick={() => {
                     onClear();
                     setIsOpen(false);
                   }}
-                  className='rounded-lg px-4 py-2 font-medium transition-all hover:scale-105'
+                  className='rounded-lg px-3 py-2 text-xs font-medium transition-all hover:scale-105 sm:px-4 sm:text-sm'
                   style={{
                     background: 'var(--secondary)',
                     color: 'var(--secondary-foreground)',

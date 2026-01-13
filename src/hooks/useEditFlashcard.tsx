@@ -4,7 +4,7 @@ import newKeyGen from '@/utils/keyGenIterator';
 
 type UseEditFlashcardProps = {
   flashcard: Flashcard;
-  onUpdate: (id: string, flashcard: Partial<Flashcard>) => void;
+  onUpdate: (id: string, flashcard: Partial<Flashcard>) => Promise<void>;
   isEditing: boolean;
   setIsEditing: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -22,15 +22,21 @@ const useEditFlashcard = ({
   const [dynamicFields, setDynamicFields] = useState<{ [key: string]: string }>(
     flashcard.dynamicFields || {},
   );
+  const [isSaving, setIsSaving] = useState(false);
 
-  const handleSave = () => {
-    onUpdate(flashcard._id!, {
-      question,
-      answer,
-      categories: selectedCategories,
-      dynamicFields,
-    });
-    setIsEditing(false);
+  const handleSave = async () => {
+    setIsSaving(true);
+    try {
+      await onUpdate(flashcard._id!, {
+        question,
+        answer,
+        categories: selectedCategories,
+        dynamicFields,
+      });
+      setIsEditing(false);
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   const handleCancel = () => {
@@ -130,6 +136,7 @@ const useEditFlashcard = ({
     moveDynamicField,
     setSelectedCategories,
     selectedCategories,
+    isSaving,
   };
 };
 
