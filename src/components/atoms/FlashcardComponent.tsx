@@ -183,17 +183,21 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
     const handleSaveExplanation = async () => {
       if (!newExplanationTitle.trim() || !newExplanationContent.trim()) return;
 
+      // Close modal immediately and show loading on card
+      const titleToSave = newExplanationTitle.trim();
+      const contentToSave = newExplanationContent.trim();
+      setNewExplanationTitle('');
+      setNewExplanationContent('');
+      setIsAddExplanationOpen(false);
+
       setIsUpdating(true);
       try {
         const currentFields = flashcard.dynamicFields || {};
         const updatedFields = {
           ...currentFields,
-          [newExplanationTitle.trim()]: newExplanationContent.trim(),
+          [titleToSave]: contentToSave,
         };
         await onUpdate(flashcard._id!, { dynamicFields: updatedFields });
-        setNewExplanationTitle('');
-        setNewExplanationContent('');
-        setIsAddExplanationOpen(false);
       } catch (error) {
         console.error('Error adding explanation:', error);
       } finally {
@@ -638,8 +642,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
                   onClick={handleSaveExplanation}
                   disabled={
                     !newExplanationTitle.trim() ||
-                    !newExplanationContent.trim() ||
-                    isUpdating
+                    !newExplanationContent.trim()
                   }
                   className='flex-1 rounded-lg px-4 py-2 font-medium transition-all hover:scale-105 disabled:opacity-50'
                   style={{
@@ -647,7 +650,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
                     color: 'var(--primary-foreground)',
                   }}
                 >
-                  {isUpdating ? 'Saving...' : 'Save'}
+                  Save
                 </button>
                 <button
                   onClick={handleCancelExplanation}

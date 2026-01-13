@@ -446,13 +446,15 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                       const correctedUpdates = { ...updates };
                       if (updates.question) {
                         correctedUpdates.answer = updates.question;
+                        delete correctedUpdates.question;
                       }
                       if (updates.answer) {
                         correctedUpdates.question = updates.answer;
+                        delete correctedUpdates.answer;
                       }
-                      onUpdate(id, correctedUpdates);
+                      return await onUpdate(id, correctedUpdates);
                     } else {
-                      onUpdate(id, updates);
+                      return await onUpdate(id, updates);
                     }
                   }}
                   onDelete={onDelete}
