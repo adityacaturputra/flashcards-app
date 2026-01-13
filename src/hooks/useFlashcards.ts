@@ -43,8 +43,8 @@ const useFlashcards = (
   };
 
   const updateFlashcard = async (id: string, flashcard: Partial<Flashcard>) => {
+    setLoading(true);
     try {
-      setLoading(true);
       const response = await fetch(`/api/flashcards?id=${id}`, {
         method: 'PUT',
         headers: {
@@ -61,6 +61,7 @@ const useFlashcards = (
       );
     } catch (error) {
       console.error(error);
+      throw error; // Re-throw so the caller knows the update failed
     } finally {
       setLoading(false);
     }

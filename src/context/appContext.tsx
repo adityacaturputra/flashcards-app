@@ -7,10 +7,12 @@ import React, {
   useEffect,
   useRef,
   PropsWithChildren,
+  useCallback,
 } from 'react';
 import { Flashcard, FlashcardCategory } from '../types/flashcard';
 import useFlashcards from '@/hooks/useFlashcards';
 import { useFlashcardCategories } from '@/hooks/useFlashcardCategories';
+import { useOfflineUpdateQueue, PendingUpdate } from '@/hooks/useOfflineUpdateQueue';
 
 type AppContextType = {
   flashcards: Flashcard[];
@@ -23,6 +25,12 @@ type AppContextType = {
   loadingAction: boolean;
   categories: FlashcardCategory[];
   loadingCategories: boolean;
+  // Offline queue
+  pendingUpdates: PendingUpdate[];
+  isProcessingQueue: boolean;
+  retryQueue: () => void;
+  clearQueue: () => void;
+  processQueue: () => void;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -39,7 +47,7 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [flashcards, setFlashcards] = useState<Flashcard[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [loadingAction, setLoadingAction] = useState<boolean>(false);
-  const { loadFlashcards, addFlashcard, updateFlashcard, deleteFlashcard } =
+  const { loadFlashcards, addFlashcard, updateFlashcard: apiUpdateFlashcard, deleteFlashcard } =
     useFlashcards(setFlashcards, setLoadingAction);
   const {
     categories,
@@ -47,6 +55,20 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     loadCategories,
   } = useFlashcardCategories();
   const loadFlashcardsRef = useRef(loadFlashcards);
+
+  // Offline queue setup - wrapper function for API updates
+  const performUpdate = useCallback(async (id: string, flashcard: Partial<Flashcard>) => {
+    return apiUpdateFlashcard(id, flashcard);
+  }, [apiUpdateFlashcard]);
+
+  const {
+    pendingUpdates,
+    isProcessing: isProcessingQueue,
+    queueUpdate,
+    retryAll,
+    clearQueue,
+    processQueue,
+  } = useOfflineUpdateQueue(performUpdate);
 
   useEffect(() => {
     loadFlashcardsRef.current = loadFlashcards;
@@ -89,6 +111,20 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     loadCategories();
   };
 
+  // Wrap updateFlashcard to try direct update first, then queue if it fails
+  const updateFlashcard = useCallback(async (id: string, updates: Partial<Flashcard>) => {
+    try {
+      // Try direct update first
+      await apiUpdateFlashcard(id, updates);
+    } catch (error) {
+      // If update fails, add to queue with the flashcard question
+      console.log('Update failed, adding to queue:', error);
+      const flashcard = flashcards.find((f) => f._id === id);
+      const question = flashcard?.question || 'Unknown Card';
+      queueUpdate(id, question, updates);
+    }
+  }, [apiUpdateFlashcard, queueUpdate, flashcards]);
+
   return (
     <AppContext.Provider
       value={{
@@ -102,6 +138,11 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
         loadingAction,
         categories,
         loadingCategories,
+        pendingUpdates,
+        isProcessingQueue,
+        retryQueue: retryAll,
+        clearQueue,
+        processQueue,
       }}
     >
       {children}

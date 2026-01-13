@@ -13,6 +13,7 @@ import { Progression } from '@/types/flashcard';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes, FaPlay, FaStop, FaCog, FaPlus } from 'react-icons/fa';
 import SkeletonLoader from '@/components/atoms/SkeletonLoader';
+import PendingUpdatesIndicator from '@/components/atoms/PendingUpdatesIndicator';
 
 // Lazy load heavy components
 const FlashcardList = lazy(
@@ -23,8 +24,16 @@ const SearchTemplateModal = lazy(
 );
 
 const Home: React.FC = memo(() => {
-  const { flashcards, updateFlashcard, deleteFlashcard, loading } =
-    useAppContext();
+  const {
+    flashcards,
+    updateFlashcard,
+    deleteFlashcard,
+    loading,
+    pendingUpdates,
+    isProcessingQueue,
+    retryQueue,
+    clearQueue,
+  } = useAppContext();
   const { isModalOpen, closeModal, selectedTemplate, setSelectedTemplate } =
     useSearchTemplateContext();
 
@@ -314,6 +323,39 @@ const Home: React.FC = memo(() => {
           onSelectTemplate={setSelectedTemplate}
         />
       </Suspense>
+
+      {/* Pending Updates Indicator */}
+      <PendingUpdatesIndicator
+        pendingCount={pendingUpdates.length}
+        isProcessing={isProcessingQueue}
+        onRetry={retryQueue}
+        onClear={clearQueue}
+        pendingUpdates={pendingUpdates}
+      />
+
+      {/* Test button to simulate failed update - remove in production */}
+      {process.env.NODE_ENV === 'development' && (
+        <button
+          onClick={() => {
+            // Simulate adding a pending update to localStorage
+            const testUpdate = {
+              id: `test-${Date.now()}`,
+              flashcardId: 'test-card-123',
+              flashcardQuestion: `Test Card ${Date.now().toString().slice(-4)}`,
+              updates: { progression: 'hard' },
+              timestamp: Date.now(),
+              retryCount: 0,
+            };
+            const existing = JSON.parse(localStorage.getItem('flashcard_update_queue') || '[]');
+            localStorage.setItem('flashcard_update_queue', JSON.stringify([...existing, testUpdate]));
+            window.location.reload();
+          }}
+          className='fixed bottom-20 left-4 z-50 rounded bg-yellow-500 px-2 py-1 text-xs text-white'
+          title='Test: Simulate failed update'
+        >
+          Test Fail
+        </button>
+      )}
     </div>
   );
 });
