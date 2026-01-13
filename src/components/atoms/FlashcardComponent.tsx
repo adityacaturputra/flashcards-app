@@ -612,7 +612,6 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
                     color: 'var(--foreground)',
                     borderColor: 'var(--border)',
                   }}
-                  autoFocus
                 />
               </div>
 
