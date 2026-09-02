@@ -484,6 +484,84 @@ Perhatikan perubahan posisi kata kerja ketika frase ini berada di dalam kalimat 
     createdAt: '2026-09-02',
     tags: ['questions', 'auxiliary-verbs', 'why-does-it-matter', 'matter', 'embedded-clauses', 'direct-questions'],
   },
+  {
+    id: 'subject-verb-agreement-its-color-makes',
+    module: 'Subject-Verb Agreement',
+    title: 'Its color makes vs. Its colors make (Third-Person Singular Agreement)',
+    question: '“its color makes me remember about blablabla” (Why is "makes" written with an "-s"? Does "its color" equal "it"?)',
+    correction: '“Its color (singular / it)” -> “makes (V+s)” vs “Its colors (plural / they)” -> “make (V1)”',
+    remarks: `Jawaban Anda **100% BENAR!** 
+
+Alasan kata kerja **\`makes\`** berakhiran **\`-s\`** adalah karena subjeknya (**"its color"**) adalah **kata benda tunggal (*singular noun*)** yang setara dengan kata ganti **"it"** (*Third-Person Singular*).
+
+---
+
+### 1. Aturan Dasar: Subject-Verb Agreement (Simple Present Tense)
+
+Dalam tata bahasa Inggris, pada **Simple Present Tense**, bentuk kata kerja wajib menyesuaikan jumlah subjek (*Subject-Verb Agreement*):
+
+1. **Subjek Tunggal (*He / She / It / Singular Noun*)** → Kata kerja **WAJIB ditambah \`-s\` atau \`-es\`**:
+   $$\\mathbf{\\text{Subject (Its color = It)}} + \\mathbf{\\text{Verb + -s (makes)}} + \\mathbf{\\text{Object (me)}} + \\mathbf{\\text{Bare Verb (remember)}}$$
+2. **Subjek Jamak (*They / We / You / I / Plural Noun*)** → Kata kerja **TETAP bentuk dasar (V1 tanpa -s)**:
+   $$\\mathbf{\\text{Subject (Its colors = They)}} + \\mathbf{\\text{Verb (make)}} + \\mathbf{\\text{Object (me)}} + \\mathbf{\\text{Bare Verb (remember)}}$$
+
+---
+
+### 2. Perbandingan Subjek Tunggal (*Its color*) vs Subjek Jamak (*Its colors*)
+
+- ✅ **Tunggal (*Its color = It*):** *“Its **color makes** me feel calm.”* *(Hanya 1 warna).*
+- ✅ **Jamak (*Its colors = They*):** *“Its **colors make** me feel excited.”* *(Banyak warna / warna-warni).*
+- ✅ **Contoh Serupa (Benda Lain):**
+  - *“The **music makes** me dance.”* (*music* = singular noun / it → *makes*).
+  - *“These **songs make** me dance.”* (*songs* = plural noun / they → *make*).
+
+---
+
+### 3. Bonus Tata Bahasa 1: Pola Causative Verb "Make" (*Make someone do*)
+
+Setelah kata kerja *make / makes*, kata kerja berikutnya **WAJIB berbentuk dasar (*Bare Infinitive / V1 tanpa to*)**:
+
+$$\\mathbf{\\text{make / makes}} + \\mathbf{\\text{Object (me/him/them)}} + \\mathbf{\\text{V1 (remember / cry / smile)}}$$
+
+- ✅ **BENAR:** *“Its color makes me **remember**...”*
+- ❌ **SALAH:** *“Its color makes me **to remember**...”*
+
+---
+
+### 4. Bonus Tata Bahasa 2: "Reminds me of" vs "Makes me remember"
+
+Meskipun *“makes me remember”* secara struktur benar, penutur asli (*native speakers*) memiliki kata kerja khusus yang jauh lebih natural untuk mengungkapkan *"membuat teringat akan sesuatu"*, yaitu **\`remind someone of something\`**:
+
+| Tingkat Kealamian | Contoh Kalimat | Keterangan |
+| :--- | :--- | :--- |
+| ⭐ **Paling Natural (Native)** | *“Its color **reminds me of** our trip.”* | Menggunakan kata kerja khusus \`remind ... of\`. |
+| ✅ **Secara Grammar Benar** | *“Its color **makes me remember** our trip.”* | Menggunakan pola causative \`make + remember\`. |
+| ❌ **Kurang Tepat (Preposisi)** | *“...remember **about** our trip.”* | \`remember\` adalah transitive verb, langsung diikuti objeknya tanpa \`about\`. |
+
+---
+
+### 5. Tabel Ringkasan
+
+| Pola Subjek | Kata Ganti | Bentuk Verb | Contoh Kalimat |
+| :--- | :--- | :--- | :--- |
+| **Its color** *(Tunggal)* | **It** | **makes** *(V + s)* | *“Its color **makes** me happy.”* |
+| **Its colors** *(Jamak)* | **They** | **make** *(V1)* | *“Its colors **make** me happy.”* |
+| **The car's color** *(Tunggal)* | **It** | **looks** *(V + s)* | *“The car's color **looks** stunning.”* |
+| **The car's colors** *(Jamak)* | **They** | **look** *(V1)* | *“The car's colors **look** stunning.”* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - **Its color** (1 warna = *it*) → **makes** / **reminds** (pakai **-s**).
+> - **Its colors** (>1 warna = *they*) → **make** / **remind** (tanpa **-s**).
+> - Ingin bilang *"bikin aku ingat"* yang paling natural → Gunakan **“reminds me of [something]”**.
+`,
+    source: 'Real-World Grammar & Daily Writing',
+    chapter: 'Subject-Verb Agreement & Causative Verbs',
+    createdAt: '2026-09-02',
+    tags: ['subject-verb-agreement', 'third-person-singular', 'its-color', 'causative-verbs', 'make-someone-do', 'remind-of'],
+  },
 ];
 
 /**
