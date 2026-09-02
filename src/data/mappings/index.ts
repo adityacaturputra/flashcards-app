@@ -1802,6 +1802,83 @@ Karena *news* adalah kata benda non-count, kita **DILARANG** mengatakan *"a news
     createdAt: '2026-09-02',
     tags: ['news', 'nouns', 'uncountable-nouns', 'singular-nouns', 'subject-verb-agreement', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'prepositions-due-to-vs-because-of-vs-because',
+    module: 'Prepositions & Conjunctions',
+    title: 'due to & because of + Noun vs. because + Clause',
+    question: '“Due to it was a holiday, there weren’t many cars on the road.” (21. Using due to and because of incorrectly)',
+    correction: '“Due to it was a holiday...” -> “Due to the holiday...” / “Because of the holiday...” / “Because it was a holiday...”',
+    remarks: `Jawaban yang benar dan baku dapat diungkapkan dengan 3 cara berikut:
+1. **“Due to the holiday, there weren’t many cars on the road.”**
+2. **“Because of the holiday, there weren’t many cars on the road.”**
+3. **“Because it was a holiday, there weren’t many cars on the road.”**
+
+---
+
+### 1. Mengapa "Due to it was a holiday" SALAH?
+
+Kunci perbedaannya terletak pada perbedaan antara **Preposisi (Kata Depan)** dan **Konjungsi (Kata Hubung)**:
+
+> [!IMPORTANT]
+> - **\`due to\`** dan **\`because of\`** adalah **Preposisi / Frasa Kata Depan**. Sesuai aturan tata bahasa, preposisi **HANYA BOLEH diikuti oleh Kata Benda (*Noun*), Frasa Kata Benda (*Noun Phrase*), atau Gerund (\`V-ing\`)**.
+> - **DILARANG KERAS** meletakkan klausa lengkap (**\`Subject + Verb\`**) langsung di belakang *due to* atau *because of*.
+> - **\`because\`** adalah **Konjungsi (Kata Hubung)** yang **WAJIB diikuti oleh klausa lengkap (\`Subject + Verb\`)**.
+
+Frasa *“it was a holiday”* memiliki Subjek (*it*) dan Verb (*was*), yang merupakan sebuah **klausa**, bukan kata benda:
+- ❌ **SALAH:** *“**Due to it was a holiday**...”*
+- ❌ **SALAH:** *“**Because of it was a holiday**...”*
+- ✅ **BENAR (Pakai Noun Phrase):** *“**Due to the holiday**, there weren't many cars on the road.”*
+- ✅ **BENAR (Pakai Noun Phrase):** *“**Because of the holiday**, there weren't many cars on the road.”*
+- ✅ **BENAR (Pakai Conjunction + Clause):** *“**Because it was a holiday**, there weren't many cars on the road.”*
+
+---
+
+### 2. Rincian Rumus & Contoh Penggunaan
+
+#### A. \`because\` → Diikuti Klausa Lengkap (Subject + Verb)
+$$\\mathbf{\\text{Because}} + \\mathbf{\\text{Subject}} + \\mathbf{\\text{Verb}} + \\dots$$
+
+- *“We stayed home **because it was raining heavily**.”* *(Subject: it, Verb: was raining).*
+- *“He was late **because the traffic was terrible**.”*
+
+#### B. \`because of\` & \`due to\` → Diikuti Kata Benda / Frasa Benda / V-ing
+$$\\mathbf{\\text{Because of / Due to}} + \\mathbf{\\text{Noun / Noun Phrase / V-ing}}$$
+
+- *“We stayed home **because of the heavy rain**.”* *(Noun Phrase).*
+- *“The flight cancellation was **due to severe turbulence**.”* *(Noun Phrase).*
+- *“He succeeded **due to working hard**.”* *(Gerund / V-ing).*
+
+#### C. Trik Khusus: Menggunakan Klausa dengan "Due to the fact that"
+Jika Anda tetap ingin menyusun klausa lengkap setelah *due to*, tambahkan frasa **\`the fact that\`**:
+
+$$\\mathbf{\\text{Due to the fact that}} + \\mathbf{\\text{Subject}} + \\mathbf{\\text{Verb}}$$
+
+- *“**Due to the fact that it was a holiday**, the road was very quiet.”*
+
+---
+
+### 3. Tabel Rangkuman Perbandingan
+
+| Kata / Frasa | Kelas Tata Bahasa | Pola yang Mengikuti | Contoh Kalimat Benar |
+| :--- | :--- | :--- | :--- |
+| **because** | Subordinating Conjunction | **Klausa (Subject + Verb)** | *“**Because it rained**, the match was stopped.”* |
+| **because of** | Preposition | **Noun / Noun Phrase / V-ing** | *“**Because of the rain**, the match was stopped.”* |
+| **due to** | Preposition | **Noun / Noun Phrase / V-ing** | *“**Due to the rain**, the match was stopped.”* |
+| **owing to / thanks to** | Preposition | **Noun / Noun Phrase / V-ing** | *“**Owing to bad weather**, we postponed the trip.”* |
+| **due to the fact that** | Conjunction Phrase | **Klausa (Subject + Verb)** | *“**Due to the fact that it rained**, we stayed home.”* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Diikuti **Subject + Verb** (Klausa) → Gunakan **because** (*because it was a holiday*).
+> - Diikuti **Noun / Frasa Benda** (Tanpa Verb) → Gunakan **due to** atau **because of** (*due to the holiday* / *because of the holiday*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['prepositions', 'conjunctions', 'due-to', 'because-of', 'because', 'cause-and-effect', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
