@@ -8,6 +8,8 @@ import {
   FaLayerGroup,
   FaCheck,
   FaGraduationCap,
+  FaArrowDownWideShort,
+  FaArrowUpWideShort,
 } from 'react-icons/fa6';
 import { MappingItem } from '@/types/mapping';
 import { useMappingFilter } from '@/hooks/useMappingFilter';
@@ -27,6 +29,8 @@ export const MappingTable: React.FC<MappingTableProps> = ({
     setSelectedModule,
     searchQuery,
     setSearchQuery,
+    sortOrder,
+    toggleSortOrder,
     moduleStats,
     uniqueModules,
     filteredItems,
@@ -40,10 +44,16 @@ export const MappingTable: React.FC<MappingTableProps> = ({
 
   return (
     <div className='space-y-4 sm:space-y-6'>
-      {/* Filter and Search Bar */}
-      <div className='space-y-3 sm:space-y-4'>
-        {/* Module Filter Pills */}
-        <div className='flex items-center gap-1.5 overflow-x-auto pb-1'>
+      {/* Top Filter Bar: Modules + Search & Actions */}
+      <div
+        className='rounded-2xl border p-3.5 sm:p-5 shadow-xs space-y-3.5'
+        style={{
+          background: 'var(--card)',
+          borderColor: 'var(--border)',
+        }}
+      >
+        {/* Module Filter Chips */}
+        <div className='flex items-center gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible'>
           <button
             onClick={() => setSelectedModule(null)}
             className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold whitespace-nowrap transition-all hover:scale-105 ${
@@ -127,19 +137,51 @@ export const MappingTable: React.FC<MappingTableProps> = ({
             )}
           </div>
 
-          {onStartFlashcardMode && (
+          <div className='flex items-center gap-2'>
+            {/* Sort Toggle Button (Descending by default) */}
             <button
-              onClick={() => onStartFlashcardMode(filteredItems)}
-              className='flex items-center justify-center gap-2 rounded-xl px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all hover:scale-105 hover:shadow-md'
+              onClick={toggleSortOrder}
+              className='flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all hover:bg-slate-100 dark:hover:bg-slate-800 shrink-0'
               style={{
-                background: 'var(--primary)',
-                color: 'var(--primary-foreground)',
+                background: 'var(--card)',
+                borderColor: 'var(--border)',
+                color: 'var(--foreground)',
               }}
+              title={
+                sortOrder === 'desc'
+                  ? 'Sorted: Newest First (Click to switch to Oldest First)'
+                  : 'Sorted: Oldest First (Click to switch to Newest First)'
+              }
             >
-              <FaLayerGroup className='h-3.5 w-3.5 sm:h-4 sm:w-4' />
-              <span>Study as Flashcards ({filteredItems.length})</span>
+              {sortOrder === 'desc' ? (
+                <>
+                  <FaArrowDownWideShort className='h-3.5 w-3.5 text-blue-500' />
+                  <span className='hidden sm:inline'>Newest First</span>
+                  <span className='sm:hidden'>Newest</span>
+                </>
+              ) : (
+                <>
+                  <FaArrowUpWideShort className='h-3.5 w-3.5 text-blue-500' />
+                  <span className='hidden sm:inline'>Oldest First</span>
+                  <span className='sm:hidden'>Oldest</span>
+                </>
+              )}
             </button>
-          )}
+
+            {onStartFlashcardMode && (
+              <button
+                onClick={() => onStartFlashcardMode(filteredItems)}
+                className='flex flex-1 sm:flex-initial items-center justify-center gap-2 rounded-xl px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all hover:scale-105 hover:shadow-md whitespace-nowrap'
+                style={{
+                  background: 'var(--primary)',
+                  color: 'var(--primary-foreground)',
+                }}
+              >
+                <FaLayerGroup className='h-3.5 w-3.5 sm:h-4 sm:w-4' />
+                <span>Study as Flashcards ({filteredItems.length})</span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
 

@@ -406,7 +406,7 @@ Pada penggalan kedua prompt:
  * Utility functions to access mapping data
  */
 export function getAllMappings(): MappingItem[] {
-  return MAPPING_ITEMS;
+  return [...MAPPING_ITEMS].reverse();
 }
 
 export function getModules(): string[] {
@@ -419,5 +419,5 @@ export function getMappingById(id: string): MappingItem | undefined {
 }
 
 export function getMappingsByModule(moduleName: string): MappingItem[] {
-  return MAPPING_ITEMS.filter((item) => item.module === moduleName);
+  return [...MAPPING_ITEMS].reverse().filter((item) => item.module === moduleName);
 }

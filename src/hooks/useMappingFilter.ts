@@ -7,6 +7,9 @@ interface UseMappingFilterReturn {
   setSelectedModule: (mod: string | null) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
+  sortOrder: 'desc' | 'asc';
+  setSortOrder: (order: 'desc' | 'asc') => void;
+  toggleSortOrder: () => void;
   moduleStats: Record<string, number>;
   uniqueModules: string[];
   filteredItems: MappingItem[];
@@ -21,12 +24,17 @@ interface UseMappingFilterReturn {
 
 /**
  * Custom Hook for managing Mapping Table filtering, module selection,
- * search indexing, and modal inspection navigation.
+ * search indexing, descending/ascending sorting, and modal inspection navigation.
  */
 export function useMappingFilter(items: MappingItem[]): UseMappingFilterReturn {
   const [selectedModule, setSelectedModule] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
   const [activeModalItem, setActiveModalItem] = useState<MappingItem | null>(null);
+
+  const toggleSortOrder = useCallback(() => {
+    setSortOrder((prev) => (prev === 'desc' ? 'asc' : 'desc'));
+  }, []);
 
   // Extract unique modules with counts
   const moduleStats = useMemo(() => {
@@ -41,9 +49,9 @@ export function useMappingFilter(items: MappingItem[]): UseMappingFilterReturn {
     return Object.keys(moduleStats).sort();
   }, [moduleStats]);
 
-  // Filter items based on selected module and search query
+  // Filter items based on selected module, search query, and sort order (default: descending / newest first)
   const filteredItems = useMemo(() => {
-    return items.filter((item) => {
+    const list = items.filter((item) => {
       const matchModule = selectedModule === null || item.module === selectedModule;
       const query = searchQuery.trim().toLowerCase();
       if (!query) return matchModule;
@@ -60,7 +68,9 @@ export function useMappingFilter(items: MappingItem[]): UseMappingFilterReturn {
 
       return matchModule && matchSearch;
     });
-  }, [items, selectedModule, searchQuery]);
+
+    return sortOrder === 'desc' ? [...list].reverse() : list;
+  }, [items, selectedModule, searchQuery, sortOrder]);
 
   // Modal navigation index
   const currentModalIndex = useMemo(() => {
@@ -89,6 +99,9 @@ export function useMappingFilter(items: MappingItem[]): UseMappingFilterReturn {
     setSelectedModule,
     searchQuery,
     setSearchQuery,
+    sortOrder,
+    setSortOrder,
+    toggleSortOrder,
     moduleStats,
     uniqueModules,
     filteredItems,
