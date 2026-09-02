@@ -1033,6 +1033,73 @@ Jika Anda ragu apakah kata **\`to\`** tersebut adalah Preposisi atau Infinitive:
     createdAt: '2026-09-02',
     tags: ['prepositions', 'gerunds', 'parts-of-speech', 'look-forward-to', 'infinitive-vs-preposition', 'grammar-guide'],
   },
+  {
+    id: 'collocations-not-pretty-sure-vs-not-sure',
+    module: 'Collocations & Common Errors',
+    title: 'I\'m not pretty sure vs. I\'m not sure / not quite sure (Degree Adverb Negation)',
+    question: '“I\'m not pretty sure what the weather is going to be today.” (What is the correct version of the above sentence?)',
+    correction: '“I\'m not pretty sure” -> “I\'m not sure / I\'m not quite sure / I\'m not so sure”',
+    remarks: `Jawaban yang benar adalah **"I'm not sure what the weather is going to be today."**
+
+---
+
+### 1. Mengapa "I'm not pretty sure" SALAH?
+
+Kata keterangan tingkatan (*adverb of degree*) **\`pretty\`** yang bermakna *"cukup / lumayan"* secara alami **HANYA digunakan dalam kalimat positif (afirmatif)**:
+
+- ✅ **Kalimat Positif:** *“I'm **pretty sure** we will win.”* *(Saya **cukup yakin** kita akan menang).*
+- ✅ **Kalimat Positif:** *“The movie was **pretty good**.”* *(Filmnya **lumayan bagus**).*
+
+Dalam tata bahasa Inggris baku, kata ingkar **\`not\` DILARANG dipasangkan langsung sebelum \`pretty sure\`**:
+- ❌ **SALAH / TIDAK BAKU:** *“I'm **not pretty sure**...”*
+
+---
+
+### 2. Pilihan Alami Saat Menyatakan Keraguan / Ketidakyakinan (Bentuk Negatif)
+
+Jika Anda ingin menyatakan keraguan atau ketidakyakinan, gunakan variasi alami berikut:
+
+| Bentuk Baku | Makna & Nuansa | Contoh Kalimat |
+| :--- | :--- | :--- |
+| **I'm not sure** | Paling umum, langsung, dan netral | *“I'm **not sure** what the weather is going to be today.”* |
+| **I'm not quite sure** | *"Tidak begitu yakin"* (tahu sedikit, tapi masih ada ragu) | *“I'm **not quite sure** about his exact arrival time.”* |
+| **I'm not so sure / too sure** | *"Kurang yakin / belum yakin betul"* (*not convinced*) | *“I'm **not so sure** that's a good decision.”* |
+| **I'm not entirely sure** | *"Tidak sepenuhnya yakin"* (formal & sopan) | *“I'm **not entirely sure** if the report is finalized.”* |
+
+---
+
+### 3. Spektrum Tingkat Keyakinan (*Certainty Spectrum*)
+
+$$\\begin{aligned}
+\\mathbf{100\\%}: &\\quad \\text{I'm completely sure / certain} \\\\
+\\mathbf{80\\text{-}90\\%}: &\\quad \\text{I'm \\textbf{pretty sure}} \\quad (\\text{Bentuk Positif}) \\\\
+\\mathbf{50\\%}: &\\quad \\text{I'm \\textbf{not quite sure}} \\quad (\\text{Ada sedikit keraguan}) \\\\
+\\mathbf{20\\text{-}40\\%}: &\\quad \\text{I'm \\textbf{not sure / not so sure}} \\quad (\\text{Ragu / Belum yakin}) \\\\
+\\mathbf{0\\%}: &\\quad \\text{I'm not sure at all / I have no idea}
+\\end{aligned}$$
+
+---
+
+### 4. Perbandingan Kalimat Positif vs Negatif
+
+| Konteks | Bentuk Positif (BENAR) | Bentuk Negatif (SALAH) | Bentuk Negatif (BENAR) |
+| :--- | :--- | :--- | :--- |
+| **Cukup Yakin** | *I'm **pretty sure**.* | ❌ *I'm not pretty sure.* | ✅ *I'm **not sure**.* / *I'm **not quite sure**.* |
+| **Lumayan Bagus** | *It's **pretty good**.* | ❌ *It's not pretty good.* | ✅ *It's **not that good**.* / *It's **not very good**.* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Ingin bilang *"cukup yakin"* (positif) → **I'm pretty sure**.
+> - Ingin bilang *"tidak yakin"* (negatif) → **I'm not sure** atau **I'm not quite sure** (JANGAN pakai *pretty*!).
+> - *I'm not so sure* = *"Saya kurang yakin / belum yakin betul"*.
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Common Speaking Errors: Collocations & Degrees of Certainty',
+    createdAt: '2026-09-02',
+    tags: ['collocations', 'common-errors', 'pretty-sure', 'not-sure', 'not-quite-sure', 'degrees-of-certainty', 'englishvit'],
+  },
 ];
 
 /**
