@@ -47,6 +47,15 @@ This application unites both worlds into an **integrated, git-backed study syste
 > - The user can immediately read and learn without waiting.
 > - The background software engineering tasks (appending to `src/data/mappings/index.ts`, executing `npm run build`, and running `git commit`) proceed seamlessly in the background to persist the record.
 
+> [!IMPORTANT]
+> **5. Search-First De-Duplication & Consolidation (Search Existing Entries First)**:
+> - **MANDATORY**: Before creating any new `MappingItem`, the AI Agent **MUST ALWAYS perform a search (`grep_search`)** in [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) using keywords from the question, phrase, or grammar topic (e.g. `look forward to`, `pretty sure`, `recommend`, `in on at`).
+> - **If an entry ALREADY exists for that topic/phrase**:
+>   - **DO NOT create a new duplicate card!**
+>   - **EDIT, EXPAND, and CONSOLIDATE** into the existing entry so all related nuances, grammar definitions, and examples are unified in one single comprehensive master card.
+> - **If NO matching or related entry exists**:
+>   - Proceed to append a new `MappingItem` at the bottom of the dataset.
+
 ---
 
 ## 🔄 End-to-End Workflow Architecture

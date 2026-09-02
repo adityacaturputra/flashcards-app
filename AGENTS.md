@@ -56,12 +56,13 @@ flashcards/
 When a user asks the agent to add a new question, error analysis, or English rule:
 1. **Read and Follow [MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)** for the complete 6-step study mapping protocol.
 2. **Immediate Educational Delivery**: Deliver the clear, comprehensive explanation, formula breakdown, and correct answer in chat FIRST so the user learns immediately.
-3. **Analyze & Extract**: Module, title, question, correction, source, and chapter.
-4. **Bottom-Up Inspection**: When reading or appending to [`src/data/mappings/index.ts`](./src/data/mappings/index.ts), always inspect the bottom/tail of the file first (the newest entries and insertion point) rather than reading from line 1 down.
-5. **Generate Comprehensive Remarks**: Markdown, KaTeX math formulas (`$$...$$` and `$...$`), comparison tables, and quick memory tips.
-6. **Append in Repo**: Update [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) adhering to `MappingItem`.
-7. **Verify Build**: Run `npm run build` to ensure type safety and zero compilation errors.
-8. **Auto-Commit**: If changes only affect study mapping dataset & docs, the agent is authorized to automatically execute `git commit`.
+3. **Search Existing Entries First**: Always execute `grep_search` on [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) to check if a card on this topic/phrase already exists. If found, **EDIT and expand** that card; do not create duplicate cards.
+4. **Analyze & Extract**: Module, title, question, correction, source, and chapter.
+5. **Bottom-Up Inspection**: When reading or appending to [`src/data/mappings/index.ts`](./src/data/mappings/index.ts), always inspect the bottom/tail of the file first (the newest entries and insertion point) rather than reading from line 1 down.
+6. **Generate Comprehensive Remarks**: Markdown, KaTeX math formulas (`$$...$$` and `$...$`), comparison tables, and quick memory tips.
+7. **Persist in Repo**: Update or append in [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) adhering to `MappingItem`.
+8. **Verify Build**: Run `npm run build` to ensure type safety and zero compilation errors.
+9. **Auto-Commit**: If changes only affect study mapping dataset & docs, the agent is authorized to automatically execute `git commit`.
 
 ---
 
