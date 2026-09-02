@@ -2117,6 +2117,73 @@ Jika pertanyaan langsungnya tidak memiliki kata tanya *Wh-* (*Yes/No Question*),
     createdAt: '2026-09-02',
     tags: ['indirect-questions', 'embedded-questions', 'noun-clauses', 'word-order', 'polite-questions', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'vocabulary-native-american-vs-native-english-speaker',
+    module: 'Vocabulary & Cultural Nuances',
+    title: 'Native American vs. Native English Speaker (Cultural & Linguistic Distinction)',
+    question: '“I like living in the United States because I can practice my English with Native American speakers.” (25. Confusing Native American speaker with Native English speaker)',
+    correction: '“Native American speakers” -> “native speakers” / “native English speakers”',
+    remarks: `Jawaban yang benar dan baku adalah **"I like living in the United States because I can practice my English with native speakers."** *(atau "native English speakers" / "American native speakers")*
+
+---
+
+### 1. Mengapa Istilah "Native American speakers" SALAH dalam Konteks Ini?
+
+Banyak pembelajar bahasa Inggris sering salah mengartikan kata per kata (*“Native” = Asli + “American” = Orang Amerika* $\\rightarrow$ disangka berarti penutur asli Amerika). Padahal:
+
+> [!IMPORTANT]
+> - **\`Native American\`** adalah **nama identitas suku / etnisitas pribumi asli benua Amerika (Suku Indian)**, seperti suku *Navajo, Cherokee, Apache, Sioux, Iroquois, Mohawk*, dsb., yang mendiami benua Amerika sebelum kedatangan bangsa Eropa. Suku pribumi memiliki bahasa adat mereka sendiri (misal: bahasa Navajo, Lakota).
+> - **\`Native English speaker\`** atau **\`Native speaker\`** adalah sebutan untuk **orang yang menuturkan bahasa Inggris sebagai bahasa ibu (*mother tongue / first language*) sejak lahir/kanak-kanak**.
+
+Jika Anda mengatakan *“Native American speakers”*, orang Amerika akan mengira Anda sedang belajar berbicara bahasa suku pribumi Indian!
+
+- ❌ **SALAH:** *“...practice my English with **Native American speakers**.”*
+- ✅ **BENAR:** *“...practice my English with **native speakers**.”*
+- ✅ **BENAR:** *“...practice my English with **native English speakers**.”*
+- ✅ **BENAR:** *“...practice my English with **American native speakers**.”*
+
+---
+
+### 2. Perbedaan Huruf Kapital (*Capitalization*)
+
+Perhatikan cara penulisan huruf besar/kecil yang membedakan artinya:
+- **\`Native American\`** *(Huruf N dan A kapital)* → Merujuk khusus pada ras/suku bangsa pribumi Amerika (*Proper Noun*).
+- **\`native speaker\`** *(Huruf n kecil)* → Kata sifat umum yang berarti penutur bahasa ibu (*adjective*).
+
+---
+
+### 3. Istilah Standar Penutur Bahasa di Dunia Internasional
+
+| Istilah Baku | Definisi & Makna | Contoh Penggunaan |
+| :--- | :--- | :--- |
+| **Native English speaker** | Penutur yang bahasa pertamanya bahasa Inggris | *“She is a **native English speaker** from New York.”* |
+| **Non-native speaker** | Penutur yang belajar bahasa Inggris sebagai bahasa asing/kedua | *“He is a **non-native speaker**, but his fluency is impressive.”* |
+| **Mother tongue / First language (L1)** | Bahasa ibu yang dikuasai sejak kecil | *“English is his **mother tongue**.”* |
+| **Target language** | Bahasa yang sedang dipelajari | *“English is my **target language**.”* |
+| **Native American** | Penduduk asli / suku pribumi benua Amerika | *“The **Native American** cultural museum in Washington.”* |
+
+---
+
+### 4. Tabel Perbandingan Frasa Tepat vs Frasa Keliru
+
+| Maksud Pembicara | ❌ Frasa Keliru | ✅ Frasa Baku & Alami |
+| :--- | :--- | :--- |
+| Ingin ngobrol dengan orang Amerika asli berbahasa Inggris | *Native American speaker* | **American native speaker** / **native English speaker** |
+| Ingin belajar dari penutur asli | *Native American* | **Native speaker** / **native English speaker** |
+| Merujuk pada suku asli Cherokee / Apache | *American native speaker* | **Native American** |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Mau bilang **"Penutur Asli Bahasa Inggris"** → Gunakan **native speaker** atau **native English speaker** (huruf n kecil).
+> - **Native American** (huruf kapital) → Khusus untuk **Suku Pribumi Indian Amerika**.
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['vocabulary', 'cultural-nuances', 'native-american', 'native-english-speaker', 'word-choice', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
