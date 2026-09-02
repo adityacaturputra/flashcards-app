@@ -1487,6 +1487,79 @@ Jika menggunakan bentuk lampau (*past tense*), frasa ini sering menyiratkan bahw
     createdAt: '2026-09-02',
     tags: ['modals', 'be-supposed-to', 'should', 'obligations', 'commitments', 'advice', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'conjunctions-even-though-vs-even-if',
+    module: 'Conjunctions & Conditionals',
+    title: 'even though vs. even if (Factual Reality vs. Hypothetical Possibility)',
+    question: '“We won’t cancel the meeting even though it snows later.” (17. Confusing even though and even if)',
+    correction: '“even though it snows later” -> “even if it snows later”',
+    remarks: `Jawaban yang benar dan baku adalah **"We won’t cancel the meeting even if it snows later."**
+
+---
+
+### 1. Mengapa "even though it snows later" SALAH?
+
+Perhatikan kata keterangan waktu **\`later\`** (*nanti*). Salju **belum turun saat ini**, melainkan baru sebatas kemungkinan di masa depan atau situasi pengandaian (*hypothetical condition*):
+
+> [!IMPORTANT]
+> - **\`EVEN THOUGH\`** HANYA digunakan untuk **fakta nyata yang sudah / sedang benar-benar terjadi (*real facts / true conditions*)**. Maknanya sama dengan *although* atau *meskipun kenyataannya...*.
+> - **\`EVEN IF\`** digunakan untuk **pengandaian, kemungkinan masa depan, atau kondisi yang belum tentu terjadi (*hypothetical / future possibilities*)**. Maknanya sama dengan *bahkan jika / sekalipun / tidak peduli apakah terjadi atau tidak...*.
+
+Karena salju baru kemungkinan di masa depan yang belum tentu terjadi, maka **WAJIB menggunakan \`even if\`**:
+- ❌ **SALAH:** *“We won't cancel the meeting **even though** it snows later.”*
+- ✅ **BENAR:** *“We won't cancel the meeting **even if** it snows later.”* *(Kami tidak akan membatalkan rapat **bahkan jika / sekalipun** nanti turun salju).*
+
+---
+
+### 2. Rincian Perbedaan Penggunaan
+
+#### A. \`even though\` → Fakta Nyata (*Factual Situation*)
+Gunakan ketika klausanya adalah kenyataan yang benar-benar ada / sudah terbukti:
+- *“I went to work **even though I was sick**.”* *(Fakta: Saya memang benar-benar sakit saat itu).*
+- *“She bought the laptop **even though it was expensive**.”* *(Fakta: Laptop tersebut memang mahal).*
+- *“We enjoyed the picnic **even though it rained**.”* *(Fakta: Hujan benar-benar turun saat piknik).*
+
+#### B. \`even if\` → Pengandaian / Belum Tentu Terjadi (*Hypothetical Condition*)
+Gunakan ketika klausanya adalah kemungkinan atau kondisi imajinatif di masa depan:
+- *“I will go to work tomorrow **even if I feel tired**.”* *(Pengandaian: Kalaupun besok lelah, saya tetap berangkat).*
+- *“I will buy the car **even if it is expensive**.”* *(Pengandaian: Entah mahal atau tidak, saya tetap membelinya).*
+- *“**Even if they apologize**, I will not change my decision.”* *(Pengandaian: Sekalipun mereka minta maaf...).*
+
+---
+
+### 3. Perbandingan Langsung yang Sangat Kontras
+
+Perhatikan perbedaan nuansa makna pada pasangan kalimat berikut:
+
+- 🌧️ *“I am going out **even though it's raining**.”*  
+  → **FAKTA NYATA:** Saat ini saya melihat ke luar jendela dan **hujan sedang turun sekarang**.
+- 🌦️ *“I am going out **even if it rains**.”*  
+  → **PENGANDAIAN:** Saat ini belum hujan, tetapi **seandainya pun nanti hujan**, saya tetap akan keluar.
+
+---
+
+### 4. Tabel Rangkuman Perbandingan
+
+| Aspek Pembeda | **even though** | **even if** |
+| :--- | :--- | :--- |
+| **Status Kondisi** | **Fakta Nyata (*Real Fact / Reality*)** | **Pengandaian (*Hypothetical / Possibility*)** |
+| **Waktu Kejadian** | **Sudah / sedang terjadi saat ini** | **Belum terjadi / belum tentu terjadi** |
+| **Padanan Makna** | *Meskipun / Walaupun kenyataannya...* | *Bahkan jika / Sekalipun / Entah terjadi atau tidak...* |
+| **Sinonim Bahasa Inggris** | *Although / Despite the fact that* | *Whether or not / No matter if* |
+| **Contoh Kalimat** | *“He failed **even though he studied hard**.”* (Fakta: Dia sudah belajar keras). | *“He will fail **even if he studies hard**.”* (Pengandaian: Sekalipun dia belajar keras). |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Kondisi **Sudah Terjadi / Fakta Nyata** → Gunakan **even though** (*even though it rained* = Hujannya nyata).
+> - Kondisi **Masa Depan / Belum Tentu Terjadi / Ada kata "later / tomorrow"** → Gunakan **even if** (*even if it snows later* = Sekalipun nanti salju).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['conjunctions', 'even-though', 'even-if', 'conditionals', 'hypotheticals', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
