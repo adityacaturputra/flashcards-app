@@ -1560,6 +1560,87 @@ Perhatikan perbedaan nuansa makna pada pasangan kalimat berikut:
     createdAt: '2026-09-02',
     tags: ['conjunctions', 'even-though', 'even-if', 'conditionals', 'hypotheticals', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'gerund-vs-infinitive-stop-doing-vs-stop-to-do',
+    module: 'Gerunds & Infinitives',
+    title: 'stop + V-ing vs. stop + to V1 (Meaning Change: Gerund vs. To-Infinitive)',
+    question: '“I stopped to smoke several years ago.” (18. Confusing stop smoking with stop to smoke, etc.)',
+    correction: '“I stopped to smoke...” -> “I stopped smoking several years ago.”',
+    remarks: `Jawaban yang benar dan baku adalah **"I stopped smoking several years ago."**
+
+---
+
+### 1. Mengapa "I stopped to smoke several years ago" SALAH?
+
+Kata kerja **\`STOP\`** memiliki **dua arti yang bertolak belakang** tergantung apakah diikuti oleh **Gerund (\`V-ing\`)** atau **To-Infinitive (\`to + V1\`)**:
+
+> [!IMPORTANT]
+> - **\`stop + V-ing (Gerund)\`** = **Menghentikan / mengakhiri aktivitas tersebut (*Quit / Cease doing something*)**. Aktivitas *V-ing* itulah yang **berhenti dilakukan**.
+> - **\`stop + to + V1 (To-Infinitive)\`** = **Berhenti sejenak dari apa yang sedang dilakukan *UNTUK* melakukan aktivitas baru (*Infinitive of Purpose: in order to do something*)**.
+
+Jika Anda bermaksud menyatakan bahwa Anda *sudah berhenti dari kebiasaan merokok*, maka kata kerjanya **WAJIB berbentuk Gerund (\`V-ing\`)**:
+- ❌ **SALAH / SALAH MAKNA:** *“I stopped **to smoke** several years ago.”*  
+  *(Secara harfiah artinya: Bertahun-tahun lalu saya menghentikan aktivitas saya demi menyalakan rokok!).*
+- ✅ **BENAR:** *“I stopped **smoking** several years ago.”*  
+  *(Artinya: Saya sudah berhenti merokok beberapa tahun yang lalu).*
+
+---
+
+### 2. Rincian Rumus & Contoh Penggunaan
+
+#### A. \`stop + V-ing\` → Berhenti Melakukan Aktivitas Itu
+Aktivitas tersebut berakhir (baik permanen maupun sementara):
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{stop / stopped}} + \\mathbf{\\text{V-ing (Gerund)}}$$
+
+- *“Please **stop talking** during the exam.”* *(Tolong berhenti berbicara).*
+- *“It **stopped raining** an hour ago.”* *(Hujan sudah berhenti).*
+- *“He **stopped drinking** sugary drinks to stay healthy.”* *(Dia berhenti minum minuman manis).*
+
+#### B. \`stop + to + V1\` → Berhenti Sejenak DEMI Melakukan Sesuatu
+Menghentikan aktivitas sebelumnya untuk memulai aktivitas baru:
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{stop / stopped}} + \\mathbf{\\text{to + V1 (Infinitive of Purpose)}}$$
+
+- *“While driving home, he **stopped to buy** some groceries.”* *(Dia menepikan mobilnya untuk membeli bahan makanan).*
+- *“We were exhausted, so we **stopped to take a rest**.”* *(Kami berhenti berjalan untuk beristirahat).*
+- *“On our road trip, we **stopped to take photos** of the scenery.”* *(Kami berhenti sejenak untuk berfoto).*
+
+---
+
+### 3. Kata Kerja Penting Lainnya yang Mengubah Makna (Gerund vs. Infinitive)
+
+Selain *stop*, terdapat beberapa kata kerja penting yang maknanya berubah total ketika dipasangkan dengan Gerund vs To-Infinitive:
+
+| Kata Kerja | + V-ing (Gerund) | + to + V1 (To-Infinitive) |
+| :--- | :--- | :--- |
+| **STOP** | **Berhenti melakukan aktivitas itu** (*I stopped smoking* = Berhenti merokok). | **Berhenti sejenak demi melakukan hal itu** (*I stopped to smoke* = Berhenti untuk merokok). |
+| **REMEMBER** | **Mengingat kenangan/kejadian lampau** (*I remember locking the door* = Ingat tadi sudah mengunci). | **Ingat untuk mengerjakan tugas di depan** (*Remember to lock the door* = Ingat kuncilah pintunya). |
+| **FORGET** | **Lupa kenangan pernah melakukan sesuatu** (*I'll never forget meeting him* = Takkan lupa kenangan itu). | **Lupa/lalai mengerjakan suatu tugas** (*Don't forget to pay the bill* = Jangan lupa bayar tagihan). |
+| **REGRET** | **Menyesali perbuatan di masa lalu** (*I regret saying those words* = Menyesal dulu telah bicara begitu). | **Dengan berat hati menyampaikan kabar buruk** (*We regret to inform you that...* = Mohon maaf kami infokan). |
+| **TRY** | **Bereksperimen mencoba metode/cara** (*Try restarting your laptop* = Coba restart apakah berhasil). | **Berusaha keras melawan kesulitan** (*I tried to lift the heavy box* = Berjuang sekuat tenaga mengangkat). |
+
+---
+
+### 4. Tabel Rangkuman Kontras:
+
+| Pola Kalimat | Makna Aksi | Contoh Kalimat |
+| :--- | :--- | :--- |
+| **stop + V-ing** | Aktivitas **dihentikan / selesai** | *I **stopped working** at 5 p.m.* (Pekerjaan selesai/berhenti). |
+| **stop + to V1** | Aktivitas **baru akan dimulai** setelah jeda | *I **stopped to work** on the project.* (Mengambil jeda untuk mulai kerja). |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Mau bilang **"berhenti dari suatu kebiasaan/aktivitas"** → **stop + V-ing** (*stop smoking, stop complaining*).
+> - Mau bilang **"berhenti sejenak UNTUK melakukan sesuatu"** → **stop + to V1** (*stopped to drink water*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['gerund', 'infinitive', 'stop-smoking', 'stop-to-smoke', 'remember', 'forget', 'regret', 'try', 'verb-patterns', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
