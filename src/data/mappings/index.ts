@@ -562,6 +562,81 @@ Meskipun *“makes me remember”* secara struktur benar, penutur asli (*native 
     createdAt: '2026-09-02',
     tags: ['subject-verb-agreement', 'third-person-singular', 'its-color', 'causative-verbs', 'make-someone-do', 'remind-of'],
   },
+  {
+    id: 'modals-must-have-rained-past-deduction',
+    module: 'Modal Auxiliaries & Deduction',
+    title: 'must have rained vs. should have rained (Past Logical Deduction)',
+    question: '“The ground is all wet. It should have rained last night.” (What is the correct version of the above sentence?)',
+    correction: '“should have rained / must have raining” -> “must have rained”',
+    remarks: `Jawaban yang benar adalah **"The ground is all wet. It must have rained last night."**
+
+---
+
+### 1. Aturan Dasar: Kesimpulan Logis Masa Lampau (*Past Logical Deduction*)
+
+Ketika kita melihat **bukti nyata di masa sekarang** (*“The ground is all wet”* = tanahnya basah kuyup), kita menarik kesimpulan logis yang hampir pasti mengenai peristiwa yang terjadi di masa lampau:
+
+$$\\mathbf{\\text{must have}} + \\mathbf{\\text{Past Participle (V3 / rained)}}$$
+
+- ✅ **BENAR:** *“The ground is all wet. It **must have rained** last night.”*  
+  *(Tanahnya basah semua. Tadi malam **pasti hujan**).*
+
+---
+
+### 2. Mengapa "should have" SALAH dalam Konteks Ini?
+
+Rumus $\\mathbf{\\text{should have}} + \\mathbf{\\text{V3}}$ digunakan untuk menyatakan **penyesalan atau keharusan masa lalu yang TIDAK terjadi (*Past Regret / Unfulfilled Expectation*)**:
+
+- *“You **should have studied** for the exam.”* *(Kamu seharusnya belajar, tapi faktanya kamu tidak belajar).*
+- *“It **should have rained** last night.”* *(Seharusnya tadi malam hujan, tapi **faktanya tidak hujan**).*
+
+> [!WARNING]
+> Karena di kalimat pertama dinyatakan bahwa **tanahnya basah (*The ground is all wet*)**, maka jelas faktanya hujan benar-benar turun! Oleh karena itu, penggunaan **\`should have\`** bertentangan 180 derajat dengan fakta situasi.
+
+---
+
+### 3. Mengapa Pilihan Merah (*“It should have raining”*) Salah Fatal?
+
+Pilihan ini memiliki **2 kesalahan tata bahasa sekaligus**:
+1. **Salah Makna Modal:** Menggunakan \`should have\` (penyesalan/tidak terjadi), padahal ada bukti basah nyata sehingga wajib memakai \`must have\` (pasti terjadi).
+2. **Salah Bentuk Kata Kerja:** Setelah modal perfect \`have\`, kata kerja **WAJIB berbentuk V3 (*Past Participle*)**, yaitu **\`rained\`**, bukan *V-ing* (*raining*).
+   - Bentuk continuous hanya boleh jika memakai \`been\`: *“It must have **been raining**”* (tapi di opsi tidak ada kata *been*).
+
+---
+
+### 4. Perbandingan Makna Modal Perfect (Masa Lampau)
+
+| Rumus Modal Perfect | Makna / Fungsi | Contoh Kalimat & Artinya |
+| :--- | :--- | :--- |
+| **must have + V3** | **Pasti terjadi** *(Kesimpulan logis berdasarkan bukti)* | *“It **must have rained**.”* (Pasti semalam hujan). |
+| **should have + V3** | **Seharusnya terjadi** *(tapi faktanya TIDAK terjadi)* | *“You **should have told** me.”* (Harusnya kamu beri tahu aku). |
+| **could / might have + V3** | **Mungkin saja terjadi** *(Kemungkinan lampau)* | *“He **might have missed** the bus.”* (Mungkin dia ketinggalan bus). |
+| **can't / couldn't have + V3** | **Mustahil terjadi** *(Kesimpulan negatif)* | *“He **couldn't have stolen** it.”* (Mustahil dia yang mencuri). |
+
+---
+
+### 5. Analisis Seluruh Pilihan Soal
+
+| Pilihan Jawaban | Status | Analisis Kesalahan |
+| :--- | :--- | :--- |
+| *“...It **must have rained** last night.”* | ✅ **BENAR** | Modal kesimpulan logis (\`must have\`) + Kata kerja bentuk V3 (\`rained\`). |
+| *“...It **must have rain** last night.”* | ❌ Salah | \`rain\` adalah bentuk dasar (V1/Noun), bukan bentuk V3. |
+| *“...It **should have raining** last night.”* | ❌ Salah | Salah makna modal (\`should\`) dan salah bentuk verb (\`have raining\` tanpa been). |
+| *“...It **must have raining** last night.”* | ❌ Salah | \`have\` tidak bisa langsung disambung ke *V-ing* tanpa kata bantu \`been\`. |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Ada bukti nyata di depan mata (*tanah basah*) → Gunakan **must have + V3** (*pasti sudah terjadi*).
+> - Menyesal / keharusan yang tidak terlaksana → Gunakan **should have + V3** (*seharusnya dilakukan*).
+> - Semua rumus Modal Perfect **WAJIB diikuti V3** (*must have rained*, bukan *rain* atau *raining*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Modal Verbs of Deduction & Past Speculation',
+    createdAt: '2026-09-02',
+    tags: ['modals', 'deduction', 'must-have', 'should-have', 'past-participle', 'englishvit'],
+  },
 ];
 
 /**
