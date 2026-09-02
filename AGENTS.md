@@ -61,7 +61,7 @@ When a user asks the agent to add a new question, error analysis, or English rul
 5. **Bottom-Up Inspection**: When reading or appending to [`src/data/mappings/index.ts`](./src/data/mappings/index.ts), always inspect the bottom/tail of the file first (the newest entries and insertion point) rather than reading from line 1 down.
 6. **Generate Comprehensive Remarks**: Markdown, KaTeX math formulas (`$$...$$` and `$...$`), comparison tables, and quick memory tips.
 7. **Persist in Repo**: Update or append in [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) adhering to `MappingItem`.
-8. **Verify Build**: Run `npm run build` to ensure type safety and zero compilation errors.
+8. **No Build Delay for Pure Mappings**: Skip `npm run build` on pure dataset updates in `src/data/mappings/index.ts` to ensure 100% immediate, single-turn responses without UI churn. Reserve `npm run build` for component and core app refactors.
 9. **Auto-Commit**: If changes only affect study mapping dataset & docs, the agent is authorized to automatically execute `git commit`.
 
 ---

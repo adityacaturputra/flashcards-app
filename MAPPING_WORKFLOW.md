@@ -18,19 +18,19 @@ This application unites both worlds into an **integrated, git-backed study syste
 ## ⚡ Core Operational Directives
 
 > [!IMPORTANT]
-> **1. Proactive Automatic Persistence (Zero Manual Reminder Needed)**:
+> **1. Instant Educational Delivery & Persistence (Single-Turn, Zero-Build Delay)**:
 > Whenever the user asks a grammar question (e.g. *"ini jawaban benarnya apa?"*, *"why is this wrong?"*, or shares a sentence / quiz):
-> 1. **Do NOT just answer in chat and stop.**
-> 2. **PROACTIVELY create and append the new `MappingItem`** into [`src/data/mappings/index.ts`](./src/data/mappings/index.ts).
-> 3. **Run `npm run build`** to guarantee compile safety.
-> 4. **Confirm to the user** that the explanation has been explained in chat AND saved to their study deck at `/mapping`.
+> 1. **Deliver the COMPLETE, comprehensive pedagogical explanation, formulas, comparison tables, and correct answer directly in chat IMMEDIATELY in Turn 1.**
+> 2. **PROACTIVELY create and persist the `MappingItem`** into [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) in the same step.
+> 3. **DO NOT run `npm run build` during user study turns**: Pure mapping data updates strictly adhere to TypeScript types and do not require running a 4-second Next.js webpack compile that spawns background tasks and causes UI message churn.
+> 4. **Auto-commit directly**: Execute git commit immediately so the user's study deck is updated instantly.
 
 > [!TIP]
 > **2. Auto-Commit Authorization for Pure Mapping Additions**:
 > When a session or user request only involves adding or updating study mappings in `src/data/mappings/index.ts` (and updating mapping docs):
-> - The AI Agent is **fully authorized to automatically commit** the changes to git after verifying `npm run build` passes (Exit Code 0).
+> - The AI Agent is **fully authorized to automatically commit** the changes to git directly.
 > - Use standard Conventional Commit format (e.g. `feat(mapping): add [Title] study mapping record`).
-> - Provide the commit hash/summary in the response to the user.
+> - Provide the commit summary in the response to the user.
 
 > [!TIP]
 > **3. Bottom-Up File Inspection (Analyze from the End / Last Entries First)**:
@@ -42,17 +42,13 @@ This application unites both worlds into an **integrated, git-backed study syste
 >   2. Inspecting the tail first saves tokens, eliminates redundant parsing of older records at the top, and lets the agent immediately find the insertion point and latest schema conventions.
 
 > [!IMPORTANT]
-> **4. Educational Explanation FIRST in Initial Chat Response (Zero-Delay Learning)**:
-> - **Zero-Delay Learning Rule**: When the user asks a question or shares a quiz, the agent **MUST deliver the full, comprehensive pedagogical explanation, formula breakdown, tables, and correct answer directly in the chat response IMMEDIATELY**.
-> - **PROHIBITED**: **DO NOT** output short placeholder messages (e.g. *“Sedang menjalankan build...”*) while postponing the explanation until after the background task completes. The user must see the full answer right away so they can study immediately.
-> - **Execution Order**:
->   1. Provide the complete educational explanation and answer in the chat right away.
->   2. Update/append data in [`src/data/mappings/index.ts`](./src/data/mappings/index.ts).
->   3. Execute `npm run build` and `git commit` as the trailing persistence step in the background.
+> **4. Single-Turn Immediate Response (No Background Task / No Placeholder)**:
+> - The agent **MUST output the full explanation and persist the data in ONE single turn**.
+> - **PROHIBITED**: Never spawn async build commands or send placeholder messages (e.g. *“Sedang menjalankan build...”*) that displace or delay the user's educational text.
 
 > [!IMPORTANT]
 > **5. Search-First De-Duplication & Consolidation (Search Existing Entries First)**:
-> - **MANDATORY**: Before creating any new `MappingItem`, the AI Agent **MUST ALWAYS perform a search (`grep_search`)** in [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) using keywords from the question, phrase, or grammar topic (e.g. `look forward to`, `pretty sure`, `recommend`, `in on at`).
+> - **MANDATORY**: Before creating any new `MappingItem`, the AI Agent **MUST ALWAYS perform a search (`grep_search`)** in [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) using keywords from the question, phrase, or grammar topic (e.g. `look forward to`, `pretty sure`, `recommend`, `used to`).
 > - **If an entry ALREADY exists for that topic/phrase**:
 >   - **DO NOT create a new duplicate card!**
 >   - **EDIT, EXPAND, and CONSOLIDATE** into the existing entry so all related nuances, grammar definitions, and examples are unified in one single comprehensive master card.
