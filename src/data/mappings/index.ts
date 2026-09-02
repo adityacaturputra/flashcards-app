@@ -1175,6 +1175,82 @@ Kata benda tersebut **HANYA** memakai akhiran \`-s\` jika posisinya berdiri send
     createdAt: '2026-09-02',
     tags: ['adjectives', 'compound-adjectives', 'hyphenated-words', 'singular-nouns', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'gerund-be-used-to-vs-used-to-verb',
+    module: 'Gerunds & Verb Patterns',
+    title: 'used to + V1 vs. be used to + V-ing vs. get used to + V-ing',
+    question: '“I’m used to wake up early, so I have no problem getting here at 7 a.m.” (13. Misusing used to)',
+    correction: '“I’m used to wake up...” -> “I’m used to waking up early...”',
+    remarks: `Jawaban yang benar dan baku adalah **"I’m used to waking up early, so I have no problem getting here at 7 a.m."**
+
+---
+
+### 1. Mengapa "I'm used to wake up" SALAH?
+
+Di dalam kalimat ini terdapat kata kerja bantu to-be **\`am ('m)\`** sebelum kata *used to*.
+
+Dalam tata bahasa Inggris, ketika kata *used to* didahului oleh to-be (**\`be used to\`**), frasa tersebut bermakna *"sudah terbiasa dengan..."*. Kata **\`to\`** pada frasa ini berfungsi sebagai **kata depan (*preposition*)**, BUKAN bagian dari *to-infinitive*.
+
+Oleh karena itu, setiap kata kerja yang mengikutinya **WAJIB berbentuk Gerund (\`V-ing\`)**:
+
+- ❌ **SALAH:** *“I'm used to **wake up** early...”*
+- ✅ **BENAR:** *“I'm used to **waking up** early, so I have no problem getting here at 7 a.m.”*
+
+---
+
+### 2. Tiga (3) Pola Berbeda "USED TO" dalam Bahasa Inggris
+
+Banyak pembelajar terkecoh karena kata *used to* memiliki 3 pola yang maknanya sangat berbeda:
+
+#### A. Pola 1: \`used to + V1\` (Kebiasaan Masa Lalu yang Sudah Berhenti)
+Digunakan untuk menceritakan kebiasaan atau fakta masa lalu yang **sekarang sudah tidak dilakukan / tidak berlaku lagi (*past habit / no longer true*)**:
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{used to}} + \\mathbf{\\text{Base Verb (V1)}}$$
+
+- *“I **used to wake up** late when I was a student.”* *(Dulu waktu kuliah saya biasa bangun siang, tapi sekarang tidak lagi).*
+- *“He **used to smoke**, but he quit five years ago.”*
+- *“They **used to live** in London.”*
+
+#### B. Pola 2: \`be used to + V-ing / Noun\` (Sudah Terbiasa Saat Ini / Accustomed To)
+Digunakan untuk menyatakan bahwa kita **sudah terbiasa dan merasa familiar dengan suatu kondisi (*accustomed to*)**, sehingga hal tersebut bukan lagi masalah:
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{to-be (am/is/are/was/were)}} + \\mathbf{\\text{used to}} + \\mathbf{\\text{V-ing / Noun}}$$
+
+- *“I **am used to waking up** early.”* *(Saya sudah terbiasa bangun pagi).*
+- *“She **is used to working** in a fast-paced startup.”*
+- *“He **is used to the cold weather** here.”* *(Diikuti kata benda).*
+
+#### C. Pola 3: \`get used to + V-ing / Noun\` (Proses Beradaptasi / Becoming Accustomed To)
+Digunakan untuk menyatakan **proses adaptasi menuju terbiasa (*becoming accustomed to*)**:
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{get / gets / got / getting used to}} + \\mathbf{\\text{V-ing / Noun}}$$
+
+- *“I am slowly **getting used to living** alone.”* *(Saya perlahan mulai terbiasa hidup sendiri).*
+- *“Don't worry, you will **get used to the new workflow** soon.”*
+
+---
+
+### 3. Tabel Rangkuman 3 Pola "Used To"
+
+| Pola Grammar | Arti / Fungsi | Bentuk Kata Kerja | Contoh Kalimat Benar |
+| :--- | :--- | :--- | :--- |
+| **used to + V1** | Dulu pernah / kebiasaan masa lalu | **V1 polos (Base)** | *I **used to wake** up late.* (Sekarang tidak). |
+| **be used to + V-ing** | Sudah terbiasa saat ini | **V-ing (Gerund)** / Noun | *I **am used to waking** up early.* (Bukan masalah). |
+| **get used to + V-ing** | Proses mulai terbiasa | **V-ing (Gerund)** / Noun | *I am **getting used to waking** up early.* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - **TANPA to-be** (*used to*) → Diikuti **V1 polos** (*I used to live...* = Dulu pernah).
+> - **ADA to-be** (*am/is/are + used to*) → Diikuti **V-ing** (*I am used to living...* = Sudah terbiasa).
+> - **ADA get** (*get used to*) → Diikuti **V-ing** (*getting used to living...* = Mulai terbiasa).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['used-to', 'be-used-to', 'get-used-to', 'gerunds', 'verb-patterns', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
