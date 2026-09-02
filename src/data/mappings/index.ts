@@ -400,6 +400,90 @@ Pada penggalan kedua prompt:
     createdAt: '2026-09-02',
     tags: ['explain', 'prepositions', 'verb-patterns', 'grammar-correction', 'direct-questions'],
   },
+  {
+    id: 'questions-why-does-it-matter',
+    module: 'Questions & Auxiliary Verbs',
+    title: 'Why does it matter? vs. Why is it matter / Why its matter (Direct Questions)',
+    question: '“why is it matter atau why its matter?” (What is the correct English grammar structure?)',
+    correction: '“why is it matter / why its matter” -> “Why does it matter?”',
+    remarks: `Jawaban yang benar adalah **"Why does it matter?"**
+
+---
+
+### 1. Aturan Dasar: Mengapa "Why does it matter?" BENAR?
+
+Dalam kalimat ini, kata **\`matter\`** berfungsi sebagai **kata kerja (*Verb*)** yang artinya *"berpengaruh / penting / menjadi masalah"*. 
+
+Untuk membentuk kalimat tanya langsung (*direct question*) pada Present Simple Tense dengan kata kerja biasa:
+1. **Wajib memakai Auxiliary Verb (*kata kerja bantu*):** Untuk subjek orang ketiga tunggal (*it / he / she*), gunakan **\`does\`**.
+2. **Kata kerja utama (*main verb*) kembali ke bentuk dasar (V1 bare infinitive):** Yaitu **\`matter\`** (bukan *matters* karena sudah ada *does*).
+
+$$\\mathbf{\\text{Question Word (Why)}} + \\mathbf{\\text{Auxiliary (does)}} + \\mathbf{\\text{Subject (it)}} + \\mathbf{\\text{Base Verb (matter)}}?$$
+
+- ✅ **BENAR:** *“Why **does it matter**?”* (Kenapa hal itu penting / berpengaruh?)
+- ✅ **BENAR:** *“Does it matter?”* (Apakah itu penting?)
+
+---
+
+### 2. Mengapa "Why is it matter" SALAH?
+
+- **Kesalahan Penggunaan To-Be (*is*) dengan Kata Kerja Dasar (*matter*)**:
+  - \`is\` adalah kata kerja bantu to-be yang digunakan untuk **kata sifat (*adjective*)**, **kata benda (*noun*)**, atau **kata kerja V-ing (*continuous*)**.
+  - *Matter* di sini adalah **kata kerja dasar (V1)**, sehingga tidak boleh digabungkan langsung dengan *is*.
+- **Kapan Boleh Menggunakan "is"?**:
+  - Jika menggunakan kata sifat **\`important\`**: ✅ *“Why **is it important**?”*
+  - Jika menggunakan kata benda dengan artikel dalam idiom: ✅ *“What **is the matter**?”* (Ada apa? / Ada masalah apa?).
+
+---
+
+### 3. Mengapa "Why its matter" SALAH?
+
+Pilihan ini memiliki **2 kesalahan tata bahasa**:
+1. **Kekeliruan antara \`its\` dan \`it's\`**:
+   - \`its\` (tanpa apostrof) = kata ganti kepemilikan (*possessive*, contoh: *its color* / *its price*).
+   - \`it's\` (dengan apostrof) = singkatan dari *it is* atau *it has*.
+2. **Kehilangan Kata Kerja Bantu Tanya (*No Auxiliary*)**:
+   - Kalimat tanya langsung dalam bahasa Inggris tidak bisa hanya menggabungkan *Question Word + Subject + Verb* tanpa auxiliary (*does*).
+
+---
+
+### 4. Perbedaan: Direct Question vs Embedded Clause (Pernyataan Tidak Langsung)
+
+Perhatikan perubahan posisi kata kerja ketika frase ini berada di dalam kalimat pernyataan:
+
+| Jenis Struktur | Pola Tata Bahasa | Contoh Kalimat Benar |
+| :--- | :--- | :--- |
+| **Direct Question** *(Pertanyaan Langsung)* | \`Why\` + **\`does\`** + \`it\` + **\`matter\`**? | ✅ *“**Why does it matter**?”* |
+| **Embedded Clause** *(Klausa dalam Pernyataan)* | ... + \`why\` + \`it\` + **\`matters\`** | ✅ *“I can explain **why it matters** to our team.”* |
+| **Negative Statement** | \`It\` + **\`doesn't matter\`** | ✅ *“It **doesn't matter** at all.”* |
+
+> [!NOTE]
+> Pada **Embedded Clause** (*“why it matters”*), tidak ada kata bantu *does*, sehingga kata kerja *matter* kembali mendapat akhiran **-s** sesuai subjek tunggal *it*.
+
+---
+
+### 5. Tabel Ringkasan
+
+| Frase | Status | Alasan & Analisis |
+| :--- | :--- | :--- |
+| *“Why does it matter?”* | ✅ **BENAR** | Menggunakan pola tanya baku: \`Why\` + \`does\` + \`it\` + \`matter\`. |
+| *“Why is it matter?”* | ❌ **SALAH** | Menggabungkan to-be (*is*) langsung dengan bare verb (*matter*). Seharusnya: *“Why is it important?”*. |
+| *“Why its matter?”* | ❌ **SALAH** | Menggunakan possessive *its* dan tidak memiliki auxiliary verb *does*. |
+| *“What's the matter?”* | ✅ **BENAR** | Idiom ungkapan menanyakan masalah/kabar (*matter* = noun). |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Ingin tanya *"Kenapa penting?"* menggunakan **verb matter** → **Why DOES it matter?**
+> - Ingin tanya menggunakan **adjective important** → **Why IS it important?**
+> - Ingin tanya *"Ada apa?"* → **What's the matter?**
+`,
+    source: 'English Grammar in Use & Real-World Questions',
+    chapter: 'Auxiliary Verbs, Question Formation & Embedded Clauses',
+    createdAt: '2026-09-02',
+    tags: ['questions', 'auxiliary-verbs', 'why-does-it-matter', 'matter', 'embedded-clauses', 'direct-questions'],
+  },
 ];
 
 /**
