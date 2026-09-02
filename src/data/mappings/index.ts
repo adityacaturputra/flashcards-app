@@ -1411,6 +1411,82 @@ Khusus untuk kata kerja persepsi indra dan pikiran (*see, hear, smell, feel, und
     createdAt: '2026-09-02',
     tags: ['modals', 'could-vs-was-able-to', 'past-ability', 'single-occasion', 'was-able-to', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'modals-be-supposed-to-vs-should',
+    module: 'Modal Auxiliaries & Obligations',
+    title: 'be supposed to vs. should (Obligation/Commitment vs. Advice/Recommendation)',
+    question: '“Today I should babysit my little brother. I told my mom I would.” (16. Confusing to be supposed to and should)',
+    correction: '“Today I should babysit...” -> “Today I’m supposed to babysit my little brother. I told my mom I would.”',
+    remarks: `Jawaban yang benar dan baku adalah **"Today I’m supposed to babysit my little brother. I told my mom I would."**
+
+---
+
+### 1. Mengapa "I should babysit" SALAH di Konteks Ini?
+
+Perhatikan kalimat lanjutannya: **“I told my mom I would.”** *(Saya sudah bilang ke ibu bahwa saya akan menjaganya)*. 
+
+Kalimat ini menunjukkan adanya **komitmen, janji, atau kesepakatan yang telah dibuat sebelumnya**:
+
+> [!IMPORTANT]
+> - **\`be supposed to + V1\`** digunakan ketika seseorang memiliki **kewajiban, janji, jadwal, atau ekspektasi dari pihak luar** (*obligation / agreed commitment*).
+> - **\`should + V1\`** hanya digunakan untuk memberikan **saran, rekomendasi, atau opini subjektif** tentang apa yang dianggap baik dilakukan (*advice / recommendation*), tanpa ada ikatan janji atau kewajiban formal.
+
+Karena pembicara sudah berjanji kepada ibunya, maka itu adalah kewajiban yang telah disepakati, sehingga **WAJIB menggunakan \`be supposed to\`**:
+- ❌ **SALAH:** *“Today I **should babysit**... I told my mom I would.”*
+- ✅ **BENAR:** *“Today I **am supposed to babysit** my little brother. I told my mom I would.”*
+
+---
+
+### 2. Rincian Perbedaan Penggunaan
+
+#### A. \`be supposed to + V1\` (Kewajiban, Jadwal, Janji, Aturan)
+Digunakan untuk menyatakan sesuatu yang **sudah seharusnya dilakukan berdasarkan janji, jadwal, aturan, atau perintah**:
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{to-be (am/is/are/was/were)}} + \\mathbf{\\text{supposed to}} + \\mathbf{\\text{Base Verb (V1)}}$$
+
+- *“We **are supposed to submit** the sprint report by 5 p.m.”* *(Sesuai tenggat waktu/aturan kantor).*
+- *“The flight **is supposed to arrive** at 8:30.”* *(Sesuai jadwal resmi maskapai).*
+- *“You **are not supposed to park** your car here.”* *(Sesuai aturan larangan).*
+
+#### B. \`should + V1\` (Saran, Rekomendasi, Pendapat Pribadi)
+Digunakan ketika pembicara menyarankan tindakan yang baik/bijak, tetapi **tidak ada perjanjian atau kewajiban yang mengikat**:
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{should}} + \\mathbf{\\text{Base Verb (V1)}}$$
+
+- *“You **should drink** more water every day.”* *(Saran kesehatan).*
+- *“I think we **should leave** early to avoid traffic.”* *(Opini pribadi).*
+- *“You **should apply** for that senior engineer position.”* *(Rekomendasi).*
+
+---
+
+### 3. Nuansa Khusus: "was/were supposed to" (Rencana Masa Lalu yang Batal)
+
+Jika menggunakan bentuk lampau (*past tense*), frasa ini sering menyiratkan bahwa hal tersebut **seharusnya terjadi, tetapi pada kenyataannya TIDAK terjadi**:
+- *“I **was supposed to meet** him yesterday, but he canceled at the last minute.”* *(Seharusnya bertemu, tapi batal).*
+
+---
+
+### 4. Tabel Rangkuman Perbandingan
+
+| Aspek Pembeda | **be supposed to + V1** | **should + V1** |
+| :--- | :--- | :--- |
+| **Fungsi Utama** | Kewajiban karena janji, kesepakatan, jadwal, atau aturan | Saran, anjuran, nasihat, atau opini pribadi |
+| **Sumber Dorongan** | Pihak eksternal (janji ke orang lain, bos, deadline, jadwal) | Internal (pikiran/pendapat subjektif pembicara) |
+| **Makna Kalimat** | *"Sudah semestinya / ada tugas / sudah dijadwalkan"* | *"Sebaiknya / ada baiknya / disarankan"* |
+| **Contoh Kalimat** | *“I'm **supposed to pick up** my sister.”* (Sudah janji). | *“You **should call** your sister.”* (Saran yang baik). |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Ada **janji / jadwal / aturan / tugas dari orang lain** → Gunakan **be supposed to** (*I'm supposed to babysit*).
+> - Hanya **saran / pendapat pribadi / nasihat** → Gunakan **should** (*You should rest*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['modals', 'be-supposed-to', 'should', 'obligations', 'commitments', 'advice', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
