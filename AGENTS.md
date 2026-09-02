@@ -54,21 +54,14 @@ flashcards/
 ## 🤖 Study Mapping Update Protocol for Agents
 
 When a user asks the agent to add a new question, error analysis, or English rule:
-1. **Analyze the Request**:
-   - Extract `module` (e.g., *Gerunds, Prepositions, Tenses, Conditionals, SVA*).
-   - Extract `title` (concise rule name).
-   - Extract `question` (the original sentence or problem).
-   - Extract `correction` (the fix, e.g., `to relax -> to relaxing`).
-   - Extract `source` (e.g., *Englishvit - English Pro Class*) and `chapter` (e.g., *Chapter 11*).
-2. **Generate Comprehensive Remarks**:
-   - Format with Markdown, section headings, and LaTeX math formulas (KaTeX `$$...$$` and `$...$`).
-   - Include why the wrong choice is wrong, common pitfalls, related preposition/grammar patterns, and a summary table.
-3. **Append/Update in Repo**:
-   - Update [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) following the `MappingItem` interface.
-4. **Verify Build**:
-   - Run `npm run build` to guarantee type safety and zero compile regressions.
+1. **Read and Follow [MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)** for the complete 6-step study mapping protocol.
+2. **Analyze & Extract**: Module, title, question, correction, source, and chapter.
+3. **Generate Comprehensive Remarks**: Markdown, KaTeX math formulas (`$$...$$` and `$...$`), comparison tables, and quick memory tips.
+4. **Append in Repo**: Update [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) adhering to `MappingItem`.
+5. **Verify Build**: Run `npm run build` to ensure type safety and zero compilation errors.
 
 ---
 
 ## 🔗 Related Documentation
+- 📖 **[MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)**: Complete guide to the agentic study mapping workflow.
 - 📘 **[BESTPRACTICE.md](./BESTPRACTICE.md)**: Full Senior Software Engineer standards and coding guidelines.

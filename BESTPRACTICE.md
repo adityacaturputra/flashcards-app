@@ -130,3 +130,9 @@ A maintainable codebase maintains clear boundaries between layers:
 - **JSDoc on Public Modules**: Add concise JSDoc comments explaining parameters, return types, and context.
 - **Atomic Commits & Zero-Warning Builds**:
   Ensure `npm run build` exits with code 0 before finalizing any feature or refactor.
+
+---
+
+## 🔗 Related Documentation
+- 📖 **[MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)**: Step-by-step study mapping workflow for AI agents.
+- 📘 **[AGENTS.md](./AGENTS.md)**: Main operational guide for AI agents and developers.
