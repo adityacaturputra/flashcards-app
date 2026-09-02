@@ -32,6 +32,15 @@ This application unites both worlds into an **integrated, git-backed study syste
 > - Use standard Conventional Commit format (e.g. `feat(mapping): add [Title] study mapping record`).
 > - Provide the commit hash/summary in the response to the user.
 
+> [!TIP]
+> **3. Bottom-Up File Inspection (Analyze from the End / Last Entries First)**:
+> When inspecting, updating, or appending to [`src/data/mappings/index.ts`](./src/data/mappings/index.ts):
+> - **DO NOT read or analyze the file from top to bottom (Line 1 down).**
+> - **ALWAYS inspect the end of the file first (the last ~50–80 lines)** using `view_file` with `StartLine` targeted near the end.
+> - **Why?**
+>   1. The newest mapping entries, latest formatting standards, and insertion points are located at the bottom of the `MAPPING_ITEMS` array.
+>   2. Inspecting the tail first saves tokens, eliminates redundant parsing of older records at the top, and lets the agent immediately find the insertion point and latest schema conventions.
+
 ---
 
 ## 🔄 End-to-End Workflow Architecture
