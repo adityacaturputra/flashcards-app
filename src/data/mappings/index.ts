@@ -2040,6 +2040,83 @@ Banyak kata kerja bahasa Inggris yang sering salah disisipi preposisi karena pen
     createdAt: '2026-09-02',
     tags: ['verbs', 'transitive-verbs', 'prepositions', 'discuss', 'talk-about', 'zero-preposition', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'sentence-structure-indirect-questions-word-order',
+    module: 'Sentence Structure & Questions',
+    title: 'Indirect Questions Word Order (Subject + Verb vs. Verb + Subject Inversion)',
+    question: '“Could you please tell me where are the restrooms?” (24. Using the wrong word order in indirect questions)',
+    correction: '“where are the restrooms?” -> “where the restrooms are?”',
+    remarks: `Jawaban yang benar dan baku adalah **"Could you please tell me where the restrooms are?"**
+
+---
+
+### 1. Mengapa "where are the restrooms" SALAH pada Indirect Question?
+
+Dalam tata bahasa Inggris, terdapat perbedaan mendasar antara **Pertanyaan Langsung (*Direct Question*)** dan **Pertanyaan Tak Langsung (*Indirect Question*)**:
+
+> [!IMPORTANT]
+> - **Direct Question (Pertanyaan Langsung):** Menggunakan susunan inversi tanya:  
+>   $$\\mathbf{\\text{Question Word}} + \\mathbf{\\text{To-Be / Auxiliary}} + \\mathbf{\\text{Subject}} \\quad (\\text{contoh: \"Where **are the restrooms**?\"})$$
+> - **Indirect Question (Pertanyaan Tak Langsung / Sopan):** Diawali frasa pembuka seperti *“Could you tell me...”, “Do you know...”, “I wonder...”*. Bagian setelah kata tanya berubah fungsi menjadi **Klausa Benda (*Noun Clause*)**.
+> - **Aturan Emas Klausa Benda:** Susunan kata **WAJIB kembali ke urutan kalimat normal: \`Subject + Verb / To-Be\` (DILARANG diinversi!)**:
+>   $$\\mathbf{\\text{Introductory Phrase}} + \\mathbf{\\text{Wh- Word}} + \\mathbf{\\text{Subject}} + \\mathbf{\\text{Verb / To-Be}}$$
+
+- ❌ **SALAH:** *“Could you please tell me where **are the restrooms**?”* *(Inversi tanya tidak boleh dipakai).*
+- ✅ **BENAR:** *“Could you please tell me where **the restrooms are**?”* *(Subject: the restrooms + To-Be: are).*
+
+---
+
+### 2. Aturan Menghapus Kata Kerja Bantu (Do, Does, Did)
+
+Pada pertanyaan langsung yang menggunakan *do / does / did*, kata kerja bantu tersebut **DIBUANG**, dan bentuk kata kerjanya disesuaikan dengan tenses kalimat:
+
+#### A. Pertanyaan Present Tense (*Does → Verb-s/es*):
+- ❓ *Direct:* *“What time **does the store close**?”*
+- ❌ *Indirect Salah:* *“Do you know what time **does the store close**?”*
+- ✅ *Indirect Benar:* *“Do you know what time **the store closes**?”* *(Tanpa does, kata kerja close + s).*
+
+#### B. Pertanyaan Past Tense (*Did → Verb 2*):
+- ❓ *Direct:* *“Where **did she go**?”*
+- ❌ *Indirect Salah:* *“Can you tell me where **did she go**?”*
+- ✅ *Indirect Benar:* *“Can you tell me where **she went**?”* *(Tanpa did, kata kerja go berubah jadi went).*
+
+---
+
+### 3. Indirect Questions untuk Yes/No Questions (Gunakan "IF" atau "WHETHER")
+
+Jika pertanyaan langsungnya tidak memiliki kata tanya *Wh-* (*Yes/No Question*), gunakan kata penghubung **\`if\`** atau **\`whether\`**:
+
+- ❓ *Direct:* *“Is the manager available today?”*
+- ❌ *Indirect Salah:* *“Do you know is the manager available today?”*
+- ✅ *Indirect Benar:* *“Do you know **if the manager is** available today?”*
+- ✅ *Indirect Benar:* *“Could you tell me **whether the bus has arrived**?”*
+
+---
+
+### 4. Tabel Rangkuman Perbandingan Direct vs Indirect
+
+| Tipe Pertanyaan | ❓ Direct Question (Inversi Tanya) | ❌ Kesalahan Umum Indirect | ✅ Indirect Question Baku (Subject + Verb) |
+| :--- | :--- | :--- | :--- |
+| **To-Be (is/are/was/were)** | *“Where **are the restrooms**?”* | *“Could you tell me where **are the restrooms**?”* | *“Could you tell me where **the restrooms are**?”* |
+| **Auxiliary (does)** | *“When **does the train leave**?”* | *“Do you know when **does the train leave**?”* | *“Do you know when **the train leaves**?”* |
+| **Auxiliary (did)** | *“Why **did he resign**?”* | *“I wonder why **did he resign**.”* | *“I wonder why **he resigned**.”* |
+| **Modal (will/can)** | *“How **can I fix** this bug?”* | *“Can you explain how **can I fix** this?”* | *“Can you explain how **I can fix** this?”* |
+| **Yes/No Question** | *“Does she speak English?”* | *“Do you know does she speak English?”* | *“Do you know **if she speaks English**?”* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Di dalam kalimat tidak langsung (*Could you tell me... / Do you know...*):
+>   1. Urutannya selalu **Subject dulu, baru Verb/To-Be** (*where **the restrooms are***).
+>   2. **Hapus kata \`do / does / did\`** (*what time **the train leaves***, *where **she went***).
+>   3. Untuk pertanyaan Ya/Tidak → Sisipkan **\`if\`** (*if she is ready*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['indirect-questions', 'embedded-questions', 'noun-clauses', 'word-order', 'polite-questions', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
