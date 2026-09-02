@@ -273,43 +273,46 @@ Ketika angka dan kata satuan bilangan digabungkan dengan tanda hubung (*hyphen*)
   {
     id: 'subjunctive-recommend-that',
     module: 'Subjunctive & Verb Patterns',
-    title: 'recommend that I buy vs. recommend me to buy (Subjunctive Mood)',
+    title: 'recommend & suggest (Subjunctive Mood & Verb Patterns)',
     question: '“My friend recommended me to buy this car.” (What is the correct version of the above sentence?)',
-    correction: '“recommended me to buy...” -> “recommended that I buy this car”',
+    correction: '“recommended / suggested me to do...” -> “recommended / suggested that I [V1] / [V-ing]”',
     remarks: `Jawaban yang benar adalah **"My friend recommended that I buy this car."**
 
 ---
 
-### 1. Aturan Dasar: Mengapa "recommend someone to do something" SALAH?
+### 1. Aturan Dasar: Mengapa "recommend / suggest someone to do" SALAH?
 
 Banyak orang mengira pola kata kerja dalam bahasa Inggris semuanya sama seperti *tell* atau *advise* (*advise me to do*). Namun, kata kerja **\`recommend\`** dan **\`suggest\`** memiliki aturan khusus dan **TIDAK BISA** diikuti pola **\`Object + to-infinitive\`**:
 
+#### Contoh Kasus 1: "Recommend"
 - ❌ **SALAH:** *“My friend recommended **me to buy** this car.”*
+- ✅ **BENAR (Subjunctive):** *“My friend recommended **that I buy** this car.”*
+- ✅ **BENAR (Gerund):** *“My friend recommended **buying** this car.”*
+- ✅ **BENAR (Preposisi):** *“My friend recommended this car **to me**.”*
+
+#### Contoh Kasus 2: "Suggest"
 - ❌ **SALAH:** *“He suggested **me to take** a break.”*
-- ✅ **BENAR:** *“My friend recommended **that I buy** this car.”*
+- ✅ **BENAR (Subjunctive):** *“He suggested **that I take** a break.”* *(atau informal: “He suggested **I take** a break”)*
+- ✅ **BENAR (Gerund):** *“He suggested **taking** a break.”*
+- ✅ **BENAR (Preposisi):** *“He suggested a break **to me**.”*
+- ✅ **BENAR (Ganti Kata Kerja):** *“He **advised me to take** a break.”* / *“He **told me to take** a break.”*
 
 ---
 
-### 2. Tiga (3) Pola Baku Penggunaan "Recommend"
+### 2. Tiga (3) Pola Baku Penggunaan "Recommend" & "Suggest"
 
-- **Pola 1 (Subjunctive Clause):** $\\mathbf{\\text{recommend} + (\\text{that}) + \\text{Subject} + \\text{Base Verb (V1)}}$
-- **Pola 2 (Direct Gerund):** $\\mathbf{\\text{recommend} + \\text{V-ing}}$
-- **Pola 3 (Direct Noun + To):** $\\mathbf{\\text{recommend} + \\text{Something} + \\text{to Someone}}$
+- **Pola 1 (Subjunctive Clause):** $\\mathbf{\\text{recommend / suggest} + (\\text{that}) + \\text{Subject} + \\text{Base Verb (V1)}}$
+- **Pola 2 (Direct Gerund):** $\\mathbf{\\text{recommend / suggest} + \\text{V-ing}}$
+- **Pola 3 (Direct Noun + To):** $\\mathbf{\\text{recommend / suggest} + \\text{Something} + \\text{to Someone}}$
 
----
-
-#### Contoh Penerapan Tiap Pola:
-1. **Subjunctive Mood (Pola Soal Ini):**
-   - ✅ *“My friend recommended that I **buy** this car.”*
-   - ✅ *“The doctor recommended that he **eat** healthier food.”* *(Perhatikan: tetap **eat**, bukan **eats**, karena dalam Subjunctive Mood kata kerja selalu dalam bentuk dasar V1).*
-2. **Gerund (V-ing):**
-   - ✅ *“My friend recommended **buying** this car.”*
-3. **Noun + to Someone:**
-   - ✅ *“My friend recommended this car **to me**.”*
+#### Contoh Penerapan Subjunctive Mood:
+- ✅ *“My friend recommended that I **buy** this car.”*
+- ✅ *“He suggested that she **take** a break.”* *(Perhatikan: tetap **take**, bukan **takes**, karena dalam Subjunctive Mood kata kerja selalu dalam bentuk dasar V1 tanpa akhiran -s).*
+- ✅ *“The doctor recommended that he **eat** healthier food.”* *(Tetap **eat**, bukan eats).*
 
 ---
 
-### 3. Analisis Kenapa Pilihan Lain Salah
+### 3. Analisis Kenapa Pilihan Soal Ini Salah
 
 | Pilihan Jawaban | Status | Analisis Kesalahan |
 | :--- | :--- | :--- |
@@ -325,19 +328,19 @@ Banyak orang mengira pola kata kerja dalam bahasa Inggris semuanya sama seperti 
 | Jenis Pola | Kata Kerja | Contoh Kalimat Benar |
 | :--- | :--- | :--- |
 | **WAJIB Subjunctive / Gerund** *(NO to-infinitive)* | \`recommend\`, \`suggest\`, \`propose\`, \`insist\`, \`demand\` | *“She **suggested that we leave** early.”* (Bukan: *suggested us to leave*). |
-| **BISA Object + to-Infinitive** | \`advise\`, \`tell\`, \`ask\`, \`encourage\`, \`persuade\` | *“She **advised me to buy** this car.”* |
+| **BISA Object + to-Infinitive** | \`advise\`, \`tell\`, \`ask\`, \`encourage\`, \`persuade\` | *“She **advised me to buy** this car.”* / *“He **advised me to take** a break.”* |
 
 ---
 
 > [!TIP]
 > **Kunci Ingatan Cepat:**
 > - **Recommend / Suggest** → **JANGAN PERNAH** pakai *someone to do*!
-> - Gunakan: $\\mathbf{\\text{recommended that I [V1]}}$ atau $\\mathbf{\\text{recommended [V-ing]}}$.
+> - Gunakan: $\\mathbf{\\text{recommended / suggested that I [V1]}}$ atau $\\mathbf{\\text{recommended / suggested [V-ing]}}$.
 `,
     source: 'Englishvit - English Pro Class',
     chapter: 'Chapter 11: You are About to be Promoted',
     createdAt: '2026-09-02',
-    tags: ['recommend', 'subjunctive', 'verb-patterns', 'suggest', 'gerunds', 'englishvit'],
+    tags: ['recommend', 'suggest', 'subjunctive', 'verb-patterns', 'gerunds', 'englishvit'],
   },
   {
     id: 'verb-pattern-explain-to-me',

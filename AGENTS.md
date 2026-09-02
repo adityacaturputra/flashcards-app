@@ -59,6 +59,7 @@ When a user asks the agent to add a new question, error analysis, or English rul
 3. **Generate Comprehensive Remarks**: Markdown, KaTeX math formulas (`$$...$$` and `$...$`), comparison tables, and quick memory tips.
 4. **Append in Repo**: Update [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) adhering to `MappingItem`.
 5. **Verify Build**: Run `npm run build` to ensure type safety and zero compilation errors.
+6. **Auto-Commit**: If changes only affect study mapping dataset & docs, the agent is authorized to automatically execute `git commit`.
 
 ---
 

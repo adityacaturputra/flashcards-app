@@ -15,6 +15,25 @@ This application unites both worlds into an **integrated, git-backed study syste
 
 ---
 
+## ⚡ Core Operational Directives
+
+> [!IMPORTANT]
+> **1. Proactive Automatic Persistence (Zero Manual Reminder Needed)**:
+> Whenever the user asks a grammar question (e.g. *"ini jawaban benarnya apa?"*, *"why is this wrong?"*, or shares a sentence / quiz):
+> 1. **Do NOT just answer in chat and stop.**
+> 2. **PROACTIVELY create and append the new `MappingItem`** into [`src/data/mappings/index.ts`](./src/data/mappings/index.ts).
+> 3. **Run `npm run build`** to guarantee compile safety.
+> 4. **Confirm to the user** that the explanation has been explained in chat AND saved to their study deck at `/mapping`.
+
+> [!TIP]
+> **2. Auto-Commit Authorization for Pure Mapping Additions**:
+> When a session or user request only involves adding or updating study mappings in `src/data/mappings/index.ts` (and updating mapping docs):
+> - The AI Agent is **fully authorized to automatically commit** the changes to git after verifying `npm run build` passes (Exit Code 0).
+> - Use standard Conventional Commit format (e.g. `feat(mapping): add [Title] study mapping record`).
+> - Provide the commit hash/summary in the response to the user.
+
+---
+
 ## 🔄 End-to-End Workflow Architecture
 
 ```text
