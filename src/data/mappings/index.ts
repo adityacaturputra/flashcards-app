@@ -2184,6 +2184,88 @@ Perhatikan cara penulisan huruf besar/kecil yang membedakan artinya:
     createdAt: '2026-09-02',
     tags: ['vocabulary', 'cultural-nuances', 'native-american', 'native-english-speaker', 'word-choice', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'verbs-ditransitive-send-me-vs-send-to-me',
+    module: 'Verbs & Sentence Patterns',
+    title: 'send me [something] vs. send [something] to me (Ditransitive Verbs Word Order)',
+    question: '“Could you please send to me the proposal today?” (Question 2: Ditransitive Verb Word Order)',
+    correction: '“send to me the proposal” -> “send me the proposal” / “send the proposal to me”',
+    remarks: `Jawaban yang benar dan baku dapat diungkapkan dengan 2 pola berikut:
+1. **“Could you please send me the proposal today?”** *(Pola tanpa preposisi: Verb + Orang + Benda)*
+2. **“Could you please send the proposal to me today?”** *(Pola dengan preposisi: Verb + Benda + to + Orang)*
+
+---
+
+### 1. Mengapa "send to me the proposal" SALAH?
+
+Kata kerja **\`send\`** tergolong ke dalam **Kata Kerja Ditransitif (*Ditransitive Verb*)**, yaitu kata kerja yang membutuhkan **dua objek**:
+1. **Indirect Object (Objek Tidak Langsung / Penerima):** *me, him, her, us, them*
+2. **Direct Object (Objek Langsung / Benda yang dikirim):** *the proposal, the email, the file*
+
+> [!IMPORTANT]
+> **Dua (2) Pola Baku Susunan Objek dalam Bahasa Inggris:**
+> 
+> - **Pola 1 (Orang ditulis lebih dulu $\\rightarrow$ TANPA kata "to"):**
+>   $$\\mathbf{\\text{Subject}} + \\mathbf{\\text{Verb}} + \\mathbf{\\text{Indirect Object (Orang)}} + \\mathbf{\\text{Direct Object (Benda)}}$$
+>   - ✅ *“Could you please **send me the proposal** today?”*
+> 
+> - **Pola 2 (Benda ditulis lebih dulu $\\rightarrow$ WAJIB pakai kata "to"):**
+>   $$\\mathbf{\\text{Subject}} + \\mathbf{\\text{Verb}} + \\mathbf{\\text{Direct Object (Benda)}} + \\mathbf{\\text{to}} + \\mathbf{\\text{Indirect Object (Orang)}}$$
+>   - ✅ *“Could you please **send the proposal to me** today?”*
+
+❌ **DILARANG KERAS:** Meletakkan kata *"to"* tepat di belakang kata kerja saat menyebut orang sebelum benda (*“send **to me** the proposal”*).
+
+---
+
+### 2. Kata Kerja Ditransitif yang Menggunakan Preposisi "TO"
+
+Berikut pasangan kata kerja ditransitif umum yang mengikuti pola ini:
+
+| Kata Kerja | Pola 1: [Orang] + [Benda] (Tanpa Preposisi) | Pola 2: [Benda] + to + [Orang] |
+| :--- | :--- | :--- |
+| **send** | *“**send me** the file”* | *“**send the file to** me”* |
+| **give** | *“**give her** the keys”* | *“**give the keys to** her”* |
+| **show** | *“**show us** the report”* | *“**show the report to** us”* |
+| **email** | *“**email him** the contract”* | *“**email the contract to** him”* |
+| **lend** | *“**lend me** some money”* | *“**lend some money to** me”* |
+| **pass** | *“**pass me** the salt”* | *“**pass the salt to** me”* |
+
+---
+
+### 3. Kata Kerja Ditransitif yang Menggunakan Preposisi "FOR" (*Benefactive Verbs*)
+
+Beberapa kata kerja menggunakan preposisi **\`for\`** (bukan *to*) ketika benda diletakkan di depan orang yang menerima manfaatnya:
+
+| Kata Kerja | Pola 1: [Orang] + [Benda] | Pola 2: [Benda] + for + [Orang] |
+| :--- | :--- | :--- |
+| **buy** | *“**buy me** a coffee”* | *“**buy a coffee for** me”* *(Bukan to me)* |
+| **make** | *“**make him** a sandwich”* | *“**make a sandwich for** him”* |
+| **cook** | *“**cook us** dinner”* | *“**cook dinner for** us”* |
+| **find** | *“**find her** a job”* | *“**find a job for** her”* |
+
+---
+
+### 4. Tabel Rangkuman Kesalahan vs Bentuk Baku
+
+| ❌ Bentuk Salah (Sering Terjadi) | ✅ Bentuk Baku 1 (Paling Ringkas) | ✅ Bentuk Baku 2 (Formal) |
+| :--- | :--- | :--- |
+| *send to me the proposal* | **send me the proposal** | **send the proposal to me** |
+| *give to him the money* | **give him the money** | **give the money to him** |
+| *buy for me a drink* | **buy me a drink** | **buy a drink for me** |
+| *show to us your ID* | **show us your ID** | **show your ID to us** |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - **Orang di depan** → **JANGAN pakai to** (*send **me** the file*, *give **her** the key*).
+> - **Benda di depan** → **WAJIB pakai to** (*send the file **to me***, *give the key **to her***).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-03',
+    tags: ['ditransitive-verbs', 'direct-object', 'indirect-object', 'send-me', 'send-to-me', 'word-order', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
