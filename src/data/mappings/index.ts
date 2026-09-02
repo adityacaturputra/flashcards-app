@@ -1035,7 +1035,7 @@ $$\\begin{aligned}
 > - *I'm not so sure* = *"Saya kurang yakin / belum yakin betul"*.
 `,
     source: 'Englishvit - English Pro Class',
-    chapter: 'Common Speaking Errors: Collocations & Degrees of Certainty',
+    chapter: 'Chapter 11: You are About to be Promoted',
     createdAt: '2026-09-02',
     tags: ['collocations', 'common-errors', 'pretty-sure', 'not-sure', 'not-quite-sure', 'degrees-of-certainty', 'englishvit'],
   },
