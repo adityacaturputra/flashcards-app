@@ -1879,6 +1879,92 @@ $$\\mathbf{\\text{Due to the fact that}} + \\mathbf{\\text{Subject}} + \\mathbf{
     createdAt: '2026-09-02',
     tags: ['prepositions', 'conjunctions', 'due-to', 'because-of', 'because', 'cause-and-effect', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'prepositions-despite-vs-in-spite-of-vs-although',
+    module: 'Prepositions & Conjunctions',
+    title: 'despite & in spite of + Noun/V-ing vs. although/even though + Clause',
+    question: '“In spite of she grew up poor, Melanie became a successful entrepreneur.” (22. Using despite and in spite of incorrectly)',
+    correction: '“In spite of she grew up poor...” -> “In spite of growing up poor...” / “Despite growing up poor...” / “Although she grew up poor...”',
+    remarks: `Jawaban yang benar dan baku dapat diungkapkan dengan beberapa cara berikut:
+1. **“In spite of growing up poor, Melanie became a successful entrepreneur.”** *(Menggunakan Gerund)*
+2. **“Despite growing up poor, Melanie became a successful entrepreneur.”** *(Menggunakan Gerund)*
+3. **“Although she grew up poor, Melanie became a successful entrepreneur.”** *(Menggunakan Klausa)*
+4. **“Even though she grew up poor, Melanie became a successful entrepreneur.”** *(Menggunakan Klausa)*
+
+---
+
+### 1. Mengapa "In spite of she grew up poor" SALAH?
+
+Kunci perbedaannya terletak pada perbedaan kelas kata antara **Preposisi (Kata Depan)** vs **Konjungsi (Kata Hubung)**:
+
+> [!IMPORTANT]
+> - **\`despite\`** dan **\`in spite of\`** adalah **Preposisi / Frasa Kata Depan**. Preposisi **HANYA BOLEH diikuti oleh Kata Benda (*Noun*), Frasa Benda (*Noun Phrase*), atau Gerund (\`V-ing\`)**.
+> - **DILARANG KERAS** meletakkan klausa lengkap (**\`Subject + Verb\`**) langsung di belakang *despite* atau *in spite of*.
+> - **\`although\`**, **\`even though\`**, dan **\`though\`** adalah **Konjungsi (Kata Hubung)** yang **WAJIB diikuti oleh klausa lengkap (\`Subject + Verb\`)**.
+
+Frasa *“she grew up poor”* memiliki Subjek (*she*) dan Verb (*grew up*), yang merupakan sebuah **klausa**:
+- ❌ **SALAH:** *“**In spite of she grew up poor**...”*
+- ❌ **SALAH:** *“**Despite she grew up poor**...”*
+- ✅ **BENAR (Gunakan Gerund V-ing):** *“**In spite of growing up poor**, Melanie became a successful entrepreneur.”*
+- ✅ **BENAR (Gunakan Gerund V-ing):** *“**Despite growing up poor**, Melanie became a successful entrepreneur.”*
+- ✅ **BENAR (Gunakan Noun Phrase):** *“**In spite of her poverty**, Melanie became a successful entrepreneur.”*
+- ✅ **BENAR (Gunakan Conjunction + Klausa):** *“**Although she grew up poor**, Melanie became a successful entrepreneur.”*
+
+---
+
+### 2. Kesalahan Ejaan Umum: "despite of" (SALAH!) vs. "in spite of" (BENAR!)
+
+Banyak pembelajar sering mencampuradukkan kedua bentuk ini:
+- ❌ **SALAH BESAR:** *“despite of the rain”* → Kata **\`despite\` TIDAK PERNAH memakai kata "of"**!
+- ✅ **BENAR (1 kata tanpa of):** *“**despite** the rain”*
+- ✅ **BENAR (3 kata dengan of):** *“**in spite of** the rain”*
+
+---
+
+### 3. Rincian Rumus & Contoh Penggunaan
+
+#### A. \`despite\` & \`in spite of\` → Diikuti Noun Phrase / Gerund (V-ing)
+$$\\mathbf{\\text{Despite / In spite of}} + \\mathbf{\\text{Noun / Noun Phrase / V-ing}}$$
+
+- *“**Despite the heavy rain**, the outdoor concert continued.”* *(Noun Phrase).*
+- *“**In spite of working overtime**, he didn't feel exhausted.”* *(Gerund / V-ing).*
+
+#### B. \`although\` & \`even though\` → Diikuti Klausa Lengkap (Subject + Verb)
+$$\\mathbf{\\text{Although / Even though}} + \\mathbf{\\text{Subject}} + \\mathbf{\\text{Verb}} + \\dots$$
+
+- *“**Although it rained heavily**, the concert continued.”* *(Subject: it, Verb: rained).*
+- *“**Even though he worked overtime**, he didn't feel exhausted.”*
+
+#### C. Trik Khusus: Menggunakan Klausa dengan "the fact that"
+$$\\mathbf{\\text{Despite / In spite of the fact that}} + \\mathbf{\\text{Subject}} + \\mathbf{\\text{Verb}}$$
+
+- *“**Despite the fact that she grew up poor**, Melanie became a successful entrepreneur.”*
+
+---
+
+### 4. Tabel Rangkuman Perbandingan
+
+| Kata / Frasa Kontras | Jenis Tata Bahasa | Pola yang Mengikuti | Contoh Kalimat Benar |
+| :--- | :--- | :--- | :--- |
+| **despite** | Preposition | **Noun / Noun Phrase / V-ing** | *“**Despite the rain**, we went out.”* *(Tanpa of!).* |
+| **in spite of** | Preposition Phrase | **Noun / Noun Phrase / V-ing** | *“**In spite of the rain**, we went out.”* |
+| **although** | Subordinating Conjunction | **Klausa (Subject + Verb)** | *“**Although it rained**, we went out.”* |
+| **even though** | Subordinating Conjunction | **Klausa (Subject + Verb)** | *“**Even though it was raining**, we went out.”* |
+| **despite the fact that** | Conjunction Phrase | **Klausa (Subject + Verb)** | *“**Despite the fact that it rained**, we went out.”* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Diikuti **Subject + Verb** (Klausa) → Gunakan **although / even though** (*although she was poor*).
+> - Diikuti **Noun / V-ing** (Tanpa Verb utama) → Gunakan **despite** atau **in spite of** (*despite growing up poor*).
+> - Ingat: **despite** (tanpa of) vs **in spite of** (pakai of).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['prepositions', 'conjunctions', 'despite', 'in-spite-of', 'although', 'even-though', 'contrast', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
