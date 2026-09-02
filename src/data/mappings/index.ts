@@ -637,6 +637,79 @@ Pilihan ini memiliki **2 kesalahan tata bahasa sekaligus**:
     createdAt: '2026-09-02',
     tags: ['modals', 'deduction', 'must-have', 'should-have', 'past-participle', 'englishvit'],
   },
+  {
+    id: 'prepositions-no-preposition-before-next-last-this',
+    module: 'Prepositions & Time Expressions',
+    title: 'next Saturday vs. on next Saturday (No Preposition with next/last/this/every)',
+    question: '“I\'ll see you in class on next Saturday.” (What is the correct version of the above sentence?)',
+    correction: '“on next Saturday / at next Saturday / in next Saturday” -> “next Saturday”',
+    remarks: `Jawaban yang benar adalah **"I'll see you in class next Saturday."**
+
+---
+
+### 1. Aturan Emas Preposisi Waktu (*The Zero-Preposition Rule*)
+
+Dalam tata bahasa Inggris baku, ketika kata penunjuk waktu (hari, minggu, bulan, tahun) didahului oleh kata penentu (**\`next\`**, **\`last\`**, **\`this\`**, **\`every\`**, **\`each\`**, **\`all\`**), maka kata depan waktu (**\`on\`**, **\`in\`**, **\`at\`**) **TIDAK BOLEH DIGUNAKAN / WAJIB DIHILANGKAN**:
+
+$$\\mathbf{\\text{next / last / this / every}} + \\mathbf{\\text{Time Noun (Saturday / week / month)}} \\quad (\\text{TANPA on / in / at})$$
+
+- ❌ **SALAH:** *“I'll see you in class **on next Saturday**.”*
+- ❌ **SALAH:** *“I'll see you in class **at next Saturday**.”*
+- ❌ **SALAH:** *“I'll see you in class **in next Saturday**.”*
+- ✅ **BENAR:** *“I'll see you in class **next Saturday**.”*
+
+---
+
+### 2. Kapan Preposisi "on" Boleh Digunakan?
+
+Kata depan **\`on\`** HANYA digunakan jika nama harinya **berdiri sendiri tanpa kata penentu (*next/last/this/every*)**:
+
+- ✅ *“I'll see you in class **on Saturday**.”* *(Tanpa kata "next" → Wajib pakai on).*
+- ✅ *“I'll see you in class **next Saturday**.”* *(Ada kata "next" → Dilarang pakai on).*
+
+---
+
+### 3. Daftar Kata Penentu yang Menghapus Preposisi (*Zero Preposition Determiners*)
+
+| Kata Penentu | Contoh BENAR (Tanpa Preposisi) | Contoh SALAH (Kelebihan Preposisi) |
+| :--- | :--- | :--- |
+| **next** | ✅ *“See you **next Monday**.”* / *“**next week**”* | ❌ *“on next Monday”* / *“in next week”* |
+| **last** | ✅ *“I met him **last Friday**.”* / *“**last night**”* | ❌ *“on last Friday”* / *“at last night”* |
+| **this** | ✅ *“Let's meet **this Sunday**.”* / *“**this year**”* | ❌ *“on this Sunday”* / *“in this year”* |
+| **every** | ✅ *“I play tennis **every Saturday**.”* | ❌ *“on every Saturday”* |
+| **each / any** | ✅ *“We test it **each week**.”* | ❌ *“in each week”* |
+
+---
+
+### 4. Mengapa "in class" Benar (Bukan "on class")?
+
+- **\`in class\`** adalah kolokasi baku dalam bahasa Inggris yang berarti *"di dalam ruangan kelas / saat sesi kegiatan kelas berlangsung"*.
+- **\`on class\`** adalah bentuk yang keliru dan tidak lazim (*non-standard*).
+
+---
+
+### 5. Analisis Seluruh Pilihan Soal
+
+| Pilihan Jawaban | Status | Analisis Kesalahan |
+| :--- | :--- | :--- |
+| *“I'll see you in class **next Saturday**.”* | ✅ **BENAR** | Menggunakan kolokasi baku \`in class\` dan menghilangkan preposisi sebelum \`next Saturday\`. |
+| *“I'll see you in class **at next Saturday**.”* | ❌ Salah | Kelebihan preposisi \`at\` sebelum \`next\`. |
+| *“I'll see you in class **in next Saturday**.”* | ❌ Salah | Kelebihan preposisi \`in\` sebelum \`next\`. |
+| *“I'll see you **on class on next Saturday**.”* | ❌ Salah | Memiliki 2 kesalahan sekaligus: salah preposisi tempat (\`on class\`) dan kelebihan preposisi waktu (\`on next\`). |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Ada kata **next / last / this / every** di depan waktu → **HAPUS SEMUA PREPOSISI** (*on/in/at*)!
+> - *on Saturday* (tanpa next) → **next Saturday** (ada next, buang on).
+> - Di kelas → **in class** (bukan *on class*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Prepositions of Time & Time Modifiers',
+    createdAt: '2026-09-02',
+    tags: ['prepositions', 'time-expressions', 'next-saturday', 'on-saturday', 'zero-preposition', 'englishvit'],
+  },
 ];
 
 /**
