@@ -42,10 +42,13 @@ This application unites both worlds into an **integrated, git-backed study syste
 >   2. Inspecting the tail first saves tokens, eliminates redundant parsing of older records at the top, and lets the agent immediately find the insertion point and latest schema conventions.
 
 > [!IMPORTANT]
-> **4. Immediate Educational Feedback First (Zero-Delay Learning)**:
-> - **Prioritize the user's active learning flow**: When the user asks a question or shares a quiz, deliver the **full, clear explanation, rule breakdown, and correct answer directly in the conversation FIRST**.
-> - The user can immediately read and learn without waiting.
-> - The background software engineering tasks (appending to `src/data/mappings/index.ts`, executing `npm run build`, and running `git commit`) proceed seamlessly in the background to persist the record.
+> **4. Educational Explanation FIRST in Initial Chat Response (Zero-Delay Learning)**:
+> - **Zero-Delay Learning Rule**: When the user asks a question or shares a quiz, the agent **MUST deliver the full, comprehensive pedagogical explanation, formula breakdown, tables, and correct answer directly in the chat response IMMEDIATELY**.
+> - **PROHIBITED**: **DO NOT** output short placeholder messages (e.g. *“Sedang menjalankan build...”*) while postponing the explanation until after the background task completes. The user must see the full answer right away so they can study immediately.
+> - **Execution Order**:
+>   1. Provide the complete educational explanation and answer in the chat right away.
+>   2. Update/append data in [`src/data/mappings/index.ts`](./src/data/mappings/index.ts).
+>   3. Execute `npm run build` and `git commit` as the trailing persistence step in the background.
 
 > [!IMPORTANT]
 > **5. Search-First De-Duplication & Consolidation (Search Existing Entries First)**:

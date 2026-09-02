@@ -55,7 +55,7 @@ flashcards/
 
 When a user asks the agent to add a new question, error analysis, or English rule:
 1. **Read and Follow [MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)** for the complete 6-step study mapping protocol.
-2. **Immediate Educational Delivery**: Deliver the clear, comprehensive explanation, formula breakdown, and correct answer in chat FIRST so the user learns immediately.
+2. **Immediate Educational Delivery (No Build Delay/Placeholders)**: Deliver the complete, comprehensive explanation, formula breakdown, comparison tables, and correct answer in chat FIRST so the user learns immediately without waiting for builds.
 3. **Search Existing Entries First**: Always execute `grep_search` on [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) to check if a card on this topic/phrase already exists. If found, **EDIT and expand** that card; do not create duplicate cards.
 4. **Analyze & Extract**: Module, title, question, correction, source, and chapter.
 5. **Bottom-Up Inspection**: When reading or appending to [`src/data/mappings/index.ts`](./src/data/mappings/index.ts), always inspect the bottom/tail of the file first (the newest entries and insertion point) rather than reading from line 1 down.
