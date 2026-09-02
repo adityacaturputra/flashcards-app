@@ -1339,6 +1339,78 @@ $$\\mathbf{\\text{Subject}} + \\mathbf{\\text{have / get}} + \\mathbf{\\text{Som
     createdAt: '2026-09-02',
     tags: ['causative-verbs', 'make-let-have', 'get-someone-to-do', 'bare-infinitive', 'verb-patterns', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'modals-could-vs-was-able-to-single-occasion',
+    module: 'Modal Auxiliaries',
+    title: 'could vs. was/were able to (Past Ability on a Single Occasion)',
+    question: '“I had to think about it for a while, but finally I could remember the name of my first grade teacher.” (15. Using could instead of was/were able to talk about an ability on a single occasion in the past)',
+    correction: '“finally I could remember...” -> “finally I was able to remember the name of my first grade teacher.”',
+    remarks: `Jawaban yang benar dan baku adalah **"I had to think about it for a while, but finally I was able to remember the name of my first grade teacher."**
+
+---
+
+### 1. Aturan Dasar: "could" vs. "was/were able to" dalam Kalimat Positif (+)
+
+Banyak pembelajar mengira bahwa \`could\` dan \`was/were able to\` selalu bisa saling menggantikan. Namun, dalam tata bahasa Inggris baku:
+
+#### A. \`COULD\` → Kemampuan Umum Masa Lalu (*General Past Ability*)
+Gunakan **\`could\`** ketika membicarakan keahlian atau kemampuan umum yang Anda miliki secara konstan di masa lalu:
+- *“When I was six years old, I **could swim** very well.”* *(Kemampuan umum sepanjang masa kecil).*
+- *“My grandmother **could speak** five languages.”* *(Kemampuan umum).*
+
+#### B. \`WAS / WERE ABLE TO\` → Keberhasilan pada Satu Peristiwa Spesifik (*Single Occasion / Specific Achievement*)
+Jika Anda membicarakan keberhasilan melakukan sesuatu pada **satu momen tertentu / peristiwa spesifik yang membutuhkan usaha**, dalam **kalimat positif (+)** Anda **WAJIB menggunakan \`was/were able to\`** (atau \`managed to\`), **BUKAN \`could\`**:
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{was / were able to}} + \\mathbf{\\text{Base Verb (V1)}} \\quad (\\text{Peristiwa Spesifik})$$
+
+- ❌ **SALAH:** *“...finally I **could remember** the name of my teacher.”*
+- ✅ **BENAR:** *“...finally I **was able to remember** the name of my first grade teacher.”*
+- ✅ **BENAR:** *“The fire spread quickly, but everyone **was able to escape** safely.”* (Bukan *could escape*).
+
+---
+
+### 2. Bagaimana dengan Kalimat Negatif (-)? (**SAMA-SAMA BOLEH!**)
+
+Dalam **kalimat negatif (-)**, perbedaan antara kemampuan umum dan peristiwa spesifik **TIDAK BERLAKU**. Anda bebas menggunakan **\`couldn't\`** ataupun **\`wasn't/weren't able to\`**:
+
+- ✅ *“I **couldn't remember** her name.”* = *“I **wasn't able to remember** her name.”* (Keduanya sah & alami).
+- ✅ *“He **couldn't escape** the building.”* = *“He **wasn't able to escape** the building.”*
+
+> [!NOTE]
+> Dalam percakapan sehari-hari, penutur asli cenderung lebih sering memilih **\`couldn't\`** karena lebih singkat dan praktis.
+
+---
+
+### 3. Pengecualian: Kata Kerja Panca Indra & Pikiran (*Verbs of Perception*)
+
+Khusus untuk kata kerja persepsi indra dan pikiran (*see, hear, smell, feel, understand, taste*), kata **\`could\`** diperbolehkan meskipun merujuk pada satu momen spesifik:
+- ✅ *“Suddenly, I **could smell** smoke.”*
+- ✅ *“I looked out the window and **could see** the mountains.”*
+
+---
+
+### 4. Tabel Rangkuman Perbandingan
+
+| Konteks Kemampuan Masa Lalu | Jenis Kalimat | Pilihan yang TEPAT | Contoh Kalimat Benar |
+| :--- | :--- | :--- | :--- |
+| **Kemampuan Umum (*General Ability*)** | Positif (+) | **could** / **was/were able to** | *I **could swim** when I was a child.* |
+| **Momen Tertentu (*Single Occasion*)** | Positif (+) | **WAJIB was/were able to** | *Finally, I **was able to solve** the bug.* (❌ *could solve*) |
+| **Situasi Umum / Momen Tertentu** | Negatif (-) | **couldn't** / **wasn't able to** | *I **couldn't find** my keys anywhere.* |
+| **Persepsi Indra (*see, hear, smell*)** | Positif (+) Spesifik | **could** diperbolehkan | *I **could hear** someone knocking on the door.* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Kalimat **Positif (+)** pada **1 Momen Spesifik** → **WAJIB was/were able to** (*finally I **was able to remember***).
+> - Kalimat **Positif (+)** pada **Kemampuan Umum** → **could** (*When I was young, I **could run** fast*).
+> - Kalimat **Negatif (-)** → **Bebas** boleh *couldn't* atau *wasn't able to*.
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['modals', 'could-vs-was-able-to', 'past-ability', 'single-occasion', 'was-able-to', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
