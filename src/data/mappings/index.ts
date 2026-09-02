@@ -894,6 +894,72 @@ Kata **\`would\`** mengubah makna kalimat dari **kebiasaan umum** menjadi **pili
     createdAt: '2026-09-02',
     tags: ['preferences', 'would-rather', 'would-prefer', 'prefer', 'modals', 'englishvit'],
   },
+  {
+    id: 'conditionals-second-conditional-hypothetical-did-move',
+    module: 'Conditionals & Hypotheticals',
+    title: 'if I did move ... it would be vs. if I do move ... it will be (Second Conditional Consistency)',
+    question: '“I would never choose to live in another country, but if I do move to another country, it will be Spain.” (What is the correct version of the above sentence?)',
+    correction: '“if I do move... it will be” -> “if I did move... it would be”',
+    remarks: `Jawaban yang benar adalah **“I would never choose to live in another country, but if I did move to another country, it would be Spain.”** (Opsi Hijau ke-4).
+
+---
+
+### 1. Aturan Dasar: Pengandaian Hipotetis (*Second Conditional / Unreal Situation*)
+
+Kalimat diawali dengan pernyataan yang menunjukkan situasi tidak nyata / berlawanan dengan kenyataan masa kini (*hypothetical / unreal present*):
+- *“I **would never choose** to live in another country...”* *(Saya tidak akan pernah memilih tinggal di negara lain...)*
+
+Karena pembicara membayangkan situasi yang sangat kecil kemungkinannya terjadi (hanya berandai-andai), maka kelanjutan kalimatnya **WAJIB menggunakan pola Second Conditional (Tipe 2)**:
+
+$$\\mathbf{\\text{If}} + \\mathbf{\\text{Subject}} + \\mathbf{\\text{Past Simple (did + V1 / V2)}}, \\quad \\mathbf{\\text{Subject}} + \\mathbf{\\text{would}} + \\mathbf{\\text{Base Verb (V1)}}$$
+
+- ✅ **BENAR:** *“...but if I **did move** to another country, it **would be** Spain.”*  
+  *(...tapi seandainya pun saya pindah ke negara lain, negara itu **pasti Spanyol**).*
+
+---
+
+### 2. Apa Fungsi "did move" (*Emphatic Did*)?
+
+Dalam klausa \`if\`, bentuk Past Simple bisa ditulis dengan dua cara:
+1. **Bentuk Standar:** *“...if I **moved** to another country...”*
+2. **Bentuk Penekanan (*Emphatic Did*):** *“...if I **did move** to another country...”*
+
+> [!NOTE]
+> Kata bantu **\`did\` + V1 (\`move\`)** digunakan untuk memberi penekanan khusus (*emphasis*) yang artinya: *"seandainya pun hal itu benar-benar terjadi..."*. Ini sangat cocok digabungkan setelah kalimat *“I would never choose...”*.
+
+---
+
+### 3. Mengapa Pilihan Lain Salah?
+
+| Pilihan Jawaban | Status | Analisis Kesalahan |
+| :--- | :--- | :--- |
+| *“...if I do move... **I will be Spain**.”* | ❌ Salah Fatal | Subjeknya salah (*I will be Spain* berarti saya akan berubah menjadi negara Spanyol!). |
+| *“...if I move... **it will be Spain**.”* | ❌ Salah Tenses | Menggunakan First Conditional (*move ... will be*) yang mengindikasikan rencana nyata di masa depan, tidak konsisten dengan premis hipotetis di awal (*would never choose*). |
+| *“...if I am moving... **it will be Spain**.”* | ❌ Salah Tenses | Menggunakan Present Continuous dan *will be*, tidak cocok untuk situasi pengandaian imajinatif. |
+| *“...if I **did move**... it **would be** Spain.”* | ✅ **BENAR** | Menggunakan pola **Second Conditional** yang konsisten: Past Simple (\`did move\`) berpasangan dengan modal lampau (\`would be\`). |
+
+---
+
+### 4. Perbandingan First Conditional vs Second Conditional
+
+| Jenis Kalimat Pengandaian | Makna & Nuansa | Rumus Pola | Contoh Kalimat |
+| :--- | :--- | :--- | :--- |
+| **First Conditional (Tipe 1)** | Nyata / Sangat mungkin terjadi di masa depan | \`If\` + **Present (V1)**, **will + V1** | *“If I **move** to Spain, I **will learn** Spanish.”* (Rencana realistis). |
+| **Second Conditional (Tipe 2)** | Khayalan / Hipotetis / Tidak mungkin saat ini | \`If\` + **Past (V2 / did V1)**, **would + V1** | *“If I **did move** to Spain, it **would be** amazing.”* (Hanya pengandaian). |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Kalimat dimulai dengan pengandaian hipotetis (**would**) $\rightarrow$ Kelanjutannya **wajib Second Conditional** (**did move ... would be**).
+> - **Emphatic did** (**did + move**) = Penekanan *"seandainya pun benar-benar..."*.
+> - Jangan pasangkan **would** di awal dengan **will** di akhir!
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Conditionals: Type 2 Unreal Conditions & Emphatic Did',
+    createdAt: '2026-09-02',
+    tags: ['conditionals', 'second-conditional', 'unreal-conditions', 'emphatic-did', 'would-be', 'englishvit'],
+  },
 ];
 
 /**
