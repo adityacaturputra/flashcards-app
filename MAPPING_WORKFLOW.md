@@ -41,6 +41,12 @@ This application unites both worlds into an **integrated, git-backed study syste
 >   1. The newest mapping entries, latest formatting standards, and insertion points are located at the bottom of the `MAPPING_ITEMS` array.
 >   2. Inspecting the tail first saves tokens, eliminates redundant parsing of older records at the top, and lets the agent immediately find the insertion point and latest schema conventions.
 
+> [!IMPORTANT]
+> **4. Immediate Educational Feedback First (Zero-Delay Learning)**:
+> - **Prioritize the user's active learning flow**: When the user asks a question or shares a quiz, deliver the **full, clear explanation, rule breakdown, and correct answer directly in the conversation FIRST**.
+> - The user can immediately read and learn without waiting.
+> - The background software engineering tasks (appending to `src/data/mappings/index.ts`, executing `npm run build`, and running `git commit`) proceed seamlessly in the background to persist the record.
+
 ---
 
 ## 🔄 End-to-End Workflow Architecture
