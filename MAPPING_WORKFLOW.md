@@ -81,9 +81,42 @@ The `remarks` string must be rich, educational, and formatted with **GitHub Flav
 5. **Quick Memory Tip**:
    - Include a `> [!TIP]` callout summarizing the fastest trick to remember the rule.
 
-> [!CAUTION]
-> **Template Literal Safety Rule**:
-> Because `remarks` is stored inside a TypeScript template literal (enclosed in backticks `` `...` ``), any code backticks inside the text MUST be escaped with a backslash (`` \`code\` ``) or written using markdown bold (`**text**`) to prevent syntax errors during build.
+---
+
+## 🛡️ Code Quality & Formatting Checklist (Preventing Parser & Rendering Errors)
+
+To guarantee that Markdown and LaTeX math formulas render crisply without red KaTeX syntax errors or mangled text:
+
+### 1. LaTeX Backslash Escaping in TypeScript Strings (CRITICAL)
+In JavaScript/TypeScript template literals (enclosed in backticks `` `...` ``), special characters like `\b`, `\t`, `\r`, `\n` are interpreted as control characters:
+- `\textbf` $\rightarrow$ JavaScript reads `\b` as a **backspace** character (`\x08extbf`), corrupting LaTeX.
+- `\rightarrow` $\rightarrow$ JavaScript reads `\r` as a **carriage return** character (`\right` $\rightarrow$ `ightarrow`), breaking math rendering.
+- `\text` $\rightarrow$ JavaScript reads `\t` as a **tab** character.
+
+> [!IMPORTANT]
+> **The Double-Backslash & Unicode Arrow Rule**:
+> - In mathematical equations, every LaTeX command written inside a TypeScript template literal **MUST use double backslashes**:
+>   - ✅ `$\\mathbf{\\text{Subject}} + \\mathbf{\\text{Verb}}$`
+>   - ✅ `$\\rightarrow$` (NOT `$\rightarrow$`)
+> - **In plain text, explanations, and `[!TIP]` boxes**:
+>   - Always use the **standard unicode arrow `→`** directly (*e.g., `Tell → Langsung orang`*).
+>   - This avoids any control-character escaping issues and renders instantly everywhere.
+
+### 2. Equation Structure: Prefer Bulleted Math Over Fragile Multi-Line Blocks
+Instead of complex multi-line `\begin{aligned}` blocks that require nested quadruple backslashes (`\\\\`), prefer clean bulleted list equations:
+- **Pola 1 (Subjunctive):** `$\mathbf{\text{recommend}} + (\text{that}) + \mathbf{\text{Subject}} + \mathbf{\text{Base Verb}}$`
+- **Pola 2 (Gerund):** `$\mathbf{\text{recommend}} + \mathbf{\text{V-ing}}$`
+
+This renders reliably across mobile, tablet, and desktop Markdown viewers.
+
+### 3. Template Literal Backtick Escaping
+Because the entire `remarks` string is wrapped in template literal backticks `` `...` ``, any inline code snippet inside the explanation must escape backticks:
+- ✅ *Write:* `` \`recommend\` `` or `` \`suggest\` ``
+- ❌ *Never write unescaped:* `` `recommend` `` (this terminates the TypeScript string and breaks the build).
+
+### 4. Markdown Table Formatting
+- Always include header separators: `| :--- | :--- | :--- |`
+- Never leave dangling unclosed pipes `|` or mismatched column counts.
 
 ---
 
@@ -93,16 +126,16 @@ Every mapping record must strictly adhere to the `MappingItem` interface defined
 
 ```typescript
 export interface MappingItem {
-  id: string;          // Unique kebab-case identifier (e.g. 'numeral-million-residents')
-  module: string;      // Category (e.g. 'Nouns & Quantifiers')
-  title: string;       // Descriptive title
+  id: string;          // Unique kebab-case identifier (e.g. 'subjunctive-recommend-that')
+  module: string;      // Category (e.g. 'Subjunctive & Verb Patterns')
+  title: string;       // Descriptive topic title
   question: string;    // Problem sentence or multiple-choice question
-  correction: string;  // The fix (e.g. 'to relax -> to relaxing')
+  correction: string;  // Concise formulaic fix (e.g. 'recommended me to buy -> recommended that I buy')
   remarks: string;     // In-depth Markdown + KaTeX explanation
   source?: string;     // e.g. 'Englishvit - English Pro Class'
   chapter?: string;    // e.g. 'Chapter 11: You are About to be Promoted'
   createdAt: string;   // 'YYYY-MM-DD'
-  tags?: string[];     // ['numbers', 'million', 'grammar-rules']
+  tags?: string[];     // ['recommend', 'subjunctive', 'verb-patterns']
 }
 ```
 

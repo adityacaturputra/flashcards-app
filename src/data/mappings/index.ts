@@ -164,8 +164,8 @@ Ada beberapa idiom dan ungkapan dalam bahasa Inggris yang mempertahankan bentuk 
 
 > [!TIP]
 > **Kunci Ingatan Cepat:**
-> - **Thank God** $\rightarrow$ Tanpa huruf **-s**, tanpa tanda petik **'s**.
-> - Jika ingin memakai **Thanks**, **WAJIB** disambung dengan **"to"**: $\rightarrow$ **Thanks to God** / **Thanks to [Noun]**!
+> - **Thank God** → Tanpa huruf **-s**, tanpa tanda petik **'s**.
+> - Jika ingin memakai **Thanks**, **WAJIB** disambung dengan **"to"**: → **Thanks to God** / **Thanks to [Noun]**!
 `,
     source: 'Englishvit - English Pro Class',
     chapter: 'Common Expressions & Verb Forms',
@@ -193,7 +193,7 @@ $$\\mathbf{\\text{Exact Number (21, two, five)}} + \\mathbf{\\text{million (tanp
 
 ---
 
-### 2. Bagaimana Jika TIDAK ADA Kata Benda (*Tanpa Residents / Noun*)? $\rightarrow$ **Tetap TANPA \`-s\`!**
+### 2. Bagaimana Jika TIDAK ADA Kata Benda (*Tanpa Residents / Noun*)? → **Tetap TANPA \`-s\`!**
 
 Meskipun kata bendanya tidak disebutkan secara langsung (karena sudah dipahami konteksnya), kata *million/thousand/hundred* **TETAP WAJIB tanpa akhiran \`-s\`** selama ada angka di depannya:
 
@@ -239,7 +239,7 @@ $$\\mathbf{\\text{Millions of}} + \\mathbf{\\text{Plural Noun}}$$
 
 ---
 
-### 6. Bentuk Kata Sifat Majemuk (*Hyphenated Adjective*) $\rightarrow$ **Semua TANPA \`-s\`**
+### 6. Bentuk Kata Sifat Majemuk (*Hyphenated Adjective*) → **Semua TANPA \`-s\`**
 
 Ketika angka dan kata satuan bilangan digabungkan dengan tanda hubung (*hyphen*) untuk menjadi kata sifat di depan kata benda:
 
@@ -262,13 +262,140 @@ Ketika angka dan kata satuan bilangan digabungkan dengan tanda hubung (*hyphen*)
 
 > [!TIP]
 > **Kunci Ingatan Cepat:**
-> - Ada **angka di depan** $\rightarrow$ **million / thousand / hundred** **TIDAK PAKAI -s** (*21 million residents* / *The total is 21 million*).
-> - Ada **"of" di belakang** (tanpa angka di depan) $\rightarrow$ **millions of / thousands of** **WAJIB PAKAI -s** (*millions of residents*).
+> - Ada **angka di depan** → **million / thousand / hundred** **TIDAK PAKAI -s** (*21 million residents* / *The total is 21 million*).
+> - Ada **"of" di belakang** (tanpa angka di depan) → **millions of / thousands of** **WAJIB PAKAI -s** (*millions of residents*).
 `,
     source: 'Englishvit - English Pro Class',
     chapter: 'Chapter 11: You are About to be Promoted',
     createdAt: '2026-09-02',
     tags: ['numbers', 'quantifiers', 'million', 'plural-nouns', 'prepositions', 'englishvit'],
+  },
+  {
+    id: 'subjunctive-recommend-that',
+    module: 'Subjunctive & Verb Patterns',
+    title: 'recommend that I buy vs. recommend me to buy (Subjunctive Mood)',
+    question: '“My friend recommended me to buy this car.” (What is the correct version of the above sentence?)',
+    correction: '“recommended me to buy...” -> “recommended that I buy this car”',
+    remarks: `Jawaban yang benar adalah **"My friend recommended that I buy this car."**
+
+---
+
+### 1. Aturan Dasar: Mengapa "recommend someone to do something" SALAH?
+
+Banyak orang mengira pola kata kerja dalam bahasa Inggris semuanya sama seperti *tell* atau *advise* (*advise me to do*). Namun, kata kerja **\`recommend\`** dan **\`suggest\`** memiliki aturan khusus dan **TIDAK BISA** diikuti pola **\`Object + to-infinitive\`**:
+
+- ❌ **SALAH:** *“My friend recommended **me to buy** this car.”*
+- ❌ **SALAH:** *“He suggested **me to take** a break.”*
+- ✅ **BENAR:** *“My friend recommended **that I buy** this car.”*
+
+---
+
+### 2. Tiga (3) Pola Baku Penggunaan "Recommend"
+
+- **Pola 1 (Subjunctive Clause):** $\\mathbf{\\text{recommend} + (\\text{that}) + \\text{Subject} + \\text{Base Verb (V1)}}$
+- **Pola 2 (Direct Gerund):** $\\mathbf{\\text{recommend} + \\text{V-ing}}$
+- **Pola 3 (Direct Noun + To):** $\\mathbf{\\text{recommend} + \\text{Something} + \\text{to Someone}}$
+
+---
+
+#### Contoh Penerapan Tiap Pola:
+1. **Subjunctive Mood (Pola Soal Ini):**
+   - ✅ *“My friend recommended that I **buy** this car.”*
+   - ✅ *“The doctor recommended that he **eat** healthier food.”* *(Perhatikan: tetap **eat**, bukan **eats**, karena dalam Subjunctive Mood kata kerja selalu dalam bentuk dasar V1).*
+2. **Gerund (V-ing):**
+   - ✅ *“My friend recommended **buying** this car.”*
+3. **Noun + to Someone:**
+   - ✅ *“My friend recommended this car **to me**.”*
+
+---
+
+### 3. Analisis Kenapa Pilihan Lain Salah
+
+| Pilihan Jawaban | Status | Analisis Kesalahan |
+| :--- | :--- | :--- |
+| *“My friend **recommend me to buy** this car.”* | ❌ Salah | Memiliki **2 kesalahan**: Subject-Verb Agreement salah (*My friend* harusnya *recommends* jika present), dan pola *recommend me to buy* dilarang dalam bahasa Inggris. |
+| *“My friend **recommending** me to buy...”* | ❌ Salah | Kalimat kehilangan kata kerja utama (*predicate verb*), *recommending* tanpa to-be bukan verb kalimat. |
+| *“My friend recommended **I to buy**...”* | ❌ Salah | Menggabungkan subjek *I* langsung dengan *to-infinitive* tanpa klausa (*that*) yang valid. |
+| *“My friend **recommended that I buy** this car.”* | ✅ **BENAR** | Menggunakan pola **Subjunctive Mood** yang tepat dan baku: $\\mathbf{\\text{recommended that I buy}}$. |
+
+---
+
+### 4. Perbandingan Kata Kerja yang Boleh & Tidak Boleh Menggunakan "to-Infinitive"
+
+| Jenis Pola | Kata Kerja | Contoh Kalimat Benar |
+| :--- | :--- | :--- |
+| **WAJIB Subjunctive / Gerund** *(NO to-infinitive)* | \`recommend\`, \`suggest\`, \`propose\`, \`insist\`, \`demand\` | *“She **suggested that we leave** early.”* (Bukan: *suggested us to leave*). |
+| **BISA Object + to-Infinitive** | \`advise\`, \`tell\`, \`ask\`, \`encourage\`, \`persuade\` | *“She **advised me to buy** this car.”* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - **Recommend / Suggest** → **JANGAN PERNAH** pakai *someone to do*!
+> - Gunakan: $\\mathbf{\\text{recommended that I [V1]}}$ atau $\\mathbf{\\text{recommended [V-ing]}}$.
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['recommend', 'subjunctive', 'verb-patterns', 'suggest', 'gerunds', 'englishvit'],
+  },
+  {
+    id: 'verb-pattern-explain-to-me',
+    module: 'Prepositional Verbs',
+    title: 'explain this to me vs. explain me this (Prepositional Verb Patterns)',
+    question: '“Please explain me this question, why its getting incorrect.” (What is the correct grammar structure?)',
+    correction: '“explain me this...” -> “explain this to me / explain to me why it is incorrect”',
+    remarks: `Jawaban yang benar adalah **"Please explain this question to me. Why is it incorrect?"**
+
+---
+
+### 1. Aturan Dasar: Mengapa "explain me this" SALAH?
+
+Dalam bahasa Inggris, kata kerja (**Verb**) terbagi menjadi dua jenis perlakuan terhadap objek orang:
+1. **Ditransitive Verbs (Bisa langsung orang):** *give me, tell me, show me, send me*.
+2. **Prepositional Verbs (WAJIB pakai "to" sebelum orang):** *explain to me, describe to me, suggest to me, say to me*.
+
+Kata **\`explain\`** TIDAK BISA menerima objek orang secara langsung tanpa kata depan **\`to\`**:
+
+$$\\mathbf{\\text{explain}} + \\mathbf{\\text{Something (Direct Object)}} + \\mathbf{\\text{to Someone (Prepositional Phrase)}}$$
+
+- ❌ **SALAH:** *“Please **explain me** this question.”*
+- ✅ **BENAR:** *“Please **explain this question to me**.”*
+- ✅ **BENAR:** *“Please **explain to me why** it is incorrect.”*
+
+---
+
+### 2. Kesalahan Kalimat Tanya: "why its getting incorrect"
+
+Pada penggalan kedua prompt:
+- **Penggunaan \`its\` vs \`it's / is it\`**:
+  - \`its\` = Kata ganti kepemilikan (*possessive*, misal: *its color*).
+  - \`it's\` = Singkatan dari *it is* (*it's incorrect*).
+- **Inversi Pertanyaan (*Question Word Inversion*)**:
+  - Pada kalimat tanya langsung (*direct question*), kata kerja bantu (*auxiliary/to-be*) harus **mendahului subjek**:
+  - ❌ *“Why its getting incorrect?”*
+  - ✅ *“Why **is it** incorrect?”* atau *“Why **is it getting** marked as incorrect?”*
+
+---
+
+### 3. Tabel Perbandingan Kata Kerja Serupa
+
+| Pola Kata Kerja | Kata Kerja | Contoh Benar | Contoh Salah |
+| :--- | :--- | :--- | :--- |
+| **Wajib Pakai \`to Someone\`** | \`explain\`, \`describe\`, \`say\`, \`introduce\`, \`suggest\` | *“Explain it **to me**.”* | ❌ *“Explain me it.”* |
+| **Bisa Langsung \`Someone\`** | \`tell\`, \`ask\`, \`teach\`, \`show\`, \`give\` | *“Tell **me** the answer.”* | ❌ *“Tell to me the answer.”* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - **Tell** → Langsung orang (*Tell me*).
+> - **Explain** → Wajib pakai **to** (*Explain **to** me* / *Explain this **to** me*).
+`,
+    source: 'Real-World Writing & Communication',
+    chapter: 'Transitive vs Prepositional Verbs & Questions',
+    createdAt: '2026-09-02',
+    tags: ['explain', 'prepositions', 'verb-patterns', 'grammar-correction', 'direct-questions'],
   },
 ];
 
