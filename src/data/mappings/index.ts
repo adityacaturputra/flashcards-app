@@ -1965,6 +1965,81 @@ $$\\mathbf{\\text{Despite / In spite of the fact that}} + \\mathbf{\\text{Subjec
     createdAt: '2026-09-02',
     tags: ['prepositions', 'conjunctions', 'despite', 'in-spite-of', 'although', 'even-though', 'contrast', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'verbs-transitive-discuss-no-preposition',
+    module: 'Verbs & Prepositions',
+    title: 'discuss [object] vs. talk about [object] (Zero-Preposition Transitive Verbs)',
+    question: '“We discussed about adding additional security measures.” (23. Using the preposition about after the verb discuss)',
+    correction: '“discussed about adding...” -> “discussed adding additional security measures”',
+    remarks: `Jawaban yang benar dan baku adalah **"We discussed adding additional security measures."**
+
+---
+
+### 1. Mengapa "discussed about" SALAH?
+
+Di dalam bahasa Indonesia kita terbiasa mengucapkan *"berdiskusi **tentang** sesuatu"*. Namun, dalam tata bahasa Inggris baku:
+
+> [!IMPORTANT]
+> - Kata kerja **\`DISCUSS\`** adalah **Kata Kerja Transitif Murni (*Transitive Verb*)**.
+> - Kata kerja transitif **WAJIB langsung terhubung ke Objek Langsung (*Direct Object*) TANPA disisipi preposisi apa pun (termasuk kata "about")**:
+>   $$\\mathbf{\\text{Subject}} + \\mathbf{\\text{discuss / discussed}} + \\mathbf{\\text{Direct Object (Noun / V-ing)}} \\quad (\\text{DILARANG PAKAI \"about\"!})$$
+> - Makna kata *discuss* sendiri sudah mencakup arti *“to talk **about** something”*, sehingga menambahkan kata *about* setelah *discuss* adalah redundan (*mubazir / pleonasme*).
+
+- ❌ **SALAH:** *“We discussed **about** adding additional security measures.”*
+- ❌ **SALAH:** *“Let's discuss **about** the new marketing budget.”*
+- ✅ **BENAR:** *“We discussed **adding additional security measures**.”*
+- ✅ **BENAR:** *“Let's discuss **the new marketing budget**.”*
+
+---
+
+### 2. Kapan Kata "About" BOLEH Digunakan?
+
+Kata *about* sah digunakan jika Anda menggunakan kata kerja intransitif seperti **\`talk\`**, **\`argue\`**, **\`chat\`**, atau ketika menggunakan bentuk kata benda (**\`discussion\`**):
+
+- ✅ **Kata Kerja "Talk":** *“We **talked about** adding additional security measures.”*
+- ✅ **Kata Kerja "Argue":** *“They **argued about** the contract terms.”*
+- ✅ **Kata Benda "Discussion":** *“We had a productive **discussion about** the project.”* *(Sebagai Noun, frasa 'discussion about' 100% benar).*
+
+---
+
+### 3. Daftar Kata Kerja Transitif Bebas Preposisi (*Zero-Preposition Verbs*)
+
+Banyak kata kerja bahasa Inggris yang sering salah disisipi preposisi karena pengaruh terjemahan bahasa Indonesia:
+
+| Kata Kerja | ❌ Kesalahan Umum (Salah Preposisi) | ✅ Bentuk Baku (Langsung Objek) | Contoh Kalimat Benar |
+| :--- | :--- | :--- | :--- |
+| **discuss** | *discuss about the plan* | **discuss [something]** | *“We **discussed the plan**.”* |
+| **mention** | *mention about the issue* | **mention [something]** | *“She **mentioned the issue** earlier.”* |
+| **reach** | *reach to / at the airport* | **reach [a destination]** | *“We **reached the airport** on time.”* |
+| **enter** | *enter into the room* | **enter [a place]** | *“He **entered the room** quietly.”* |
+| **marry** | *marry with someone* | **marry [someone]** | *“He **married Sarah** last year.”* |
+| **contact** | *contact to our support* | **contact [someone]** | *“Please **contact our support team**.”* |
+| **attend** | *attend to the meeting* | **attend [an event]** | *“I will **attend the meeting**.”* |
+| **emphasize** | *emphasize on the quality* | **emphasize [something]** | *“The CEO **emphasized the quality**.”* |
+| **approach** | *approach to the building* | **approach [something]** | *“The car is **approaching the building**.”* |
+
+---
+
+### 4. Tabel Rangkuman Perbandingan
+
+| Pola Kalimat | Status Preposisi | Contoh Kalimat Benar |
+| :--- | :--- | :--- |
+| **discuss + [Object]** | **TANPA preposisi** (Langsung objek) | *Let's **discuss the proposal**.* |
+| **talk about + [Object]** | **Pakai preposisi "about"** | *Let's **talk about the proposal**.* |
+| **have a discussion about** | **Pakai preposisi "about"** (Bentuk Noun) | *We had a **discussion about the proposal**.* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Gunakan **discuss** → **DILARANG pakai about** (*Let's **discuss the plan***).
+> - Mau pakai **about**? → Gunakan **talk about** (*Let's **talk about the plan***) atau **a discussion about** (*We had **a discussion about the plan***).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['verbs', 'transitive-verbs', 'prepositions', 'discuss', 'talk-about', 'zero-preposition', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
