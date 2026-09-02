@@ -1641,6 +1641,89 @@ Selain *stop*, terdapat beberapa kata kerja penting yang maknanya berubah total 
     createdAt: '2026-09-02',
     tags: ['gerund', 'infinitive', 'stop-smoking', 'stop-to-smoke', 'remember', 'forget', 'regret', 'try', 'verb-patterns', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'nouns-uncountable-tricky-non-count-nouns',
+    module: 'Nouns & Determiners',
+    title: 'Tricky Non-Count Nouns (advice, information, furniture, homework, luggage, etc.)',
+    question: '“My father always gives me great advices.” (19. Using some tricky non-count nouns as count nouns)',
+    correction: '“great advices” -> “great advice”',
+    remarks: `Jawaban yang benar dan baku adalah **"My father always gives me great advice."**
+
+---
+
+### 1. Mengapa "great advices" SALAH?
+
+Di dalam bahasa Indonesia dan beberapa bahasa lain, kata *"nasihat"* atau *"informasi"* sering kali terasa bisa dihitung (misal: "dua buah nasihat", "banyak informasi"). Namun, dalam tata bahasa Inggris baku:
+
+> [!IMPORTANT]
+> **Aturan Mutlak Non-Count / Uncountable Nouns:**
+> Kata benda tak dapat dihitung **TIDAK PERNAH memiliki bentuk jamak (*DILARANG menambahkan akhiran -s / -es*)** dan **TIDAK BISA dipasangi artikel tunggal \`a / an\` secara langsung**:
+> - ❌ **SALAH:** *“My father gives me great **advices**.”*
+> - ❌ **SALAH:** *“He gave me **an advice**.”*
+> - ✅ **BENAR:** *“My father always gives me great **advice**.”*
+> - ✅ **BENAR:** *“He gave me **a piece of advice**.”* *(Jika ingin menyatakan 1 butir nasihat).*
+
+---
+
+### 2. Daftar 12 Tricky Non-Count Nouns yang Paling Sering Salah
+
+Berikut adalah daftar kata benda tak dapat dihitung yang paling sering salah diberi akhiran \`-s\`:
+
+1. **advice** (❌ *advices*) → *“I need some **advice**.”*
+2. **information** (❌ *informations*) → *“Can you send me the **information**?”*
+3. **homework** (❌ *homeworks*) → *“I have a lot of **homework** to finish.”*
+4. **furniture** (❌ *furnitures*) → *“They bought new **furniture** for the living room.”*
+5. **luggage / baggage** (❌ *luggages / baggages*) → *“How many pieces of **luggage** do you have?”*
+6. **equipment** (❌ *equipments*) → *“The gym has modern **equipment**.”*
+7. **evidence / proof** (❌ *evidences / proofs*) → *“There is strong **evidence** to support this claim.”*
+8. **knowledge** (❌ *knowledges*) → *“He has deep **knowledge** in AI systems.”*
+9. **help** (❌ *helps*) → *“Thank you for your **help**.”*
+10. **mail** (❌ *mails*) → *“There is a lot of **mail** in the mailbox.”* *(Gunakan letters / emails jika ingin bentuk jamak).*
+11. **work** (❌ *works*) → *“I have so much **work** today.”* *(Gunakan tasks / jobs jika ingin dihitung).*
+12. **news** (❌ *selalu singular, bukan jamak*) → *“The **news is** very encouraging.”* *(Menggunakan to-be 'is', bukan 'are').*
+
+---
+
+### 3. Cara Menghitung Non-Count Nouns (*Partitive Expressions*)
+
+Jika Anda ingin menyebutkan jumlah satuan tertentu dari kata benda non-count, gunakan frasa takaran satuan (**partitive / counter expressions**):
+
+$$\\mathbf{\\text{a piece of / items of / bottles of}} + \\mathbf{\\text{Uncountable Noun}}$$
+
+- 💡 **Nasihat:** *a piece of advice* (1 nasihat) / *two pieces of advice* (2 nasihat).
+- 💡 **Informasi:** *a piece of information* (1 info) / *several pieces of information*.
+- 💡 **Perabotan:** *an item of furniture* / *three pieces of furniture*.
+- 💡 **Koper:** *a piece of luggage* / *two suitcases*.
+- 💡 **Peralatan:** *a piece of equipment* / *several items of equipment*.
+
+---
+
+### 4. Tabel Perbandingan Bentuk Salah vs Bentuk Baku
+
+| Kata Benda | ❌ Bentuk Salah (Sering Terjadi) | ✅ Bentuk Baku | 🎯 Cara Menghitung (Unit Countable) |
+| :--- | :--- | :--- | :--- |
+| **Nasihat** | *an advice, advices* | **advice** | *a piece of advice / some advice* |
+| **Informasi** | *an information, informations* | **information** | *a piece of information / lots of info* |
+| **PR (Tugas)** | *a homework, homeworks* | **homework** | *an assignment / two assignments* |
+| **Perabotan** | *a furniture, furnitures* | **furniture** | *a piece of furniture / items of furniture* |
+| **Koper / Bagasi** | *a luggage, luggages* | **luggage** | *a piece of luggage / two suitcases* |
+| **Peralatan** | *an equipment, equipments* | **equipment** | *a piece of equipment / pieces of equipment* |
+| **Bukti** | *an evidence, evidences* | **evidence** | *a piece of evidence / strong evidence* |
+| **Surat / Pos** | *a mail, mails* | **mail** | *a piece of mail / emails / letters* |
+| **Pekerjaan** | *a work, works* | **work** | *a job / a task / lots of work* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - **advice, information, furniture, homework, luggage, equipment, evidence, work** → **DILARANG PAKAI -S & DILARANG PAKAI 'A/AN'**.
+> - Mau menghitung satuannya? → Gunakan **a piece of / pieces of** (*a piece of advice*, *a piece of information*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['uncountable-nouns', 'non-count-nouns', 'advice', 'information', 'furniture', 'homework', 'luggage', 'equipment', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
