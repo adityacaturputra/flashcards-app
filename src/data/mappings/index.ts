@@ -765,25 +765,38 @@ Gunakan **\`at\`** untuk waktu yang sangat presisi (jam di jam dinding) atau tit
 | **Pagi/Sore vs Malam** | *in the morning* vs **at night** | Khusus *night*, gunakan **\`at night\`** (bukan *in the night*). |
 | **Weekend (Akhir Pekan)** | **at the weekend** *(UK)* / **on the weekend** *(US)* | Keduanya benar tergantung dialek British vs American. |
 | **Bulan vs Tanggal** | *in September* vs **on September 2nd** | Jika ada tanggalnya, preposisi otomatis berubah menjadi **\`on\`**. |
+| **Hari Raya: "Christmas" vs "Holiday"** | **at Christmas** vs **on Christmas Day** vs **during/over the Christmas holiday** | Tanpa kata *Day/Holiday* pakai **\`at Christmas\`**. Ada kata *Day* pakai **\`on Christmas Day\`**. Jika ada kata *holiday*, gunakan **\`during / over the Christmas holiday\`** atau **\`on (the) Christmas holiday\`** *(bukan at Christmas holiday)*. |
 | **Ada Kata "next/last/this/every"** | **next Monday** *(Bukan on next Monday)* | Kata penentu **menghapus semua preposisi in/on/at**! |
 
 ---
 
-### 5. Tabel Ringkasan Cepat
+### 5. Khusus Kata "Christmas" & "Holiday": Mana yang Benar?
+
+- ✅ **at Christmas:** Merujuk pada masa perayaan Natal secara umum (*“We gather at Christmas.”*).
+- ✅ **on Christmas Day:** Merujuk tepat pada tanggal 25 Desember (*“We open gifts on Christmas Day.”*).
+- ✅ **on Christmas Eve:** Merujuk tepat pada malam 24 Desember (*“Church service is on Christmas Eve.”*).
+- ✅ **during / over the Christmas holiday(s):** Merujuk pada sepanjang periode liburan (*“I will travel over the Christmas holiday.”*).
+- ✅ **on (the) Christmas holiday / vacation:** Sedang berlibur (*“They are on Christmas holiday in Bali.”*).
+- ❌ **SALAH:** *“at Christmas holiday”* (Kombinasi yang tidak baku dan rancu).
+
+---
+
+### 6. Tabel Ringkasan Cepat
 
 | Preposisi | Kategori Waktu | Contoh Penggunaan |
 | :--- | :--- | :--- |
 | **IN** | Abad, Tahun, Musim, Bulan, Pagi/Sore | *in 2026*, *in summer*, *in September*, *in the morning* |
 | **ON** | Nama Hari, Tanggal Lengkap, Hari Spesial (*Day*) | *on Monday*, *on September 2nd*, *on Christmas Day* |
-| **AT** | Jam Pasti, Titik Momen, Malam Hari | *at 7:00 PM*, *at noon*, *at midnight*, *at night* |
+| **AT** | Jam Pasti, Titik Momen, Malam Hari | *at 7:00 PM*, *at noon*, *at midnight*, *at night*, *at Christmas* |
 
 ---
 
 > [!TIP]
 > **Kunci Ingatan Cepat:**
 > - **IN** → Kotak Besar (Bulan, Tahun, Musim).
-> - **ON** → Kotak Sedang (Hari & Tanggal).
-> - **AT** → Titik Jarum Jam (Jam & Momen Spesifik).
+> - **ON** → Kotak Sedang (Hari, Tanggal, & yang berakhiran *Day*).
+> - **AT** → Titik Jarum Jam (Jam, Momen Spesifik, & *at Christmas* tanpa kata *day/holiday*).
+> - Ada kata **holiday** → Gunakan **during / over / on the Christmas holiday** (bukan *at*).
 `,
     source: 'English Grammar in Use & Real-World Communication',
     chapter: 'Prepositions of Time: In, On, At & Fixed Expressions',
