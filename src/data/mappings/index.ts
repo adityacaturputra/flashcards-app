@@ -803,6 +803,81 @@ Gunakan **\`at\`** untuk waktu yang sangat presisi (jam di jam dinding) atau tit
     createdAt: '2026-09-02',
     tags: ['prepositions', 'in-on-at', 'time-expressions', 'time-pyramid', 'grammar-rules'],
   },
+  {
+    id: 'preferences-would-rather-vs-would-prefer',
+    module: 'Preferences & Modals',
+    title: 'would rather stay vs. would prefer to stay (Preferences in Specific Situations)',
+    question: '“Today I prefer to stay at home because it is raining.” (What is the correct version for the above sentence?)',
+    correction: '“prefer to stay (for specific today)” -> “I’d rather stay (V1) / I’d prefer to stay (to V1)”',
+    remarks: `Jawaban yang benar adalah **"A and B both are correct."** (Pilihan Opsi A dan B keduanya benar).
+
+---
+
+### 1. Aturan Dasar: General Preference vs Specific Preference
+
+Dalam bahasa Inggris, cara menyatakan kesukaan (*preference*) dibedakan menjadi dua konteks:
+
+1. **General Preference (Kebiasaan / Kesukaan Umum):**
+   - Menggunakan kata kerja dasar **\`prefer\`** (diikuti Gerund *V-ing* atau *Noun*):
+   - ✅ *“In general, I **prefer staying** at home when it rains.”* (Secara umum kalau hujan saya lebih suka di rumah).
+   - ✅ *“I **prefer** tea **to** coffee.”*
+
+2. **Specific Preference (Pilihan pada Situasi / Momen Spesifik Saat Ini, contohnya ada kata "Today"):**
+   - Ketika menyatakan pilihan pada situasi spesifik hari ini (*Today... because it is raining*), kita **WAJIB menggunakan modal \`would\` (\`'d\`)**:
+   - **Opsi A (\`would rather\`):** $\\mathbf{\\text{would rather}} + \\mathbf{\\text{Bare Infinitive (V1 tanpa to)}}$
+     - ✅ *“Today **I'd rather stay** at home because it is raining.”*
+   - **Opsi B (\`would prefer\`):** $\\mathbf{\\text{would prefer}} + \\mathbf{\\text{to-Infinitive (to + V1)}}$
+     - ✅ *“Today **I'd prefer to stay** at home because it is raining.”*
+
+---
+
+### 2. Perbedaan Bentuk Kata Kerja: "Would Rather" vs "Would Prefer"
+
+Perhatikan pasangan bentuk kata kerja setelahnya:
+
+| Bentuk Preferensi | Pola Kata Kerja | Contoh Kalimat Benar | Contoh Salah |
+| :--- | :--- | :--- | :--- |
+| **would rather** | **+ V1 (Bare Infinitive)** | *“I'd rather **stay** home.”* | ❌ *“I'd rather to stay home.”* |
+| **would prefer** | **+ to + V1 (to-Infinitive)** | *“I'd prefer **to stay** home.”* | ❌ *“I'd prefer stay home.”* |
+| **prefer (general)** | **+ V-ing / Noun** | *“I prefer **staying** home.”* | ❌ *“Today I prefer to stay...”* |
+
+---
+
+### 3. Perbandingan Saat Membandingkan Dua Hal (*Comparison*)
+
+Perhatikan kata penghubung perbandingannya:
+
+- **would rather ... THAN ...:**
+  - ✅ *“I'd rather **stay** at home **than go** out in the rain.”*
+- **would prefer ... RATHER THAN ...:**
+  - ✅ *“I'd prefer **to stay** at home **rather than go** out in the rain.”*
+- **prefer ... TO ...:**
+  - ✅ *“I prefer **staying** at home **to going** out.”*
+
+---
+
+### 4. Analisis Pilihan Soal
+
+| Pilihan Jawaban | Status | Penjelasan |
+| :--- | :--- | :--- |
+| **A:** *“Today I'd rather stay at home...”* | ✅ **BENAR** | Pola baku \`would rather + V1\` untuk situasi spesifik hari ini. |
+| **B:** *“Today I'd prefer to stay at home...”* | ✅ **BENAR** | Pola baku \`would prefer + to V1\` untuk situasi spesifik hari ini. |
+| **C:** *“A and B both are correct.”* | 🏆 **JAWABAN TEPAT** | Karena opsi A dan B sama-sama sah dan alami. |
+| **D:** *“A and B both are incorrect.”* | ❌ Salah | Karena opsi A dan B valid. |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Ada situasi spesifik (*Today / right now*) → Gunakan **'d rather** atau **'d prefer**.
+> - **'d rather** $\rightarrow$ langsung kata kerja V1 (*I'd rather **stay***).
+> - **'d prefer** $\rightarrow$ wajib pakai to (*I'd prefer **to stay***).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Expressing Preferences: Prefer, Would Prefer, Would Rather',
+    createdAt: '2026-09-02',
+    tags: ['preferences', 'would-rather', 'would-prefer', 'prefer', 'modals', 'englishvit'],
+  },
 ];
 
 /**
