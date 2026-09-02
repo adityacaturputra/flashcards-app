@@ -11,7 +11,7 @@ import { useAppContext } from '@/context/appContext';
 import { useSearchTemplateContext } from '@/context/searchTemplateContext';
 import { Progression } from '@/types/flashcard';
 import { motion } from 'framer-motion';
-import { FaBars, FaTimes, FaPlay, FaStop, FaCog, FaPlus } from 'react-icons/fa';
+import { FaBars, FaTimes, FaPlay, FaStop, FaCog, FaPlus, FaTable } from 'react-icons/fa';
 import SkeletonLoader from '@/components/atoms/SkeletonLoader';
 import PendingUpdatesIndicator from '@/components/atoms/PendingUpdatesIndicator';
 
@@ -129,6 +129,21 @@ const Home: React.FC = memo(() => {
                       background: 'var(--secondary)',
                       color: 'var(--secondary-foreground)',
                     }}
+                    onClick={() => (window.location.href = '/mapping')}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className='flex items-center gap-1.5'>
+                      <FaTable className='h-3.5 w-3.5' />
+                      <span>Mapping Table</span>
+                    </div>
+                  </motion.button>
+
+                  <motion.button
+                    className='rounded-lg px-4 py-2 text-sm font-medium transition-all hover:scale-105'
+                    style={{
+                      background: 'var(--secondary)',
+                      color: 'var(--secondary-foreground)',
+                    }}
                     onClick={() => (window.location.href = '/search-templates')}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -184,6 +199,19 @@ const Home: React.FC = memo(() => {
         >
           <div className='border-b border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-gray-800'>
             <div className='flex flex-col gap-2'>
+              <motion.button
+                className='flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700'
+                style={{ color: 'white' }}
+                onClick={() => {
+                  window.location.href = '/mapping';
+                  setIsMobileMenuOpen(false);
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaTable className='h-4 w-4' style={{ color: '#94a3b8' }} />
+                Mapping Table
+              </motion.button>
+
               <motion.button
                 className='flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700'
                 style={{ color: 'white' }}

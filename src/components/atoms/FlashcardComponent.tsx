@@ -5,6 +5,7 @@ import calculateNextReviewDate from '@/utils/calculateNextReviewDate';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { formatRemainingTime } from '@/utils/formatRemainingTime';
+import { openTTSInNewTab, openGoogleSearchInNewTab } from '@/utils/externalLinks';
 import {
   FaEye,
   FaEyeSlash,
@@ -125,29 +126,9 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
       );
     };
 
-    // Function to open TTS in a new tab without referrer
-    const openTTSInNewTab = (text: string) => {
-      const ttsUrl = `https://translate.google.com.vn/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=en&client=tw-ob`;
-      const link = document.createElement('a');
-      link.href = ttsUrl;
-      link.rel = 'noopener noreferrer'; // Set rel attribute to avoid referrer issues
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    };
-
-    // Function to open Google search in a new tab
-    const openGoogleSearchInNewTab = (text: string) => {
+    const handleSearch = (text: string) => {
       const query = generateSearchQuery(text);
-      const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-      const link = document.createElement('a');
-      link.href = searchUrl;
-      link.rel = 'noopener noreferrer'; // Set rel attribute to avoid referrer issues
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      openGoogleSearchInNewTab(query);
     };
 
     const progressionOptions = Object.values(Progression);
@@ -451,7 +432,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
                       className='rounded-md p-1.5 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                       onClick={(e) => {
                         e.stopPropagation();
-                        openGoogleSearchInNewTab(flashcard.question);
+                        handleSearch(flashcard.question);
                       }}
                       title='Search question'
                     >
@@ -505,7 +486,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
                         className='rounded-md p-1.5 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700'
                         onClick={(e) => {
                           e.stopPropagation();
-                          openGoogleSearchInNewTab(flashcard.answer);
+                          handleSearch(flashcard.answer);
                         }}
                         title='Search answer'
                       >
