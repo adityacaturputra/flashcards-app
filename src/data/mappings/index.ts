@@ -1113,6 +1113,68 @@ Jika Anda menulis esai, dokumen kerja, atau jurnal akademis dan ingin variasi ya
     createdAt: '2026-09-02',
     tags: ['quantifiers', 'much-vs-a-lot-of', 'uncountable-nouns', 'non-count-nouns', 'positive-sentences', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'adjectives-compound-number-noun-singular',
+    module: 'Adjectives & Modifiers',
+    title: 'three-day weekend vs. three-days weekend (Compound Adjectives)',
+    question: '“We have a three-days weekend coming up.” (12. Making nouns plural in compound adjectives)',
+    correction: '“a three-days weekend” -> “a three-day weekend”',
+    remarks: `Jawaban yang benar dan baku adalah **"We have a three-day weekend coming up."**
+
+---
+
+### 1. Aturan Dasar: Mengapa "three-day" TANPA Akhiran \`-s\`?
+
+Ketika sebuah angka (*number*) dan kata benda (*noun*) digabungkan dengan tanda hubung (*hyphen*) untuk menjelaskan kata benda lain di belakangnya, susunan tersebut berubah fungsi menjadi **Kata Sifat Majemuk (*Compound Adjective*)**:
+
+$$\\mathbf{\\text{Article (a/an)}} + \\mathbf{\\text{Number}} \\mathbf{-} \\mathbf{\\text{Singular Noun (tanpa -s)}} + \\mathbf{\\text{Head Noun}}$$
+
+> [!IMPORTANT]
+> **Aturan Emas Kata Sifat dalam Bahasa Inggris:**  
+> Kata sifat (*adjective*) **TIDAK PERNAH memiliki bentuk jamak (*never pluralized*)**. Anda tidak boleh menambahkan akhiran \`-s\` atau \`-es\` pada kata sifat.
+
+Oleh karena itu, kata benda di dalam kata sifat majemuk **wajib selalu berbentuk tunggal (*singular*)**:
+- ❌ **SALAH:** *“a **three-days** weekend”*
+- ✅ **BENAR:** *“a **three-day** weekend”* (Akhir pekan berdurasi 3 hari).
+
+---
+
+### 2. Kapan Kata Benda Tersebut BOLEH Memakai Akhiran \`-s\`?
+
+Kata benda tersebut **HANYA** memakai akhiran \`-s\` jika posisinya berdiri sendiri sebagai **frasa kata benda biasa (*ordinary noun phrase*)** di belakang kata kerja:
+
+- ✅ *“The weekend lasts for **three days**.”* *(Berfungsi sebagai noun jamak biasa).*
+- ✅ *“The boy is **ten years old**.”* *(Berdiri sendiri di belakang to-be).*
+- ✅ *“The coffee costs **five dollars**.”*
+- ✅ *“The meeting took **two hours**.”*
+
+---
+
+### 3. Tabel Perbandingan Berbagai Unit Ukuran (*Time, Age, Money, Distance, Quantity*)
+
+| Kategori | Bentuk Compound Adjective (Di Depan Noun) $\\rightarrow$ **SINGULAR (TANPA -s)** | Bentuk Noun Biasa (Di Belakang Verb) $\\rightarrow$ **PLURAL (PAKAI -s)** |
+| :--- | :--- | :--- |
+| **Durasi Waktu** | *a **three-day** weekend* | *The weekend is **three days** long.* |
+| **Durasi Jam** | *a **two-hour** meeting* | *The meeting lasted **two hours**.* |
+| **Usia** | *a **ten-year-old** boy* | *The boy is **ten years old**.* |
+| **Mata Uang** | *a **five-dollar** coffee* | *The coffee costs **five dollars**.* |
+| **Jarak** | *a **six-mile** marathon* | *He ran for **six miles**.* |
+| **Halaman Dokumen** | *a **50-page** report* | *The report has **50 pages**.* |
+| **Jumlah Ruangan** | *a **four-bedroom** apartment* | *The apartment has **four bedrooms**.* |
+| **Istirahat Menit** | *a **fifteen-minute** break* | *We took a break for **fifteen minutes**.* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Ada tanda hubung di depan kata benda (**Number-Noun + Noun**) $\rightarrow$ Berfungsi sebagai **Kata Sifat** $\rightarrow$ **DILARANG pakai -s** (*a **three-day** weekend*, *a **10-year-old** boy*).
+> - Berdiri sendiri di belakang (**Number + Nouns**) $\rightarrow$ Berfungsi sebagai **Kata Benda** $\rightarrow$ **WAJIB pakai -s** (*lasts for **three days***, *is **10 years old***).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['adjectives', 'compound-adjectives', 'hyphenated-words', 'singular-nouns', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
