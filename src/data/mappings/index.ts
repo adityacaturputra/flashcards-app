@@ -1251,6 +1251,94 @@ $$\\mathbf{\\text{Subject}} + \\mathbf{\\text{get / gets / got / getting used to
     createdAt: '2026-09-02',
     tags: ['used-to', 'be-used-to', 'get-used-to', 'gerunds', 'verb-patterns', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'causative-verbs-make-let-have-bare-infinitive',
+    module: 'Causative Verbs & Verb Patterns',
+    title: 'Causative Verbs (let, make, have + Bare Infinitive vs. get + to-Infinitive)',
+    question: '“I made my son to clean up his room.” (14. Using the infinitive after the causative verbs let, make, and have)',
+    correction: '“made my son to clean...” -> “made my son clean up his room”',
+    remarks: `Jawaban yang benar dan baku adalah **"I made my son clean up his room."**
+
+---
+
+### 1. Definisi & Aturan Dasar: Causative Verbs (*Kata Kerja Kausatif*)
+
+**Causative Verbs** digunakan ketika Subjek tidak melakukan aksi secara langsung, melainkan **membuat, memaksa, mengizinkan, atau meminta orang lain** untuk melakukannya:
+
+> [!IMPORTANT]
+> Tiga kata kerja kausatif utama: **\`LET\`**, **\`MAKE\`**, dan **\`HAVE\`** **DILARANG memakai kata "to"** di depan kata kerja kedua. Kata kerja kedua **WAJIB berbentuk kata kerja dasar polos (Bare Infinitive / V1)**:
+> 
+> $$\\mathbf{\\text{Subject}} + \\mathbf{\\text{make / let / have}} + \\mathbf{\\text{Person (Object)}} + \\mathbf{\\text{Base Verb (V1 polos)}}$$
+
+- ❌ **SALAH:** *“I made my son **to clean** up his room.”*
+- ✅ **BENAR:** *“I made my son **clean** up his room.”*
+
+---
+
+### 2. Tiga (3) Causative Verbs yang Wajib Bare Infinitive (TANPA "to")
+
+| Causative Verb | Makna & Fungsi | Rumus Pola | Contoh Kalimat Benar |
+| :--- | :--- | :--- | :--- |
+| **MAKE** | Memaksa / Mengharuskan (*force / require*) | \`make + person + V1\` | *“She **made me apologize**.”* (Bukan *to apologize*). |
+| **LET** | Mengizinkan / Membiarkan (*allow / permit*) | \`let + person + V1\` | *“My boss **let us leave** early.”* (Bukan *to leave*). |
+| **HAVE** | Meminta / Mendelegasikan tugas (*request / assign*) | \`have + person + V1\` | *“I will **have my assistant call** you.”* (Bukan *to call*). |
+
+---
+
+### 3. Pengecualian Penting: Causative Verb "GET" (WAJIB Pakai "to")
+
+Berbeda dengan *make, let,* dan *have*, kata kerja kausatif **\`GET\`** (yang bermakna *membujuk / meyakinkan seseorang untuk melakukan sesuatu*) **WAJIB menggunakan to-infinitive (\`to + V1\`)**:
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{get / got}} + \\mathbf{\\text{Person (Object)}} + \\mathbf{\\text{to}} + \\mathbf{\\text{Base Verb (V1)}}$$
+
+- ❌ **SALAH:** *“I got my son clean his room.”*
+- ✅ **BENAR:** *“I **got my son to clean** his room.”*
+- ✅ **BENAR:** *“She **got her brother to help** her with math.”*
+
+---
+
+### 4. Bagaimana dengan Kata Kerja "HELP"?
+
+Kata kerja **\`HELP\`** sangat fleksibel dan **boleh menggunakan "to" ataupun TANPA "to"** (keduanya 100% baku dan benar):
+- ✅ *“He helped me **clean** the room.”* (Umum dalam percakapan).
+- ✅ *“He helped me **to clean** the room.”* (Sedikit lebih formal).
+
+---
+
+### 5. Kausatif Pasif (*Passive Causative: have / get something done*)
+
+Jika objeknya adalah **benda (bukan orang)** yang dikenai tindakan oleh pihak lain:
+
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{have / get}} + \\mathbf{\\text{Something (Object)}} + \\mathbf{\\text{V3 (Past Participle)}}$$
+
+- *“I **had my car repaired** yesterday.”* (Mobil saya diperbaiki oleh montir).
+- *“She **got her hair cut** last week.”* (Rambutnya dipotong oleh salon).
+
+---
+
+### 6. Tabel Rangkuman Perbandingan Kausatif Aktif
+
+| Kata Kerja | Makna Kausatif | Pola Kata Kerja Kedua | Contoh Kalimat |
+| :--- | :--- | :--- | :--- |
+| **make** | Memaksa | **+ V1 (Bare)** | *She made him **wash** the dishes.* |
+| **let** | Mengizinkan | **+ V1 (Bare)** | *They let us **enter** for free.* |
+| **have** | Meminta / Menugaskan | **+ V1 (Bare)** | *I had the plumber **fix** the sink.* |
+| **get** | Membujuk | **+ to + V1** | *I got the plumber **to fix** the sink.* |
+| **help** | Membantu | **+ (to) + V1** | *He helped me **(to) carry** the boxes.* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - **LET, MAKE, HAVE** → **DILARANG pakai to** (*made him **clean***, *let him **go***, *had him **call***).
+> - **GET** → **WAJIB pakai to** (*got him **to clean***).
+> - **HELP** → **Bebas** boleh pakai atau tanpa *to* (*helped me clean* / *helped me to clean*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['causative-verbs', 'make-let-have', 'get-someone-to-do', 'bare-infinitive', 'verb-patterns', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
