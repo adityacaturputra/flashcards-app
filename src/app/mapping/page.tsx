@@ -51,56 +51,40 @@ export default function MappingPage() {
           <div className='mx-auto max-w-7xl px-3 py-2.5 sm:px-6 sm:py-4'>
             <div className='flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between'>
               {/* Row 1: Back + Title + Badges */}
-              <div className='flex items-center justify-between sm:justify-start gap-2 sm:gap-3'>
-                <div className='flex items-center gap-2 sm:gap-3 min-w-0'>
-                  <motion.button
-                    className='rounded-xl border p-2 sm:p-2.5 transition-all hover:scale-105 shrink-0'
-                    style={{
-                      background: 'var(--secondary)',
-                      color: 'var(--secondary-foreground)',
-                      borderColor: 'var(--border)',
-                    }}
-                    onClick={() => router.push('/')}
-                    whileTap={{ scale: 0.95 }}
-                    title='Back to Main Flashcards'
-                  >
-                    <FaArrowLeft className='h-3.5 w-3.5 sm:h-4 sm:w-4' />
-                  </motion.button>
-
-                  <div className='min-w-0'>
-                    <div className='flex items-center gap-1.5 sm:gap-2'>
-                      <h1 className='gradient-text-accent text-base font-bold sm:text-xl lg:text-2xl truncate'>
-                        English Journey
-                      </h1>
-                      <span
-                        className='rounded-full px-2 py-0.5 text-[10px] font-bold shrink-0 whitespace-nowrap'
-                        style={{
-                          background: 'var(--primary)',
-                          color: 'var(--primary-foreground)',
-                        }}
-                      >
-                        Repo
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Mobile Agent Guide Trigger */}
-                <button
-                  onClick={() => setShowAgentGuide(!showAgentGuide)}
-                  className='sm:hidden rounded-xl border p-2 shrink-0 transition-all'
+              <div className='flex items-center gap-2 sm:gap-3 min-w-0'>
+                <motion.button
+                  className='rounded-xl border p-2 sm:p-2.5 transition-all hover:scale-105 shrink-0'
                   style={{
-                    background: showAgentGuide ? 'var(--primary)' : 'var(--secondary)',
-                    color: showAgentGuide ? 'var(--primary-foreground)' : 'var(--secondary-foreground)',
+                    background: 'var(--secondary)',
+                    color: 'var(--secondary-foreground)',
                     borderColor: 'var(--border)',
                   }}
-                  title='Agent Info'
+                  onClick={() => router.push('/')}
+                  whileTap={{ scale: 0.95 }}
+                  title='Back to Main Flashcards'
                 >
-                  <FaRobot className='h-3.5 w-3.5' />
-                </button>
+                  <FaArrowLeft className='h-3.5 w-3.5 sm:h-4 sm:w-4' />
+                </motion.button>
+
+                <div className='min-w-0'>
+                  <div className='flex items-center gap-1.5 sm:gap-2'>
+                    <h1 className='gradient-text-accent text-base font-bold sm:text-xl lg:text-2xl truncate'>
+                      English Journey
+                    </h1>
+                    <span
+                      className='rounded-full px-2 py-0.5 text-[10px] font-bold shrink-0 whitespace-nowrap'
+                      style={{
+                        background: 'var(--primary)',
+                        color: 'var(--primary-foreground)',
+                      }}
+                    >
+                      Repo
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              {/* Row 2: View Switcher Tabs & Desktop Agent Guide */}
+              {/* Row 2: View Switcher Tabs & Single Agent Guide Button */}
               <div className='flex items-center gap-2'>
                 <div
                   className='flex flex-1 sm:flex-initial items-center rounded-xl border p-1 shadow-inner'
@@ -157,10 +141,10 @@ export default function MappingPage() {
                   </button>
                 </div>
 
-                {/* Desktop Agent Guide Button */}
+                {/* Single Agent Guide Button */}
                 <button
                   onClick={() => setShowAgentGuide(!showAgentGuide)}
-                  className='hidden sm:flex rounded-xl border p-2.5 transition-all hover:scale-105'
+                  className='flex rounded-xl border p-2 sm:p-2.5 transition-all hover:scale-105 shrink-0'
                   style={{
                     background: showAgentGuide ? 'var(--primary)' : 'var(--secondary)',
                     color: showAgentGuide ? 'var(--primary-foreground)' : 'var(--secondary-foreground)',
@@ -168,7 +152,7 @@ export default function MappingPage() {
                   }}
                   title='How to update with Antigravity Agent'
                 >
-                  <FaRobot className='h-4 w-4' />
+                  <FaRobot className='h-3.5 w-3.5 sm:h-4 sm:w-4' />
                 </button>
               </div>
             </div>

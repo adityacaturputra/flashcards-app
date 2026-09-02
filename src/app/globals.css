@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import 'katex/dist/katex.min.css';
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 /* Critical CSS - Above the fold styles */
 @layer base {
   body {
@@ -47,6 +49,13 @@
   --ring: #3b82f6;
   --radius: 0.75rem;
 
+  /* Grammar Fix Box (High Contrast Accessible Green) */
+  --fix-bg: rgba(5, 150, 105, 0.08);
+  --fix-border: #059669;
+  --fix-text: #064e3b;
+  --fix-label: #047857;
+  --fix-icon: #059669;
+
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -76,6 +85,13 @@
   --border: #334155;
   --input: #1e293b;
   --ring: #60a5fa;
+
+  /* Grammar Fix Box (Dark mode emerald) */
+  --fix-bg: rgba(16, 185, 129, 0.12);
+  --fix-border: #10b981;
+  --fix-text: #6ee7b7;
+  --fix-label: #34d399;
+  --fix-icon: #34d399;
 }
 
 * {

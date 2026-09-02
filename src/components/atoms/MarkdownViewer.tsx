@@ -37,30 +37,35 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   };
 
   return (
-    <div className={`relative max-w-full overflow-hidden ${className}`}>
+    <div className={`max-w-full overflow-hidden ${className}`}>
       {showCopyButton && (
-        <button
-          onClick={handleCopy}
-          className='absolute top-2 right-2 z-10 flex items-center gap-1 rounded-md border px-2 py-0.5 text-[11px] font-medium transition-all hover:scale-105 sm:px-2.5 sm:py-1 sm:text-xs'
-          style={{
-            background: 'var(--secondary)',
-            color: 'var(--secondary-foreground)',
-            borderColor: 'var(--border)',
-          }}
-          title='Copy Markdown Content'
+        <div
+          className='flex items-center justify-end pb-2 mb-2 border-b'
+          style={{ borderColor: 'var(--border)' }}
         >
-          {copied ? (
-            <>
-              <FaCheck className='h-3 w-3 text-green-500' />
-              <span>Copied!</span>
-            </>
-          ) : (
-            <>
-              <FaCopy className='h-3 w-3' />
-              <span>Copy</span>
-            </>
-          )}
-        </button>
+          <button
+            onClick={handleCopy}
+            className='flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium transition-all hover:scale-105 shadow-sm'
+            style={{
+              background: 'var(--secondary)',
+              color: 'var(--secondary-foreground)',
+              borderColor: 'var(--border)',
+            }}
+            title='Copy Markdown Content'
+          >
+            {copied ? (
+              <>
+                <FaCheck className='h-3 w-3 text-green-500' />
+                <span>Copied!</span>
+              </>
+            ) : (
+              <>
+                <FaCopy className='h-3 w-3' />
+                <span>Copy</span>
+              </>
+            )}
+          </button>
+        </div>
       )}
 
       <div className='markdown-content prose prose-slate dark:prose-invert max-w-none text-xs leading-relaxed sm:text-sm md:text-base break-words'>

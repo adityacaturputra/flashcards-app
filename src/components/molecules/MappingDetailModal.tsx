@@ -214,19 +214,28 @@ export const MappingDetailModal: React.FC<MappingDetailModalProps> = ({
 
             {/* The Things That Should Be Fix (Correction) */}
             <div
-              className='mb-4 sm:mb-5 rounded-xl border-l-4 p-3 sm:p-4 shadow-sm'
+              className='mb-4 sm:mb-5 rounded-xl border-l-4 p-3.5 sm:p-4 shadow-sm'
               style={{
-                borderColor: '#10b981', // emerald
-                background: 'rgba(16, 185, 129, 0.08)',
+                borderColor: 'var(--fix-border)',
+                background: 'var(--fix-bg)',
               }}
             >
-              <div className='flex items-center gap-1.5 mb-1'>
-                <FaCheck className='h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400' />
-                <span className='text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300'>
+              <div className='flex items-center gap-1.5 mb-1.5'>
+                <FaCheck
+                  className='h-3.5 w-3.5'
+                  style={{ color: 'var(--fix-icon)' }}
+                />
+                <span
+                  className='text-[10px] sm:text-xs font-bold uppercase tracking-wider'
+                  style={{ color: 'var(--fix-label)' }}
+                >
                   The Things That Should Be Fixed
                 </span>
               </div>
-              <div className='font-mono text-xs sm:text-sm md:text-base font-semibold text-emerald-900 dark:text-emerald-200'>
+              <div
+                className='font-mono text-xs sm:text-sm md:text-base font-bold leading-relaxed'
+                style={{ color: 'var(--fix-text)' }}
+              >
                 {item.correction}
               </div>
             </div>

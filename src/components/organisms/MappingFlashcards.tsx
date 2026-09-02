@@ -254,19 +254,28 @@ export const MappingFlashcards: React.FC<MappingFlashcardsProps> = ({
               >
                 {/* Correction Box */}
                 <div
-                  className='rounded-xl border-l-4 p-3 sm:p-4 shadow-sm'
+                  className='rounded-xl border-l-4 p-3.5 sm:p-4 shadow-sm'
                   style={{
-                    borderColor: '#10b981',
-                    background: 'rgba(16, 185, 129, 0.08)',
+                    borderColor: 'var(--fix-border)',
+                    background: 'var(--fix-bg)',
                   }}
                 >
-                  <div className='mb-1 flex items-center gap-1.5'>
-                    <FaCheck className='h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400' />
-                    <span className='text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300'>
+                  <div className='mb-1.5 flex items-center gap-1.5'>
+                    <FaCheck
+                      className='h-3.5 w-3.5'
+                      style={{ color: 'var(--fix-icon)' }}
+                    />
+                    <span
+                      className='text-[10px] sm:text-xs font-bold uppercase tracking-wider'
+                      style={{ color: 'var(--fix-label)' }}
+                    >
                       The Things That Should Be Fix
                     </span>
                   </div>
-                  <div className='font-mono text-sm sm:text-base font-bold text-emerald-900 dark:text-emerald-200'>
+                  <div
+                    className='font-mono text-sm sm:text-base font-bold'
+                    style={{ color: 'var(--fix-text)' }}
+                  >
                     {currentItem.correction}
                   </div>
                 </div>

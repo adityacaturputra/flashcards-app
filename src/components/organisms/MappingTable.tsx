@@ -150,7 +150,7 @@ export const MappingTable: React.FC<MappingTableProps> = ({
             <motion.div
               key={item.id}
               onClick={() => setActiveModalItem(item)}
-              className='rounded-2xl border p-4 shadow-sm transition-all active:scale-[0.99] cursor-pointer'
+              className='rounded-2xl border p-4 shadow-sm transition-all active:scale-[0.99] cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/30'
               style={{
                 background: 'var(--card)',
                 borderColor: 'var(--border)',
@@ -217,14 +217,20 @@ export const MappingTable: React.FC<MappingTableProps> = ({
 
               {/* The Things That Should Be Fix */}
               <div
-                className='mb-3 rounded-xl border-l-4 p-2.5 text-xs'
+                className='mb-3 rounded-xl border-l-4 p-2.5 text-xs shadow-xs'
                 style={{
-                  borderColor: '#10b981',
-                  background: 'rgba(16, 185, 129, 0.08)',
+                  borderColor: 'var(--fix-border)',
+                  background: 'var(--fix-bg)',
                 }}
               >
-                <div className='flex items-start gap-1.5 font-mono font-bold text-emerald-800 dark:text-emerald-300'>
-                  <FaCheck className='h-3.5 w-3.5 text-emerald-500 shrink-0 mt-0.5' />
+                <div
+                  className='flex items-start gap-1.5 font-mono font-bold'
+                  style={{ color: 'var(--fix-text)' }}
+                >
+                  <FaCheck
+                    className='h-3.5 w-3.5 shrink-0 mt-0.5'
+                    style={{ color: 'var(--fix-icon)' }}
+                  />
                   <span>{item.correction}</span>
                 </div>
               </div>
@@ -323,7 +329,7 @@ export const MappingTable: React.FC<MappingTableProps> = ({
                 filteredItems.map((item, index) => (
                   <motion.tr
                     key={item.id}
-                    className='group cursor-pointer transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/60'
+                    className='group cursor-pointer transition-colors hover:bg-slate-100/70 dark:hover:bg-slate-800/40'
                     onClick={() => setActiveModalItem(item)}
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -367,8 +373,14 @@ export const MappingTable: React.FC<MappingTableProps> = ({
                     {/* The things that should be fix */}
                     <td className='px-4 py-4 align-top'>
                       <div className='flex items-start gap-1.5'>
-                        <FaCheck className='mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-500' />
-                        <span className='font-mono text-xs font-semibold text-emerald-700 dark:text-emerald-300'>
+                        <FaCheck
+                          className='mt-0.5 h-3.5 w-3.5 shrink-0'
+                          style={{ color: 'var(--fix-icon)' }}
+                        />
+                        <span
+                          className='font-mono text-xs font-bold'
+                          style={{ color: 'var(--fix-text)' }}
+                        >
                           {item.correction}
                         </span>
                       </div>
