@@ -1724,6 +1724,84 @@ $$\\mathbf{\\text{a piece of / items of / bottles of}} + \\mathbf{\\text{Uncount
     createdAt: '2026-09-02',
     tags: ['uncountable-nouns', 'non-count-nouns', 'advice', 'information', 'furniture', 'homework', 'luggage', 'equipment', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'nouns-news-singular-uncountable-rule',
+    module: 'Nouns & Determiners',
+    title: 'news vs. new (Singular Uncountable Noun & Subject-Verb Agreement)',
+    question: '“Did you hear the new about the Kardashians?” (20. Using news without an ‘s’)',
+    correction: '“the new about...” -> “the news about the Kardashians?”',
+    remarks: `Jawaban yang benar dan baku adalah **"Did you hear the news about the Kardashians?"**
+
+---
+
+### 1. Mengapa "the new" SALAH?
+
+Kata **\`new\`** (tanpa akhiran \`-s\`) adalah **Kata Sifat (*Adjective*)** yang berarti *"baru"* (contoh: *a new laptop, a new car*), bukan kata benda yang berarti *"berita/kabar"*.
+
+> [!IMPORTANT]
+> - Kata benda untuk *"berita / kabar / warta peristiwa"* dalam bahasa Inggris adalah **\`news\`** yang **SEJAK DARI AWAL WAJIB DIEJA DENGAN AKHIRAN \`-s\`**.
+> - Akhiran \`-s\` pada kata *news* **BUKAN penanda bentuk jamak (*not a plural ending*)**, melainkan bagian asli dari kata benda tunggal tak dapat dihitung (**Singular Uncountable Noun**).
+
+- ❌ **SALAH:** *“Did you hear the **new** about the Kardashians?”*
+- ✅ **BENAR:** *“Did you hear the **news** about the Kardashians?”*
+
+---
+
+### 2. Aturan Subject-Verb Agreement untuk "NEWS" (Selalu TUNGGAL / Singular)
+
+Karena kata *news* adalah kata benda tunggal tak dapat dihitung (*singular non-count noun*), kata kerja bantu / predikat yang menyertainya **WAJIB berbentuk TUNGGAL (\`is / was / has / Verb-s\`)**, BUKAN jamak (\`are / were / have\`):
+
+- ❌ **SALAH:** *“The news **are** shocking!”*
+- ✅ **BENAR:** *“The news **is** shocking!”*
+- ❌ **SALAH:** *“**These** news **were** unexpected.”*
+- ✅ **BENAR:** *“**This** news **was** unexpected.”*
+
+---
+
+### 3. Kata Benda Lain yang Berakhiran \`-s\` Tetapi SELALU TUNGGAL (*Singular*)
+
+Selain *news*, banyak kata benda berakhiran \`-s\` yang selalu dipasangkan dengan kata kerja tunggal (*is / was / has*):
+
+| Kategori | Contoh Kata Benda Berakhiran -s | Contoh Kalimat Baku |
+| :--- | :--- | :--- |
+| **Bidang Studi / Ilmu** | *Physics, Mathematics / Maths, Economics, Politics, Statistics* | *“**Physics is** my favorite subject.”* (Bukan *are*). |
+| **Penyakit / Medis** | *Measles, Diabetes, Rabies, Rickets* | *“**Measles is** highly contagious.”* |
+| **Olahraga / Permainan** | *Billiards, Darts, Gymnastics, Aerobics* | *“**Gymnastics requires** great flexibility.”* |
+| **Informasi Berita** | *News* | *“No **news is** good news.”* |
+
+---
+
+### 4. Cara Menyebutkan Satuan Berita (*Singular & Plural Counters*)
+
+Karena *news* adalah kata benda non-count, kita **DILARANG** mengatakan *"a news"* atau *"two newses"*. Untuk menyebutkan satuannya, gunakan frasa takaran:
+
+- 💡 **1 Buah Berita:** *a piece of news*, *a news story*, *a news report*, *a news article*, *a news item*.
+- 💡 **Beberapa Berita:** *three pieces of news*, *two news stories*, *several news reports*.
+
+---
+
+### 5. Tabel Rangkuman Perbandingan
+
+| Kata / Frasa | Kelas Kata & Makna | Pasangan To-Be / Predikat | Contoh Kalimat Benar |
+| :--- | :--- | :--- | :--- |
+| **new** | Adjective (*Baru*) | Sesuai kata benda utamanya | *“I bought **new** shoes.”* |
+| **news** | Noun (*Berita / Kabar*) | **WAJIB TUNGGAL (is / was / has)** | *“The **news was** broadcast live.”* |
+| **a piece of news** | Noun Phrase (1 butir berita) | **Tunggal (is / was)** | *“I have **a great piece of news** for you!”* |
+| **news stories** | Noun Phrase (Kisah-kisah berita) | **Jamak (are / were)** | *“There **are** three **news stories** on the front page.”* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Mau bilang **"berita / kabar"** → **WAJIB pakai -s** (**news**, bukan *new*).
+> - *news* selalu dianggap **Tunggal / Singular** → Gunakan **is / was / has** (*The news is good*, *This news was surprising*).
+> - Mau sebut satu berita? → Gunakan **a piece of news** atau **a news story** (bukan *a news*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['news', 'nouns', 'uncountable-nouns', 'singular-nouns', 'subject-verb-agreement', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
