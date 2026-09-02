@@ -1039,6 +1039,80 @@ Jika Anda ingin menyatakan keraguan atau ketidakyakinan, gunakan variasi alami b
     createdAt: '2026-09-02',
     tags: ['collocations', 'common-errors', 'pretty-sure', 'not-sure', 'not-quite-sure', 'degrees-of-certainty', 'englishvit'],
   },
+  {
+    id: 'quantifiers-much-vs-a-lot-of-positive-sentences',
+    module: 'Nouns & Quantifiers',
+    title: 'much vs. a lot of (Using Much in Positive Sentences with Non-Count Nouns)',
+    question: '“I have much experience with children.” (11. Using much instead of a lot of in positive sentences with non-count nouns)',
+    correction: '“I have much experience...” -> “I have a lot of experience with children.”',
+    remarks: `Jawaban yang benar dan alami adalah **"I have a lot of experience with children."**
+
+---
+
+### 1. Aturan Dasar: Mengapa "much" Tidak Lazim dalam Kalimat Positif?
+
+Banyak pembelajar bahasa Inggris diajarkan aturan umum:
+- \`many\` = untuk benda yang bisa dihitung (*countable nouns*, misal: *books, cars*).
+- \`much\` = untuk benda yang tidak bisa dihitung (*uncountable / non-count nouns*, misal: *time, money, experience, water*).
+
+Meskipun konsep di atas benar, ada **aturan penting dalam penggunaan sehari-hari (*natural English usage*)**:
+
+> [!WARNING]
+> Kata **\`much\`** secara alami **HANYA DIGUNAKAN DALAM KALIMAT NEGATIF (-) DAN KALIMAT TANYA (?)**.  
+> Dalam **KALIMAT POSITIF (+)**, kata \`much\` terdengar sangat kaku, tidak alami, atau terlalu kuno (*unnatural / awkward*).
+
+Sebagai gantinya, dalam **kalimat positif** untuk benda yang tidak bisa dihitung, gunakan **\`a lot of\`**, **\`lots of\`**, atau **\`plenty of\`**:
+
+- ❌ **Kaku / Tidak Alami:** *“I have **much experience** with children.”*
+- ✅ **Alami & Baku:** *“I have **a lot of experience** with children.”*
+- ✅ **Bentuk Negatif:** *“I don't have **much experience** with children.”* *(Di kalimat negatif, \`much\` 100% tepat).*
+- ✅ **Bentuk Tanya:** *“Do you have **much experience** with children?”* *(Di kalimat tanya, \`much\` 100% tepat).*
+
+---
+
+### 2. Kapan "much" BOLEH Digunakan dalam Kalimat Positif?
+
+Kata **\`much\`** HANYA boleh dan wajar digunakan dalam kalimat positif jika digabungkan dengan **kata penguat / modifier khusus**:
+
+| Pola Khusus | Contoh Kalimat | Arti / Keterangan |
+| :--- | :--- | :--- |
+| **too much** | *“There is **too much noise** in this room.”* | Terlalu banyak (melebihi batas) |
+| **so much** | *“Thank you **so much** for your help!”* / *“I have **so much work**.”* | Sangat banyak (penekanan emosi) |
+| **as much ... as** | *“Take **as much time** as you need.”* | Sebanyak yang dibutuhkan (perbandingan) |
+| **how much** | *“**How much sugar** do you want in your coffee?”* | Berapa banyak (kalimat tanya) |
+
+---
+
+### 3. Pilihan Kata untuk Tulisan Formal / Akademis (*Formal Writing*)
+
+Jika Anda menulis esai, dokumen kerja, atau jurnal akademis dan ingin variasi yang lebih formal daripada *a lot of*:
+- **a great deal of:** *“The project requires **a great deal of effort**.”*
+- **a large amount of:** *“They collected **a large amount of data**.”*
+
+---
+
+### 4. Tabel Rangkuman Penggunaan Quantifier (Countable vs Uncountable)
+
+| Tipe Kalimat | Countable Nouns (Bisa Dihitung) | Uncountable Nouns (Tidak Bisa Dihitung) |
+| :--- | :--- | :--- |
+| **Positif (+)** | **a lot of** / **many** (*a lot of books*) | **a lot of** / **lots of** (*a lot of time, a lot of experience*) $\\rightarrow$ *(Bukan much!)* |
+| **Negatif (-)** | **many** / **a lot of** (*not many cars*) | **much** / **a lot of** (*not much time, don't have much money*) |
+| **Tanya (?)** | **many** (*Do you have many friends?*) | **much** (*Have you had much luck finding a job?*) |
+| **Dengan Penguat** | *too many, so many, how many* | *too much, so much, how much, as much* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Kalimat **Positif (+)** $\rightarrow$ Gunakan **a lot of** (*I have **a lot of experience***).
+> - Kalimat **Negatif (-)** & **Tanya (?)** $\rightarrow$ Gunakan **much** (*I don't have **much time*** / *Do you have **much time**?*).
+> - *much* hanya boleh positif jika ada kata **too / so / as** (*too much, so much*).
+`,
+    source: 'Englishvit - English Pro Class',
+    chapter: 'Chapter 11: You are About to be Promoted',
+    createdAt: '2026-09-02',
+    tags: ['quantifiers', 'much-vs-a-lot-of', 'uncountable-nouns', 'non-count-nouns', 'positive-sentences', 'common-errors', 'englishvit'],
+  },
 ];
 
 /**
