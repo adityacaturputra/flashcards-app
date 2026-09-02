@@ -960,6 +960,79 @@ Dalam klausa \`if\`, bentuk Past Simple bisa ditulis dengan dua cara:
     createdAt: '2026-09-02',
     tags: ['conditionals', 'second-conditional', 'unreal-conditions', 'emphatic-did', 'would-be', 'englishvit'],
   },
+  {
+    id: 'prepositions-master-guide-categories-and-gerund-rules',
+    module: 'Prepositions & Time Expressions',
+    title: 'Prepositions Master Guide: 5 Categories & The Gerund Rule (V-ing)',
+    question: 'Preposition itu apa dan ada apa saja jenisnya dalam bahasa Inggris?',
+    correction: 'Preposition + Noun / Gerund (V-ing) -> (e.g. look forward to relaxing, good at coding)',
+    remarks: `Berikut adalah panduan lengkap mengenai **Preposition (Kata Depan)** dalam bahasa Inggris:
+
+---
+
+### 1. Definisi Preposition (*Kata Depan*)
+
+**Preposition (Kata Depan)** adalah kata yang diletakkan di depan **kata benda (*noun*)**, **kata ganti (*pronoun*)**, atau **kata kerja yang dibendakan (*gerund / V-ing*)** untuk menghubungkannya dengan bagian lain dari kalimat:
+
+$$\\mathbf{\\text{Preposition}} + \\mathbf{\\text{Noun / Pronoun / Gerund (V-ing)}}$$
+
+---
+
+### 2. Aturan Emas Preposisi (*The Golden Rule of Prepositions*)
+
+> [!IMPORTANT]
+> **Setiap kali sebuah Preposisi diikuti oleh KATA KERJA, kata kerja tersebut WAJIB berbentuk Gerund (\`V-ing\`)**:
+> - ✅ *“Thank you **for coming**.”* (Bukan *for come*).
+> - ✅ *“She is good **at speaking** English.”* (Bukan *at speak*).
+> - ✅ *“I left **without saying** goodbye.”* (Bukan *without say*).
+> - ✅ *“We look forward **to relaxing**.”* (Bukan *to relax*).
+
+---
+
+### 3. 5 Kategori Utama Preposisi dalam Bahasa Inggris
+
+| Kategori Preposisi | Fungsi & Hubungan | Contoh Preposisi & Frasa |
+| :--- | :--- | :--- |
+| **1. Time (Waktu)** | Kapan suatu kejadian terjadi | \`in\`, \`on\`, \`at\`, \`before\`, \`after\`, \`during\`, \`since\`, \`for\`, \`until\` |
+| **2. Place & Position (Tempat & Posisi)** | Di mana benda/orang berada | \`in\`, \`on\`, \`at\`, \`under\`, \`above\`, \`between\`, \`among\`, \`behind\`, \`next to\` |
+| **3. Direction & Movement (Arah & Gerak)** | Ke mana arah perpindahan | \`to\`, \`towards\`, \`into\`, \`out of\`, \`through\`, \`across\`, \`along\`, \`past\` |
+| **4. Manner, Cause & Agent (Cara & Sebab)** | Bagaimana atau karena apa | \`by\`, \`with\`, \`without\`, \`about\`, \`of\`, \`for\`, \`because of\`, \`as\` |
+| **5. Dependent Prepositions (Preposisi Khusus)** | Melekat tetap pada kata kerja/sifat | \`look forward to\`, \`depend on\`, \`interested in\`, \`used to\`, \`object to\` |
+
+---
+
+### 4. Mengapa Kata "to" Sering Membingungkan? (*Infinitive vs Preposition*)
+
+Kata **\`to\`** dalam bahasa Inggris memiliki **dua identitas berbeda**:
+
+1. **Infinitive Marker (\`to + V1\`):**
+   - Berfungsi sebagai pasangan kata kerja bantu:
+   - *“I want **to sleep**.”* / *“She decided **to go**.”*
+2. **Preposition (\`to + Noun / V-ing\`):**
+   - Berfungsi sebagai kata depan yang menghubungkan ke objek:
+   - *“I look forward **to relaxing**.”* / *“I am used **to waking** up early.”*
+
+---
+
+### 5. Trik Pengujian Cepat (*The "it" Replacement Test*)
+
+Jika Anda ragu apakah kata **\`to\`** tersebut adalah Preposisi atau Infinitive:
+> Coba ganti kata setelah **\`to\`** dengan kata ganti benda **\`it\`** atau **\`something\`**:
+> - *“I look forward to **it**.”* (✅ Nyambung & bermakna $\\rightarrow$ Berarti **"to" adalah Preposisi**, kata kerja **wajib pakai -ing**!).
+> - *“I want to it.”* (❌ Aneh & tidak bermakna $\\rightarrow$ Berarti **"to" adalah Infinitive**, kata kerja **wajib pakai V1**).
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - Rumus universal: **Preposisi + V-ing** (*for coming, at solving, without knowing*).
+> - *look forward to* memiliki kata depan **to** $\rightarrow$ Wajib diikuti **V-ing (*relaxing*)**.
+`,
+    source: 'English Grammar Master Reference & Real-World Usage',
+    chapter: 'Prepositions: Foundations, Categories, and Dependent Idioms',
+    createdAt: '2026-09-02',
+    tags: ['prepositions', 'gerunds', 'parts-of-speech', 'look-forward-to', 'infinitive-vs-preposition', 'grammar-guide'],
+  },
 ];
 
 /**
