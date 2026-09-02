@@ -145,12 +145,13 @@ In JavaScript/TypeScript template literals (enclosed in backticks `` `...` ``), 
 >   - Always use the **standard unicode arrow `→`** directly (*e.g., `Tell → Langsung orang`*).
 >   - This avoids any control-character escaping issues and renders instantly everywhere.
 
-### 2. Equation Structure: Prefer Bulleted Math Over Fragile Multi-Line Blocks
-Instead of complex multi-line `\begin{aligned}` blocks that require nested quadruple backslashes (`\\\\`), prefer clean bulleted list equations:
-- **Pola 1 (Subjunctive):** `$\mathbf{\text{recommend}} + (\text{that}) + \mathbf{\text{Subject}} + \mathbf{\text{Base Verb}}$`
-- **Pola 2 (Gerund):** `$\mathbf{\text{recommend}} + \mathbf{\text{V-ing}}$`
-
-This renders reliably across mobile, tablet, and desktop Markdown viewers.
+### 2. Equation Structure & The Percent (`%`) KaTeX Safety Rule
+- **CRITICAL: Never use `%` or `\%` inside KaTeX `$$...$$` math blocks**:
+  - In LaTeX / KaTeX, `%` is treated as a comment delimiter. Writing `100\%` or `100%` inside `$$...$$` comments out subsequent code, triggers a KaTeX parser error, and renders the entire remainder of the card in broken red text.
+- **Prefer Markdown Tables for Spectrums, Hierarchies, and Classifications**:
+  - For certainty spectrums (e.g. 100%, 80%, 50%), step-by-step progressions, and multi-tier comparisons, **ALWAYS use clean Markdown tables** instead of complex multi-line `$$\begin{aligned}` blocks.
+  - Reserve KaTeX `$$...$$` strictly for single-line mathematical grammar formulas:
+    - ✅ `$$\mathbf{\text{Subject}} + \mathbf{\text{look forward to}} + \mathbf{\text{Gerund (V-ing)}}$$`
 
 ### 3. Template Literal Backtick Escaping
 Because the entire `remarks` string is wrapped in template literal backticks `` `...` ``, any inline code snippet inside the explanation must escape backticks:

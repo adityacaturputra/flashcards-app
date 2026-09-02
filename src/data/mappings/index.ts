@@ -1009,13 +1009,13 @@ Jika Anda ingin menyatakan keraguan atau ketidakyakinan, gunakan variasi alami b
 
 ### 3. Spektrum Tingkat Keyakinan (*Certainty Spectrum*)
 
-$$\\begin{aligned}
-\\mathbf{100\\%}: &\\quad \\text{I'm completely sure / certain} \\\\
-\\mathbf{80\\text{-}90\\%}: &\\quad \\text{I'm \\textbf{pretty sure}} \\quad (\\text{Bentuk Positif}) \\\\
-\\mathbf{50\\%}: &\\quad \\text{I'm \\textbf{not quite sure}} \\quad (\\text{Ada sedikit keraguan}) \\\\
-\\mathbf{20\\text{-}40\\%}: &\\quad \\text{I'm \\textbf{not sure / not so sure}} \\quad (\\text{Ragu / Belum yakin}) \\\\
-\\mathbf{0\\%}: &\\quad \\text{I'm not sure at all / I have no idea}
-\\end{aligned}$$
+| Tingkat Keyakinan | Frasa / Pola | Nuansa & Arti |
+| :--- | :--- | :--- |
+| **100% (Yakin Mutlak)** | *“I'm **completely sure** / **certain**.”* | Sangat yakin tanpa keraguan |
+| **80–90% (Cukup Yakin)** | *“I'm **pretty sure**.”* | Cukup yakin (*Hanya untuk kalimat Positif*) |
+| **50% (Agak Ragu)** | *“I'm **not quite sure**.”* | Tidak begitu yakin (tahu sedikit, tapi masih ada ragu) |
+| **20–40% (Kurang Yakin)** | *“I'm **not sure** / **not so sure**.”* | Ragu / belum percaya betul (*not convinced*) |
+| **0% (Sama Sekali Tidak Tahu)** | *“I'm **not sure at all** / **I have no idea**.”* | Tidak tahu sama sekali |
 
 ---
 
