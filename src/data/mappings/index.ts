@@ -710,6 +710,86 @@ Kata depan **\`on\`** HANYA digunakan jika nama harinya **berdiri sendiri tanpa 
     createdAt: '2026-09-02',
     tags: ['prepositions', 'time-expressions', 'next-saturday', 'on-saturday', 'zero-preposition', 'englishvit'],
   },
+  {
+    id: 'prepositions-in-on-at-time-pyramid',
+    module: 'Prepositions & Time Expressions',
+    title: 'in vs. on vs. at (The Time Pyramid Rules & Common Traps)',
+    question: 'Kapan menggunakan preposisi waktu "in", "on", dan "at" dalam bahasa Inggris?',
+    correction: 'IN (Bulan/Tahun/Abad/Musim) -> ON (Hari/Tanggal) -> AT (Jam/Titik Waktu)',
+    remarks: `Cara paling mudah dan praktis untuk mengingat penggunaan **\`in\`**, **\`on\`**, dan **\`at\`** untuk waktu adalah menggunakan konsep **Piramida Waktu (*The Time Pyramid*)**:
+
+$$\\mathbf{\\text{IN (Paling Luas/Umum)}} \\longrightarrow \\mathbf{\\text{ON (Lebih Spesifik/1 Hari)}} \\longrightarrow \\mathbf{\\text{AT (Paling Sempit/Titik Jam)}}$$
+
+---
+
+### 1. IN → Digunakan untuk Jangka Waktu Luas & Panjang (*General / Big Periods*)
+
+Gunakan **\`in\`** untuk periode waktu yang berdurasi panjang atau tidak merujuk pada satu hari tertentu:
+
+- **Abad (*Centuries*):** *in the 21st century*
+- **Dekade (*Decades*):** *in the 90s*, *in the 1980s*
+- **Tahun (*Years*):** *in 2026*, *in 1945*
+- **Musim (*Seasons*):** *in summer*, *in winter*, *in the dry season*
+- **Bulan (*Months*):** *in September*, *in January* *(hanya bulan tanpa tanggal)*
+- **Bagian dari Hari (*Parts of the Day*):** *in the morning*, *in the afternoon*, *in the evening*
+- **Rentang Waktu Masa Depan (*Time from now*):** *in 10 minutes* (10 menit lagi), *in two weeks*
+
+---
+
+### 2. ON → Digunakan untuk Periode 1 Hari & Tanggal (*Specific Days & Dates*)
+
+Gunakan **\`on\`** untuk segala sesuatu yang merujuk pada rentang waktu tepat **1 hari (24 jam)** atau memiliki tanggal:
+
+- **Nama Hari (*Days of the Week*):** *on Monday*, *on Sunday*
+- **Tanggal Lengkap (*Specific Dates*):** *on September 2nd*, *on 17 August 1945*
+- **Hari Perayaan Berakhiran "Day" / "Eve":** *on Christmas Day*, *on New Year's Eve*, *on my birthday*
+- **Kombinasi Hari + Bagian Hari:** *on Monday morning*, *on Friday night*
+
+---
+
+### 3. AT → Digunakan untuk Titik Waktu Sangat Spesifik (*Precise Clock Times & Moments*)
+
+Gunakan **\`at\`** untuk waktu yang sangat presisi (jam di jam dinding) atau titik momen tertentu:
+
+- **Jam Pasti (*Exact Clock Times*):** *at 7:00 AM*, *at 3 o'clock*, *at 10:30*
+- **Titik Waktu Khusus (*Specific Moments*):** *at noon* (tengah hari), *at midday*, *at midnight* (tengah malam), *at lunchtime*, *at sunrise*, *at sunset*
+- **Hari Raya Tanpa Kata "Day" (*Holiday Periods*):** *at Christmas*, *at Eid*, *at Easter* *(merujuk pada keseluruhan musim liburan)*
+- **Ungkapan Tetap (*Fixed Expressions*):** *at night*, *at the moment*, *at present*
+
+---
+
+### 4. Jebakan Populer & Pengecualian Penting (*Common Traps*)
+
+| Jebakan Tata Bahasa | Bentuk Benar | Keterangan |
+| :--- | :--- | :--- |
+| **Pagi/Sore vs Malam** | *in the morning* vs **at night** | Khusus *night*, gunakan **\`at night\`** (bukan *in the night*). |
+| **Weekend (Akhir Pekan)** | **at the weekend** *(UK)* / **on the weekend** *(US)* | Keduanya benar tergantung dialek British vs American. |
+| **Bulan vs Tanggal** | *in September* vs **on September 2nd** | Jika ada tanggalnya, preposisi otomatis berubah menjadi **\`on\`**. |
+| **Ada Kata "next/last/this/every"** | **next Monday** *(Bukan on next Monday)* | Kata penentu **menghapus semua preposisi in/on/at**! |
+
+---
+
+### 5. Tabel Ringkasan Cepat
+
+| Preposisi | Kategori Waktu | Contoh Penggunaan |
+| :--- | :--- | :--- |
+| **IN** | Abad, Tahun, Musim, Bulan, Pagi/Sore | *in 2026*, *in summer*, *in September*, *in the morning* |
+| **ON** | Nama Hari, Tanggal Lengkap, Hari Spesial (*Day*) | *on Monday*, *on September 2nd*, *on Christmas Day* |
+| **AT** | Jam Pasti, Titik Momen, Malam Hari | *at 7:00 PM*, *at noon*, *at midnight*, *at night* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Cepat:**
+> - **IN** → Kotak Besar (Bulan, Tahun, Musim).
+> - **ON** → Kotak Sedang (Hari & Tanggal).
+> - **AT** → Titik Jarum Jam (Jam & Momen Spesifik).
+`,
+    source: 'English Grammar in Use & Real-World Communication',
+    chapter: 'Prepositions of Time: In, On, At & Fixed Expressions',
+    createdAt: '2026-09-02',
+    tags: ['prepositions', 'in-on-at', 'time-expressions', 'time-pyramid', 'grammar-rules'],
+  },
 ];
 
 /**
