@@ -730,7 +730,7 @@ Kata depan **\`on\`** HANYA digunakan jika nama harinya **berdiri sendiri tanpa 
     correction: 'IN (Bulan/Tahun/Abad/Musim) -> ON (Hari/Tanggal) -> AT (Jam/Titik Waktu)',
     remarks: `Cara paling mudah dan praktis untuk mengingat penggunaan **\`in\`**, **\`on\`**, dan **\`at\`** untuk waktu adalah menggunakan konsep **Piramida Waktu (*The Time Pyramid*)**:
 
-$$\\mathbf{\\text{IN (Paling Luas/Umum)}} \\longrightarrow \\mathbf{\\text{ON (Lebih Spesifik/1 Hari)}} \\longrightarrow \\mathbf{\\text{AT (Paling Sempit/Titik Jam)}}$$
+> **IN (Paling Luas & Umum)** → **ON (Lebih Spesifik / 1 Hari)** → **AT (Paling Sempit / Titik Jam)**
 
 ---
 
@@ -840,7 +840,7 @@ Topik ini mencakup 3 cabang tata bahasa Inggris sekaligus:
    - Semua kata kerja modal dalam bahasa Inggris **TIDAK PERNAH memakai "to"** (wajib diikuti **Bare Infinitive / V1 polos**):
      - *“I **can swim**”* (bukan *I can to swim*).
      - *“I **should go**”* (bukan *I should to go*).
-     - $\rightarrow$ *“I **would rather stay**”* (bukan *would rather to stay*).
+     - ➔ *“I **would rather stay**”* (bukan *would rather to stay*).
 2. **\`prefer\` Adalah Kata Kerja Biasa (*Main Lexical Verb*):**
    - Sebagai kata kerja biasa, jika bertemu kata kerja lain, ia mengikuti pola standar kata kerja:
      - Pola Infinitif: $\\mathbf{\\text{prefer} + \\text{to} + \\text{V1}}$ (*“I prefer to stay”* / *“I would prefer to stay”*).
@@ -897,9 +897,9 @@ Kata **\`would\`** mengubah makna kalimat dari **kebiasaan umum** menjadi **pili
 
 > [!TIP]
 > **Kunci Ingatan Cepat:**
-> - **'d rather** adalah keluarga **MODAL** $\rightarrow$ **DILARANG pakai to** (*I'd rather **stay***).
-> - **'d prefer** adalah kata kerja biasa $\rightarrow$ **WAJIB pakai to** (*I'd prefer **to stay***).
-> - Ada kata **Today / right now** $\rightarrow$ **WAJIB pakai would ('d)** untuk menunjukkan situasi spesifik saat ini!
+> - **'d rather** adalah keluarga **MODAL** → **DILARANG pakai to** (*I'd rather **stay***).
+> - **'d prefer** adalah kata kerja biasa → **WAJIB pakai to** (*I'd prefer **to stay***).
+> - Ada kata **Today / right now** → **WAJIB pakai would ('d)** untuk menunjukkan situasi spesifik saat ini!
 `,
     source: 'Englishvit - English Pro Class',
     chapter: 'Expressing Preferences: Prefer, Would Prefer, Would Rather',
@@ -963,7 +963,7 @@ Dalam klausa \`if\`, bentuk Past Simple bisa ditulis dengan dua cara:
 
 > [!TIP]
 > **Kunci Ingatan Cepat:**
-> - Kalimat dimulai dengan pengandaian hipotetis (**would**) $\rightarrow$ Kelanjutannya **wajib Second Conditional** (**did move ... would be**).
+> - Kalimat dimulai dengan pengandaian hipotetis (**would**) → Kelanjutannya **wajib Second Conditional** (**did move ... would be**).
 > - **Emphatic did** (**did + move**) = Penekanan *"seandainya pun benar-benar..."*.
 > - Jangan pasangkan **would** di awal dengan **will** di akhir!
 `,
@@ -1095,7 +1095,7 @@ Jika Anda menulis esai, dokumen kerja, atau jurnal akademis dan ingin variasi ya
 
 | Tipe Kalimat | Countable Nouns (Bisa Dihitung) | Uncountable Nouns (Tidak Bisa Dihitung) |
 | :--- | :--- | :--- |
-| **Positif (+)** | **a lot of** / **many** (*a lot of books*) | **a lot of** / **lots of** (*a lot of time, a lot of experience*) $\\rightarrow$ *(Bukan much!)* |
+| **Positif (+)** | **a lot of** / **many** (*a lot of books*) | **a lot of** / **lots of** (*a lot of time, a lot of experience*) → *(Bukan much!)* |
 | **Negatif (-)** | **many** / **a lot of** (*not many cars*) | **much** / **a lot of** (*not much time, don't have much money*) |
 | **Tanya (?)** | **many** (*Do you have many friends?*) | **much** (*Have you had much luck finding a job?*) |
 | **Dengan Penguat** | *too many, so many, how many* | *too much, so much, how much, as much* |
@@ -1104,8 +1104,8 @@ Jika Anda menulis esai, dokumen kerja, atau jurnal akademis dan ingin variasi ya
 
 > [!TIP]
 > **Kunci Ingatan Cepat:**
-> - Kalimat **Positif (+)** $\rightarrow$ Gunakan **a lot of** (*I have **a lot of experience***).
-> - Kalimat **Negatif (-)** & **Tanya (?)** $\rightarrow$ Gunakan **much** (*I don't have **much time*** / *Do you have **much time**?*).
+> - Kalimat **Positif (+)** → Gunakan **a lot of** (*I have **a lot of experience***).
+> - Kalimat **Negatif (-)** & **Tanya (?)** → Gunakan **much** (*I don't have **much time*** / *Do you have **much time**?*).
 > - *much* hanya boleh positif jika ada kata **too / so / as** (*too much, so much*).
 `,
     source: 'Englishvit - English Pro Class',
@@ -1152,7 +1152,7 @@ Kata benda tersebut **HANYA** memakai akhiran \`-s\` jika posisinya berdiri send
 
 ### 3. Tabel Perbandingan Berbagai Unit Ukuran (*Time, Age, Money, Distance, Quantity*)
 
-| Kategori | Bentuk Compound Adjective (Di Depan Noun) $\\rightarrow$ **SINGULAR (TANPA -s)** | Bentuk Noun Biasa (Di Belakang Verb) $\\rightarrow$ **PLURAL (PAKAI -s)** |
+| Kategori | Bentuk Compound Adjective (Di Depan Noun) → **SINGULAR (TANPA -s)** | Bentuk Noun Biasa (Di Belakang Verb) → **PLURAL (PAKAI -s)** |
 | :--- | :--- | :--- |
 | **Durasi Waktu** | *a **three-day** weekend* | *The weekend is **three days** long.* |
 | **Durasi Jam** | *a **two-hour** meeting* | *The meeting lasted **two hours**.* |
@@ -1167,8 +1167,8 @@ Kata benda tersebut **HANYA** memakai akhiran \`-s\` jika posisinya berdiri send
 
 > [!TIP]
 > **Kunci Ingatan Cepat:**
-> - Ada tanda hubung di depan kata benda (**Number-Noun + Noun**) $\rightarrow$ Berfungsi sebagai **Kata Sifat** $\rightarrow$ **DILARANG pakai -s** (*a **three-day** weekend*, *a **10-year-old** boy*).
-> - Berdiri sendiri di belakang (**Number + Nouns**) $\rightarrow$ Berfungsi sebagai **Kata Benda** $\rightarrow$ **WAJIB pakai -s** (*lasts for **three days***, *is **10 years old***).
+> - Ada tanda hubung di depan kata benda (**Number-Noun + Noun**) → Berfungsi sebagai **Kata Sifat** → **DILARANG pakai -s** (*a **three-day** weekend*, *a **10-year-old** boy*).
+> - Berdiri sendiri di belakang (**Number + Nouns**) → Berfungsi sebagai **Kata Benda** → **WAJIB pakai -s** (*lasts for **three days***, *is **10 years old***).
 `,
     source: 'Englishvit - English Pro Class',
     chapter: 'Chapter 11: You are About to be Promoted',
