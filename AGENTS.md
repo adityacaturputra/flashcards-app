@@ -41,6 +41,7 @@ flashcards/
 │   │   ├── molecules/         # Molecular UI (MappingDetailModal, etc.)
 │   │   └── organisms/         # Organisms (MappingTable, MappingFlashcards, etc.)
 │   ├── data/
+│   │   ├── flashcards/        # Local repository flashcards dataset (flashcards.json, categories.json, index.ts)
 │   │   └── mappings/          # Local repository study mapping dataset (index.ts)
 │   ├── hooks/                 # Custom React hooks (useMappingDeck, useMappingFilter, etc.)
 │   ├── models/                # Database/Entity models
@@ -62,7 +63,9 @@ When a user asks the agent to add a new question, error analysis, or English rul
 6. **Generate Comprehensive Remarks**: Markdown, KaTeX math formulas (`$$...$$` and `$...$`), comparison tables, and quick memory tips.
 7. **Persist in Repo**: Update or append in [`src/data/mappings/index.ts`](./src/data/mappings/index.ts) adhering to `MappingItem`.
 8. **No Build Delay for Pure Mappings**: Skip `npm run build` on pure dataset updates in `src/data/mappings/index.ts` to ensure 100% immediate, single-turn responses without UI churn. Reserve `npm run build` for component and core app refactors.
-9. **Auto-Commit**: If changes only affect study mapping dataset & docs, the agent is authorized to automatically execute `git commit`.
+9. **Strict Auto-Commit Policy (Data Updates ONLY)**:
+   - ✅ **AUTHORIZED**: The agent is authorized to automatically execute `git commit` **ONLY for pure data updates** (e.g. updating `src/data/mappings/`, `src/data/flashcards/`, and accompanying data documentation).
+   - ❌ **FORBIDDEN (NO AUTO-COMMIT)**: For **application code, UI components, pages, hooks, services, styles, configs, and logic refactors**, the agent **MUST NEVER auto-commit**. Always leave application code changes unstaged/uncommitted for the user to review.
 
 ---
 

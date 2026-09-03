@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "68fdd9f899ff8264aaa016ad",
+    "name": "Idioms",
+    "description": "English idioms, figurative expressions, and common sayings"
+  },
+  {
+    "_id": "6886ee8e75b4418c47a47d9b",
+    "name": "Regular Verbs",
+    "description": "Regular verbs following standard -ed inflection rules"
+  },
+  {
+    "_id": "68863c76d911399cd3fb3a4c",
+    "name": "Irregular Verbs",
+    "description": "Irregular verbs with unique past and participle forms"
+  },
+  {
+    "_id": "6901a0010000000000000001",
+    "name": "Daily Objects, Clothing & Home",
+    "description": "Clothing, personal accessories, furniture, appliances, and household items"
+  },
+  {
+    "_id": "6901a0010000000000000002",
+    "name": "Health, Body & Personal Care",
+    "description": "Human anatomy, health, illnesses, medical terms, and personal grooming"
+  },
+  {
+    "_id": "6901a0010000000000000003",
+    "name": "Nature, Animals & Environment",
+    "description": "Flora, fauna, geographical features, weather, astronomy, and science"
+  },
+  {
+    "_id": "6901a0010000000000000004",
+    "name": "Food, Drinks & Culinary",
+    "description": "Food ingredients, fruits, vegetables, dishes, beverages, and cooking"
+  },
+  {
+    "_id": "6901a0010000000000000005",
+    "name": "Travel, Transport & Places",
+    "description": "Vehicles, roads, aviation, public infrastructure, and travel vocabulary"
+  },
+  {
+    "_id": "6901a0010000000000000006",
+    "name": "Work, Career & Technology",
+    "description": "Professions, workplace, business, finance, tools, and digital technology"
+  },
+  {
+    "_id": "6901a0010000000000000007",
+    "name": "Action Verbs & Expressions",
+    "description": "Dynamic action verbs, phrasal verbs, physical movement, and activities"
+  },
+  {
+    "_id": "6901a0010000000000000008",
+    "name": "General Vocabulary & Concepts",
+    "description": "Essential everyday vocabulary, adjectives, feelings, time, and abstract concepts"
+  }
+]

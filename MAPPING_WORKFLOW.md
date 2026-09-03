@@ -26,10 +26,10 @@ This application unites both worlds into an **integrated, git-backed study syste
 > 4. **Auto-commit directly**: Execute git commit immediately so the user's study deck is updated instantly.
 
 > [!TIP]
-> **2. Auto-Commit Authorization for Pure Mapping Additions**:
-> When a session or user request only involves adding or updating study mappings in `src/data/mappings/index.ts` (and updating mapping docs):
-> - The AI Agent is **fully authorized to automatically commit** the changes to git directly.
-> - Use standard Conventional Commit format (e.g. `feat(mapping): add [Title] study mapping record`).
+> **2. Strict Auto-Commit Policy (Data Updates ONLY)**:
+> - The AI Agent is **authorized to auto-commit ONLY when adding or updating pure data** in [`src/data/mappings/index.ts`](./src/data/mappings/index.ts), [`src/data/flashcards/`](./src/data/flashcards/), and related data documentation.
+> - **FORBIDDEN (NO AUTO-COMMIT)**: For application code, components, hooks, services, pages, or config refactors, the agent **MUST NEVER auto-commit**.
+> - Use standard Conventional Commit format (e.g. `feat(mapping): add [Title] study mapping record` or `feat(data): update flashcards dataset`).
 > - Provide the commit summary in the response to the user.
 
 > [!TIP]
