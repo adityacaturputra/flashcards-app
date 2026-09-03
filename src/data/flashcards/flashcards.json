@@ -1,24 +1,5 @@
 [
   {
-    "_id": "6902a0010000000000000021",
-    "question": "Apparently (Adverb: Meaning, Usage & Nuance)",
-    "answer": "**Kata Keterangan (*Sentence Adverb*)**: `Apparently` (/əˈpær.ənt.li/)  \n\n**Makna Utama**:  \n1. **Katanya sih / Rupanya** (*Hearsay*): Menyampaikan info yang didengar/dibaca tapi belum disaksikan langsung.  \n2. **Kelihatannya** (*Appearance*): Tampak benar dari luar, meski fakta aslinya belum tentu demikian.  \n\n**Tiga Posisi Kalimat**:  \n- **Awal (Front)**: *“Apparently, the meeting has been postponed.”*  \n- **Tengah (Mid)**: *“They apparently decided to cancel the project.”*  \n- **Akhir (End)**: *“He resigned from his job, apparently.”*  \n\n**Beda dengan Obviously**:  \n- *Apparently*: Belum pasti 100% / dengar kabar burung.  \n- *Obviously*: Sudah jelas sekali / fakta nyata di depan mata.",
-    "progression": "new",
-    "nextReviewDate": "2026-09-03T15:40:02.988Z",
-    "categories": [
-      "6901a0010000000000000008"
-    ],
-    "dynamicFields": {
-      "Part of Speech": "Adverb (Sentence Adverb / Epistemic Stance)",
-      "Pronunciation": "/əˈpær.ənt.li/ (US: /əˈper.ənt.li/)",
-      "Arti Utama": "Rupanya, tampaknya, katanya sih (berdasarkan info sekilas, belum pasti 100%)",
-      "Rumus & Posisi": "Awal: Apparently, S + V | Tengah: S + apparently + V | Akhir: S + V, apparently.",
-      "Contoh Kalimat": "Apparently, the flight has been delayed. / He is apparently looking for a new job.",
-      "Beda dengan Obviously": "Apparently = katanya/kelihatannya (belum pasti). Obviously = jelas banget (fakta nyata semua orang tahu).",
-      "Tips Mengingat": "Ingat: APPARENTLY = \"Katanya / Rupanya\". Pakai saat menyampaikan kabar burung yang belum Anda buktikan sendiri!"
-    }
-  },
-  {
     "_id": "6902a0010000000000000020",
     "question": "Nucleus vs. Nuclei (Singular vs. Plural)",
     "answer": "**Singular**: `nucleus` (/ˈnjuː.kli.əs/)  \n**Plural**: `nuclei` (/ˈnjuː.kli.aɪ/)  \n\n**Deskripsi**: Bentuk jamak ilmiah dari nucleus (inti atom / inti sel) adalah nuclei.  \n**Agreement**: nucleus -> is / has | nuclei -> are / have  \n\n- **Contoh Tunggal**: *The nucleus contains genetic material (DNA).*  \n- **Contoh Jamak**: *Atomic nuclei consist of protons and neutrons.*",
