@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import FlashcardService from '@/services/flashcardService';
 import { Progression } from '@/types/flashcard';
+import { DataProviderFactory } from '@/services/dataProviders';
+import { resolveDataSource } from '@/utils/resolveDataSource';
 
 interface BulkUpdateRequest {
   flashcardIds: string[];
@@ -25,20 +26,17 @@ const getNewProgression = (
 
   switch (action) {
     case 'increase':
-      // Move up in progression, but cap at 'good' for most categories
       const maxIndex = categoryId
         ? Math.min(progressionOrder.length - 2, currentIndex + 1)
         : currentIndex + 1;
       return progressionOrder[Math.min(maxIndex, progressionOrder.length - 1)];
 
     case 'current':
-      // Set to normal for most categories, or keep current if already normal
       return currentProgression === Progression.Normal
         ? currentProgression
         : Progression.Normal;
 
     case 'decrease':
-      // Move down in progression, but don't go below 'learning'
       const minIndex = Math.max(1, currentIndex - 1);
       return progressionOrder[minIndex];
 
@@ -52,6 +50,7 @@ export async function PUT(request: NextRequest) {
   try {
     const body: BulkUpdateRequest = await request.json();
     const { flashcardIds, action } = body;
+    const source = resolveDataSource(request);
 
     if (
       !flashcardIds ||
@@ -77,29 +76,25 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    // First, fetch all flashcards to get their current states
-    const flashcardService = FlashcardService.getInstance();
-    const allFlashcards = await flashcardService.getFlashcards();
+    const provider = DataProviderFactory.getFlashcardProvider(source);
+    const allFlashcards = await provider.getFlashcards();
 
-    // Filter to only the flashcards we want to update
     const flashcardsToUpdate = allFlashcards.filter((flashcard) =>
       flashcardIds.includes(flashcard._id || ''),
     );
 
-    // Update all flashcards with category-aware progression
     const updatePromises = flashcardsToUpdate.map(async (flashcard) => {
       try {
         const currentProgression = flashcard.progression;
-        const categoryId = flashcard.categories?.[0]; // Use first category if available
+        const categoryId = flashcard.categories?.[0];
         const newProgression = getNewProgression(
           currentProgression,
           action,
           categoryId,
         );
 
-        // Only update if the progression actually changes
         if (newProgression !== currentProgression) {
-          const updatedFlashcard = await flashcardService.updateFlashcard(
+          const updatedFlashcard = await provider.updateFlashcard(
             flashcard._id || '',
             { progression: newProgression },
           );

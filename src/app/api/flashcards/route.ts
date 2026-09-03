@@ -1,12 +1,10 @@
 import { NextResponse } from 'next/server';
 import { Flashcard } from '@/types/flashcard';
-import { DataSource } from '@/types/dataSource';
-import { SOURCE_QUERY_PARAM } from '@/constants/dataSource';
 import { DataProviderFactory } from '@/services/dataProviders';
+import { resolveDataSource } from '@/utils/resolveDataSource';
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const source = (searchParams.get(SOURCE_QUERY_PARAM) as DataSource) || undefined;
+  const source = resolveDataSource(request);
   const provider = DataProviderFactory.getFlashcardProvider(source);
 
   try {
@@ -22,10 +20,9 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const source = (searchParams.get(SOURCE_QUERY_PARAM) as DataSource) || undefined;
+  const source = resolveDataSource(request);
   const provider = DataProviderFactory.getFlashcardProvider(source);
-  const body: Flashcard = await request.json();
+  const body = (await request.json()) as Flashcard;
 
   try {
     const flashcard = await provider.addFlashcard(body);
@@ -41,13 +38,26 @@ export async function POST(request: Request) {
 
 export async function PUT(request: Request) {
   const { searchParams } = new URL(request.url);
-  const source = (searchParams.get(SOURCE_QUERY_PARAM) as DataSource) || undefined;
+  const body = (await request.json()) as Record<string, unknown>;
+  const id = (searchParams.get('id') || body.id || body._id) as string;
+
+  if (!id) {
+    return NextResponse.json(
+      { message: 'Flashcard ID is required for update' },
+      { status: 400 },
+    );
+  }
+
+  const source = resolveDataSource(request);
   const provider = DataProviderFactory.getFlashcardProvider(source);
-  const body = await request.json();
-  const { id, ...data } = body;
+  
+  const updateData = { ...body };
+  delete updateData.id;
+  delete updateData._id;
+  delete updateData.source;
 
   try {
-    const updatedFlashcard = await provider.updateFlashcard(id, data);
+    const updatedFlashcard = await provider.updateFlashcard(id, updateData as Partial<Flashcard>);
     return NextResponse.json(updatedFlashcard);
   } catch (error) {
     console.error('Error updating flashcard:', error);
@@ -60,10 +70,24 @@ export async function PUT(request: Request) {
 
 export async function DELETE(request: Request) {
   const { searchParams } = new URL(request.url);
-  const source = (searchParams.get(SOURCE_QUERY_PARAM) as DataSource) || undefined;
+  let body: Record<string, unknown> = {};
+  try {
+    body = (await request.json()) as Record<string, unknown>;
+  } catch {
+    // Body might be empty on DELETE
+  }
+
+  const id = (searchParams.get('id') || body.id || body._id) as string;
+
+  if (!id) {
+    return NextResponse.json(
+      { message: 'Flashcard ID is required for deletion' },
+      { status: 400 },
+    );
+  }
+
+  const source = resolveDataSource(request);
   const provider = DataProviderFactory.getFlashcardProvider(source);
-  const body = await request.json();
-  const { id } = body;
 
   try {
     const deletedFlashcard = await provider.deleteFlashcard(id);

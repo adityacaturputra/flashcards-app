@@ -17,6 +17,10 @@ export interface SearchTemplateQueryParams {
   userId?: string;
 }
 
+export interface BulkQueryParams {
+  source?: DataSource;
+}
+
 /**
  * API Endpoint Registry using URL Builder and API Paths
  * Eliminates all hardcoded API URLs across the codebase.
@@ -34,7 +38,11 @@ export const API_ENDPOINTS = {
   },
   FLASHCARD_BY_ID: (id: string, source?: DataSource) =>
     buildUrl(API_PATHS.FLASHCARDS, { id, [SOURCE_QUERY_PARAM]: source }),
-  FLASHCARDS_BULK: API_PATHS.FLASHCARDS_BULK,
+  FLASHCARDS_BULK: (params?: BulkQueryParams | DataSource) => {
+    if (!params) return API_PATHS.FLASHCARDS_BULK;
+    const source = typeof params === 'string' ? params : params.source;
+    return buildUrl(API_PATHS.FLASHCARDS_BULK, { [SOURCE_QUERY_PARAM]: source });
+  },
   FLASHCARDS_DELETE_BY_DATE: API_PATHS.FLASHCARDS_DELETE_BY_DATE,
   FLASHCARDS_DELETE_BY_TEXT: API_PATHS.FLASHCARDS_DELETE_BY_TEXT,
   FLASHCARD_CATEGORIES: (params?: CategoryQueryParams | DataSource) => {
@@ -52,14 +60,14 @@ export const API_ENDPOINTS = {
   GENERATE_FLASHCARDS: API_PATHS.GENERATE_FLASHCARDS,
   SEARCH_TEMPLATES: (params?: SearchTemplateQueryParams | string) => {
     if (!params) return API_PATHS.SEARCH_TEMPLATES;
-    const userId = typeof params === 'string' ? params: params.userId;
+    const userId = typeof params === 'string' ? params : params.userId;
     return buildUrl(API_PATHS.SEARCH_TEMPLATES, { userId });
   },
   SEARCH_TEMPLATE_BY_ID: (
     id: string,
     params?: SearchTemplateQueryParams | string,
   ) => {
-    const userId = typeof params === 'string' ? params: params?.userId;
+    const userId = typeof params === 'string' ? params : params?.userId;
     const basePath = joinPaths(API_PATHS.SEARCH_TEMPLATES, id);
     return buildUrl(basePath, { userId });
   },

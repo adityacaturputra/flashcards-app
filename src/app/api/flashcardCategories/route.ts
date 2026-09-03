@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { FlashcardCategory } from '@/types/flashcard';
-import { DataSource } from '@/types/dataSource';
-import { SOURCE_QUERY_PARAM } from '@/constants/dataSource';
 import { DataProviderFactory } from '@/services/dataProviders';
+import { resolveDataSource } from '@/utils/resolveDataSource';
 
 export async function GET(request: NextRequest) {
-  const source = (request.nextUrl.searchParams.get(SOURCE_QUERY_PARAM) as DataSource) || undefined;
+  const source = resolveDataSource(request);
   const provider = DataProviderFactory.getCategoryProvider(source);
 
   try {
@@ -21,9 +20,9 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const source = (request.nextUrl.searchParams.get(SOURCE_QUERY_PARAM) as DataSource) || undefined;
+  const source = resolveDataSource(request);
   const provider = DataProviderFactory.getCategoryProvider(source);
-  const body: FlashcardCategory = await request.json();
+  const body = (await request.json()) as FlashcardCategory;
 
   try {
     const category = await provider.addCategory(body);
@@ -38,13 +37,26 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
-  const source = (request.nextUrl.searchParams.get(SOURCE_QUERY_PARAM) as DataSource) || undefined;
+  const body = (await request.json()) as Record<string, unknown>;
+  const id = (request.nextUrl.searchParams.get('id') || body.id || body._id) as string;
+
+  if (!id) {
+    return NextResponse.json(
+      { message: 'Category ID is required for update' },
+      { status: 400 },
+    );
+  }
+
+  const source = resolveDataSource(request);
   const provider = DataProviderFactory.getCategoryProvider(source);
-  const body = await request.json();
-  const { id, ...data } = body;
+  
+  const updateData = { ...body };
+  delete updateData.id;
+  delete updateData._id;
+  delete updateData.source;
 
   try {
-    const updatedCategory = await provider.updateCategory(id, data);
+    const updatedCategory = await provider.updateCategory(id, updateData as Partial<FlashcardCategory>);
     if (!updatedCategory) {
       return NextResponse.json(
         { message: 'Category not found' },
@@ -62,10 +74,24 @@ export async function PUT(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-  const source = (request.nextUrl.searchParams.get(SOURCE_QUERY_PARAM) as DataSource) || undefined;
+  let body: Record<string, unknown> = {};
+  try {
+    body = (await request.json()) as Record<string, unknown>;
+  } catch {
+    // Body might be empty
+  }
+
+  const id = (request.nextUrl.searchParams.get('id') || body.id || body._id) as string;
+
+  if (!id) {
+    return NextResponse.json(
+      { message: 'Category ID is required for deletion' },
+      { status: 400 },
+    );
+  }
+
+  const source = resolveDataSource(request);
   const provider = DataProviderFactory.getCategoryProvider(source);
-  const body = await request.json();
-  const { id } = body;
 
   try {
     const deletedCategory = await provider.deleteCategory(id);

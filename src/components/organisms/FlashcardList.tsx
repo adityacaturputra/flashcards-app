@@ -38,7 +38,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
   isReviewMode,
   handleOpenCategoryModal,
 }) => {
-  const { handleRefetchFlashCards, categories, loadingCategories } =
+  const { handleRefetchFlashCards, categories, loadingCategories, dataSource } =
     useAppContext();
   const { openModal } = useSearchTemplateContext();
   const [searchQuery, setSearchQuery] = useState('');
@@ -64,7 +64,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
     getSelectedCount,
     enableBulkMode,
     disableBulkMode,
-  } = useBulkFlashcards();
+  } = useBulkFlashcards(dataSource);
 
   // State to hold randomized flashcards
   const [randomizedFlashcards, setRandomizedFlashcards] = useState<Flashcard[]>(

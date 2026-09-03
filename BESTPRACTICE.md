@@ -170,6 +170,19 @@ When supporting multiple data backends (e.g. **Local Repository** vs. **MongoDB 
 
 ---
 
+## 🎯 11. Single Source of Truth & Deterministic Contracts (No Speculative Multi-Fallbacks)
+
+- **Strict, Single Parameter Channel**:
+  Do NOT invent or layer multiple speculative fallback channels (e.g. checking query params $\rightarrow$ checking request body $\rightarrow$ checking headers $\rightarrow$ guessing from ID string patterns $\rightarrow$ guessing from memory cache).
+- **Explicit Frontend-Backend Contract**:
+  The Frontend must send parameters explicitly through the standardized contract (e.g. `?source=local` via `API_ENDPOINTS`).
+- **Deterministic Server Resolution**:
+  The backend utility (e.g. `resolveDataSource(request)`) must simply read and validate that single contract parameter, and return a clean default if missing or invalid.
+- **Rule for AI Agents**:
+  Never hallucinate speculative multi-fallback chains. Investigate and adhere to the explicit API contract directly.
+
+---
+
 ## 🔗 Related Documentation
 - 📖 **[MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)**: Step-by-step study mapping workflow for AI agents.
 - 📘 **[AGENTS.md](./AGENTS.md)**: Main operational guide for AI agents and developers.

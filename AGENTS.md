@@ -21,6 +21,10 @@ Before writing or refactoring any code in this project, **you must read and stri
 3. **Mobile-First & Defensive Responsiveness**:
    - Every feature must look stellar on mobile viewports (e.g. 375px–430px iPhone) as well as wide desktop screens.
    - For wide datasets on mobile, prefer responsive cards or dedicated touch-scrolling containers over cramped multi-column tables.
+4. **Single Source of Truth & Deterministic Contracts (No Speculative Multi-Fallbacks)**:
+   - Never invent speculative multi-fallback chains (e.g. checking query params -> body -> headers -> ID pattern guessing).
+   - Establish and adhere to one deterministic contract (e.g. `?source=local` via `API_ENDPOINTS` & `resolveDataSource`).
+   - Extract pure parameter resolution logic into `src/utils/` instead of duplicate inline parsing.
 
 ---
 

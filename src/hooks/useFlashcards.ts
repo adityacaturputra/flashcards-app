@@ -40,7 +40,8 @@ const useFlashcards = (
         throw new Error('Failed to add flashcard');
       }
       const newFlashcard = await response.json();
-      updateFlashcards((prev) => [...prev, newFlashcard]);
+      updateFlashcards((prev) => [newFlashcard, ...prev]);
+      return newFlashcard;
     } catch (error) {
       console.error(error);
     } finally {
@@ -67,11 +68,12 @@ const useFlashcards = (
       }
       const updatedFlashcard = await response.json();
       updateFlashcards((prev: Flashcard[]) =>
-        prev.map((f) => (f._id === id ? updatedFlashcard : f)),
+        prev.map((f) => (f._id === id ? { ...f, ...updatedFlashcard } : f)),
       );
+      return updatedFlashcard;
     } catch (error) {
       console.error(error);
-      throw error; // Re-throw so the caller knows the update failed
+      throw error;
     } finally {
       setLoading(false);
     }
@@ -96,6 +98,7 @@ const useFlashcards = (
           prev.filter((f) => f._id !== id),
         );
       }
+      return deletedFlashcard;
     } catch (error) {
       console.error(error);
     } finally {
