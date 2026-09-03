@@ -11,7 +11,7 @@ import { useAppContext } from '@/context/appContext';
 import { useSearchTemplateContext } from '@/context/searchTemplateContext';
 import { Progression } from '@/types/flashcard';
 import { motion } from 'framer-motion';
-import { FaBars, FaTimes, FaPlay, FaStop, FaCog, FaPlus, FaTable } from 'react-icons/fa';
+import { FaBars, FaTimes, FaPlay, FaStop, FaCog, FaPlus, FaTable, FaRobot } from 'react-icons/fa';
 import SkeletonLoader from '@/components/atoms/SkeletonLoader';
 import PendingUpdatesIndicator from '@/components/atoms/PendingUpdatesIndicator';
 import DataSourceToggle from '@/components/atoms/DataSourceToggle';
@@ -153,6 +153,21 @@ const Home: React.FC = memo(() => {
                       background: 'var(--secondary)',
                       color: 'var(--secondary-foreground)',
                     }}
+                    onClick={() => (window.location.href = APP_ROUTES.GEMINI_TOOLS)}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className='flex items-center gap-1.5'>
+                      <FaRobot className='h-3.5 w-3.5 text-primary' />
+                      <span>Gemini Tools</span>
+                    </div>
+                  </motion.button>
+
+                  <motion.button
+                    className='rounded-lg px-4 py-2 text-sm font-medium transition-all hover:scale-105'
+                    style={{
+                      background: 'var(--secondary)',
+                      color: 'var(--secondary-foreground)',
+                    }}
                     onClick={() => (window.location.href = APP_ROUTES.SEARCH_TEMPLATES)}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -224,6 +239,19 @@ const Home: React.FC = memo(() => {
               >
                 <FaTable className='h-4 w-4' style={{ color: '#94a3b8' }} />
                 Mapping Table
+              </motion.button>
+
+              <motion.button
+                className='flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700'
+                style={{ color: 'white' }}
+                onClick={() => {
+                  window.location.href = APP_ROUTES.GEMINI_TOOLS;
+                  setIsMobileMenuOpen(false);
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaRobot className='h-4 w-4' style={{ color: '#38bdf8' }} />
+                Gemini AI Tools
               </motion.button>
 
               <motion.button

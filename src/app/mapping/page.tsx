@@ -7,6 +7,7 @@ import {
   FaTable,
   FaLayerGroup,
   FaRobot,
+  FaGem,
 } from 'react-icons/fa6';
 import { MAPPING_ITEMS, getModules } from '@/data/mappings';
 import { MappingItem, MappingViewMode } from '@/types/mapping';
@@ -141,6 +142,21 @@ export default function MappingPage() {
                     <span>Flashcards</span>
                   </button>
                 </div>
+
+                {/* Gemini AI Suite Navigation Button */}
+                <button
+                  onClick={() => router.push(APP_ROUTES.GEMINI_TOOLS)}
+                  className='flex items-center gap-1.5 rounded-xl border px-3 py-2 text-xs font-semibold transition-all hover:scale-105 shrink-0'
+                  style={{
+                    background: 'var(--secondary)',
+                    color: 'var(--secondary-foreground)',
+                    borderColor: 'var(--border)',
+                  }}
+                  title='Buka Gemini AI Study Tools'
+                >
+                  <FaGem className='h-3.5 w-3.5 text-amber-500' />
+                  <span className='hidden sm:inline'>AI Tools</span>
+                </button>
 
                 {/* Single Agent Guide Button */}
                 <button

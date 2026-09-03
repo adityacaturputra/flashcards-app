@@ -8,6 +8,7 @@ export const APP_ROUTES = {
   SEARCH_TEMPLATES: '/search-templates',
   ADD_FLASHCARD: '/add-flashcard',
   ADD_CATEGORY: '/add-category',
+  GEMINI_TOOLS: '/gemini-tools',
 } as const;
 
 export type AppRoute = (typeof APP_ROUTES)[keyof typeof APP_ROUTES];
