@@ -28,7 +28,7 @@
 }
 
 .content.visible {
-  max-height: 800px;
+  max-height: 5000px;
   opacity: 1;
   transform: translateY(0);
 }
