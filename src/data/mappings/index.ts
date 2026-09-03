@@ -2266,6 +2266,103 @@ Beberapa kata kerja menggunakan preposisi **\`for\`** (bukan *to*) ketika benda 
     createdAt: '2026-09-03',
     tags: ['ditransitive-verbs', 'direct-object', 'indirect-object', 'send-me', 'send-to-me', 'word-order', 'common-errors', 'englishvit'],
   },
+  {
+    id: 'subject-verb-agreement-irregular-plural-women-do-vs-does',
+    module: 'Subject-Verb Agreement & Plurals',
+    title: 'Where do the women attend vs. does (Irregular Plural: woman vs. women)',
+    question: 'Where _____ the women attend the seminar ? (Options: do, are, does, were)',
+    correction: 'Where does the women attend... -> Where do the women attend the seminar ?',
+    remarks: `Jawaban yang benar adalah **"do"**:  
+👉 **"Where do the women attend the seminar ?"**
+
+---
+
+### 1. Mengapa Jawabannya "DO", Bukan "DOES"?
+
+Kesalahan umum terjadi karena pembelajar mengira subjek kalimat tersebut adalah tunggal (*singular*), padahal kata **\`women\`** adalah **Bentuk Jamak Tidak Beraturan (*Irregular Plural Noun*)**:
+
+- **\`woman\`** (/ˈwʊm.ən/) = **1 orang wanita** (Tunggal / *Singular* $\\rightarrow$ Kata ganti: *she*)
+- **\`women\`** (/ˈwɪm.ɪn/) = **Lebih dari 1 wanita / para wanita** (Jamak / *Plural* $\\rightarrow$ Kata ganti: *they*)
+
+Dalam **Simple Present Tense**, kata kerja bantu (*auxiliary verb*) untuk membuat kalimat tanya bergantung sepenuhnya pada subjeknya:
+
+$$\\mathbf{\\text{Wh-Word}} + \\mathbf{\\text{Auxiliary (DO / DOES)}} + \\mathbf{\\text{Subject}} + \\mathbf{\\text{Base Verb (V1)}} + \\dots ?$$
+
+Karena subjek kalimat adalah **\`the women\`** (*jamak / plural / they*), maka kata kerja bantu yang **WAJIB** digunakan adalah **\`DO\`**:
+
+$$\\text{Where} + \\mathbf{do} + \\mathbf{\\text{the women (plural / they)}} + \\mathbf{\\text{attend (V1)}} + \\text{the seminar?}$$
+
+- ❌ **SALAH:** *“Where **does** the women attend the seminar?”*
+- ✅ **BENAR (Jamak):** *“Where **do** the women attend the seminar?”*
+- ✅ **BENAR (Jika Tunggal):** *“Where **does** the woman attend the seminar?”*
+
+---
+
+### 2. Mengapa Bukan "ARE" atau "WERE"?
+
+Pilihan **\`are\`** dan **\`were\`** adalah bentuk kata kerja bantu *to-be*.
+
+Dalam tata bahasa Inggris, *to-be* **DILARANG BERDIRI BERSAMAAN DENGAN KATA KERJA DASAR POLOS (V1)** dalam kalimat aktif:
+- Di dalam soal terdapat kata kerja dasar polos: **\`attend\`** (V1).
+- Jika Anda menggunakan *are* atau *were*, kata kerjanya wajib berbentuk **V-ing** (*Continuous Tense*) atau **V3** (*Passive Voice*):
+  - ❌ *Where **are** the women **attend**...* (Tata bahasa rusak / *ungrammatical*).
+  - ✅ *Where **are** the women **attending** the seminar?* (Sedang berlangsung sekarang).
+  - ✅ *Where **were** the women **attending** the seminar?* (Sedang berlangsung di masa lampau).
+- Karena kata kerjanya adalah **\`attend\`** polos, maka kata kerja bantu yang bisa digunakan hanyalah keluarga **DO / DOES / DID**.
+
+---
+
+### 3. Tabel Pasangan Subjek & Auxiliary Verb (Simple Present)
+
+| Subjek | Kata Ganti (*Pronoun*) | Auxiliary Verb Kalimat Tanya | Contoh Kalimat Tanya |
+| :--- | :--- | :--- | :--- |
+| **a woman / the woman** | *she* (Tunggal) | **DOES** | *“Where **does the woman** attend the seminar?”* |
+| **the women** | *they* (Jamak) | **DO** | *“Where **do the women** attend the seminar?”* |
+| **a man / the man** | *he* (Tunggal) | **DOES** | *“What **does the man** do for a living?”* |
+| **the men** | *they* (Jamak) | **DO** | *“What **do the men** do for a living?”* |
+| **a child / the child** | *he/she* (Tunggal) | **DOES** | *“Why **does the child** cry?”* |
+| **children / the children** | *they* (Jamak) | **DO** | *“Why **do the children** cry?”* |
+| **a person / the person** | *he/she* (Tunggal) | **DOES** | *“How **does the person** solve the issue?”* |
+| **people / the people** | *they* (Jamak) | **DO** | *“How **do people** solve the issue?”* |
+
+---
+
+### 4. Daftar Lengkap Irregular Plural Nouns yang Paling Sering Menjebak
+
+Bahasa Inggris memiliki sejumlah kata benda yang bentuk jamaknya **TIDAK berakhiran \`-s\` atau \`-es\`**:
+
+| Kata Benda Tunggal (*Singular*) | Kata Benda Jamak (*Plural*) | Pengucapan Tunggal vs Jamak | Auxiliary yang Dipakai |
+| :--- | :--- | :--- | :--- |
+| **woman** | **women** | /ˈwʊm.ən/ vs. /ˈwɪm.ɪn/ | *woman* $\\rightarrow$ **does/is** \| *women* $\\rightarrow$ **do/are** |
+| **man** | **men** | /mæn/ vs. /men/ | *man* $\\rightarrow$ **does/is** \| *men* $\\rightarrow$ **do/are** |
+| **child** | **children** | /tʃaɪld/ vs. /ˈtʃɪl.drən/ | *child* $\\rightarrow$ **does/is** \| *children* $\\rightarrow$ **do/are** |
+| **person** | **people** | /ˈpɜː.sən/ vs. /ˈpiː.pəl/ | *person* $\\rightarrow$ **does/is** \| *people* $\\rightarrow$ **do/are** |
+| **foot** | **feet** | /fʊt/ vs. /fiːt/ | *foot* $\\rightarrow$ **does/is** \| *feet* $\\rightarrow$ **do/are** |
+| **tooth** | **teeth** | /tuːθ/ vs. /tiːθ/ | *tooth* $\\rightarrow$ **does/is** \| *teeth* $\\rightarrow$ **do/are** |
+| **mouse** | **mice** | /maʊs/ vs. /maɪs/ | *mouse* $\\rightarrow$ **does/is** \| *mice* $\\rightarrow$ **do/are** |
+| **criterion** | **criteria** | /kraɪˈtɪə.ri.ən/ vs. /kraɪˈtɪə.ri.ə/ | *criterion* $\\rightarrow$ **does/is** \| *criteria* $\\rightarrow$ **do/are** |
+| **phenomenon** | **phenomena** | /fəˈnɒm.ɪ.nən/ vs. /fəˈnɒm.ɪ.nə/ | *phenomenon* $\\rightarrow$ **does/is** \| *phenomena* $\\rightarrow$ **do/are** |
+
+---
+
+### 5. Tips Pengucapan (*Pronunciation Tip*)
+Perhatikan perubahan bunyi vokal pada suku kata pertama:
+- **w-o-m-a-n** diucapkan: **"wum-en"** (/ˈwʊm.ən/)
+- **w-o-m-e-n** diucapkan: **"wim-in"** (/ˈwɪm.ɪn/) $\\rightarrow$ huruf 'o' berubah menjadi bunyi /ɪ/ (*short i*).
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Kilat:**
+> - **womAn (ada huruf A)** $\\rightarrow$ **1 orang** (tunggal) $\\rightarrow$ gunakan **does / is / has**.
+> - **womEn (ada huruf E)** $\\rightarrow$ **banyak orang / >1** (jamak) $\\rightarrow$ gunakan **do / are / have**.
+> - Ada kata kerja V1 polos di belakang (*attend*) $\\rightarrow$ **DILARANG pakai are/were**, wajib pakai keluarga **DO / DOES**.
+`,
+    source: 'Englishvit - Daily Quiz',
+    chapter: 'Subject-Verb Agreement & Question Forms',
+    createdAt: '2026-09-03',
+    tags: ['subject-verb-agreement', 'irregular-plural-nouns', 'woman-vs-women', 'do-vs-does', 'wh-questions', 'auxiliary-verbs', 'common-errors'],
+  },
 ];
 
 /**
