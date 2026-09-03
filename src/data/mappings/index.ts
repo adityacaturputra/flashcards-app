@@ -2363,6 +2363,92 @@ Perhatikan perubahan bunyi vokal pada suku kata pertama:
     createdAt: '2026-09-03',
     tags: ['subject-verb-agreement', 'irregular-plural-nouns', 'woman-vs-women', 'do-vs-does', 'wh-questions', 'auxiliary-verbs', 'common-errors'],
   },
+  {
+    id: 'adverbs-apparently-usage-and-nuance',
+    module: 'Adverbs & Discourse Markers',
+    title: 'Apparently: Makna, Posisi Kalimat, dan Perbedaan Nuansa dengan Obviously',
+    question: 'Kapan dan bagaimana cara menggunakan kata "Apparently" dengan benar dalam kalimat bahasa Inggris?',
+    correction: 'Apparently = "Rupanya / Katanya sih / Kelihatannya" (Berdasarkan informasi yang didengar atau dilihat, bukan fakta mutlak yang sudah pasti)',
+    remarks: `Kata **"Apparently"** (/əˈpær.ənt.li/) adalah salah satu *sentence adverb* yang paling sering digunakan oleh penutur asli (*native speakers*) dalam percakapan sehari-hari maupun tulisan profesional.
+
+---
+
+### 1. Dua Makna Utama "Apparently"
+
+1. **Berdasarkan apa yang didengar / dibaca / kabar burung (*Hearsay / Report*)**:  
+   👉 Digunakan saat Anda menyampaikan informasi yang Anda dengar dari orang lain atau membaca berita, tetapi Anda sendiri **belum menyaksikan atau membuktikannya secara langsung 100%**:
+   * *“**Apparently**, the meeting has been postponed to tomorrow.”*  
+     (Katanya sih / rupanya rapatnya diundur sampai besok.)
+   * *“He has resigned from the company, **apparently**.”*  
+     (Kabarnya dia sudah mengundurkan diri dari perusahaan.)
+
+2. **Kelihatannya / Secara kasat mata (*Apparent Appearance*)**:  
+   👉 Digunakan untuk menjelaskan sesuatu yang tampak benar dari luar, meskipun kondisi aslinya belum tentu demikian:
+   * *“She was **apparently** unhurt after the accident, but doctors kept her for observation.”*  
+     (Kelihatannya dia tidak terluka setelah kecelakaan, tapi dokter tetap menahannya untuk observasi.)
+
+---
+
+### 2. Tiga Posisi Kalimat & Rumus Penulisan
+
+Kata *apparently* sangat fleksibel dan dapat diletakkan di 3 posisi dalam kalimat:
+
+#### A. Posisi Awal (*Front Position*) — Paling Populer
+Diletakkan di awal kalimat sebagai pembuka informasi baru, **wajib diikuti tanda koma**:
+$$\\mathbf{\\text{Apparently,}} + \\mathbf{\\text{Subject}} + \\mathbf{\\text{Verb}} + \\dots$$
+- *“**Apparently,** they didn't receive our email.”* (Rupanya mereka tidak menerima email kita.)
+
+#### B. Posisi Tengah (*Mid Position*) — Formal & Halus
+Diletakkan di antara Subjek dan Kata Kerja Utama, atau setelah *to-be / auxiliary*:
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{apparently}} + \\mathbf{\\text{Main Verb}}$$
+$$\\mathbf{\\text{Subject}} + \\mathbf{\\text{be / auxiliary}} + \\mathbf{\\text{apparently}} + \\mathbf{\\text{Complement}}$$
+- *“They **apparently decided** to cancel the whole project.”*
+- *“He **is apparently** looking for a new apartment.”*
+
+#### C. Posisi Akhir (*End Position*) — Sebagai Catatan Tambahan (*Afterthought*)
+Diletakkan di ujung kalimat dengan tanda koma sebelumnya, sering dipakai saat ngobrol santai:
+$$\\mathbf{\\text{Clause}} + \\mathbf{\\text{, apparently.}}$$
+- *“They got married in Bali last week, **apparently**.”* (Mereka menikah di Bali minggu lalu, katanya sih.)
+
+---
+
+### 3. Tabel Perbandingan Nuansa Kata Serupa
+
+Banyak pembelajar keliru menyamakan *apparently* dengan *obviously*. Perhatikan perbedaannya:
+
+| Kata Keterangan (*Adverb*) | Makna & Nuansa | Tingkat Kepastian | Contoh Kalimat |
+| :--- | :--- | :--- | :--- |
+| **Apparently** | Katanya sih / Rupanya (berdasarkan info pihak ketiga / belum dicek sendiri) | Sedang (50%–70%) | *“**Apparently**, the CEO is visiting our branch today.”* |
+| **Obviously** | Jelas sekali / Semua orang pasti tahu (fakta terang-terangan di depan mata) | Sangat Tinggi (95%–100%) | *“**Obviously**, we cannot launch the app with this critical bug.”* |
+| **Evidently** | Terbukti / Nyata dari fakta logis (lebih formal daripada apparently) | Tinggi (80%–90%) | *“He was **evidently** pleased with the test results.”* |
+| **Seemingly** | Kelihatannya / Tampaknya (sering kali fakta aslinya berbeda / ada kontras) | Meragukan | *“It was a **seemingly** simple problem, but it took hours to fix.”* |
+
+---
+
+### 4. Kesalahan Umum (*Common Pitfalls*)
+
+- ❌ **SALAH:** Memakai *obviously* untuk kabar burung yang belum pasti.  
+  *“Obviously, they broke up.”* $\\rightarrow$ Mengesankan Anda menyaksikan langsung atau fakta itu sudah gamblang bagi semua orang.
+- ✅ **BENAR:** Jika Anda cuma dengar gosip/kabar burung, gunakan **apparently**:  
+  *“**Apparently**, they broke up.”* (Katanya sih mereka putus.)
+- ❌ **SALAH:** Lupa tanda koma saat *apparently* berada di awal atau akhir kalimat:  
+  *“Apparently he is sick”*
+- ✅ **BENAR:**  
+  *“**Apparently,** he is sick.”*
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Kilat:**
+> - **Apparently** = **"Katanya sih / Rupanya"** (ada unsur *hearsay* / info sekilas, belum tentu 100% pasti).
+> - **Obviously** = **"Jelas banget / Masa nggak tahu"** (bukti nyata terang benderang di depan mata).
+> - Diletakkan di awal kalimat? Jangan lupa beri tanda koma: **"Apparently, ..."**
+`,
+    source: 'English Expressions & Discourse Markers',
+    chapter: 'Sentence Adverbs & Epistemic Stance',
+    createdAt: '2026-09-03',
+    tags: ['apparently', 'adverbs', 'sentence-adverbs', 'discourse-markers', 'apparently-vs-obviously', 'conversational-english', 'common-expressions'],
+  },
 ];
 
 /**
