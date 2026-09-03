@@ -21,6 +21,7 @@ import FlashcardFormEdit from '../organisms/FlashcardFormEdit';
 import styles from './FlashcardComponent.module.css';
 import { FaTrashAlt } from 'react-icons/fa';
 import TextArea from './TextArea';
+import MarkdownViewer from './MarkdownViewer';
 
 dayjs.extend(relativeTime);
 
@@ -116,10 +117,24 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
     const renderViewModeDynamicFields = () => {
       return Object.entries(flashcard.dynamicFields || {}).map(
         ([key, value]) => (
-          <div key={key} className='mt-2'>
-            <strong className='font-medium'>{key}:</strong>
-            <div className='mt-1 whitespace-pre-wrap'>
-              {renderFormattedText(value)}
+          <div
+            key={key}
+            className='mt-3 rounded-xl border p-3.5 shadow-xs'
+            style={{
+              background: 'var(--card)',
+              borderColor: 'var(--border)',
+            }}
+          >
+            <div className='mb-1.5 flex items-center justify-between'>
+              <span
+                className='text-[10px] sm:text-xs font-bold uppercase tracking-wider'
+                style={{ color: 'var(--primary)' }}
+              >
+                {key}
+              </span>
+            </div>
+            <div className='text-xs sm:text-sm leading-relaxed'>
+              <MarkdownViewer content={value} showCopyButton={false} />
             </div>
           </div>
         ),
@@ -190,62 +205,6 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
       setNewExplanationTitle('');
       setNewExplanationContent('');
       setIsAddExplanationOpen(false);
-    };
-
-    // Function to render markdown-like text (bold, bullets, newlines)
-    const renderFormattedText = (text: string) => {
-      if (!text) return null;
-
-      // Split by newlines first
-      const lines = text.split('\n');
-
-      return lines.map((line, lineIndex) => {
-        // Check if line starts with bullet point
-        const isBullet =
-          line.trim().startsWith('•') || line.trim().startsWith('- ');
-        const isNumbered = /^\d+\.\s/.test(line.trim());
-
-        // Process bold text (**text**)
-        const parts = line.split(/(\*\*[^*]+\*\*)/g);
-        const formattedParts = parts.map((part, partIndex) => {
-          if (part.startsWith('**') && part.endsWith('**')) {
-            return (
-              <strong key={partIndex} className='font-bold'>
-                {part.slice(2, -2)}
-              </strong>
-            );
-          }
-          return part;
-        });
-
-        if (isBullet) {
-          return (
-            <div key={lineIndex} className='flex items-start gap-2 pl-2'>
-              <span className='text-primary'>•</span>
-              <span>{formattedParts.slice(1)}</span>
-            </div>
-          );
-        }
-
-        if (isNumbered) {
-          const match = line.trim().match(/^(\d+\.)\s(.*)$/);
-          if (match) {
-            return (
-              <div key={lineIndex} className='flex items-start gap-2 pl-2'>
-                <span className='font-medium'>{match[1]}</span>
-                <span>{formattedParts}</span>
-              </div>
-            );
-          }
-        }
-
-        return (
-          <span key={lineIndex}>
-            {formattedParts}
-            {lineIndex < lines.length - 1 && <br />}
-          </span>
-        );
-      });
     };
 
     return (
@@ -451,20 +410,19 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
               className={`${styles.content} ${isAnswerHidden ? styles.hidden : styles.visible}`}
             >
               <div
-                className='mx-4 mb-4 rounded-lg p-4'
+                className='mx-4 mb-4 rounded-xl border p-4 shadow-sm'
                 style={{
-                  background: 'var(--muted)',
+                  background: 'var(--card)',
+                  borderColor: 'var(--border)',
                   borderLeft: '4px solid var(--primary)',
                 }}
               >
                 <div className='flex items-start gap-3'>
                   <div className='flex-1'>
-                    <p
-                      className='text-base leading-relaxed'
-                      style={{ color: 'var(--muted-foreground)' }}
-                    >
-                      {flashcard.answer || 'No answer available'}
-                    </p>
+                    <MarkdownViewer
+                      content={flashcard.answer || 'No answer available'}
+                      showCopyButton={false}
+                    />
                   </div>
 
                   {!isAnswerHidden && (
