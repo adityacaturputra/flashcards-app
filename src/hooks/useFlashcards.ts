@@ -1,5 +1,9 @@
+// src/hooks/useFlashcards.ts
 'use client';
 import { Flashcard } from '../types/flashcard';
+import { DataSource } from '@/types/dataSource';
+import { DEFAULT_DATA_SOURCE } from '@/constants/dataSource';
+import { API_ENDPOINTS } from '@/constants/endpoints';
 
 type UpdateFlashcards = React.Dispatch<React.SetStateAction<Flashcard[]>>;
 
@@ -7,23 +11,25 @@ const useFlashcards = (
   updateFlashcards: UpdateFlashcards,
   setLoading: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
-  const loadFlashcards = async () => {
+  const loadFlashcards = async (source: DataSource = DEFAULT_DATA_SOURCE) => {
     try {
-      const response = await fetch('/api/flashcards');
+      const response = await fetch(API_ENDPOINTS.FLASHCARDS(source));
       if (!response.ok) {
         throw new Error('Failed to fetch flashcards');
       }
       const flashcards: Flashcard[] = await response.json();
       updateFlashcards(flashcards);
+      return flashcards;
     } catch (error) {
       console.error(error);
+      return [];
     }
   };
 
-  const addFlashcard = async (flashcard: Flashcard) => {
+  const addFlashcard = async (flashcard: Flashcard, source?: DataSource) => {
     try {
       setLoading(true);
-      const response = await fetch('/api/flashcards', {
+      const response = await fetch(API_ENDPOINTS.FLASHCARDS(source), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,10 +48,14 @@ const useFlashcards = (
     }
   };
 
-  const updateFlashcard = async (id: string, flashcard: Partial<Flashcard>) => {
+  const updateFlashcard = async (
+    id: string,
+    flashcard: Partial<Flashcard>,
+    source?: DataSource,
+  ) => {
     setLoading(true);
     try {
-      const response = await fetch(`/api/flashcards?id=${id}`, {
+      const response = await fetch(API_ENDPOINTS.FLASHCARD_BY_ID(id, source), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -67,10 +77,10 @@ const useFlashcards = (
     }
   };
 
-  const deleteFlashcard = async (id: string) => {
+  const deleteFlashcard = async (id: string, source?: DataSource) => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/flashcards?id=${id}`, {
+      const response = await fetch(API_ENDPOINTS.FLASHCARD_BY_ID(id, source), {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

@@ -13,6 +13,7 @@ import { MappingItem, MappingViewMode } from '@/types/mapping';
 import MappingTable from '@/components/organisms/MappingTable';
 import MappingFlashcards from '@/components/organisms/MappingFlashcards';
 import ErrorBoundary from '@/components/atoms/ErrorBoundary';
+import { APP_ROUTES } from '@/constants/routes';
 
 export default function MappingPage() {
   const router = useRouter();
@@ -59,7 +60,7 @@ export default function MappingPage() {
                     color: 'var(--secondary-foreground)',
                     borderColor: 'var(--border)',
                   }}
-                  onClick={() => router.push('/')}
+                  onClick={() => router.push(APP_ROUTES.HOME)}
                   whileTap={{ scale: 0.95 }}
                   title='Back to Main Flashcards'
                 >

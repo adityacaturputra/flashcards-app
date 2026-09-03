@@ -2,20 +2,25 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { FlashcardCategory } from '@/types/flashcard';
+import { DataSource } from '@/types/dataSource';
+import { DEFAULT_DATA_SOURCE } from '@/constants/dataSource';
+import { API_ENDPOINTS } from '@/constants/endpoints';
 
 type UseFlashcardCategoriesReturnType = {
   categories: FlashcardCategory[];
   loading: boolean;
   loadingAction: boolean;
-  loadCategories: () => Promise<void>;
+  loadCategories: (source?: DataSource) => Promise<void>;
   addCategory: (
     category: FlashcardCategory,
+    source?: DataSource,
   ) => Promise<FlashcardCategory | undefined>;
   updateCategory: (
     id: string,
     category: Partial<FlashcardCategory>,
+    source?: DataSource,
   ) => Promise<FlashcardCategory | undefined>;
-  deleteCategory: (id: string) => Promise<void>;
+  deleteCategory: (id: string, source?: DataSource) => Promise<void>;
 };
 
 const STORAGE_KEY = 'flashcardCategories';
@@ -32,10 +37,10 @@ export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
     }
   }, [categories]);
 
-  const loadCategories = async () => {
+  const loadCategories = async (source: DataSource = DEFAULT_DATA_SOURCE) => {
     try {
       setLoading(true);
-      const response = await fetch('/api/flashcardCategories');
+      const response = await fetch(API_ENDPOINTS.FLASHCARD_CATEGORIES(source));
       if (!response.ok) {
         throw new Error('Failed to fetch categories');
       }
@@ -51,10 +56,13 @@ export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
     }
   };
 
-  const addCategory = async (category: FlashcardCategory) => {
+  const addCategory = async (
+    category: FlashcardCategory,
+    source?: DataSource,
+  ) => {
     try {
       setLoadingAction(true);
-      const response = await fetch('/api/flashcardCategories', {
+      const response = await fetch(API_ENDPOINTS.FLASHCARD_CATEGORIES(source), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,10 +89,11 @@ export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
   const updateCategory = async (
     id: string,
     category: Partial<FlashcardCategory>,
+    source?: DataSource,
   ) => {
     try {
       setLoadingAction(true);
-      const response = await fetch('/api/flashcardCategories', {
+      const response = await fetch(API_ENDPOINTS.CATEGORY_BY_ID(id, source), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -110,10 +119,10 @@ export const useFlashcardCategories = (): UseFlashcardCategoriesReturnType => {
     }
   };
 
-  const deleteCategory = async (id: string) => {
+  const deleteCategory = async (id: string, source?: DataSource) => {
     try {
       setLoadingAction(true);
-      const response = await fetch('/api/flashcardCategories', {
+      const response = await fetch(API_ENDPOINTS.CATEGORY_BY_ID(id, source), {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

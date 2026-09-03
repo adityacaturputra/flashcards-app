@@ -4,6 +4,7 @@ import newKeyGen from '@/utils/keyGenIterator';
 import convertXmlToObject from '@/utils/convertXmlToObject';
 import { useAppContext } from '@/context/appContext';
 import convertFlashcardsToXml from '@/utils/convertFlashcardsToXml';
+import { API_ENDPOINTS } from '@/constants/endpoints';
 
 interface UseGenerateFlashcardsResult {
   flashCards: Flashcard[];
@@ -65,7 +66,7 @@ const useGenerateFlashcards = (
     setError(null);
 
     try {
-      const response = await fetch('/api/generateFlashcards', {
+      const response = await fetch(API_ENDPOINTS.GENERATE_FLASHCARDS, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

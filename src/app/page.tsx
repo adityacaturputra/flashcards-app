@@ -14,6 +14,8 @@ import { motion } from 'framer-motion';
 import { FaBars, FaTimes, FaPlay, FaStop, FaCog, FaPlus, FaTable } from 'react-icons/fa';
 import SkeletonLoader from '@/components/atoms/SkeletonLoader';
 import PendingUpdatesIndicator from '@/components/atoms/PendingUpdatesIndicator';
+import DataSourceToggle from '@/components/atoms/DataSourceToggle';
+import { APP_ROUTES } from '@/constants/routes';
 
 // Lazy load heavy components
 const FlashcardList = lazy(
@@ -53,7 +55,7 @@ const Home: React.FC = memo(() => {
   }, []);
 
   const handleNavigateToCategoryPage = useCallback(() => {
-    window.location.href = '/add-category';
+    window.location.href = APP_ROUTES.ADD_CATEGORY;
   }, []);
 
   // Close mobile menu when clicking outside
@@ -91,9 +93,16 @@ const Home: React.FC = memo(() => {
               >
                 {flashcards.length}
               </div>
+              <div className='hidden md:block'>
+                <DataSourceToggle compact={false} />
+              </div>
             </div>
 
             <div className='flex items-center gap-2 sm:gap-3'>
+              <div className='md:hidden'>
+                <DataSourceToggle compact={true} />
+              </div>
+
               {/* Review Mode Button - Always visible */}
               <motion.button
                 className='rounded-lg px-2 py-2 text-xs font-medium transition-all hover:scale-105 sm:px-4 sm:text-sm'
@@ -129,7 +138,7 @@ const Home: React.FC = memo(() => {
                       background: 'var(--secondary)',
                       color: 'var(--secondary-foreground)',
                     }}
-                    onClick={() => (window.location.href = '/mapping')}
+                    onClick={() => (window.location.href = APP_ROUTES.MAPPING)}
                     whileTap={{ scale: 0.95 }}
                   >
                     <div className='flex items-center gap-1.5'>
@@ -144,7 +153,7 @@ const Home: React.FC = memo(() => {
                       background: 'var(--secondary)',
                       color: 'var(--secondary-foreground)',
                     }}
-                    onClick={() => (window.location.href = '/search-templates')}
+                    onClick={() => (window.location.href = APP_ROUTES.SEARCH_TEMPLATES)}
                     whileTap={{ scale: 0.95 }}
                   >
                     Search Templates
@@ -156,7 +165,7 @@ const Home: React.FC = memo(() => {
                       background: 'var(--primary)',
                       color: 'var(--primary-foreground)',
                     }}
-                    onClick={() => (window.location.href = '/add-flashcard')}
+                    onClick={() => (window.location.href = APP_ROUTES.ADD_FLASHCARD)}
                     whileTap={{ scale: 0.95 }}
                   >
                     + Add Flashcard
@@ -199,11 +208,16 @@ const Home: React.FC = memo(() => {
         >
           <div className='border-b border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-gray-800'>
             <div className='flex flex-col gap-2'>
+              <div className='flex items-center justify-between border-b border-gray-100 pb-2 dark:border-gray-700'>
+                <span className='text-xs font-semibold text-zinc-400'>Source:</span>
+                <DataSourceToggle compact={false} />
+              </div>
+
               <motion.button
                 className='flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700'
                 style={{ color: 'white' }}
                 onClick={() => {
-                  window.location.href = '/mapping';
+                  window.location.href = APP_ROUTES.MAPPING;
                   setIsMobileMenuOpen(false);
                 }}
                 whileTap={{ scale: 0.98 }}
@@ -216,7 +230,7 @@ const Home: React.FC = memo(() => {
                 className='flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700'
                 style={{ color: 'white' }}
                 onClick={() => {
-                  window.location.href = '/search-templates';
+                  window.location.href = APP_ROUTES.SEARCH_TEMPLATES;
                   setIsMobileMenuOpen(false);
                 }}
                 whileTap={{ scale: 0.98 }}
@@ -229,7 +243,7 @@ const Home: React.FC = memo(() => {
                 className='flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-700'
                 style={{ color: 'white' }}
                 onClick={() => {
-                  window.location.href = '/add-flashcard';
+                  window.location.href = APP_ROUTES.ADD_FLASHCARD;
                   setIsMobileMenuOpen(false);
                 }}
                 whileTap={{ scale: 0.98 }}

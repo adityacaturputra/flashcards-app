@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Flashcard } from '@/types/flashcard';
+import { API_ENDPOINTS } from '@/constants/endpoints';
 
 interface BulkUpdateResult {
   total: number;
@@ -55,7 +56,7 @@ export const useBulkFlashcards = () => {
       setIsUpdating(true);
 
       try {
-        const response = await fetch('/api/flashcards/bulk', {
+        const response = await fetch(API_ENDPOINTS.FLASHCARDS_BULK, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

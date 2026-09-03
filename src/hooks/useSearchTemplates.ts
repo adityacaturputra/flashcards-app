@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import { SearchTemplate } from '@/models/SearchTemplateModel';
+import { useState, useEffect, useCallback } from 'react';
+import { SearchTemplate } from '@/types/searchTemplate';
+import { API_ENDPOINTS } from '@/constants/endpoints';
 
 interface UseSearchTemplatesResult {
   templates: SearchTemplate[];
@@ -25,14 +26,12 @@ export default function useSearchTemplates(
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchTemplates = async () => {
+  const fetchTemplates = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
 
-      const url = userId
-        ? `/api/searchTemplates?userId=${userId}`
-        : '/api/searchTemplates';
+      const url = API_ENDPOINTS.SEARCH_TEMPLATES(userId);
       const response = await fetch(url);
       const data = await response.json();
 
@@ -48,7 +47,7 @@ export default function useSearchTemplates(
     } finally {
       setLoading(false);
     }
-  };
+  }, [userId]);
 
   const addTemplate = async (
     name: string,
@@ -57,7 +56,7 @@ export default function useSearchTemplates(
     try {
       setError(null);
 
-      const response = await fetch('/api/searchTemplates', {
+      const response = await fetch(API_ENDPOINTS.SEARCH_TEMPLATES(), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +94,7 @@ export default function useSearchTemplates(
     try {
       setError(null);
 
-      const response = await fetch(`/api/searchTemplates/${id}`, {
+      const response = await fetch(API_ENDPOINTS.SEARCH_TEMPLATE_BY_ID(id), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -129,7 +128,7 @@ export default function useSearchTemplates(
       setError(null);
 
       const response = await fetch(
-        `/api/searchTemplates/${id}?userId=${userId || ''}`,
+        API_ENDPOINTS.SEARCH_TEMPLATE_BY_ID(id, userId),
         {
           method: 'DELETE',
         },
@@ -158,7 +157,7 @@ export default function useSearchTemplates(
 
   useEffect(() => {
     fetchTemplates();
-  }, [userId]);
+  }, [fetchTemplates]);
 
   return {
     templates,

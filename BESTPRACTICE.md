@@ -133,6 +133,43 @@ A maintainable codebase maintains clear boundaries between layers:
 
 ---
 
+## 🏭 9. Factory Design Pattern for Multi-Source Data Providers
+
+When supporting multiple data backends (e.g. **Local Repository** vs. **MongoDB Cloud**):
+- **Abstract Interfaces (`src/services/dataProviders/types.ts`)**:
+  Define explicit provider contracts (`IFlashcardDataProvider`, `ICategoryDataProvider`) so consumers never know or care whether data comes from local JSON files or remote database queries.
+- **Provider Implementations**:
+  - `LocalFlashcardProvider` / `LocalCategoryProvider`: Fast, zero-latency, local disk/memory operations.
+  - `MongoFlashcardProvider` / `MongoCategoryProvider`: Production MongoDB database connection.
+- **Factory Provider (`DataProviderFactory`)**:
+  Expose static factory methods to instantiate the correct provider according to the requested `DataSource`:
+  ```ts
+  const provider = DataProviderFactory.getFlashcardProvider(source);
+  const flashcards = await provider.getFlashcards();
+  ```
+
+---
+
+## 🚫 10. Zero-Hardcoding Standards & URL Builder Pattern
+
+- **No Magic Strings or Inline String Interpolation**:
+  Never hardcode API endpoint strings, storage keys, query parameter names, or configuration values in components or hooks.
+- **URL & Query Builder Utility (`src/utils/urlBuilder.ts`)**:
+  Always use `buildUrl(basePath, params)` or `UrlBuilder.create(basePath).setParam(k, v).build()` to construct URLs dynamically. Parameters are only appended when non-empty, avoiding trailing `?`, `&`, or empty values:
+  ```ts
+  // ✅ DO: Dynamic, safe URL building
+  buildUrl('/api/searchTemplates', { userId }); // -> '/api/searchTemplates?userId=123' or '/api/searchTemplates'
+  ```
+- **Centralized Endpoint Registry (`src/constants/endpoints.ts`)**:
+  - `API_ENDPOINTS.FLASHCARDS(params)`
+  - `API_ENDPOINTS.FLASHCARD_CATEGORIES(params)`
+  - `API_ENDPOINTS.SEARCH_TEMPLATES(params)`
+  - `API_ENDPOINTS.SEARCH_TEMPLATE_BY_ID(id, params)`
+- **Enums Over Raw Literals**:
+  Always use strongly-typed enums (e.g. `DataSource.Local`, `DataSource.MongoDB`, `Progression.Good`) instead of raw string literals (`'local'`, `'mongodb'`).
+
+---
+
 ## 🔗 Related Documentation
 - 📖 **[MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)**: Step-by-step study mapping workflow for AI agents.
 - 📘 **[AGENTS.md](./AGENTS.md)**: Main operational guide for AI agents and developers.
