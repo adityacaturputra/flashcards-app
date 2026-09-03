@@ -1,5 +1,65 @@
 [
   {
+    "_id": "6902a0010000000000000021",
+    "question": "Apparently (Adverb: Meaning, Usage & Nuance)",
+    "answer": "**Kata Keterangan (*Sentence Adverb*)**: `Apparently` (/əˈpær.ənt.li/)\n\n**Makna Utama**:\n1. **Katanya sih / Rupanya** (*Hearsay*): Menyampaikan informasi yang Anda dengar/baca tetapi belum Anda buktikan sendiri 100%.\n2. **Kelihatannya** (*Appearance*): Tampak benar dari luar, meski fakta aslinya belum tentu demikian.\n\n**Tiga Posisi Kalimat**:\n- **Awal (*Front*)**: *“Apparently, the meeting has been postponed to tomorrow.”*\n- **Tengah (*Mid*)**: *“They apparently decided to cancel the project.”*\n- **Akhir (*End*)**: *“He resigned from his job, apparently.”*\n\n**Beda dengan Obviously**:\n- *Apparently*: Belum pasti 100% (berdasarkan desas-desus / kabar burung).\n- *Obviously*: Sudah jelas sekali di depan mata (semua orang sudah tahu).",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T15:42:54.794Z",
+    "categories": [
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adverb (Sentence Adverb / Epistemic Stance)",
+      "Pronunciation": "/əˈpær.ənt.li/ (US: /əˈper.ənt.li/)",
+      "Arti Utama": "Rupanya, katanya sih, kelihatannya (berdasarkan info sekilas / kabar burung, belum pasti 100%)",
+      "Rumus & Posisi Kalimat": "Awal: Apparently, S + V | Tengah: S + apparently + V | Akhir: S + V, apparently.",
+      "Contoh Kalimat": "Apparently, the flight has been delayed due to heavy rain. / She is apparently looking for a new apartment.",
+      "Perbedaan dengan Obviously": "Apparently = katanya/rupanya (belum pasti). Obviously = jelas banget (fakta terang benderang).",
+      "Tips Mengingat": "APPARENTLY = \"Katanya sih / Rupanya\". Ingat: jangan pakai \"obviously\" kalau Anda sendiri cuma dengar kabar burung!"
+    }
+  },
+  {
+    "_id": "6902a0010000000000000022",
+    "question": "Tarpits / Tar Pit (Noun: Literal & Tech/Startup Metaphor)",
+    "answer": "**Kata Benda (*Noun*)**: `Tar Pit` (Jamak: `Tarpits`) (/ˈtɑːr.pɪt/)\n\n**Dua Makna Penting**:\n1. **Harfiah (Geologi / Alam)**: Kubangan atau kolam aspal minyak mentah alami yang lengket luar biasa, terkenal sebagai tempat hewan purba terjebak (*La Brea Tar Pits* di Los Angeles).\n2. **Metafora Software & Startup**: Masalah, proyek, atau ide bisnis yang tampak memikat dan mudah dari luar, tetapi begitu dikerjakan menjebak tim dalam lumpur kerumitan tanpa akhir dan sulit bergerak (*\"tarpit problem / tarpit ideas\"*).\n\n**Asal Istilah Metafora**:\n- Dipopulerkan oleh **Fred Brooks** dalam buku legendaris *The Mythical Man-Month* (1975) dan esai startup **Paul Graham** (Y Combinator).",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T15:42:54.796Z",
+    "categories": [
+      "6901a0010000000000000006",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun (Countable. Singular: tar pit / tarpit, Plural: tarpits)",
+      "Pronunciation": "/ˈtɑːr.pɪt/ (Plural: /ˈtɑːr.pɪts/)",
+      "Arti Harfiah (Literal)": "Kubangan / kolam aspal mentah alami yang sangat lengket dan menjebak.",
+      "Arti Metafora (Tech/Startup)": "Ide proyek/bisnis yang tampak menarik tapi menjebak dalam kerumitan lambat tanpa akhir (\"tarpit ideas\").",
+      "Contoh Kalimat Harfiah": "Thousands of prehistoric animal fossils, including mammoths and saber-toothed cats, were preserved in California's La Brea tar pits.",
+      "Contoh Kalimat Tech/Business": "Building a social networking app for college students is a classic startup tarpit—everyone thinks they can do it, but almost no one succeeds.",
+      "Common Collocations": "tarpit idea, software tarpit, trapped in a tarpit, prehistoric tar pits",
+      "Tips Mengingat": "TAR (aspal pekat) + PIT (kubangan/lubang). Bayangkan monster purba menginjak aspal: makin meronta, makin tersedot ke dalam!"
+    }
+  },
+  {
+    "_id": "6902a0010000000000000023",
+    "question": "Shallow (Adjective: Literal vs. Figurative Meaning)",
+    "answer": "**Kata Sifat (*Adjective*)**: `Shallow` (/ˈʃæl.əʊ/)\n**Lawan Kata (*Antonym*)**: `Deep` (/diːp/)\n\n**Dua Makna Utama**:\n1. **Harfiah (Kedalaman Fisik)**: Dangkal, tidak dalam (kedalamannya sedikit).\n   - *“The water is quite shallow here, only up to your ankles.”*\n   - *“He was taking quick, shallow breaths.”* (Napas pendek/dangkal).\n2. **Kiasan (Karakter / Pemikiran / Analisis)**: Cetek, dangkal, tidak berbobot, atau cuma peduli hal-hal permukaan (seperti penampilan fisik atau harta).\n   - *“She criticized him for being shallow and vain.”*\n   - *“A shallow analysis of a very complex problem.”*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T15:42:54.796Z",
+    "categories": [
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjective (Comparative: shallower, Superlative: shallowest)",
+      "Pronunciation": "/ˈʃæl.əʊ/ (US: /ˈʃæl.oʊ/)",
+      "Arti Harfiah (Fisik)": "Dangkal, tidak dalam (air/wadah berkedalaman sedikit). Lawan kata: DEEP.",
+      "Arti Kiasan (Figurative)": "Cetek, dangkal (pemikiran/orang yang tidak berbobot atau cuma peduli penampilan luar).",
+      "Contoh Kalimat Harfiah": "The children splashed happily in the shallow end of the swimming pool.",
+      "Contoh Kalimat Kiasan": "I found his article rather shallow; it completely ignored the root causes of the economic crisis.",
+      "Common Collocations": "shallow water, shallow breathing, shallow person, shallow understanding, shallow grave",
+      "Tips Mengingat": "SHALLOW lawan kata DEEP. Air SHALLOW = cetek semata kaki. Orang SHALLOW = cetek pemikirannya cuma mandang fisik/harta!"
+    }
+  },
+  {
     "_id": "6902a0010000000000000020",
     "question": "Nucleus vs. Nuclei (Singular vs. Plural)",
     "answer": "**Singular**: `nucleus` (/ˈnjuː.kli.əs/)  \n**Plural**: `nuclei` (/ˈnjuː.kli.aɪ/)  \n\n**Deskripsi**: Bentuk jamak ilmiah dari nucleus (inti atom / inti sel) adalah nuclei.  \n**Agreement**: nucleus -> is / has | nuclei -> are / have  \n\n- **Contoh Tunggal**: *The nucleus contains genetic material (DNA).*  \n- **Contoh Jamak**: *Atomic nuclei consist of protons and neutrons.*",
