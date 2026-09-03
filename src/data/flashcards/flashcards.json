@@ -1,5 +1,385 @@
 [
   {
+    "_id": "6902a0010000000000000020",
+    "question": "Nucleus vs. Nuclei (Singular vs. Plural)",
+    "answer": "**Singular**: `nucleus` (/ˈnjuː.kli.əs/)  \n**Plural**: `nuclei` (/ˈnjuː.kli.aɪ/)  \n\n**Deskripsi**: Bentuk jamak ilmiah dari nucleus (inti atom / inti sel) adalah nuclei.  \n**Agreement**: nucleus -> is / has | nuclei -> are / have  \n\n- **Contoh Tunggal**: *The nucleus contains genetic material (DNA).*  \n- **Contoh Jamak**: *Atomic nuclei consist of protons and neutrons.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "nucleus (/ˈnjuː.kli.əs/)",
+      "Plural Form": "nuclei (/ˈnjuː.kli.aɪ/)",
+      "Subject-Verb Agreement": "nucleus -> is / has | nuclei -> are / have",
+      "Contoh Kalimat Singular": "The nucleus contains genetic material (DNA).",
+      "Contoh Kalimat Plural": "Atomic nuclei consist of protons and neutrons.",
+      "Tips Mengingat": "-us berubah menjadi -i (/aɪ/).",
+      "Penjelasan Lengkap": "Bentuk jamak ilmiah dari nucleus (inti atom / inti sel) adalah nuclei."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000019",
+    "question": "Louse vs. Lice (Singular vs. Plural)",
+    "answer": "**Singular**: `louse` (/laʊs/)  \n**Plural**: `lice` (/laɪs/)  \n\n**Deskripsi**: Bentuk jamak dari louse (kutu rambut) adalah lice.  \n**Agreement**: louse -> is | lice -> are  \n\n- **Contoh Tunggal**: *A head louse spreads through close physical contact.*  \n- **Contoh Jamak**: *Special shampoo is used to treat head lice.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "louse (/laʊs/)",
+      "Plural Form": "lice (/laɪs/)",
+      "Subject-Verb Agreement": "louse -> is | lice -> are",
+      "Contoh Kalimat Singular": "A head louse spreads through close physical contact.",
+      "Contoh Kalimat Plural": "Special shampoo is used to treat head lice.",
+      "Tips Mengingat": "Pola yang sama seperti mouse -> mice (louse -> lice).",
+      "Penjelasan Lengkap": "Bentuk jamak dari louse (kutu rambut) adalah lice."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000018",
+    "question": "Die vs. Dice (Singular vs. Plural)",
+    "answer": "**Singular**: `die` (/daɪ/)  \n**Plural**: `dice` (/daɪs/)  \n\n**Deskripsi**: Bentuk tunggal dari dadu adalah die, dan bentuk jamaknya adalah dice.  \n**Agreement**: die -> is / has | dice -> are / have  \n\n- **Contoh Tunggal**: *Roll a single six-sided die.*  \n- **Contoh Jamak**: *A pair of dice were rolled to start the board game.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "die (/daɪ/)",
+      "Plural Form": "dice (/daɪs/)",
+      "Subject-Verb Agreement": "die -> is / has | dice -> are / have",
+      "Contoh Kalimat Singular": "Roll a single six-sided die.",
+      "Contoh Kalimat Plural": "A pair of dice were rolled to start the board game.",
+      "Tips Mengingat": "Satu buah dadu disebut \"die\", sedangkan dua atau lebih dadu disebut \"dice\".",
+      "Penjelasan Lengkap": "Bentuk tunggal dari dadu adalah die, dan bentuk jamaknya adalah dice."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000017",
+    "question": "Cactus vs. Cacti / cactuses (Singular vs. Plural)",
+    "answer": "**Singular**: `cactus` (/ˈkæk.təs/)  \n**Plural**: `cacti / cactuses` (/ˈkæk.taɪ/)  \n\n**Deskripsi**: Bentuk jamak dari cactus (kaktus) adalah cacti.  \n**Agreement**: cactus -> is / has | cacti -> are / have  \n\n- **Contoh Tunggal**: *A cactus thrives in dry desert climates.*  \n- **Contoh Jamak**: *Various cacti were displayed at the botanical garden.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "cactus (/ˈkæk.təs/)",
+      "Plural Form": "cacti / cactuses (/ˈkæk.taɪ/)",
+      "Subject-Verb Agreement": "cactus -> is / has | cacti -> are / have",
+      "Contoh Kalimat Singular": "A cactus thrives in dry desert climates.",
+      "Contoh Kalimat Plural": "Various cacti were displayed at the botanical garden.",
+      "Tips Mengingat": "-us (Latin) berubah menjadi -i (/aɪ/). \"Cactuses\" juga bisa diterima, tetapi \"cacti\" lebih baku dalam botani.",
+      "Penjelasan Lengkap": "Bentuk jamak dari cactus (kaktus) adalah cacti."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000016",
+    "question": "Datum vs. Data (Singular vs. Plural)",
+    "answer": "**Singular**: `datum` (/ˈdeɪ.təm/)  \n**Plural**: `data` (/ˈdeɪ.tə/)  \n\n**Deskripsi**: Bentuk jamak teknis/formal dari datum adalah data.  \n**Agreement**: datum -> is | data -> are (formal/akademis) atau is (modern non-count)  \n\n- **Contoh Tunggal**: *A single datum was considered an outlier.*  \n- **Contoh Jamak**: *The collected data demonstrate significant improvement.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "datum (/ˈdeɪ.təm/)",
+      "Plural Form": "data (/ˈdeɪ.tə/)",
+      "Subject-Verb Agreement": "datum -> is | data -> are (formal/akademis) atau is (modern non-count)",
+      "Contoh Kalimat Singular": "A single datum was considered an outlier.",
+      "Contoh Kalimat Plural": "The collected data demonstrate significant improvement.",
+      "Tips Mengingat": "Dalam konteks ilmiah formal, \"data\" adalah bentuk jamak dari \"datum\".",
+      "Penjelasan Lengkap": "Bentuk jamak teknis/formal dari datum adalah data."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000015",
+    "question": "Bacterium vs. Bacteria (Singular vs. Plural)",
+    "answer": "**Singular**: `bacterium` (/bækˈtɪə.ri.əm/)  \n**Plural**: `bacteria` (/bækˈtɪə.ri.ə/)  \n\n**Deskripsi**: Bentuk jamak dari bacterium adalah bacteria.  \n**Agreement**: bacterium -> is / has | bacteria -> are / have  \n\n- **Contoh Tunggal**: *A single bacterium was observed under the microscope.*  \n- **Contoh Jamak**: *Bacteria are essential for gut health.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "bacterium (/bækˈtɪə.ri.əm/)",
+      "Plural Form": "bacteria (/bækˈtɪə.ri.ə/)",
+      "Subject-Verb Agreement": "bacterium -> is / has | bacteria -> are / have",
+      "Contoh Kalimat Singular": "A single bacterium was observed under the microscope.",
+      "Contoh Kalimat Plural": "Bacteria are essential for gut health.",
+      "Tips Mengingat": "-um (Latin) berubah menjadi -a. \"Bacteria\" adalah kata benda JAMAK, jadi gunakan \"Bacteria are...\", bukan \"is\".",
+      "Penjelasan Lengkap": "Bentuk jamak dari bacterium adalah bacteria."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000014",
+    "question": "Thesis vs. Theses (Singular vs. Plural)",
+    "answer": "**Singular**: `thesis` (/ˈθiː.sɪs/)  \n**Plural**: `theses` (/ˈθiː.siːz/)  \n\n**Deskripsi**: Bentuk jamak dari thesis (tesis) adalah theses.  \n**Agreement**: thesis -> is / has | theses -> are / have  \n\n- **Contoh Tunggal**: *She defended her doctoral thesis yesterday.*  \n- **Contoh Jamak**: *The university library preserves all master theses.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "thesis (/ˈθiː.sɪs/)",
+      "Plural Form": "theses (/ˈθiː.siːz/)",
+      "Subject-Verb Agreement": "thesis -> is / has | theses -> are / have",
+      "Contoh Kalimat Singular": "She defended her doctoral thesis yesterday.",
+      "Contoh Kalimat Plural": "The university library preserves all master theses.",
+      "Tips Mengingat": "-is (/ɪs/) berubah menjadi -es (/iːz/).",
+      "Penjelasan Lengkap": "Bentuk jamak dari thesis (tesis) adalah theses."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000013",
+    "question": "Crisis vs. Crises (Singular vs. Plural)",
+    "answer": "**Singular**: `crisis` (/ˈkraɪ.sɪs/)  \n**Plural**: `crises` (/ˈkraɪ.siːz/)  \n\n**Deskripsi**: Bentuk jamak dari crisis (krisis) adalah crises.  \n**Agreement**: crisis -> does / is / has | crises -> do / are / have  \n\n- **Contoh Tunggal**: *The company handled the public relations crisis effectively.*  \n- **Contoh Jamak**: *Governments must prepare for recurring economic crises.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "crisis (/ˈkraɪ.sɪs/)",
+      "Plural Form": "crises (/ˈkraɪ.siːz/)",
+      "Subject-Verb Agreement": "crisis -> does / is / has | crises -> do / are / have",
+      "Contoh Kalimat Singular": "The company handled the public relations crisis effectively.",
+      "Contoh Kalimat Plural": "Governments must prepare for recurring economic crises.",
+      "Tips Mengingat": "-is (/ɪs/) berubah menjadi -es (/iːz/). Crises berarti beberapa krisis.",
+      "Penjelasan Lengkap": "Bentuk jamak dari crisis (krisis) adalah crises."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000012",
+    "question": "Analysis vs. Analyses (Singular vs. Plural)",
+    "answer": "**Singular**: `analysis` (/əˈnæl.ə.sɪs/)  \n**Plural**: `analyses` (/əˈnæl.ə.siːz/)  \n\n**Deskripsi**: Bentuk jamak dari analysis (analisis) adalah analyses.  \n**Agreement**: analysis -> does / is / has | analyses -> do / are / have  \n\n- **Contoh Tunggal**: *His financial analysis was detailed and insightful.*  \n- **Contoh Jamak**: *Their market analyses provide valuable predictions.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "analysis (/əˈnæl.ə.sɪs/)",
+      "Plural Form": "analyses (/əˈnæl.ə.siːz/)",
+      "Subject-Verb Agreement": "analysis -> does / is / has | analyses -> do / are / have",
+      "Contoh Kalimat Singular": "His financial analysis was detailed and insightful.",
+      "Contoh Kalimat Plural": "Their market analyses provide valuable predictions.",
+      "Tips Mengingat": "-is (/ɪs/) berubah menjadi -es (/iːz/). Bunyi akhir jamak panjang \"eez\".",
+      "Penjelasan Lengkap": "Bentuk jamak dari analysis (analisis) adalah analyses."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000011",
+    "question": "Phenomenon vs. Phenomena (Singular vs. Plural)",
+    "answer": "**Singular**: `phenomenon` (/fəˈnɒm.ɪ.nən/)  \n**Plural**: `phenomena` (/fəˈnɒm.ɪ.nə/)  \n\n**Deskripsi**: Bentuk jamak dari phenomenon (gejala / fenomena) adalah phenomena.  \n**Agreement**: phenomenon -> is / has | phenomena -> are / have  \n\n- **Contoh Tunggal**: *The Northern Lights is a natural phenomenon.*  \n- **Contoh Jamak**: *Scientists study these complex natural phenomena.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "phenomenon (/fəˈnɒm.ɪ.nən/)",
+      "Plural Form": "phenomena (/fəˈnɒm.ɪ.nə/)",
+      "Subject-Verb Agreement": "phenomenon -> is / has | phenomena -> are / have",
+      "Contoh Kalimat Singular": "The Northern Lights is a natural phenomenon.",
+      "Contoh Kalimat Plural": "Scientists study these complex natural phenomena.",
+      "Tips Mengingat": "-on berubah menjadi -a. \"Phenomena\" adalah jamak (Phenomena are...), bukan tunggal!",
+      "Penjelasan Lengkap": "Bentuk jamak dari phenomenon (gejala / fenomena) adalah phenomena."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000010",
+    "question": "Criterion vs. Criteria (Singular vs. Plural)",
+    "answer": "**Singular**: `criterion` (/kraɪˈtɪə.ri.ən/)  \n**Plural**: `criteria` (/kraɪˈtɪə.ri.ə/)  \n\n**Deskripsi**: Bentuk jamak dari criterion (tolok ukur / kriteria) adalah criteria.  \n**Agreement**: criterion -> is / has | criteria -> are / have  \n\n- **Contoh Tunggal**: *Quality is the most important criterion for selection.*  \n- **Contoh Jamak**: *The candidates must meet all the eligibility criteria.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "criterion (/kraɪˈtɪə.ri.ən/)",
+      "Plural Form": "criteria (/kraɪˈtɪə.ri.ə/)",
+      "Subject-Verb Agreement": "criterion -> is / has | criteria -> are / have",
+      "Contoh Kalimat Singular": "Quality is the most important criterion for selection.",
+      "Contoh Kalimat Plural": "The candidates must meet all the eligibility criteria.",
+      "Tips Mengingat": "-on berubah menjadi -a (serapan bahasa Yunani). \"Criteria\" adalah jamak, jadi gunakan \"The criteria are...\", bukan \"The criteria is...\".",
+      "Penjelasan Lengkap": "Bentuk jamak dari criterion (tolok ukur / kriteria) adalah criteria."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000009",
+    "question": "Ox vs. Oxen (Singular vs. Plural)",
+    "answer": "**Singular**: `ox` (/ɒks/)  \n**Plural**: `oxen` (/ˈɒk.sən/)  \n\n**Deskripsi**: Bentuk jamak dari ox (lembu jantan penarik beban) adalah oxen.  \n**Agreement**: ox -> does / is / has | oxen -> do / are / have  \n\n- **Contoh Tunggal**: *The farmer used an ox to plow the field.*  \n- **Contoh Jamak**: *A pair of oxen were pulling the heavy cart.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "ox (/ɒks/)",
+      "Plural Form": "oxen (/ˈɒk.sən/)",
+      "Subject-Verb Agreement": "ox -> does / is / has | oxen -> do / are / have",
+      "Contoh Kalimat Singular": "The farmer used an ox to plow the field.",
+      "Contoh Kalimat Plural": "A pair of oxen were pulling the heavy cart.",
+      "Tips Mengingat": "Bentuk jamak kuno berakhiran -en (ox -> oxen). Bukan oxes!",
+      "Penjelasan Lengkap": "Bentuk jamak dari ox (lembu jantan penarik beban) adalah oxen."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000008",
+    "question": "Goose vs. Geese (Singular vs. Plural)",
+    "answer": "**Singular**: `goose` (/ɡuːs/)  \n**Plural**: `geese` (/ɡiːs/)  \n\n**Deskripsi**: Bentuk jamak dari goose (angsa) adalah geese.  \n**Agreement**: goose -> does / is / has | geese -> do / are / have  \n\n- **Contoh Tunggal**: *A wild goose landed on the lake.*  \n- **Contoh Jamak**: *A flock of geese flew south for the winter.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "goose (/ɡuːs/)",
+      "Plural Form": "geese (/ɡiːs/)",
+      "Subject-Verb Agreement": "goose -> does / is / has | geese -> do / are / have",
+      "Contoh Kalimat Singular": "A wild goose landed on the lake.",
+      "Contoh Kalimat Plural": "A flock of geese flew south for the winter.",
+      "Tips Mengingat": "oo berubah menjadi ee (goose -> geese). Bukan gooses!",
+      "Penjelasan Lengkap": "Bentuk jamak dari goose (angsa) adalah geese."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000007",
+    "question": "Mouse vs. Mice (Singular vs. Plural)",
+    "answer": "**Singular**: `mouse` (/maʊs/)  \n**Plural**: `mice` (/maɪs/)  \n\n**Deskripsi**: Bentuk jamak dari mouse (tikus) adalah mice.  \n**Agreement**: mouse -> does / is / has | mice -> do / are / have  \n\n- **Contoh Tunggal**: *The cat chased a mouse across the kitchen.*  \n- **Contoh Jamak**: *The field is infested with mice. / Mice are nocturnal.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "mouse (/maʊs/)",
+      "Plural Form": "mice (/maɪs/)",
+      "Subject-Verb Agreement": "mouse -> does / is / has | mice -> do / are / have",
+      "Contoh Kalimat Singular": "The cat chased a mouse across the kitchen.",
+      "Contoh Kalimat Plural": "The field is infested with mice. / Mice are nocturnal.",
+      "Tips Mengingat": "ouse berubah menjadi ice (mouse -> mice). Catatan: Untuk mouse komputer, \"mouses\" atau \"mice\" keduanya diterima, tapi untuk hewan WAJIB \"mice\".",
+      "Penjelasan Lengkap": "Bentuk jamak dari mouse (tikus) adalah mice."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000006",
+    "question": "Tooth vs. Teeth (Singular vs. Plural)",
+    "answer": "**Singular**: `tooth` (/tuːθ/)  \n**Plural**: `teeth` (/tiːθ/)  \n\n**Deskripsi**: Bentuk jamak dari tooth (gigi) adalah teeth.  \n**Agreement**: tooth -> does / is / has | teeth -> do / are / have  \n\n- **Contoh Tunggal**: *The dentist pulled one decayed tooth.*  \n- **Contoh Jamak**: *Remember to brush your teeth twice a day.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "tooth (/tuːθ/)",
+      "Plural Form": "teeth (/tiːθ/)",
+      "Subject-Verb Agreement": "tooth -> does / is / has | teeth -> do / are / have",
+      "Contoh Kalimat Singular": "The dentist pulled one decayed tooth.",
+      "Contoh Kalimat Plural": "Remember to brush your teeth twice a day.",
+      "Tips Mengingat": "oo berubah menjadi ee (tooth -> teeth). Bukan tooths!",
+      "Penjelasan Lengkap": "Bentuk jamak dari tooth (gigi) adalah teeth."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000005",
+    "question": "Foot vs. Feet (Singular vs. Plural)",
+    "answer": "**Singular**: `foot` (/fʊt/)  \n**Plural**: `feet` (/fiːt/)  \n\n**Deskripsi**: Bentuk jamak dari foot (kaki / satuan panjang) adalah feet.  \n**Agreement**: foot -> does / is / has | feet -> do / are / have  \n\n- **Contoh Tunggal**: *My left foot hurts after running. / He is six foot/feet tall.*  \n- **Contoh Jamak**: *My feet hurt after the long hike. / Wash your feet.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "foot (/fʊt/)",
+      "Plural Form": "feet (/fiːt/)",
+      "Subject-Verb Agreement": "foot -> does / is / has | feet -> do / are / have",
+      "Contoh Kalimat Singular": "My left foot hurts after running. / He is six foot/feet tall.",
+      "Contoh Kalimat Plural": "My feet hurt after the long hike. / Wash your feet.",
+      "Tips Mengingat": "oo berubah menjadi ee (foot -> feet). Bukan foots!",
+      "Penjelasan Lengkap": "Bentuk jamak dari foot (kaki / satuan panjang) adalah feet."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000004",
+    "question": "Person vs. People (Singular vs. Plural)",
+    "answer": "**Singular**: `person` (/ˈpɜː.sən/)  \n**Plural**: `people` (/ˈpiː.pəl/)  \n\n**Deskripsi**: Bentuk jamak paling alami dari person adalah people. Selalu menggunakan kata kerja jamak.  \n**Agreement**: person -> does / is / has | people -> do / are / have  \n\n- **Contoh Tunggal**: *One person was waiting in line. / The person understands the task.*  \n- **Contoh Jamak**: *Many people were waiting in line. / People understand the task.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "person (/ˈpɜː.sən/)",
+      "Plural Form": "people (/ˈpiː.pəl/)",
+      "Subject-Verb Agreement": "person -> does / is / has | people -> do / are / have",
+      "Contoh Kalimat Singular": "One person was waiting in line. / The person understands the task.",
+      "Contoh Kalimat Plural": "Many people were waiting in line. / People understand the task.",
+      "Tips Mengingat": "People selalu jamak dan memakai to-be are/were (bukan is). \"Persons\" hanya dipakai di konteks hukum/legal sangat formal.",
+      "Penjelasan Lengkap": "Bentuk jamak paling alami dari person adalah people. Selalu menggunakan kata kerja jamak."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000003",
+    "question": "Child vs. Children (Singular vs. Plural)",
+    "answer": "**Singular**: `child` (/tʃaɪld/)  \n**Plural**: `children` (/ˈtʃɪl.drən/)  \n\n**Deskripsi**: Bentuk jamak dari child adalah children. Subjek children menggunakan to-be are/were dan auxiliary do.  \n**Agreement**: child -> does / is / has | children -> do / are / have  \n\n- **Contoh Tunggal**: *The child goes to elementary school. / Does the child want a toy?*  \n- **Contoh Jamak**: *The children go to elementary school. / Do the children want toys?*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "child (/tʃaɪld/)",
+      "Plural Form": "children (/ˈtʃɪl.drən/)",
+      "Subject-Verb Agreement": "child -> does / is / has | children -> do / are / have",
+      "Contoh Kalimat Singular": "The child goes to elementary school. / Does the child want a toy?",
+      "Contoh Kalimat Plural": "The children go to elementary school. / Do the children want toys?",
+      "Tips Mengingat": "DILARANG menambahkan -s pada children (childrens itu salah!). Children sudah jamak.",
+      "Penjelasan Lengkap": "Bentuk jamak dari child adalah children. Subjek children menggunakan to-be are/were dan auxiliary do."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000002",
+    "question": "Man vs. Men (Singular vs. Plural)",
+    "answer": "**Singular**: `man` (/mæn/)  \n**Plural**: `men` (/men/)  \n\n**Deskripsi**: Bentuk jamak dari man adalah men (bukan mans). Memerlukan kata kerja jamak (men work, men do).  \n**Agreement**: man -> does / is / has | men -> do / are / have  \n\n- **Contoh Tunggal**: *The man works at a tech company. / What does the man do?*  \n- **Contoh Jamak**: *The men work at a tech company. / What do the men do?*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "man (/mæn/)",
+      "Plural Form": "men (/men/)",
+      "Subject-Verb Agreement": "man -> does / is / has | men -> do / are / have",
+      "Contoh Kalimat Singular": "The man works at a tech company. / What does the man do?",
+      "Contoh Kalimat Plural": "The men work at a tech company. / What do the men do?",
+      "Tips Mengingat": "mAn (huruf A) = 1 pria. mEn (huruf E) = para pria (>1).",
+      "Penjelasan Lengkap": "Bentuk jamak dari man adalah men (bukan mans). Memerlukan kata kerja jamak (men work, men do)."
+    }
+  },
+  {
+    "_id": "6902a0010000000000000001",
+    "question": "Woman vs. Women (Singular vs. Plural)",
+    "answer": "**Singular**: `woman` (/ˈwʊm.ən/ (wum-en))  \n**Plural**: `women` (/ˈwɪm.ɪn/ (wim-in))  \n\n**Deskripsi**: Bentuk jamak dari woman adalah women (bukan womans). Mempengaruhi auxiliary verb dalam Simple Present (does vs do).  \n**Agreement**: woman -> does / is / has | women -> do / are / have  \n\n- **Contoh Tunggal**: *Where does the woman attend the seminar? / The woman is speaking.*  \n- **Contoh Jamak**: *Where do the women attend the seminar? / The women are speaking.*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-03T07:06:28.153Z",
+    "categories": [
+      "6901a0010000000000000009"
+    ],
+    "dynamicFields": {
+      "Singular Form": "woman (/ˈwʊm.ən/ (wum-en))",
+      "Plural Form": "women (/ˈwɪm.ɪn/ (wim-in))",
+      "Subject-Verb Agreement": "woman -> does / is / has | women -> do / are / have",
+      "Contoh Kalimat Singular": "Where does the woman attend the seminar? / The woman is speaking.",
+      "Contoh Kalimat Plural": "Where do the women attend the seminar? / The women are speaking.",
+      "Tips Mengingat": "womAn (ada huruf A) = 1 orang (tunggal). womEn (ada huruf E) = banyak orang (jamak). Pelafalan jamak berubah menjadi \"wim-in\".",
+      "Penjelasan Lengkap": "Bentuk jamak dari woman adalah women (bukan womans). Mempengaruhi auxiliary verb dalam Simple Present (does vs do)."
+    }
+  },
+  {
     "_id": "6876607beb12fde01aa091dc",
     "question": "Robe",
     "answer": "jubah",

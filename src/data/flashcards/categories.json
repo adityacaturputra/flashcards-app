@@ -53,5 +53,10 @@
     "_id": "6901a0010000000000000008",
     "name": "General Vocabulary & Concepts",
     "description": "Essential everyday vocabulary, adjectives, feelings, time, and abstract concepts"
+  },
+  {
+    "_id": "6901a0010000000000000009",
+    "name": "Irregular Plurals & Nouns",
+    "description": "Irregular plural nouns, singular vs plural pairs, and subject-verb agreement rules"
   }
 ]

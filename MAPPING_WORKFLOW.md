@@ -230,6 +230,21 @@ Respond to the user with:
 
 ---
 
+### Step 7: Cross-Checking & Proactive Flashcard Deck Recommendation Protocol
+
+Whenever a new study mapping entry is added or analyzed, the AI agent must bridge **Study Mapping (`src/data/mappings/index.ts`)** with **Local Flashcards (`src/data/flashcards/flashcards.json`)**:
+
+1. **Existence Check in Local Flashcards Dataset**:
+   - Perform a search in `src/data/flashcards/flashcards.json` to check if flashcard(s) for the corresponding vocabulary, word pair (e.g. singular vs plural), or expression already exist.
+2. **Quality & Depth Inspection (Unlimited Dynamic Fields)**:
+   - If the card exists: Inspect its `dynamicFields` and `answer`. Check if the explanation is sufficiently thorough (phonetic pronunciation, singular vs plural forms, subject-verb agreements, example sentences, quick memory tips).
+   - If the explanation is shallow or lacks essential fields: Proactively recommend expanding the card. Flashcards support **unlimited `dynamicFields`** (`Record<string, string>`), allowing any number of rich educational attributes to be added without schema migrations.
+3. **Proactive Recommendation & Automatic Linking**:
+   - If NO card exists: Proactively recommend adding it to the flashcards deck (or create it directly when instructed).
+   - Ensure that contrasted pairs (such as singular vs plural nouns) are unified in **one single master card** with both versions, detailed descriptions, and linked to the appropriate category in `src/data/flashcards/categories.json` (e.g. `Irregular Plurals & Nouns`).
+
+---
+
 ## 🔗 Related Documentation
 - 📘 **[AGENTS.md](./AGENTS.md)**: Main operational guide for AI agents and developers.
 - 📘 **[BESTPRACTICE.md](./BESTPRACTICE.md)**: Senior Software Engineer architectural patterns and standards.
