@@ -1,5 +1,87 @@
 [
   {
+    "_id": "6902a0010000000000000027",
+    "question": "Flightless (Adjective: Meaning & Zoology Usage)",
+    "answer": "Tidak bisa terbang (naturally unable to fly — especially of birds or insects)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-04T01:30:37.888Z",
+    "categories": [
+      "6901a0010000000000000003",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjective | Suffix: -less (tanpa / tidak)",
+      "Pronunciation": "/ˈflaɪt.ləs/",
+      "Arti Utama": "Secara biologis atau anatomi tidak memiliki kemampuan untuk terbang (khususnya burung atau serangga yang sayapnya mengecil atau tidak berfungsi untuk terbang).",
+      "Rumus & Kolokasi": "• Flightless bird(s) (Burung yang tak bisa terbang)\n• Flightless species (Spesies yang tidak bisa terbang)\n• Kolokasi contoh spesies: penguins, ostriches, emus, kiwis, kakapos, the extinct dodo",
+      "Contoh Kalimat": "1. 'Penguins are flightless birds that use their streamlined wings as flippers for swimming underwater.' (Pinguin adalah burung yang tidak bisa terbang yang memanfaatkan sayap aerodinamisnya sebagai sirip untuk berenang di bawah air.)\n2. 'Isolated island habitats allowed several avian species to evolve into flightless birds due to the absence of ground predators.' (Habitat pulau terpencil memungkinkan beberapa spesies unggas berevolusi menjadi burung tak bisa terbang karena ketiadaan pemangsa darat.)",
+      "Nuance & Pitfalls": "'Flightless' merujuk pada sifat biologis/alami suatu spesies (memang spesiesnya tidak bisa terbang). Jika burung normal sayapnya patah sehingga tidak bisa terbang, gunakan 'unable to fly' atau 'injured bird', bukan flightless bird!",
+      "Tips Mengingat": "FLIGHT (terbang) + LESS (tanpa / tidak ada) = Tanpa kemampuan terbang!"
+    }
+  },
+  {
+    "_id": "6902a0010000000000000026",
+    "question": "Extinction (Noun: Meaning, Collocations & Environmental Context)",
+    "answer": "Kepunahan / Pemusnahan total suatu spesies atau keberadaan (the state or process of a species being completely wiped out)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-04T01:30:37.888Z",
+    "categories": [
+      "6901a0010000000000000003",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun (Uncountable & Countable) | Adjective: extinct",
+      "Pronunciation": "/ɪkˈstɪŋk.ʃən/ (US: /ɪkˈstɪŋk.ʃən/)",
+      "Arti Utama": "Keadaan atau peristiwa ketika seluruh anggota dari suatu spesies flora, fauna, atau bahasa mati sehingga tidak ada lagi yang tersisa di muka bumi (mati punah).",
+      "Rumus & Kolokasi": "• Be driven / pushed to extinction (Ditekan/didorong menuju kepunahan)\n• Face extinction (Menghadapi kepunahan)\n• On the brink / verge of extinction (Di ambang kepunahan)\n• Mass extinction (Kepunahan massal)",
+      "Contoh Kalimat": "1. 'Human hunting and habitat destruction drove the dodo bird to extinction in the 17th century.' (Perburuan manusia dan perusakan habitat mendorong burung dodo ke jurang kepunahan pada abad ke-17.)\n2. 'Scientists warn that thousands of species are currently on the brink of extinction.' (Para ilmuwan memperingatkan bahwa ribuan spesies saat ini berada di ambang kepunahan.)",
+      "Nuance & Pitfalls": "Kata sifatnya adalah EXTINCT (bukan extinctioned!). Contoh: 'The Tasmanian tiger is extinct' (bukan is extinction). Lawan katanya: Survival / Extant (masih hidup).",
+      "Tips Mengingat": "Ingat EXTINGUISH (memadamkan api sampai padam total). EXTINCTION = kehidupan yang sudah 'padam' total tanpa sisa!"
+    }
+  },
+  {
+    "_id": "6902a0010000000000000025",
+    "question": "Hastened / Hasten (Verb: Meaning, Pronunciation & Usage)",
+    "answer": "Mempercepat / Mempergegas kedatangan atau terjadinya sesuatu (to cause something to happen sooner / accelerate)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-04T01:30:37.888Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b",
+      "6901a0010000000000000007",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb (Transitive & Intransitive) | Past: hastened | Root: hasten",
+      "Pronunciation": "/ˈheɪ.sən/ (Past: /ˈheɪ.sənd/) — Catatan: huruf 't' tidak dibaca (silent 't')!",
+      "Arti Utama": "1. Menyebabkan sesuatu terjadi lebih awal atau lebih cepat (to speed up / accelerate an outcome/death/decay). 2. Bersegera / bergegas pergi atau bertindak (hasten to do something / hasten away).",
+      "Rumus & Kolokasi": "• S + hasten + Noun (Deforestation hastened climate change)\n• S + hasten to + V1 (She hastened to apologize before things got worse)\n• Kolokasi kuat: hasten someone's death, hasten the demise/end of, hasten the process",
+      "Contoh Kalimat": "1. 'Severe drought and overgrazing hastened the collapse of the ancient civilization.' (Kemarau parah dan penggembalaan berlebih mempercepat keruntuhan peradaban kuno tersebut.)\n2. 'The government hastened to reassure the public that food supplies were safe.' (Pemerintah bergegas meyakinkan publik bahwa pasokan pangan aman.)",
+      "Nuance & Pitfalls": "Hati-hati pengucapan: KATAKAN 'HEYSEN', JANGAN bunyikan huruf 't'! Mirip dengan 'listen' dan 'fasten'. Berasal dari kata benda 'haste' (terburu-buru). Sering dipakai dalam konteks mempercepat dampak buruk (hasten demise, hasten extinction).",
+      "Tips Mengingat": "HASTE = buru-buru (seperti pepatah 'Haste makes waste'). HASTEN = bikin buru-buru / mempercepat datangnya waktu!"
+    }
+  },
+  {
+    "_id": "6902a0010000000000000024",
+    "question": "Annihilated / Annihilate (Verb: Meaning, Pronunciation & Collocations)",
+    "answer": "Dihancurkan total / Dimusnahkan hingga tak bersisa (to destroy completely; obliterate / wipe out)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-04T01:30:37.888Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b",
+      "6901a0010000000000000007",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb (Transitive) | Past: annihilated | Root: annihilate",
+      "Pronunciation": "/əˈnaɪ.ə.leɪt/ (Past: /əˈnaɪ.ə.leɪ.tɪd/) — Catatan: huruf 'h' tidak dibaca (silent)!",
+      "Arti Utama": "1. Menghancurkan sampai lenyap tak berbekas (destroy completely / wipe out of existence). 2. Mengalahkan lawan secara telak / tanpa ampun dalam kompetisi/pertandingan.",
+      "Rumus & Kolokasi": "• S + annihilate + O (The explosion annihilated the entire city)\n• Be + annihilated by + Agent (Their army was utterly annihilated)\n• Kolokasi kuat: completely annihilated, utterly annihilated, virtually annihilated",
+      "Contoh Kalimat": "1. 'A single asteroid strike annihilated the dinosaurs 66 million years ago.' (Satu hantaman asteroid memusnahkan dinosaurus 66 juta tahun lalu.)\n2. 'Our football team annihilated the opposing squad 6-0 in the finals.' (Tim kami membantai lawan secara telak 6-0 di babak final.)",
+      "Nuance & Pitfalls": "Beda dengan 'Damage' (hanya merusak sebagian) atau 'Destroy' (bisa masih ada puing). 'Annihilate' berasal dari kata Latin 'nihil' (= nothing/nol), artinya dihancurkan sampai benar-benar 'menjadi nol / musnah total'.",
+      "Tips Mengingat": "Ingat akar kata NIHIL = NOL. Annihilate = Bikin musnah jadi NOL / Nihil!"
+    }
+  },
+  {
     "_id": "6902a0010000000000000021",
     "question": "Apparently (Adverb: Meaning, Usage & Nuance)",
     "answer": "**Kata Keterangan (*Sentence Adverb*)**: `Apparently` (/əˈpær.ənt.li/)\n\n**Makna Utama**:\n1. **Katanya sih / Rupanya** (*Hearsay*): Menyampaikan informasi yang Anda dengar/baca tetapi belum Anda buktikan sendiri 100%.\n2. **Kelihatannya** (*Appearance*): Tampak benar dari luar, meski fakta aslinya belum tentu demikian.\n\n**Tiga Posisi Kalimat**:\n- **Awal (*Front*)**: *“Apparently, the meeting has been postponed to tomorrow.”*\n- **Tengah (*Mid*)**: *“They apparently decided to cancel the project.”*\n- **Akhir (*End*)**: *“He resigned from his job, apparently.”*\n\n**Beda dengan Obviously**:\n- *Apparently*: Belum pasti 100% (berdasarkan desas-desus / kabar burung).\n- *Obviously*: Sudah jelas sekali di depan mata (semua orang sudah tahu).",
