@@ -1,5 +1,25 @@
 [
   {
+    "_id": "6902a001000000000000002b",
+    "question": "Devastating (Adjective: Destruction, Emotional Trauma & Critical Impact)",
+    "answer": "Sangat Menghancurkan / Mengerikan / Meluluhlantakkan (Fisik/Bencana) ATAU Sangat Terpukul / Memilukan (Emosional/Dampak)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-04T07:51:00.000Z",
+    "categories": [
+      "6901a0010000000000000003",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjective (Participle) | Verb: devastate | Noun: devastation | Passive adj (perasaan): devastated",
+      "Pronunciation": "/ˈdev.ə.steɪ.tɪŋ/ — Ucapkan \"DEV-ə-stey-ting\" (tekanan pada suku kata pertama 'DEV')!",
+      "Arti Utama": "1. Kerusakan Fisik: Sangat merusak, meluluhlantakkan, dan memicu kehancuran total (causing widespread physical destruction).\n2. Emosional/Psikologis: Sangat memilukan, menghancurkan hati, atau membuat syok luar biasa (causing extreme shock or grief).\n3. Dampak Ekonomi/Sosial: Melumpuhkan, fatal, atau membawa bencana kerugian besar (having a disastrous, crippling effect).\n4. Kritik/Argumen: Sangat tajam, telak, dan mematikan sanggahan lawan (incisive and damaging).",
+      "Rumus & Kolokasi": "• Devastating impact / effect on + Noun (Dampak yang meluluhlantakkan/fatal terhadap...)\n• A devastating blow to + Noun (Pukulan telak yang menghancurkan...)\n• Devastating earthquake / hurricane / flood (Gempa bumi/badai yang meluluhlantakkan)\n• Devastating news / loss (Kabar yang menghancurkan hati / kehilangan yang sangat memilukan)\n• Suffer a devastating defeat (Mengalami kekalahan telak)",
+      "Contoh Kalimat": "1. 'The magnitude 7.8 earthquake had a devastating impact on coastal communities, leveling thousands of buildings.' (Gempa bermagnitudo 7,8 tersebut memberikan dampak yang meluluhlantakkan komunitas pesisir, meratakan ribuan bangunan.)\n2. 'Receiving the devastating news of her father's terminal diagnosis left her completely heartbroken.' (Menerima kabar yang memilukan tentang diagnosis stadium akhir ayahnya membuatnya sangat hancur hatinya.)\n3. 'The unexpected loss of their top enterprise client was a devastating blow to the startup's revenue.' (Kehilangan klien korporat terbesar secara tiba-tiba menjadi pukulan telak yang melumpuhkan pendapatan startup tersebut.)",
+      "Nuance & Pitfalls": "• Jebakan -ING vs -ED:\n  - DEVASTATING (-ing): Sifat dari penyebabnya ('The news was devastating' = kabarnya sangat memilukan/menghancurkan).\n  - DEVASTATED (-ed): Perasaan orang yang terpukul ('She was devastated' = dia merasa hancur lebur/sangat sedih).\n• Turunan lain: Adverb 'devastatingly' (contoh: 'devastatingly effective', 'devastatingly handsome').",
+      "Tips Mengingat": "Berasal dari akar Latin 'vastus' (kosong lebur / hancur jadi puing/waste). DE-VAST-ATING = Mengubah segalanya menjadi puing/kehancuran (waste)!"
+    }
+  },
+  {
     "_id": "6902a001000000000000002a",
     "question": "Propel (Verb: Physical Propulsion & Figurative Career/Success Usage)",
     "answer": "Mendorong Maju / Melontarkan (Fisik) ATAU Melejitkan / Melesatkan (Karier, Ketenaran, Kesuksesan)",
