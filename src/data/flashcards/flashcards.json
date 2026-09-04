@@ -1,5 +1,26 @@
 [
   {
+    "_id": "6902a001000000000000002c",
+    "question": "Foster / Fostering (Verb & Noun: Nurturing Growth, Collaboration & Foster Care)",
+    "answer": "Membina / Memupuk / Menumbuhkembangkan (Ide, Budaya, Kolaborasi) ATAU Mengasuh (Anak/Hewan Asuh)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-04T07:53:00.000Z",
+    "categories": [
+      "6901a0010000000000000006",
+      "6901a0010000000000000007",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive Verb & Gerund/Noun | Adjective (attributive: foster parent) | Base verb: foster",
+      "Pronunciation": "/ˈfɒs.tər.ɪŋ/ (US: /ˈfɑː.stɚ.ɪŋ/) — Ucapkan \"FOS-tər-ing\" (tekanan pada suku kata pertama)!",
+      "Arti Utama": "1. Membina / Memupuk / Menumbuhkan (Abstrak): Mendorong pertumbuhan, perkembangan, atau pemeliharaan ide, hubungan, budaya kerja, atau inovasi (to encourage the growth or development of something).\n2. Mengasuh / Merawat (Keluarga/Sosial): Mengasuh anak (atau hewan) tanpa adopsi resmi secara permanen untuk periode waktu tertentu (to take care of a child/animal without legal adoption).",
+      "Rumus & Kolokasi": "• Foster innovation / creativity (Menumbuhkan inovasi/kreativitas)\n• Foster collaboration / teamwork / trust (Membina kolaborasi/kerja tim/rasa percaya)\n• Foster an environment / a culture of... (Membangun lingkungan/budaya yang...)\n• Foster a sense of belonging / community (Menumbuhkan rasa memiliki/kebersamaan)\n• Foster care / foster parent / foster child (Layanan pengasuhan / orang tua asuh / anak asuh)",
+      "Contoh Kalimat": "1. 'Effective leaders actively listen to feedback in order to foster a culture of trust and psychological safety.' (Pemimpin yang efektif mendengarkan masukan secara aktif demi membina budaya saling percaya dan rasa aman secara psikologis.)\n2. 'The university curriculum is designed to foster critical thinking and creative problem-solving skills.' (Kurikulum universitas dirancang untuk menumbuhkembangkan pemikiran kritis dan keterampilan pemecahan masalah yang kreatif.)\n3. 'The couple decided to start fostering children whose families were undergoing temporary hardship.' (Pasangan tersebut memutuskan untuk mulai menjadi orang tua asuh bagi anak-anak yang keluarganya sedang mengalami kesulitan sementara.)",
+      "Nuance & Pitfalls": "• Foster vs Adopt:\n  - FOSTER = Mengasuh sementara (status hukum anak tetap pada orang tua kandung/negara).\n  - ADOPT = Mengangkat anak secara sah dan permanen menjadi bagian keluarga inti hukum.\n• Di dunia profesional/akademik, 'foster' adalah kata kerja berkelas tinggi (high-register) untuk menggantikan 'develop' atau 'promote'.",
+      "Tips Mengingat": "Berasal dari bahasa Inggris Kuno 'fōstrian' (memberi makan/nutrisi, serumpun dengan 'FOOD' & 'FEED'). FOSTER = Memberi 'makanan/nutrisi' agar sesuatu bisa tumbuh mekar (baik anak asuh maupun ide & kerja sama tim)!"
+    }
+  },
+  {
     "_id": "6902a001000000000000002b",
     "question": "Devastating (Adjective: Destruction, Emotional Trauma & Critical Impact)",
     "answer": "Sangat Menghancurkan / Mengerikan / Meluluhlantakkan (Fisik/Bencana) ATAU Sangat Terpukul / Memilukan (Emosional/Dampak)",
