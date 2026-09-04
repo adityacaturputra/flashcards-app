@@ -1,5 +1,26 @@
 [
   {
+    "_id": "6902a001000000000000002a",
+    "question": "Propel (Verb: Physical Propulsion & Figurative Career/Success Usage)",
+    "answer": "Mendorong Maju / Melontarkan (Fisik) ATAU Melejitkan / Melesatkan (Karier, Ketenaran, Kesuksesan)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-04T07:49:00.000Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b",
+      "6901a0010000000000000007",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive Verb | Past & Participle: propelled (double 'l') | Gerund: propelling | Noun: propulsion, propeller",
+      "Pronunciation": "/prəˈpel/ — Ucapkan \"prə-PEL\" (tekanan pada suku kata kedua 'pel')!",
+      "Arti Utama": "1. Fisik: Mendorong atau melontarkan sesuatu bergerak maju ke depan dengan kekuatan fisik/mekanis (to drive/push forward mechanically).\n2. Figuratif (Karier/Bisnis): Melejitkan, melesatkan, atau mendorong seseorang/sesuatu meraih status, kesuksesan, atau ketenaran secara cepat (to cause someone to enter a state or achieve fame/success).",
+      "Rumus & Kolokasi": "• Propel someone into stardom / the spotlight / fame (Melejitkan seseorang menuju ketenaran)\n• Propel something forward (Mendorong kemajuan/pertumbuhan sesuatu)\n• Propel someone to victory / success (Mengantarkan/mendorong seseorang menuju kemenangan)\n• Jet-propelled / Rocket-propelled (Ditenagai mesin jet / didorong roket)",
+      "Contoh Kalimat": "1. 'The breakthrough role in the blockbuster movie propelled the young actor into international stardom.' (Peran terobosan dalam film laris tersebut melejitkan aktor muda itu ke panggung ketenaran internasional.)\n2. 'Powerful jet engines propel the aircraft through the sky at supersonic speeds.' (Mesin jet yang kuat mendorong pesawat melesat di angkasa dengan kecepatan supersonik.)\n3. 'A massive surge in digital subscriptions propelled the company to record-breaking profits.' (Lonjakan besar dalam langganan digital melesatkan perusahaan meraih laba pemecah rekor.)",
+      "Nuance & Pitfalls": "• Ejaan: Gandakan huruf 'l' saat bentuk lampau dan gerund: PROPELLED dan PROPELLING (karena stres vokal di akhir suku kata: pro-PEL).\n• Beda akar Latin 'pellere' (dorong): PROPEL (dorong maju), REPEL (tolak/tangkal mundur), COMPEL (paksa), IMPEL (dorong batin), EXPEL (keluarkan/usir).",
+      "Tips Mengingat": "PRO (maju ke depan) + PEL (dorong, dari Latin 'pellere'). Ingat PROPELLER (baling-baling): tugas propeller adalah me-PROPEL (mendorong maju) pesawat/kapal!"
+    }
+  },
+  {
     "_id": "6902a0010000000000000029",
     "question": "Incumbent (Noun & Adjective: Political, Business & Moral Obligation Usage)",
     "answer": "Petahana / Pemegang Jabatan / Pemain Mapan (Current office holder or dominant player) ATAU Kewajiban (Incumbent upon someone)",
