@@ -1,5 +1,25 @@
 [
   {
+    "_id": "6902a0010000000000000028",
+    "question": "Conscious vs. Unconscious (Adjectives: Meaning, Medical & Psychological Usage)",
+    "answer": "Sadar vs. Tidak Sadar / Pingsan (Aware & awake vs. Senseless, knocked out, or involuntary)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-04T04:36:43.141Z",
+    "categories": [
+      "6901a0010000000000000002",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjectives (Antonym Pair) | Nouns: consciousness / unconsciousness",
+      "Pronunciation": "Conscious: /ˈkɒn.ʃəs/ (US: /ˈkɑːn.ʃəs/) | Unconscious: /ʌnˈkɒn.ʃəs/ — Ucapkan \"KON-syəs\" & \"an-KON-syəs\"!",
+      "Arti Utama": "• Conscious: 1. Sadar/terjaga secara medis (awake & alert). 2. Sadar/menyadari sesuatu (aware of / mindful of). 3. Dilakukan dengan sengaja (a conscious decision).\n• Unconscious: 1. Pingsan/hilang kesadaran secara medis (knocked out / in a coma). 2. Tidak sadar/di luar kesadaran pikiran (unconscious bias / involuntary reaction).",
+      "Rumus & Kolokasi": "• Be conscious of + Noun (Sadar akan): \"She is conscious of her mistakes.\"\n• Make a conscious effort/decision (Usaha sadar/sengaja): \"I made a conscious decision to exercise daily.\"\n• Knock someone unconscious / fall unconscious (Pukul sampai pingsan / jatuh pingsan).\n• Unconscious bias / unconscious habits (Bias/kebiasaan tanpa disadari).",
+      "Contoh Kalimat": "1. 'The patient remained conscious throughout the surgical procedure.' (Pasien tetap sadar sepanjang prosedur operasi.)\n2. 'He was knocked unconscious after hitting his head on the ice.' (Dia pingsan tak sadarkan diri setelah kepalanya membentur es.)\n3. 'She made a conscious choice to ignore the negative comments.' (Dia membuat keputusan sadar untuk mengabaikan komentar negatif tersebut.)",
+      "Nuance & Pitfalls": "Hati-hati pengucapan: huruf 'sc' dibaca 'SH' (/ʃ/), bukan 'sk' (JANGAN ucapkan 'kon-skius')! Beda dengan 'Subconscious' (bawah sadar yang masih bisa dipicu/diingat) vs 'Unconscious' (hilang kesadaran medis/pingsan atau proses biologis otomatis).",
+      "Tips Mengingat": "CONSCIOUS = Sadar (\"KON-syəs\"). Awalan UN- = Tidak (\"an-KON-syəs\"). Ingat 2 konteks: Medis (Sadar vs Pingsan) dan Pikiran (Sengaja vs Tanpa Disadari)!"
+    }
+  },
+  {
     "_id": "6902a0010000000000000027",
     "question": "Flightless (Adjective: Meaning & Zoology Usage)",
     "answer": "Tidak bisa terbang (naturally unable to fly — especially of birds or insects)",
@@ -13637,12 +13657,18 @@
   {
     "_id": "688539b741f03f8fc042b34f",
     "question": "Unconscious | Faint",
-    "answer": "pingsan",
+    "answer": "Pingsan / Tidak sadarkan diri (lacking awareness and the capacity for sensory perception as if asleep or dead)",
     "progression": "normal",
     "nextReviewDate": "2025-10-30T11:35:43.361Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjective (Unconscious) | Verb/Noun (Faint)",
+      "Pronunciation": "/ʌnˈkɒn.ʃəs/ | /feɪnt/",
+      "Arti Utama": "Pingsan, tidak sadarkan diri akibat benturan, trauma, atau kehilangan aliran darah ke otak.",
+      "Tips Mengingat": "Unconscious = Tidak sadar (Adjective). Faint = Pingsan (Verb/Noun)."
+    }
   },
   {
     "_id": "688539b741f03f8fc042b351",
