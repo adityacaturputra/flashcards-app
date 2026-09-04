@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import FlashcardComponent from '../atoms/FlashcardComponent';
 import {
   Flashcard,
-  progressionOrder,
   Progression,
 } from '../../types/flashcard';
 import usePagination from '../../hooks/usePagination';
@@ -20,6 +19,8 @@ import { FiLoader } from 'react-icons/fi';
 import { FaGoogle } from 'react-icons/fa';
 import { useBulkFlashcards } from '@/hooks/useBulkFlashcards';
 import BulkActionButtons from '../atoms/BulkActionButtons';
+import { useFlashcardSort } from '@/hooks/useFlashcardSort';
+import FlashcardSortControls from '../molecules/FlashcardSortControls';
 
 type FlashcardListProps = {
   flashcards: Flashcard[];
@@ -98,20 +99,9 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
     return progressionMatch && categoryMatch && searchMatch;
   });
 
-  // Sort the filtered flashcards based on the progression order and nextReviewDate if not in review mode
-  const sortedFlashcards = isReviewMode
-    ? filteredFlashcards
-    : [...filteredFlashcards].sort((a, b) => {
-        const progressionComparison =
-          progressionOrder[a.progression] - progressionOrder[b.progression];
-        if (progressionComparison === 0) {
-          return (
-            new Date(a.nextReviewDate).getTime() -
-            new Date(b.nextReviewDate).getTime()
-          );
-        }
-        return progressionComparison;
-      });
+  // Sort flashcards using the useFlashcardSort hook
+  const { sortOption, setSortOption, sortedFlashcards, totalCount } =
+    useFlashcardSort(flashcards, filteredFlashcards, isReviewMode);
 
   // Use the pagination hook
   const {
@@ -125,10 +115,10 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
     setCurrentPage, // Add setCurrentPage to control the page manually
   } = usePagination<Flashcard>({ items: sortedFlashcards, pageSize });
 
-  // Effect to reset page to 1 when search query, category filter, or progression filter changes
+  // Effect to reset page to 1 when search query, category filter, progression filter, or sort option changes
   useEffect(() => {
     setCurrentPage(0);
-  }, [searchQuery, selectedCategoryId, selectedProgression, setCurrentPage]);
+  }, [searchQuery, selectedCategoryId, selectedProgression, sortOption, setCurrentPage]);
 
   // Bulk action handlers
   const handleBulkIncrease = async () => {
@@ -401,6 +391,13 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
                 </motion.button>
               </div>
             </div>
+
+            {/* Sort Controls & Card Counter */}
+            <FlashcardSortControls
+              sortOption={sortOption}
+              onSortChange={setSortOption}
+              totalCount={totalCount}
+            />
           </div>
         </div>
       )}

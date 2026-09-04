@@ -183,6 +183,24 @@ When supporting multiple data backends (e.g. **Local Repository** vs. **MongoDB 
 
 ---
 
+## 🧩 12. Component & Hook Decomposition (Keeping Files Lean & Modular)
+
+- **Keep Organism Components Lean (< 300–400 Lines)**:
+  When an organism handles multiple UI concerns (such as search bars, category filters, multi-criteria sorting, bulk selection, pagination, and card rendering), never cram all state algorithms and JSX blocks into a single monolithic file.
+- **Extract Complex List Logics into Custom Hooks (`src/hooks/`)**:
+  - Multi-criteria sorting (e.g. `useFlashcardSort` for recent/progression/alphabetical order) and complex filtering must be encapsulated in dedicated hooks.
+  - The organism component simply calls the hook:
+    ```ts
+    const { sortOption, setSortOption, sortedFlashcards, totalCount } =
+      useFlashcardSort(flashcards, filteredFlashcards, isReviewMode);
+    ```
+- **Extract Sub-Controls into Molecules (`src/components/molecules/`)**:
+  - Sub-control bars (such as `FlashcardSortControls`, `BulkActionButtons`, `MappingFilters`) must be extracted into focused molecular components.
+  - Wrap molecular controls with `React.memo` and communicate via explicit event props (`onSortChange`, `onFilterChange`) to ensure clean separation of concerns and prevent unnecessary re-renders.
+
+---
+
 ## 🔗 Related Documentation
 - 📖 **[MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)**: Step-by-step study mapping workflow for AI agents.
+- 🗂️ **[FLASHCARD_WORKFLOW.md](./FLASHCARD_WORKFLOW.md)**: Step-by-step local flashcard addition and schema guide.
 - 📘 **[AGENTS.md](./AGENTS.md)**: Main operational guide for AI agents and developers.

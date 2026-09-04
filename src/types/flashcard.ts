@@ -18,6 +18,8 @@ export const progressionOrder: { [key in Progression]: number } = {
   [Progression.Perfect]: 5,
 };
 
+export type FlashcardSortOption = 'recent' | 'progression' | 'alphabetical';
+
 export interface Flashcard {
   _id?: string;
   question: string;
