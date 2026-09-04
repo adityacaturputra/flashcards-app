@@ -76,6 +76,10 @@ const nextConfig: NextConfig = {
 
   // Webpack optimizations
   webpack: (config) => {
+    config.module.rules.push({
+      test: /\.md$/,
+      type: 'asset/source',
+    });
     return config;
   },
 };

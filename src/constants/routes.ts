@@ -9,6 +9,7 @@ export const APP_ROUTES = {
   ADD_FLASHCARD: '/add-flashcard',
   ADD_CATEGORY: '/add-category',
   GEMINI_TOOLS: '/gemini-tools',
+  IELTS: '/ielts',
 } as const;
 
 export type AppRoute = (typeof APP_ROUTES)[keyof typeof APP_ROUTES];
