@@ -1,5 +1,25 @@
 [
   {
+    "_id": "6902a0010000000000000029",
+    "question": "Incumbent (Noun & Adjective: Political, Business & Moral Obligation Usage)",
+    "answer": "Petahana / Pemegang Jabatan / Pemain Mapan (Current office holder or dominant player) ATAU Kewajiban (Incumbent upon someone)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-04T06:51:00.000Z",
+    "categories": [
+      "6901a0010000000000000006",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun (Countable) & Adjective | Plural: incumbents | Noun form: incumbency",
+      "Pronunciation": "/ɪnˈkʌm.bənt/ (US: /ɪnˈkʌm.bənt/) — Ucapkan \"in-KAM-bənt\" (tekanan pada suku kata kedua 'cum')!",
+      "Arti Utama": "1. Noun (Politik/Pemerintahan): Petahana — pejabat yang sedang memegang posisi/kekuasaan saat ini (the current holder of an office).\n2. Noun (Bisnis/Industri): Perusahaan/pemain lama yang sudah mapan dan mendominasi pasar (established leading company vs new startups/challengers).\n3. Adjective (Jabatan): Sedang menjabat/berkuasa (the incumbent president/CEO).\n4. Adjective (Kewajiban Formal - 'incumbent on/upon'): Menjadi kewajiban/tanggung jawab moral seseorang (necessary as a duty/responsibility).",
+      "Rumus & Kolokasi": "• The incumbent president / mayor / governor (Presiden/gubernur petahana)\n• Defeat the incumbent (Mengalahkan petahana dalam pemilu)\n• Incumbent advantage (Keuntungan petahana: nama sudah terkenal & akses sumber daya)\n• Market / Industry incumbents (Pemain lama yang mendominasi pasar)\n• It is incumbent on / upon somebody to + V1 (Merupakan kewajiban bagi seseorang untuk...)",
+      "Contoh Kalimat": "1. 'In the upcoming presidential election, the incumbent faces a fierce challenge from a young reformist.' (Dalam pemilu presiden mendatang, petahana menghadapi tantangan sengit dari seorang reformis muda.)\n2. 'Agile tech startups often disrupt traditional banking incumbents by offering faster, frictionless digital services.' (Startup teknologi yang lincah sering mendisrupsi bank-bank mapan dengan menawarkan layanan digital yang lebih cepat tanpa hambatan.)\n3. 'It is incumbent upon all team leads to ensure that safety guidelines are rigorously followed.' (Merupakan kewajiban bagi seluruh pimpinan tim untuk memastikan pedoman keselamatan dipatuhi dengan ketat.)",
+      "Nuance & Pitfalls": "• Lawan kata politik: 'Challenger', 'Contender', 'Opponent' (penantang).\n• Lawan kata bisnis: 'New entrant', 'Startup', 'Disruptor' (pemain baru/pendobrak).\n• Bedakan dua fungsi: Sebagai kata benda/sifat jabatan (petahana) vs frasa formal kewajiban ('It is incumbent upon us...'). Dalam konteks politik di Indonesia, padanan baku yang paling tepat adalah 'Petahana'.",
+      "Tips Mengingat": "Berasal dari bahasa Latin 'incumbere' (in = di atas + cubare = berbaring/rebahan):\n1. Petahana/Pemain Mapan: Sudah enak 'berbaring di kursi empuk kekuasaan/pasar'.\n2. Kewajiban (incumbent upon): Beban tanggung jawab yang 'menindih/jatuh ke pundak' kita!"
+    }
+  },
+  {
     "_id": "6902a0010000000000000028",
     "question": "Conscious vs. Unconscious (Adjectives: Meaning, Medical & Psychological Usage)",
     "answer": "Sadar vs. Tidak Sadar / Pingsan (Aware & awake vs. Senseless, knocked out, or involuntary)",
