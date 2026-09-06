@@ -1,5 +1,86 @@
 [
   {
+    "_id": "6902a0010000000000000034",
+    "question": "Credence (Noun: Belief, Acceptance as True & Lending Weight)",
+    "answer": "Kepercayaan / Keyakinan akan Kebenaran Sesuatu (acceptance of something as true — especially in 'lend credence to')",
+    "progression": "new",
+    "nextReviewDate": "2026-09-06T13:00:00.000Z",
+    "categories": [
+      "6901a0010000000000000006",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun (Uncountable) | Related: credible, credibility, credentials, credit",
+      "Pronunciation": "/ˈkriː.dəns/ — Ucapkan \"KREE-dəns\" (tekanan pada suku kata pertama 'kree')!",
+      "Arti Utama": "Kepercayaan atau penerimaan dalam pikiran bahwa suatu teori, cerita, klaim, atau pernyataan itu benar dan dapat diandalkan (belief in or acceptance of something as true or real).",
+      "Rumus & Kolokasi": "• Lend / give credence to + Noun (Memperkuat kebenaran / membuat sesuatu terdengar lebih meyakinkan)\n• Gain credence (Mulai dipercaya luas oleh publik atau para ahli)\n• Give no credence to... (Sama sekali tidak mempercayai / menolak anggapan)\n• Letter of credence (Surat kepercayaan diplomatik resmi)",
+      "Contoh Kalimat": "1. 'The recent discovery of ancient seafaring artifacts lends strong credence to the theory of early transoceanic trade.' (Penemuan artefak pelayaran kuno baru-baru ini memberikan bobot kepercayaan yang kuat pada teori perdagangan lintas samudera di masa lampau.)\n2. 'Critical thinkers should never give credence to sensationalist rumors without verifying the primary sources.' (Pemikir kritis sebaiknya tidak memberikan kepercayaan pada rumor yang sensasional tanpa memverifikasi sumber utamanya.)\n3. 'As multiple independent witnesses came forward, the whistleblower's report rapidly gained credence.' (Ketika banyak saksi independen melapor, laporan sang pelapor pelanggaran dengan cepat meraih kepercayaan luas.)",
+      "Nuance & Pitfalls": "• Credence vs Credibility:\n  - CREDIBILITY = Kredibilitas atau kualitas dapat dipercaya dari bukti/sumber ('The witness has credibility').\n  - CREDENCE = Sikap mental percaya dari pihak yang mendengar/melihat ('We give credence to the witness'). Sumber yang memiliki 'credibility' membuat kita memberikan 'credence'.",
+      "Tips Mengingat": "Berasal dari bahasa Latin 'credere' (percaya), akar kata yang sama dengan CREDIT (kepercayaan finansial) dan CREDIBLE (dapat dipercaya). CREDENCE = Keyakinan/kepercayaan bahwa sesuatu itu nyata dan benar!"
+    }
+  },
+  {
+    "_id": "6902a0010000000000000033",
+    "question": "Heredity (Noun: Biological Inheritance, Genetics & Traits)",
+    "answer": "Keturunan / Pewarisan Sifat Genetik (The biological transmission of genetic traits from parents to offspring)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-06T13:00:00.000Z",
+    "categories": [
+      "6901a0010000000000000002",
+      "6901a0010000000000000003",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun (Uncountable) | Adjective: hereditary | Noun agent: heir",
+      "Pronunciation": "/hɪˈred.ə.ti/ (US: /həˈred.ə.t̬i/) — Ucapkan \"hɪ-RED-ə-ti\" (tekanan pada suku kata kedua 'red')!",
+      "Arti Utama": "Proses biologis penerusan atau pewarisan ciri-ciri fisik, fisiologis, mental, atau kelainan genetik dari induk/orang tua kepada anak keturunannya (the passing on of physical or mental characteristics genetically).",
+      "Rumus & Kolokasi": "• Laws / mechanisms of heredity (Hukum / mekanisme pewarisan genetik)\n• Determined by heredity (Ditentukan oleh faktor keturunan/genetika)\n• Heredity vs environment (Perdebatan alamiah vs pengasuhan: Nature vs Nurture)\n• Hereditary disease / defect / trait (Penyakit / cacat / sifat bawaan keturunan)",
+      "Contoh Kalimat": "1. 'Gregor Mendel's pioneering experiments with pea plants established the foundational laws of heredity.' (Eksperimen rintisan Gregor Mendel dengan tanaman kacang polong menetapkan hukum-hukum dasar pewarisan sifat genetik.)\n2. 'Cardiologists emphasize that a patient's risk of heart disease is shaped by both heredity and lifestyle choices.' (Dokter spesialis jantung menegaskan bahwa risiko penyakit jantung pasien dibentuk oleh faktor keturunan sekaligus pilihan gaya hidup.)\n3. 'The child inherited her striking eye color purely through heredity from her maternal grandmother.' (Anak itu mewarisi warna matanya yang mencolok murni melalui faktor keturunan genetik dari nenek pihak ibunya.)",
+      "Nuance & Pitfalls": "• Heredity vs Heritage vs Inheritance:\n  - HEREDITY: Khusus genetika biologis (DNA, ciri fisik, penyakit bawaan).\n  - HERITAGE: Warisan budaya, sejarah, tradisi, dan nilai leluhur (cultural/architectural heritage).\n  - INHERITANCE: Harta warisan materiil/uang peninggalan orang tua, atau gen spesifik yang diwarisi.\n• Hati-hati tekanan kata: Tekanan pada suku kata kedua /hɪˈred.ə.ti/, bukan pada suku kata pertama!",
+      "Tips Mengingat": "Berasal dari bahasa Latin 'heres' (ahli waris, serumpun dengan kata HEIR). Warisan biologis yang kamu terima dari silsilah ahli warismu adalah HEREDITY!"
+    }
+  },
+  {
+    "_id": "6902a0010000000000000032",
+    "question": "Afflicted / Afflict (Adjective & Verb: Suffering from Illness, Hardship or Grief)",
+    "answer": "Tertimpa / Terjangkit / Dirundung Derita (Suffering from a medical illness, disease, disability, or severe hardship)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-06T13:00:00.000Z",
+    "categories": [
+      "6901a0010000000000000002",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjective (Participle) & Verb (afflicted, afflicting) | Root verb: afflict | Noun: affliction",
+      "Pronunciation": "/əˈflɪk.tɪd/ — Ucapkan \"ə-FLIK-tid\" (tekanan pada suku kata kedua 'flik')!",
+      "Arti Utama": "1. Medis & Kesehatan: Menderita atau terjangkit penyakit menahun, rasa sakit, atau kecacatan fisik/mental (grievously affected by illness or disability).\n2. Musibah & Bencana: Dilanda, dirundung, atau tertimpa malapetaka, kekeringan, kemiskinan, atau penderitaan berat (troubled by adversity or distress).",
+      "Rumus & Kolokasi": "• Be afflicted with / by + Disease/Condition (Menderita/terjangkit penyakit...)\n• Drought-afflicted / Poverty-afflicted region (Wilayah yang dilanda kekeringan / kemiskinan)\n• The afflicted (Orang-orang yang tertimpa musibah/penyakit)\n• Affliction (Penderitaan menahun / kemalangan besar)",
+      "Contoh Kalimat": "1. 'Millions of individuals worldwide are afflicted with chronic autoimmune conditions that require lifelong care.' (Jutaan orang di seluruh dunia terjangkit kondisi autoimun kronis yang memerlukan perawatan seumur hidup.)\n2. 'International relief organizations deployed aid workers to the drought-afflicted provinces in East Africa.' (Organisasi bantuan kemanusiaan internasional mengerahkan relawan ke provinsi-provinsi yang dilanda kekeringan di Afrika Timur.)\n3. 'Throughout his later years, the prolific composer was deeply afflicted by progressive hearing impairment.' (Sepanjang tahun-tahun terakhir hidupnya, komponis produktif itu sangat menderita akibat gangguan pendengaran yang kian memburuk.)",
+      "Nuance & Pitfalls": "• Afflict vs Inflict:\n  - AFFLICT (Pasif dengan with/by): Subjeknya adalah korban yang menderita karena penyakit atau nasib ('He is afflicted with Parkinson's').\n  - INFLICT (Transitif aktif dengan on/upon): Subjeknya adalah pelaku yang secara sengaja mendatangkan luka atau hukuman ('The general inflicted heavy losses on the enemy').",
+      "Tips Mengingat": "Berasal dari bahasa Latin 'affligere' (ad = ke arah + fligere = memukul/menghantam, serumpun dengan CONFLICT). AFFLICTED = Dihantam oleh penyakit atau penderitaan berat!"
+    }
+  },
+  {
+    "_id": "6902a0010000000000000031",
+    "question": "Culprit (Noun: Perpetrators, Wrongdoers & Root Causes of Problems)",
+    "answer": "Pelaku Kesalahan / Pelaku Kejahatan ATAU Biang Kerok / Penyebab Utama Masalah (The person or factor responsible)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-06T13:00:00.000Z",
+    "categories": [
+      "6901a0010000000000000002",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun (Countable) | Plural: culprits",
+      "Pronunciation": "/ˈkʌl.prɪt/ (US: /ˈkʌl.prɪt/) — Ucapkan \"KAL-prit\" (tekanan pada suku kata pertama)!",
+      "Arti Utama": "1. Hukum & Kriminal: Orang yang bertanggung jawab melakukan kejahatan, pelanggaran, atau kesalahan hukum (the person who committed a crime or misdeed).\n2. Masalah, Medis & Teknis (Sangat Umum): Penyebab utama atau biang keladi di balik kerusakan, penyakit, kegagalan sistem, atau masalah tertentu (the cause of a problem or defect).",
+      "Rumus & Kolokasi": "• The main / chief / prime culprit (Biang kerok / penyebab utama)\n• Catch / apprehend the culprit (Menangkap pelaku kejahatan)\n• Identify the culprit (Menemukan biang keladi masalah/kerusakan)\n• The usual culprits (Penyebab-penyebab yang sudah lazim/biasa dicurigai)",
+      "Contoh Kalimat": "1. 'Police detectives meticulously analyzed forensic evidence from the crime scene to apprehend the culprit.' (Detektif polisi dengan cermat menganalisis bukti forensik dari tempat kejadian perkara untuk menangkap sang pelaku.)\n2. 'High sugar consumption and lack of physical exercise are the primary culprits behind rising diabetes rates.' (Konsumsi gula yang tinggi dan kurangnya olahraga adalah biang keladi utama di balik meningkatnya angka diabetes.)\n3. 'After hours of server troubleshooting, engineers discovered that a faulty configuration file was the culprit.' (Setelah berjam-jam melakukan pemecahan masalah server, para insinyur menemukan bahwa file konfigurasi yang cacat adalah biang keroknya.)",
+      "Nuance & Pitfalls": "• Perluasan Makna: Jangan hanya mengira 'culprit' adalah manusia penjahat! Dalam artikel sains, teknologi, dan medis, 'culprit' sering kali merujuk pada benda mati, bakteri, gaya hidup, atau bug perangkat lunak sebagai 'biang keladi'.\n• Sinonim: Perpetrator (formal pelaku kriminal), root cause (akar penyebab), offender.",
+      "Tips Mengingat": "Berasal dari bahasa Anglo-French kuno 'cul. prit' (singkatan dari 'culpable' = bersalah + 'prest' = siap diadili). Ingat kata CULPABLE (bersalah) $\rightarrow$ CULPRIT = Orang atau hal yang bersalah / biang keladinya!"
+    }
+  },
+  {
     "_id": "6902a0010000000000000030",
     "question": "Rim (Noun & Verb: Edges, Circular Borders, Wheels & Optics)",
     "answer": "Bibir / Tepian Melingkar (Gelas, Kawah, Cekungan) ATAU Velg Roda ATAU Bingkai Kacamata",
