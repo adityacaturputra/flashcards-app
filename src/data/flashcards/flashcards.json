@@ -1,5 +1,86 @@
 [
   {
+    "_id": "6902a0010000000000000030",
+    "question": "Rim (Noun & Verb: Edges, Circular Borders, Wheels & Optics)",
+    "answer": "Bibir / Tepian Melingkar (Gelas, Kawah, Cekungan) ATAU Velg Roda ATAU Bingkai Kacamata",
+    "progression": "new",
+    "nextReviewDate": "2026-09-06T03:00:00.000Z",
+    "categories": [
+      "6901a0010000000000000001",
+      "6901a0010000000000000003",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun (Countable) & Transitive Verb (rimmed, rimming) | Plural: rims",
+      "Pronunciation": "/rɪm/ — Ucapkan 1 suku kata pendek \"RIM\"!",
+      "Arti Utama": "1. Noun (Tepian Melingkar): Pinggiran, bibir, atau batas terluar dari benda melingkar atau cekung (cangkir, mangkuk, kawah, roda, keranjang basket).\n2. Noun (Otomotif & Olahraga): Velg roda kendaraan (wheel rim) atau ring keranjang basket (basketball rim).\n3. Noun (Kacamata): Bingkai yang mengelilingi lensa (misal: rimless glasses = kacamata tanpa bingkai / frameless).\n4. Verb (Transitive): Membatasi atau melapisi tepian lingkaran dengan sesuatu (contoh: a margarita glass rimmed with salt; eyes rimmed with red).",
+      "Rumus & Kolokasi": "• The rim of a cup / glass / bowl (Bibir cangkir/gelas/mangkuk)\n• The rim of the crater / canyon (Bibir kawah / tepi tebing ngarai)\n• Wheel rim / alloy rims (Velg roda / velg logam campuran mobil/motor)\n• Rimless / Horn-rimmed glasses (Kacamata tanpa bingkai / berbingkai tanduk)\n• Rimmed with + Noun (Dilapisi di pinggirannya, e.g. glass rimmed with salt, eyes rimmed with tears)",
+      "Contoh Kalimat": "1. 'She wiped a smudge of lipstick from the gold rim of her delicate porcelain teacup.' (Dia menyeka noda lipstik dari bibir emas cangkir teh porselennya yang anggun.)\n2. 'Standing at the rim of the Grand Canyon, visitors were awestruck by the sheer depth of the gorge.' (Berdiri di tepi tebing Grand Canyon, para pengunjung terpana oleh kedalaman ngarai yang luar biasa.)\n3. 'The basketball bounced harmlessly off the back rim and into the defender's waiting hands.' (Bola basket memantul dari bibir belakang ring basket dan jatuh ke tangan pemain bertahan yang menunggu.)",
+      "Nuance & Pitfalls": "• Rim vs Edge vs Border vs Brim:\n  - RIM: Khusus tepian benda bundar / melingkar / cekung (cangkir, mangkuk, kawah, velg, kacamata).\n  - BRIM: Tepian paling atas wadah (sering dalam konteks kepenuhan: 'filled to the brim') atau tepian daun topi (brim of a hat).\n  - EDGE: Garis pinggir secara umum (ujung meja, ujung pisau).\n  - BORDER: Batas wilayah negara/daerah.",
+      "Tips Mengingat": "Ingat R-I-M: Ring / Round - Inner - Margin. RIM = Tepian luar dari sesuatu yang bundar (Round)! Ingat juga istilah velg mobil/motor yang sering disebut 'rims'!"
+    }
+  },
+  {
+    "_id": "6902a001000000000000002f",
+    "question": "Approximately (Adverb: Precision, Estimation & High-Register Usage)",
+    "answer": "Kira-kira / Kurang Lebih / Sekitar (Digunakan untuk estimasi angka, waktu, atau kuantitas secara formal)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-06T03:00:00.000Z",
+    "categories": [
+      "6901a0010000000000000006",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adverb | Adjective: approximate | Noun: approximation | Abbreviation: approx.",
+      "Pronunciation": "/əˈprɒk.sɪ.mət.li/ (US: /əˈprɑːk.sə.mət.li/) — Ucapkan \"ə-PROK-si-mət-li\"!",
+      "Arti Utama": "Digunakan untuk menyatakan angka, jumlah, jarak, waktu, atau estimasi yang hampir mendekati tepat tetapi tidak persis 100% (close to a particular number or time, but not exactly that number). Padanan baku tingkat tinggi untuk 'about' atau 'roughly'.",
+      "Rumus & Kolokasi": "• Approximately + Angka/Waktu/Jarak: \"approximately 500 miles\", \"approximately 2 hours\"\n• Equal approximately to... (Kurang lebih sama dengan...)\n• Abbreviation: \"approx.\" (sering dipakai dalam tabel data/faktur/dokumen teknis)",
+      "Contoh Kalimat": "1. 'The journey from Jakarta to Bandung by high-speed rail takes approximately 45 minutes.' (Perjalanan dari Jakarta ke Bandung menggunakan kereta cepat memakan waktu sekitar 45 menit.)\n2. 'Archaeologists estimate that the ancient stone monument was built approximately 3,000 years ago.' (Para arkeolog memperkirakan monumen batu kuno itu dibangun kira-kira 3.000 tahun yang lalu.)\n3. 'The repair costs will be approximately $5,000, depending on the availability of replacement parts.' (Biaya perbaikan akan memakan waktu kurang lebih $5.000, bergantung pada ketersediaan suku cadang pengganti.)",
+      "Nuance & Pitfalls": "• Perbedaan Register/Formalitas:\n  - Casual/Daily: 'About', 'Around' (e.g. about 5 minutes).\n  - Conversational/Estimasi: 'Roughly' (e.g. roughly speaking).\n  - Formal/Akademik/Bisnis: 'Approximately' (paling tepat untuk paper ilmiah, laporan keuangan, dan ujian IELTS/TOEFL).\n• Hati-hati pelafalan kata sifat 'approximate' (/əˈprɒk.sɪ.mət/) vs kata kerja 'approximate' (/əˈprɒk.sɪ.meɪt/ - berakhiran -eyt)!",
+      "Tips Mengingat": "Berasal dari bahasa Latin 'ad' (ke arah) + 'proximus' (terdekat, akar kata PROXIMITY/kedekatan). APPROXIMATELY = Mendekati angka terdekatnya!"
+    }
+  },
+  {
+    "_id": "6902a001000000000000002e",
+    "question": "Crater (Noun & Verb: Volcanic Vents, Impact Basins & Collapse)",
+    "answer": "Kawah / Lubang Besar (Bekas Letusan Gunung, Hantaman Meteorit, atau Ledakan Bom) ATAU [Verb] Runtuh / Jatuh Terpuruk",
+    "progression": "new",
+    "nextReviewDate": "2026-09-06T03:00:00.000Z",
+    "categories": [
+      "6901a0010000000000000003",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun (Countable) & Verb (Intransitive: cratered, cratering) | Plural: craters",
+      "Pronunciation": "/ˈkreɪ.tər/ (US: /ˈkreɪ.t̬ɚ/) — Ucapkan \"KREY-tər\" (tekanan pada suku kata pertama 'krey')!",
+      "Arti Utama": "1. Noun (Geologi & Astronomi): Kawah — lubang cekungan besar di puncak gunung berapi atau di permukaan planet/bulan akibat hantaman meteorit (impact crater) atau ledakan bom.\n2. Verb (Informal / Bisnis & Keuangan): Runtuh mendadak, anjlok drastis, atau hancur berantakan (to collapse or drop precipitously to a disastrous low).",
+      "Rumus & Kolokasi": "• Volcanic crater (Kawah gunung berapi)\n• Impact crater (Kawah tumbukan meteorit/asteroid)\n• Bomb crater (Lubang bekas ledakan bom)\n• Crater rim (Bibir / tepian lingkar kawah)\n• [Verb] Stock prices / profits cratered (Harga saham / laba anjlok drastis)",
+      "Contoh Kalimat": "1. 'The telescope revealed thousands of impact craters covering the desolate surface of the moon.' (Teleskop memperlihatkan ribuan kawah hantaman meteorit yang menutupi permukaan bulan yang sunyi.)\n2. 'Hikers carefully peered over the rim into the steaming, sulfurous volcanic crater below.' (Para pendaki dengan hati-hati mengintip dari bibir tebing ke dalam kawah vulkanik berasap belerang di bawahnya.)\n3. 'Following the regulatory crackdown, the cryptocurrency's market value cratered by over 70% in 48 hours.' (Menyusul tindakan keras regulator, nilai pasar mata uang kripto tersebut anjlok drastis lebih dari 70% dalam 48 jam.)",
+      "Nuance & Pitfalls": "• Noun vs Verb: Jangan lupakan fungsi verb informalnya ('crater') yang sangat sering muncul di berita finansial/ekonomi dengan arti 'anjlok ke titik terendah'.\n• Crater vs Caldera: 'Caldera' adalah kawah raksasa yang terbentuk akibat runtuhnya badan gunung berapi (seperti Danau Toba), sedangkan 'crater' adalah istilah umum kawah/cekungan lubang.",
+      "Tips Mengingat": "Berasal dari bahasa Yunani kuno 'krater' (bejana/mangkuk besar tempat mencampur anggur dan air). Bayangkan kawah gunung atau bulan berbentuk seperti mangkuk besar yang melekuk ke dalam bumi!"
+    }
+  },
+  {
+    "_id": "6902a001000000000000002d",
+    "question": "Fierce (Adjective: Intense Competition, Ferocity & Modern Style)",
+    "answer": "Sengit / Keras / Garang (Kompetisi, Emosi) ATAU Ganas / Buas (Hewan, Badai) ATAU Keren & Penuh Percaya Diri (Gaya/Fashion)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-06T03:00:00.000Z",
+    "categories": [
+      "6901a0010000000000000006",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjective | Comparative: fiercer | Superlative: fiercest | Adverb: fiercely | Noun: fierceness",
+      "Pronunciation": "/fɪəs/ (US: /fɪrs/) — Ucapkan 1 suku kata \"FIRS\" (berima dengan kata 'pierce')!",
+      "Arti Utama": "1. Sengit / Keras / Tajam: Menunjukkan intensitas, agresi, atau persaingan yang sangat kuat (e.g. fierce competition, fierce debate).\n2. Ganas / Buas / Menakutkan: Hewan buas atau ekspresi wajah yang galak dan menakutkan (e.g. a fierce dog, a fierce glare).\n3. Dahsyat / Ekstrem (Cuaca/Kekuatan): Badai atau panas yang membakar (e.g. fierce storm, fierce heat).\n4. Gaul / Fashion (Pop Culture): Tampil memukau, berani, dan memancarkan aura percaya diri tinggi (e.g. She looks absolutely fierce!).",
+      "Rumus & Kolokasi": "• Fierce competition / rivalry (Persaingan sengit / rivalitas keras)\n• Fierce loyalty / determination (Kesetiaan luar biasa / tekad membaja)\n• Fierce debate / opposition (Perdebatan panas / penentangan keras)\n• Fierce storm / wind / heat (Badai dahsyat / angin kencang / panas terik)\n• Fiercely independent / competitive (Sangat independen / sangat kompetitif)",
+      "Contoh Kalimat": "1. 'Tech giants face fierce competition in the race to develop commercial artificial intelligence.' (Raksasa teknologi menghadapi persaingan sengit dalam perlombaan mengembangkan kecerdasan buatan komersial.)\n2. 'The lioness displayed fierce protective instincts whenever other predators approached her cubs.' (Singa betina itu memperlihatkan naluri protektif yang galak setiap kali predator lain mendekati anak-anaknya.)\n3. 'A fierce gale swept through the harbor, tearing boats from their moorings.' (Angin badai yang dahsyat menerjang pelabuhan, merenggut kapal-kapal dari tambatannya.)",
+      "Nuance & Pitfalls": "• Hati-hati pengucapan: 1 suku kata (/fɪrs/), BUKAN dua suku kata (jangan ucapkan 'fi-ers').\n• Fierce vs Wild: 'Wild' = liar (tidak jinak), sedangkan 'Fierce' = ganas/agresif siap menyerang.\n• Beda dengan 'Fiercely' (adverb yang sangat sering dipakai sebagai intensifier: 'fiercely loyal' = sangat setia).",
+      "Tips Mengingat": "Berasal dari bahasa Latin 'ferus' (liar / buas, serumpun dengan kata FERAL). Bayangkan binatang FERAL dengan cakar yang menusuk (PIERCE) $\rightarrow$ FIERCE (garang & sengit)!"
+    }
+  },
+  {
     "_id": "6902a001000000000000002c",
     "question": "Foster / Fostering (Verb & Noun: Nurturing Growth, Collaboration & Foster Care)",
     "answer": "Membina / Memupuk / Menumbuhkembangkan (Ide, Budaya, Kolaborasi) ATAU Mengasuh (Anak/Hewan Asuh)",
