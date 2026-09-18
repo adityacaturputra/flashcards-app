@@ -1,5 +1,24 @@
 [
   {
+    "_id": "6902a0010000000000000035",
+    "question": "Phonemic / Phoneme (Adjective & Noun: Linguistic Speech Sounds & Pronunciation Symbols)",
+    "answer": "Fonemik / Berkaitan dengan Sistem Lambang Bunyi Suara Bahasa (relating to phonemes — the distinct units of sound in a language)",
+    "progression": "new",
+    "nextReviewDate": "2026-09-18T13:00:00.000Z",
+    "categories": [
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjective (phonemic) | Noun (phoneme, phonemics) | Related: phonetic, phonetics",
+      "Pronunciation": "/fəˈniː.mɪk/ (US: /fəˈne.mɪk/) — Ucapkan \"fuh-NEE-mik\" (tekanan pada suku kata kedua 'nee')!",
+      "Arti Utama": "1. Fonemik (Adjektiva): Berkaitan dengan fonem atau sistem lambang bunyi ucapan yang membedakan makna kata dalam suatu bahasa.\n2. Phonemic Script / Transcription: Sistem tulisan simbol fonetik (seperti /æ/, /θ/, /ʃ/) yang digunakan di kamus untuk menunjukkan pengucapan asli suatu kata tanpa tertipu ejaan tulisan.",
+      "Rumus & Kolokasi": "• Phonemic script / transcription (Transkripsi simbol lambang bunyi di kamus)\n• Phonemic chart (Bagan 44 lambang bunyi fonem bahasa Inggris karya Adrian Underhill)\n• Phonemic awareness (Kepekaan mendengar dan membedakan satuan bunyi kata)\n• Phoneme (Satuan terkecil bunyi ucapan yang membedakan arti kata, misal /p/ dan /b/ pada 'pat' vs 'bat')",
+      "Contoh Kalimat": "1. 'Advanced English learners should learn to read phonemic script so they can pronounce unfamiliar vocabulary accurately from a dictionary.' (Pembelajar bahasa Inggris tingkat lanjut sebaiknya belajar membaca simbol fonemik agar dapat mengucapkan kosakata asing secara akurat langsung dari kamus.)\n2. 'Developing strong phonemic awareness helps non-native speakers eliminate mother-tongue interference in IELTS Speaking.' (Membangun kepekaan fonemik yang kuat membantu penutur non-pribumi menghilangkan pengaruh aksen bahasa ibu saat tes IELTS Speaking.)\n3. 'The word 'through' has seven letters in spelling, but consists of only three phonemic sounds: /θ/, /r/, and /uː/.' (Kata 'through' memiliki tujuh huruf dalam ejaan, tetapi hanya terdiri dari tiga bunyi fonemik: /θ/, /r/, dan /uː/.)",
+      "Nuance & Pitfalls": "• Phonemic vs Phonetic:\n  - PHONEMIC: Fokus pada makna dan sistem bunyi bahasa tertentu (misal: membedakan /ɪ/ pada 'ship' dan /iː/ pada 'sheep').\n  - PHONETIC: Fokus pada fisik bunyi suara secara universal (getaran pita suara, hembusan udara bibir, frekuensi akustik).\n• Hati-hati pengucapan: /fəˈniː.mɪk/ (aksen British) atau /fəˈne.mɪk/ (aksen American). Jangan dibaca 'fo-no-mik'!",
+      "Tips Mengingat": "Akar katanya adalah PHONE (bunyi/suara, seperti telephone / headphone). PHONEMIC SCRIPT = Sandi/simbol panduan bunyi suara kata di kamus!"
+    }
+  },
+  {
     "_id": "6902a0010000000000000034",
     "question": "Credence (Noun: Belief, Acceptance as True & Lending Weight)",
     "answer": "Kepercayaan / Keyakinan akan Kebenaran Sesuatu (acceptance of something as true — especially in 'lend credence to')",
