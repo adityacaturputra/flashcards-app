@@ -2363,6 +2363,109 @@ Perhatikan perubahan bunyi vokal pada suku kata pertama:
     createdAt: '2026-09-03',
     tags: ['subject-verb-agreement', 'irregular-plural-nouns', 'woman-vs-women', 'do-vs-does', 'wh-questions', 'auxiliary-verbs', 'common-errors'],
   },
+  {
+    id: 'phrasal-verbs-look-and-preposition-up',
+    module: 'Phrasal Verbs & Prepositions',
+    title: 'Phrasal Verbs with "Look" (look up, look for, look after) & Preposition "Up" Patterns',
+    question: 'You can [explain / look] up the meaning of a word or phrase in a dictionary.',
+    correction: '“You can explain up...” → “You can look up the meaning of a word or phrase...”',
+    remarks: `Soal ini menguji pemahaman mengenai **Phrasal Verbs** (kata kerja yang digabungkan dengan satu atau dua preposisi/partikel sehingga membentuk makna idiomatik baru).
+
+---
+
+### 1. Mengapa "Explain Up" Salah dan "Look Up" Benar?
+
+Dalam bahasa Inggris, kata kerja **\`explain\`** tidak pernah berpasangan dengan partikel **\`up\`**:
+- ❌ *You can explain up the meaning of a word...* (Salah / *ungrammatical*).
+- ✅ *You can **look up** the meaning of a word...* (Benar / *idiomatic*).
+
+Phrasal verb **\`look up\`** memiliki makna spesifik:
+$$\\mathbf{\\text{look up}} + \\mathbf{\\text{something (Word / Information)}} \\quad \\rightarrow \\quad \\text{Mencari kata, data, nomor, atau informasi di kamus / internet / buku referensi}$$
+
+> **Catatan Struktur Separable (Bisa Dipisah):**
+> - Objek berupa kata benda: *“You can **look up** the word”* ATAU *“You can **look** the word **up**”*.
+> - Objek berupa kata ganti (*pronoun*): **Wajib di tengah!** $\\rightarrow$ *“I will **look it up**”* (❌ *look up it*).
+
+---
+
+### 2. Pasangan Phrasal Verbs Kata Kerja "LOOK" (Preposisi Selain "UP")
+
+Kata kerja **\`look\`** memiliki banyak variasi makna drastis ketika dipasangkan dengan preposisi berbeda:
+
+| Phrasal Verb | Arti / Fungsi Utama | Contoh Kalimat Nyata | Padanan Kata Formal |
+| :--- | :--- | :--- | :--- |
+| **look up** | 1. Mencari arti/info di kamus<br>2. Membaik / berkembang | • *“Can you **look up** this term in the dictionary?”*<br>• *“The economic situation is **looking up**.”* | *search reference / improve* |
+| **look up to** | Mengagumi / sangat menghormati | • *“He has always **looked up to** his older brother.”* | *admire / respect* |
+| **look for** | Mencari barang/orang yang hilang | • *“I am **looking for** my car keys.”* | *search / seek* |
+| **look after** | Merawat / menjaga | • *“Could you **look after** my cat while I am away?”* | *take care of / tend* |
+| **look forward to** | Menantikan dengan gembira (+ V-ing/Noun) | • *“I **look forward to hearing** from you soon.”* | *anticipate eagerly* |
+| **look into** | Menyelidiki / menginvestigasi masalah | • *“The police are **looking into** the cause of the accident.”* | *investigate* |
+| **look out / look out for** | Awas / waspada / hati-hati | • *“**Look out**! There is a car coming!”*<br>• *“**Look out for** pickpockets in crowded areas.”* | *beware / be cautious* |
+| **look down on** | Merendahkan / memandang sebelah mata | • *“She tends to **look down on** people who are less educated.”* | *despise / condescend* |
+| **look through** | Memeriksa sekilas / membaca cepat | • *“I **looked through** the report before the meeting.”* | *skim / browse* |
+| **look over** | Memeriksa / meninjau secara saksama | • *“The lawyer will **look over** the contract before signing.”* | *inspect / examine* |
+| **look back on** | Mengenang masa lalu / kilas balik | • *“She **looks back on** her college days with fond memories.”* | *reminisce / reflect* |
+
+---
+
+### 3. Logika & Nuansa Preposisi "UP" dalam Phrasal Verbs
+
+Partikel **\`up\`** bukan sekadar berarti "ke atas" secara fisik. Dalam phrasal verbs, **\`up\`** memiliki 4 kelompok fungsi makna utama:
+
+#### A. Nuansa Penuntasan & Kelengkapan (*Completeness / Totality*)
+Partikel \`up\` sering memberi penekanan bahwa suatu tindakan dilakukan **sampai habis, tuntas, atau selesai bersih**:
+- **eat up**: makan sampai tandas / habis bersih (*“Eat up your vegetables!”*).
+- **drink up**: minum sampai habis.
+- **clean up / tidy up**: membersihkan seluruh ruangan sampai tuntas.
+- **use up**: menggunakan seluruh stok sampai habis (*“We have used up all the paper.”*).
+- **pack up**: berkemas-kemas seluruh barang.
+
+#### B. Nuansa Peningkatan & Pertambahan (*Increase / Intensification*)
+- **turn up**: membesarkan volume / suhu (*“Turn up the volume.”*).
+- **speed up**: mempercepat laju.
+- **speak up**: berbicara lebih keras dan tegas.
+- **heat up**: memanaskan makanan/suhu.
+
+#### C. Nuansa Memulai, Menciptakan, atau Muncul (*Emergence & Beginning*)
+- **set up**: mendirikan / memasang sistem / mengorganisir (*“set up a company”*).
+- **make up**: 1. Mengarang cerita/alasan (*“make up an excuse”*), 2. Berbaikan, 3. Merias wajah.
+- **take up**: memulai hobi/kebiasaan baru (*“I decided to take up photography”*).
+- **show up / turn up**: muncul / hadir di suatu tempat (*“He did not show up for the interview”*).
+- **bring up**: 1. Membesarkan anak (*raise*), 2. Mengangkat topik obrolan (*mention*).
+- **come up with**: menemukan / mencetuskan ide brilian (*“come up with an idea/solution”*).
+
+#### D. Nuansa Berhenti atau Mengakhiri (*Termination*)
+- **give up**: menyerah / berhenti melakukan kebiasaan (*“give up smoking”*).
+- **break up / split up**: putus hubungan / berpisah.
+- **end up**: akhirnya berakhir di suatu kondisi tak terduga (*“We ended up walking home”*).
+
+---
+
+### 4. Ringkasan Cepat Phrasal Verbs Terpopuler dengan "UP" di Ujian IELTS
+
+| Phrasal Verb | Arti Bahasa Indonesia | Contoh Kalimat |
+| :--- | :--- | :--- |
+| **catch up with** | Menyusul ketertinggalan | *“I need to **catch up with** my coursework.”* |
+| **keep up with** | Mengimbangi ritme / tetap sejajar | *“It is hard to **keep up with** rapid technological changes.”* |
+| **put up with** | Mentoleransi / bersabar menghadapi sesuatu | *“I cannot **put up with** this constant noise anymore.”* |
+| **pick up** | 1. Mengambil/menjemput<br>2. Mempelajari bahasa/keterampilan tanpa sengaja | *“She **picked up** French while living in Paris for six months.”* |
+| **bring up** | Mengasuh anak / menyinggung topik | *“Why did you **bring up** that sensitive issue now?”* |
+| **back up** | 1. Memberikan cadangan data<br>2. Mendukung pernyataan seseorang | *“Can you **back up** your claim with statistical evidence?”* |
+
+---
+
+> [!TIP]
+> **Kunci Ingatan Kilat (Memory Hooks):**
+> 1. **Cari info/kata di kamus** $\\rightarrow$ selalu gunakan **LOOK UP** (bukan *explain up* atau *search up*).
+> 2. **Menghormati orang lebih tua/idola** $\\rightarrow$ **LOOK UP TO** (melihat ke atas ke arah mereka).
+> 3. **Merawat anak/hewan** $\\rightarrow$ **LOOK AFTER** (mengikuti dari belakang untuk menjaga).
+> 4. **Preposisi UP untuk ketuntasan** $\\rightarrow$ *eat up* (makan habis), *use up* (pakai habis), *clean up* (bersih tuntas).
+`,
+    source: 'Cambridge Vocabulary for IELTS Advanced',
+    chapter: 'Unit 21: Choosing a Dictionary (Vocabulary & Phrasal Verbs)',
+    createdAt: '2026-09-18',
+    tags: ['phrasal-verbs', 'look-up', 'prepositions', 'look-after', 'look-into', 'look-for', 'look-up-to', 'vocabulary', 'ielts-advanced'],
+  },
 ];
 
 /**
