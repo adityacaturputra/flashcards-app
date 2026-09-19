@@ -200,6 +200,75 @@ When supporting multiple data backends (e.g. **Local Repository** vs. **MongoDB 
 
 ---
 
+## 🧠 13. Core Architectural Approach & Coding Behavior (Author's Standards)
+
+This section documents the specific engineering philosophy, coding habits, and refactoring standards established through hands-on development in this codebase:
+
+### 1. The Single-Source-of-Truth Enum Pattern (`as const` + Derived Type)
+- **Strict Prohibition of Raw String Unions**:
+  Never declare naked string unions in types or components:
+  ```ts
+  // ❌ FORBIDDEN: Raw string union
+  type PartOfSpeech = 'Verb' | 'Noun' | 'Adjective' | 'Adverb';
+  type TabMode = 'explorer' | 'paraphrase' | 'quiz' | 'guide';
+  type FlashcardField = 'question' | 'answer';
+  ```
+- **The Mandatory Pattern**:
+  Always define a constant dictionary with `as const` and derive the TypeScript union type directly from its values:
+  ```ts
+  // ✅ MANDATORY: as const dictionary + derived union type
+  export const FLASHCARD_FIELD = {
+    QUESTION: 'question',
+    ANSWER: 'answer',
+  } as const;
+
+  export type FlashcardField = (typeof FLASHCARD_FIELD)[keyof typeof FLASHCARD_FIELD];
+  ```
+- **Why**: Changing a value in one central constant automatically updates the entire codebase across components, hooks, and types without search-and-replace regressions or typo bugs.
+
+### 2. Radical DRY (Don't Repeat Yourself) & Zero String/Ternary Duplication
+- If a UI label, tooltip string, or ternary condition (such as `playing ? 'Stop listening' : ...`) appears in more than one place, **it MUST NOT be copy-pasted**.
+- Extract it immediately into a pure helper method (e.g. `getSpeechButtonAriaProps(isPlaying, descriptor)`).
+- Never allow identical ternary strings to linger across multiple component files.
+
+### 3. The Props Factory Pattern in Custom Hooks
+- When a custom hook encapsulates stateful interactions (like audio playback, modal triggers, or form fields), it should not force consuming components to manually reconstruct event handlers and accessibility attributes.
+- The hook must provide a **Props Factory method** (e.g. `getAudioButtonProps(field, text, label)`) that returns clean, ready-to-spread DOM attributes (`onClick`, `title`, `'aria-label'`).
+- Consuming components remain ultra-lean, readable, and declarative:
+  ```tsx
+  // ✅ Clean, declarative consumption via props factory:
+  <button
+    className={`rounded-md p-1.5 ${isPlaying(FLASHCARD_FIELD.QUESTION) ? 'animate-pulse' : ''}`}
+    {...getAudioButtonProps(FLASHCARD_FIELD.QUESTION, flashcard.question, 'question')}
+  >
+    <FaVolumeHigh />
+  </button>
+  ```
+
+### 4. Unified, Lifecycle-Safe Custom Hooks
+- Identify shared lifecycle patterns across seemingly different views (e.g. single-card flashcards vs. multi-item journey mapping vs. detail modals).
+- Unify them into a single generic hook (`useSpeechPlayback`) equipped with:
+  - **Automatic unmount cleanup**: Cancelling ongoing side effects (e.g. `stopSpeech()`).
+  - **Reactive reset triggers**: Taking a dependency array (`resetTriggers: [card._id]` or `[currentIndex]`) to reset internal states cleanly when data switches.
+  - **Interactive state querying**: Supporting both pinpoint target queries (`isPlaying(field)`) and generic active checks (`isPlaying()`).
+
+### 5. Clean White Apple-Style Aesthetic (Restrained, High-Contrast UI)
+- **No Loud Primary Accents or Redundant Badges**: Avoid heavy blue highlights or noisy "Active" text labels on toggles.
+- **Elevation & Track Contrast**:
+  - Inactive options sit on a recessed, neutral track (`background: var(--secondary)`), using soft muted typography (`text-muted-foreground`).
+  - Active options render as elevated cards (`background: var(--card)`), with crisp subtle shadows (`shadow-sm`), clear borders, and high-contrast bold dark typography (`font-bold text-foreground`).
+- Spatial depth, elevation, and typography must communicate active state cleanly.
+
+### 6. Sensible Defaults & Instant In-Browser Experience
+- Always favor instant, offline-ready in-browser execution (e.g. Web Speech API) over jarring external services or new browser tabs.
+- Set user-preferred defaults automatically (e.g. General American English `'us'` for pronunciation).
+
+### 7. Atomic Commit Milestones & Zero-Warning Builds
+- Request and execute commits at clean, logical milestones.
+- Ensure every commit is backed by an `npm run build` exit code of 0 with zero lint or typecheck warnings.
+
+---
+
 ## 🔗 Related Documentation
 - 📖 **[MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)**: Step-by-step study mapping workflow for AI agents.
 - 🗂️ **[FLASHCARD_WORKFLOW.md](./FLASHCARD_WORKFLOW.md)**: Step-by-step local flashcard addition and schema guide.
