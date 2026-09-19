@@ -21353,10 +21353,16 @@
     "question": "Bad luck",
     "answer": "sialan",
     "progression": "normal",
-    "nextReviewDate": "2025-12-23T01:27:40.543Z",
+    "nextReviewDate": "2026-10-04T16:46:24.039Z",
     "categories": [
       "68fdd9f899ff8264aaa016ad"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 3,
+    "interval": 15,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-19T16:46:24.039Z"
   },
   {
     "_id": "68fddc9899ff8264aaa0173f",
