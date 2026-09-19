@@ -275,17 +275,50 @@ export const MappingFlashcards: React.FC<MappingFlashcardsProps> = ({
                     background: 'var(--fix-bg)',
                   }}
                 >
-                  <div className='mb-1.5 flex items-center gap-1.5'>
-                    <FaCheck
-                      className='h-3.5 w-3.5'
-                      style={{ color: 'var(--fix-icon)' }}
-                    />
-                    <span
-                      className='text-[10px] sm:text-xs font-bold uppercase tracking-wider'
-                      style={{ color: 'var(--fix-label)' }}
-                    >
-                      The Things That Should Be Fix
-                    </span>
+                  <div className='mb-1.5 flex items-center justify-between'>
+                    <div className='flex items-center gap-1.5'>
+                      <FaCheck
+                        className='h-3.5 w-3.5'
+                        style={{ color: 'var(--fix-icon)' }}
+                      />
+                      <span
+                        className='text-[10px] sm:text-xs font-bold uppercase tracking-wider'
+                        style={{ color: 'var(--fix-label)' }}
+                      >
+                        The Things That Should Be Fixed
+                      </span>
+                    </div>
+                    <div className='flex items-center gap-1'>
+                      <button
+                        className={`rounded-md p-1.5 transition-colors ${
+                          isPlaying(FLASHCARD_FIELD.CORRECTION)
+                            ? 'bg-primary/10 ring-1 ring-primary/30'
+                            : 'hover:bg-slate-200 dark:hover:bg-slate-700'
+                        }`}
+                        {...getAudioButtonProps(
+                          FLASHCARD_FIELD.CORRECTION,
+                          currentItem.correction,
+                          'correction'
+                        )}
+                      >
+                        <FaVolumeHigh
+                          className={`h-3.5 w-3.5 ${
+                            isPlaying(FLASHCARD_FIELD.CORRECTION) ? 'animate-pulse' : ''
+                          }`}
+                          style={{ color: 'var(--primary)' }}
+                        />
+                      </button>
+                      <button
+                        onClick={() => openGoogleSearchInNewTab(currentItem.correction, 'English grammar')}
+                        className='rounded-md p-1.5 transition-colors hover:bg-slate-200 dark:hover:bg-slate-700'
+                        title='Search correction on Google'
+                      >
+                        <FaMagnifyingGlass
+                          className='h-3.5 w-3.5'
+                          style={{ color: 'var(--primary)' }}
+                        />
+                      </button>
+                    </div>
                   </div>
                   <div
                     className='font-mono text-sm sm:text-base font-bold'

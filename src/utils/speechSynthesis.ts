@@ -71,6 +71,8 @@ export function stripMarkdownForTTS(text: string): string {
       .replace(/`([^`]+)`/g, '$1')
       // Remove KaTeX math formulas: $$formula$$ or $formula$
       .replace(/\$\$?([\s\S]*?)\$\$?/g, '$1')
+      // Replace arrow symbols (-> or →) with comma for natural speech pause
+      .replace(/\s*(?:->|→)\s*/g, ', ')
       // Remove images
       .replace(/!\[.*?\]\(.*?\)/g, '')
       // Replace links [text](url) with just text
