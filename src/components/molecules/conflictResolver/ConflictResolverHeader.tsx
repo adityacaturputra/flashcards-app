@@ -20,7 +20,7 @@ export const ConflictResolverHeader: React.FC<ConflictResolverHeaderProps> = ({
 }) => {
   return (
     <div
-      className='flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-2.5 border-b'
+      className='flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2.5 border-b'
       style={{ borderColor: 'var(--border)' }}
     >
       <div className='flex items-center gap-2 min-w-0'>
@@ -33,14 +33,14 @@ export const ConflictResolverHeader: React.FC<ConflictResolverHeaderProps> = ({
       </div>
 
       {/* Bulk Card Level Shortcuts */}
-      <div className='flex items-center gap-1.5 shrink-0 self-end sm:self-auto'>
+      <div className='flex items-center justify-end gap-1.5 shrink-0 w-full sm:w-auto'>
         <span className='text-[10px] text-muted-foreground uppercase font-bold tracking-wider mr-1 hidden xs:inline'>
           Bulk Card:
         </span>
         <button
           onClick={() => onSelectAll(SYNC_SOURCE.LOCAL)}
           disabled={isResolving}
-          className={`rounded-lg px-2.5 py-1 text-[11px] font-bold border transition-all ${
+          className={`flex-1 sm:flex-initial rounded-lg px-2.5 py-1.5 sm:py-1 text-[11px] font-bold border transition-all text-center ${
             isAllLocalActive
               ? 'bg-red-500/15 text-red-600 dark:text-red-400 border-red-500/40 shadow-2xs'
               : 'bg-slate-100 dark:bg-slate-800 text-muted-foreground hover:text-foreground border-transparent'
@@ -52,7 +52,7 @@ export const ConflictResolverHeader: React.FC<ConflictResolverHeaderProps> = ({
         <button
           onClick={() => onSelectAll(SYNC_SOURCE.CLOUD)}
           disabled={isResolving}
-          className={`rounded-lg px-2.5 py-1 text-[11px] font-bold border transition-all ${
+          className={`flex-1 sm:flex-initial rounded-lg px-2.5 py-1.5 sm:py-1 text-[11px] font-bold border transition-all text-center ${
             isAllCloudActive
               ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/40 shadow-2xs'
               : 'bg-slate-100 dark:bg-slate-800 text-muted-foreground hover:text-foreground border-transparent'

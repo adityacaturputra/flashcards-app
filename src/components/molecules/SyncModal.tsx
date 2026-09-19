@@ -206,9 +206,9 @@ export const SyncModal: React.FC<SyncModalProps> = ({
               >
                 <FaRotate className={`h-4 w-4 text-blue-500 ${loading || isSyncing ? 'animate-spin' : ''}`} />
               </div>
-              <div>
-                <h2 className='text-base sm:text-lg font-bold'>Cloud ⇋ Local Synchronization</h2>
-                <p className='text-xs text-muted-foreground'>
+              <div className='min-w-0'>
+                <h2 className='text-sm sm:text-lg font-bold truncate'>Cloud ⇋ Local Synchronization</h2>
+                <p className='text-xs text-muted-foreground hidden xs:block'>
                   Sync flashcard changes and Anki SRS reviews between Local Repository and MongoDB Cloud.
                 </p>
               </div>
@@ -224,7 +224,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
           </div>
 
           {/* Modal Body */}
-          <div className='flex-1 min-h-0 overflow-y-auto p-4 sm:p-6 space-y-4'>
+          <div className='flex-1 min-h-0 overflow-y-auto p-3.5 sm:p-6 space-y-4'>
             {/* Banner Messages */}
             {error && (
               <div className='rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-600 dark:text-red-400 flex items-start gap-2'>
@@ -298,23 +298,23 @@ export const SyncModal: React.FC<SyncModalProps> = ({
             )}
 
             {/* Quick Actions Bar */}
-            <div className='flex flex-wrap items-center justify-between gap-2 pt-1'>
-              <div className='flex items-center gap-2'>
+            <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1'>
+              <div className='grid grid-cols-2 gap-2 w-full sm:w-auto'>
                 {/* Push Local to Cloud */}
                 <button
                   onClick={handlePush}
                   disabled={isSyncing || !report || (report.localOnly.length === 0 && report.modified.length === 0)}
-                  className='flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-bold transition-all shadow-sm active:scale-95 disabled:opacity-50'
+                  className='flex items-center justify-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition-all shadow-sm active:scale-95 disabled:opacity-50'
                   style={{
                     background: 'var(--primary)',
                     color: 'var(--primary-foreground)',
                   }}
                   title='Upload local additions and modifications to MongoDB'
                 >
-                  <FaCloudArrowUp className={`h-3.5 w-3.5 ${isSyncing ? 'animate-bounce' : ''}`} />
-                  <span>Push Local ➔ Cloud</span>
+                  <FaCloudArrowUp className={`h-3.5 w-3.5 shrink-0 ${isSyncing ? 'animate-bounce' : ''}`} />
+                  <span className='truncate'>Push Local ➔ Cloud</span>
                   {report && (report.localOnly.length + report.modified.length > 0) && (
-                    <span className='rounded-full bg-white/20 px-1.5 py-0.2 text-[10px] font-bold'>
+                    <span className='rounded-full bg-white/20 px-1.5 py-0.2 text-[10px] font-bold shrink-0'>
                       {report.localOnly.length + report.modified.length}
                     </span>
                   )}
@@ -324,7 +324,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                 <button
                   onClick={handlePull}
                   disabled={isSyncing || !report || (report.cloudOnly.length === 0 && report.modified.length === 0)}
-                  className='flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-xs font-bold transition-all shadow-xs active:scale-95 disabled:opacity-50 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  className='flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2 text-xs font-bold transition-all shadow-xs active:scale-95 disabled:opacity-50 hover:bg-slate-100 dark:hover:bg-slate-800'
                   style={{
                     background: 'var(--card)',
                     borderColor: 'var(--border)',
@@ -332,10 +332,10 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                   }}
                   title='Download cloud cards and mobile reviews into local flashcards.json'
                 >
-                  <FaCloudArrowDown className={`h-3.5 w-3.5 ${isSyncing ? 'animate-bounce' : ''}`} />
-                  <span>Pull Cloud ➔ Local</span>
+                  <FaCloudArrowDown className={`h-3.5 w-3.5 shrink-0 ${isSyncing ? 'animate-bounce' : ''}`} />
+                  <span className='truncate'>Pull Cloud ➔ Local</span>
                   {report && (report.cloudOnly.length + report.modified.length > 0) && (
-                    <span className='rounded-full bg-blue-500/15 px-1.5 py-0.2 text-[10px] font-bold text-blue-600 dark:text-blue-400'>
+                    <span className='rounded-full bg-blue-500/15 px-1.5 py-0.2 text-[10px] font-bold text-blue-600 dark:text-blue-400 shrink-0'>
                       {report.cloudOnly.length + report.modified.length}
                     </span>
                   )}
@@ -346,7 +346,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
               <button
                 onClick={fetchDiff}
                 disabled={loading || isSyncing}
-                className='flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50'
+                className='flex items-center justify-end gap-1 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50 self-end sm:self-auto'
               >
                 <FaRotate className={`h-3 w-3 ${loading ? 'animate-spin' : ''}`} />
                 <span>Refresh Diff</span>
@@ -357,10 +357,10 @@ export const SyncModal: React.FC<SyncModalProps> = ({
             {report && totalDifferences > 0 ? (
               <div className='space-y-3 pt-2'>
                 {/* Tabs */}
-                <div className='flex items-center gap-1.5 border-b pb-2' style={{ borderColor: 'var(--border)' }}>
+                <div className='flex items-center gap-1.5 border-b pb-2 overflow-x-auto no-scrollbar whitespace-nowrap' style={{ borderColor: 'var(--border)' }}>
                   <button
                     onClick={() => setActiveTab(SYNC_FILTER_TAB.ALL)}
-                    className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
+                    className={`shrink-0 rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
                       activeTab === SYNC_FILTER_TAB.ALL
                         ? 'bg-slate-200 dark:bg-slate-700 text-foreground font-bold'
                         : 'text-muted-foreground hover:text-foreground'
@@ -370,7 +370,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                   </button>
                   <button
                     onClick={() => setActiveTab(SYNC_FILTER_TAB.MODIFIED)}
-                    className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
+                    className={`shrink-0 rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
                       activeTab === SYNC_FILTER_TAB.MODIFIED
                         ? 'bg-slate-200 dark:bg-slate-700 text-foreground font-bold'
                         : 'text-muted-foreground hover:text-foreground'
@@ -380,7 +380,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                   </button>
                   <button
                     onClick={() => setActiveTab(SYNC_FILTER_TAB.LOCAL_ONLY)}
-                    className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
+                    className={`shrink-0 rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
                       activeTab === SYNC_FILTER_TAB.LOCAL_ONLY
                         ? 'bg-slate-200 dark:bg-slate-700 text-foreground font-bold'
                         : 'text-muted-foreground hover:text-foreground'
@@ -390,7 +390,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                   </button>
                   <button
                     onClick={() => setActiveTab(SYNC_FILTER_TAB.CLOUD_ONLY)}
-                    className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
+                    className={`shrink-0 rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
                       activeTab === SYNC_FILTER_TAB.CLOUD_ONLY
                         ? 'bg-slate-200 dark:bg-slate-700 text-foreground font-bold'
                         : 'text-muted-foreground hover:text-foreground'

@@ -39,57 +39,59 @@ export const ConflictResolverFooter: React.FC<ConflictResolverFooterProps> = ({
 
       {/* Conflict Resolution Action Buttons */}
       <div
-        className='flex flex-wrap items-center justify-between gap-2 pt-2 border-t'
+        className='flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-2 border-t'
         style={{ borderColor: 'var(--border)' }}
       >
         <div className='text-[11px] text-muted-foreground'>
           Choose where to apply this merged card:
         </div>
 
-        <div className='flex items-center gap-2'>
-          {/* Secondary: Apply to Local Only */}
-          <button
-            onClick={() => onResolve(SYNC_TARGET.LOCAL)}
-            disabled={isResolving}
-            className='flex items-center gap-1.5 rounded-xl border px-3 py-1.5 text-xs font-semibold shadow-2xs transition-all hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50'
-            style={{
-              background: 'var(--card)',
-              borderColor: 'var(--border)',
-            }}
-            title='Update Local Repository only with the merged card'
-          >
-            <FaCloudArrowDown className='h-3 w-3 text-amber-500' />
-            <span>Apply to Local</span>
-          </button>
+        <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto'>
+          <div className='grid grid-cols-2 gap-2 sm:flex sm:items-center'>
+            {/* Secondary: Apply to Local Only */}
+            <button
+              onClick={() => onResolve(SYNC_TARGET.LOCAL)}
+              disabled={isResolving}
+              className='flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2 sm:py-1.5 text-xs font-semibold shadow-2xs transition-all hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50'
+              style={{
+                background: 'var(--card)',
+                borderColor: 'var(--border)',
+              }}
+              title='Update Local Repository only with the merged card'
+            >
+              <FaCloudArrowDown className='h-3.5 w-3.5 text-amber-500 shrink-0' />
+              <span className='truncate'>Apply to Local</span>
+            </button>
 
-          {/* Secondary: Apply to Cloud Only */}
-          <button
-            onClick={() => onResolve(SYNC_TARGET.CLOUD)}
-            disabled={isResolving}
-            className='flex items-center gap-1.5 rounded-xl border px-3 py-1.5 text-xs font-semibold shadow-2xs transition-all hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50'
-            style={{
-              background: 'var(--card)',
-              borderColor: 'var(--border)',
-            }}
-            title='Update MongoDB Cloud only with the merged card'
-          >
-            <FaCloudArrowUp className='h-3 w-3 text-blue-500' />
-            <span>Apply to Cloud</span>
-          </button>
+            {/* Secondary: Apply to Cloud Only */}
+            <button
+              onClick={() => onResolve(SYNC_TARGET.CLOUD)}
+              disabled={isResolving}
+              className='flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2 sm:py-1.5 text-xs font-semibold shadow-2xs transition-all hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50'
+              style={{
+                background: 'var(--card)',
+                borderColor: 'var(--border)',
+              }}
+              title='Update MongoDB Cloud only with the merged card'
+            >
+              <FaCloudArrowUp className='h-3.5 w-3.5 text-blue-500 shrink-0' />
+              <span className='truncate'>Apply to Cloud</span>
+            </button>
+          </div>
 
           {/* Primary: Resolve & Sync Both (Recommended) */}
           <button
             onClick={() => onResolve(SYNC_TARGET.BOTH)}
             disabled={isResolving}
-            className='flex items-center gap-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-1.5 text-xs font-bold shadow-xs transition-all disabled:opacity-50'
+            className='flex items-center justify-center gap-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 sm:py-1.5 text-xs font-bold shadow-xs transition-all disabled:opacity-50 w-full sm:w-auto'
             title='Save to both Local and Cloud, completely resolving the conflict'
           >
             {isResolving ? (
-              <FaRotate className='h-3 w-3 animate-spin' />
+              <FaRotate className='h-3.5 w-3.5 animate-spin shrink-0' />
             ) : (
-              <FaCheck className='h-3 w-3' />
+              <FaCheck className='h-3.5 w-3.5 shrink-0' />
             )}
-            <span>Resolve & Sync Both</span>
+            <span className='whitespace-nowrap'>Resolve & Sync Both</span>
           </button>
         </div>
       </div>

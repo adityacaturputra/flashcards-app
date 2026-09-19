@@ -208,7 +208,7 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
 
   return (
     <div
-      className='rounded-xl border p-4 space-y-3.5 text-xs transition-all shadow-xs'
+      className='rounded-xl border p-3 sm:p-4 space-y-3 sm:space-y-3.5 text-xs transition-all shadow-xs'
       style={{
         background: 'var(--card)',
         borderColor: 'var(--border)',

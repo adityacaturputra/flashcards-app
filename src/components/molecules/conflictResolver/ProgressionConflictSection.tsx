@@ -27,13 +27,13 @@ export const ProgressionConflictSection: React.FC<ProgressionConflictSectionProp
           borderColor: 'var(--border)',
         }}
       >
-        <div className='flex items-center gap-1.5'>
-          <FaGraduationCap className='h-3.5 w-3.5 text-muted-foreground' />
-          <span className='font-bold uppercase tracking-wider text-[10px] text-muted-foreground'>
-            Difficulty / Progression State & Anki SRS
+        <div className='flex items-center gap-1.5 min-w-0'>
+          <FaGraduationCap className='h-3.5 w-3.5 text-muted-foreground shrink-0' />
+          <span className='font-bold uppercase tracking-wider text-[10px] text-muted-foreground truncate'>
+            <span className='hidden xs:inline'>Difficulty / Progression & </span>Anki SRS
           </span>
         </div>
-        <div className='flex items-center gap-1.5'>
+        <div className='flex items-center gap-1.5 shrink-0'>
           <button
             onClick={() => onChoiceChange(SYNC_SOURCE.LOCAL)}
             className={`rounded-md px-2 py-0.5 text-[10px] font-bold border transition-all ${
