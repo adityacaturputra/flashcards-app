@@ -59,6 +59,42 @@ export function resolveBestVoice(accent: AccentPreference): SpeechSynthesisVoice
 }
 
 /**
+ * Clean markdown and formatting artifacts so speech synthesis sounds natural
+ */
+export function stripMarkdownForTTS(text: string): string {
+  if (!text) return '';
+  return (
+    text
+      // Remove code blocks
+      .replace(/```[\s\S]*?```/g, '')
+      // Remove inline code
+      .replace(/`([^`]+)`/g, '$1')
+      // Remove KaTeX math formulas: $$formula$$ or $formula$
+      .replace(/\$\$?([\s\S]*?)\$\$?/g, '$1')
+      // Remove images
+      .replace(/!\[.*?\]\(.*?\)/g, '')
+      // Replace links [text](url) with just text
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      // Remove headings (#, ##, etc.)
+      .replace(/^#{1,6}\s+/gm, '')
+      // Remove blockquotes (> )
+      .replace(/^>\s+/gm, '')
+      // Remove bold/italic markers
+      .replace(/(\*\*|__)(.*?)\1/g, '$2')
+      .replace(/(\*|_)(.*?)\1/g, '$2')
+      .replace(/~~(.*?)~~/g, '$1')
+      // Remove list bullets
+      .replace(/^[\s*+-]+(?=\S)/gm, '')
+      .replace(/^\d+\.\s+/gm, '')
+      // Remove HTML tags
+      .replace(/<[^>]*>/g, '')
+      // Normalize multiple spaces and newlines to a single space
+      .replace(/\s+/g, ' ')
+      .trim()
+  );
+}
+
+/**
  * Play synthesized speech audio for a phoneme, word, or sentence
  */
 export function playSpeech({
@@ -76,10 +112,16 @@ export function playSpeech({
     return;
   }
 
+  const cleanedText = stripMarkdownForTTS(text);
+  if (!cleanedText) {
+    onEnd?.();
+    return;
+  }
+
   // Cancel any ongoing utterance to ensure instant response
   window.speechSynthesis.cancel();
 
-  const utterance = new SpeechSynthesisUtterance(text);
+  const utterance = new SpeechSynthesisUtterance(cleanedText);
   utterance.rate = rate;
   utterance.pitch = pitch;
   utterance.lang = accent === ACCENT_PREFERENCE.UK ? 'en-GB' : 'en-US';

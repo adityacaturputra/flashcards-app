@@ -34,15 +34,15 @@ A maintainable codebase maintains clear boundaries between layers:
 
 - **Extract Repeated Logic Promptly**:
   If a function or calculation is needed in more than one place (e.g. opening TTS audio, formatting timestamps, parsing AI markdown, generating search URLs), extract it into `src/utils/` immediately.
-- **Example (`src/utils/externalLinks.ts`)**:
+- **Example (`src/utils/speechSynthesis.ts` & `src/utils/externalLinks.ts`)**:
   ```ts
   // ✅ DO: Centralized, safe, reusable utility
-  export function openTTSInNewTab(text: string, lang: string = 'en'): void { ... }
+  export function playSpeech({ text, accent, rate }: SpeechOptions): void { ... }
   export function openGoogleSearchInNewTab(query: string, prefix?: string): void { ... }
   ```
   ```ts
-  // ❌ DON'T: Copy-pasting inline functions across 5 different components
-  const openTTS = () => { window.open(...) };
+  // ❌ DON'T: Copy-pasting inline speech synthesis across 5 different components
+  const speakText = () => { window.speechSynthesis.speak(...) };
   ```
 
 ---
@@ -126,7 +126,7 @@ A maintainable codebase maintains clear boundaries between layers:
 
 ## 🧹 8. Code Cleanliness & Documentation
 
-- **Self-Documenting Code**: Choose descriptive, unambiguous identifiers (`filteredItems`, `handleToggleReveal`, `openTTSInNewTab`).
+- **Self-Documenting Code**: Choose descriptive, unambiguous identifiers (`filteredItems`, `handleToggleReveal`, `playSpeech`).
 - **JSDoc on Public Modules**: Add concise JSDoc comments explaining parameters, return types, and context.
 - **Atomic Commits & Zero-Warning Builds**:
   Ensure `npm run build` exits with code 0 before finalizing any feature or refactor.
