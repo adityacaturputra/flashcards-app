@@ -3,6 +3,8 @@ import { Flashcard } from '@/types/flashcard';
 import FlashcardModel from '@/models/FlashcardModel';
 import dbConnect from '@/lib/dbConnect';
 
+import mongoose from 'mongoose';
+
 export class MongoFlashcardProvider implements IFlashcardDataProvider {
   private static instance: MongoFlashcardProvider;
 
@@ -22,7 +24,11 @@ export class MongoFlashcardProvider implements IFlashcardDataProvider {
 
   public async addFlashcard(flashcard: Flashcard): Promise<Flashcard> {
     await dbConnect();
-    return await FlashcardModel.create(flashcard);
+    const payload = { ...flashcard };
+    if (payload._id && !mongoose.isValidObjectId(payload._id)) {
+      delete payload._id;
+    }
+    return await FlashcardModel.create(payload);
   }
 
   public async updateFlashcard(

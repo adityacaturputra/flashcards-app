@@ -12,6 +12,11 @@ export interface LocalFlashcard {
   nextReviewDate: string;
   categories?: string[];
   dynamicFields?: Record<string, string>;
+  repetitions?: number;
+  interval?: number;
+  easeFactor?: number;
+  lapses?: number;
+  lastReviewedDate?: string;
 }
 
 export interface LocalFlashcardCategory {

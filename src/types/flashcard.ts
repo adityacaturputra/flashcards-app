@@ -31,6 +31,13 @@ export interface Flashcard {
   dynamicFields?: Record<string, string>; // Added to store dynamic fields
   key?: string;
   categories?: string[]; // Many-to-many relationship, references FlashcardCategory _id
+
+  // Anki Spaced Repetition (SM-2) Variables
+  repetitions?: number; // Consecutive successful reviews
+  interval?: number; // Current review interval in days
+  easeFactor?: number; // Ease Factor multiplier (default 2.5, min 1.3)
+  lapses?: number; // Count of times card lapsed (failed / Retry)
+  lastReviewedDate?: Date; // Timestamp of previous review
 }
 
 export interface FlashcardCategory {

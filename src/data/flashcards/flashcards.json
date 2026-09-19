@@ -13931,7 +13931,11 @@
       "Pronunciation": "/ʌnˈkɒn.ʃəs/ | /feɪnt/",
       "Arti Utama": "Pingsan, tidak sadarkan diri akibat benturan, trauma, atau kehilangan aliran darah ke otak.",
       "Tips Mengingat": "Unconscious = Tidak sadar (Adjective). Faint = Pingsan (Verb/Noun)."
-    }
+    },
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0
   },
   {
     "_id": "688539b741f03f8fc042b351",

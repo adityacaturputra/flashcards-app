@@ -45,6 +45,13 @@ export class LocalFlashcardProvider implements IFlashcardDataProvider {
         : new Date().toISOString(),
       categories: flashcard.categories || [],
       dynamicFields: flashcard.dynamicFields || {},
+      repetitions: flashcard.repetitions ?? 0,
+      interval: flashcard.interval ?? 0,
+      easeFactor: flashcard.easeFactor ?? 2.5,
+      lapses: flashcard.lapses ?? 0,
+      lastReviewedDate: flashcard.lastReviewedDate
+        ? new Date(flashcard.lastReviewedDate).toISOString()
+        : undefined,
     };
 
     // Append to memory array
@@ -92,6 +99,23 @@ export class LocalFlashcardProvider implements IFlashcardDataProvider {
         updates.dynamicFields !== undefined
           ? updates.dynamicFields
           : current.dynamicFields,
+      repetitions:
+        updates.repetitions !== undefined
+          ? updates.repetitions
+          : current.repetitions,
+      interval:
+        updates.interval !== undefined ? updates.interval : current.interval,
+      easeFactor:
+        updates.easeFactor !== undefined
+          ? updates.easeFactor
+          : current.easeFactor,
+      lapses: updates.lapses !== undefined ? updates.lapses : current.lapses,
+      lastReviewedDate:
+        updates.lastReviewedDate !== undefined
+          ? updates.lastReviewedDate
+            ? new Date(updates.lastReviewedDate).toISOString()
+            : undefined
+          : current.lastReviewedDate,
     };
 
     // Update in-memory array
@@ -132,6 +156,13 @@ export class LocalFlashcardProvider implements IFlashcardDataProvider {
       nextReviewDate: new Date(item.nextReviewDate),
       categories: item.categories,
       dynamicFields: item.dynamicFields,
+      repetitions: item.repetitions ?? 0,
+      interval: item.interval ?? 0,
+      easeFactor: item.easeFactor ?? 2.5,
+      lapses: item.lapses ?? 0,
+      lastReviewedDate: item.lastReviewedDate
+        ? new Date(item.lastReviewedDate)
+        : undefined,
     };
   }
 }

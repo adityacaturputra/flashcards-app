@@ -14,6 +14,12 @@ const FlashcardSchema = new mongoose.Schema<Flashcard>(
     nextReviewDate: { type: Date, required: true },
     dynamicFields: Object, // Added to store dynamic fields
     categories: [{ type: Schema.Types.ObjectId, ref: 'FlashcardCategory' }], // Many-to-many relationship
+    // Anki Spaced Repetition (SM-2) Variables
+    repetitions: { type: Number, default: 0 },
+    interval: { type: Number, default: 0 },
+    easeFactor: { type: Number, default: 2.5 },
+    lapses: { type: Number, default: 0 },
+    lastReviewedDate: { type: Date },
   },
   { collection: 'flashcards' },
 );

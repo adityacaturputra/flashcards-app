@@ -7,7 +7,7 @@ import {
   FLASHCARD_FIELD,
   FlashcardField,
 } from '@/types/flashcard';
-import calculateNextReviewDate from '@/utils/calculateNextReviewDate';
+import { calculateAnkiReview } from '@/utils/ankiAlgorithm';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { formatRemainingTime } from '@/utils/formatRemainingTime';
@@ -96,8 +96,16 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
     ) => {
       setIsUpdating(true);
       try {
-        const nextReviewDate = calculateNextReviewDate(progression);
-        await onUpdate(flashcard._id!, { progression, nextReviewDate });
+        const ankiResult = calculateAnkiReview(flashcard, progression);
+        await onUpdate(flashcard._id!, {
+          progression,
+          nextReviewDate: ankiResult.nextReviewDate,
+          repetitions: ankiResult.repetitions,
+          interval: ankiResult.interval,
+          easeFactor: ankiResult.easeFactor,
+          lapses: ankiResult.lapses,
+          lastReviewedDate: ankiResult.lastReviewedDate,
+        });
         // Add a small delay to ensure loading indicator is visible
         await new Promise((resolve) => setTimeout(resolve, 300));
       } catch (error) {
@@ -280,6 +288,21 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
                 >
                   {remainingTime}
                 </span>
+                {flashcard.interval !== undefined && flashcard.interval > 0 && (
+                  <span
+                    className='rounded-full px-2 py-0.5 text-[10px] font-semibold border hidden sm:inline-flex items-center gap-1'
+                    style={{
+                      background: 'var(--card)',
+                      borderColor: 'var(--border)',
+                      color: 'var(--muted-foreground)',
+                    }}
+                    title={`Anki SRS: Interval ${flashcard.interval}d, Ease ${Math.round((flashcard.easeFactor ?? 2.5) * 100)}%, Reps ${flashcard.repetitions ?? 0}, Lapses ${flashcard.lapses ?? 0}`}
+                  >
+                    <span>{flashcard.interval}d</span>
+                    <span>•</span>
+                    <span>{Math.round((flashcard.easeFactor ?? 2.5) * 100)}%</span>
+                  </span>
+                )}
               </div>
 
               <div className='flex items-center gap-2'>
