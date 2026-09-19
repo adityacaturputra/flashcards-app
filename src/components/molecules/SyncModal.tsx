@@ -13,7 +13,13 @@ import {
   FaTriangleExclamation,
   FaFilter,
 } from 'react-icons/fa6';
-import { SyncDiffReport, SyncCardDiff } from '@/services/syncService';
+import {
+  SyncDiffReport,
+  SyncCardDiff,
+  SyncFilterTab,
+  SYNC_FILTER_TAB,
+  SYNC_DIRECTION,
+} from '@/types/sync';
 import SyncDiffViewer from './SyncDiffViewer';
 
 interface SyncModalProps {
@@ -21,8 +27,6 @@ interface SyncModalProps {
   onClose: () => void;
   onSyncComplete?: () => void;
 }
-
-type FilterTab = 'all' | 'modified' | 'localOnly' | 'cloudOnly';
 
 export const SyncModal: React.FC<SyncModalProps> = ({
   isOpen,
@@ -34,7 +38,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [isSyncing, setIsSyncing] = useState(false);
-  const [activeTab, setActiveTab] = useState<FilterTab>('all');
+  const [activeTab, setActiveTab] = useState<SyncFilterTab>(SYNC_FILTER_TAB.ALL);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -89,7 +93,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
       const res = await fetch('/api/sync', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ direction: 'push' }),
+        body: JSON.stringify({ direction: SYNC_DIRECTION.PUSH }),
       });
       const data = await res.json();
       if (!res.ok || !data.success) {
@@ -116,7 +120,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
       const res = await fetch('/api/sync', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ direction: 'pull' }),
+        body: JSON.stringify({ direction: SYNC_DIRECTION.PULL }),
       });
       const data = await res.json();
       if (!res.ok || !data.success) {
@@ -145,13 +149,13 @@ export const SyncModal: React.FC<SyncModalProps> = ({
   const getVisibleItems = (): SyncCardDiff[] => {
     if (!report) return [];
     switch (activeTab) {
-      case 'modified':
+      case SYNC_FILTER_TAB.MODIFIED:
         return report.modified;
-      case 'localOnly':
+      case SYNC_FILTER_TAB.LOCAL_ONLY:
         return report.localOnly;
-      case 'cloudOnly':
+      case SYNC_FILTER_TAB.CLOUD_ONLY:
         return report.cloudOnly;
-      case 'all':
+      case SYNC_FILTER_TAB.ALL:
       default:
         return [...report.modified, ...report.localOnly, ...report.cloudOnly];
     }
@@ -355,9 +359,9 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                 {/* Tabs */}
                 <div className='flex items-center gap-1.5 border-b pb-2' style={{ borderColor: 'var(--border)' }}>
                   <button
-                    onClick={() => setActiveTab('all')}
+                    onClick={() => setActiveTab(SYNC_FILTER_TAB.ALL)}
                     className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
-                      activeTab === 'all'
+                      activeTab === SYNC_FILTER_TAB.ALL
                         ? 'bg-slate-200 dark:bg-slate-700 text-foreground font-bold'
                         : 'text-muted-foreground hover:text-foreground'
                     }`}
@@ -365,9 +369,9 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                     All Differences ({totalDifferences})
                   </button>
                   <button
-                    onClick={() => setActiveTab('modified')}
+                    onClick={() => setActiveTab(SYNC_FILTER_TAB.MODIFIED)}
                     className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
-                      activeTab === 'modified'
+                      activeTab === SYNC_FILTER_TAB.MODIFIED
                         ? 'bg-slate-200 dark:bg-slate-700 text-foreground font-bold'
                         : 'text-muted-foreground hover:text-foreground'
                     }`}
@@ -375,9 +379,9 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                     Modified ({report.modified.length})
                   </button>
                   <button
-                    onClick={() => setActiveTab('localOnly')}
+                    onClick={() => setActiveTab(SYNC_FILTER_TAB.LOCAL_ONLY)}
                     className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
-                      activeTab === 'localOnly'
+                      activeTab === SYNC_FILTER_TAB.LOCAL_ONLY
                         ? 'bg-slate-200 dark:bg-slate-700 text-foreground font-bold'
                         : 'text-muted-foreground hover:text-foreground'
                     }`}
@@ -385,9 +389,9 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                     Local Only ({report.localOnly.length})
                   </button>
                   <button
-                    onClick={() => setActiveTab('cloudOnly')}
+                    onClick={() => setActiveTab(SYNC_FILTER_TAB.CLOUD_ONLY)}
                     className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
-                      activeTab === 'cloudOnly'
+                      activeTab === SYNC_FILTER_TAB.CLOUD_ONLY
                         ? 'bg-slate-200 dark:bg-slate-700 text-foreground font-bold'
                         : 'text-muted-foreground hover:text-foreground'
                     }`}

@@ -5,45 +5,22 @@
  */
 
 import { Flashcard } from '@/types/flashcard';
-import { LocalFlashcardProvider } from './dataProviders/LocalFlashcardProvider';
-import { MongoFlashcardProvider } from './dataProviders/MongoFlashcardProvider';
+import { DataProviderFactory } from './dataProviders/DataProviderFactory';
+import {
+  SyncCardDiff,
+  SyncDiffReport,
+  SyncExecutionResult,
+  SyncFieldDiff,
+  SyncSource,
+  SyncTarget,
+  SYNC_CARD_STATUS,
+  SYNC_DIRECTION,
+  SYNC_SOURCE,
+  SYNC_TARGET,
+  SYNC_TARGET_LABEL,
+} from '@/types/sync';
 
-export type SyncCardStatus = 'localOnly' | 'cloudOnly' | 'modified' | 'identical';
-
-export interface SyncFieldDiff {
-  field: string;
-  label: string;
-  localValue: unknown;
-  cloudValue: unknown;
-}
-
-export interface SyncCardDiff {
-  id: string;
-  question: string;
-  status: SyncCardStatus;
-  diffs: SyncFieldDiff[];
-  localCard?: Flashcard;
-  cloudCard?: Flashcard;
-}
-
-export interface SyncDiffReport {
-  localOnly: SyncCardDiff[];
-  cloudOnly: SyncCardDiff[];
-  modified: SyncCardDiff[];
-  identicalCount: number;
-  totalLocal: number;
-  totalCloud: number;
-  timestamp: string;
-}
-
-export interface SyncExecutionResult {
-  success: boolean;
-  direction: 'push' | 'pull';
-  createdCount: number;
-  updatedCount: number;
-  message: string;
-  errors?: string[];
-}
+export * from '@/types/sync';
 
 /**
  * Normalizes question string for fuzzy comparison fallback
@@ -178,11 +155,11 @@ export class SyncService {
    * Generates a comprehensive comparison report between Local and MongoDB flashcards
    */
   public static async computeDiff(): Promise<SyncDiffReport> {
-    const localProvider = LocalFlashcardProvider.getInstance();
-    const mongoProvider = MongoFlashcardProvider.getInstance();
+    const localProvider = DataProviderFactory.getLocalFlashcardProvider();
+    const cloudProvider = DataProviderFactory.getCloudFlashcardProvider();
 
     const localCards = await localProvider.getFlashcards();
-    const cloudCards = await mongoProvider.getFlashcards();
+    const cloudCards = await cloudProvider.getFlashcards();
 
     const localOnly: SyncCardDiff[] = [];
     const cloudOnly: SyncCardDiff[] = [];
@@ -222,7 +199,7 @@ export class SyncService {
         localOnly.push({
           id: localId || `local_${Math.random()}`,
           question: localCard.question,
-          status: 'localOnly',
+          status: SYNC_CARD_STATUS.LOCAL_ONLY,
           diffs: [],
           localCard,
         });
@@ -234,7 +211,7 @@ export class SyncService {
           modified.push({
             id: localId || matchedCloud._id?.toString() || '',
             question: localCard.question,
-            status: 'modified',
+            status: SYNC_CARD_STATUS.MODIFIED,
             diffs,
             localCard,
             cloudCard: matchedCloud,
@@ -252,7 +229,7 @@ export class SyncService {
         cloudOnly.push({
           id: cloudId,
           question: cloudCard.question,
-          status: 'cloudOnly',
+          status: SYNC_CARD_STATUS.CLOUD_ONLY,
           diffs: [],
           cloudCard,
         });
@@ -277,7 +254,7 @@ export class SyncService {
    */
   public static async pushLocalToCloud(cardIds?: string[]): Promise<SyncExecutionResult> {
     const report = await this.computeDiff();
-    const mongoProvider = MongoFlashcardProvider.getInstance();
+    const cloudProvider = DataProviderFactory.getCloudFlashcardProvider();
     const errors: string[] = [];
     let createdCount = 0;
     let updatedCount = 0;
@@ -288,7 +265,7 @@ export class SyncService {
     for (const item of report.localOnly) {
       if (!shouldSync(item.id) || !item.localCard) continue;
       try {
-        await mongoProvider.addFlashcard(item.localCard);
+        await cloudProvider.addFlashcard(item.localCard);
         createdCount++;
       } catch (err) {
         errors.push(`Failed to insert local card "${item.question}": ${String(err)}`);
@@ -300,7 +277,7 @@ export class SyncService {
       if (!shouldSync(item.id) || !item.localCard) continue;
       try {
         const cloudId = item.cloudCard?._id || item.id;
-        await mongoProvider.updateFlashcard(cloudId, item.localCard);
+        await cloudProvider.updateFlashcard(cloudId, item.localCard);
         updatedCount++;
       } catch (err) {
         errors.push(`Failed to update cloud card "${item.question}": ${String(err)}`);
@@ -309,7 +286,7 @@ export class SyncService {
 
     return {
       success: errors.length === 0,
-      direction: 'push',
+      direction: SYNC_DIRECTION.PUSH,
       createdCount,
       updatedCount,
       message: `Successfully pushed ${createdCount} new cards and updated ${updatedCount} existing cards to MongoDB Cloud.`,
@@ -324,7 +301,7 @@ export class SyncService {
    */
   public static async pullCloudToLocal(cardIds?: string[]): Promise<SyncExecutionResult> {
     const report = await this.computeDiff();
-    const localProvider = LocalFlashcardProvider.getInstance();
+    const localProvider = DataProviderFactory.getLocalFlashcardProvider();
     const errors: string[] = [];
     let createdCount = 0;
     let updatedCount = 0;
@@ -356,7 +333,7 @@ export class SyncService {
 
     return {
       success: errors.length === 0,
-      direction: 'pull',
+      direction: SYNC_DIRECTION.PULL,
       createdCount,
       updatedCount,
       message: `Successfully pulled ${createdCount} new cards and updated ${updatedCount} cards in Local Repository.`,
@@ -371,39 +348,29 @@ export class SyncService {
   public static async resolveCardConflict(
     cardId: string,
     resolvedCard: Flashcard,
-    target: 'both' | 'local' | 'cloud' = 'both'
+    target: SyncTarget = SYNC_TARGET.BOTH
   ): Promise<{ success: boolean; message: string; errors?: string[] }> {
-    const localProvider = LocalFlashcardProvider.getInstance();
-    const mongoProvider = MongoFlashcardProvider.getInstance();
     const errors: string[] = [];
-
     const cardToSave: Flashcard = {
       ...resolvedCard,
     };
 
-    if (target === 'local' || target === 'both') {
-      try {
-        await localProvider.updateFlashcard(cardId, cardToSave);
-      } catch (err) {
-        errors.push(`Failed to update local card: ${String(err)}`);
-      }
-    }
+    const targetsToUpdate: SyncSource[] =
+      target === SYNC_TARGET.BOTH
+        ? [SYNC_SOURCE.LOCAL, SYNC_SOURCE.CLOUD]
+        : [target];
 
-    if (target === 'cloud' || target === 'both') {
+    for (const t of targetsToUpdate) {
+      const provider = DataProviderFactory.getFlashcardProviderByTarget(t);
       try {
-        await mongoProvider.updateFlashcard(cardId, cardToSave);
+        await provider.updateFlashcard(cardId, cardToSave);
       } catch (err) {
-        errors.push(`Failed to update cloud card: ${String(err)}`);
+        errors.push(`Failed to update ${t} card: ${String(err)}`);
       }
     }
 
     const success = errors.length === 0;
-    const targetLabel =
-      target === 'both'
-        ? 'Both Local & Cloud'
-        : target === 'local'
-          ? 'Local Repository'
-          : 'MongoDB Cloud';
+    const targetLabel = SYNC_TARGET_LABEL[target] || target;
 
     return {
       success,

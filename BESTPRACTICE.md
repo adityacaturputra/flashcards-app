@@ -147,6 +147,17 @@ When supporting multiple data backends (e.g. **Local Repository** vs. **MongoDB 
   const provider = DataProviderFactory.getFlashcardProvider(source);
   const flashcards = await provider.getFlashcards();
   ```
+- **Semantic & Target-Based Factory Methods**:
+  Provide clear, semantic resolution methods to prevent consumer modules from doing duplicate source checking:
+  ```ts
+  DataProviderFactory.getLocalFlashcardProvider();
+  DataProviderFactory.getCloudFlashcardProvider();
+  DataProviderFactory.getFlashcardProviderByTarget(target); // accepts SyncSource | SyncTarget | DataSource
+  ```
+- **Dependency Inversion & Consumer Decoupling**:
+  High-level services (such as `SyncService`) must NEVER import concrete provider classes (`LocalFlashcardProvider` or `MongoFlashcardProvider`) directly. They must always resolve providers dynamically via `DataProviderFactory`.
+- **YAGNI (You Aren't Gonna Need It) on Provider Methods**:
+  Do not invent speculative provider helper methods (e.g. category sync providers) without actual consuming features. Keep the factory lean, purposeful, and driven by actual requirements.
 
 ---
 
@@ -185,7 +196,8 @@ When supporting multiple data backends (e.g. **Local Repository** vs. **MongoDB 
 
 ## 🧩 12. Component & Hook Decomposition (Keeping Files Lean & Modular)
 
-- **Keep Organism Components Lean (< 300–400 Lines)**:
+### 12.1 Organism Decomposition & Custom Hooks (< 300–400 Lines Target)
+- **Keep Organism Components Lean**:
   When an organism handles multiple UI concerns (such as search bars, category filters, multi-criteria sorting, bulk selection, pagination, and card rendering), never cram all state algorithms and JSX blocks into a single monolithic file.
 - **Extract Complex List Logics into Custom Hooks (`src/hooks/`)**:
   - Multi-criteria sorting (e.g. `useFlashcardSort` for recent/progression/alphabetical order) and complex filtering must be encapsulated in dedicated hooks.
@@ -197,6 +209,28 @@ When supporting multiple data backends (e.g. **Local Repository** vs. **MongoDB 
 - **Extract Sub-Controls into Molecules (`src/components/molecules/`)**:
   - Sub-control bars (such as `FlashcardSortControls`, `BulkActionButtons`, `MappingFilters`) must be extracted into focused molecular components.
   - Wrap molecular controls with `React.memo` and communicate via explicit event props (`onSortChange`, `onFilterChange`) to ensure clean separation of concerns and prevent unnecessary re-renders.
+
+### 12.2 Complex Molecular Card & Widget Decomposition (< 150–200 Lines Target)
+When an individual card or molecular widget handles intricate workflows (such as 3-way merge conflict resolution, multi-field diffing, multi-section cards, or detailed interactive modals):
+- **Never Let Files Balloon Past 250–300 Lines**:
+  Monolithic card files (e.g. 700+ lines) hinder readability, introduce merge conflicts, and make testing individual visual states nearly impossible.
+- **Feature Sub-Directories (`src/components/molecules/<feature>/`)**:
+  Group tightly-coupled sub-components into a dedicated feature folder (e.g., `src/components/molecules/conflictResolver/`, `src/components/molecules/header/`).
+- **Consolidate Symmetric Patterns (DRY Component Extraction)**:
+  If multiple sections share identical structures (e.g., Question and Answer diff blocks), consolidate them into a single reusable sub-component (e.g., `TextFieldConflictSection`) parameterized via props (`label`, `localValue`, `cloudValue`, `choice`, `onChoiceChange`, `isPreWrap`).
+- **Barrel Export Pattern (`index.ts`)**:
+  Provide an `index.ts` barrel file inside the feature directory to keep imports tidy and self-contained:
+  ```ts
+  export * from './ConflictResolverHeader';
+  export * from './ProgressionConflictSection';
+  export * from './TextFieldConflictSection';
+  export * from './DynamicFieldsConflictSection';
+  export * from './MergedCardPreview';
+  export * from './ConflictResolverFooter';
+  ```
+- **The Orchestrator Role**:
+  The main card component acts purely as an **orchestrator** (< 150 lines): it manages state, executes computations (`mergedCard`), triggers network actions (`handleResolve`), and renders declarative sub-components.
+
 
 ---
 
