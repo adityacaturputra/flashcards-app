@@ -1,25 +1,21 @@
 /**
  * English Phonemics & Pronunciation Type Definitions
  */
+import {
+  PhonemeCategory,
+  MonophthongSubCategory,
+  DiphthongSubCategory,
+  ConsonantSubCategory,
+  VoicingType,
+  ConnectedSpeechCategory,
+} from '@/constants/phonemic';
 
-export type PhonemeCategory = 'monophthong' | 'diphthong' | 'consonant';
-
-export type MonophthongSubCategory = 'short' | 'long';
-export type DiphthongSubCategory = 'closing-i' | 'closing-u' | 'centring';
-export type ConsonantSubCategory =
-  | 'plosive'
-  | 'fricative'
-  | 'affricate'
-  | 'nasal'
-  | 'approximant'
-  | 'glottal';
+export * from '@/constants/phonemic';
 
 export type PhonemeSubCategory =
   | MonophthongSubCategory
   | DiphthongSubCategory
   | ConsonantSubCategory;
-
-export type VoicingType = 'voiced' | 'unvoiced' | 'voiced-vowel';
 
 export interface ArticulatoryGuide {
   lips: string; // e.g. 'Spread', 'Rounded', 'Neutral / Relaxed'
@@ -72,7 +68,7 @@ export interface WeakFormExample {
 export interface ConnectedSpeechLesson {
   id: string;
   title: string;
-  category: 'schwa' | 'weak-forms' | 'linking' | 'elision' | 'stress';
+  category: ConnectedSpeechCategory;
   summary: string;
   rule: string;
   ieltsBand7Benefit: string;
@@ -83,11 +79,3 @@ export interface ConnectedSpeechLesson {
     audioPrompt: string;
   }[];
 }
-
-export type PhonemicViewTab =
-  | 'chart'
-  | 'minimal-pairs'
-  | 'connected-speech'
-  | 'roadmap';
-
-export type AccentPreference = 'uk' | 'us';

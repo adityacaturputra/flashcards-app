@@ -11,6 +11,7 @@ export const APP_ROUTES = {
   GEMINI_TOOLS: '/gemini-tools',
   IELTS: '/ielts',
   PHONEMICS: '/phonemics',
+  AWL: '/awl',
 } as const;
 
 export type AppRoute = (typeof APP_ROUTES)[keyof typeof APP_ROUTES];

@@ -2,7 +2,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaVolumeHigh } from 'react-icons/fa6';
-import { PhonemeItem, AccentPreference } from '@/types/phonemic';
+import {
+  PhonemeItem,
+  AccentPreference,
+  PHONEME_CATEGORY,
+  VOICING_TYPE,
+} from '@/types/phonemic';
 import { playSpeech } from '@/utils/speechSynthesis';
 
 interface PhonemeCardProps {
@@ -34,20 +39,20 @@ export const PhonemeCard: React.FC<PhonemeCardProps> = ({
 
   // Border & Accent coloring based on phoneme category
   const getCardStyle = () => {
-    if (phoneme.category === 'monophthong') {
+    if (phoneme.category === PHONEME_CATEGORY.MONOPHTHONG) {
       return {
         bg: 'hover:border-amber-400/80 bg-amber-500/5 dark:bg-amber-500/10',
         badge: 'bg-amber-500/15 text-amber-700 dark:text-amber-300',
       };
     }
-    if (phoneme.category === 'diphthong') {
+    if (phoneme.category === PHONEME_CATEGORY.DIPHTHONG) {
       return {
         bg: 'hover:border-orange-400/80 bg-orange-500/5 dark:bg-orange-500/10',
         badge: 'bg-orange-500/15 text-orange-700 dark:text-orange-300',
       };
     }
     // Consonant
-    if (phoneme.voicing === 'voiced') {
+    if (phoneme.voicing === VOICING_TYPE.VOICED) {
       return {
         bg: 'hover:border-emerald-400/80 bg-emerald-500/5 dark:bg-emerald-500/10',
         badge: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300',

@@ -58,5 +58,10 @@
     "_id": "6901a0010000000000000009",
     "name": "Irregular Plurals & Nouns",
     "description": "Irregular plural nouns, singular vs plural pairs, and subject-verb agreement rules"
+  },
+  {
+    "_id": "6901a0010000000000000010",
+    "name": "Academic Word List (AWL)",
+    "description": "Averil Coxhead's 570 academic word families essential for IELTS Band 7.0–8.5+ and university-level study"
   }
 ]

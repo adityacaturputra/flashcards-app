@@ -3,7 +3,7 @@
  * Zero-dependency, offline-ready browser speech synthesis.
  */
 
-import { AccentPreference } from '@/types/phonemic';
+import { AccentPreference, ACCENT_PREFERENCE, DEFAULT_ACCENT } from '@/types/phonemic';
 
 interface SpeechOptions {
   text: string;
@@ -15,26 +15,14 @@ interface SpeechOptions {
   onError?: (err: unknown) => void;
 }
 
-let cachedVoices: SpeechSynthesisVoice[] = [];
-
 /**
- * Pre-cache and refresh available voices from the browser
+ * Get available browser voices safely
  */
 export function getAvailableVoices(): SpeechSynthesisVoice[] {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
     return [];
   }
-  if (cachedVoices.length === 0) {
-    cachedVoices = window.speechSynthesis.getVoices();
-  }
-  return cachedVoices;
-}
-
-// Auto-register voice changes if supported
-if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-  window.speechSynthesis.onvoiceschanged = () => {
-    cachedVoices = window.speechSynthesis.getVoices();
-  };
+  return window.speechSynthesis.getVoices() || [];
 }
 
 /**
@@ -44,7 +32,7 @@ export function resolveBestVoice(accent: AccentPreference): SpeechSynthesisVoice
   const voices = getAvailableVoices();
   if (!voices || voices.length === 0) return null;
 
-  const targetLang = accent === 'uk' ? 'en-GB' : 'en-US';
+  const targetLang = accent === ACCENT_PREFERENCE.UK ? 'en-GB' : 'en-US';
 
   // 1. Try to find natural/high-quality voices matching target lang
   const naturalMatch = voices.find(
@@ -75,7 +63,7 @@ export function resolveBestVoice(accent: AccentPreference): SpeechSynthesisVoice
  */
 export function playSpeech({
   text,
-  accent = 'uk',
+  accent = DEFAULT_ACCENT,
   rate = 0.88,
   pitch = 1.0,
   onStart,
@@ -94,7 +82,7 @@ export function playSpeech({
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.rate = rate;
   utterance.pitch = pitch;
-  utterance.lang = accent === 'uk' ? 'en-GB' : 'en-US';
+  utterance.lang = accent === ACCENT_PREFERENCE.UK ? 'en-GB' : 'en-US';
 
   const selectedVoice = resolveBestVoice(accent);
   if (selectedVoice) {

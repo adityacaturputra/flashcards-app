@@ -5,7 +5,14 @@ import {
   FaFilter,
 } from 'react-icons/fa6';
 import { ALL_PHONEMES } from '@/data/phonemics';
-import { PhonemeItem, AccentPreference } from '@/types/phonemic';
+import {
+  PhonemeItem,
+  AccentPreference,
+  PHONEME_CATEGORY,
+  VOICING_TYPE,
+  UNDERHILL_FILTER_OPTION,
+  UnderhillFilterOption,
+} from '@/types/phonemic';
 import PhonemeCard from '@/components/atoms/PhonemeCard';
 import PhonemeDetailModal from '@/components/molecules/PhonemeDetailModal';
 
@@ -13,24 +20,22 @@ interface UnderhillPhonemicBoardProps {
   accent: AccentPreference;
 }
 
-type FilterOption = 'all' | 'monophthongs' | 'diphthongs' | 'consonants' | 'voiced' | 'unvoiced';
-
 export const UnderhillPhonemicBoard: React.FC<UnderhillPhonemicBoardProps> = ({ accent }) => {
   const [selectedPhoneme, setSelectedPhoneme] = useState<PhonemeItem | null>(null);
-  const [filter, setFilter] = useState<FilterOption>('all');
+  const [filter, setFilter] = useState<UnderhillFilterOption>(UNDERHILL_FILTER_OPTION.ALL);
   const [searchQuery, setSearchQuery] = useState('');
 
   // Segregate by official Underhill layout quadrants
   const monophthongs = useMemo(
-    () => ALL_PHONEMES.filter((p) => p.category === 'monophthong'),
+    () => ALL_PHONEMES.filter((p) => p.category === PHONEME_CATEGORY.MONOPHTHONG),
     []
   );
   const diphthongs = useMemo(
-    () => ALL_PHONEMES.filter((p) => p.category === 'diphthong'),
+    () => ALL_PHONEMES.filter((p) => p.category === PHONEME_CATEGORY.DIPHTHONG),
     []
   );
   const consonants = useMemo(
-    () => ALL_PHONEMES.filter((p) => p.category === 'consonant'),
+    () => ALL_PHONEMES.filter((p) => p.category === PHONEME_CATEGORY.CONSONANT),
     []
   );
 
@@ -49,20 +54,22 @@ export const UnderhillPhonemicBoard: React.FC<UnderhillPhonemicBoardProps> = ({ 
       );
     }
 
-    if (filter === 'monophthongs') {
-      return list.filter((p) => p.category === 'monophthong');
+    if (filter === UNDERHILL_FILTER_OPTION.MONOPHTHONGS) {
+      return list.filter((p) => p.category === PHONEME_CATEGORY.MONOPHTHONG);
     }
-    if (filter === 'diphthongs') {
-      return list.filter((p) => p.category === 'diphthong');
+    if (filter === UNDERHILL_FILTER_OPTION.DIPHTHONGS) {
+      return list.filter((p) => p.category === PHONEME_CATEGORY.DIPHTHONG);
     }
-    if (filter === 'consonants') {
-      return list.filter((p) => p.category === 'consonant');
+    if (filter === UNDERHILL_FILTER_OPTION.CONSONANTS) {
+      return list.filter((p) => p.category === PHONEME_CATEGORY.CONSONANT);
     }
-    if (filter === 'voiced') {
-      return list.filter((p) => p.voicing === 'voiced' || p.voicing === 'voiced-vowel');
+    if (filter === UNDERHILL_FILTER_OPTION.VOICED) {
+      return list.filter(
+        (p) => p.voicing === VOICING_TYPE.VOICED || p.voicing === VOICING_TYPE.VOICED_VOWEL
+      );
     }
-    if (filter === 'unvoiced') {
-      return list.filter((p) => p.voicing === 'unvoiced');
+    if (filter === UNDERHILL_FILTER_OPTION.UNVOICED) {
+      return list.filter((p) => p.voicing === VOICING_TYPE.UNVOICED);
     }
 
     return list;
@@ -111,39 +118,62 @@ export const UnderhillPhonemicBoard: React.FC<UnderhillPhonemicBoardProps> = ({ 
         </div>
 
         {/* Filter Pills */}
-        <div className='flex flex-wrap items-center gap-1.5 pt-1 border-t border-border/60'>
-          <div className='flex items-center gap-1 text-xs text-muted-foreground mr-1.5 font-medium'>
+        <div className='flex flex-wrap items-center gap-2 pt-2 border-t border-border/60'>
+          <div className='flex items-center gap-1.5 text-xs text-muted-foreground mr-1 font-bold'>
             <FaFilter className='h-3 w-3' />
             <span>Kategori:</span>
           </div>
 
-          {(
-            [
-              { id: 'all', label: 'Semua (44)' },
-              { id: 'monophthongs', label: 'Monophthongs (12)' },
-              { id: 'diphthongs', label: 'Diphthongs (8)' },
-              { id: 'consonants', label: 'Consonants (24)' },
-              { id: 'voiced', label: 'Voiced Saja' },
-              { id: 'unvoiced', label: 'Unvoiced Saja' },
-            ] as const
-          ).map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setFilter(item.id)}
-              className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
-                filter === item.id
-                  ? 'bg-primary text-primary-foreground shadow-xs'
-                  : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
+          <div
+            className='inline-flex flex-wrap items-center gap-1 p-1 rounded-xl border shadow-xs'
+            style={{
+              background: 'var(--secondary)',
+              borderColor: 'var(--border)',
+            }}
+          >
+            {(
+              [
+                { id: UNDERHILL_FILTER_OPTION.ALL, label: 'Semua (44)' },
+                { id: UNDERHILL_FILTER_OPTION.MONOPHTHONGS, label: 'Monophthongs (12)' },
+                { id: UNDERHILL_FILTER_OPTION.DIPHTHONGS, label: 'Diphthongs (8)' },
+                { id: UNDERHILL_FILTER_OPTION.CONSONANTS, label: 'Consonants (24)' },
+                { id: UNDERHILL_FILTER_OPTION.VOICED, label: 'Voiced Saja' },
+                { id: UNDERHILL_FILTER_OPTION.UNVOICED, label: 'Unvoiced Saja' },
+              ] as const
+            ).map((item) => {
+              const isSelected = filter === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setFilter(item.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs transition-all ${
+                    isSelected
+                      ? 'font-bold border shadow-xs'
+                      : 'font-medium opacity-65 hover:opacity-100'
+                  }`}
+                  style={
+                    isSelected
+                      ? {
+                          background: 'var(--card)',
+                          color: 'var(--foreground)',
+                          borderColor: 'var(--border)',
+                          boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+                        }
+                      : {
+                          color: 'var(--muted-foreground)',
+                        }
+                  }
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
       {/* When filtering or searching: Flat Grid View */}
-      {filter !== 'all' || searchQuery.trim() !== '' ? (
+      {filter !== UNDERHILL_FILTER_OPTION.ALL || searchQuery.trim() !== '' ? (
         <div className='space-y-3'>
           <div className='flex items-center justify-between text-xs text-muted-foreground px-1'>
             <span>Ditemukan {filteredPhonemes.length} fonem</span>

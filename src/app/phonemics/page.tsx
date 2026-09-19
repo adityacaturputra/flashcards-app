@@ -10,17 +10,23 @@ import {
   FaMapLocationDot,
   FaCheck,
 } from 'react-icons/fa6';
-import { PhonemicViewTab, AccentPreference } from '@/types/phonemic';
+import {
+  PhonemicViewTab,
+  AccentPreference,
+  PHONEMIC_VIEW_TAB,
+  ACCENT_PREFERENCE,
+} from '@/types/phonemic';
 import UnderhillPhonemicBoard from '@/components/organisms/UnderhillPhonemicBoard';
 import MinimalPairsTrainer from '@/components/organisms/MinimalPairsTrainer';
 import ConnectedSpeechLab from '@/components/organisms/ConnectedSpeechLab';
 import ErrorBoundary from '@/components/atoms/ErrorBoundary';
+import AccentToggle from '@/components/atoms/AccentToggle';
 import { APP_ROUTES } from '@/constants/routes';
 
 export default function PhonemicsPage() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<PhonemicViewTab>('chart');
-  const [accent, setAccent] = useState<AccentPreference>('uk');
+  const [activeTab, setActiveTab] = useState<PhonemicViewTab>(PHONEMIC_VIEW_TAB.CHART);
+  const [accent, setAccent] = useState<AccentPreference>(ACCENT_PREFERENCE.US);
 
   return (
     <ErrorBoundary>
@@ -75,33 +81,7 @@ export default function PhonemicsPage() {
               </div>
 
               {/* Right: Accent Toggle (UK vs US) */}
-              <div className='flex items-center gap-1.5 p-1 rounded-xl border bg-secondary/60 border-border'>
-                <button
-                  onClick={() => setAccent('uk')}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
-                    accent === 'uk'
-                      ? 'bg-primary text-primary-foreground shadow-xs'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                  title='Gunakan Aksen British RP (Standar Resmi Cambridge IELTS)'
-                >
-                  <span>🇬🇧</span>
-                  <span className='hidden sm:inline'>British RP</span>
-                </button>
-
-                <button
-                  onClick={() => setAccent('us')}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
-                    accent === 'us'
-                      ? 'bg-primary text-primary-foreground shadow-xs'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                  title='Gunakan Aksen American English'
-                >
-                  <span>🇺🇸</span>
-                  <span className='hidden sm:inline'>American</span>
-                </button>
-              </div>
+              <AccentToggle value={accent} onChange={setAccent} />
             </div>
           </div>
         </header>
@@ -113,25 +93,25 @@ export default function PhonemicsPage() {
             {(
               [
                 {
-                  id: 'chart',
+                  id: PHONEMIC_VIEW_TAB.CHART,
                   label: 'Bagan Fonem 44',
                   sub: 'Underhill Soundboard',
                   icon: FaTableCells,
                 },
                 {
-                  id: 'minimal-pairs',
+                  id: PHONEMIC_VIEW_TAB.MINIMAL_PAIRS,
                   label: 'Minimal Pairs Quiz',
                   sub: 'Kuis Pendengaran',
                   icon: FaHeadphones,
                 },
                 {
-                  id: 'connected-speech',
+                  id: PHONEMIC_VIEW_TAB.CONNECTED_SPEECH,
                   label: 'Connected Speech',
                   sub: 'Schwa & Weak Forms',
                   icon: FaWaveSquare,
                 },
                 {
-                  id: 'roadmap',
+                  id: PHONEMIC_VIEW_TAB.ROADMAP,
                   label: 'Roadmap Belajar',
                   sub: 'Metode & Tahapan',
                   icon: FaMapLocationDot,
@@ -164,9 +144,9 @@ export default function PhonemicsPage() {
 
           {/* Active Tab View */}
           <AnimatePresence mode='wait'>
-            {activeTab === 'chart' && (
+            {activeTab === PHONEMIC_VIEW_TAB.CHART && (
               <motion.div
-                key='chart'
+                key={PHONEMIC_VIEW_TAB.CHART}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
@@ -176,9 +156,9 @@ export default function PhonemicsPage() {
               </motion.div>
             )}
 
-            {activeTab === 'minimal-pairs' && (
+            {activeTab === PHONEMIC_VIEW_TAB.MINIMAL_PAIRS && (
               <motion.div
-                key='minimal-pairs'
+                key={PHONEMIC_VIEW_TAB.MINIMAL_PAIRS}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
@@ -188,9 +168,9 @@ export default function PhonemicsPage() {
               </motion.div>
             )}
 
-            {activeTab === 'connected-speech' && (
+            {activeTab === PHONEMIC_VIEW_TAB.CONNECTED_SPEECH && (
               <motion.div
-                key='connected-speech'
+                key={PHONEMIC_VIEW_TAB.CONNECTED_SPEECH}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
@@ -200,9 +180,9 @@ export default function PhonemicsPage() {
               </motion.div>
             )}
 
-            {activeTab === 'roadmap' && (
+            {activeTab === PHONEMIC_VIEW_TAB.ROADMAP && (
               <motion.div
-                key='roadmap'
+                key={PHONEMIC_VIEW_TAB.ROADMAP}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}

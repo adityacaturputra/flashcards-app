@@ -12,7 +12,12 @@ import {
   FaBookOpen,
 } from 'react-icons/fa6';
 import { MINIMAL_PAIRS } from '@/data/phonemics';
-import { MinimalPairItem, AccentPreference } from '@/types/phonemic';
+import {
+  MinimalPairItem,
+  AccentPreference,
+  MINIMAL_PAIRS_MODE,
+  MinimalPairsMode,
+} from '@/types/phonemic';
 import { playSpeech } from '@/utils/speechSynthesis';
 
 interface MinimalPairsTrainerProps {
@@ -20,7 +25,7 @@ interface MinimalPairsTrainerProps {
 }
 
 export const MinimalPairsTrainer: React.FC<MinimalPairsTrainerProps> = ({ accent }) => {
-  const [activeSubTab, setActiveSubTab] = useState<'study' | 'quiz'>('quiz');
+  const [activeSubTab, setActiveSubTab] = useState<MinimalPairsMode>(MINIMAL_PAIRS_MODE.QUIZ);
 
   // Quiz State
   const [currentPairIndex, setCurrentPairIndex] = useState(0);
@@ -90,33 +95,63 @@ export const MinimalPairsTrainer: React.FC<MinimalPairsTrainerProps> = ({ accent
     <div className='space-y-6'>
       {/* Subtab Switcher: Quiz Mode vs Study Reference */}
       <div className='flex items-center justify-between flex-wrap gap-3'>
-        <div className='flex items-center gap-2 p-1 rounded-xl border bg-secondary/50'>
+        <div
+          className='inline-flex items-center gap-1 p-1 rounded-xl border shadow-xs'
+          style={{
+            background: 'var(--secondary)',
+            borderColor: 'var(--border)',
+          }}
+        >
           <button
-            onClick={() => setActiveSubTab('quiz')}
-            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-              activeSubTab === 'quiz'
-                ? 'bg-primary text-primary-foreground shadow-xs'
-                : 'text-muted-foreground hover:text-foreground'
+            onClick={() => setActiveSubTab(MINIMAL_PAIRS_MODE.QUIZ)}
+            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs transition-all ${
+              activeSubTab === MINIMAL_PAIRS_MODE.QUIZ
+                ? 'font-bold border shadow-xs'
+                : 'font-medium opacity-65 hover:opacity-100'
             }`}
+            style={
+              activeSubTab === MINIMAL_PAIRS_MODE.QUIZ
+                ? {
+                    background: 'var(--card)',
+                    color: 'var(--foreground)',
+                    borderColor: 'var(--border)',
+                    boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+                  }
+                : {
+                    color: 'var(--muted-foreground)',
+                  }
+            }
           >
             <FaHeadphones className='h-3.5 w-3.5' />
             <span>Mode Kuis Pendengaran</span>
           </button>
 
           <button
-            onClick={() => setActiveSubTab('study')}
-            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-              activeSubTab === 'study'
-                ? 'bg-primary text-primary-foreground shadow-xs'
-                : 'text-muted-foreground hover:text-foreground'
+            onClick={() => setActiveSubTab(MINIMAL_PAIRS_MODE.STUDY)}
+            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs transition-all ${
+              activeSubTab === MINIMAL_PAIRS_MODE.STUDY
+                ? 'font-bold border shadow-xs'
+                : 'font-medium opacity-65 hover:opacity-100'
             }`}
+            style={
+              activeSubTab === MINIMAL_PAIRS_MODE.STUDY
+                ? {
+                    background: 'var(--card)',
+                    color: 'var(--foreground)',
+                    borderColor: 'var(--border)',
+                    boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+                  }
+                : {
+                    color: 'var(--muted-foreground)',
+                  }
+            }
           >
             <FaBookOpen className='h-3.5 w-3.5' />
             <span>Daftar 30+ Pasangan Suara</span>
           </button>
         </div>
 
-        {activeSubTab === 'quiz' && (
+        {activeSubTab === MINIMAL_PAIRS_MODE.QUIZ && (
           <div className='flex items-center gap-3 text-xs font-medium'>
             <div className='flex items-center gap-1.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-lg border border-emerald-500/20'>
               <FaCheck className='h-3 w-3' />
@@ -143,7 +178,7 @@ export const MinimalPairsTrainer: React.FC<MinimalPairsTrainerProps> = ({ accent
       </div>
 
       {/* QUIZ MODE */}
-      {activeSubTab === 'quiz' && (
+      {activeSubTab === MINIMAL_PAIRS_MODE.QUIZ && (
         <div
           className='rounded-3xl border p-6 sm:p-8 space-y-6 text-center max-w-xl mx-auto shadow-sm'
           style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
@@ -264,7 +299,7 @@ export const MinimalPairsTrainer: React.FC<MinimalPairsTrainerProps> = ({ accent
       )}
 
       {/* STUDY REFERENCE MODE */}
-      {activeSubTab === 'study' && (
+      {activeSubTab === MINIMAL_PAIRS_MODE.STUDY && (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-3.5'>
           {MINIMAL_PAIRS.map((pair) => (
             <div
