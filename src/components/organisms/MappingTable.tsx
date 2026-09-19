@@ -53,27 +53,37 @@ export const MappingTable: React.FC<MappingTableProps> = ({
         }}
       >
         {/* Module Filter Chips */}
-        <div className='flex items-center gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible'>
+        <div className='flex items-center gap-2 overflow-x-auto py-1 -mx-1 px-1 sm:mx-0 sm:px-0 sm:flex-wrap sm:overflow-visible scrollbar-none'>
           <button
             onClick={() => setSelectedModule(null)}
-            className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold whitespace-nowrap transition-all hover:scale-105 ${
+            className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs whitespace-nowrap transition-all shrink-0 active:scale-95 ${
               selectedModule === null
-                ? 'shadow-md'
-                : 'opacity-80 hover:opacity-100'
+                ? 'font-bold border shadow-xs'
+                : 'font-medium opacity-75 hover:opacity-100 border border-transparent'
             }`}
-            style={{
-              background:
-                selectedModule === null
-                  ? 'var(--primary)'
-                  : 'var(--secondary)',
-              color:
-                selectedModule === null
-                  ? 'var(--primary-foreground)'
-                  : 'var(--secondary-foreground)',
-            }}
+            style={
+              selectedModule === null
+                ? {
+                    background: 'var(--card)',
+                    color: 'var(--foreground)',
+                    borderColor: 'var(--border)',
+                    boxShadow:
+                      '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+                  }
+                : {
+                    background: 'var(--secondary)',
+                    color: 'var(--muted-foreground)',
+                  }
+            }
           >
             <span>All Modules</span>
-            <span className='rounded-full bg-black/15 px-1.5 py-0.2 text-[10px] dark:bg-white/20'>
+            <span
+              className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${
+                selectedModule === null
+                  ? 'bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200'
+                  : 'bg-black/5 text-muted-foreground dark:bg-white/10'
+              }`}
+            >
               {items.length}
             </span>
           </button>
@@ -84,20 +94,34 @@ export const MappingTable: React.FC<MappingTableProps> = ({
               <button
                 key={mod}
                 onClick={() => setSelectedModule(isSelected ? null : mod)}
-                className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold whitespace-nowrap transition-all hover:scale-105 ${
-                  isSelected ? 'shadow-md' : 'opacity-80 hover:opacity-100'
+                className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs whitespace-nowrap transition-all shrink-0 active:scale-95 ${
+                  isSelected
+                    ? 'font-bold border shadow-xs'
+                    : 'font-medium opacity-75 hover:opacity-100 border border-transparent'
                 }`}
-                style={{
-                  background: isSelected
-                    ? 'var(--primary)'
-                    : 'var(--secondary)',
-                  color: isSelected
-                    ? 'var(--primary-foreground)'
-                    : 'var(--secondary-foreground)',
-                }}
+                style={
+                  isSelected
+                    ? {
+                        background: 'var(--card)',
+                        color: 'var(--foreground)',
+                        borderColor: 'var(--border)',
+                        boxShadow:
+                          '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+                      }
+                    : {
+                        background: 'var(--secondary)',
+                        color: 'var(--muted-foreground)',
+                      }
+                }
               >
                 <span>{mod}</span>
-                <span className='rounded-full bg-black/15 px-1.5 py-0.2 text-[10px] dark:bg-white/20'>
+                <span
+                  className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${
+                    isSelected
+                      ? 'bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200'
+                      : 'bg-black/5 text-muted-foreground dark:bg-white/10'
+                  }`}
+                >
                   {moduleStats[mod]}
                 </span>
               </button>
