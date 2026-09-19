@@ -146,3 +146,23 @@ export function stopSpeech(): void {
     window.speechSynthesis.cancel();
   }
 }
+
+export interface SpeechButtonAriaProps {
+  title: string;
+  'aria-label': string;
+}
+
+/**
+ * Generates standardized accessible title and aria-label attributes for speech playback buttons.
+ * @param isPlaying Whether speech is currently playing for this target
+ * @param descriptor Optional target name (e.g., 'question', 'answer', 'word')
+ */
+export function getSpeechButtonAriaProps(
+  isPlaying: boolean,
+  descriptor: string = 'text'
+): SpeechButtonAriaProps {
+  return {
+    title: isPlaying ? 'Stop listening' : `Listen to ${descriptor}`,
+    'aria-label': isPlaying ? `Stop listening to ${descriptor}` : `Listen to ${descriptor}`,
+  };
+}

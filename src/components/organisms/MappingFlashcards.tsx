@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   FaEye,
@@ -14,9 +14,10 @@ import {
   FaGraduationCap,
 } from 'react-icons/fa6';
 import { MappingItem } from '@/types/mapping';
+import { FLASHCARD_FIELD } from '@/types/flashcard';
 import { useMappingDeck } from '@/hooks/useMappingDeck';
+import { useSpeechPlayback } from '@/hooks/useSpeechPlayback';
 import { openGoogleSearchInNewTab } from '@/utils/externalLinks';
-import { playSpeech, stopSpeech } from '@/utils/speechSynthesis';
 import MarkdownViewer from '../atoms/MarkdownViewer';
 
 interface MappingFlashcardsProps {
@@ -40,33 +41,9 @@ export const MappingFlashcards: React.FC<MappingFlashcardsProps> = ({
     handleToggleReveal,
   } = useMappingDeck(items);
 
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      stopSpeech();
-    };
-  }, []);
-
-  useEffect(() => {
-    setIsPlaying(false);
-  }, [currentIndex]);
-
-  const handlePlaySpeech = () => {
-    if (!currentItem) return;
-    if (isPlaying) {
-      stopSpeech();
-      setIsPlaying(false);
-      return;
-    }
-    setIsPlaying(true);
-    playSpeech({
-      text: currentItem.question,
-      onStart: () => setIsPlaying(true),
-      onEnd: () => setIsPlaying(false),
-      onError: () => setIsPlaying(false),
-    });
-  };
+  const { isPlaying, getAudioButtonProps } = useSpeechPlayback({
+    resetTriggers: [currentIndex],
+  });
 
   if (!currentItem) {
     return (
@@ -201,16 +178,21 @@ export const MappingFlashcards: React.FC<MappingFlashcardsProps> = ({
 
             <div className='flex items-center gap-1 sm:gap-1.5 shrink-0'>
               <button
-                onClick={handlePlaySpeech}
                 className={`rounded-lg p-1.5 sm:p-2 transition-all hover:scale-105 ${
-                  isPlaying
+                  isPlaying(FLASHCARD_FIELD.QUESTION)
                     ? 'bg-primary/10 ring-1 ring-primary/30'
                     : 'hover:bg-slate-200 dark:hover:bg-slate-700'
                 }`}
-                title={isPlaying ? 'Stop listening' : 'Listen'}
+                {...getAudioButtonProps(
+                  FLASHCARD_FIELD.QUESTION,
+                  currentItem.question,
+                  'question'
+                )}
               >
                 <FaVolumeHigh
-                  className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${isPlaying ? 'animate-pulse' : ''}`}
+                  className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${
+                    isPlaying(FLASHCARD_FIELD.QUESTION) ? 'animate-pulse' : ''
+                  }`}
                   style={{ color: 'var(--primary)' }}
                 />
               </button>

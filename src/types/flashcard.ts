@@ -1,4 +1,6 @@
 // src/types/flashcard.ts
+export * from '@/constants/flashcard';
+
 export enum Progression {
   Perfect = 'perfect',
   Good = 'good',

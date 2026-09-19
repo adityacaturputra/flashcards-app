@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
 import { createPortal } from 'react-dom';
-import { Flashcard, FlashcardCategory, Progression } from '@/types/flashcard';
+import {
+  Flashcard,
+  FlashcardCategory,
+  Progression,
+  FLASHCARD_FIELD,
+  FlashcardField,
+} from '@/types/flashcard';
 import calculateNextReviewDate from '@/utils/calculateNextReviewDate';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { formatRemainingTime } from '@/utils/formatRemainingTime';
 import { openGoogleSearchInNewTab } from '@/utils/externalLinks';
-import { playSpeech, stopSpeech } from '@/utils/speechSynthesis';
+import { useSpeechPlayback } from '@/hooks/useSpeechPlayback';
 import {
   FaEye,
   FaEyeSlash,
@@ -43,41 +49,12 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
     const [isAddExplanationOpen, setIsAddExplanationOpen] = useState(false);
     const [newExplanationTitle, setNewExplanationTitle] = useState('');
     const [newExplanationContent, setNewExplanationContent] = useState('');
-    const [playingField, setPlayingField] = useState<'question' | 'answer' | null>(null);
     const menuRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
-    // Stop audio when component unmounts or flashcard changes
-    useEffect(() => {
-      return () => {
-        stopSpeech();
-      };
-    }, []);
-
-    useEffect(() => {
-      setPlayingField(null);
-    }, [flashcard._id]);
-
-    const handlePlaySpeech = (
-      e: React.MouseEvent,
-      field: 'question' | 'answer',
-      text: string
-    ) => {
-      e.stopPropagation();
-      if (playingField === field) {
-        stopSpeech();
-        setPlayingField(null);
-        return;
-      }
-
-      setPlayingField(field);
-      playSpeech({
-        text,
-        onStart: () => setPlayingField(field),
-        onEnd: () => setPlayingField(null),
-        onError: () => setPlayingField(null),
-      });
-    };
+    const { isPlaying, getAudioButtonProps } = useSpeechPlayback<FlashcardField>({
+      resetTriggers: [flashcard._id],
+    });
 
     // Use the global search template context
     const { generateSearchQuery } = useSearchTemplateContext();
@@ -410,22 +387,21 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
                   <div className='ml-2 flex items-center gap-2'>
                     <button
                       className={`rounded-md p-1.5 transition-colors ${
-                        playingField === 'question'
+                        isPlaying(FLASHCARD_FIELD.QUESTION)
                           ? 'bg-primary/10 ring-1 ring-primary/30'
                           : 'hover:bg-slate-100 dark:hover:bg-slate-700'
                       }`}
-                      onClick={(e) =>
-                        handlePlaySpeech(e, 'question', flashcard.question)
-                      }
-                      title={
-                        playingField === 'question'
-                          ? 'Stop listening'
-                          : 'Listen to question'
-                      }
+                      {...getAudioButtonProps(
+                        FLASHCARD_FIELD.QUESTION,
+                        flashcard.question,
+                        'question'
+                      )}
                     >
                       <FaVolumeHigh
                         className={`h-3.5 w-3.5 ${
-                          playingField === 'question' ? 'animate-pulse' : ''
+                          isPlaying(FLASHCARD_FIELD.QUESTION)
+                            ? 'animate-pulse'
+                            : ''
                         }`}
                         style={{ color: 'var(--primary)' }}
                       />
@@ -472,22 +448,21 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
                     <div className='ml-2 flex items-center gap-2'>
                       <button
                         className={`rounded-md p-1.5 transition-colors ${
-                          playingField === 'answer'
+                          isPlaying(FLASHCARD_FIELD.ANSWER)
                             ? 'bg-primary/10 ring-1 ring-primary/30'
                             : 'hover:bg-slate-100 dark:hover:bg-slate-700'
                         }`}
-                        onClick={(e) =>
-                          handlePlaySpeech(e, 'answer', flashcard.answer)
-                        }
-                        title={
-                          playingField === 'answer'
-                            ? 'Stop listening'
-                            : 'Listen to answer'
-                        }
+                        {...getAudioButtonProps(
+                          FLASHCARD_FIELD.ANSWER,
+                          flashcard.answer,
+                          'answer'
+                        )}
                       >
                         <FaVolumeHigh
                           className={`h-3.5 w-3.5 ${
-                            playingField === 'answer' ? 'animate-pulse' : ''
+                            isPlaying(FLASHCARD_FIELD.ANSWER)
+                              ? 'animate-pulse'
+                              : ''
                           }`}
                           style={{ color: 'var(--primary)' }}
                         />
