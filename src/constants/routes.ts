@@ -12,6 +12,7 @@ export const APP_ROUTES = {
   IELTS: '/ielts',
   PHONEMICS: '/phonemics',
   AWL: '/awl',
+  QUIZ: '/quiz',
 } as const;
 
 export type AppRoute = (typeof APP_ROUTES)[keyof typeof APP_ROUTES];

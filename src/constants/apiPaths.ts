@@ -13,6 +13,7 @@ export const API_PATHS = {
   FLASHCARD_CATEGORIES: `${API_BASE}/flashcardCategories`,
   GENERATE_FLASHCARDS: `${API_BASE}/generateFlashcards`,
   SEARCH_TEMPLATES: `${API_BASE}/searchTemplates`,
+  QUIZ: `${API_BASE}/quiz`,
 } as const;
 
 export type ApiPath = (typeof API_PATHS)[keyof typeof API_PATHS];
