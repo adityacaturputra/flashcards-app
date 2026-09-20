@@ -2730,6 +2730,116 @@ $$\\mathbf{\\text{Pillar 1: Intellectual Curiosity / Side Projects}} \\quad + \\
     createdAt: '2026-09-20',
     tags: ['interview', 'job-interview', 'hobbies', 'cultural-fit', 'soft-skills', 'speaking', 'side-projects'],
   },
+  {
+    id: 'interview-how-do-you-handle-stress',
+    module: 'Job Interview & Professional Communication',
+    title: 'Job Interview: Answering "How Do You Handle Stress?" (The Engineering STAR Framework)',
+    question:
+      'How do you handle stress? (The interviewer wants to know whether you can handle job-related stress and what you do in particularly stressful situations at work)',
+    correction:
+      'Vague / robotic response ("I never feel stress" / "I just work all night") -> Systematic 3-Part Engineering Framework (Acknowledge -> Triage & RCA -> Real STAR Incident Example)',
+    remarks: `### 1. Tujuan Pewawancara & Kesalahan Umum
+
+Ketika pewawancara menanyakan:
+> *“How do you handle stress?”* atau *“Tell me about a stressful situation at work and how you dealt with it.”*
+
+Mereka ingin mengukur:
+1. **Emotional Regulation**: Apakah kamu mudah panik saat terjadi insiden kritis (*production downtime / bug darurat*)?
+2. **Systematic Problem Solving**: Apakah kamu menyelesaikannya dengan analisis terstruktur (*Root Cause Analysis*) atau asal coba-coba (*guessing / rushing untested hotfixes*)?
+3. **Communication Under Pressure**: Apakah kamu proaktif mengabari *stakeholders* atau menghilang saat tertekan?
+
+#### ❌ 3 Jawaban Fatal yang Harus Dihindari:
+- *“I never get stressed. I am always 100% calm.”* $\\rightarrow$ Tidak realistis; terkesan robotik atau tidak punya pengalaman menangani sistem riil.
+- *“I just work non-stop, drink 5 cups of coffee, and stay up all night.”* $\\rightarrow$ Mengindikasikan risiko *burnout* tinggi dan manajemen waktu yang buruk.
+- *“I get anxious, but I just wait for my manager to tell me what to do.”* $\\rightarrow$ Menunjukkan kurangnya inisiatif dan kemandirian (*autonomy*).
+
+---
+
+### 2. The 3-Step Engineering Stress Framework
+
+Gunakan rumus terstruktur yang menggabungkan *mindset*, aksi teknis, dan metode **STAR**:
+
+$$\\mathbf{\\text{Step 1: Reframe Stress as a Signal to Prioritize}} \\;\\rightarrow\\; \\mathbf{\\text{Step 2: Technical Triage \\& Structured RCA}} \\;\\rightarrow\\; \\mathbf{\\text{Step 3: Concrete Past Incident (STAR)}}$$
+
+1. **Step 1 — Acknowledge & Reframe**:
+   - Akui bahwa stres dalam dunia rekayasa perangkat lunak adalah hal wajar saat ada *deadline* ketat atau insiden produksi.
+   - *Mindset*: Jadikan stres sebagai sinyal untuk **memperlambat tempo sejenak dan menyusun prioritas secara sistematis**, bukan bereaksi emosional.
+2. **Step 2 — The Tactical Toolkit (Triage, Isolate & Communicate)**:
+   - **Triage**: Memisahkan isu kritis vs isu sekunder (*urgent vs non-critical*).
+   - **Isolate & RCA**: Mengandalkan *distributed tracing, structured logs*, dan metrik sistem alih-alih panik menebak.
+   - **Communicate**: Memberikan *status update* dan estimasi transparan kepada *team lead* / manajer.
+3. **Step 3 — Decompression**:
+   - Cara menjaga stabilitas jangka panjang: menjauh dari layar monitor (*step away from screens*), beristirahat cukup, dan melakukan *post-mortem* agar masalah serupa tidak terulang.
+
+---
+
+### 3. Skrip Jawaban Siap Pakai (Ready-to-Speak Interview Scripts)
+
+#### Opsi A: Comprehensive & STAR-Driven (Rekomendasi Utama untuk Technical / Hiring Manager Round)
+> *“I view stress not as something to panic over, but as a clear signal to slow down, step back, and systematically prioritize. In software engineering, especially when dealing with production systems or tight delivery schedules, unexpected issues will inevitably arise.*
+> 
+> *When high-stress situations happen—such as a critical production bug or a deployment roadblock—I follow a structured three-step approach:*
+> *First, I **triage the situation** to isolate the immediate blast radius and ensure system stability.*
+> *Second, I **communicate proactively** with my team lead and stakeholders to set clear expectations on what is being investigated.*
+> *Third, I rely on **data-driven debugging**—inspecting application logs, transaction traces, and metrics rather than rushing untested fixes.*
+> 
+> *For example, during a high-priority payment integration release, we encountered an unexpected transaction timeout under concurrent load. While the deadline was pressing, I stayed calm, isolated the bottleneck in our database connection pool, and deployed an optimized query with proper indexing. We resolved the incident with zero data loss, and later held a blameless post-mortem to add automated load tests.*
+> 
+> *Outside of work, I decompress by taking walks and stepping away from screens, which ensures I return with sharp problem-solving focus.”*
+
+#### Opsi B: Concise & Structured (Format Ringkas untuk HR / Recruiter Screen / 45 Detik)
+> *“I handle stress by staying organized and focusing on actionable solutions rather than the pressure itself. Whenever a high-pressure situation occurs at work—such as an urgent deadline or an unexpected system bug—I break the problem down into manageable tasks and tackle them by priority.*
+> 
+> *I also make sure to keep open communication with my team so everyone is aligned on progress. By maintaining a structured workflow and taking short breaks to recharge when needed, I can deliver reliable, clean code even in demanding environments.”*
+
+#### Opsi C: Khusus Berfokus pada Pengalaman Nyata (STAR Real-World Anecdote)
+> *“For me, the best way to manage stress is having a reliable process. In my previous role, we had a critical deployment with a tight deadline where several microservices had inter-dependency issues during testing.*
+> 
+> *Instead of letting the pressure escalate, I organized a quick sync with our backend and QA peers, mapped out the dependency graph, and assigned clear ownership for each endpoint. By turning an overwhelming problem into a step-by-step checklist, we unblocked the release and deployed on schedule. That experience reinforced to me that calm communication and structured task breakdown are the best antidotes to workplace stress.”*
+
+---
+
+### 4. Perbandingan Respons: Weak vs. Strong
+
+| Aspek | Respons Lemah / Klise (Avoid) | Respons Terstruktur & Profesional (Use) |
+| :--- | :--- | :--- |
+| **Mindset** | *“I never feel stress, pressure doesn't bother me.”* | *“I view stress as a **signal to step back and systematically prioritize**.”* |
+| **Aksi Teknis** | *“I just code faster and push fixes until it works.”* | *“I **triage the issue, isolate the root cause using logs**, and avoid rushing untested hotfixes.”* |
+| **Komunikasi** | *“I keep quiet and try to fix it alone.”* | *“I **proactively update stakeholders** so expectations are managed transparently.”* |
+| **Penyelesaian** | *“The stress just goes away when it's done.”* | *“We conduct a **blameless post-mortem** and add automated tests to prevent recurrence.”* |
+
+---
+
+### 5. Vocabulary & Power Collocations Bank
+
+- **triage the situation / isolate the blast radius** = Menentukan prioritas penanganan dan membatasi dampak kerusakan sistem
+- **step back and systematically prioritize** = Mengambil jeda sejenak untuk menyusun prioritas secara runtut
+- **data-driven debugging** = Proses mencari *bug* berdasarkan data log dan metrik nyata, bukan spekulasi
+- **set clear expectations** = Menetapkan ekspektasi yang jelas dan transparan kepada tim
+- **blameless post-mortem** = Evaluasi retrospektif pasca-insiden tanpa saling menyalahkan, berfokus pada perbaikan sistem
+- **turn an overwhelming problem into a step-by-step checklist** = Mengubah masalah yang rumit menjadi daftar kerja bertahap
+- **decompress and recharge** = Melepas ketegangan dan memulihkan energi mental
+
+---
+
+> [!TIP]
+> **Kunci Sukses Menjawab "How do you handle stress?":**
+> Ingat rumus **A-T-C (Acknowledge $\\rightarrow$ Triage $\\rightarrow$ Communicate)**. Interviewer ingin mendengar bahwa saat alarm kebakaran berbunyi (*production down / deadline mepet*), kamu adalah orang yang tetap tenang, membuka log, membagi masalah menjadi potongan kecil, dan mengabari tim dengan jelas!
+`,
+    source: 'Englishvit - Job Interview Preparation',
+    chapter: 'Behavioral Questions: Stress Management & Problem Solving',
+    createdAt: '2026-09-20',
+    tags: [
+      'interview',
+      'job-interview',
+      'behavioral-interview',
+      'stress-management',
+      'star-method',
+      'speaking',
+      'software-engineer',
+      'root-cause-analysis',
+    ],
+  },
 ];
 
 /**
