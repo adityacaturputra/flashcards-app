@@ -2469,11 +2469,11 @@ Partikel \`up\` sering memberi penekanan bahwa suatu tindakan dilakukan **sampai
   {
     id: 'interview-educational-background',
     module: 'Job Interview & Professional Communication',
-    title: 'Educational Background: Balancing Studies, Internships & Hands-on Lab Assistantship',
+    title: 'Educational Background: Balancing Studies, Internships & Online Lab Assistantship',
     question:
-      "How should I explain my university background when answering 'Tell me about yourself', considering I graduated from Gunadarma University in Information Management (GPA 3.87), balanced college with internships and freelance work, barely participated in student clubs, and served as a lab assistant who provided 1-on-1 troubleshooting and graded assignments individually rather than lecturing?",
+      "How should I explain my university background when answering 'Tell me about yourself', considering I graduated from Gunadarma University in Information Management (GPA 3.87), balanced college with internships and freelance work, barely participated in student clubs, and served as an online lab assistant who helped students via chat/screen-share troubleshooting and graded assignments individually?",
     correction:
-      'Generic Template (forcing campus club leadership & vague lecturing) -> Authentic Engineering Pitch (balancing college with internships/freelance + hands-on 1-on-1 code debugging & grading at LePKom)',
+      'Generic Template (forcing campus club leadership & vague in-person lecturing) -> Authentic Engineering Pitch (balancing college with internships/freelance + remote troubleshooting via chat & grading code at LePKom)',
     remarks: `### 1. The Core Educational Formula & Preposition Rules
 
 When introducing your educational background in an English technical interview, structure your opening using precise prepositions:
@@ -2504,18 +2504,19 @@ Template ini tidak mencerminkan kenyataanmu dan justru melemahkan profil teknism
 
 #### A. Organisasi Kampus: Kejujuran vs. Klaim Palsu
 - Jika kamu terdaftar di organisasi (*e.g., KSP Biro Media / Humas*) tapi **jarang ikut kegiatannya**, jangan memaksakan cerita kepemimpinan klub.
-- Jangan merasa bersalah: *Engineering Managers* jauh lebih tertarik pada pengalaman koding nyata daripada sertifikat kepanitiaan seremonial.
+- *Engineering Managers* jauh lebih tertarik pada pengalaman koding nyata daripada sertifikat kepanitiaan seremonial.
 
 #### B. Menyeimbangkan Kuliah, Magang & Freelance (*The Real Superpower!*)
 - Selama masa kuliah, kamu tidak hanya duduk di kelas: kamu **magang (Backend Developer di KMPlus Consulting)**, mengerjakan **proyek freelance web development**, dan menjadi **asisten lab**, sambil mempertahankan **IPK 3.87 / 4.00**.
 - Ini membuktikan etos kerja (*grit*), kedisiplinan manajemen waktu (*time management*), dan kesiapan industri sejak sebelum lulus.
 
-#### C. Peran Nyata Asisten Lab (LePKom): 1-on-1 Troubleshooting & Code Review
-- Kamu **bukan dosen utama** yang ceramah di depan kelas dengan slide (*“I was not the lead lecturer delivering presentations”*).
-- Peran nyatamu justru **jauh lebih bernilai bagi calon software engineer**:
-  1. **In-Lab 1-on-1 Troubleshooting**: Mendampingi mahasiswa yang bingung, mendiagnosis *bug* / *syntax error* pada kodingan mereka secara langsung saat praktikum (*fundamental web & desktop programming*).
-  2. **Individual Assignment Grading & Code Review**: Memeriksa, meninjau, dan mengoreksi hasil tugas koding mahasiswa satu per satu.
-- Dalam dunia kerja profesional, ini setara dengan **Junior Code Review** dan **Live Pair-Debugging**!
+#### C. Peran Nyata Asisten Lab (LePKom): Online Troubleshooting via Chat & Code Review
+- Praktikum diselenggarakan secara **online/daring** (*remote practical sessions*).
+- Kamu **bukan dosen yang berceramah**, melainkan memegang peran teknis yang sangat krusial:
+  1. **Live Chat Troubleshooting**: Menjawab dan membantu memecahkan masalah koding mahasiswa yang bingung lewat chat selama sesi berlangsung.
+  2. **Screen-Share Co-Debugging**: Ketika mahasiswa *share screen* menunjukkan *error*, instruktur utama dan kamu berkolaborasi (*co-debugging*) untuk mencari dan memperbaiki akar masalah (*root cause*).
+  3. **Individual Assignment Grading & Code Review**: Memeriksa, meninjau, dan mengoreksi hasil tugas koding mahasiswa satu per satu.
+- Dalam dunia kerja profesional *remote / hybrid*, ini setara dengan **Async Communication, Remote Pair-Debugging**, dan **Junior Code Review**!
 
 ---
 
@@ -2524,16 +2525,18 @@ Template ini tidak mencerminkan kenyataanmu dan justru melemahkan profil teknism
 #### Opsi A: Comprehensive & High-Impact (Rekomendasi Utama untuk Interviewer Teknikal)
 > *“I graduated from Gunadarma University in Depok, majoring in Information Management with a 3.87 GPA. Rather than focusing on conventional campus clubs, I prioritized practical software engineering early on. Throughout my college years, I actively balanced my academic coursework with professional internships and freelance web development.*
 > 
-> *At the same time, I served as a laboratory course assistant at LePKom. Rather than lecturing from a podium, my role was very hands-on: I supported the main instructor by providing one-on-one troubleshooting whenever students got stuck on their code, and I individually reviewed and graded each student's programming assignments. That routine of debugging other people's code and juggling real-world client work with my studies gave me strong engineering discipline before I even graduated.”*
+> *At the same time, I served as an online laboratory course assistant at LePKom. During remote lab sessions, I supported the lead instructor by answering student questions via live chat and helping troubleshoot syntax or logic bugs when students shared their screens. Afterwards, I individually reviewed and graded each student's programming assignments. That routine of diagnosing bugs in other people's code remotely while managing real-world client work gave me strong engineering discipline before I even graduated.”*
 
 #### Opsi B: Concise & Fast-Paced (Cocok untuk Initial HR / Recruiter Screen / 30-45 Detik)
-> *“I hold an Associate Degree in Information Management from Gunadarma University with a 3.87 GPA. During my studies, I focused on building practical experience—balancing my classes with a software engineering internship, freelance development, and working as a computer lab assistant.*
+> *“I hold an Associate Degree in Information Management from Gunadarma University with a 3.87 GPA. During my studies, I focused on building practical experience—balancing my classes with a software engineering internship, freelance development, and working as an online computer lab assistant.*
 > 
-> *In the lab, I helped students troubleshoot programming roadblocks one-on-one and evaluated their assignment code line by line. That combination of academic excellence and early hands-on industry work helped me hit the ground running as a full-time software engineer.”*
+> *In the remote lab, I assisted students with coding roadblocks via chat and screen share, while evaluating their assignment code line by line. That combination of academic excellence and early hands-on industry work helped me hit the ground running as a full-time software engineer.”*
 
 #### Opsi C: Khusus Menjawab Jika Ditanya Detail Soal Peran Asisten Lab
 Jika interviewer bertanya: *“What specifically did you do as a Course Assistant at LePKom?”*
-> *“I assisted the primary tutor during practical lab sessions for web and desktop programming. While the tutor led the session, I shadowed the room to provide immediate, on-the-spot troubleshooting whenever students encountered compiler errors or couldn't grasp a programming concept. Afterwards, I was responsible for evaluating and grading each student's assignment submissions individually. It was great practice for reviewing diverse coding styles and quickly diagnosing bugs under time pressure.”*
+> *“Because the practical lab sessions were conducted online, I assisted the primary tutor remotely. While the tutor led the main presentation, I actively monitored the live chat to support students who got stuck or couldn't follow along. Whenever a student shared their screen with a broken build or runtime error, I collaborated with the tutor to help pinpoint the issue and guide them to the fix.*
+> 
+> *After each session, I was responsible for evaluating and grading each student's assignment code individually. It was great practical experience for asynchronous text-based communication, reading diverse coding styles, and diagnosing bugs remotely.”*
 
 ---
 
@@ -2542,31 +2545,31 @@ Jika interviewer bertanya: *“What specifically did you do as a Course Assistan
 | Aspek | Generic Template (Kurang Kena) | Authentic Tech Pitch (Kuat, Jujur & Elegan) |
 | :--- | :--- | :--- |
 | **Aktivitas Kuliah** | *“I joined many campus clubs and was a student leader...”* (Berisiko bila ditanya detail) | *“I **balanced my academic coursework with software internships and freelance development**, maintaining a 3.87 GPA.”* |
-| **Peran Asisten Lab** | *“I taught programming courses to hundreds of students.”* (Kesan ceramah di depan kelas yang kurang akurat) | *“I **shadowed the lead tutor, provided 1-on-1 troubleshooting** when students got stuck, and **graded submissions individually**.”* |
-| **Relevansi ke Pekerjaan** | *“It helped me build leadership.”* (Klise) | *“It sharpened my **code review, debugging under pressure, and time management** skills early on.”* |
+| **Peran Asisten Lab** | *“I moved around the room lecturing in an offline classroom.”* (Kurang akurat / tatap muka) | *“I **supported remote online lab sessions via live chat, helped debug screen-shares**, and **graded code submissions individually**.”* |
+| **Relevansi ke Pekerjaan** | *“It helped me build leadership.”* (Klise) | *“It sharpened my **remote troubleshooting, async communication, and code review** skills early on.”* |
 
 ---
 
 ### 5. Vocabulary & Power Phrasing Bank
 
-- **balance coursework with internships and freelance work** = Menyeimbangkan perkuliahan dengan magang dan kerja *freelance*.
-- **provide one-on-one troubleshooting** = Memberikan bantuan pemecahan masalah / *debugging* kode secara langsung 1-lawan-1.
-- **shadow the lead instructor / tutor** = Mendampingi instruktur utama selama sesi berlangsung.
-- **evaluate and grade assignments individually / one by one** = Menilai dan mengoreksi tugas pemrograman mahasiswa satu per satu.
-- **encounter roadblocks / compiler errors** = Menemui kendala / *error* kompilasi dalam kode.
-- **diagnose bugs under time pressure** = Mendiagnosis *bug* dengan cepat di bawah tekanan waktu.
+- **conducted online / remote practical sessions** = Sesi praktikum laboratorium diselenggarakan secara daring / online.
+- **monitor the live chat to support students** = Memantau obrolan langsung untuk membantu mahasiswa yang kesulitan.
+- **screen-share debugging / co-debug** = Melakukan *debugging* bersama saat mahasiswa membagikan layar.
+- **pinpoint the root cause of an error** = Menemukan dengan tepat akar penyebab suatu *error*.
+- **evaluate and grade code submissions individually / line by line** = Menilai dan mengoreksi kode tugas mahasiswa satu per satu per baris.
+- **asynchronous text-based communication** = Komunikasi berbasis teks secara asinkronus (keterampilan penting di tim remote).
 - **juggle multiple responsibilities** = Mengatur banyak tanggung jawab sekaligus (kuliah + magang + *freelance*).
 
 ---
 
 > [!TIP]
-> **Kunci Sukses Wawancara:**
-> Mengoreksi tugas koding mahasiswa satu per satu dan membantu mereka *debugging* 1-on-1 adalah narasi emas dalam wawancara *software engineer*. Ini membuktikan kamu memiliki kesabaran membaca kode orang lain (*code review mindset*) dan kemampuan komunikasi teknis interpersonal yang sangat baik!
+> **Kunci Sukses Wawancara Remote Engineering:**
+> Menjelaskan bahwa kamu membantu mahasiswa lewat **chat** dan **screen share** serta mengoreksi tugas koding secara individual justru adalah nilai tambah luar biasa di era kerja modern! Ini membuktikan kamu terbiasa melakukan *async communication*, *remote pair-debugging*, dan *code review* dengan jelas dan sabar melalui media teks.
 `,
     source: 'Professional English for Software Engineers',
     chapter: 'Job Interview Mastery: Tell Me About Yourself',
     createdAt: '2026-09-20',
-    tags: ['interview', 'job-interview', 'education', 'gunadarma', 'speaking', 'self-introduction', 'internship', 'freelance', 'code-review', 'debugging'],
+    tags: ['interview', 'job-interview', 'education', 'gunadarma', 'speaking', 'self-introduction', 'internship', 'freelance', 'code-review', 'debugging', 'remote-work'],
   },
   {
     id: 'interview-professional-experience-software-engineer',
