@@ -55,17 +55,18 @@ export const SvaTheoryGuide: React.FC = () => {
     <div className='space-y-6 max-w-4xl mx-auto'>
       {/* Tab Navigation Header */}
       <div
-        className='flex items-center gap-1.5 p-1 rounded-2xl border overflow-x-auto shadow-inner'
+        className='flex items-center gap-1.5 p-1 rounded-2xl border overflow-x-auto shadow-inner scrollbar-none'
         style={{
           background: 'var(--muted)',
           borderColor: 'var(--border)',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         <button
           onClick={() => setActiveTab('concepts')}
-          className={`flex-1 py-2 px-3 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap ${
+          className={`shrink-0 sm:flex-1 py-2 px-3.5 sm:px-4 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap text-center ${
             activeTab === 'concepts'
-              ? 'bg-card text-foreground shadow-sm'
+              ? 'bg-card text-foreground shadow-sm font-bold'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -74,9 +75,9 @@ export const SvaTheoryGuide: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('distractors')}
-          className={`flex-1 py-2 px-3 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap ${
+          className={`shrink-0 sm:flex-1 py-2 px-3.5 sm:px-4 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap text-center ${
             activeTab === 'distractors'
-              ? 'bg-card text-foreground shadow-sm'
+              ? 'bg-card text-foreground shadow-sm font-bold'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -85,9 +86,9 @@ export const SvaTheoryGuide: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('bracket_demo')}
-          className={`flex-1 py-2 px-3 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap ${
+          className={`shrink-0 sm:flex-1 py-2 px-3.5 sm:px-4 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap text-center ${
             activeTab === 'bracket_demo'
-              ? 'bg-card text-foreground shadow-sm'
+              ? 'bg-card text-foreground shadow-sm font-bold'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
@@ -96,9 +97,9 @@ export const SvaTheoryGuide: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('rubric')}
-          className={`flex-1 py-2 px-3 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap ${
+          className={`shrink-0 sm:flex-1 py-2 px-3.5 sm:px-4 text-xs sm:text-sm font-semibold rounded-xl transition-all whitespace-nowrap text-center ${
             activeTab === 'rubric'
-              ? 'bg-card text-foreground shadow-sm'
+              ? 'bg-card text-foreground shadow-sm font-bold'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >

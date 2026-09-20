@@ -97,26 +97,28 @@ function QuizModuleContent({ moduleId }: { moduleId: string }) {
             >
               <button
                 onClick={() => setActiveTab('practice')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 ${
                   activeTab === 'practice'
                     ? 'bg-card text-foreground shadow-xs'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 <FaBolt className='h-3 w-3 text-amber-500' />
-                <span>Latihan [ /5]</span>
+                <span className='hidden sm:inline'>Latihan [ /5]</span>
+                <span className='sm:hidden'>Latihan</span>
               </button>
 
               <button
                 onClick={() => setActiveTab('theory')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 ${
                   activeTab === 'theory'
                     ? 'bg-card text-foreground shadow-xs'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 <FaBookOpen className='h-3 w-3 text-emerald-500' />
-                <span>Panduan Teori</span>
+                <span className='hidden sm:inline'>Panduan Teori</span>
+                <span className='sm:hidden'>Teori</span>
               </button>
             </div>
           </div>

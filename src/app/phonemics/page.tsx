@@ -124,7 +124,7 @@ export default function PhonemicsPage() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap border ${
+                  className={`flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap border shrink-0 ${
                     isActive
                       ? 'bg-primary text-primary-foreground border-primary shadow-xs'
                       : 'border-transparent text-muted-foreground hover:bg-secondary hover:text-foreground'

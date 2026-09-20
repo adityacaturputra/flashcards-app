@@ -92,13 +92,19 @@ export const QuizExplanationCard: React.FC<QuizExplanationCardProps> = ({
           </span>
         </div>
 
-        <div className='text-[11px] text-muted-foreground pt-1 flex items-center gap-2'>
-          <span className='inline-block w-2 h-2 rounded-full bg-emerald-500' />
-          <span>Hijau: Subjek Asli</span>
-          <span className='inline-block w-2 h-2 rounded-full bg-muted-foreground' />
-          <span>Abu-abu [ ]: Sisipan Penjelas</span>
-          <span className='inline-block w-2 h-2 rounded-full bg-amber-500' />
-          <span>Kuning: Kata Kerja Selaras</span>
+        <div className='text-[11px] text-muted-foreground pt-1 flex items-center gap-x-2 gap-y-1 flex-wrap'>
+          <div className='flex items-center gap-1.5'>
+            <span className='inline-block w-2 h-2 rounded-full bg-emerald-500' />
+            <span>Hijau: Subjek Asli</span>
+          </div>
+          <div className='flex items-center gap-1.5'>
+            <span className='inline-block w-2 h-2 rounded-full bg-muted-foreground' />
+            <span>Abu-abu [ ]: Sisipan Penjelas</span>
+          </div>
+          <div className='flex items-center gap-1.5'>
+            <span className='inline-block w-2 h-2 rounded-full bg-amber-500' />
+            <span>Kuning: Kata Kerja Selaras</span>
+          </div>
         </div>
       </div>
 

@@ -104,7 +104,7 @@ const Home: React.FC = memo(() => {
               {Object.values(Progression).map((progression) => (
                 <motion.button
                   key={progression}
-                  className='rounded-md px-2 py-1 text-xs font-medium whitespace-nowrap transition-all hover:scale-105 sm:rounded-lg sm:px-4 sm:py-2 sm:text-sm'
+                  className='rounded-md px-2 py-1 text-xs font-medium whitespace-nowrap transition-all hover:scale-105 sm:rounded-lg sm:px-4 sm:py-2 sm:text-sm shrink-0'
                   style={{
                     background:
                       selectedProgression === progression
@@ -137,7 +137,7 @@ const Home: React.FC = memo(() => {
                 </motion.button>
               ))}
               <motion.button
-                className='rounded-md px-2 py-1 text-xs font-medium whitespace-nowrap transition-all hover:scale-105 sm:rounded-lg sm:px-4 sm:py-2 sm:text-sm'
+                className='rounded-md px-2 py-1 text-xs font-medium whitespace-nowrap transition-all hover:scale-105 sm:rounded-lg sm:px-4 sm:py-2 sm:text-sm shrink-0'
                 style={{
                   background:
                     selectedProgression === null
