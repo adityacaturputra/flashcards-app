@@ -76,6 +76,7 @@ const Home: React.FC = memo(() => {
                 onDelete={deleteFlashcard}
                 selectedProgression={selectedProgression}
                 isReviewMode={isReviewMode}
+                onExitReviewMode={() => setIsReviewMode(false)}
                 handleOpenCategoryModal={handleNavigateToCategoryPage}
               />
             </Suspense>

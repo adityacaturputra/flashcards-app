@@ -6235,10 +6235,15 @@
     "question": "To depart",
     "answer": "berangkat",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:21:21.011Z",
+    "nextReviewDate": "2026-09-22T03:12:02.369Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-20T03:12:02.369Z"
   },
   {
     "_id": "68766080eb12fde01aa095f2",
