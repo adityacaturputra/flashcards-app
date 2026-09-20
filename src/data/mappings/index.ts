@@ -2840,6 +2840,113 @@ $$\\mathbf{\\text{Step 1: Reframe Stress as a Signal to Prioritize}} \\;\\righta
       'root-cause-analysis',
     ],
   },
+  {
+    id: 'interview-what-are-you-passionate-about',
+    module: 'Job Interview & Professional Communication',
+    title: 'Job Interview: Answering "What Are You Passionate About?" (The Craft-to-Value Framework)',
+    question:
+      'What are you passionate about? (The hiring manager is looking to learn as much as possible about you and what you can bring to the company, in addition to the skills that qualify you for the job)',
+    correction:
+      'Vague / disconnected personal hobbies ("I like music and coffee") -> The 3-Part Craft-to-Value Bridge (Core Spark -> Real-World Evidence -> Tangible Company Value)',
+    remarks: `### 1. Tujuan Pewawancara & Jebakan Utama
+
+Ketika pewawancara menanyakan:
+> *“What are you passionate about?”* atau *“What gets you excited to come to work every day?”*
+
+Catatan pada slide menjelaskan inti pertanyaan ini:
+> *“The hiring manager is looking to learn as much as possible about you and what you can bring to the company, in addition to the skills that qualify you for the job.”*
+
+Pewawancara ingin mengukur:
+1. **Intrinsic Motivation (Bahan Bakar Internal)**: Keterampilan di CV membuktikan apa yang *bisa* kamu lakukan, tetapi *passion* membuktikan apa yang membuatmu bersemangat dan bertahan saat menghadapi kode rumit atau *deadline* sulit.
+2. **Value Alignment (Menghubungkan Passion ke Nilai Bisnis Perusahaan)**: *Passion* dalam wawancara kerja **harus selalu memiliki jembatan ke nilai tambah perusahaan**.
+   - Menjawab hobi personal lepas (*“I am passionate about playing video games and traveling”*) adalah **jebakan** karena tidak menunjukkan kontribusi ke perusahaan.
+   - Menjawab *passion* di bidang *software craftsmanship*, otomatisasi masalah, dan pemecahan kendala bisnis adalah **jawaban emas**.
+
+---
+
+### 2. Formula Tata Bahasa & Aturan Preposisi Kunci
+
+$$\\mathbf{\\text{Pillar 1: The Craft (Core Spark)}} \\;\\rightarrow\\; \\mathbf{\\text{Pillar 2: Real-World Evidence (In Action)}} \\;\\rightarrow\\; \\mathbf{\\text{Pillar 3: Tangible Company Value (What You Bring)}}$$
+
+#### Aturan Preposisi Kunci:
+1. **passionate about + Noun / Gerund (V-ing)**:
+   - ✅ *“I am **passionate about building** scalable backend systems...”*
+   - ✅ *“I have a strong **passion for** software craftsmanship...”*
+   - ❌ *“I am passionate to build...”* (Salah preposisi).
+   - ❌ *“I am passionate on...”* (Salah preposisi).
+2. **what excites me most is + Noun / V-ing**:
+   - ✅ *“What **excites me most is seeing** complex business logic simplified into clean code.”*
+3. **translates into + Noun / V-ing**:
+   - ✅ *“For your team, this passion **translates into** delivering resilient, self-documenting code.”*
+
+---
+
+### 3. Skrip Jawaban Siap Pakai (Ready-to-Speak Interview Scripts)
+
+#### Opsi A: Software Craftsmanship & System Reliability (Rekomendasi Utama untuk Software Engineer)
+> *“At my core, I am deeply **passionate about software craftsmanship and systems architecture**—specifically, the challenge of taking complex, messy business workflows and transforming them into clean, resilient, and scalable backend solutions.*
+> 
+> *In my professional work, that passion reflects in how I approach engineering: I genuinely enjoy optimizing system reliability—whether that's designing high-throughput microservices in Java and Spring Boot that handle transactions with zero latency, or building intuitive fullstack tools with Next.js and TypeScript that eliminate operational friction for users.*
+> 
+> *What excites me most is seeing code deliver tangible impact. For your company, this passion translates into an engineer who doesn't just complete tickets blindly, but who cares deeply about **architectural integrity, long-term maintainability, and building systems that stand the test of scale**.”*
+
+#### Opsi B: Automation & Problem-Solving Focus (Sangat Disukai Startup & Scale-Up)
+> *“I am passionate about **automation and eliminating daily friction through software**. I love identifying bottlenecks—whether it's an inefficient manual business process or a tedious developer workflow—and engineering automated solutions that make things seamless.*
+> 
+> *For example, on the backend, that means designing reliable transaction pipelines and automated data migrations so systems run autonomously. On the frontend, it's about crafting responsive interfaces that make users' daily tasks effortless.*
+> 
+> *Bringing this to your team means I am constantly looking for ways to **streamline workflows, reduce operational overhead, and ship features that genuinely improve user productivity**.”*
+
+#### Opsi C: Concise & High-Energy (Format Ringkas untuk Recruiter Screen / 30-45 Detik)
+> *“I am most passionate about **solving challenging technical problems and building scalable, reliable applications**. I love digging into system design—connecting resilient Java backend pipelines with modern, responsive TypeScript frontends.*
+> 
+> *What drives me every day is continuous learning and knowing that the code I deploy makes someone's work easier, faster, and more reliable. That curiosity and dedication to quality is what I bring to every team I work with.”*
+
+---
+
+### 4. Perbandingan Respons: Disconnected vs. Value-Driven
+
+| Aspek | Respons Kurang Tepat (Hindari) | Respons Nilai Tambah (Rekomendasi) |
+| :--- | :--- | :--- |
+| **Topik Pilihan** | Menyebutkan hobi personal tanpa kaitan kerja (*“I love watching movies and playing guitar.”*) | Menyebutkan *software craftsmanship* atau otomatisasi masalah (*“I am passionate about clean architecture and eliminating workflow friction.”*) |
+| **Relevansi Tim** | Hanya fokus pada kesenangan pribadi (*“It makes me happy.”*) | Menghubungkan ke dampak bisnis (*“It translates into building maintainable, high-throughput systems that scale reliably.”*) |
+| **Etos Kerja** | Terkesan pasif menunggu tugas | Menunjukkan inisiatif mandiri untuk terus belajar (*continuous learning & technical curiosity*). |
+
+---
+
+### 5. Vocabulary & Power Collocations Bank
+
+- **software craftsmanship** = Dedikasi untuk menghasilkan kode yang bersih, teruji, dan berstandar tinggi
+- **stand the test of scale** = Bertahan dan tetap stabil saat volume pengguna / transaksi meningkat pesat
+- **eliminate operational friction** = Menghilangkan hambatan dan ketidakefisienan dalam alur kerja operasional
+- **intrinsic motivation** = Motivasi alami dari dalam diri yang tidak bergantung pada dorongan luar
+- **architectural integrity** = Integritas dan kekokohan struktur arsitektur sistem perangkat lunak
+- **continuous learning mindset** = Pola pikir untuk terus mempelajari teknologi dan metodologi baru
+- **tangible business impact** = Dampak nyata yang dapat dirasakan oleh bisnis dan pengguna
+
+---
+
+> [!TIP]
+> **Jembatan Emas (The Golden Bridge):**
+> Apapun *passion* teknis yang kamu sebutkan (*clean architecture, high-concurrency pipelines, AI automation*), selalu tutup dengan kalimat:
+> *“For your team, this passion translates into...”*
+> Kalimat ini seketika mengubah jawaban dari sekadar obrolan minat pribadi menjadi bukti bahwa kamu adalah aset berharga bagi perusahaan!
+`,
+    source: 'Englishvit - Job Interview Preparation',
+    chapter: 'Behavioral Questions: Motivation, Culture Fit & Passion',
+    createdAt: '2026-09-20',
+    tags: [
+      'interview',
+      'job-interview',
+      'behavioral-interview',
+      'passion',
+      'motivation',
+      'speaking',
+      'software-engineer',
+      'culture-fit',
+      'prepositions',
+    ],
+  },
 ];
 
 /**
