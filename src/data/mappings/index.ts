@@ -2471,7 +2471,7 @@ Partikel \`up\` sering memberi penekanan bahwa suatu tindakan dilakukan **sampai
     module: 'Job Interview & Professional Communication',
     title: 'Job Interview Master Guide: Software Engineer Framework & Spoken Scripts',
     question:
-      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself" (Education & Experience), "What are your hobbies?", "How do you handle stress?", and "What are you passionate about?"',
+      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself", "How has your educational background prepared you for your career?", "What are your hobbies?", "How do you handle stress?", and "What are you passionate about?"',
     correction:
       'Fragmented / generic scripts -> Unified End-to-End Interview Playbook for Software Engineers',
     remarks: `### 🎯 Overview: The Software Engineer Job Interview Master Guide
@@ -2480,25 +2480,49 @@ Panduan master ini menggabungkan seluruh modul wawancara kerja teknikal bahasa I
 
 ---
 
-### 🏛️ Bagian 1: Educational Background (Cheklist 4 Poin Englishvit)
+### 🏛️ Bagian 1: Educational Background & Career Preparation
 
+#### 1.1 Checklist 4 Poin Englishvit ("Tell me about your educational background")
 Slide Englishvit menekankan bahwa jawaban latar belakang pendidikan harus **terfokus, jelas, dan percaya diri (*focused, clear, and confident*)** dengan mencakup 4 elemen:
 1. **Your Major**: Information Management (*Associate Degree / Diploma*)
 2. **Your University**: Gunadarma University in Depok
 3. **Your Project**: Proyek nyata (*internship* di KMPlus Consulting & *freelance fullstack development*)
 4. **Your Organization / Assistantship**: Afiliasi organisasi + peran nyata sebagai Asisten Lab LePKom daring
 
-#### Formula & Aturan Preposisi Kunci:
+##### Formula & Aturan Preposisi Kunci:
 $$\\mathbf{\\text{Subject}} + \\mathbf{\\text{graduated from [University]}} + \\mathbf{\\text{majoring in [Field]}} + \\mathbf{\\text{balancing [Studies] with [Internships \\& Freelancing]}}$$
 
 - ✅ **\`graduated from [University]\`** (Bukan *graduated of* atau *graduated at*).
 - ✅ **\`majoring in [Field]\`** (Bukan *majoring of*).
 - ✅ **Realita Organisasi & Asisten Lab**: Jangan memaksakan cerita kepemimpinan klub bila jarang aktif. Sebaliknya, ceritakan peran nyata sebagai **Asisten Lab LePKom Daring**: membantu mahasiswa memecahkan masalah koding via *live chat*, mendampingi tutor mendiagnosis *bug* saat *screen share*, dan mengoreksi tugas koding satu per satu (*line by line*).
 
-#### Skrip Siap Pakai (Educational Background):
+##### Skrip Siap Pakai (Educational Background Overview):
 > *“I graduated from Gunadarma University in Depok, majoring in Information Management with a 3.87 GPA. Rather than focusing on conventional campus clubs, I prioritized practical software engineering early on. Throughout my college years, I actively balanced my academic coursework with professional internships and freelance web development.*
 > 
 > *At the same time, I served as an online laboratory course assistant at LePKom. During remote lab sessions, I supported the lead instructor by answering student questions via live chat and helping troubleshoot syntax or logic bugs when students shared their screens. Afterwards, I individually reviewed and graded each student's programming assignments. That routine of diagnosing bugs in other people's code remotely while managing real-world client work gave me strong engineering discipline before I even graduated.”*
+
+---
+
+#### 1.2 Pertanyaan Lanjutan: "How has your educational background prepared you for your career?"
+
+Slide kedua menanyakan jembatan antara masa perkuliahan dengan kesiapan karier:
+> *“How has your educational background **prepared** you for your career?”*
+
+*(Catatan Tata Bahasa: Pada slide tertulis "prepare", namun bentuk tata bahasa baku bahasa Inggris wajib menggunakan Present Perfect: **has + Verb 3 (prepared)**).*
+
+##### 3 Pilar Persiapan Kuliah ke Karier Rekayasa Perangkat Lunak:
+1. **Teori Komputer yang Kokoh (*Rigorous Fundamentals*)**: Struktur data, algoritma, OOP, dan basis data di Manajemen Informatika Gunadarma melatih pemahaman mendalam tentang *mengapa* suatu arsitektur bekerja secara optimal.
+2. **Insting Debugging & Code Review Nyata (Asisten Lab Daring)**: Meninjau kode mahasiswa dan memecahkan *bug* via chat & *screen share* melatih kesabaran serta kemampuan membaca kode orang lain sebelum terjun ke dunia industri.
+3. **Disiplin Kerja & Manajemen Waktu Nyata**: Menyeimbangkan kuliah (IPK 3.87) dengan magang backend di KMPlus dan proyek *freelance* membiasakan diri dengan *production release* dan *deadline* bisnis.
+
+##### Skrip Siap Pakai (How Education Prepared Career):
+> *“My educational background at Gunadarma University prepared me for my software engineering career in three distinct ways:*
+> 
+> *First, majoring in Information Management gave me a **rigorous foundation in core computer science principles**—specifically data structures, algorithms, and object-oriented design. That theoretical grounding helps me reason about system performance and write optimized, scalable code rather than just copying framework templates.*
+> 
+> *Second, serving as an online laboratory assistant provided invaluable, hands-on experience in **reading, troubleshooting, and reviewing diverse coding styles line by line**. Diagnosing student bugs under time pressure directly sharpened my debugging instincts and collaborative communication.*
+> 
+> *Finally, actively balancing my degree with software internships and freelance projects trained me in **time management and shipping production-ready code under real deadlines**. That blend of academic excellence and early hands-on industry execution allowed me to transition into full-time software engineering with immediate confidence and productivity.”*
 
 ---
 
