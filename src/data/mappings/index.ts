@@ -2471,7 +2471,7 @@ Partikel \`up\` sering memberi penekanan bahwa suatu tindakan dilakukan **sampai
     module: 'Job Interview & Professional Communication',
     title: 'Job Interview Master Guide: Software Engineer Framework & Spoken Scripts',
     question:
-      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself", "How has your educational background prepared you for your career?", "What are your hobbies?", "How do you handle stress?", and "What are you passionate about?"',
+      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself / educational background", "Tell me more about your educational background", "How has your educational background prepared you for your career?", "What are your hobbies?", "How do you handle stress?", and "What are you passionate about?"',
     correction:
       'Fragmented / generic scripts -> Unified End-to-End Interview Playbook for Software Engineers',
     remarks: `### 🎯 Overview: The Software Engineer Job Interview Master Guide
@@ -2523,6 +2523,38 @@ Slide kedua menanyakan jembatan antara masa perkuliahan dengan kesiapan karier:
 > *Second, serving as an online laboratory assistant provided invaluable, hands-on experience in **reading, troubleshooting, and reviewing diverse coding styles line by line**. Diagnosing student bugs under time pressure directly sharpened my debugging instincts and collaborative communication.*
 > 
 > *Finally, actively balancing my degree with software internships and freelance projects trained me in **time management and shipping production-ready code under real deadlines**. That blend of academic excellence and early hands-on industry execution allowed me to transition into full-time software engineering with immediate confidence and productivity.”*
+
+---
+
+#### 1.3 Pertanyaan Pendalaman: "Tell me more about your educational background"
+
+Ketika interviewer mengatakan:
+> *“Tell me **more** about your educational background.”*
+
+Artinya interviewer **sudah mendengar ringkasan awalmu**, dan sekarang ingin melihat **detail spesifik, kedalaman teknis, dan bukti nyata dari masa perkuliahanmu**:
+1. **Mata Kuliah Inti & Penguasaan Konseptual**:
+   - Sebutkan kurikulum teknis: *Data Structures, Algorithms, Object-Oriented Programming (OOP), Relational Databases, and Software Engineering*.
+   - Jelaskan bahwa IPK 3.87/4.00 mencerminkan dedikasi memahami fondasi logika komputer secara mendalam, bukan sekadar menghafal sintaks.
+2. **Dinamika Nyata Asisten Lab LePKom (Mentorship & Code Review)**:
+   - Sesi praktikum pemrograman web dan desktop daring: memantau *chat*, mendiagnosis kendala saat mahasiswa *share screen*, serta mengoreksi baris kode tugas satu per satu.
+3. **Keseimbangan Kuliah dengan Magang Industri & Freelance**:
+   - Menunjukkan bahwa kamu tidak pasif menunggu wisuda, melainkan langsung menguji coba teori kuliah dalam proyek komersial nyata (*internship di KMPlus Consulting & freelance development*).
+
+##### Formula Pendalaman Kunci:
+$$\\mathbf{\\text{To dive a bit deeper into my studies}} + \\mathbf{\\text{my curriculum focused heavily on [Core CS Topics]}} + \\mathbf{\\text{which I reinforced through [Lab Assistantship \\& Real-world Projects]}}$$
+
+##### Skrip Siap Pakai (Deep Dive Educational Background):
+###### Opsi A: Komprehensif & Berbobot Tinggi (Rekomendasi Utama untuk Technical / Hiring Manager Round)
+> *“Certainly! To dive a bit deeper, my curriculum in Information Management at Gunadarma University was heavily focused on practical software engineering fundamentals—including data structures, algorithms, object-oriented programming, and relational database systems. Graduating with a 3.87 GPA was a reflection of my commitment to truly understanding these core computer science principles rather than just memorizing syntax.*
+> 
+> *A particularly defining part of my university experience was working as an online course assistant at LePKom—our campus computer development laboratory. For over a year, I assisted lead instructors during live remote practical sessions for web and desktop programming. I was responsible for monitoring the chat to answer questions, helping debug runtime and compiler issues when students shared their screens, and carefully evaluating their assignment submissions line by line. That experience taught me how to read other people's code critically and communicate technical solutions clearly.*
+> 
+> *Furthermore, I didn't treat my education as purely academic. In my final year, I actively applied these principles in the real world through a backend developer internship at KMPlus Consulting and several freelance web projects. That balance between rigorous theory, peer mentoring, and commercial delivery is what shaped my engineering discipline today.”*
+
+###### Opsi B: Format Ringkas (Untuk 30–45 Detik)
+> *“To give you more detail, my program was centered on core software engineering: algorithms, OOP design, and database architecture. I maintained a strong academic record with a 3.87 GPA while serving as an online laboratory course assistant for web and desktop programming.*
+> 
+> *In that lab role, I supported students remotely—troubleshooting bugs via chat and screen-share, and reviewing their code submissions line by line. I also balanced my coursework with an actual software internship and freelance work. So my education was really a continuous loop of learning theoretical computer science and immediately putting it to the test in practical software environments.”*
 
 ---
 
