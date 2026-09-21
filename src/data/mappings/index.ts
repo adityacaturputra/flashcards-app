@@ -2471,7 +2471,7 @@ Partikel \`up\` sering memberi penekanan bahwa suatu tindakan dilakukan **sampai
     module: 'Job Interview & Professional Communication',
     title: 'Job Interview Master Guide: Software Engineer Framework & Spoken Scripts',
     question:
-      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself / educational background", "Tell me more about your educational background", "How has your educational background prepared you for your career?", "How a particular course or project helped you succeed?", "What are your hobbies?", "How do you handle stress?", and "What are you passionate about?"',
+      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself / educational background", "Tell me more about your educational background", "Why did you choose this particular major?", "How has your educational background prepared you for your career?", "How a particular course or project helped you succeed?", "What are your hobbies?", "How do you handle stress?", and "What are you passionate about?"',
     correction:
       'Fragmented / generic scripts -> Unified End-to-End Interview Playbook for Software Engineers',
     remarks: `### 🎯 Overview: The Software Engineer Job Interview Master Guide
@@ -2588,6 +2588,31 @@ $$\\mathbf{\\text{Course / Project Choice}} \\;\\rightarrow\\; \\mathbf{\\text{C
 > *“A course project that directly contributed to my career success was our **Object-Oriented Programming and Web Systems capstone**. We were tasked with building a modular web application from scratch, enforcing strict separation of concerns, design patterns, and clean layered architecture.*
 > 
 > *In my professional work—both engineering Java Spring Boot microservices and architecting fullstack TypeScript applications—that project instilled a deep habit of writing decoupled, testable, and self-documenting code. It prevented me from falling into the trap of writing messy, tightly coupled logic, allowing me to ship scalable features quickly and lead clean architecture practices across my teams.”*
+
+---
+
+#### 1.5 Motivasi Jurusan: "Why did you choose this particular major?"
+
+Interviewer menanyakan alasan memilih jurusan untuk melihat apakah minatmu terhadap rekayasa perangkat lunak adalah **keputusan sadar yang didorong oleh rasa ingin tahu (*intentional decision*)**, bukan sekadar ikut-ikutan tren:
+> *“Why did you choose this particular major?”*
+
+##### 3 Elemen Jawaban Pemenang (Why Information Management):
+1. **Daya Tarik Otomasi & Alur Informasi**: Tertarik melihat bagaimana perangkat lunak dapat merapikan data yang berantakan dan mengotomasi alur kerja operasional.
+2. **Kombinasi Unik Teknikal + Konteks Bisnis**: Memilih *Information Management* (Manajemen Informatika) di Universitas Gunadarma karena tidak hanya mengajarkan koding (*algorithms, OOP, databases*), tetapi juga mengajarkan **tujuan bisnis di balik mengapa perangkat lunak dibuat** (*business process modeling, system analysis, data flow*).
+3. **Relevansi Nyata di Karier Saat Ini**: Pola pikir ini membuatmu menjadi *software engineer* yang paham konteks bisnis saat merancang sistem perbankan (*core banking cash management*), bukan sekadar *coder* yang menulis sintaks secara terisolasi.
+
+##### Skrip Siap Pakai (Why This Major):
+###### Opsi A: Komprehensif & Berorientasi Bisnis-Teknikal (Rekomendasi Utama)
+> *“I chose to major in **Information Management** because I was fascinated by the intersection of **software engineering and business operations**. Early on, I realized that writing code is powerful, but writing software that solves real operational bottlenecks and organizes complex information is where the true value lies.*
+> 
+> *Gunadarma University's Information Management curriculum stood out to me because it didn't just teach programming syntax in isolation. It combined rigorous technical training—such as data structures, OOP, and relational databases—with systems analysis and how information flows through an enterprise.*
+> 
+> *That choice proved immensely valuable in my career: it shaped me into an engineer who doesn't just build features, but who genuinely understands the business domain—whether that's designing core banking cash management workflows at Infosys or building intuitive SaaS platforms. It gave me both the technical depth to build systems and the business awareness to understand why they matter.”*
+
+###### Opsi B: Format Ringkas (Untuk 30–45 Detik)
+> *“I chose Information Management because I wanted to learn how to build practical software that solves real organizational problems. The program offered the perfect blend of core computer science—like algorithms, database architecture, and programming—alongside business systems analysis.*
+> 
+> *That foundation helped me develop a dual mindset early on: writing clean, resilient backend code while always keeping the business outcome and end-user workflows at the center of my design decisions.”*
 
 ---
 
