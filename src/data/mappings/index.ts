@@ -2471,7 +2471,7 @@ Partikel \`up\` sering memberi penekanan bahwa suatu tindakan dilakukan **sampai
     module: 'Job Interview & Professional Communication',
     title: 'Job Interview Master Guide: Software Engineer Framework & Spoken Scripts',
     question:
-      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself / educational background", "Tell me more about your educational background", "How has your educational background prepared you for your career?", "What are your hobbies?", "How do you handle stress?", and "What are you passionate about?"',
+      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself / educational background", "Tell me more about your educational background", "How has your educational background prepared you for your career?", "How a particular course or project helped you succeed?", "What are your hobbies?", "How do you handle stress?", and "What are you passionate about?"',
     correction:
       'Fragmented / generic scripts -> Unified End-to-End Interview Playbook for Software Engineers',
     remarks: `### 🎯 Overview: The Software Engineer Job Interview Master Guide
@@ -2555,6 +2555,39 @@ $$\\mathbf{\\text{To dive a bit deeper into my studies}} + \\mathbf{\\text{my cu
 > *“To give you more detail, my program was centered on core software engineering: algorithms, OOP design, and database architecture. I maintained a strong academic record with a 3.87 GPA while serving as an online laboratory course assistant for web and desktop programming.*
 > 
 > *In that lab role, I supported students remotely—troubleshooting bugs via chat and screen-share, and reviewing their code submissions line by line. I also balanced my coursework with an actual software internship and freelance work. So my education was really a continuous loop of learning theoretical computer science and immediately putting it to the test in practical software environments.”*
+
+---
+
+#### 1.4 Studi Kasus Spesifik: "Tell me about how a particular course or course project helped you succeed in your professional life"
+
+Interviewer ingin melihat kemampuanmu menghubungkan satu mata kuliah / proyek kampus secara konkret dengan pencapaian di dunia industri:
+> *“Tell me about how a particular course or course project helped you succeed in your professional life.”*
+
+##### Rumus 3 Tahap (Course $\rightarrow$ Core Principle $\rightarrow$ Real Engineering Impact):
+$$\\mathbf{\\text{Course / Project Choice}} \\;\\rightarrow\\; \\mathbf{\\text{Core Engineering Takeaway (The 'Why')}} \\;\\rightarrow\\; \\mathbf{\\text{Direct Application in Core Banking / Web Systems}}$$
+
+##### 2 Pilihan Rekomendasi Terkuat untuk Software Engineer:
+1. **Opsi 1 (Database Systems & ACID Transactions)** $\\rightarrow$ Dihubungkan ke **Core Banking Cash Management (PT Infosys Solusi Terpadu)**:
+   - *Mata Kuliah*: Database Systems & Relational Data Modeling.
+   - *Inti Pembelajaran*: Desain skema relasional, normalisasi, integritas data, dan sifat transaksi ACID (Atomicity, Consistency, Isolation, Durability).
+   - *Dampak Profesional*: Memungkinkanmu merancang sistem likuiditas perbankan (*sweep in / sweep out*), integrasi BI-Fast/RTGS tanpa risiko *race conditions*, serta migrasi skema SQL tanpa *downtime* menggunakan Flyway.
+2. **Opsi 2 (Data Structures, Algorithms & OOP)** $\\rightarrow$ Dihubungkan ke **Microservices & Layered Architecture**:
+   - *Mata Kuliah*: Object-Oriented Programming (OOP) & Data Structures.
+   - *Inti Pembelajaran*: Pemisahan tanggung jawab (*separation of concerns*), *dependency inversion*, dan kompleksitas algoritma.
+   - *Dampak Profesional*: Menghasilkan arsitektur *clean code* di Java Spring Boot dan TypeScript, serta menjadi fondasi pembuatan *boilerplate* arsitektur bersih yang kamu kembangkan.
+
+##### Skrip Siap Pakai (Course Impact on Career):
+###### Opsi A: Database Systems & Transaction Integrity (Rekomendasi Utama untuk FinTech / Backend)
+> *“A course that profoundly shaped my professional engineering career was **Database Systems and Relational Data Modeling**. During that course, our projects went beyond basic CRUD operations—we had to design normalized schemas, analyze query execution plans, and ensure strict ACID transaction guarantees under simulated concurrency.*
+> 
+> *That foundational understanding directly enabled my success when I transitioned to developing **mission-critical core banking cash management systems at PT Infosys Solusi Terpadu**. In that role, I was architecting liquidity management platforms—handling automated sweep-in and sweep-out transactions across corporate accounts. Because of the principles I mastered in that course, I was able to design transaction boundaries that prevent race conditions, optimize complex SQL migrations using Flyway, and ensure zero data loss during high-volume BI-Fast payment settlements.*
+> 
+> *It taught me early on that writing good backend code starts with respecting data integrity and database fundamentals.”*
+
+###### Opsi B: OOP & Layered Architecture (Cocok untuk Fullstack / Software Design)
+> *“A course project that directly contributed to my career success was our **Object-Oriented Programming and Web Systems capstone**. We were tasked with building a modular web application from scratch, enforcing strict separation of concerns, design patterns, and clean layered architecture.*
+> 
+> *In my professional work—both engineering Java Spring Boot microservices and architecting fullstack TypeScript applications—that project instilled a deep habit of writing decoupled, testable, and self-documenting code. It prevented me from falling into the trap of writing messy, tightly coupled logic, allowing me to ship scalable features quickly and lead clean architecture practices across my teams.”*
 
 ---
 
