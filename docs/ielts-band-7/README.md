@@ -9,6 +9,8 @@ Panduan belajar komprehensif, terstruktur, dan berorientasi taktis untuk menembu
 ```text
 docs/ielts-band-7/
 ├── README.md                                             # Silabus induk & konversi skor
+├── syllabus-progress-tracker.md                          # 📊 Pelacak 35 Bagian / 613 Materi Udemy vs Lokal
+├── udemy-auth.md                                         # 🔐 Konfigurasi sesi cURL & API Udemy 2.0
 ├── module-01-general-overview/                           # Bagian 1 (4 Materi)
 │   ├── 01-roadmap-and-mindset-band-7.md
 │   ├── 02-course-orientation-and-structure.md
@@ -48,6 +50,9 @@ Masing-masing sub-tes Listening dan Reading memiliki **40 butir pertanyaan**. Pe
 ---
 
 ## 🚀 Progres Modul
+
+> 📌 **Pelacak Progres Lengkap**: Lihat [Syllabus & Progress Tracker](./syllabus-progress-tracker.md) untuk matriks komparasi lengkap seluruh 35 bagian Udemy (613 materi) vs repositori lokal. Dokumen autentikasi cURL tersimpan di [Udemy Auth Guide](./udemy-auth.md).
+
 - [x] **Bagian 1: Pengenalan & Orientasi Belajar IELTS Band 7+ (4 Bab)**
   - [x] 1. Roadmap & Mindset Belajar Menembus Band 7.0+
   - [x] 2. Orientasi Silabus & Struktur Komprehensif IELTS
