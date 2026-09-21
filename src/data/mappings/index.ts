@@ -2471,7 +2471,7 @@ Partikel \`up\` sering memberi penekanan bahwa suatu tindakan dilakukan **sampai
     module: 'Job Interview & Professional Communication',
     title: 'Job Interview Master Guide: Software Engineer Framework & Spoken Scripts',
     question:
-      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself / educational background", "Tell me more about your educational background", "Why did you choose this particular major?", "How has your educational background prepared you for your career?", "How a particular course or project helped you succeed?", "What are your hobbies?", "How do you handle stress?", "What are you passionate about?", "Do you prefer working independently or in a team?", and "What do you think is the most difficult decision to make?"',
+      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself / educational background", "Tell me more about your educational background", "Why did you choose this particular major?", "How has your educational background prepared you for your career?", "How a particular course or project helped you succeed?", "What are your hobbies?", "How do you handle stress?", "What are you passionate about?", "Do you prefer working independently or in a team?", "What do you think is the most difficult decision to make?", and "What type of work environment do you prefer?"',
     correction:
       'Fragmented / generic scripts -> Unified End-to-End Interview Playbook for Software Engineers',
     remarks: `### 🎯 Overview: The Software Engineer Job Interview Master Guide
@@ -2788,6 +2788,54 @@ $$\mathbf{\text{D (Define Trade-offs)}} \;\rightarrow\; \mathbf{\text{A (Analyze
 
 ---
 
+### 🏢 Bagian 8: Handling "What Type of Work Environment Do You Prefer?" (The High-Trust & Craftsmanship Framework)
+
+Pertanyaan ini menguji kesesuaian budaya (*culture fit*), gaya kerja, dan cara kamu berinteraksi dengan tim rekayasa. Pewawancara ingin mengetahui apakah nilai-nilai kerjamu sejalan dengan lingkungan tim mereka.
+
+#### ⚠️ 4 Jebakan Umum yang Harus Dihindari:
+- ❌ **Jebakan Fasilitas Fisik Remeh**: Menjawab hal superfisial seperti "Saya suka kantor yang banyak cemilan gratis, bean bag, atau meja ping pong" (terkesan tidak dewasa dan tidak fokus pada pekerjaan).
+- ❌ **Jebakan Fanatisme Lokasi (Dogmatic Remote vs. On-site)**: Menolak mentah-mentah salah satu format kerja secara kaku (*"I strictly refuse to ever meet in person"* atau sebaliknya). Perusahaan mencari kandidat yang adaptif.
+- ❌ **Jebakan Tanpa Struktur / Chaos**: "Saya suka kantor yang bebas sebebas-bebasnya tanpa aturan dan tanpa dokumentasi".
+- ❌ **Jebakan Menuntut Dilayani**: Membuat daftar tuntutan panjang seolah perusahaan yang harus menyesuaikan segalanya untuk kandidat.
+
+#### 💡 Pola Pemenang: The High-Trust & Engineering Craftsmanship Framework
+Bagi seorang Software Engineer profesional, lingkungan kerja impian bukanlah tentang fasilitas fisik, melainkan tentang **budaya rekayasa (*engineering culture*)** yang dibangun di atas 3 pilar:
+
+$$\mathbf{\text{Pillar 1: High Trust \& Autonomy}} \;\rightarrow\; \mathbf{\text{Pillar 2: Psychological Safety \& Blameless Collaboration}} \;\rightarrow\; \mathbf{\text{Pillar 3: Software Craftsmanship \& High Standards}}$$
+
+1. **Pilar 1: High Trust & Autonomy (Outcome-Oriented, No Micromanagement)**:
+   - Diberikan konteks masalah dan tujuan bisnis (*business goals*) yang jelas, lalu dipercaya untuk merancang solusi teknis terbaik dan mengeksekusinya dengan *end-to-end ownership*.
+2. **Pilar 2: Psychological Safety & Blameless Collaboration**:
+   - Ruang diskusi yang aman untuk bertanya dan berdebat arsitektur secara objektif.
+   - Budaya *peer review* yang konstruktif untuk belajar bersama (*peer learning*), bukan saling menjatuhkan (*gatekeeping*).
+   - Budaya *blameless post-mortem* saat sistem mengalami kendala: fokus pada perbaikan sistem dan proses, bukan menyalahkan individu.
+3. **Pilar 3: Software Craftsmanship & Continuous Growth**:
+   - Lingkungan yang menghargai kualitas kode (*maintainability*), pengujian otomatis (*automated testing*), dan melunasi utang teknis secara teratur.
+4. **Adaptabilitas Format Kerja (Remote / Hybrid / Onsite)**:
+   - Menegaskan bahwa kamu sangat adaptif dan disiplin bekerja secara *remote/asynchronous* (terbukti dari pengalaman asisten lab daring, *freelance*, dan proyek *backend* terdistribusi), namun juga sangat menikmati kolaborasi tatap muka saat *whiteboarding* atau *sprint planning*.
+
+---
+
+#### 🗣️ Skrip Siap Pakai:
+
+##### Opsi A: Comprehensive & Cultural (Sangat Direkomendasikan untuk Technical Lead / Engineering Manager Interview)
+> *“I thrive best in a work environment defined by **high trust, psychological safety, and strong engineering craftsmanship**.*
+> 
+> *First, I value **autonomy and clear ownership**. I perform at my best when a team is aligned on the 'why'—the business goals and problem context—and engineers are trusted to design and execute robust technical solutions without micromanagement.*
+> 
+> *Second, I deeply appreciate a **collaborative culture with psychological safety**. To me, that means an environment where asking questions is encouraged, architectural trade-offs can be openly debated, and pull request reviews are viewed as shared learning opportunities rather than gatekeeping. When production issues inevitably occur in complex distributed architectures, a healthy team conducts blameless post-mortems focused on systemic prevention rather than finger-pointing.*
+> 
+> *Finally, I value an environment that takes **software craftsmanship seriously**—one that cares about code maintainability, automated testing, and continuous learning. Whether the team operates remotely, hybrid, or on-site, having clear documentation, proactive asynchronous communication, and mutual respect among teammates is what enables me to deliver my highest impact.”*
+
+##### Opsi B: Concise & Punchy (Untuk HR Screening / Waktu Singkat 45-60 Detik)
+> *“I thrive most in an environment that combines **autonomy, psychological safety, and high engineering standards**.*
+> 
+> *I appreciate a workplace where engineers are trusted with end-to-end ownership of their deliverables, communication is transparent, and feedback—like during code reviews—is constructive and blameless.*
+> 
+> *Whether working remotely or on-site, what matters most to me is being part of a curious, collaborative team that cares about writing clean, reliable software and supporting each other's continuous growth.”*
+
+---
+
 ### 📊 Master Summary Table: Pertanyaan vs. Strategi Jawaban
 
 | Pertanyaan Interview | Jebakan Umum (Avoid) | Pola Pemenang / Rekomendasi (Use) |
@@ -2799,6 +2847,7 @@ $$\mathbf{\text{D (Define Trade-offs)}} \;\rightarrow\; \mathbf{\text{A (Analyze
 | **What Are You Passionate About?** | Menjawab hobi personal lepas | **The Craft-to-Value Bridge: Software craftsmanship yang diterjemahkan ke kode stabil bagi tim** |
 | **Independent vs. Team Work** | Terjebak memilih salah satu (lone wolf vs. needy) | **The Adaptable Engineer: Kolaborasi di tahap alignment & code review, mandiri di tahap deep execution & ownership** |
 | **Most Difficult Decision** | Masalah pribadi / remeh / anti-bisnis kaku | **Architectural Trade-offs: Menyeimbangkan speed-to-market vs. integritas sistem & tech debt dengan mitigasi terukur** |
+| **Preferred Work Environment** | Fasilitas fisik remeh / kaku lokasi / anti-aturan | **The High-Trust & Craftsmanship Framework: Otonomi tinggi berbasis hasil, psychological safety & blameless post-mortem, serta komitmen pada mutu kode** |
 
 ---
 
@@ -2830,6 +2879,12 @@ $$\mathbf{\text{D (Define Trade-offs)}} \;\rightarrow\; \mathbf{\text{A (Analyze
 - **pay down technical debt** = Melunasi utang teknis melalui refactoring terencana
 - **shared accountability** = Akuntabilitas dan tanggung jawab bersama antara tim rekayasa dan bisnis
 - **non-negotiable data integrity** = Integritas dan keakuratan data yang tidak dapat ditawar
+- **high-trust environment** = Lingkungan kerja berbasis rasa saling percaya dan tanggung jawab mandiri
+- **psychological safety** = Rasa aman secara psikologis untuk bertanya dan mengutarakan ide tanpa takut dihakimi
+- **outcome-driven autonomy** = Kemandirian kerja yang difokuskan pada tercapainya hasil dan dampak nyata bagi bisnis
+- **constructive peer feedback** = Masukan rekan kerja yang membangun dan berorientasi pada peningkatan kualitas
+- **gatekeeping vs. peer learning** = Sikap membatasi/menghakimi vs. belajar bersama dalam tinjauan kode
+- **proactive asynchronous communication** = Komunikasi asinkron yang proaktif dan terstruktur melalui dokumentasi rapi
 
 ---
 
@@ -2856,6 +2911,9 @@ $$\mathbf{\text{D (Define Trade-offs)}} \;\rightarrow\; \mathbf{\text{A (Analyze
       'decision-making',
       'architecture',
       'trade-offs',
+      'work-environment',
+      'culture-fit',
+      'engineering-culture',
       'speaking',
       'business-english',
       'remote-work',
