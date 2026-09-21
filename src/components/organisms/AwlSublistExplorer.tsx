@@ -132,7 +132,7 @@ export const AwlSublistExplorer: React.FC<AwlSublistExplorerProps> = ({
               Semua Sublist
             </button>
 
-            {[1, 2, 3, 7].map((num) => {
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => {
               const isSelected = selectedSublist === num;
               return (
                 <button
