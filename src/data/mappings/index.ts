@@ -2471,7 +2471,7 @@ Partikel \`up\` sering memberi penekanan bahwa suatu tindakan dilakukan **sampai
     module: 'Job Interview & Professional Communication',
     title: 'Job Interview Master Guide: Software Engineer Framework & Spoken Scripts',
     question:
-      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself / educational background", "Tell me more about your educational background", "Why did you choose this particular major?", "How has your educational background prepared you for your career?", "How a particular course or project helped you succeed?", "What are your hobbies?", "How do you handle stress?", and "What are you passionate about?"',
+      'Complete Job Interview Playbook for Software Engineer: How to answer "Tell me about yourself / educational background", "Tell me more about your educational background", "Why did you choose this particular major?", "How has your educational background prepared you for your career?", "How a particular course or project helped you succeed?", "What are your hobbies?", "How do you handle stress?", "What are you passionate about?", and "Do you prefer working independently or in a team?"',
     correction:
       'Fragmented / generic scripts -> Unified End-to-End Interview Playbook for Software Engineers',
     remarks: `### 🎯 Overview: The Software Engineer Job Interview Master Guide
@@ -2697,6 +2697,51 @@ $$\\mathbf{\\text{Pillar 1: The Craft (Core Spark)}} \\;\\rightarrow\\; \\mathbf
 
 ---
 
+### 🤝 Bagian 6: Handling "Do You Prefer Working Independently or in a Team?" (The Adaptable Engineer Framework)
+
+Pertanyaan ini sering diajukan untuk menguji apakah kamu seorang insinyur yang memiliki inisiatif dan kemandirian (*autonomous & self-directed*) atau justru butuh *micromanagement*, dan sekaligus melihat apakah kamu bisa berkolaborasi secara sehat dalam ekosistem tim (*cross-functional collaboration & culture fit*).
+
+#### ⚠️ Jebakan Pilihan Biner (The False Dichotomy Trap):
+- ❌ **Hanya memilih "Independently"**: Terkesan *lone wolf*, arogan, defensif saat *code review*, dan sulit beradaptasi dengan alur kerja tim *Agile/Scrum*.
+- ❌ **Hanya memilih "Team"**: Berisiko terkesan tidak mandiri, kurang memiliki inisiatif, atau tidak mampu melakukan *deep-focus problem solving* tanpa terus-menerus disuapi atau didampingi rekan kerja.
+
+#### 💡 Pola Pemenang: The Adaptable Engineer Formula
+Software engineering modern membutuhkan sinergi dari kedua kutub tersebut. Kuncinya adalah **membingkai (*reframe*) keduanya sebagai fase komplementer dalam siklus pengembangan perangkat lunak (*software development lifecycle*)**:
+
+$$\mathbf{\text{Stance: I thrive in both}} \;\rightarrow\; \mathbf{\text{Independent Phase: Deep Work \& End-to-End Ownership}} \;\rightarrow\; \mathbf{\text{Team Phase: Cross-Functional Alignment \& Code Reviews}}$$
+
+1. **Independent Phase (Deep Work & Ownership)**:
+   - Mampu fokus mendalam (*deep work*) untuk mengurai *concurrency bugs*, meneliti *root cause* lewat log transaksi (*distributed tracing*), atau merancang implementasi *clean architecture* dan migrasi skema basis data (*Flyway*).
+   - Menunjukkan kepemilikan penuh (*end-to-end ownership*) dari menulis kode, *unit testing*, hingga integrasi tanpa perlu *micromanagement*.
+2. **Team Phase (Collaboration & Alignment)**:
+   - Menyelaraskan kontrak API (REST/JSON contract) antara *backend* dan *frontend*.
+   - Berdiskusi dan *brainstorming* trade-off arsitektur bersama *tech leads*, *product managers*, dan QA.
+   - Budaya *peer code review*: belajar dari perspektif rekan kerja, menjaga konsistensi standar kode (*codebase consistency*), dan mencegah *blind spots*.
+
+---
+
+#### 🗣️ Skrip Siap Pakai:
+
+##### Opsi A: Comprehensive & In-Depth (Sangat Direkomendasikan untuk Technical / User Interview)
+> *“I genuinely thrive in both environments because I see them as complementary phases of the software development lifecycle rather than an either-or choice.*
+> 
+> *When it comes to execution, I really enjoy working **independently**. I value being able to dive into deep-focus work—whether that's tracing a complex concurrency issue in Java backend services, designing a resilient database schema, or taking end-to-end ownership of a critical feature from implementation to automated testing without needing micromanagement.*
+> 
+> *At the same time, great software is never built in a silo. I value **team collaboration** tremendously during the architecture, alignment, and review stages. I love collaborating with frontend engineers to define clean API contracts, brainstorming architectural trade-offs with leads, and participating in peer code reviews. Code reviews, in particular, are invaluable because they help prevent blind spots and ensure long-term codebase health.*
+> 
+> *To put it simply: I collaborate upfront to build consensus and alignment, I execute independently with deep focus and ownership, and I reconvene with the team to review, integrate, and ship high-quality software.”*
+
+##### Opsi B: Concise & Punchy (Untuk HR Screening / Waktu Singkat 45 Detik)
+> *“To be honest, I value and enjoy both, as they represent different stages of delivering great software.*
+> 
+> *I thrive **independently** when it's time for deep-focus engineering—taking full ownership of a feature, diagnosing edge-case bugs, and writing clean, well-tested code autonomously.*
+> 
+> *However, I rely heavily on **team collaboration** when shaping requirements, defining API contracts with frontend teammates, and conducting constructive peer code reviews to ensure system cohesion and eliminate blind spots.*
+> 
+> *In short, I collaborate to align on architecture, work independently to execute with rigor, and collaborate again to integrate and deliver value.”*
+
+---
+
 ### 📊 Master Summary Table: Pertanyaan vs. Strategi Jawaban
 
 | Pertanyaan Interview | Jebakan Umum (Avoid) | Pola Pemenang / Rekomendasi (Use) |
@@ -2706,6 +2751,7 @@ $$\\mathbf{\\text{Pillar 1: The Craft (Core Spark)}} \\;\\rightarrow\\; \\mathbf
 | **What Are Your Hobbies?** | Pura-pura suka baca buku sastra / panik | **Engineering Curiosity Pivot: Eksperimen side-projects + kopi & jalan santai** |
 | **How Do You Handle Stress?** | Mengaku tidak pernah stres / lembur buta | **Metode ATC: Reframe signal, triage & data-driven RCA, komunikasi proaktif & post-mortem** |
 | **What Are You Passionate About?** | Menjawab hobi personal lepas | **The Craft-to-Value Bridge: Software craftsmanship yang diterjemahkan ke kode stabil bagi tim** |
+| **Independent vs. Team Work** | Terjebak memilih salah satu (lone wolf vs. needy) | **The Adaptable Engineer: Kolaborasi di tahap alignment & code review, mandiri di tahap deep execution & ownership** |
 
 ---
 
@@ -2721,6 +2767,14 @@ $$\\mathbf{\\text{Pillar 1: The Craft (Core Spark)}} \\;\\rightarrow\\; \\mathbf
 - **blameless post-mortem** = Retrospektif pasca-insiden yang fokus pada perbaikan sistem tanpa saling menyalahkan
 - **software craftsmanship** = Dedikasi menghasilkan kode yang bersih, teruji, dan berstandar tinggi
 - **stand the test of scale** = Bertahan dan tetap berkinerja tinggi saat beban transaksi membesar
+- **thrive in both environments** = Berkembang optimal di kedua lingkungan kerja (mandiri maupun tim)
+- **complementary phases of the SDLC** = Fase-fase yang saling melengkapi dalam siklus pengembangan perangkat lunak
+- **end-to-end ownership** = Tanggung jawab penuh dari hulu ke hilir (desain, koding, pengujian, hingga integrasi)
+- **deep-focus engineering / deep work** = Fase kerja dengan konsentrasi tinggi tanpa distraksi untuk menyelesaikan logika rumit
+- **built in a silo** = Dibangun secara terisolasi tanpa komunikasi dengan pihak lain
+- **define clean API contracts** = Menyepakati spesifikasi dan format data antarmuka (API) yang jelas dan konsisten
+- **prevent blind spots** = Mencegah potensi celah, kesalahan logika, atau asumsi keliru yang luput dari pandangan satu orang
+- **system cohesion & codebase health** = Keselarasan arsitektur sistem dan kesehatan kualitas kode jangka panjang
 
 ---
 
@@ -2741,6 +2795,9 @@ $$\\mathbf{\\text{Pillar 1: The Craft (Core Spark)}} \\;\\rightarrow\\; \\mathbf
       'hobbies',
       'stress-management',
       'passion',
+      'teamwork',
+      'collaboration',
+      'independent-work',
       'speaking',
       'business-english',
       'remote-work',
