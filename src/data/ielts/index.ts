@@ -17,6 +17,12 @@ import m3c3 from '../../../docs/ielts-band-7/module-03-grammar-and-vocabulary-di
 import m3c4 from '../../../docs/ielts-band-7/module-03-grammar-and-vocabulary-diagnostic-tests/04-cefr-english-levels-test-a1-c2.md';
 import m3c5 from '../../../docs/ielts-band-7/module-03-grammar-and-vocabulary-diagnostic-tests/05-english-self-assessment-levels-test.md';
 
+import m4c1 from '../../../docs/ielts-band-7/module-04-listening-section-basics/01-ielts-listening-general-information.md';
+import m4c2 from '../../../docs/ielts-band-7/module-04-listening-section-basics/02-ielts-listening-question-types-and-strategy.md';
+import m4c3 from '../../../docs/ielts-band-7/module-04-listening-section-basics/03-ielts-listening-tips-for-higher-band-score.md';
+import m4c4 from '../../../docs/ielts-band-7/module-04-listening-section-basics/04-methods-to-improve-listening-ability.md';
+import m4c5 from '../../../docs/ielts-band-7/module-04-listening-section-basics/05-ielts-spelling-list-and-common-pitfalls.md';
+
 export const IELTS_MODULES: IeltsModule[] = [
   {
     moduleNumber: 1,
@@ -269,8 +275,100 @@ export const IELTS_MODULES: IeltsModule[] = [
     moduleNumber: 4,
     title: 'Bagian 4: Listening Section Basics and Information',
     slug: 'listening-section-basics',
-    description: 'Panduan dasar listening, 10 tips mendongkrak skor, metode melatih pendengaran, serta daftar ejaan IELTS wajib.',
-    chapters: []
+    description: 'Panduan format listening, 10 tips mendongkrak skor, metode active listening, transkrip verbatim per menit, serta daftar ejaan Cambridge wajib.',
+    totalDuration: '28m',
+    chapters: [
+      {
+        id: 'm4-01',
+        chapterNumber: 14,
+        itemNumber: 1,
+        title: '14. Informasi Umum & Anatomi Format IELTS Listening',
+        moduleNumber: 4,
+        moduleTitle: 'Bagian 4: Listening Section Basics and Information',
+        itemType: 'video',
+        duration: '7m',
+        description: '40 soal, 4 seksi, perbandingan waktu transfer PBI (10m) vs CDI (2m), progresi kesulitan, dan larangan mencatat di kertas terpisah.',
+        markdownContent: m4c1,
+        keyTakeaways: [
+          '40 pertanyaan, 4 seksi; audio hanya diputar 1 kali tanpa pengulangan',
+          'Waktu transfer: 10 menit di Paper-Based vs HANYA 2 menit di Computer-Based',
+          'Wajib memaksimalkan Seksi 1 & 2 (target 18-20/20) sebagai tabungan skor',
+          'Tulis jawaban langsung di samping soal; jangan membuat catatan di kertas buram'
+        ]
+      },
+      {
+        id: 'm4-02',
+        chapterNumber: 15,
+        itemNumber: 2,
+        title: '15. Kompilasi Tipe Soal & Strategi Eksekusi IELTS Listening',
+        moduleNumber: 4,
+        moduleTitle: 'Bagian 4: Listening Section Basics and Information',
+        itemType: 'video',
+        duration: '10m',
+        description: 'Bedah 6 tipe soal utama: Form completion, multiple choice, map labelling, matching, sentence completion, dan flow-chart.',
+        markdownContent: m4c2,
+        keyTakeaways: [
+          'Hukum urutan kronologis: Jawaban soal selalu muncul berurutan dari nomor 1 sampai 40',
+          'Let-It-Go Protocol: Jika nomor terlewat, langsung tebak cepat dan fokus pada nomor berikutnya',
+          'Exact Word Trap pada MCQ: Pilihan dengan kata persis seperti di audio sering kali adalah distraktor',
+          'Map Labelling: Kunci starting point dan kuasai preposisi spasial (opposite, adjacent, corridor)'
+        ]
+      },
+      {
+        id: 'm4-03',
+        chapterNumber: 16,
+        itemNumber: 3,
+        title: '16. 10 Tips Taktis Mendongkrak Skor IELTS Listening (Band 7.0–9.0)',
+        moduleNumber: 4,
+        moduleTitle: 'Bagian 4: Listening Section Basics and Information',
+        itemType: 'video',
+        duration: '6m',
+        description: 'Aturan ketat penghitungan kata (artikel dihitung 1 kata), trik aman ALL CAPITAL LETTERS, dan sensitivitas akhiran jamak (-s).',
+        markdownContent: m4c3,
+        keyTakeaways: [
+          'Artikel (a/an/the) dihitung sebagai 1 kata penuh; melanggar word limit = 0 poin',
+          'Gunakan ALL CAPITAL LETTERS untuk menghindari kesalahan kapitalisasi nama diri',
+          'Sensitivitas akhiran jamak (-s/-es): kelalaian huruf s sering menggugurkan skor ke 6.5',
+          'Manfaatkan 30 detik pasca audio untuk memeriksa ketepatan gramatikal'
+        ]
+      },
+      {
+        id: 'm4-04',
+        chapterNumber: 17,
+        itemNumber: 4,
+        title: '17. 7 Metode Teruji Meningkatkan Kemampuan Listening Mandiri',
+        moduleNumber: 4,
+        moduleTitle: 'Bagian 4: Listening Section Basics and Information',
+        itemType: 'article',
+        duration: '4m',
+        description: 'Deteksi intonasi penekanan jawaban, latihan aksen UK/AU/US, metode Speed Listening 1.25x-1.5x, dan fenomena connected speech.',
+        markdownContent: m4c4,
+        keyTakeaways: [
+          'Deteksi kata yang dipanjangkan (stretched words) sebagai penanda jawaban isian singkat',
+          'Latihan Speed Listening (1.25x - 1.5x) membuat ujian asli terasa berjalan jauh lebih lambat',
+          'Membuat Paraphrase Table: mencocokkan kata kunci soal dengan bahasa parafrase audio',
+          'Membedah connected speech: melatih telinga mengenali bunyi kata yang saling melebur'
+        ]
+      },
+      {
+        id: 'm4-05',
+        chapterNumber: 18,
+        itemNumber: 5,
+        title: '18. Daftar Ejaan Wajib IELTS Listening & Jebakan Ortografi',
+        moduleNumber: 4,
+        moduleTitle: 'Bagian 4: Listening Section Basics and Information',
+        itemType: 'article',
+        duration: '1m',
+        description: 'Kompilasi kosakata resmi Cambridge IELTS Tests 5–16, 6 jebakan huruf ganda (accommodation, necessary), dan huruf senyap.',
+        markdownContent: m4c5,
+        keyTakeaways: [
+          'Kaidah Cambridge: Salah satu huruf saja dihitung SALAH TOTAL (0 poin, tanpa nilai setengah)',
+          'Jebakan huruf ganda fatal: accommodation (2c, 2m), embarrassment (2r, 2s), necessary (1c, 2s)',
+          'Huruf senyap: environment (ada n sebelum m), government, Wednesday (ada d senyap)',
+          'Koleksi kata kunci ejaan teruji dari Cambridge IELTS Practice Tests seri 5 hingga 16'
+        ]
+      }
+    ]
   },
   {
     moduleNumber: 5,

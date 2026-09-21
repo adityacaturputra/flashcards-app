@@ -10,10 +10,10 @@ Dokumen ini melacak pemetaan lengkap kurikulum **Udemy: IELTS Band 7+ Complete P
 | :--- | :--- | :--- |
 | **Total Bagian Udemy** | `35 Bagian` | Mencakup 4 keahlian: Listening, Reading, Writing, Speaking |
 | **Total Materi / Video / Kuis** | `613 Item` | 511 Kuliah/Video, 48 Kuis, 27 AI Role-Play, 27 Lainnya |
-| **Bagian Selesai (DONE)** | `3 Bagian` (Bagian 1, 2, 3) | 100% lengkap dengan ringkasan & kuis interaktif |
-| **Total Bab Lokal Selesai** | `13 Bab` | Tersedia di `docs/ielts-band-7/` & `src/data/ielts/` |
-| **Materi Terakhir Selesai (Last Done)** | `Kuliah #4 (ID: 55461173)` | *IELTS Preparation Course Books Used to Teach This Course* |
-| **Target Lanjutan Terdekat (Next Up)** | `Bagian 4 (ID: 9194542)` | *Listening Section Basics and Information* (5 Materi) |
+| **Bagian Selesai (DONE)** | `4 Bagian` (Bagian 1, 2, 3, 4) | 100% lengkap dengan ringkasan & kuis interaktif |
+| **Total Bab Lokal Selesai** | `18 Bab` | Tersedia di `docs/ielts-band-7/` & `src/data/ielts/` |
+| **Materi Terakhir Selesai (Last Done)** | `Kuliah #17 (ID: 5542190)` | *IELTS Spelling List* (Bab 18) |
+| **Target Lanjutan Terdekat (Next Up)** | `Bagian 5 (ID: 1389986)` | *Listening Section 1 (Part 1) Strategy* (19 Materi) |
 
 ---
 
@@ -24,8 +24,8 @@ Dokumen ini melacak pemetaan lengkap kurikulum **Udemy: IELTS Band 7+ Complete P
 | 01 | `1385688` | IELTS Band 7 Preparation Course General Overview | 4 | 4 Kuliah | Module 1: General Overview | ✅ **DONE (4/4)** |
 | 02 | `12025459` | IELTS Exam Basic Information | 4 | 3 Kuliah, 1 Kuis | Module 2: Exam Basic Information | ✅ **DONE (4/4)** |
 | 03 | `8419754` | Grammar and Vocabulary Diagnostic Tests | 5 | 5 Kuliah | Module 3: Diagnostic Tests | ✅ **DONE (5/5)** |
-| 04 | `9194542` | Listening Section Basics and Information | 5 | 5 Kuliah | Module 4: Listening Basics | ⏳ *NEXT UP (0/5)* |
-| 05 | `1389986` | Listening Section 1 (Part 1) Strategy (General and Academic Application) | 19 | 19 Kuliah | Module 5: Listening Part 1 | ⚪ Pending (0/19) |
+| 04 | `9194542` | Listening Section Basics and Information | 5 | 5 Kuliah | Module 4: Listening Basics | ✅ **DONE (5/5)** |
+| 05 | `1389986` | Listening Section 1 (Part 1) Strategy (General and Academic Application) | 19 | 19 Kuliah | Module 5: Listening Part 1 | ⏳ *NEXT UP (0/19)* |
 | 06 | `10596240` | Listening Section 2 (Part 2) Strategy (General and Academic Application) | 16 | 16 Kuliah | Module 6: Listening Part 2 | ⚪ Pending (0/16) |
 | 07 | `10596250` | Listening Section 3 (Part 3) Strategy (General and Academic Application) | 11 | 11 Kuliah | Module 7: Listening Part 3 | ⚪ Pending (0/11) |
 | 08 | `10596508` | Listening Section 4 (Part 4) Strategy (General and Academic Application) | 11 | 11 Kuliah | Module 8: Listening Part 4 | ⚪ Pending (0/11) |
@@ -91,6 +91,18 @@ Dokumen ini melacak pemetaan lengkap kurikulum **Udemy: IELTS Band 7+ Complete P
 
 ---
 
+### Bagian 4: Listening Section Basics and Information (ID: `9194542`)
+
+| No | ID Item | Tipe | Judul Materi Asli Udemy | File Lokal Repositori | Status |
+| :---: | :---: | :---: | :--- | :--- | :---: |
+| 1 | `5541946` | Lecture | IELTS Listening General Information | [`01-ielts-listening-general-information.md`](docs/ielts-band-7/module-04-listening-section-basics/01-ielts-listening-general-information.md) | ✅ DONE |
+| 2 | `5541970` | Lecture | IELTS Listening Question Types and Strategy | [`02-ielts-listening-question-types-and-strategy.md`](docs/ielts-band-7/module-04-listening-section-basics/02-ielts-listening-question-types-and-strategy.md) | ✅ DONE |
+| 3 | `5541950` | Lecture | IELTS  Listening Tips for a Higher Band Score | [`03-ielts-listening-tips-for-higher-band-score.md`](docs/ielts-band-7/module-04-listening-section-basics/03-ielts-listening-tips-for-higher-band-score.md) | ✅ DONE |
+| 4 | `34356000` | Article | Methods to Improve Listening Ability | [`04-methods-to-improve-listening-ability.md`](docs/ielts-band-7/module-04-listening-section-basics/04-methods-to-improve-listening-ability.md) | ✅ DONE |
+| 5 | `5542190` | Article | IELTS Spelling List | [`05-ielts-spelling-list-and-common-pitfalls.md`](docs/ielts-band-7/module-04-listening-section-basics/05-ielts-spelling-list-and-common-pitfalls.md) | ✅ DONE |
+
+---
+
 ## 🎯 Rencana Aksi Lanjutan: Target Berikutnya (NEXT UP)
 
 ### 📍 Bagian 4: Listening Section Basics and Information (ID: `9194542`)
@@ -112,10 +124,10 @@ Modul berikutnya yang siap dikerjakan untuk melengkapi seksi dasar Listening seb
 | Kelompok Keahlian | Cakupan Bagian Udemy | Total Bagian | Total Materi | Status Repositori |
 | :--- | :---: | :---: | :---: | :--- |
 | **1. Orientasi & Diagnostik** | Bagian 1 – 3 | 3 Bagian | 13 Materi | ✅ **13 / 13 Selesai (100%)** |
-| **2. Listening Comprehensive** | Bagian 4 – 12 | 9 Bagian | 94 Materi | ⏳ *0 / 94 (Target Tahap 2)* |
+| **2. Listening Comprehensive** | Bagian 4 – 12 | 9 Bagian | 94 Materi | ⏳ **5 / 94 Selesai (5.3%)** |
 | **3. Academic Reading** | Bagian 13 – 17 | 5 Bagian | 121 Materi | ⚪ *0 / 121 (Target Tahap 3)* |
 | **4. General Reading** | Bagian 18 – 22 | 5 Bagian | 79 Materi | ⚪ *0 / 79 (Target Tambahan)* |
 | **5. Computer Based Test (CBT)** | Bagian 23 | 1 Bagian | 22 Materi | ⚪ *0 / 22 (Target Tahap 4)* |
 | **6. Writing Task 1 & Task 2** | Bagian 24 – 29 | 6 Bagian | 122 Materi | ⚪ *0 / 122 (Target Tahap 5)* |
 | **7. Speaking Comprehensive** | Bagian 30 – 35 | 6 Bagian | 133 Materi | ⚪ *0 / 133 (Target Tahap 6)* |
-| **TOTAL KURSUS** | **Bagian 1 – 35** | **35 Bagian** | **613 Materi** | **13 Selesai / 600 Menunggu** |
+| **TOTAL KURSUS** | **Bagian 1 – 35** | **35 Bagian** | **613 Materi** | **18 Selesai / 595 Menunggu** |

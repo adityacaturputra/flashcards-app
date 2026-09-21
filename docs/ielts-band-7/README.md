@@ -27,6 +27,12 @@ docs/ielts-band-7/
     ├── 03-information-on-grammar-and-vocabulary-ielts-sources.md
     ├── 04-cefr-english-levels-test-a1-c2.md
     └── 05-english-self-assessment-levels-test.md
+└── module-04-listening-section-basics/                   # Bagian 4 (5 Materi)
+    ├── 01-ielts-listening-general-information.md
+    ├── 02-ielts-listening-question-types-and-strategy.md
+    ├── 03-ielts-listening-tips-for-higher-band-score.md
+    ├── 04-methods-to-improve-listening-ability.md
+    └── 05-ielts-spelling-list-and-common-pitfalls.md
 ```
 
 ---
@@ -69,4 +75,10 @@ Masing-masing sub-tes Listening dan Reading memiliki **40 butir pertanyaan**. Pe
   - [x] 11. Sumber Referensi Grammar & Vocabulary untuk IELTS
   - [x] 12. Panduan Level Kemahiran Bahasa Inggris CEFR (A1 - C2)
   - [x] 13. Lembar Evaluasi & Penilaian Mandiri (IELTS Self-Assessment Framework)
-- [ ] **Bagian 4: Listening Section Basics and Information** *(Berikutnya)*
+- [x] **Bagian 4: Listening Section Basics and Information (5 Bab)**
+  - [x] 14. Informasi Umum & Anatomi Format IELTS Listening
+  - [x] 15. Kompilasi Tipe Soal & Strategi Eksekusi IELTS Listening
+  - [x] 16. 10 Tips Taktis Mendongkrak Skor IELTS Listening (Band 7.0–9.0)
+  - [x] 17. 7 Metode Teruji Meningkatkan Kemampuan Listening Mandiri
+  - [x] 18. Daftar Ejaan Wajib IELTS Listening & Jebakan Ortografi
+- [ ] **Bagian 5: Listening Section 1 (Part 1) Strategy** *(Berikutnya)*
