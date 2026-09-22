@@ -2919,6 +2919,119 @@ $$\mathbf{\text{Pillar 1: High Trust \& Autonomy}} \;\rightarrow\; \mathbf{\text
       'remote-work',
     ],
   },
+  {
+    id: 'ielts-listening-form-note-completion-prediction-strategy',
+    module: 'IELTS Preparation',
+    title: 'IELTS Listening: Strategi Prediksi Kelas Kata & Batas Kata Ketat pada Form / Note Completion',
+    question:
+      'Dalam tes IELTS Listening tipe Form / Note Completion (Seksi 1 & 4), bagaimana cara membaca instruksi "NO MORE THAN TWO WORDS AND/OR A NUMBER" dan bagaimana mengeksekusi "Prediksi Kelas Kata" (Noun, Adjective, Number, Date) selama 30 detik fase pra-mendengar agar terhindar dari batas kata dan jebakan ejaan?',
+    correctAnswer:
+      '1. Patuhi batas kata tanpa kompromi (jawaban melebihi batas kata otomatis dinilai 0 meskipun maknanya benar; hilangkan artikel/preposisi yang tidak perlu). 2. Lakukan Prediksi Kelas Kata (Part of Speech) dalam 30 detik pra-mendengar: analisis kata sebelum/sesudah celah untuk memprediksi apakah celah membutuhkan Noun (tunggal/jamak), Adjective, Number, atau Date. 3. Pasang telinga pada kelompok bunyi rawan ejaan alfabet (A/E/I, G/J, teen vs ty, dan angka nol "oh").',
+    explanation:
+      'Form / Note Completion adalah tipe soal melengkapi formulir pendaftaran atau catatan kuliah dengan batas kata ketat. Mengisi titik-titik kosong membutuhkan mode pendengaran aktif-prediktif: alih-alih mendengar pasif kata demi kata, kandidat menggunakan 30 detik sebelum audio diputar untuk menganalisis struktur kalimat dan memprediksi jenis data atau kelas kata yang hilang. Dengan mengetahui sejak awal bahwa celah memerlukan angka harga, tanggal, kata sifat, atau kata benda tunggal, telinga kandidat menjadi 10x lebih sensitif menyaring informasi yang relevan di tengah percakapan penutur asli.',
+    remarks: `### 🎯 Bedah Konseptual: Apa Itu Form / Note Completion?
+
+Di ujian IELTS Listening, **Form Completion** (biasanya di Seksi 1) dan **Note Completion** (di Seksi 1 dan Seksi 4) menyajikan lembar formulir pendaftaran layanan atau catatan ringkas yang memiliki bagian rumpang (*blank spaces* / \`_______\`). Tugas kandidat adalah mendengarkan audio pembicara dan mencatat kata atau angka yang tepat ke dalam celah tersebut.
+
+---
+
+### ⚠️ 1. Dekonstruksi "Batas Kata Ketat" (*Strict Word Limit Strictness*)
+
+Sebelum audio dimulai, lembar soal selalu mencantumkan instruksi batas kata dengan huruf tebal. Aturan penilaian Cambridge adalah **zero tolerance** (tanpa toleransi kompromi):
+
+| Instruksi Resmi | Makna Hukum Penilaian | Contoh Kasus Nyata | Hasil Penilaian |
+| :--- | :--- | :--- | :---: |
+| **NO MORE THAN TWO WORDS** | Maksimal 2 kata. Jika menulis 3 kata, nilai otomatis 0. | Soal: \`Location: ________\`<br>Audio: *"We meet near the train station."*<br>• Siswa menulis: \`near the train station\` (4 kata)<br>• Jawaban benar: \`train station\` (2 kata) | ❌ **SKOR 0**<br>✅ **1 POIN** |
+| **ONE WORD ONLY** | Wajib tepat 1 kata saja. | Soal: \`Applicant needs: a ________\`<br>Audio: *"Please bring a valid certificate."*<br>• Siswa menulis: \`valid certificate\` (2 kata)<br>• Jawaban benar: \`certificate\` (1 kata) | ❌ **SKOR 0**<br>✅ **1 POIN** |
+| **ONE WORD AND/OR A NUMBER** | Maksimal 1 kata dan/atau 1 angka. | Audio: *"The class starts on the 24th of October."*<br>• Siswa menulis: \`24 October\` (1 angka + 1 kata)<br>• Siswa menulis: \`the 24th of October\` (4 kata) | ✅ **1 POIN**<br>❌ **SKOR 0** |
+
+$$
+\\text{Panjang Jawaban} > \\text{Batas Kata Maksimal} \\implies \\text{Skor Mutlak } = 0
+$$
+
+> [!IMPORTANT]
+> **Trik Menghindari Pelanggaran Batas Kata**: Jangan menyalin kata depan (*preposition*: in, on, at, near) atau artikel (*a, an, the*) jika hal itu menyebabkan jumlah kata melebihi batas yang diizinkan!
+
+---
+
+### 🧭 2. Mengapa "Prediksi Kelas Kata" (*Part of Speech Prediction*) Sangat Sakti?
+
+Sebelum audio berputar, narator selalu memberikan waktu persiapan sekitar 30 detik:
+> *"You have some time to look at questions 1 to 5."*
+
+Sebagian besar kandidat yang gagal hanya membaca kata demi kata secara pasif. Kandidat **Band 7.5–9.0** menggunakan 30 detik ini untuk **menebak jenis kata apa yang hilang** berdasarkan kata sebelum dan sesudah celah kosong:
+
+\`\`\`mermaid
+flowchart LR
+    A["Analisis Kata Sebelum/Sesudah Celah"] --> B["Prediksi Kelas Kata<br>(Noun / Adj / Number / Date)"]
+    B --> C["Audio Berputar"]
+    C --> D["Telinga Menyaring Khusus Jenis Kata Tersebut<br>(Instant Keyword Lock)"]
+    D --> E["Catat Tanpa Ragu"]
+\`\`\`
+
+#### Empat Contoh Simulasi Prediksi Kelas Kata:
+
+#### A. Prediksi Angka (*Number*)
+- **Bentuk Soal**: \`Contact telephone: ________\`
+- **Analisis Kognitif**: Celah berada setelah kata *telephone*. Jawabannya **pasti deretan angka**!
+- **Refleks Telinga**: Abaikan cerita pembuka pembicara; telinga langsung siaga saat pembicara mulai mendikte angka: *"My mobile number is 079..."*.
+
+#### B. Prediksi Tanggal (*Date*)
+- **Bentuk Soal**: \`Date of booking: ________\`
+- **Analisis Kognitif**: Memerlukan kombinasi hari, tanggal, atau nama bulan.
+- **Refleks Telinga**: Telinga otomatis menunggu nama bulan (*March, October, etc.*) atau angka tanggal kalender.
+
+#### C. Prediksi Kata Sifat (*Adjective*)
+- **Bentuk Soal**: \`Special request: a ________ room\`
+- **Analisis Kognitif**: Terdapat artikel \`a\` di depan dan kata benda \`room\` di belakang. Kata yang berada di antara artikel dan kata benda **pasti kata sifat (*Adjective*)** yang menjelaskan kondisi kamar.
+- **Refleks Telinga**: Saat pembicara berkata: *"I'd strongly prefer a very quiet room"*, otak langsung menyergap kata sifat: \`QUIET\`.
+
+#### D. Prediksi Kata Benda Tunggal vs Jamak (*Singular vs Plural Noun*)
+- **Bentuk Soal**: \`The applicant must bring a ________.\`
+- **Analisis Kognitif**: Terdapat artikel tunggal \`a\`. Jawabannya **mutlak kata benda tunggal (*Singular Countable Noun*)**.
+- **Refleks Telinga**: Jika audio menyebut: *"Please bring certificates or a passport"*, jawaban yang benar adalah \`PASSPORT\` (karena ada \`a\`). Menulis \`certificates\` salah secara gramatikal.
+
+---
+
+### 🔤 3. Mengapa Harus Memperhatikan "Ejaan Nama Jalan dan Nomor Kontak"?
+
+Di Seksi 1, penguji IELTS **selalu menguji kepekaan ortografi alfabet dan angka penutur asli**:
+1. **Ejaan Huruf Vokal yang Rawan Tertukar**:
+   - Huruf **A** (/eɪ/) sering tertukar dengan **E** (/iː/) atau **I** (/aɪ/).
+   - Huruf **G** (/dʒiː/) sering tertukar dengan **J** (/dʒeɪ/).
+2. **Penyebutan Karakter Tertentu**:
+   - Angka nol (\`0\`) pada nomor telepon hampir selalu diucapkan sebagai bunyi **"oh"** (/oʊ/), bukan *"zero"*.
+   - *"Double"* berarti dua angka/huruf berturut-turut (*double five* = \`55\`).
+3. **Konvensi Huruf Kapital Penuh (*ALL CAPS*)**:
+   - Tulis seluruh jawaban nama jalan, nama orang, dan hari dalam huruf kapital penuh (misal: \`BRAMPTON ROAD\`) untuk menghindari risiko pengurangan poin akibat lupa mengkapitalkan huruf awal nama diri (*proper nouns*).
+
+---
+
+### 💡 Quick Memory Tip (Rumus Saku)
+
+$$
+\\text{30 Detik Pra-Audio} = \\text{Lingkari Batas Kata} + \\text{Tentukan Part of Speech} + \\text{Kunci Anchor Keywords}
+$$
+
+> [!TIP]
+> **Mentalitas Detektif**: Jangan menunggu audio memberi tahu Anda segalanya. Beraksilah seperti detektif yang sudah tahu bentuk jejak kaki yang dicari sebelum tersangka lewat!
+`,
+    source: 'IELTS Band 7+ Preparation Course',
+    chapter: 'Bab 15: Kompilasi Tipe Soal & Strategi Eksekusi IELTS Listening',
+    createdAt: '2026-09-22',
+    tags: [
+      'ielts',
+      'ielts-listening',
+      'form-completion',
+      'note-completion',
+      'word-limit',
+      'part-of-speech',
+      'prediction',
+      'spelling',
+      'numbers',
+      'dates',
+    ],
+  },
 ];
 
 /**

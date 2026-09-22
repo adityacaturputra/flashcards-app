@@ -32,12 +32,17 @@ flowchart TD
 
 | Tipe Soal | Letak Seksi Umum | Pola Soal | Strategi Kunci Keino Campbell |
 | :--- | :---: | :--- | :--- |
-| **1. Form / Note Completion** | Seksi 1 & 4 | Mengisi formulir, faktur, atau catatan kuliah dengan batas kata ketat. | **Prediksi Kelas Kata**: Tentukan apakah titik-titik membutuhkan *Noun*, *Adjective*, *Number*, atau *Date*. Perhatikan ejaan nama jalan dan nomor kontak. |
+| **1. Form / Note Completion** | Seksi 1 & 4 | Mengisi formulir, faktur, atau catatan kuliah dengan batas kata ketat. | **Prediksi Kelas Kata**: Tentukan apakah titik-titik membutuhkan *Noun*, *Adjective*, *Number*, atau *Date*. Perhatikan ejaan nama jalan dan nomor kontak.<br>👉 *[Pelajari Kartu Study Mapping: Prediksi Kelas Kata & Batas Kata Ketat](/mapping?search=Form+Note+Completion)* |
 | **2. Multiple Choice (MCQ)** | Seksi 2 & 3 | Pilihan tunggal (A, B, C) atau memilih 2 jawaban benar dari 5 opsi (A–E). | **Beware the Exact Word Trap**: Pilihan yang menggunakan kata persis seperti di audio sering kali adalah distraktor. Jawaban benar biasanya berupa parafrase makna. |
 | **3. Map / Plan Labelling** | Seksi 2 | Memberi label pada denah gedung, peta desa, atau diagram mesin. | **Kunci Titik Awal (*Starting Point*)**: Cari tanda panah *"You are here"*, kompas (North/South/East/West), dan kuasai preposisi spasial (*clockwise, corridor, adjacent*). |
 | **4. Matching Information** | Seksi 2 & 3 | Menghubungkan daftar pembicara/opsi dengan kategori pernyataan. | **Fokus pada Opsi Pendek**: Baca dan pahami pernyataan yang lebih panjang terlebih dahulu agar saat audio berputar Anda tinggal melirik kode opsi. |
 | **5. Sentence Completion** | Seksi 3 & 4 | Melengkapi kalimat rumpang yang merangkum poin-poin penting kuliah. | **Grammatical Fit**: Jawaban yang disalin dari audio harus pas secara tata bahasa dengan struktur kalimat soal tanpa mengubah bentuk kata. |
 | **6. Flow-Chart Completion** | Seksi 3 & 4 | Mengisi tahapan proses berurutan (tahap 1 ➔ 2 ➔ 3). | **Follow the Signpost Words**: Dengarkan kata penanda proses: *initially, the next step involves, subsequently, finally*. |
+
+> [!TIP]
+> **📘 Kartu Belajar Terintegrasi (Study Mapping)**:
+> Penjelasan mendalam mengenai mekanisme *Prediksi Kelas Kata* (Noun, Adjective, Number, Date), aturan batas kata ketat (*zero tolerance word count*), dan jebakan ejaan ortografi kini tersedia dalam kartu flashcard mapping interaktif:  
+> 👉 [**Study Mapping: IELTS Listening Form / Note Completion Strategy**](/mapping?search=Form+Note+Completion) *(Kategori: `IELTS Preparation`, ID: `ielts-listening-form-note-completion-prediction-strategy`)*.
 
 ---
 
