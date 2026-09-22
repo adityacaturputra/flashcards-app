@@ -105,17 +105,31 @@ Dokumen ini melacak pemetaan lengkap kurikulum **Udemy: IELTS Band 7+ Complete P
 
 ## 🎯 Rencana Aksi Lanjutan: Target Berikutnya (NEXT UP)
 
-### 📍 Bagian 4: Listening Section Basics and Information (ID: `9194542`)
+### 📍 Bagian 5: Listening Section 1 (Part 1) Strategy (ID: `1389986`)
 
-Modul berikutnya yang siap dikerjakan untuk melengkapi seksi dasar Listening sebelum masuk ke strategi per bagian (Part 1–4):
+Modul berikutnya yang siap dikerjakan untuk melatih strategi pengerjaan, rekognisi soal, dan praktik Cambridge resmi untuk Section 1 (Part 1):
 
-| No | ID Item | Tipe | Judul Kuliah Udemy | Rencana File Lokal | Status |
+| No | ID Item | Tipe | Judul Kuliah Udemy | Rencana File / Fokus Modul | Status |
 | :---: | :---: | :---: | :--- | :--- | :---: |
-| 1 | `5541946` | Lecture | IELTS Listening General Information | `docs/ielts-band-7/module-04-listening-section-basics/01-ielts-listening-general-information.md` | ⏳ READY TO BUILD |
-| 2 | `5541970` | Lecture | IELTS Listening Question Types and Strategy | `docs/ielts-band-7/module-04-listening-section-basics/02-ielts-listening-question-types-and-strategy.md` | ⏳ READY TO BUILD |
-| 3 | `5541950` | Lecture | IELTS  Listening Tips for a Higher Band Score | `docs/ielts-band-7/module-04-listening-section-basics/03-ielts-listening-tips-for-higher-band-score.md` | ⏳ READY TO BUILD |
-| 4 | `34356000` | Lecture | Methods to Improve Listening Ability | `docs/ielts-band-7/module-04-listening-section-basics/04-methods-to-improve-listening-ability.md` | ⏳ READY TO BUILD |
-| 5 | `5542190` | Lecture | IELTS Spelling List | `docs/ielts-band-7/module-04-listening-section-basics/05-ielts-spelling-list-and-common-pitfalls.md` | ⏳ READY TO BUILD |
+| 1 | `35252392` | Lecture | Listening Diagnostic Test | Diagnostic Assessment & Baseline Benchmark | ⏳ TARGET TAHAP INI |
+| 2 | `46228435` | Lecture | IELTS Listening Microskills Practice | Number, Spelling & Distractor Tracking | ⏳ TARGET TAHAP INI |
+| 3 | `46545365` | Lecture | Listening Section 1 Answer and Question Recognition | Prompt Prediction & Word Boundary Recognition | ⏳ TARGET TAHAP INI |
+| 4 | `55998357` | Lecture | Teaching Section 1 Strategy (Part 1) | 3-Phase Strategy: Pre-listening, Active, Review | ⏳ TARGET TAHAP INI |
+| 5 | `55998359` | Lecture | Teaching Section 1 Strategy (Part 2) | Common Form Patterns & Trap Avoidance | ⏳ TARGET TAHAP INI |
+| 6 | `55998361` | Lecture | Teaching Section 1 Strategy (Part 3) | Form Filling Execution & Answer Sheet Rules | ⏳ TARGET TAHAP INI |
+| 7 | `18845580` | Lecture | Guided Practice #1: Section 1 (Part 1) (Book 13 Test 1) | Cambridge 13 Test 1 Guided Analysis | ⏳ TARGET TAHAP INI |
+| 8 | `44423390` | Lecture | Guided Practice #2: Section 1 (Part) 1 (Book 9 Test 4) | Cambridge 9 Test 4 Guided Analysis | ⏳ TARGET TAHAP INI |
+| 9 | `44423400` | Lecture | Guided Practice #3: (Part 1) (Book 14 Test 4) | Cambridge 14 Test 4 Guided Analysis | ⏳ TARGET TAHAP INI |
+| 10 | `44423426` | Lecture | Guided Practice #4: Section 1 (Part 1) (Book 11 Test 3) | Cambridge 11 Test 3 Guided Analysis | ⏳ TARGET TAHAP INI |
+| 11 | `44423452` | Lecture | Guided Practice #5: (Part1) (Book 16 Test 2) | Cambridge 16 Test 2 Guided Analysis | ⏳ TARGET TAHAP INI |
+| 12 | `44423488` | Lecture | Guided Practice #6: Section 1 (Book 6 Test 2 ) | Cambridge 6 Test 2 Guided Analysis | ⏳ TARGET TAHAP INI |
+| 13 | `44423506` | Lecture | Guided Practice #7: (Part) 1 (Book 17 Test 1) | Cambridge 17 Test 1 Guided Analysis | ⏳ TARGET TAHAP INI |
+| 14 | `31930658` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 1 | Live Class Masterclass Review Part 1 | ⏳ TARGET TAHAP INI |
+| 15 | `31930660` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 2 | Live Class Masterclass Review Part 2 | ⏳ TARGET TAHAP INI |
+| 16 | `31930664` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 3 | Live Class Masterclass Review Part 3 | ⏳ TARGET TAHAP INI |
+| 17 | `31930668` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 4 | Live Class Masterclass Review Part 4 | ⏳ TARGET TAHAP INI |
+| 18 | `31930670` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 5 | Live Class Masterclass Review Part 5 | ⏳ TARGET TAHAP INI |
+| 19 | `31930672` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 6 | Live Class Masterclass Review Part 6 | ⏳ TARGET TAHAP INI |
 
 ---
 
