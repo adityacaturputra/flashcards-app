@@ -14,10 +14,11 @@ interface IeltsChapterReaderProps {
   onNextChapter?: () => void;
   hasPrev: boolean;
   hasNext: boolean;
+  onMappingClick?: (mappingId: string) => void;
 }
 
 export const IeltsChapterReader: React.FC<IeltsChapterReaderProps> = memo(
-  ({ chapter, onPrevChapter, onNextChapter, hasPrev, hasNext }) => {
+  ({ chapter, onPrevChapter, onNextChapter, hasPrev, hasNext, onMappingClick }) => {
     return (
       <article
         className='flex flex-col gap-5 rounded-2xl border p-4 sm:p-7 shadow-sm'
@@ -96,7 +97,11 @@ export const IeltsChapterReader: React.FC<IeltsChapterReaderProps> = memo(
             borderColor: 'var(--border)',
           }}
         >
-          <MarkdownViewer content={chapter.markdownContent} showCopyButton={true} />
+          <MarkdownViewer
+            content={chapter.markdownContent}
+            showCopyButton={true}
+            onMappingClick={onMappingClick}
+          />
         </div>
 
         {/* Bottom Pagination */}

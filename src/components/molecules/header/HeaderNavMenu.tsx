@@ -175,7 +175,7 @@ export const HeaderNavMenu: React.FC<HeaderNavMenuProps> = ({
                         </span>
                       </div>
                       <div className='text-xs text-muted-foreground text-left'>
-                        SVA kalimat panjang & kuis terstruktur
+                        Diagnostik mandiri [1–5], tata bahasa & stamina
                       </div>
                     </div>
                   </div>

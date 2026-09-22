@@ -40,7 +40,9 @@ export const QuizExplanationCard: React.FC<QuizExplanationCardProps> = ({
                 Jawaban Benar! 🎉
               </div>
               <div className='text-xs text-muted-foreground'>
-                Kamu berhasil mengidentifikasi subjek utama tanpa terkecoh kata pengganggu.
+                {structuralBreakdown?.headSubject
+                  ? 'Kamu berhasil mengidentifikasi subjek utama tanpa terkecoh kata pengganggu.'
+                  : 'Pemahaman kaidah dan ketepatan pilihan kamu sudah sesuai standar.'}
               </div>
             </div>
           </>
@@ -52,61 +54,102 @@ export const QuizExplanationCard: React.FC<QuizExplanationCardProps> = ({
                 Kurang Tepat (Jawaban yang benar: &quot;{question.correctAnswer}&quot;)
               </div>
               <div className='text-xs text-muted-foreground'>
-                Waspadai kata benda jamak yang berada tepat sebelum kata kerja (*Proximity Trap*).
+                {structuralBreakdown?.headSubject
+                  ? 'Waspadai kata benda jamak yang berada tepat sebelum kata kerja (Proximity Trap).'
+                  : 'Perhatikan kaidah penentu, konteks waktu, atau kolokasi alami.'}
               </div>
             </div>
           </>
         )}
       </div>
 
-      {/* Structural Sentence Breakdown (Bracket Elimination) */}
-      <div
-        className='p-4 rounded-xl border space-y-2'
-        style={{
-          background: 'var(--card)',
-          borderColor: 'var(--border)',
-        }}
-      >
-        <div className='flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground'>
-          <FaLightbulb className='h-3.5 w-3.5 text-amber-500' />
-          <span>Analisis Struktur Kalimat (Teknik Coret Sisipan):</span>
-        </div>
-
-        <div className='text-sm sm:text-base leading-relaxed flex flex-wrap items-baseline gap-1 pt-1'>
-          {/* Head Subject */}
-          <span className='font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20'>
-            {structuralBreakdown.headSubject}
-            <span className='text-[10px] ml-1 opacity-70 font-mono font-normal uppercase'>
-              ({structuralBreakdown.headNumber})
+      {/* Structural Sentence Breakdown / Rule Analysis */}
+      {structuralBreakdown && (
+        <div
+          className='p-4 rounded-xl border space-y-2'
+          style={{
+            background: 'var(--card)',
+            borderColor: 'var(--border)',
+          }}
+        >
+          <div className='flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground'>
+            <FaLightbulb className='h-3.5 w-3.5 text-amber-500' />
+            <span>
+              {structuralBreakdown.headSubject
+                ? 'Analisis Struktur Kalimat (Teknik Coret Sisipan):'
+                : 'Analisis Kunci & Kaidah Pembahasan:'}
             </span>
-          </span>
+          </div>
 
-          {/* Distractor in brackets */}
-          <span className='font-mono text-muted-foreground bg-muted/60 px-2 py-0.5 rounded-md border border-dashed border-border opacity-75'>
-            [{structuralBreakdown.distractor}]
-          </span>
+          {structuralBreakdown.headSubject ? (
+            <>
+              <div className='text-sm sm:text-base leading-relaxed flex flex-wrap items-baseline gap-1 pt-1'>
+                {/* Head Subject */}
+                <span className='font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20'>
+                  {structuralBreakdown.headSubject}
+                  {structuralBreakdown.headNumber && (
+                    <span className='text-[10px] ml-1 opacity-70 font-mono font-normal uppercase'>
+                      ({structuralBreakdown.headNumber})
+                    </span>
+                  )}
+                </span>
 
-          {/* Correct Verb */}
-          <span className='font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-2 py-0.5 rounded-md border border-amber-500/30'>
-            {structuralBreakdown.targetVerb}
-          </span>
+                {/* Distractor in brackets */}
+                {structuralBreakdown.distractor && (
+                  <span className='font-mono text-muted-foreground bg-muted/60 px-2 py-0.5 rounded-md border border-dashed border-border opacity-75'>
+                    [{structuralBreakdown.distractor}]
+                  </span>
+                )}
+
+                {/* Correct Verb */}
+                {structuralBreakdown.targetVerb && (
+                  <span className='font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-2 py-0.5 rounded-md border border-amber-500/30'>
+                    {structuralBreakdown.targetVerb}
+                  </span>
+                )}
+              </div>
+
+              <div className='text-[11px] text-muted-foreground pt-1 flex items-center gap-x-2 gap-y-1 flex-wrap'>
+                <div className='flex items-center gap-1.5'>
+                  <span className='inline-block w-2 h-2 rounded-full bg-emerald-500' />
+                  <span>Hijau: Subjek Asli</span>
+                </div>
+                <div className='flex items-center gap-1.5'>
+                  <span className='inline-block w-2 h-2 rounded-full bg-muted-foreground' />
+                  <span>Abu-abu [ ]: Sisipan Penjelas</span>
+                </div>
+                <div className='flex items-center gap-1.5'>
+                  <span className='inline-block w-2 h-2 rounded-full bg-amber-500' />
+                  <span>Kuning: Kata Kerja Selaras</span>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className='space-y-1.5 pt-1 text-xs'>
+              {structuralBreakdown.focusLabel && (
+                <div className='flex items-center gap-1.5'>
+                  <span className='font-semibold text-foreground'>Fokus / Formula:</span>
+                  <span className='font-mono px-2 py-0.5 rounded-md bg-muted text-foreground border border-border'>
+                    {structuralBreakdown.focusLabel}
+                  </span>
+                </div>
+              )}
+              {structuralBreakdown.keyRule && (
+                <div className='text-muted-foreground leading-relaxed'>
+                  <strong className='text-foreground'>Kaidah: </strong>
+                  {structuralBreakdown.keyRule}
+                </div>
+              )}
+              {structuralBreakdown.contrastNote && (
+                <div className='text-muted-foreground leading-relaxed'>
+                  <strong className='text-amber-600 dark:text-amber-400'>Catatan Perbedaan: </strong>
+                  {structuralBreakdown.contrastNote}
+                </div>
+              )}
+            </div>
+          )}
         </div>
-
-        <div className='text-[11px] text-muted-foreground pt-1 flex items-center gap-x-2 gap-y-1 flex-wrap'>
-          <div className='flex items-center gap-1.5'>
-            <span className='inline-block w-2 h-2 rounded-full bg-emerald-500' />
-            <span>Hijau: Subjek Asli</span>
-          </div>
-          <div className='flex items-center gap-1.5'>
-            <span className='inline-block w-2 h-2 rounded-full bg-muted-foreground' />
-            <span>Abu-abu [ ]: Sisipan Penjelas</span>
-          </div>
-          <div className='flex items-center gap-1.5'>
-            <span className='inline-block w-2 h-2 rounded-full bg-amber-500' />
-            <span>Kuning: Kata Kerja Selaras</span>
-          </div>
-        </div>
-      </div>
+      )}
 
       {/* Text Explanation */}
       <div className='text-xs sm:text-sm text-muted-foreground leading-relaxed'>

@@ -1,6 +1,6 @@
 // src/app/quiz/page.tsx
 'use client';
-import React, { useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import {
@@ -10,43 +10,40 @@ import {
   FaChevronRight,
   FaBookOpen,
   FaArrowTrendUp,
-  FaLock,
 } from 'react-icons/fa6';
 import { QuizModuleFactory } from '@/services/quiz';
-// Trigger module registrations
+// Trigger all module registrations
 import '@/quizModules';
 import { APP_ROUTES } from '@/constants/routes';
+import {
+  QUIZ_SECTION,
+  QUIZ_SECTION_FILTER,
+  QuizSectionFilter,
+} from '@/constants/quiz';
+import { DiagnosticRubricSheet } from '@/components/organisms/quiz/DiagnosticRubricSheet';
 
 export default function QuizHubPage() {
   const router = useRouter();
+  const [selectedSection, setSelectedSection] =
+    useState<QuizSectionFilter>(QUIZ_SECTION_FILTER.ALL);
 
-  const activeModules = useMemo(() => {
+  const allModules = useMemo(() => {
     return QuizModuleFactory.getAllModules();
   }, []);
 
-  const UPCOMING_MODULES = [
-    {
-      id: 'collocations',
-      title: 'Collocations & Phrasal Idioms',
-      rubric: 'Ketepatan pemilihan Kolokasi & Idiomatic Prepositions: [ /5]',
-      cefr: 'B2 ➔ C1',
-      description: 'Menguasai pasangan kata natural penutur asli (take a toll on, shed light on, heavily influenced).',
-    },
-    {
-      id: 'inversions',
-      title: 'Inversions & Negative Fronting',
-      rubric: 'Ketepatan struktur Inversi & Emphatic Sentences: [ /5]',
-      cefr: 'C1 ➔ C2',
-      description: 'Struktur tingkat mahir untuk Academic Writing (Not only did..., Seldom have we..., Under no circumstances...).',
-    },
-    {
-      id: 'tenses',
-      title: 'Complex Tense Consistency & Conditionals',
-      rubric: 'Konsistensi Tense & Mixed Conditionals pada paragraf: [ /5]',
-      cefr: 'B2 ➔ C1',
-      description: 'Menjaga konsistensi waktu narasi dan penguasaan pengandaian bertingkat (If had known, would be).',
-    },
-  ];
+  const filteredModules = useMemo(() => {
+    if (selectedSection === QUIZ_SECTION_FILTER.ALL) return allModules;
+    return allModules.filter((m) => m.section === selectedSection);
+  }, [allModules, selectedSection]);
+
+  const counts = useMemo(() => {
+    return {
+      all: allModules.length,
+      A: allModules.filter((m) => m.section === QUIZ_SECTION.A).length,
+      B: allModules.filter((m) => m.section === QUIZ_SECTION.B).length,
+      C: allModules.filter((m) => m.section === QUIZ_SECTION.C).length,
+    };
+  }, [allModules]);
 
   return (
     <div
@@ -85,11 +82,11 @@ export default function QuizHubPage() {
                     English Skill Assessment Hub
                   </h1>
                   <span className='rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 text-[10px] font-black uppercase tracking-wider'>
-                    Rubrik [ /5]
+                    Rubrik [1–5]
                   </span>
                 </div>
                 <p className='text-[11px] text-muted-foreground hidden sm:block'>
-                  Modul latihan dan penilaian ketepatan tata bahasa pada kalimat kompleks berstandar CEFR / IELTS
+                  Suite Evaluasi Mandiri 14 Butir & Kuis Terstruktur Berstandar CEFR / IELTS Band 7.5+
                 </p>
               </div>
             </div>
@@ -98,8 +95,11 @@ export default function QuizHubPage() {
               <span className='text-xs font-semibold text-muted-foreground hidden md:inline'>
                 Target:
               </span>
-              <span className='rounded-lg border px-2 py-1 text-xs font-bold' style={{ borderColor: 'var(--border)', background: 'var(--muted)' }}>
-                B1 ➔ C1 Mastery
+              <span
+                className='rounded-lg border px-2.5 py-1 text-xs font-bold'
+                style={{ borderColor: 'var(--border)', background: 'var(--muted)' }}
+              >
+                B1 ➔ C1 / C2 Mastery
               </span>
             </div>
           </div>
@@ -119,32 +119,91 @@ export default function QuizHubPage() {
           <div className='flex items-center gap-2 text-emerald-600 dark:text-emerald-400'>
             <FaAward className='h-5 w-5' />
             <span className='text-xs font-bold uppercase tracking-wider'>
-              Standardized Assessment Suite
+              Standardized Diagnostic Suite
             </span>
           </div>
 
           <h2 className='text-xl sm:text-2xl font-black text-foreground'>
-            Tingkatkan Skor Rubrik Tata Bahasa Kamu
+            14 Butir Evaluasi Mandiri & Kuis Terstruktur
           </h2>
           <p className='text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl'>
-            Setiap modul dirancang untuk menguji satu aspek ketepatan spesifik yang sering menjadi batu sandungan dalam penulisan esai akademik (*IELTS Task 2*) dan tes kecakapan kerja (*Cambridge Linguaskill*).
+            Instrumen diagnostik 14 butir mencakup <strong>Tata Bahasa</strong> (SVA, Tenses, Passive, Conditionals, Comma Splice), <strong>Kosakata & Kolokasi</strong> (Sinonim, Collocations, AWL, Spelling, Penanda Wacana), serta <strong>Stamina Ujian</strong> (Listening 30m, Reading 18m, Outline 5m, Speaking 2m).
           </p>
         </div>
 
-        {/* Section 1: Active Assessment Modules */}
-        <div className='space-y-4'>
-          <div className='flex items-center justify-between'>
-            <h3 className='text-sm sm:text-base font-bold text-foreground flex items-center gap-2'>
+        {/* Section 1: Interactive Self-Diagnostic Rubric Sheet [1 - 5] */}
+        <DiagnosticRubricSheet />
+
+        {/* Section 2: Factory Quiz Modules with Filter Tabs */}
+        <div className='space-y-4 pt-2'>
+          <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-3'>
+            <div className='flex items-center gap-2'>
               <FaBolt className='h-4 w-4 text-amber-500' />
-              <span>Modul Aktif Siap Latihan</span>
-            </h3>
-            <span className='text-xs text-muted-foreground'>
-              {activeModules.length} Modul Tersedia
-            </span>
+              <h3 className='text-sm sm:text-base font-bold text-foreground'>
+                Daftar Modul Kuis & Latihan Praktis
+              </h3>
+              <span className='text-xs font-semibold text-muted-foreground ml-1'>
+                ({filteredModules.length} Modul)
+              </span>
+            </div>
+
+            {/* Filter Tabs */}
+            <div
+              className='flex items-center gap-1 p-1 rounded-xl border overflow-x-auto scrollbar-none shadow-xs'
+              style={{
+                background: 'var(--muted)',
+                borderColor: 'var(--border)',
+              }}
+            >
+              <button
+                onClick={() => setSelectedSection(QUIZ_SECTION_FILTER.ALL)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 ${
+                  selectedSection === QUIZ_SECTION_FILTER.ALL
+                    ? 'bg-card text-foreground shadow-xs'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Semua ({counts.all})
+              </button>
+
+              <button
+                onClick={() => setSelectedSection(QUIZ_SECTION_FILTER.A)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 ${
+                  selectedSection === QUIZ_SECTION_FILTER.A
+                    ? 'bg-card text-foreground shadow-xs'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Bagian A: Grammar ({counts.A})
+              </button>
+
+              <button
+                onClick={() => setSelectedSection(QUIZ_SECTION_FILTER.B)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 ${
+                  selectedSection === QUIZ_SECTION_FILTER.B
+                    ? 'bg-card text-foreground shadow-xs'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Bagian B: Kosakata ({counts.B})
+              </button>
+
+              <button
+                onClick={() => setSelectedSection(QUIZ_SECTION_FILTER.C)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 ${
+                  selectedSection === QUIZ_SECTION_FILTER.C
+                    ? 'bg-card text-foreground shadow-xs'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Bagian C: Stamina ({counts.C})
+              </button>
+            </div>
           </div>
 
+          {/* Module Cards Grid */}
           <div className='grid grid-cols-1 gap-4'>
-            {activeModules.map((mod) => (
+            {filteredModules.map((mod) => (
               <motion.div
                 key={mod.id}
                 whileHover={{ y: -2 }}
@@ -154,8 +213,11 @@ export default function QuizHubPage() {
                   borderColor: 'var(--border)',
                 }}
               >
-                <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3' style={{ borderColor: 'var(--border)' }}>
-                  <div className='flex items-center gap-2.5'>
+                <div
+                  className='flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3'
+                  style={{ borderColor: 'var(--border)' }}
+                >
+                  <div className='flex items-center gap-3'>
                     <div
                       className='h-10 w-10 rounded-xl flex items-center justify-center shrink-0 shadow-xs'
                       style={{
@@ -166,10 +228,17 @@ export default function QuizHubPage() {
                       <FaBolt className='h-5 w-5' />
                     </div>
                     <div>
-                      <h4 className='text-base font-bold text-foreground'>
-                        {mod.title}
-                      </h4>
-                      <div className='text-xs font-medium text-emerald-600 dark:text-emerald-400'>
+                      <div className='flex items-center gap-2'>
+                        <h4 className='text-base font-bold text-foreground'>
+                          {mod.title}
+                        </h4>
+                        {mod.section && (
+                          <span className='px-1.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-muted text-muted-foreground border border-border'>
+                            Bagian {mod.section}
+                          </span>
+                        )}
+                      </div>
+                      <div className='text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-0.5'>
                         {mod.rubricTitle}
                       </div>
                     </div>
@@ -187,7 +256,7 @@ export default function QuizHubPage() {
                 <div className='flex flex-col sm:flex-row items-center justify-between gap-3 pt-2'>
                   <div className='flex items-center gap-2 text-xs text-muted-foreground'>
                     <FaArrowTrendUp className='h-3.5 w-3.5 text-emerald-500' />
-                    <span>Generator kombinatorial: Ribuan variasi kalimat acak</span>
+                    <span>Bank soal terstruktur dengan analisis rubrik skor [1–5]</span>
                   </div>
 
                   <div className='flex items-center gap-2 w-full sm:w-auto'>
@@ -218,40 +287,6 @@ export default function QuizHubPage() {
                   </div>
                 </div>
               </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Section 2: Upcoming Modules */}
-        <div className='space-y-4 pt-4'>
-          <h3 className='text-sm sm:text-base font-bold text-foreground flex items-center gap-2'>
-            <FaLock className='h-3.5 w-3.5 text-muted-foreground' />
-            <span>Modul Segera Hadir (*Upcoming Skills*)</span>
-          </h3>
-
-          <div className='grid grid-cols-1 sm:grid-cols-3 gap-3'>
-            {UPCOMING_MODULES.map((up) => (
-              <div
-                key={up.id}
-                className='p-4 rounded-2xl border space-y-2 opacity-75'
-                style={{
-                  background: 'var(--muted)',
-                  borderColor: 'var(--border)',
-                }}
-              >
-                <div className='flex items-center justify-between'>
-                  <span className='text-[10px] font-bold uppercase tracking-wider text-muted-foreground'>
-                    {up.cefr}
-                  </span>
-                  <span className='text-[10px] font-semibold px-2 py-0.5 rounded-md bg-card text-muted-foreground'>
-                    Coming Soon
-                  </span>
-                </div>
-                <div className='text-xs font-bold text-foreground'>{up.title}</div>
-                <div className='text-[11px] text-muted-foreground leading-relaxed line-clamp-2'>
-                  {up.description}
-                </div>
-              </div>
             ))}
           </div>
         </div>

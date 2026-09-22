@@ -9,8 +9,11 @@ import {
 } from 'react-icons/fa6';
 import { ALL_IELTS_CHAPTERS, getIeltsChapterById } from '@/data/ielts';
 import { IeltsChapter } from '@/types/ielts';
+import { MappingItem } from '@/types/mapping';
+import { MAPPING_ITEMS, getMappingById } from '@/data/mappings';
 import IeltsCurriculumSidebar from '@/components/organisms/IeltsCurriculumSidebar';
 import IeltsChapterReader from '@/components/organisms/IeltsChapterReader';
+import MappingDetailModal from '@/components/molecules/MappingDetailModal';
 import ErrorBoundary from '@/components/atoms/ErrorBoundary';
 import { APP_ROUTES } from '@/constants/routes';
 
@@ -21,6 +24,7 @@ export default function IeltsPage() {
   );
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState<boolean>(false);
+  const [activeMappingItem, setActiveMappingItem] = useState<MappingItem | null>(null);
 
   // Lock body scroll when mobile drawer is open
   useEffect(() => {
@@ -74,6 +78,24 @@ export default function IeltsPage() {
     setSelectedChapterId(ch.id);
     setIsMobileDrawerOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenMappingModal = (mappingIdOrSearch: string) => {
+    // 1. Try exact match by ID
+    let item = getMappingById(mappingIdOrSearch);
+    // 2. If not found, search flexibly across ID and title
+    if (!item) {
+      const query = mappingIdOrSearch.toLowerCase().replace(/\+/g, ' ');
+      item = MAPPING_ITEMS.find(
+        (it) =>
+          it.id.toLowerCase() === query ||
+          it.id.toLowerCase().includes(query) ||
+          it.title.toLowerCase().includes(query)
+      );
+    }
+    if (item) {
+      setActiveMappingItem(item);
+    }
   };
 
   return (
@@ -200,13 +222,14 @@ export default function IeltsPage() {
 
             {/* Main Chapter Reader (8 cols) */}
             <div className='lg:col-span-8 xl:col-span-8'>
-              {activeChapter ? (
+              {activeChapter? (
                 <IeltsChapterReader
                   chapter={activeChapter}
                   onPrevChapter={handlePrev}
                   onNextChapter={handleNext}
                   hasPrev={hasPrev}
                   hasNext={hasNext}
+                  onMappingClick={handleOpenMappingModal}
                 />
               ) : (
                 <div className='rounded-2xl border p-8 text-center bg-card' style={{ borderColor: 'var(--border)' }}>
@@ -216,6 +239,13 @@ export default function IeltsPage() {
             </div>
           </div>
         </main>
+
+        {/* In-Place Mapping Detail Modal */}
+        <MappingDetailModal
+          isOpen={Boolean(activeMappingItem)}
+          item={activeMappingItem}
+          onClose={() => setActiveMappingItem(null)}
+        />
       </div>
     </ErrorBoundary>
   );

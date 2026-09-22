@@ -1,5 +1,5 @@
 // src/hooks/useMappingFilter.ts
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { MappingItem } from '@/types/mapping';
 
 interface UseMappingFilterReturn {
@@ -31,6 +31,26 @@ export function useMappingFilter(items: MappingItem[]): UseMappingFilterReturn {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
   const [activeModalItem, setActiveModalItem] = useState<MappingItem | null>(null);
+
+  // Check URL query parameters on client mount for deep-linking (e.g. ?id=... or ?search=...)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const idParam = params.get('id');
+      const searchParam = params.get('search');
+      if (idParam) {
+        const found = items.find((it) => it.id === idParam);
+        if (found) {
+          setActiveModalItem(found);
+        }
+      } else if (searchParam) {
+        setSearchQuery(searchParam);
+      }
+    } catch (e) {
+      console.error('Error reading url params in useMappingFilter', e);
+    }
+  }, [items]);
 
   const toggleSortOrder = useCallback(() => {
     setSortOrder((prev) => (prev === 'desc' ? 'asc' : 'desc'));

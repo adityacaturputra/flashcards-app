@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeRaw from 'rehype-raw';
+import MermaidDiagram from './MermaidDiagram';
 import {
   FaCheck,
   FaCopy,
@@ -17,14 +19,21 @@ interface MarkdownViewerProps {
   content: string;
   className?: string;
   showCopyButton?: boolean;
+  onMappingClick?: (mappingId: string) => void;
 }
 
 export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   content,
   className = '',
   showCopyButton = true,
+  onMappingClick,
 }) => {
   const [copied, setCopied] = useState(false);
+
+  const processedContent = React.useMemo(() => {
+    if (!content) return '';
+    return content;
+  }, [content]);
 
   const handleCopy = async () => {
     try {
@@ -71,7 +80,7 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
       <div className='markdown-content prose prose-slate dark:prose-invert max-w-none text-xs leading-relaxed sm:text-sm md:text-base break-words'>
         <ReactMarkdown
           remarkPlugins={[remarkGfm, remarkMath]}
-          rehypePlugins={[rehypeKatex]}
+          rehypePlugins={[rehypeRaw, rehypeKatex]}
           components={{
             h1: ({ children }) => (
               <h1 className='mt-4 mb-2 text-lg font-bold text-foreground sm:text-xl md:text-2xl'>
@@ -241,8 +250,17 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
                 {children}
               </td>
             ),
+            pre: ({ children }) => <>{children}</>,
             code: ({ className, children, ...props }) => {
               const isInline = !className && typeof children === 'string' && !children.includes('\n');
+              const isMermaid =
+                className === 'language-mermaid' ||
+                Boolean(className?.includes('language-mermaid'));
+
+              if (isMermaid) {
+                return <MermaidDiagram chart={String(children)} />;
+              }
+
               return isInline ? (
                 <code
                   className='rounded px-1.5 py-0.5 text-[11px] sm:text-xs font-mono font-semibold break-words'
@@ -263,7 +281,9 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
                     WebkitOverflowScrolling: 'touch',
                   }}
                 >
-                  <code {...props}>{children}</code>
+                  <pre className='m-0 p-0 overflow-x-auto bg-transparent border-0'>
+                    <code {...props}>{children}</code>
+                  </pre>
                 </div>
               );
             },
@@ -273,9 +293,50 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
             em: ({ children }) => (
               <em className='italic text-foreground/90'>{children}</em>
             ),
+            a: ({ href, children }) => {
+              const isMappingLink =
+                Boolean(href && (
+                  href.startsWith('#mapping:') ||
+                  href.startsWith('/mapping?id=') ||
+                  href.startsWith('/mapping?search=')
+                ));
+
+              const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                if (!href) return;
+                let mappingId: string | null = null;
+                if (href.startsWith('#mapping:')) {
+                  mappingId = href.replace('#mapping:', '');
+                } else if (href.startsWith('/mapping?id=')) {
+                  mappingId = href.replace('/mapping?id=', '').split('&')[0];
+                } else if (href.startsWith('/mapping?search=')) {
+                  mappingId = href.replace('/mapping?search=', '').split('&')[0];
+                }
+
+                if (mappingId && onMappingClick) {
+                  e.preventDefault();
+                  onMappingClick(decodeURIComponent(mappingId));
+                }
+              };
+
+              return (
+                <a
+                  href={href}
+                  onClick={handleLinkClick}
+                  className={`font-semibold transition-colors cursor-pointer ${
+                    isMappingLink
+                      ? 'inline-flex items-center gap-1 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 underline underline-offset-4 decoration-purple-400/60 font-medium'
+                      : 'text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline underline-offset-2'
+                  }`}
+                  target={href?.startsWith('http') ? '_blank' : undefined}
+                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                >
+                  {children}
+                </a>
+              );
+            },
           }}
         >
-          {content}
+          {processedContent}
         </ReactMarkdown>
       </div>
     </div>

@@ -1,6 +1,7 @@
 // src/quizModules/sva/index.tsx
 import React from 'react';
 import { QuizClientModule } from '@/types/quiz';
+import { QUIZ_CATEGORY, QUIZ_SECTION } from '@/constants/quiz';
 import SvaTheoryGuide from './theory';
 
 export const SVA_MODULE_ID = 'sva';
@@ -21,9 +22,9 @@ export const svaClientModule: QuizClientModule = {
   iconName: 'FaBolt',
   accentColor: '#10b981', // Emerald
   availableLevels: [1, 2, 3, 4, 5],
+  category: QUIZ_CATEGORY.GRAMMAR,
+  section: QUIZ_SECTION.A,
   renderTheoryGuide: () => <SvaTheoryGuide />,
 };
 
-// Backwards-compatible export
-export const svaModuleStrategy = svaClientModule;
 export default svaClientModule;

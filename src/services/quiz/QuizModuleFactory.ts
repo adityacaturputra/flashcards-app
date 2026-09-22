@@ -1,24 +1,25 @@
 // src/services/quiz/QuizModuleFactory.ts
-import { QuizModuleStrategy } from '@/types/quiz';
+import { QuizClientModule } from '@/types/quiz';
 
 /**
  * Factory and Registry Pattern for Quiz & Skill Assessment modules.
  * Decouples the Quiz Runner from specific skill implementations.
+ * Strictly adheres to BESTPRACTICE.md.
  */
 export class QuizModuleFactory {
-  private static registry = new Map<string, QuizModuleStrategy>();
+  private static registry = new Map<string, QuizClientModule>();
 
   /**
-   * Registers a new quiz module strategy into the factory.
+   * Registers a new quiz client module into the factory.
    */
-  public static register(module: QuizModuleStrategy): void {
+  public static register(module: QuizClientModule): void {
     this.registry.set(module.id.toLowerCase(), module);
   }
 
   /**
    * Retrieves a module by its identifier (case-insensitive).
    */
-  public static getModule(id: string): QuizModuleStrategy | undefined {
+  public static getModule(id: string): QuizClientModule | undefined {
     return this.registry.get(id.toLowerCase());
   }
 
@@ -32,7 +33,7 @@ export class QuizModuleFactory {
   /**
    * Returns an array of all registered quiz modules.
    */
-  public static getAllModules(): QuizModuleStrategy[] {
+  public static getAllModules(): QuizClientModule[] {
     return Array.from(this.registry.values());
   }
 

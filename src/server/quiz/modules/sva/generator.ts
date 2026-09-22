@@ -1,11 +1,11 @@
-// src/quizModules/sva/generator.ts
-import { QuizQuestion, QuizDifficultyLevel } from '@/types/quiz';
+// src/server/quiz/modules/sva/generator.ts
+import { QuizQuestion, QuizDifficultyLevel, GrammaticalNumber } from '@/types/quiz';
 
 interface SvaTemplate {
   category: string;
   level: QuizDifficultyLevel;
   headSubject: string;
-  headNumber: 'singular' | 'plural';
+  headNumber: GrammaticalNumber;
   distractor: string;
   distractorType: string;
   beforeBlank: string;

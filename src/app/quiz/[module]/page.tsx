@@ -4,6 +4,7 @@ import React, { useState, useMemo, use, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FaArrowLeft, FaBolt, FaBookOpen } from 'react-icons/fa6';
 import { QuizModuleFactory } from '@/services/quiz';
+import { QUIZ_TAB, QuizTab } from '@/constants/quiz';
 import '@/quizModules'; // Trigger registration
 import QuizEngine from '@/components/organisms/quiz/QuizEngine';
 import { APP_ROUTES } from '@/constants/routes';
@@ -16,8 +17,11 @@ function QuizModuleContent({ moduleId }: { moduleId: string }) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const initialTab = searchParams?.get('tab') === 'theory' ? 'theory' : 'practice';
-  const [activeTab, setActiveTab] = useState<'practice' | 'theory'>(initialTab);
+  const initialTab: QuizTab =
+    searchParams?.get('tab') === QUIZ_TAB.THEORY
+      ? QUIZ_TAB.THEORY
+      : QUIZ_TAB.PRACTICE;
+  const [activeTab, setActiveTab] = useState<QuizTab>(initialTab);
 
   const moduleStrategy = useMemo(() => {
     return QuizModuleFactory.getModule(moduleId);
@@ -96,9 +100,9 @@ function QuizModuleContent({ moduleId }: { moduleId: string }) {
               }}
             >
               <button
-                onClick={() => setActiveTab('practice')}
+                onClick={() => setActiveTab(QUIZ_TAB.PRACTICE)}
                 className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 ${
-                  activeTab === 'practice'
+                  activeTab === QUIZ_TAB.PRACTICE
                     ? 'bg-card text-foreground shadow-xs'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
@@ -109,9 +113,9 @@ function QuizModuleContent({ moduleId }: { moduleId: string }) {
               </button>
 
               <button
-                onClick={() => setActiveTab('theory')}
+                onClick={() => setActiveTab(QUIZ_TAB.THEORY)}
                 className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 ${
-                  activeTab === 'theory'
+                  activeTab === QUIZ_TAB.THEORY
                     ? 'bg-card text-foreground shadow-xs'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
@@ -127,11 +131,11 @@ function QuizModuleContent({ moduleId }: { moduleId: string }) {
 
       {/* Main Runner Body */}
       <main className='mx-auto max-w-4xl px-4 py-6 sm:py-8'>
-        {activeTab === 'practice' ? (
+        {activeTab === QUIZ_TAB.PRACTICE ? (
           <QuizEngine
             module={moduleStrategy}
             onOpenTheory={() => {
-              setActiveTab('theory');
+              setActiveTab(QUIZ_TAB.THEORY);
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           />

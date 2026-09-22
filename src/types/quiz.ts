@@ -1,23 +1,26 @@
 // src/types/quiz.ts
 import React from 'react';
+import {
+  QuizDifficultyLevel,
+  QuizCategory,
+  QuizSection,
+  RubricTier,
+  GrammaticalNumber,
+} from '@/constants/quiz';
 
-export const QUIZ_DIFFICULTY = {
-  LEVEL_1: 1,
-  LEVEL_2: 2,
-  LEVEL_3: 3,
-  LEVEL_4: 4,
-  LEVEL_5: 5,
-} as const;
-
-export type QuizDifficultyLevel = (typeof QUIZ_DIFFICULTY)[keyof typeof QUIZ_DIFFICULTY];
+// Re-export constants & derived types from single source of truth
+export * from '@/constants/quiz';
 
 export interface StructuralBreakdown {
-  headSubject: string;
-  headNumber: 'singular' | 'plural';
-  distractor: string;
-  distractorType: string;
-  bracketedSentence: string;
-  targetVerb: string;
+  headSubject?: string;
+  headNumber?: GrammaticalNumber;
+  distractor?: string;
+  distractorType?: string;
+  bracketedSentence?: string;
+  targetVerb?: string;
+  focusLabel?: string;
+  keyRule?: string;
+  contrastNote?: string;
 }
 
 export interface QuizQuestion {
@@ -26,7 +29,7 @@ export interface QuizQuestion {
   options: string[];
   correctAnswer: string;
   explanation: string;
-  structuralBreakdown: StructuralBreakdown;
+  structuralBreakdown?: StructuralBreakdown;
   difficultyLevel: QuizDifficultyLevel;
   category: string;
 }
@@ -41,7 +44,7 @@ export interface QuestionAnswerRecord {
 export interface RubricScoreResult {
   score: number; // 1.0 to 5.0
   maxScore: 5;
-  tier: 'Master' | 'Advanced' | 'Competent' | 'Developing' | 'Novice';
+  tier: RubricTier;
   cefrLevel: string; // e.g., 'C1/C2', 'B2', 'B1', 'A2'
   ieltsEquivalent: string; // e.g., 'Band 7.5 - 9.0'
   accuracyPercentage: number;
@@ -66,6 +69,7 @@ export interface QuizSessionOptions {
 /**
  * Pure, serializable metadata for an English skill module.
  * Safe for JSON transfer between Server and Client.
+ * Strictly adheres to BESTPRACTICE.md (§13.1 Single Source of Truth Enums).
  */
 export interface QuizModuleMeta {
   id: string;
@@ -77,6 +81,8 @@ export interface QuizModuleMeta {
   iconName: string;
   accentColor: string;
   availableLevels?: number[];
+  category?: QuizCategory;
+  section?: QuizSection;
 }
 
 /**
@@ -84,15 +90,5 @@ export interface QuizModuleMeta {
  * Pairs pure metadata with client components (like the interactive theory guide).
  */
 export interface QuizClientModule extends QuizModuleMeta {
-  renderTheoryGuide: () => React.ReactNode;
-}
-
-/**
- * Legacy Strategy Pattern alias for backwards compatibility.
- */
-export interface QuizModuleStrategy extends QuizModuleMeta {
-  generateSession?: (options?: QuizSessionOptions) => QuizQuestion[];
-  calculateRubricScore?: (records: QuestionAnswerRecord[]) => RubricScoreResult;
   renderTheoryGuide?: () => React.ReactNode;
 }
-

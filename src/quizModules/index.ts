@@ -1,18 +1,73 @@
 // src/quizModules/index.ts
 import { QuizModuleFactory } from '@/services/quiz/QuizModuleFactory';
-import { svaModuleStrategy } from './sva';
+
+// Bagian A: Tata Bahasa & Struktur
+import { svaClientModule } from './sva';
+import { tensesClientModule } from './tenses';
+import { passiveVoiceClientModule } from './passive-voice';
+import { conditionalsClientModule } from './conditionals';
+import { commaSpliceClientModule } from './comma-splice';
+
+// Bagian B: Kosakata & Kolokasi
+import { synonymsClientModule } from './synonyms';
+import { collocationsClientModule } from './collocations';
+import { academicWordsClientModule } from './academic-words';
+import { spellingAccuracyClientModule } from './spelling-accuracy';
+import { discourseMarkersClientModule } from './discourse-markers';
+
+// Bagian C: Stamina & Konsentrasi Ujian
+import { listeningStaminaClientModule } from './listening-stamina';
+import { readingSpeedClientModule } from './reading-speed';
+import { writingOutlineClientModule } from './writing-outline';
+import { speakingFluencyClientModule } from './speaking-fluency';
+
+export const ALL_CLIENT_MODULES = [
+  // Bagian A
+  svaClientModule,
+  tensesClientModule,
+  passiveVoiceClientModule,
+  conditionalsClientModule,
+  commaSpliceClientModule,
+  // Bagian B
+  synonymsClientModule,
+  collocationsClientModule,
+  academicWordsClientModule,
+  spellingAccuracyClientModule,
+  discourseMarkersClientModule,
+  // Bagian C
+  listeningStaminaClientModule,
+  readingSpeedClientModule,
+  writingOutlineClientModule,
+  speakingFluencyClientModule,
+];
 
 /**
- * Initializes and registers all built-in quiz modules into the QuizModuleFactory.
- * When you add a new module in the future (e.g. collocations, tenses, inversions),
- * simply import it and call QuizModuleFactory.register() here!
+ * Initializes and registers all 14 diagnostic & skill quiz modules into the QuizModuleFactory.
  */
 export function initializeQuizModules(): void {
-  // Register Subject-Verb Agreement (SVA) Long Sentences module
-  QuizModuleFactory.register(svaModuleStrategy);
+  ALL_CLIENT_MODULES.forEach((mod) => {
+    if (!QuizModuleFactory.hasModule(mod.id)) {
+      QuizModuleFactory.register(mod);
+    }
+  });
 }
 
 // Auto-initialize default modules on import
 initializeQuizModules();
 
-export { svaModuleStrategy };
+export {
+  svaClientModule,
+  tensesClientModule,
+  passiveVoiceClientModule,
+  conditionalsClientModule,
+  commaSpliceClientModule,
+  synonymsClientModule,
+  collocationsClientModule,
+  academicWordsClientModule,
+  spellingAccuracyClientModule,
+  discourseMarkersClientModule,
+  listeningStaminaClientModule,
+  readingSpeedClientModule,
+  writingOutlineClientModule,
+  speakingFluencyClientModule,
+};

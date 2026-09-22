@@ -53,6 +53,17 @@ export const MappingDetailModal: React.FC<MappingDetailModalProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, hasNext, hasPrev, onNext, onPrev, onClose]);
 
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
+
   const { isPlaying, getAudioButtonProps } = useSpeechPlayback({
     resetTriggers: [item?.id, isOpen],
   });
@@ -62,55 +73,58 @@ export const MappingDetailModal: React.FC<MappingDetailModalProps> = ({
   return (
     <AnimatePresence>
       <div
-        className='fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4'
+        className='fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4'
         style={{
-          background: 'rgba(0, 0, 0, 0.7)',
+          background: 'rgba(0, 0, 0, 0.75)',
           backdropFilter: 'blur(6px)',
         }}
         onClick={onClose}
       >
         <motion.div
-          className='relative flex max-h-[94vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border shadow-2xl'
+          className='relative flex h-[94vh] sm:h-auto sm:max-h-[90vh] w-full sm:max-w-3xl flex-col overflow-hidden rounded-t-3xl sm:rounded-2xl border-t sm:border shadow-2xl'
           style={{
             background: 'var(--card)',
             borderColor: 'var(--border)',
             color: 'var(--foreground)',
           }}
-          initial={{ opacity: 0, scale: 0.95, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 15 }}
-          transition={{ duration: 0.2 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 30 }}
+          transition={{ duration: 0.25 }}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
           <div
-            className='flex items-center justify-between border-b px-3.5 py-3 sm:px-5 sm:py-4 gap-2'
+            className='flex items-center justify-between border-b px-4 py-3 sm:px-6 sm:py-4 gap-2.5 shrink-0'
             style={{ borderColor: 'var(--border)' }}
           >
-            <div className='flex items-center gap-1.5 sm:gap-2.5 overflow-hidden min-w-0 flex-1 pr-1'>
-              <span
-                className='rounded-md px-2 py-0.5 text-[10px] sm:text-xs font-bold tracking-wide uppercase shrink-0'
-                style={{
-                  background: 'var(--primary)',
-                  color: 'var(--primary-foreground)',
-                }}
-              >
-                {item.module}
-              </span>
-              <h2 className='truncate text-xs font-bold sm:text-base'>
+            <div className='flex flex-col gap-1 overflow-hidden min-w-0 flex-1 pr-1'>
+              <div className='flex items-center gap-2'>
+                <span
+                  className='rounded-md px-2 py-0.5 text-[10px] sm:text-xs font-bold tracking-wide uppercase shrink-0'
+                  style={{
+                    background: 'var(--primary)',
+                    color: 'var(--primary-foreground)',
+                  }}
+                >
+                  {item.module}
+                </span>
+              </div>
+              <h2 className='text-xs sm:text-base font-bold text-foreground truncate'>
                 {item.title}
               </h2>
             </div>
 
-            <div className='flex items-center gap-1 sm:gap-2 shrink-0'>
+            <div className='flex items-center gap-1.5 sm:gap-2 shrink-0'>
               {onPrev && (
                 <button
                   onClick={onPrev}
                   disabled={!hasPrev}
-                  className='rounded-lg p-1.5 sm:p-2 transition-all hover:scale-105 disabled:opacity-30'
+                  className='rounded-xl p-2 transition-all hover:scale-105 disabled:opacity-30 border'
                   style={{
                     background: 'var(--secondary)',
                     color: 'var(--secondary-foreground)',
+                    borderColor: 'var(--border)',
                   }}
                   title='Previous Item (Left Arrow)'
                 >
@@ -121,10 +135,11 @@ export const MappingDetailModal: React.FC<MappingDetailModalProps> = ({
                 <button
                   onClick={onNext}
                   disabled={!hasNext}
-                  className='rounded-lg p-1.5 sm:p-2 transition-all hover:scale-105 disabled:opacity-30'
+                  className='rounded-xl p-2 transition-all hover:scale-105 disabled:opacity-30 border'
                   style={{
                     background: 'var(--secondary)',
                     color: 'var(--secondary-foreground)',
+                    borderColor: 'var(--border)',
                   }}
                   title='Next Item (Right Arrow)'
                 >
@@ -133,21 +148,22 @@ export const MappingDetailModal: React.FC<MappingDetailModalProps> = ({
               )}
               <button
                 onClick={onClose}
-                className='rounded-lg p-1.5 sm:p-2 transition-all hover:scale-105 hover:bg-slate-200 dark:hover:bg-slate-700'
+                className='rounded-xl p-2 transition-all hover:scale-105 active:scale-95 border'
                 style={{
                   background: 'var(--secondary)',
                   color: 'var(--secondary-foreground)',
+                  borderColor: 'var(--border)',
                 }}
                 title='Close (ESC)'
               >
-                <FaXmark className='h-3.5 w-3.5 sm:h-4 sm:w-4' />
+                <FaXmark className='h-4 w-4' />
               </button>
             </div>
           </div>
 
           {/* Scrollable Body */}
           <div
-            className='overflow-y-auto p-3 sm:p-6'
+            className='flex-1 min-h-0 overflow-y-auto overscroll-contain p-4 sm:p-6 space-y-4'
             style={{ WebkitOverflowScrolling: 'touch' }}
           >
             {/* Source & Chapter Information */}
