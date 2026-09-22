@@ -2925,10 +2925,8 @@ $$\mathbf{\text{Pillar 1: High Trust \& Autonomy}} \;\rightarrow\; \mathbf{\text
     title: 'IELTS Listening: Strategi Prediksi Kelas Kata & Batas Kata Ketat pada Form / Note Completion',
     question:
       'Dalam tes IELTS Listening tipe Form / Note Completion (Seksi 1 & 4), bagaimana cara membaca instruksi "NO MORE THAN TWO WORDS AND/OR A NUMBER" dan bagaimana mengeksekusi "Prediksi Kelas Kata" (Noun, Adjective, Number, Date) selama 30 detik fase pra-mendengar agar terhindar dari batas kata dan jebakan ejaan?',
-    correctAnswer:
+    correction:
       '1. Patuhi batas kata tanpa kompromi (jawaban melebihi batas kata otomatis dinilai 0 meskipun maknanya benar; hilangkan artikel/preposisi yang tidak perlu). 2. Lakukan Prediksi Kelas Kata (Part of Speech) dalam 30 detik pra-mendengar: analisis kata sebelum/sesudah celah untuk memprediksi apakah celah membutuhkan Noun (tunggal/jamak), Adjective, Number, atau Date. 3. Pasang telinga pada kelompok bunyi rawan ejaan alfabet (A/E/I, G/J, teen vs ty, dan angka nol "oh").',
-    explanation:
-      'Form / Note Completion adalah tipe soal melengkapi formulir pendaftaran atau catatan kuliah dengan batas kata ketat. Mengisi titik-titik kosong membutuhkan mode pendengaran aktif-prediktif: alih-alih mendengar pasif kata demi kata, kandidat menggunakan 30 detik sebelum audio diputar untuk menganalisis struktur kalimat dan memprediksi jenis data atau kelas kata yang hilang. Dengan mengetahui sejak awal bahwa celah memerlukan angka harga, tanggal, kata sifat, atau kata benda tunggal, telinga kandidat menjadi 10x lebih sensitif menyaring informasi yang relevan di tengah percakapan penutur asli.',
     remarks: `### 🎯 Bedah Konseptual: Apa Itu Form / Note Completion?
 
 Di ujian IELTS Listening, **Form Completion** (biasanya di Seksi 1) dan **Note Completion** (di Seksi 1 dan Seksi 4) menyajikan lembar formulir pendaftaran layanan atau catatan ringkas yang memiliki bagian rumpang (*blank spaces* / \`_______\`). Tugas kandidat adalah mendengarkan audio pembicara dan mencatat kata atau angka yang tepat ke dalam celah tersebut.

@@ -32,7 +32,7 @@ flowchart TD
 
 | Tipe Soal | Letak Seksi Umum | Pola Soal | Strategi Kunci Keino Campbell |
 | :--- | :---: | :--- | :--- |
-| **1. Form / Note Completion** | Seksi 1 & 4 | Mengisi formulir, faktur, atau catatan kuliah dengan batas kata ketat. | **Prediksi Kelas Kata**: Tentukan apakah titik-titik membutuhkan *Noun*, *Adjective*, *Number*, atau *Date*. Perhatikan ejaan nama jalan dan nomor kontak.<br>👉 *[Pelajari Kartu Study Mapping: Prediksi Kelas Kata & Batas Kata Ketat](/mapping?search=Form+Note+Completion)* |
+| **1. Form / Note Completion** | Seksi 1 & 4 | Mengisi formulir, faktur, atau catatan kuliah dengan batas kata ketat. | **Prediksi Kelas Kata**: Tentukan apakah titik-titik membutuhkan *Noun*, *Adjective*, *Number*, atau *Date*. Perhatikan ejaan nama jalan dan nomor kontak. *(Lihat kartu mapping di bawah)* |
 | **2. Multiple Choice (MCQ)** | Seksi 2 & 3 | Pilihan tunggal (A, B, C) atau memilih 2 jawaban benar dari 5 opsi (A–E). | **Beware the Exact Word Trap**: Pilihan yang menggunakan kata persis seperti di audio sering kali adalah distraktor. Jawaban benar biasanya berupa parafrase makna. |
 | **3. Map / Plan Labelling** | Seksi 2 | Memberi label pada denah gedung, peta desa, atau diagram mesin. | **Kunci Titik Awal (*Starting Point*)**: Cari tanda panah *"You are here"*, kompas (North/South/East/West), dan kuasai preposisi spasial (*clockwise, corridor, adjacent*). |
 | **4. Matching Information** | Seksi 2 & 3 | Menghubungkan daftar pembicara/opsi dengan kategori pernyataan. | **Fokus pada Opsi Pendek**: Baca dan pahami pernyataan yang lebih panjang terlebih dahulu agar saat audio berputar Anda tinggal melirik kode opsi. |
