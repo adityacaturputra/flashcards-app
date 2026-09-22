@@ -2963,7 +2963,7 @@ Sebelum audio berputar, narator selalu memberikan waktu persiapan sekitar 30 det
 Sebagian besar kandidat yang gagal hanya membaca kata demi kata secara pasif. Kandidat **Band 7.5–9.0** menggunakan 30 detik ini untuk **menebak jenis kata apa yang hilang** berdasarkan kata sebelum dan sesudah celah kosong:
 
 \`\`\`mermaid
-flowchart LR
+flowchart TD
     A["Analisis Kata Sebelum/Sesudah Celah"] --> B["Prediksi Kelas Kata<br>(Noun / Adj / Number / Date)"]
     B --> C["Audio Berputar"]
     C --> D["Telinga Menyaring Khusus Jenis Kata Tersebut<br>(Instant Keyword Lock)"]
@@ -3154,11 +3154,11 @@ $$
 Jangan hanya melihat peta dengan mata secara pasif. Penguji berbicara dengan kecepatan normal, sehingga mata sangat mudah kehilangan posisi (*losing track*):
 
 \`\`\`mermaid
-flowchart LR
-    A["Letakkan Ujung Pensil di Titik You Are Here / Pintu Masuk"] --> B["Gerakkan Ujung Pensil Sesuai Rute Pembicara<br>(Walk through the foyer...)"]
-    B --> C["Belok Sesuai Instruksi<br>(Take the first turning on the right...)"]
-    C --> D["Berhenti di Depan Fasilitas<br>(...and you will find it opposite the cafe)"]
-    D --> E["Kunci Huruf di Titik Tersebut"]
+flowchart TD
+    A["1. Letakkan Ujung Pensil di Titik You Are Here / Pintu Masuk"] --> B["2. Gerakkan Ujung Pensil Sesuai Rute Pembicara<br>(Walk through the foyer...)"]
+    B --> C["3. Belok Sesuai Instruksi<br>(Take the first turning on the right...)"]
+    C --> D["4. Berhenti di Depan Fasilitas<br>(...and you will find it opposite the cafe)"]
+    D --> E["5. Kunci Huruf di Titik Tersebut"]
 \`\`\`
 
 > [!IMPORTANT]
