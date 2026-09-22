@@ -30,19 +30,34 @@ flowchart TD
 
 ## 🧠 Matriks Strategi per Tipe Soal
 
-| Tipe Soal | Letak Seksi Umum | Pola Soal | Strategi Kunci Keino Campbell |
-| :--- | :---: | :--- | :--- |
-| **1. Form / Note Completion** | Seksi 1 & 4 | Mengisi formulir, faktur, atau catatan kuliah dengan batas kata ketat. | **Prediksi Kelas Kata**: Tentukan apakah titik-titik membutuhkan *Noun*, *Adjective*, *Number*, atau *Date*. Perhatikan ejaan nama jalan dan nomor kontak. *(Lihat kartu mapping di bawah)* |
-| **2. Multiple Choice (MCQ)** | Seksi 2 & 3 | Pilihan tunggal (A, B, C) atau memilih 2 jawaban benar dari 5 opsi (A–E). | **Beware the Exact Word Trap**: Pilihan yang menggunakan kata persis seperti di audio sering kali adalah distraktor. Jawaban benar biasanya berupa parafrase makna. |
-| **3. Map / Plan Labelling** | Seksi 2 | Memberi label pada denah gedung, peta desa, atau diagram mesin. | **Kunci Titik Awal (*Starting Point*)**: Cari tanda panah *"You are here"*, kompas (North/South/East/West), dan kuasai preposisi spasial (*clockwise, corridor, adjacent*). |
-| **4. Matching Information** | Seksi 2 & 3 | Menghubungkan daftar pembicara/opsi dengan kategori pernyataan. | **Fokus pada Opsi Pendek**: Baca dan pahami pernyataan yang lebih panjang terlebih dahulu agar saat audio berputar Anda tinggal melirik kode opsi. |
-| **5. Sentence Completion** | Seksi 3 & 4 | Melengkapi kalimat rumpang yang merangkum poin-poin penting kuliah. | **Grammatical Fit**: Jawaban yang disalin dari audio harus pas secara tata bahasa dengan struktur kalimat soal tanpa mengubah bentuk kata. |
-| **6. Flow-Chart Completion** | Seksi 3 & 4 | Mengisi tahapan proses berurutan (tahap 1 ➔ 2 ➔ 3). | **Follow the Signpost Words**: Dengarkan kata penanda proses: *initially, the next step involves, subsequently, finally*. |
+| Tipe Soal | Letak Seksi Umum | Pola Soal | Strategi Kunci Keino Campbell | Modal Cepat |
+| :--- | :---: | :--- | :--- | :---: |
+| **1. Form / Note Completion** | Seksi 1 & 4 | Mengisi formulir, faktur, atau catatan kuliah dengan batas kata ketat. | **Prediksi Kelas Kata**: Tentukan apakah titik-titik membutuhkan *Noun*, *Adjective*, *Number*, atau *Date*. Perhatikan ejaan nama jalan dan nomor kontak. | [🔍 Buka Kartu](#mapping:ielts-listening-form-note-completion-prediction-strategy) |
+| **2. Multiple Choice (MCQ)** | Seksi 2 & 3 | Pilihan tunggal (A, B, C) atau memilih 2 jawaban benar dari 5 opsi (A–E). | **Beware the Exact Word Trap**: Pilihan yang menggunakan kata persis seperti di audio sering kali adalah distraktor. Jawaban benar biasanya berupa parafrase makna. | [🔍 Buka Kartu](#mapping:ielts-listening-mcq-exact-word-trap) |
+| **3. Map / Plan Labelling** | Seksi 2 | Memberi label pada denah gedung, peta desa, atau diagram mesin. | **Kunci Titik Awal (*Starting Point*)**: Cari tanda panah *"You are here"*, kompas (North/South/East/West), dan kuasai preposisi spasial (*clockwise, corridor, adjacent*). | [🔍 Buka Kartu](#mapping:ielts-listening-map-plan-labelling-strategy) |
+| **4. Matching Information** | Seksi 2 & 3 | Menghubungkan daftar pembicara/opsi dengan kategori pernyataan. | **Fokus pada Opsi Pendek**: Baca dan pahami pernyataan yang lebih panjang terlebih dahulu agar saat audio berputar Anda tinggal melirik kode opsi. | [🔍 Buka Kartu](#mapping:ielts-listening-matching-information-strategy) |
+| **5. Sentence Completion** | Seksi 3 & 4 | Melengkapi kalimat rumpang yang merangkum poin-poin penting kuliah. | **Grammatical Fit**: Jawaban yang disalin dari audio harus pas secara tata bahasa dengan struktur kalimat soal tanpa mengubah bentuk kata. | [🔍 Buka Kartu](#mapping:ielts-listening-sentence-completion-grammatical-fit) |
+| **6. Flow-Chart Completion** | Seksi 3 & 4 | Mengisi tahapan proses berurutan (tahap 1 ➔ 2 ➔ 3). | **Follow the Signpost Words**: Dengarkan kata penanda proses: *initially, the next step involves, subsequently, finally*. | [🔍 Buka Kartu](#mapping:ielts-listening-flow-chart-completion-signpost-words) |
+
+---
+
+### 🗂️ Pusat Studi Interaktif: 6 Kartu Study Mapping IELTS Listening
 
 > [!TIP]
-> **📘 Kartu Belajar Terintegrasi (Study Mapping)**:
-> Penjelasan mendalam mengenai mekanisme *Prediksi Kelas Kata* (Noun, Adjective, Number, Date), aturan batas kata ketat (*zero tolerance word count*), dan jebakan ejaan ortografi kini tersedia dalam kartu flashcard mapping interaktif:  
-> 👉 [**Study Mapping: IELTS Listening Form / Note Completion Strategy**](/mapping?search=Form+Note+Completion) *(Kategori: `IELTS Preparation`, ID: `ielts-listening-form-note-completion-prediction-strategy`)*.
+> **🚀 Akses Langsung (*In-Place Modal*)**: Klik salah satu judul kartu di bawah ini untuk langsung membuka pembahasan pedagogis lengkap, diagram KaTeX, tabel analisis jebakan, dan tips memori kilat tanpa berpindah halaman!
+
+1. 📝 [**Kartu 1: Form / Note Completion — Batas Kata Ketat & Prediksi Kelas Kata**](#mapping:ielts-listening-form-note-completion-prediction-strategy)
+   - *Fokus Inti*: Aturan *zero tolerance word count*, rumus identifikasi 4 kelas kata kunci (*Noun, Adjective, Number, Date*), serta mitigasi jebakan koreksi diri (*self-correction*).
+2. 🎯 [**Kartu 2: Multiple Choice (MCQ) — Jebakan Kata Persis (Exact Word Trap)**](#mapping:ielts-listening-mcq-exact-word-trap)
+   - *Fokus Inti*: Mengapa kata persis dari audio 90% adalah distraktor jebakan, membedakan MCQ Standar vs *Pick 2-from-5*, rumus eliminasi kata absolut (*always/never*), dan validasi parafrase makna.
+3. 🗺️ [**Kartu 3: Map & Plan Labelling — Kunci Titik Awal & Orientasi Kompas**](#mapping:ielts-listening-map-plan-labelling-strategy)
+   - *Fokus Inti*: Menemukan titik awal (*"You are here"*), mata angin (*North/South/East/West*) vs arah relatif tubuh (*clockwise, to your left*), dan kamus preposisi tata letak spasial.
+4. 🔗 [**Kartu 4: Matching Information — Strategi Opsi Pendek & Deteksi Pergeseran Opini**](#mapping:ielts-listening-matching-information-strategy)
+   - *Fokus Inti*: Membagi fokus visual (fokus membaca daftar pernyataan panjang vs kode opsi pendek), mengantisipasi perubahan opini pembicara, dan strategi waktu Seksi 3.
+5. ✍️ [**Kartu 5: Sentence Completion — Kesesuaian Tata Bahasa & Penanda Wacana Seksi 4**](#mapping:ielts-listening-sentence-completion-grammatical-fit)
+   - *Fokus Inti*: Hukum mutlak menyalin kata persis (*exact word reproduction*), uji sintaksis celah 3 detik, dan navigasi penanda wacana kuliah monolog Seksi 4 (*signpost words*).
+6. 🔄 [**Kartu 6: Flow-Chart Completion — Kotak Cek Waktu & Penanda Tahapan Sekuensial**](#mapping:ielts-listening-flow-chart-completion-signpost-words)
+   - *Fokus Inti*: Menggunakan kotak tanpa nomor sebagai *timing checkpoints*, kamus kata transisi sekuensial (*initially ➔ subsequently ➔ prior to ➔ ultimately*), dan jebakan langkah wajib vs opsional.
 
 ---
 
