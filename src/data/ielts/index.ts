@@ -23,6 +23,26 @@ import m4c3 from '../../../docs/ielts-band-7/module-04-listening-section-basics/
 import m4c4 from '../../../docs/ielts-band-7/module-04-listening-section-basics/04-methods-to-improve-listening-ability.md';
 import m4c5 from '../../../docs/ielts-band-7/module-04-listening-section-basics/05-ielts-spelling-list-and-common-pitfalls.md';
 
+import m5c1 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/01-listening-diagnostic-test-and-readiness.md';
+import m5c2 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/02-listening-microskills-numbers-dates-spelling.md';
+import m5c3 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/03-answer-and-question-recognition-tactics.md';
+import m5c4 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/04-teaching-section-1-strategy-pre-listening-prediction.md';
+import m5c5 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/05-teaching-section-1-strategy-trap-avoidance.md';
+import m5c6 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/06-teaching-section-1-strategy-form-filling-execution.md';
+import m5c7 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/07-cambridge-guided-practice-01-book-13-test-1.md';
+import m5c8 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/08-cambridge-guided-practice-02-book-9-test-4.md';
+import m5c9 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/09-cambridge-guided-practice-03-book-14-test-4.md';
+import m5c10 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/10-cambridge-guided-practice-04-book-11-test-3.md';
+import m5c11 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/11-cambridge-guided-practice-05-book-16-test-2.md';
+import m5c12 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/12-cambridge-guided-practice-06-book-6-test-2.md';
+import m5c13 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/13-cambridge-guided-practice-07-book-17-test-1.md';
+import m5c14 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/14-live-class-review-01-strategy-and-diagnostic.md';
+import m5c15 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/15-live-class-review-02-form-filling-traps.md';
+import m5c16 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/16-live-class-review-03-speed-and-accent-adjustments.md';
+import m5c17 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/17-live-class-review-04-spelling-and-plurals-mastery.md';
+import m5c18 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/18-live-class-review-05-notes-and-table-completion.md';
+import m5c19 from '../../../docs/ielts-band-7/module-05-listening-section-1-strategy/19-live-class-review-06-error-log-and-score-stabilization.md';
+
 export const IELTS_MODULES: IeltsModule[] = [
   {
     moduleNumber: 1,
@@ -375,7 +395,332 @@ export const IELTS_MODULES: IeltsModule[] = [
     title: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
     slug: 'listening-section-1-strategy',
     description: 'Strategi menjawab percakapan dua orang, form-filling, angka, ejaan nama, dan penanganan distractor audio.',
-    chapters: []
+    totalDuration: '54m',
+    chapters: [
+      {
+        id: 'm5-01',
+        chapterNumber: 19,
+        itemNumber: 1,
+        title: '19. Tes Diagnostik Listening & Evaluasi Kesiapan Dasar',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Pemetaan titik lemah (baseline benchmark), evaluasi kecepatan respon, dan identifikasi 4 taksonomi eror fatal.',
+        markdownContent: m5c1,
+        keyTakeaways: [
+          'Target wajib Band 7+: minimal 9 dari 10 soal (90% akurasi) di Section 1',
+          'Protokol tes diagnostik: single playback audio tanpa jeda',
+          '4 Taksonomi eror: jebakan koreksi diri, salah eja fonetik, pelanggaran batas kata, kehilangan jejak'
+        ]
+      },
+      {
+        id: 'm5-02',
+        chapterNumber: 20,
+        itemNumber: 2,
+        title: '20. Penguasaan Keterampilan Mikro Listening (Microskills Mastery)',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '4m',
+        description: 'Akurasi refleks angka (-teen vs -ty), ejaan alfabet, format tanggal, kode pos, dan nilai mata uang.',
+        markdownContent: m5c2,
+        keyTakeaways: [
+          'Microskills menyumbang 40% hingga 60% dari seluruh butir pertanyaan Section 1',
+          'Matriks bunyi berirama sama: A/H/J/K (/eɪ/) vs B/C/D/E/G/P/T/V/Z (/iː/)',
+          'Aturan angka: nol disebut "oh" (/oʊ/) pada telepon, tekanan -teen pada suku kata kedua'
+        ]
+      },
+      {
+        id: 'm5-03',
+        chapterNumber: 21,
+        itemNumber: 3,
+        title: '21. Taktik Rekognisi Soal & Prediksi Jawaban Celah',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Pemindaian cepat 30 detik pra-mendengar, prediksi kelas kata (noun/verb/adj), dan identifikasi anchor keywords.',
+        markdownContent: m5c3,
+        keyTakeaways: [
+          'Prediksi kelas kata (Part of Speech) sebelum audio berputar mengalahkan refleks pasif',
+          'Anchor keywords: kata benda konkret yang sulit diparafrasekan sebagai jangkar navigasi',
+          'Deteksi singular vs plural: artikel a/an mutlak tunggal, kuantifier many/several mutlak jamak'
+        ]
+      },
+      {
+        id: 'm5-04',
+        chapterNumber: 22,
+        itemNumber: 4,
+        title: '22. Strategi Inti Section 1: Fase Pra-Mendengar & Prediksi Tata Letak',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Struktur percakapan transaksional dua orang, dekonstruksi batas kata (Word Limits), dan pemetaan 3 layout formulir.',
+        markdownContent: m5c4,
+        keyTakeaways: [
+          'Peran penutur: Service Provider vs Inquirer dalam interaksi sosial transaksional',
+          'Aturan hukum Word Limit: ONE WORD ONLY vs ONE WORD AND/OR A NUMBER',
+          'Kata dengan tanda hubung (hyphenated words) dihitung sebagai tepat SATU KATA'
+        ]
+      },
+      {
+        id: 'm5-05',
+        chapterNumber: 23,
+        itemNumber: 5,
+        title: '23. Strategi Inti Section 1: Anatomi Distraktor & Penghindaran Jebakan',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Membongkar 5 pola distraktor klasik: koreksi diri, koreksi antar-pembicara, masa lalu vs sekarang, dan syarat penolakan.',
+        markdownContent: m5c5,
+        keyTakeaways: [
+          'Koreksi diri (Self-Correction): jangan buru-buru mengunci data pertama yang diucapkan',
+          'Kata pemicu sanggahan: actually, wait, sorry, unfortunately, previously, used to be',
+          'Metode pensil coret cepat: catat data sementara tipis-tipis, konfirmasi makna akhir'
+        ]
+      },
+      {
+        id: 'm5-06',
+        chapterNumber: 24,
+        itemNumber: 6,
+        title: '24. Strategi Inti Section 1: Eksekusi Form-Filling & Regulasi Lembar Jawaban',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Audit kualitas celah 3 langkah, regulasi ejaan British vs American, kebijakan ALL CAPS, dan aturan singkatan.',
+        markdownContent: m5c6,
+        keyTakeaways: [
+          'Audit 3 langkah pada 30 detik akhir: Grammatical Fit, Ejaan Ortografi, Batas Kata',
+          'British vs American: keduanya sah (colour/color, centre/center), utamakan konsistensi',
+          'Golden Rule Kapitalisasi: gunakan ALL CAPS penuh untuk menghilangkan risiko gagal kapital nama diri'
+        ]
+      },
+      {
+        id: 'm5-07',
+        chapterNumber: 25,
+        itemNumber: 7,
+        title: '25. Bedah Praktik Terpandu #1: Cambridge IELTS 13 Test 1',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Analisis soal kursus memasak (Cookery Classes), penanganan batas kata ONE WORD AND/OR A NUMBER, dan jebakan harga promo.',
+        markdownContent: m5c7,
+        keyTakeaways: [
+          'Cambridge 13 Test 1: Cookery classes inquiry notes completion',
+          'Jebakan singular pada celah "bring a ________" -> CONTAINER (bukan containers)',
+          'Simbol mata uang yang sudah tercetak di soal tidak boleh ditulis ulang di lembar jawaban'
+        ]
+      },
+      {
+        id: 'm5-08',
+        chapterNumber: 26,
+        itemNumber: 8,
+        title: '26. Bedah Praktik Terpandu #2: Cambridge IELTS 9 Test 4',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Analisis reservasi fasilitas konferensi hotel, perbandingan kapasitas ruangan, dan biaya sewa peralatan audio-visual.',
+        markdownContent: m5c8,
+        keyTakeaways: [
+          'Cambridge 9 Test 4: Hotel conference venue and facilities booking',
+          'Distraktor nama ruangan: ruangan yang lebih besar ditolak karena kendala anggaran',
+          'Peralatan presentasi: PROJECTOR (akhiran -or, bukan -er)'
+        ]
+      },
+      {
+        id: 'm5-09',
+        chapterNumber: 27,
+        itemNumber: 9,
+        title: '27. Bedah Praktik Terpandu #3: Cambridge IELTS 14 Test 4',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Pendaftaran relawan festival komunitas, pencocokan sinonim tugas kerja, dress code pakaian gelap, dan konsumsi.',
+        markdownContent: m5c9,
+        keyTakeaways: [
+          'Cambridge 14 Test 4: Community festival volunteer registration',
+          'Parafrase tugas kerja: "setting up" berpasangan dengan "putting together the tents"',
+          'Dress code: celana gelap (TROUSERS) dipadukan dengan kaos cerah yang disediakan panitia'
+        ]
+      },
+      {
+        id: 'm5-10',
+        chapterNumber: 28,
+        itemNumber: 10,
+        title: '28. Bedah Praktik Terpandu #4: Cambridge IELTS 11 Test 3',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Pendaftaran agensi kerja paruh waktu, pembedaan pekerjaan lalu vs lowongan baru, dan upah awal masa pelatihan.',
+        markdownContent: m5c10,
+        keyTakeaways: [
+          'Cambridge 11 Test 3: Temporary employment agency registration',
+          'Pembedaan waktu: pekerjaan masa lalu (RECEPTIONIST) vs impian masa depan (clerical)',
+          'Starting pay: upah masa pelatihan (£9.75) bukan tarif reguler (£11.50)'
+        ]
+      },
+      {
+        id: 'm5-11',
+        chapterNumber: 29,
+        itemNumber: 11,
+        title: '29. Bedah Praktik Terpandu #5: Cambridge IELTS 16 Test 2',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Pemesanan cetak brosur kustom, tekstur kertas (matte vs glossy), penyesuaian kuantitas setelah diskon, dan format file.',
+        markdownContent: m5c11,
+        keyTakeaways: [
+          'Cambridge 16 Test 2: Print shop custom brochure order',
+          'Tekstur kertas profesional: MATTE disetujui, GLOSSY ditolak',
+          'Kuantitas akhir: melonjak dari 300 menjadi 500 eksemplar karena diskon volume'
+        ]
+      },
+      {
+        id: 'm5-12',
+        chapterNumber: 30,
+        itemNumber: 12,
+        title: '30. Bedah Praktik Terpandu #6: Cambridge IELTS 6 Test 2',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Pemesanan tiket kereta api, pembedaan stasiun utama vs stasiun cabang, tarif single vs return, dan jadwal jam berangkat.',
+        markdownContent: m5c12,
+        keyTakeaways: [
+          'Cambridge 6 Test 2: Train travel timetable and ticket booking',
+          'Stasiun keberangkatan langsung: CENTRAL STATION',
+          'Waktu berangkat vs waktu tiba: jam 9:45 am adalah keberangkatan'
+        ]
+      },
+      {
+        id: 'm5-13',
+        chapterNumber: 31,
+        itemNumber: 13,
+        title: '31. Bedah Praktik Terpandu #7: Cambridge IELTS 17 Test 1',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Pendaftaran sukarelawan konservasi alam, pembedaan perlengkapan yang disediakan vs dibawa sendiri, dan titik kumpul gerbang.',
+        markdownContent: m5c13,
+        keyTakeaways: [
+          'Cambridge 17 Test 1: Environmental conservation volunteering',
+          'Perlengkapan wajib bawa sendiri: BOOTS (peralatan kerja disediakan kelompok)',
+          'Fasilitas pengamatan burung: HIDE (konstruksi kayu perlindungan)'
+        ]
+      },
+      {
+        id: 'm5-14',
+        chapterNumber: 32,
+        itemNumber: 14,
+        title: '32. Bedah Kelas Langsung #1: Evaluasi Pola Eror Diagnostik Siswa',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Mengapa 70% siswa tertahan di skor 7/10, bahaya mencatat di kertas buram, dan prinsip Cut-Your-Losses saat tertinggal.',
+        markdownContent: m5c14,
+        keyTakeaways: [
+          'Penyebab skor macet di 7/10: mendengar pasif dan panik saat 1 nomor terlewat',
+          'Bahaya fatal kertas buram pada CDI: waktu transfer 2 menit tidak cukup memindahkan catatan',
+          'Prinsip Cut-Your-Losses: ikhlaskan 1 soal dalam 5 detik demi menyelamatkan nomor berikutnya'
+        ]
+      },
+      {
+        id: 'm5-15',
+        chapterNumber: 33,
+        itemNumber: 15,
+        title: '33. Bedah Kelas Langsung #2: Dekonstruksi Jebakan Form-Filling',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Jebakan koreksi ganda (double-layer correction), prinsip konsensus persetujuan akhir, dan presisi penulisan digit telepon.',
+        markdownContent: m5c15,
+        keyTakeaways: [
+          'Double-layer correction: ralat pertama belum tentu jawaban final; dengarkan konsensus akhir',
+          'Angka nol dalam nomor telepon: "oh" (/oʊ/) wajib ditulis 0, bukan huruf O',
+          'Ketepatan format spasi kode pos Inggris (area code spasi unit code)'
+        ]
+      },
+      {
+        id: 'm5-16',
+        chapterNumber: 34,
+        itemNumber: 16,
+        title: '34. Bedah Kelas Langsung #3: Adaptasi Aksen & Kecepatan Bicara Alami',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Penyesuaian terhadap aksen British, Australian, Kiwi, dan North American, serta fenomena linking dan elision bunyi.',
+        markdownContent: m5c16,
+        keyTakeaways: [
+          'Pergeseran vokal Australian/Kiwi: bunyi /eɪ/ (day, date) bergeser mendekati /aɪ/',
+          'Pembedaan can vs can\'t berdasarkan panjang vokal dan intonasi penutur',
+          'Connected speech: linking /r/ dan elision huruf konsonan /t/ dan /d/'
+        ]
+      },
+      {
+        id: 'm5-17',
+        chapterNumber: 35,
+        itemNumber: 17,
+        title: '35. Bedah Kelas Langsung #4: Presisi Ejaan & Penegakan Singular/Plural',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Bencana 1 huruf (The 1-Letter Disaster), daftar 20 kata paling rawan salah eja, dan analisis sintaksis singular vs plural.',
+        markdownContent: m5c17,
+        keyTakeaways: [
+          'Aturan tanpa toleransi Cambridge: 99% benar tetap dinilai 0 poin jika ada 1 huruf salah',
+          '20 Kata berisiko tinggi: accommodation (2c, 2m), environment (ada n), necessary (1c, 2s)',
+          'Deteksi singular vs plural melalui linking verbs (is vs are) dan demonstratives (this vs these)'
+        ]
+      },
+      {
+        id: 'm5-18',
+        chapterNumber: 36,
+        itemNumber: 18,
+        title: '36. Bedah Kelas Langsung #5: Navigasi Catatan vs Tabel Terstruktur',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Dinamika pergerakan mata pada format tabel horizontal, pemanfaatan sel terisi sebagai penunjuk waktu, dan pembacaan tajuk.',
+        markdownContent: m5c18,
+        keyTakeaways: [
+          'Pergerakan mata pada tabel: wajib bergerak horizontal baris per baris, bukan vertikal',
+          'Sel teks yang sudah terisi berfungsi sebagai timing checkpoints sebelum celah kosong',
+          'Tajuk kolom secara mutlak membatasi kategori informasi yang dicari'
+        ]
+      },
+      {
+        id: 'm5-19',
+        chapterNumber: 37,
+        itemNumber: 19,
+        title: '37. Bedah Kelas Langsung #6: Buku Jurnal Eror & Stabilisasi Skor 10/10',
+        moduleNumber: 5,
+        moduleTitle: 'Bagian 5: Listening Section 1 (Part 1) Strategy',
+        itemType: 'lecture',
+        duration: '3m',
+        description: 'Metodologi pembuatan Error Log 5 kolom, siklus Deliberate Practice, dan syarat kelulusan 10/10 sebelum melangkah ke Section 2.',
+        markdownContent: m5c19,
+        keyTakeaways: [
+          'Prinsip Keino: Mengerjakan 50 tes dengan skor 7/10 bukanlah belajar melainkan mempraktikkan kegagalan',
+          'Template Error Log 5 kolom: Soal, Eror Saya, Kunci Resmi, Root Cause, Tindakan Korektif',
+          'Syarat kelulusan Section 1: Meraih skor 10/10 pada minimal 3 tes Cambridge berturut-turut'
+        ]
+      }
+    ]
   },
   {
     moduleNumber: 6,

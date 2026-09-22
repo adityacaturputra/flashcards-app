@@ -10,10 +10,10 @@ Dokumen ini melacak pemetaan lengkap kurikulum **Udemy: IELTS Band 7+ Complete P
 | :--- | :--- | :--- |
 | **Total Bagian Udemy** | `35 Bagian` | Mencakup 4 keahlian: Listening, Reading, Writing, Speaking |
 | **Total Materi / Video / Kuis** | `613 Item` | 511 Kuliah/Video, 48 Kuis, 27 AI Role-Play, 27 Lainnya |
-| **Bagian Selesai (DONE)** | `4 Bagian` (Bagian 1, 2, 3, 4) | 100% lengkap dengan ringkasan & kuis interaktif |
-| **Total Bab Lokal Selesai** | `18 Bab` | Tersedia di `docs/ielts-band-7/` & `src/data/ielts/` |
-| **Materi Terakhir Selesai (Last Done)** | `Kuliah #17 (ID: 5542190)` | *IELTS Spelling List* (Bab 18) |
-| **Target Lanjutan Terdekat (Next Up)** | `Bagian 5 (ID: 1389986)` | *Listening Section 1 (Part 1) Strategy* (19 Materi) |
+| **Bagian Selesai (DONE)** | `5 Bagian` (Bagian 1, 2, 3, 4, 5) | 100% lengkap dalam format Buku Ajar Komprehensif |
+| **Total Bab Lokal Selesai** | `37 Bab` | Tersedia di `docs/ielts-band-7/` & `src/data/ielts/` |
+| **Materi Terakhir Selesai (Last Done)** | `Kuliah #36 (ID: 31930672)` | *Live Class: Section 1 Review Part 6* (Bab 37) |
+| **Target Lanjutan Terdekat (Next Up)** | `Bagian 6 (ID: 10596240)` | *Listening Section 2 (Part 2) Strategy* (16 Materi) |
 
 ---
 
@@ -25,8 +25,8 @@ Dokumen ini melacak pemetaan lengkap kurikulum **Udemy: IELTS Band 7+ Complete P
 | 02 | `12025459` | IELTS Exam Basic Information | 4 | 3 Kuliah, 1 Kuis | Module 2: Exam Basic Information | ✅ **DONE (4/4)** |
 | 03 | `8419754` | Grammar and Vocabulary Diagnostic Tests | 5 | 5 Kuliah | Module 3: Diagnostic Tests | ✅ **DONE (5/5)** |
 | 04 | `9194542` | Listening Section Basics and Information | 5 | 5 Kuliah | Module 4: Listening Basics | ✅ **DONE (5/5)** |
-| 05 | `1389986` | Listening Section 1 (Part 1) Strategy (General and Academic Application) | 19 | 19 Kuliah | Module 5: Listening Part 1 | ⏳ *NEXT UP (0/19)* |
-| 06 | `10596240` | Listening Section 2 (Part 2) Strategy (General and Academic Application) | 16 | 16 Kuliah | Module 6: Listening Part 2 | ⚪ Pending (0/16) |
+| 05 | `1389986` | Listening Section 1 (Part 1) Strategy (General and Academic Application) | 19 | 19 Kuliah | Module 5: Listening Part 1 | ✅ **DONE (19/19)** |
+| 06 | `10596240` | Listening Section 2 (Part 2) Strategy (General and Academic Application) | 16 | 16 Kuliah | Module 6: Listening Part 2 | ⏳ *NEXT UP (0/16)* |
 | 07 | `10596250` | Listening Section 3 (Part 3) Strategy (General and Academic Application) | 11 | 11 Kuliah | Module 7: Listening Part 3 | ⚪ Pending (0/11) |
 | 08 | `10596508` | Listening Section 4 (Part 4) Strategy (General and Academic Application) | 11 | 11 Kuliah | Module 8: Listening Part 4 | ⚪ Pending (0/11) |
 | 09 | `11830797` | Multiple Choice Question Strategy Focus | 7 | 7 Kuliah | Module Listening: MCQ Strategy | ⚪ Pending (0/7) |
@@ -101,35 +101,56 @@ Dokumen ini melacak pemetaan lengkap kurikulum **Udemy: IELTS Band 7+ Complete P
 | 4 | `34356000` | Article | Methods to Improve Listening Ability | [`04-methods-to-improve-listening-ability.md`](docs/ielts-band-7/module-04-listening-section-basics/04-methods-to-improve-listening-ability.md) | ✅ DONE |
 | 5 | `5542190` | Article | IELTS Spelling List | [`05-ielts-spelling-list-and-common-pitfalls.md`](docs/ielts-band-7/module-04-listening-section-basics/05-ielts-spelling-list-and-common-pitfalls.md) | ✅ DONE |
 
+### Bagian 5: Listening Section 1 (Part 1) Strategy (ID: `1389986`)
+
+| No | ID Item | Tipe | Judul Materi Asli Udemy | File Lokal Repositori | Status |
+| :---: | :---: | :---: | :--- | :--- | :---: |
+| 1 | `35252392` | Lecture | Listening Diagnostic Test | [`01-listening-diagnostic-test-and-readiness.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/01-listening-diagnostic-test-and-readiness.md) | ✅ DONE |
+| 2 | `46228435` | Lecture | IELTS Listening Microskills Practice | [`02-listening-microskills-numbers-dates-spelling.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/02-listening-microskills-numbers-dates-spelling.md) | ✅ DONE |
+| 3 | `46545365` | Lecture | Listening Section 1 Answer and Question Recognition | [`03-answer-and-question-recognition-tactics.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/03-answer-and-question-recognition-tactics.md) | ✅ DONE |
+| 4 | `55998357` | Lecture | Teaching Section 1 Strategy (Part 1) | [`04-teaching-section-1-strategy-pre-listening-prediction.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/04-teaching-section-1-strategy-pre-listening-prediction.md) | ✅ DONE |
+| 5 | `55998359` | Lecture | Teaching Section 1 Strategy (Part 2) | [`05-teaching-section-1-strategy-trap-avoidance.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/05-teaching-section-1-strategy-trap-avoidance.md) | ✅ DONE |
+| 6 | `55998361` | Lecture | Teaching Section 1 Strategy (Part 3) | [`06-teaching-section-1-strategy-form-filling-execution.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/06-teaching-section-1-strategy-form-filling-execution.md) | ✅ DONE |
+| 7 | `18845580` | Lecture | Guided Practice #1: Section 1 (Part 1) (Book 13 Test 1) | [`07-cambridge-guided-practice-01-book-13-test-1.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/07-cambridge-guided-practice-01-book-13-test-1.md) | ✅ DONE |
+| 8 | `44423390` | Lecture | Guided Practice #2: Section 1 (Part) 1 (Book 9 Test 4) | [`08-cambridge-guided-practice-02-book-9-test-4.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/08-cambridge-guided-practice-02-book-9-test-4.md) | ✅ DONE |
+| 9 | `44423400` | Lecture | Guided Practice #3: (Part 1) (Book 14 Test 4) | [`09-cambridge-guided-practice-03-book-14-test-4.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/09-cambridge-guided-practice-03-book-14-test-4.md) | ✅ DONE |
+| 10 | `44423426` | Lecture | Guided Practice #4: Section 1 (Part 1) (Book 11 Test 3) | [`10-cambridge-guided-practice-04-book-11-test-3.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/10-cambridge-guided-practice-04-book-11-test-3.md) | ✅ DONE |
+| 11 | `44423452` | Lecture | Guided Practice #5: (Part1) (Book 16 Test 2) | [`11-cambridge-guided-practice-05-book-16-test-2.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/11-cambridge-guided-practice-05-book-16-test-2.md) | ✅ DONE |
+| 12 | `44423488` | Lecture | Guided Practice #6: Section 1 (Book 6 Test 2 ) | [`12-cambridge-guided-practice-06-book-6-test-2.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/12-cambridge-guided-practice-06-book-6-test-2.md) | ✅ DONE |
+| 13 | `44423506` | Lecture | Guided Practice #7: (Part) 1 (Book 17 Test 1) | [`13-cambridge-guided-practice-07-book-17-test-1.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/13-cambridge-guided-practice-07-book-17-test-1.md) | ✅ DONE |
+| 14 | `31930658` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 1 | [`14-live-class-review-01-strategy-and-diagnostic.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/14-live-class-review-01-strategy-and-diagnostic.md) | ✅ DONE |
+| 15 | `31930660` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 2 | [`15-live-class-review-02-form-filling-traps.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/15-live-class-review-02-form-filling-traps.md) | ✅ DONE |
+| 16 | `31930664` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 3 | [`16-live-class-review-03-speed-and-accent-adjustments.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/16-live-class-review-03-speed-and-accent-adjustments.md) | ✅ DONE |
+| 17 | `31930668` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 4 | [`17-live-class-review-04-spelling-and-plurals-mastery.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/17-live-class-review-04-spelling-and-plurals-mastery.md) | ✅ DONE |
+| 18 | `31930670` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 5 | [`18-live-class-review-05-notes-and-table-completion.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/18-live-class-review-05-notes-and-table-completion.md) | ✅ DONE |
+| 19 | `31930672` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 6 | [`19-live-class-review-06-error-log-and-score-stabilization.md`](docs/ielts-band-7/module-05-listening-section-1-strategy/19-live-class-review-06-error-log-and-score-stabilization.md) | ✅ DONE |
+
 ---
 
 ## 🎯 Rencana Aksi Lanjutan: Target Berikutnya (NEXT UP)
 
-### 📍 Bagian 5: Listening Section 1 (Part 1) Strategy (ID: `1389986`)
+### 📍 Bagian 6: Listening Section 2 (Part 2) Strategy (ID: `10596240`)
 
-Modul berikutnya yang siap dikerjakan untuk melatih strategi pengerjaan, rekognisi soal, dan praktik Cambridge resmi untuk Section 1 (Part 1):
+Modul berikutnya yang siap dikerjakan untuk melatih strategi pengerjaan monolog sosial, pelabelan denah/peta (*map labelling*), dan pencocokan (*matching*):
 
 | No | ID Item | Tipe | Judul Kuliah Udemy | Rencana File / Fokus Modul | Status |
 | :---: | :---: | :---: | :--- | :--- | :---: |
-| 1 | `35252392` | Lecture | Listening Diagnostic Test | Diagnostic Assessment & Baseline Benchmark | ⏳ TARGET TAHAP INI |
-| 2 | `46228435` | Lecture | IELTS Listening Microskills Practice | Number, Spelling & Distractor Tracking | ⏳ TARGET TAHAP INI |
-| 3 | `46545365` | Lecture | Listening Section 1 Answer and Question Recognition | Prompt Prediction & Word Boundary Recognition | ⏳ TARGET TAHAP INI |
-| 4 | `55998357` | Lecture | Teaching Section 1 Strategy (Part 1) | 3-Phase Strategy: Pre-listening, Active, Review | ⏳ TARGET TAHAP INI |
-| 5 | `55998359` | Lecture | Teaching Section 1 Strategy (Part 2) | Common Form Patterns & Trap Avoidance | ⏳ TARGET TAHAP INI |
-| 6 | `55998361` | Lecture | Teaching Section 1 Strategy (Part 3) | Form Filling Execution & Answer Sheet Rules | ⏳ TARGET TAHAP INI |
-| 7 | `18845580` | Lecture | Guided Practice #1: Section 1 (Part 1) (Book 13 Test 1) | Cambridge 13 Test 1 Guided Analysis | ⏳ TARGET TAHAP INI |
-| 8 | `44423390` | Lecture | Guided Practice #2: Section 1 (Part) 1 (Book 9 Test 4) | Cambridge 9 Test 4 Guided Analysis | ⏳ TARGET TAHAP INI |
-| 9 | `44423400` | Lecture | Guided Practice #3: (Part 1) (Book 14 Test 4) | Cambridge 14 Test 4 Guided Analysis | ⏳ TARGET TAHAP INI |
-| 10 | `44423426` | Lecture | Guided Practice #4: Section 1 (Part 1) (Book 11 Test 3) | Cambridge 11 Test 3 Guided Analysis | ⏳ TARGET TAHAP INI |
-| 11 | `44423452` | Lecture | Guided Practice #5: (Part1) (Book 16 Test 2) | Cambridge 16 Test 2 Guided Analysis | ⏳ TARGET TAHAP INI |
-| 12 | `44423488` | Lecture | Guided Practice #6: Section 1 (Book 6 Test 2 ) | Cambridge 6 Test 2 Guided Analysis | ⏳ TARGET TAHAP INI |
-| 13 | `44423506` | Lecture | Guided Practice #7: (Part) 1 (Book 17 Test 1) | Cambridge 17 Test 1 Guided Analysis | ⏳ TARGET TAHAP INI |
-| 14 | `31930658` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 1 | Live Class Masterclass Review Part 1 | ⏳ TARGET TAHAP INI |
-| 15 | `31930660` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 2 | Live Class Masterclass Review Part 2 | ⏳ TARGET TAHAP INI |
-| 16 | `31930664` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 3 | Live Class Masterclass Review Part 3 | ⏳ TARGET TAHAP INI |
-| 17 | `31930668` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 4 | Live Class Masterclass Review Part 4 | ⏳ TARGET TAHAP INI |
-| 18 | `31930670` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 5 | Live Class Masterclass Review Part 5 | ⏳ TARGET TAHAP INI |
-| 19 | `31930672` | Lecture | Live Class: Section 1 (Strategy and Skills Tested Review) Part 6 | Live Class Masterclass Review Part 6 | ⏳ TARGET TAHAP INI |
+| 1 | `46545391` | Lecture | Listening Section 2 Answer and Question Recognition | Monologue Navigation & Distractor Tracking | ⏳ TARGET TAHAP INI |
+| 2 | `56342737` | Lecture | Teaching Section 2 Strategy (Part 1) | Section 2 Overview & Multiple Choice Focus | ⏳ TARGET TAHAP INI |
+| 3 | `56342749` | Lecture | Teaching Section 2 Strategy (Part 2) | Matching Questions & Information Association | ⏳ TARGET TAHAP INI |
+| 4 | `56342753` | Lecture | Teaching Section 2 Strategy (Part 3) | Plan/Map/Diagram Labelling Fundamentals | ⏳ TARGET TAHAP INI |
+| 5 | `56342761` | Lecture | Teaching Section 2 Strategy (Part 4) | Directional Language & Compass Terminology | ⏳ TARGET TAHAP INI |
+| 6 | `44423692` | Lecture | Guided Practice #1: Section 2 (Book 9 Test 3 ) | Cambridge 9 Test 3 Section 2 Guided Walkthrough | ⏳ TARGET TAHAP INI |
+| 7 | `44423716` | Lecture | Guided Practice #2: Section 2 (Book 12 Test 5 ) | Cambridge 12 Test 5 Section 2 Guided Walkthrough | ⏳ TARGET TAHAP INI |
+| 8 | `44423726` | Lecture | Guided Practice #3: Section 2 (Book 10 Test 4) | Cambridge 10 Test 4 Section 2 Guided Walkthrough | ⏳ TARGET TAHAP INI |
+| 9 | `44423776` | Lecture | Guided Practice #4: (Part 2) (Official Cam. Guide Test 2) | Official Guide Test 2 Guided Walkthrough | ⏳ TARGET TAHAP INI |
+| 10 | `44423828` | Lecture | Guided Practice #5: (Part 2) (IELTS Trainer 2 Test 4 ) | IELTS Trainer 2 Test 4 Guided Walkthrough | ⏳ TARGET TAHAP INI |
+| 11 | `44423850` | Lecture | Listening Section 2: Map-Diagram Strategy | Map Coordinates & Spatial Logic | ⏳ TARGET TAHAP INI |
+| 12 | `22574212` | Lecture | Listening Map Labeling Terminology (Part 1) | Clockwise, Counter-Clockwise, Adjacent Terms | ⏳ TARGET TAHAP INI |
+| 13 | `22574222` | Lecture | Listening Map Labeling Terminology (Part 2) | Crossroads, Roundabouts, Junctions Terms | ⏳ TARGET TAHAP INI |
+| 14 | `44424036` | Lecture | Section 2 Map Practices 1 to 3 | Intensive Map Drills 1–3 | ⏳ TARGET TAHAP INI |
+| 15 | `44424044` | Lecture | Section 2 Map Practices 4 to 6 | Intensive Map Drills 4–6 | ⏳ TARGET TAHAP INI |
+| 16 | `44424052` | Lecture | Section 2 Map Practices 7 to 9 | Intensive Map Drills 7–9 | ⏳ TARGET TAHAP INI |
 
 ---
 
@@ -138,10 +159,10 @@ Modul berikutnya yang siap dikerjakan untuk melatih strategi pengerjaan, rekogni
 | Kelompok Keahlian | Cakupan Bagian Udemy | Total Bagian | Total Materi | Status Repositori |
 | :--- | :---: | :---: | :---: | :--- |
 | **1. Orientasi & Diagnostik** | Bagian 1 – 3 | 3 Bagian | 13 Materi | ✅ **13 / 13 Selesai (100%)** |
-| **2. Listening Comprehensive** | Bagian 4 – 12 | 9 Bagian | 94 Materi | ⏳ **5 / 94 Selesai (5.3%)** |
+| **2. Listening Comprehensive** | Bagian 4 – 12 | 9 Bagian | 94 Materi | ⏳ **24 / 94 Selesai (25.5%)** |
 | **3. Academic Reading** | Bagian 13 – 17 | 5 Bagian | 121 Materi | ⚪ *0 / 121 (Target Tahap 3)* |
 | **4. General Reading** | Bagian 18 – 22 | 5 Bagian | 79 Materi | ⚪ *0 / 79 (Target Tambahan)* |
 | **5. Computer Based Test (CBT)** | Bagian 23 | 1 Bagian | 22 Materi | ⚪ *0 / 22 (Target Tahap 4)* |
 | **6. Writing Task 1 & Task 2** | Bagian 24 – 29 | 6 Bagian | 122 Materi | ⚪ *0 / 122 (Target Tahap 5)* |
 | **7. Speaking Comprehensive** | Bagian 30 – 35 | 6 Bagian | 133 Materi | ⚪ *0 / 133 (Target Tahap 6)* |
-| **TOTAL KURSUS** | **Bagian 1 – 35** | **35 Bagian** | **613 Materi** | **18 Selesai / 595 Menunggu** |
+| **TOTAL KURSUS** | **Bagian 1 – 35** | **35 Bagian** | **613 Materi** | **37 Selesai / 576 Menunggu** |
