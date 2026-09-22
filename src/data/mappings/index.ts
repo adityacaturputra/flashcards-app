@@ -2937,11 +2937,14 @@ Di ujian IELTS Listening, **Form Completion** (biasanya di Seksi 1) dan **Note C
 
 Sebelum audio dimulai, lembar soal selalu mencantumkan instruksi batas kata dengan huruf tebal. Aturan penilaian Cambridge adalah **zero tolerance** (tanpa toleransi kompromi):
 
-| Instruksi Resmi | Makna Hukum Penilaian | Contoh Kasus Nyata | Hasil Penilaian |
-| :--- | :--- | :--- | :---: |
-| **NO MORE THAN TWO WORDS** | Maksimal 2 kata. Jika menulis 3 kata, nilai otomatis 0. | Soal: \`Location: ________\`<br>Audio: *"We meet near the train station."*<br>• Siswa menulis: \`near the train station\` (4 kata)<br>• Jawaban benar: \`train station\` (2 kata) | ❌ **SKOR 0**<br>✅ **1 POIN** |
-| **ONE WORD ONLY** | Wajib tepat 1 kata saja. | Soal: \`Applicant needs: a ________\`<br>Audio: *"Please bring a valid certificate."*<br>• Siswa menulis: \`valid certificate\` (2 kata)<br>• Jawaban benar: \`certificate\` (1 kata) | ❌ **SKOR 0**<br>✅ **1 POIN** |
-| **ONE WORD AND/OR A NUMBER** | Maksimal 1 kata dan/atau 1 angka. | Audio: *"The class starts on the 24th of October."*<br>• Siswa menulis: \`24 October\` (1 angka + 1 kata)<br>• Siswa menulis: \`the 24th of October\` (4 kata) | ✅ **1 POIN**<br>❌ **SKOR 0** |
+| Batas Instruksi Soal | Situasi / Audio | Jawaban Ditulis | Analisis Jumlah Kata | Hasil Skor |
+| :--- | :--- | :--- | :--- | :---: |
+| **NO MORE THAN TWO WORDS** | Audio: *"We meet near the train station."* | \`near the train station\` | 4 kata (Melebihi kuota maksimal 2 kata) | ❌ **SKOR 0** |
+| **NO MORE THAN TWO WORDS** | Audio: *"We meet near the train station."* | \`train station\` | 2 kata (Tepat memenuhi kuota tanpa kata depan) | ✅ **1 POIN** |
+| **ONE WORD ONLY** | Audio: *"Please bring a valid certificate."* | \`valid certificate\` | 2 kata (Gugur karena menyertakan kata sifat) | ❌ **SKOR 0** |
+| **ONE WORD ONLY** | Audio: *"Please bring a valid certificate."* | \`certificate\` | 1 kata (Tepat 1 kata benda inti) | ✅ **1 POIN** |
+| **ONE WORD AND/OR A NUMBER** | Audio: *"The class starts on the 24th of October."* | \`24 October\` | 1 angka + 1 kata (Sesuai kuota maksimal) | ✅ **1 POIN** |
+| **ONE WORD AND/OR A NUMBER** | Audio: *"The class starts on the 24th of October."* | \`the 24th of October\` | 4 kata (Gugur akibat artikel 'the' dan 'of') | ❌ **SKOR 0** |
 
 $$
 \\text{Panjang Jawaban} > \\text{Batas Kata Maksimal} \\implies \\text{Skor Mutlak } = 0
@@ -3073,7 +3076,7 @@ $$
 
 \`\`\`mermaid
 flowchart TD
-    S1["Langkah 1: Garis Bawahi Pertanyaan Inti<br>(Bukan Hanya Opsi A, B, C)"] --> S2["Langkah 2: Pasang Filter 'Sanggahan & Konsensus'<br>(Dengarkan Kata Penanda: However, Actually, But)"]
+    S1["Langkah 1: Garis Bawahi Pertanyaan Inti<br>(Bukan Hanya Opsi A, B, C)"] --> S2["Langkah 2: Pasang Filter Sanggahan & Konsensus<br>(Dengarkan Kata Penanda: However, Actually, But)"]
     S2 --> S3["Langkah 3: Cocokkan Ide Parafrase<br>(Pilih Opsi Berdasarkan Kesamaan Arti, Bukan Kesamaan Kata)"]
 \`\`\`
 
@@ -3152,9 +3155,9 @@ Jangan hanya melihat peta dengan mata secara pasif. Penguji berbicara dengan kec
 
 \`\`\`mermaid
 flowchart LR
-    A["Letakkan Ujung Pensil di 'You Are Here' / Pintu Masuk"] --> B["Gerakkan Ujung Pensil Sesuai Langkah Pembicara<br>('Walk through the foyer...')"]
-    B --> C["Belok Sesuai Instruksi<br>('Take the first turning on the right...')"]
-    C --> D["Berhenti di Depan Fasilitas<br>('...and you will find it opposite the cafe')"]
+    A["Letakkan Ujung Pensil di Titik You Are Here / Pintu Masuk"] --> B["Gerakkan Ujung Pensil Sesuai Rute Pembicara<br>(Walk through the foyer...)"]
+    B --> C["Belok Sesuai Instruksi<br>(Take the first turning on the right...)"]
+    C --> D["Berhenti di Depan Fasilitas<br>(...and you will find it opposite the cafe)"]
     D --> E["Kunci Huruf di Titik Tersebut"]
 \`\`\`
 
