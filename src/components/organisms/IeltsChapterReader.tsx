@@ -4,6 +4,8 @@ import {
   FaArrowLeft,
   FaArrowRight,
   FaGraduationCap,
+  FaCircleCheck,
+  FaRegCircleCheck,
 } from 'react-icons/fa6';
 import { IeltsChapter } from '@/types/ielts';
 import MarkdownViewer from '@/components/atoms/MarkdownViewer';
@@ -15,10 +17,23 @@ interface IeltsChapterReaderProps {
   hasPrev: boolean;
   hasNext: boolean;
   onMappingClick?: (mappingId: string) => void;
+  isCompleted?: boolean;
+  onToggleComplete?: () => void;
+  onCompleteAndNext?: () => void;
 }
 
 export const IeltsChapterReader: React.FC<IeltsChapterReaderProps> = memo(
-  ({ chapter, onPrevChapter, onNextChapter, hasPrev, hasNext, onMappingClick }) => {
+  ({
+    chapter,
+    onPrevChapter,
+    onNextChapter,
+    hasPrev,
+    hasNext,
+    onMappingClick,
+    isCompleted = false,
+    onToggleComplete,
+    onCompleteAndNext,
+  }) => {
     return (
       <article
         className='flex flex-col gap-5 rounded-2xl border p-4 sm:p-7 shadow-sm'
@@ -30,33 +45,56 @@ export const IeltsChapterReader: React.FC<IeltsChapterReaderProps> = memo(
       >
         {/* Chapter Header Card */}
         <div className='flex flex-col gap-3 pb-4 border-b' style={{ borderColor: 'var(--border)' }}>
-          <div className='flex flex-wrap items-center gap-2'>
-            <span className='rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-400 px-2 py-0.5 text-xs font-bold'>
-              Modul {chapter.moduleNumber}
-            </span>
-            <span
-              className='rounded-md px-2 py-0.5 text-xs font-semibold uppercase'
-              style={{
-                background: 'var(--secondary)',
-                color: 'var(--secondary-foreground)',
-              }}
-            >
-              {chapter.itemType}
-            </span>
-            {chapter.duration && (
+          <div className='flex items-center justify-between gap-3 flex-wrap'>
+            {/* Meta Tags Row */}
+            <div className='flex flex-wrap items-center gap-2'>
+              <span className='rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-400 px-2 py-0.5 text-xs font-bold'>
+                Modul {chapter.moduleNumber}
+              </span>
               <span
-                className='rounded-md px-2 py-0.5 text-xs font-medium'
+                className='rounded-md px-2 py-0.5 text-xs font-semibold uppercase'
                 style={{
                   background: 'var(--secondary)',
                   color: 'var(--secondary-foreground)',
                 }}
               >
-                {chapter.duration}
+                {chapter.itemType}
               </span>
+              {chapter.duration && (
+                <span
+                  className='rounded-md px-2 py-0.5 text-xs font-medium'
+                  style={{
+                    background: 'var(--secondary)',
+                    color: 'var(--secondary-foreground)',
+                  }}
+                >
+                  {chapter.duration}
+                </span>
+              )}
+              <span className='rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 text-xs font-bold'>
+                IELTS Band 7+
+              </span>
+            </div>
+
+            {/* Top Completion Toggle Button */}
+            {onToggleComplete && (
+              <button
+                onClick={onToggleComplete}
+                className={`btn-compact flex items-center gap-1.5 rounded-xl border px-3 py-1.5 text-xs font-semibold transition-all active:scale-95 ${
+                  isCompleted
+                    ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/40 hover:bg-emerald-500/25'
+                    : 'bg-secondary text-secondary-foreground border-border hover:bg-muted'
+                }`}
+                title={isCompleted ? 'Klik untuk membatalkan status selesai' : 'Tandai bab ini sudah selesai dipelajari'}
+              >
+                {isCompleted ? (
+                  <FaCircleCheck className='h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400' />
+                ) : (
+                  <FaRegCircleCheck className='h-3.5 w-3.5 text-muted-foreground' />
+                )}
+                <span>{isCompleted ? 'Selesai Dibaca ✓' : 'Tandai Selesai'}</span>
+              </button>
             )}
-            <span className='rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 text-xs font-bold'>
-              IELTS Band 7+
-            </span>
           </div>
 
           <h1 className='text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground'>
@@ -104,8 +142,11 @@ export const IeltsChapterReader: React.FC<IeltsChapterReaderProps> = memo(
           />
         </div>
 
-        {/* Bottom Pagination */}
-        <div className='flex items-center justify-between pt-4 border-t' style={{ borderColor: 'var(--border)' }}>
+        {/* Bottom Pagination & Completion Actions */}
+        <div
+          className='flex items-center justify-between pt-4 border-t gap-2 flex-wrap sm:flex-nowrap'
+          style={{ borderColor: 'var(--border)' }}
+        >
           <button
             onClick={onPrevChapter}
             disabled={!hasPrev}
@@ -115,6 +156,38 @@ export const IeltsChapterReader: React.FC<IeltsChapterReaderProps> = memo(
             <FaArrowLeft className='h-3 w-3' />
             <span>Bab Sebelumnya</span>
           </button>
+
+          {/* Center Completion Controls */}
+          <div className='flex items-center gap-2'>
+            {onToggleComplete && (
+              <button
+                onClick={onToggleComplete}
+                className={`flex items-center gap-1.5 rounded-xl border px-3 py-2 text-xs sm:text-sm font-semibold transition-all active:scale-95 ${
+                  isCompleted
+                    ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/40 hover:bg-emerald-500/25'
+                    : 'bg-secondary text-secondary-foreground border-border hover:bg-muted'
+                }`}
+              >
+                {isCompleted ? (
+                  <FaCircleCheck className='h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400' />
+                ) : (
+                  <FaRegCircleCheck className='h-3.5 w-3.5 text-muted-foreground' />
+                )}
+                <span>{isCompleted ? 'Selesai ✓' : 'Tandai Selesai'}</span>
+              </button>
+            )}
+
+            {/* If not completed and has next chapter, offer "Selesai & Lanjut" */}
+            {!isCompleted && hasNext && onCompleteAndNext && (
+              <button
+                onClick={onCompleteAndNext}
+                className='hidden sm:flex items-center gap-1.5 rounded-xl border px-3 py-2 text-xs sm:text-sm font-semibold transition-all active:scale-95 bg-emerald-600 text-white hover:bg-emerald-700 border-emerald-700'
+              >
+                <span>Selesai & Lanjut</span>
+                <FaArrowRight className='h-3 w-3' />
+              </button>
+            )}
+          </div>
 
           <button
             onClick={onNextChapter}

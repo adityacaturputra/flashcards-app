@@ -1,11 +1,12 @@
 'use client';
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   FaArrowLeft,
   FaGraduationCap,
   FaListUl,
+  FaCircleCheck,
 } from 'react-icons/fa6';
 import { ALL_IELTS_CHAPTERS, getIeltsChapterById } from '@/data/ielts';
 import { IeltsChapter } from '@/types/ielts';
@@ -16,6 +17,7 @@ import IeltsChapterReader from '@/components/organisms/IeltsChapterReader';
 import MappingDetailModal from '@/components/molecules/MappingDetailModal';
 import ErrorBoundary from '@/components/atoms/ErrorBoundary';
 import { APP_ROUTES } from '@/constants/routes';
+import useIeltsProgress from '@/hooks/useIeltsProgress';
 
 export default function IeltsPage() {
   const router = useRouter();
@@ -25,6 +27,20 @@ export default function IeltsPage() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState<boolean>(false);
   const [activeMappingItem, setActiveMappingItem] = useState<MappingItem | null>(null);
+
+  const hasAppliedInitialChapterRef = useRef<boolean>(false);
+
+  // Hook connecting progress state and MongoDB cloud sync
+  const {
+    completedChapterIds,
+    lastReadChapterId,
+    isSyncing,
+    toggleComplete,
+    markComplete,
+    setLastRead,
+    isCompleted,
+    overallStats,
+  } = useIeltsProgress();
 
   const handleOpenMappingModal = (mappingIdOrSearch: string) => {
     // 1. Try exact match by ID
@@ -51,6 +67,7 @@ export default function IeltsPage() {
       const chParam = params.get('chapter');
       if (chParam && ALL_IELTS_CHAPTERS.some((c) => c.id === chParam)) {
         setSelectedChapterId(chParam);
+        hasAppliedInitialChapterRef.current = true;
       }
       const mappingParam = params.get('mapping');
       if (mappingParam) {
@@ -58,6 +75,16 @@ export default function IeltsPage() {
       }
     }
   }, []);
+
+  // When lastReadChapterId arrives from cache/database and no explicit ?chapter was in URL, resume it
+  useEffect(() => {
+    if (!hasAppliedInitialChapterRef.current && lastReadChapterId) {
+      if (ALL_IELTS_CHAPTERS.some((c) => c.id === lastReadChapterId)) {
+        setSelectedChapterId(lastReadChapterId);
+        hasAppliedInitialChapterRef.current = true;
+      }
+    }
+  }, [lastReadChapterId]);
 
   // Lock body scroll when mobile drawer is open
   useEffect(() => {
@@ -86,6 +113,13 @@ export default function IeltsPage() {
     return getIeltsChapterById(selectedChapterId) || ALL_IELTS_CHAPTERS[0];
   }, [selectedChapterId]);
 
+  // Record last read whenever activeChapter changes
+  useEffect(() => {
+    if (activeChapter?.id) {
+      setLastRead(activeChapter.id);
+    }
+  }, [activeChapter?.id, setLastRead]);
+
   const currentIndex = useMemo(() => {
     return ALL_IELTS_CHAPTERS.findIndex((c) => c.id === activeChapter.id);
   }, [activeChapter]);
@@ -107,10 +141,24 @@ export default function IeltsPage() {
     }
   };
 
+  const handleCompleteAndNext = () => {
+    markComplete(activeChapter.id);
+    if (hasNext) {
+      handleNext();
+    }
+  };
+
   const handleSelectChapter = (ch: IeltsChapter) => {
     setSelectedChapterId(ch.id);
     setIsMobileDrawerOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleResumeLastRead = () => {
+    if (lastReadChapterId && ALL_IELTS_CHAPTERS.some((c) => c.id === lastReadChapterId)) {
+      setSelectedChapterId(lastReadChapterId);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -162,20 +210,43 @@ export default function IeltsPage() {
                 </div>
               </div>
 
-              {/* Right: Mobile Curriculum Toggle (strictly hidden on desktop lg) */}
-              <div className='flex lg:hidden items-center gap-1.5 shrink-0'>
-                <button
-                  onClick={() => setIsMobileDrawerOpen(true)}
-                  className='btn-compact flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-xs font-semibold transition-all hover:bg-muted active:scale-95'
-                  style={{
-                    background: 'var(--secondary)',
-                    color: 'var(--secondary-foreground)',
-                    borderColor: 'var(--border)',
-                  }}
-                >
-                  <FaListUl className='h-3 w-3' />
-                  <span>Daftar Bab</span>
-                </button>
+              {/* Center/Right: Overall Progress Header Badge */}
+              <div className='flex items-center gap-2 shrink-0'>
+                {overallStats.completedCount > 0 && (
+                  <div
+                    className='hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold'
+                    style={{
+                      background: 'var(--secondary)',
+                      color: 'var(--foreground)',
+                      border: '1px solid var(--border)',
+                    }}
+                    title={`${overallStats.completedCount} dari ${overallStats.totalCount} bab selesai dipelajari`}
+                  >
+                    <FaCircleCheck className='h-3 w-3 text-emerald-500' />
+                    <span>
+                      {overallStats.completedCount}/{overallStats.totalCount}
+                    </span>
+                    <span className='text-muted-foreground text-[10px]'>
+                      ({overallStats.percentage}%)
+                    </span>
+                  </div>
+                )}
+
+                {/* Mobile Curriculum Toggle (strictly hidden on desktop lg) */}
+                <div className='hidden max-lg:flex'>
+                  <button
+                    onClick={() => setIsMobileDrawerOpen(true)}
+                    className='btn-compact flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-xs font-semibold transition-all hover:bg-muted active:scale-95'
+                    style={{
+                      background: 'var(--secondary)',
+                      color: 'var(--secondary-foreground)',
+                      borderColor: 'var(--border)',
+                    }}
+                  >
+                    <FaListUl className='h-3 w-3' />
+                    <span>Daftar Bab</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -216,6 +287,11 @@ export default function IeltsPage() {
                   onSearchChange={setSearchQuery}
                   isDrawer={true}
                   onCloseDrawer={() => setIsMobileDrawerOpen(false)}
+                  completedChapterIds={completedChapterIds}
+                  lastReadChapterId={lastReadChapterId}
+                  overallStats={overallStats}
+                  onResumeLastRead={handleResumeLastRead}
+                  isSyncing={isSyncing}
                 />
               </motion.div>
             </div>
@@ -232,12 +308,17 @@ export default function IeltsPage() {
                 onSelectChapter={handleSelectChapter}
                 searchQuery={searchQuery}
                 onSearchChange={setSearchQuery}
+                completedChapterIds={completedChapterIds}
+                lastReadChapterId={lastReadChapterId}
+                overallStats={overallStats}
+                onResumeLastRead={handleResumeLastRead}
+                isSyncing={isSyncing}
               />
             </div>
 
             {/* Main Chapter Reader (8 cols) */}
             <div className='lg:col-span-8 xl:col-span-8'>
-              {activeChapter? (
+              {activeChapter ? (
                 <IeltsChapterReader
                   chapter={activeChapter}
                   onPrevChapter={handlePrev}
@@ -245,6 +326,9 @@ export default function IeltsPage() {
                   hasPrev={hasPrev}
                   hasNext={hasNext}
                   onMappingClick={handleOpenMappingModal}
+                  isCompleted={isCompleted(activeChapter.id)}
+                  onToggleComplete={() => toggleComplete(activeChapter.id)}
+                  onCompleteAndNext={handleCompleteAndNext}
                 />
               ) : (
                 <div className='rounded-2xl border p-8 text-center bg-card' style={{ borderColor: 'var(--border)' }}>
