@@ -63,5 +63,10 @@
     "_id": "6901a0010000000000000010",
     "name": "Academic Word List (AWL)",
     "description": "Averil Coxhead's 570 academic word families essential for IELTS Band 7.0–8.5+ and university-level study"
+  },
+  {
+    "_id": "6901a0010000000000000011",
+    "name": "Spatial Prepositions & Map Labelling",
+    "description": "High-frequency spatial prepositions, directional navigation, and layout vocabulary essential for IELTS Listening Section 2 map labelling and spatial orientation"
   }
 ]

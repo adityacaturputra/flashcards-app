@@ -1,5 +1,138 @@
 [
   {
+    "_id": "6904a0010000000000000001",
+    "question": "Adjacent to / Next to",
+    "answer": "### Definisi & Makna\n**Bersebelahan persis**, berada tepat menempel di samping sesuatu tanpa ada gedung, ruangan, atau celah pemisah (*immediately adjoining / sharing a wall*).\n\n> *\"Adjoining, immediately next to, or sharing a common boundary or wall without any intervening space or structure.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:50:52.258Z",
+    "categories": [
+      "6901a0010000000000000011"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Prepositional Phrase · Spatial Locative",
+      "Pronunciation (IPA)": "/əˈdʒeɪ.sənt tuː/ · /nekst tuː/ — Ucapkan \"uh-JAY-sənt\" (tekanan suku kata kedua) & \"next to\"!",
+      "Pasangan & Distingsi Spasial": "• **Adjacent to**: Istilah formal bernilai leksikal tinggi. Menandakan dua gedung atau ruangan yang menempel satu dinding atau bersinggungan langsung tanpa ada gedung pemisah di antaranya.\n• **Next to**: Istilah umum sehari-hari yang searti (berada tepat di sampingnya).",
+      "Kolokasi Emas IELTS": "• immediately adjacent to the main entrance\n• situated adjacent to the reference library\n• directly next to the cloakroom\n• adjacent parking facilities",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe cafeteria is beside the library room.\n\n✅ **Academic IELTS Listening Script (Band 8.0+)**:\nThe cafeteria is situated immediately adjacent to the reference library, accessible directly through the internal glass corridor.",
+      "Tips Mengingat & Rumus Saku": "Akar Latin \"ad-\" (ke arah) + \"jacere\" (berbaring). Ingat: \"adjacent\" = MENEMPEL SATU DINDING. Jika di denah ada gang atau celah bangunan pemisah, pembicara IELTS tidak menggunakan \"adjacent to\", melainkan \"across from\" atau \"separated by a walkway\".",
+      "Rumus Saku Map Labelling": "💡 **Selalu Berdiri Menghadap Arah Langkah**: Saat pembicara berkata \"turn left\", bayangkan tubuh Anda sedang melangkah maju ke depan di peta mengikuti rute, sehingga posisi \"kiri\" dan \"kanan\" Anda selalu sinkron dengan perspektif pembicara, bukan sekadar sisi kiri kertas!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000002",
+    "question": "Opposite / Facing",
+    "answer": "### Definisi & Makna\n**Berhadapan / Berseberangan langsung**, berada di seberang melintasi jalan, lorong, atau koridor dengan posisi saling memandang/berhadapan muka (*front towards front*).\n\n> *\"Located across a road, corridor, or space directly in front of and facing another building or object.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:50:52.258Z",
+    "categories": [
+      "6901a0010000000000000011"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Preposition / Spatial Adjective · Spatial Locative",
+      "Pronunciation (IPA)": "/ˈɒp.ə.zɪt/ (US: /ˈɑː.pə.zɪt/) · /ˈfeɪ.sɪŋ/ — Ucapkan \"OP-uh-zit\" dan \"FAY-sing\"!",
+      "Pasangan & Distingsi Spasial": "• **Opposite**: Berada persis di sisi seberang jalur (menyeberang jalan atau lorong).\n• **Facing**: Berorientasi menatap langsung ke arah objek tertentu. Bangunan A 'facing' Bangunan B berarti pintu depan/fasad Bangunan A menghadap ke Bangunan B.",
+      "Kolokasi Emas IELTS": "• directly opposite the ticket booth\n• facing the central plaza\n• situated on the opposite side of the road\n• facing northwards towards the lake",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe gift shop is across the street looking at the museum door.\n\n✅ **Academic IELTS Listening Script (Band 8.0+)**:\nPositioned directly opposite the administrative office, facing the main courtyard, stands the newly refurbished gift shop.",
+      "Tips Mengingat & Rumus Saku": "Ingat: \"Opposite\" = seberang yang berhadapan simetris. Beda dengan \"across\" biasa yang hanya menyeberang, \"opposite\" selalu mengunci posisi berhadapan muka secara langsung melintasi jalan atau lorong.",
+      "Rumus Saku Map Labelling": "💡 **Selalu Berdiri Menghadap Arah Langkah**: Saat pembicara berkata \"turn left\", bayangkan tubuh Anda sedang melangkah maju ke depan di peta mengikuti rute, sehingga posisi \"kiri\" dan \"kanan\" Anda selalu sinkron dengan perspektif pembicara, bukan sekadar sisi kiri kertas!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000003",
+    "question": "At the far end / At the bottom",
+    "answer": "### Definisi & Makna\n**Di ujung paling jauh / Di bagian paling belakang (bawah)**, berada di titik terjauh sebuah koridor/lorong lurus, atau bagian paling belakang/bawah kawasan denah peta.\n\n> *\"At the most distant point of a corridor or path, or situated in the rearmost or lowest portion of a map or layout.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:50:52.258Z",
+    "categories": [
+      "6901a0010000000000000011"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Prepositional Phrase · Spatial Locative",
+      "Pronunciation (IPA)": "/æt ðə fɑːr end/ · /æt ðə ˈbɒt.əm/ (US: /ˈbɑː.t̬əm/) — Tekanan pada \"far\" dan suku kata pertama \"BOT-tom\"!",
+      "Pasangan & Distingsi Spasial": "• **At the far end**: Di titik paling ujung/terjauh saat menyusuri lorong atau koridor (tidak bisa berjalan lurus lebih jauh lagi).\n• **At the bottom**: Di sisi bawah kertas peta (sering mewakili bagian selatan atau area parkir/pintu masuk awal kedatangan).",
+      "Kolokasi Emas IELTS": "• at the far end of the hallway on your right\n• located right at the far end of the corridor\n• situated at the bottom of the map near the main gate\n• towards the far end of the exhibition pavilion",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nWalk to the end of the hall and there is the conference room.\n\n✅ **Academic IELTS Listening Script (Band 8.0+)**:\nIf you proceed straight down the east wing, the conference hall is located right at the far end, just past the fire escape.",
+      "Tips Mengingat & Rumus Saku": "\"Far end\" = ujung mentok koridor/lorong tempat langkah Anda berakhir. \"Bottom\" = sisi paling bawah kertas denah peta Anda.",
+      "Rumus Saku Map Labelling": "💡 **Selalu Berdiri Menghadap Arah Langkah**: Saat pembicara berkata \"turn left\", bayangkan tubuh Anda sedang melangkah maju ke depan di peta mengikuti rute, sehingga posisi \"kiri\" dan \"kanan\" Anda selalu sinkron dengan perspektif pembicara, bukan sekadar sisi kiri kertas!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000004",
+    "question": "In the corner / At the intersection",
+    "answer": "### Definisi & Makna\n**Di sudut ruangan / Di persimpangan jalan**, berada di pojok pertemuan dua dinding/tepi kawasan atau di titik temu bertemunya dua atau lebih jalur jalan raya.\n\n> *\"Located at the angle where two walls or boundaries meet, or at the crossing junction where two roads intersect.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:50:52.258Z",
+    "categories": [
+      "6901a0010000000000000011"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Prepositional Phrase · Spatial Locative",
+      "Pronunciation (IPA)": "/ɪn ðə ˈkɔː.nər/ (US: /ˈkɔːr.nɚ/) · /æt ði ˌɪn.təˈsek.ʃən/ (US: /ˌɪn.t̬ɚˈsek.ʃən/) — Tekanan \"COR-ner\" & \"in-ter-SEC-tion\"!",
+      "Pasangan & Distingsi Spasial": "• **In the corner**: Di sudut/pojok bagian dalam suatu ruangan atau kawasan denah (misal: top-left corner / bottom-right corner).\n• **At the intersection**: Di perempatan atau persimpangan tempat dua jalan saling bersilangan (*crossroads/road junction*).",
+      "Kolokasi Emas IELTS": "• tucked in the top-right corner of the floor plan\n• located at the intersection of Market Street and King's Way\n• in the north-west corner of the compound\n• approach the busy pedestrian intersection",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe ATM is in the place where two roads meet in the corner.\n\n✅ **Academic IELTS Listening Script (Band 8.0+)**:\nSituated conveniently at the intersection of the two main thoroughfares, tucked right in the north-west corner, is the currency exchange kiosk.",
+      "Tips Mengingat & Rumus Saku": "Perhatikan preposisinya: \"IN the corner\" untuk sudut dalam ruangan/peta, \"ON the corner\" untuk sudut luar persimpangan jalan, dan \"AT the intersection\" untuk titik persilangan jalurnya.",
+      "Rumus Saku Map Labelling": "💡 **Selalu Berdiri Menghadap Arah Langkah**: Saat pembicara berkata \"turn left\", bayangkan tubuh Anda sedang melangkah maju ke depan di peta mengikuti rute, sehingga posisi \"kiri\" dan \"kanan\" Anda selalu sinkron dengan perspektif pembicara, bukan sekadar sisi kiri kertas!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000005",
+    "question": "Roundabout / Junction",
+    "answer": "### Definisi & Makna\n**Bundaran jalan / Percabangan jalur**, infrastruktur lalu lintas berupa bundaran melingkar satu arah (*traffic circle*) atau titik percabangan pertemuan jalur jalan (*junction / T-junction*).\n\n> *\"A circular road junction where traffic moves continuously around a central island, or a place where two or more roads or railway lines meet and diverge.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:50:52.258Z",
+    "categories": [
+      "6901a0010000000000000011"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun · Urban Infrastructure & Navigation",
+      "Pronunciation (IPA)": "/ˈraʊnd.ə.baʊt/ · /ˈdʒʌŋk.ʃən/ — Ucapkan \"ROUND-uh-bout\" & \"JUNK-shən\"!",
+      "Pasangan & Distingsi Spasial": "• **Roundabout**: Bundaran lalu lintas tempat pengemudi masuk dan mengambil pintu keluar tertentu (*take the first/second/third exit*).\n• **Junction**: Titik temu atau percabangan jalur secara umum (bisa T-junction, Y-junction, atau persilangan jalan raya).",
+      "Kolokasi Emas IELTS": "• take the second exit off the roundabout\n• approach a major motorway junction\n• turn right at the T-junction\n• immediately after the roundabout on your left",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nDrive around the road circle and turn at the road fork.\n\n✅ **Academic IELTS Listening Script (Band 8.0+)**:\nUpon reaching the central roundabout, take the second exit, and proceed approximately fifty metres past the railway junction to find the visitor car park.",
+      "Tips Mengingat & Rumus Saku": "Rumus Bundaran IELTS: Saat mendengar instruksi \"take the second exit at the roundabout\", hitung pintu keluar secara searah jarum jam (*clockwise*) terhitung dari titik jalan tempat Anda masuk ke bundaran!",
+      "Rumus Saku Map Labelling": "💡 **Selalu Berdiri Menghadap Arah Langkah**: Saat pembicara berkata \"turn left\", bayangkan tubuh Anda sedang melangkah maju ke depan di peta mengikuti rute, sehingga posisi \"kiri\" dan \"kanan\" Anda selalu sinkron dengan perspektif pembicara, bukan sekadar sisi kiri kertas!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000006",
+    "question": "Clockwise vs Counter-clockwise",
+    "answer": "### Definisi & Makna\n**Searah jarum jam vs Berlawanan arah jarum jam**, arah perputaran melingkar ke arah kanan (mengikuti putaran jarum jam) versus perputaran ke arah kiri (*anticlockwise*).\n\n> *\"Moving in a circle in the same direction as the hands of a clock (to the right) versus moving in the opposite direction (to the left / anticlockwise).\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:50:52.258Z",
+    "categories": [
+      "6901a0010000000000000011"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Directional Adverb & Adjective",
+      "Pronunciation (IPA)": "/ˈklɒk.waɪz/ vs. /ˌkaʊn.tərˈklɒk.waɪz/ (UK: /ˌæn.tiˈklɒk.waɪz/) — Perhatikan variasi British: \"anticlockwise\"!",
+      "Pasangan & Distingsi Spasial": "• **Clockwise**: Berputar searah jarum jam (dari atas bergerak ke kanan, bawah, lalu kiri).\n• **Counter-clockwise (US) / Anticlockwise (UK)**: Berlawanan arah jarum jam (dari atas bergerak ke kiri, bawah, lalu kanan). Audio British Council dalam tes IELTS hampir selalu mengucapkan *anticlockwise*!",
+      "Kolokasi Emas IELTS": "• follow the circular path clockwise\n• proceed anticlockwise around the lake\n• tour the exhibition galleries in a clockwise direction\n• a clockwise circular route",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nWalk around the park following the clock hands.\n\n✅ **Academic IELTS Listening Script (Band 8.0+)**:\nVisitors are strongly encouraged to tour the botanical sanctuary in a clockwise progression, starting from the orchid conservatory and circling back to the heritage fountain.",
+      "Tips Mengingat & Rumus Saku": "Arah Jarum Jam = Putar ke KANAN. Lawan Arah = Putar ke KIRI. Hati-hati jebakan British IELTS: Rekaman audio native speaker sering menyebut \"anticlockwise\", bukan \"counter-clockwise\"!",
+      "Rumus Saku Map Labelling": "💡 **Selalu Berdiri Menghadap Arah Langkah**: Saat pembicara berkata \"turn left\", bayangkan tubuh Anda sedang melangkah maju ke depan di peta mengikuti rute, sehingga posisi \"kiri\" dan \"kanan\" Anda selalu sinkron dengan perspektif pembicara, bukan sekadar sisi kiri kertas!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000007",
+    "question": "Courtyard / Foyer",
+    "answer": "### Definisi & Makna\n**Pelataran terbuka tengah gedung / Aula lobi pintu masuk**, lapangan/taman terbuka tanpa atap di tengah-tengah kompleks bangunan atau aula lobi besar di balik pintu masuk utama gedung publik.\n\n> *\"An open unroofed area surrounded by the walls of a building (courtyard), or a large entrance hall/reception area inside a theatre, hotel, or public building (foyer).\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:50:52.258Z",
+    "categories": [
+      "6901a0010000000000000011"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun · Architectural Layout & Landmark",
+      "Pronunciation (IPA)": "/ˈkɔːt.jɑːd/ (US: /ˈkɔːrt.jɑːrd/) · /ˈfɔɪ.eɪ/ (US: /ˈfɔɪ.ər/ or /ˌfɔɪˈeɪ/) — \"COURT-yard\" & British: \"FOY-ay\"!",
+      "Pasangan & Distingsi Spasial": "• **Courtyard**: Area luar ruangan (*outdoor*) terbuka yang dikelilingi oleh bangunan/tembok gedung di keempat sisinya.\n• **Foyer**: Ruang tunggu/lobi luas di dalam ruangan (*indoor*) yang langsung dijumpai setelah melewati pintu masuk utama gedung publik (misal teater, concert hall, museum).",
+      "Kolokasi Emas IELTS": "• gather in the central courtyard\n• meet in the theatre foyer\n• paved open-air courtyard\n• spacious reception foyer adjacent to the box office",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe students gathered in the middle open space and front hall.\n\n✅ **Academic IELTS Listening Script (Band 8.0+)**:\nAttendees should convene in the spacious ground-floor foyer before guides escort them through the glass colonnade into the central courtyard.",
+      "Tips Mengingat & Rumus Saku": "Courtyard = Court (lapangan) + Yard (halaman) ➔ Halaman di tengah bangunan (outdoor). Foyer = Kata serapan Prancis (lafal UK: /foy-ay/) ➔ Ruang lobi penerima tamu di depan gedung (indoor). Jangan tertukar: Courtyard tidak beratap, Foyer beratap di dalam gedung!",
+      "Rumus Saku Map Labelling": "💡 **Selalu Berdiri Menghadap Arah Langkah**: Saat pembicara berkata \"turn left\", bayangkan tubuh Anda sedang melangkah maju ke depan di peta mengikuti rute, sehingga posisi \"kiri\" dan \"kanan\" Anda selalu sinkron dengan perspektif pembicara, bukan sekadar sisi kiri kertas!"
+    }
+  },
+  {
     "_id": "6903a001000048e9a26511e0",
     "question": "Analyse",
     "answer": "### Definisi & Makna\n**Menganalisis**, memeriksa secara mendalam bagian-bagian penyusun suatu data, teks, atau fenomena untuk menjelaskan dan menafsirkannya.\n\n> *\"To examine something methodically and in detail in order to explain and interpret it.\"*",
