@@ -8,9 +8,9 @@ Dokumen ini melacak status pengayaan bertahap (*batching progress*) seluruh flas
 
 | Metrik | Angka Saat Ini | Target Total | Persentase |
 | :--- | :--- | :--- | :--- |
-| **Total Kartu di Repositori** | 3.481 | 3.481 | 100% |
-| **Kartu Standar Emas Lengkap** | 50 | 3.481 | Sedang Berjalan (Batch 2) |
-| **Kartu Format Minimal (Legacy)** | 3.431 | 0 | 98.6% |
+| **Total Kartu di Repositori** | 3.484 | 3.484 | 100% |
+| **Kartu Standar Emas Lengkap** | 60 | 3.484 | Sedang Berjalan (Batch 2) |
+| **Kartu Format Minimal (Legacy)** | 3.424 | 0 | 98.3% |
 | **Jumlah Kategori Terdaftar** | 13 Kategori | 13 Kategori | 100% |
 
 ---
@@ -19,9 +19,9 @@ Dokumen ini melacak status pengayaan bertahap (*batching progress*) seluruh flas
 
 | No | Kategori | ID Kategori | Total Kartu | Status Progres |
 | :---: | :--- | :--- | :---: | :--- |
-| 1 | **Regular Verbs** | `6886ee8e75b4418c47a47d9b` | 164 | 🟡 Batch 2 (In Progress - 20 Enriched) |
-| 2 | **Irregular Verbs** | `68863c76d911399cd3fb3a4c` | 138 | 🟡 Batch 2 (In Progress - 18 Enriched) |
-| 3 | **Academic Word List (AWL)** | `6901a0010000000000000010` | 570* | 🟡 Batch 2 (In Progress - 12 Enriched) |
+| 1 | **Regular Verbs** | `6886ee8e75b4418c47a47d9b` | 164 | 🟡 Batch 2 (In Progress - 24 Enriched) |
+| 2 | **Irregular Verbs** | `68863c76d911399cd3fb3a4c` | 138 | 🟡 Batch 2 (In Progress - 21 Enriched) |
+| 3 | **Academic Word List (AWL)** | `6901a0010000000000000010` | 570* | 🟡 Batch 2 (In Progress - 15 Enriched) |
 | 4 | **Irregular Plurals & Nouns** | `6901a0010000000000000009` | 20 | 🟢 20 Selesai (Format Lengkap) |
 | 5 | **Action Verbs & Expressions** | `6901a0010000000000000007` | 53 | ⚪ Antrean Batch 3 |
 | 6 | **Work, Career & Technology** | `6901a0010000000000000006` | 78 | ⚪ Antrean Batch 3 |
@@ -99,17 +99,28 @@ Dokumen ini melacak status pengayaan bertahap (*batching progress*) seluruh flas
   - [x] `Kneel` (Irregular Verb) — `6886e6bfbc69eb9d8a80b831`
   - [x] `Bite` (Irregular Verb) — `6886e6c07eae4adf976c37a6`
   - [x] `Blow` (Irregular Verb) — `6886e6c079914fc749e556ff`
-- **Bagian 5 (10 Kartu - Segera 🟡)**:
-  - [ ] `Environment` (AWL Sublist 1)
-  - [ ] `Estimate` (AWL Sublist 1)
-  - [ ] `Evident` (AWL Sublist 1)
-  - [ ] `Train` (Regular Verb)
-  - [ ] `Confirm` (Regular Verb)
-  - [ ] `Stop` (Regular Verb)
-  - [ ] `Report` (Regular Verb)
-  - [ ] `Sing` (Irregular Verb)
-  - [ ] `Drink` (Irregular Verb)
-  - [ ] `Choose` (Irregular Verb)
+- **Bagian 5 (10 Selesai 🟢)**:
+  - [x] `Environment` (AWL Sublist 1 · Noun) — `6903a0010000b1c2d3e4f5a1`
+  - [x] `Estimate` (AWL Sublist 1 · Verb & Noun) — `6903a0010000b2c3d4e5f6a2`
+  - [x] `Evident` (AWL Sublist 1 · Adjective) — `6903a0010000b3c4d5e6f7a3`
+  - [x] `Train` (Regular Verb) — `6886eedbb431e0c2ecf5d268`
+  - [x] `Confirm` (Regular Verb) — `6886eedbf4c0e813708d18a6`
+  - [x] `Stop` (Regular Verb) — `6886eedbfa70dabefb269a02`
+  - [x] `Report` (Regular Verb) — `6886eedc04818f58b0815e0d`
+  - [x] `Sing` (Irregular Verb) — `6886e6bfe07ef0f8d2122d62`
+  - [x] `Drink` (Irregular Verb) — `6886e6c34666c95768e2c5a5`
+  - [x] `Choose` (Irregular Verb) — `6886e6c086530b4cea2182a9`
+- **Bagian 6 (10 Kartu - Segera 🟡)**:
+  - [ ] `Export` (AWL Sublist 1)
+  - [ ] `Factor` (AWL Sublist 1)
+  - [ ] `Finance` (AWL Sublist 1)
+  - [ ] `Satisfy` (Regular Verb)
+  - [ ] `Dance` (Regular Verb)
+  - [ ] `Close` (Regular Verb)
+  - [ ] `Drop` (Regular Verb)
+  - [ ] `Draw` (Irregular Verb)
+  - [ ] `Drive` (Irregular Verb)
+  - [ ] `Eat` (Irregular Verb)
 
 ### 📌 Batch 3: AWL Sublist 1 & 2 (120 Kata)
 - Mengintegrasikan kata-kata akademis seperti `Approach`, `Area`, `Assess`, `Assume`, `Authority`, dll.
