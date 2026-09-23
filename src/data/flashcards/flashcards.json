@@ -1,5 +1,344 @@
 [
   {
+    "_id": "6904a0010000000000000014",
+    "question": "Flow-Chart Completion (Sequential Signposts)",
+    "answer": "### Definisi & Taktik Navigasi\n**Taktik Diagram Alur & Penanda Sekuensial**, strategi mengikuti kronologi proses langkah-demi-langkah pada soal IELTS Listening berformat *flow-chart* melalui 4 fase penanda transisi (*Tahap Awal, Tahap Lanjutan, Tahap Prasyarat, dan Tahap Akhir*).\n\n> *\"A chronological listening comprehension strategy for tracking step-by-step process diagrams, ensuring seamless vertical navigation from top initiation to bottom final outcome.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Strategic Framework · IELTS Listening & Writing Task 1",
+      "Pronunciation (IPA)": "/fləʊ tʃɑːt kəmˈpliː.ʃən/ — Tekanan pada \"FLOW-chart\"!",
+      "4 Tahapan Sekuensial Flow-Chart": "1. **Tahap Awal**: Menandakan awal siklus proses dari kotak paling atas (*Initially, in the first phase, to begin with, the preliminary step*).\n2. **Tahap Lanjutan**: Menandakan perpindahan turun ke kotak tepat di bawahnya (*Subsequently, following this, once that's completed, the next phase involves*).\n3. **Tahap Prasyarat**: Menunjukkan syarat/verifikasi yang wajib tuntas sebelum langkah berikutnya dieksekusi (*Prior to, before proceeding, provided that, once verified*).\n4. **Tahap Akhir**: Menandakan audio telah mencapai kotak dasar/hasil akhir (*Ultimately, the final outcome, in the last stage, concludes with*).",
+      "Efek Navigasi Visual Mata & Pensil": "Pada lembar soal, kotak dihubungkan oleh anak panah vertikal (↓) atau melingkar (↻). Telinga Anda harus mengunci kata transisi untuk memindahkan ujung pensil ke kotak berikutnya secara real-time.",
+      "Awas Jebakan Lompatan Mundur (Backward Check)": "Dosen sering menyebut: *\"Before proceeding to packaging, the mixture is pasteurised\"*. Jangan terkecoh menulis kata *packaging* terlebih dahulu karena *pasteurised* adalah langkah prasyarat yang terjadi SEBELUMNYA!",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Ingat: Setiap panah di diagram mewakili SATU KATA TRANSISI SEKUENSIAL di audio. Dengarkan kata transisi untuk berpindah kotak!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000015",
+    "question": "Initially",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Pada awalnya / Pada permulaan proses**, penanda adverbial kronologis untuk mengumumkan langkah pertama atau titik keberangkatan dari keseluruhan siklus produksi atau penelitian.\n\n> *\"At the beginning; indicating the inaugural step or baseline state in a chronological process.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adverb · Chronological Sequence Marker",
+      "Pronunciation (IPA)": "/ɪˈnɪʃ.əl.i/ — Tekanan pada suku kata kedua \"ni\" (/ˈnɪʃ/)!",
+      "Urutan Tahapan": "Tahap Awal (Initial Stage) · Kotak Paling Atas",
+      "Efek Navigasi di Audio": "Menandakan dimulainya siklus proses dari kotak paling atas di lembar diagram alur (*flow-chart*).",
+      "Frasa Ekuivalen Tahap Awal": "• In the first phase\n• To begin with\n• At the onset\n• First and foremost",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nFirst, workers wash the plastic bottles.\n\n✅ **Academic Process Script (Band 8.0+)**:\nInitially, reclaimed plastic containers undergo rigorous sanitisation in thermal wash units to eliminate surface contaminants.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Akar kata \"initial\" (huruf pertama/permulaan). Begitu mendengar \"Initially\", pastikan mata Anda berada di kotak nomor 1 paling atas!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000016",
+    "question": "In the first phase",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Pada fase pertama**, frasa preposisional formal yang menandai segmen operasi terdepan dalam proses manufaktur, eksperimen sains, atau alur kerja terstruktur.\n\n> *\"During the opening or introductory stage of a multi-stage procedural sequence.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Prepositional Phrase · Procedural Phase Marker",
+      "Pronunciation (IPA)": "/ɪn ðə fɜːst feɪz/ — Lafal \"phase\" diakhiri desis lembut /z/ (/feɪz/)!",
+      "Urutan Tahapan": "Tahap Awal (Initial Stage) · Kotak Paling Atas",
+      "Efek Navigasi di Audio": "Mengunci kelompok sub-langkah pertama dalam diagram bertingkat.",
+      "Frasa Ekuivalen Tahap Awal": "• During the initial stage\n• At the primary stage\n• As a first measure",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nIn step one, they collect samples from the lake.\n\n✅ **Academic Process Script (Band 8.0+)**:\nIn the first phase, limnological specimens are gathered systematically across varying benthic depths.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Kata \"phase\" menandakan proses tersebut memiliki beberapa babak besar. Fokuskan catatan pada aktivitas di fase 1."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000017",
+    "question": "To begin with",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Untuk memulai / Pertama-tama**, penanda diskursus infinitif yang menandai langkah kickoff di mana input mentah pertama kali diperkenalkan ke dalam sistem alur.\n\n> *\"As the initial point of departure in an unfolding series of operational actions.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Infinitive Phrase · Process Initiation Marker",
+      "Pronunciation (IPA)": "/tuː bɪˈɡɪn wɪð/ — Sambungan vokal-konsonan lancar: \"begin-with\"!",
+      "Urutan Tahapan": "Tahap Awal (Initial Stage) · Kotak Paling Atas",
+      "Efek Navigasi di Audio": "Sinyal pembuka audio saat pembicara mulai mendeskripsikan diagram kotak pertama.",
+      "Frasa Ekuivalen Tahap Awal": "• By way of commencement\n• To start off with\n• At the outset",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nTo start, farmers pick the ripe tea leaves.\n\n✅ **Academic Process Script (Band 8.0+)**:\nTo begin with, agricultural harvesters selectively hand-pluck tender apical buds during early morning hours.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "\"Begin\" = mulai. Jangan menunggu kata yang rumit, frasa klasik ini sering menjadi aba-aba awal ujian!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000018",
+    "question": "The preliminary step",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Langkah pendahuluan / Langkah persiapan awal**, tindakan prasyarat preparatory yang wajib dilakukan sebelum proses inti/utama dimulai (misal: kalibrasi alat, penyortiran bahan, atau sterilisasi wadah).\n\n> *\"An introductory or preparatory action taken prior to the primary operational sequence.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun Phrase · Preparatory Process Marker",
+      "Pronunciation (IPA)": "/ðə prɪˈlɪm.ɪ.nər.i step/ — Tekanan pada \"-lim-\" (/prɪˈlɪm.ɪ.nər.i/)!",
+      "Urutan Tahapan": "Tahap Awal (Initial Stage) · Kotak Persiapan / Prasyarat",
+      "Efek Navigasi di Audio": "Sering mewakili kotak kecil sebelum kotak utama nomor 1 pada flow-chart teknis.",
+      "Frasa Ekuivalen Tahap Awal": "• The preparatory phase\n• An antecedent measure\n• Prior preparation",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe first step is cleaning the machine before doing anything.\n\n✅ **Academic Process Script (Band 8.0+)**:\nThe preliminary step entails thorough ultrasonic sanitisation of surgical instruments prior to high-pressure autoclaving.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Latin \"prae-\" (sebelum) + \"limen\" (ambang pintu). Berarti langkah di depan pintu sebelum masuk ke proses utama!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000019",
+    "question": "Subsequently",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Selanjutnya / Kemudian**, kata keterangan sekuensial tingkat tinggi yang menandakan perpindahan langsung ke kotak tahap berikutnya tepat di bawahnya setelah tahap sebelumnya selesai.\n\n> *\"After a particular thing has happened; afterwards in the chronological chain of events.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adverb · Subsequent Stage Marker",
+      "Pronunciation (IPA)": "/ˈsʌb.sɪ.kwənt.li/ — Tekanan pada suku kata pertama \"SUB-se-quent-ly\"!",
+      "Urutan Tahapan": "Tahap Lanjutan (Intermediate / Progression Stage)",
+      "Efek Navigasi di Audio": "Menandakan perpindahan mata & pensil turun mengikuti panah (↓) ke kotak tepat di bawahnya.",
+      "Frasa Ekuivalen Tahap Lanjutan": "• Thereafter\n• Next in the sequence\n• Afterwards",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThen the crushed stone goes to the hot furnace.\n\n✅ **Academic Process Script (Band 8.0+)**:\nSubsequently, the pulverised aggregate is conveyed directly into a rotary kiln for calcination.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Latin \"subsequi\" (mengikuti dari belakang). Sinyal paling populer di IELTS untuk panah ke bawah!"
+    }
+  },
+  {
+    "_id": "6904a001000000000000001a",
+    "question": "Following this",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Mengikuti hal ini / Setelah langkah ini**, penanda transisi partisi yang menghubungkan tuntasnya sebuah perlakuan fisik/kimia dengan perlakuan berikutnya.\n\n> *\"Immediately after the preceding action or event within an established workflow.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Prepositional Phrase · Sequential Transition",
+      "Pronunciation (IPA)": "/ˈfɒl.əʊ.ɪŋ ðɪs/ — Rima lembut pada \"FOL-low-ing this\"!",
+      "Urutan Tahapan": "Tahap Lanjutan (Intermediate / Progression Stage)",
+      "Efek Navigasi di Audio": "Penunjuk jalan agar pensil meluncur ke kotak kalimat rumpang selanjutnya.",
+      "Frasa Ekuivalen Tahap Lanjutan": "• Upon completion of this\n• Succeeding this stage\n• Directly after this",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nAfter this, the milk is cooled in metal tanks.\n\n✅ **Academic Process Script (Band 8.0+)**:\nFollowing this thermal treatment, the pasteurised dairy liquid is rapidly chilled in refrigerated stainless-steel vats.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Kata \"this\" merujuk pada isi kotak sebelumnya. Begitu mendengar frasa ini, kotak sebelumnya sudah selesai dibahas!"
+    }
+  },
+  {
+    "_id": "6904a001000000000000001b",
+    "question": "Once that's completed",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Begitu tahap tersebut rampung**, klausa penanda gerbang waktu (*temporal gatekeeper*) yang menegaskan bahwa langkah sebelumnya telah tuntas sempurna sebelum aksi baru diizinkan berjalan.\n\n> *\"A temporal conditional marker ensuring that a prior process is fully finalised before triggering the subsequent stage.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Temporal Conjunction Clause · Workflow Gatekeeper",
+      "Pronunciation (IPA)": "/wʌns ðæts kəmˈpliː.tɪd/ — Tekanan pada \"once\" dan \"com-PLE-ted\"!",
+      "Urutan Tahapan": "Tahap Lanjutan (Intermediate / Progression Stage)",
+      "Efek Navigasi di Audio": "Mengunci transisi yang bersifat mutlak antar dua kotak proses.",
+      "Frasa Ekuivalen Tahap Lanjutan": "• Upon concluding this step\n• When this phase is finalised\n• Having accomplished this",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nWhen that is done, they put the labels on the jars.\n\n✅ **Academic Process Script (Band 8.0+)**:\nOnce that's completed, automated mechanical applicators affix tamper-evident labels to the sealed containers.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "\"Once\" di sini berarti \"begitu/seketika\" (*as soon as*), bukan \"satu kali\"!"
+    }
+  },
+  {
+    "_id": "6904a001000000000000001c",
+    "question": "The next phase involves",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Fase selanjutnya melibatkan / mencakup**, konstruksi kalimat predikatif untuk mengumumkan instrumen, bahan kimia, atau metode spesifik yang digunakan pada langkah baru.\n\n> *\"An explicit procedural announcement specifying the core activities, methods, or apparatus involved in the forthcoming phase.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Clause Template · Phase Description Marker",
+      "Pronunciation (IPA)": "/ðə nekst feɪz ɪnˈvɒlvz/ — Tekanan pada \"next PHASE in-VOLVES\"!",
+      "Urutan Tahapan": "Tahap Lanjutan (Intermediate / Progression Stage)",
+      "Efek Navigasi di Audio": "Kata setelah \"involves\" (biasanya Verb-ing atau Noun) sering kali merupakan **jawaban rumpang (*gap fill*)** di dalam kotak!",
+      "Frasa Ekuivalen Tahap Lanjutan": "• The subsequent operation entails\n• The succeeding procedure incorporates\n• Moving on, the process requires",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe next part has adding salt and stirring.\n\n✅ **Academic Process Script (Band 8.0+)**:\nThe next phase involves introducing chemical coagulants and agitating the compound at high velocity.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Aturan \"Grammatical Fit\": Kata setelah \"involves\" selalu berbentuk Noun atau Gerund (-ing). Waspadai bentukan kata saat mengisi lembar jawaban!"
+    }
+  },
+  {
+    "_id": "6904a001000000000000001d",
+    "question": "Prior to",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Sebelum / Menjelang**, penanda prasyarat kronologis mundur (*backward prerequisite*) yang menunjukkan aksi yang harus selesai SEBELUM langkah yang disebutkan berikutnya.\n\n> *\"Existing or happening before something else, establishing an imperative chronological precondition.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Preposition · Chronological Precondition Marker",
+      "Pronunciation (IPA)": "/ˈpraɪ.ər tuː/ — Tekanan kuat pada suku kata pertama \"PRI-or\"!",
+      "Urutan Tahapan": "Tahap Prasyarat (Prerequisite / Conditional Stage)",
+      "Efek Navigasi di Audio": "⚠️ **Jebakan Kronologis IELTS!** Kalimat *\"Prior to [A], we do [B]\"* berarti langkah [B] dikerjakan LEBIH DAHULU daripada langkah [A]!",
+      "Frasa Ekuivalen Tahap Prasyarat": "• Ahead of\n• Preceding\n• In advance of",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nBefore the water enters the pipe, it must be filtered.\n\n✅ **Academic Process Script (Band 8.0+)**:\nPrior to entering the municipal distribution conduits, raw reservoir water is channeled through multi-tiered sand filtration beds.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Rumus Jebakan: \"Prior to [Tahap 2], [Tahap 1]\". Jangan terkecoh menuliskan kata pada Tahap 2 di kotak pertama!"
+    }
+  },
+  {
+    "_id": "6904a001000000000000001e",
+    "question": "Before proceeding",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Sebelum melanjutkan**, frasa peringatan prosedural (*checkpoint warning*) yang menandakan jeda pemeriksaan kualitas atau penyesuaian parameter sebelum sistem melaju ke tahap berikutnya.\n\n> *\"A procedural checkpoint indicating that a mandatory inspection or adjustment must occur before workflow progression is permitted.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Participial Phrase · Procedural Checkpoint",
+      "Pronunciation (IPA)": "/bɪˈfɔː prəˈsiː.dɪŋ/ — Tekanan pada \"be-FORE pro-CEED-ing\"!",
+      "Urutan Tahapan": "Tahap Prasyarat (Prerequisite / Conditional Stage)",
+      "Efek Navigasi di Audio": "Sering diasosiasikan dengan kotak bertuliskan: *\"Check / Inspect / Test [_____]\"*.",
+      "Frasa Ekuivalen Tahap Prasyarat": "• Prior to advancing further\n• Before moving ahead\n• As a precautionary prerequisite",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nBefore going to the next step, check if the temperature is right.\n\n✅ **Academic Process Script (Band 8.0+)**:\nBefore proceeding to subsequent distillation, technicians rigorously verify that thermal thresholds remain within specified parameters.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "\"Proceed\" = maju/melangkah ke depan. \"Before proceeding\" = cek dulu sebelum melangkah maju!"
+    }
+  },
+  {
+    "_id": "6904a001000000000000001f",
+    "question": "Provided that",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Dengan syarat bahwa / Asalkan**, konjungsi kondisional mutlak yang menetapkan tolok ukur atau kriteria ambang batas (*threshold*) agar alur proses tidak ditolak atau dihentikan.\n\n> *\"On the condition that; specifying a mandatory prerequisite or criteria that must be satisfied for process continuation.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Subordinating Conjunction · Conditional Prerequisite",
+      "Pronunciation (IPA)": "/prəˈvaɪ.dɪd ðæt/ — Tekanan pada \"pro-VI-ded that\"!",
+      "Urutan Tahapan": "Tahap Prasyarat (Prerequisite / Conditional Stage)",
+      "Efek Navigasi di Audio": "Sering mengarah ke cabang diagram persimpangan Ya/Tidak (*Decision Diamond* / *Conditional Branch*).",
+      "Frasa Ekuivalen Tahap Prasyarat": "• On condition that\n• Contingent upon\n• Subject to the stipulation that",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nIf the sample is clean, it can go to the final test.\n\n✅ **Academic Process Script (Band 8.0+)**:\nProvided that microbiological assays demonstrate zero bacterial cultivation, the batch is cleared for secondary centrifuging.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Sinonim akademis formal untuk kata \"only if\". Menandai prasyarat kelolosan!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000020",
+    "question": "Once verified",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Setelah diverifikasi / Begitu divalidasi**, penanda validasi resmi yang menunjukkan bahwa data atau produk telah lolos uji kendali mutu (*quality assurance*) dan siap dialirkan ke tahap pengemasan/eksekusi.\n\n> *\"Subsequent to formal authentication, testing, or quality verification having been conclusively demonstrated.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Passive Participial Marker · Quality Gate",
+      "Pronunciation (IPA)": "/wʌns ˈver.ɪ.faɪd/ — Tekanan pada \"VER-i-fied\"!",
+      "Urutan Tahapan": "Tahap Prasyarat (Prerequisite / Conditional Stage)",
+      "Efek Navigasi di Audio": "Menunjukkan lolosnya uji kendali mutu sebelum masuk ke fase penutup.",
+      "Frasa Ekuivalen Tahap Prasyarat": "• Following authentication\n• Post-verification\n• Having been corroborated",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nWhen the manager checks and says it is okay, it gets packed.\n\n✅ **Academic Process Script (Band 8.0+)**:\nOnce verified by independent quality control inspectors, pharmaceutical compounds are routed directly to automated blister packaging.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Verifikasi = pengecekan kebenaran. Gerbang izin terakhir sebelum tahap akhir."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000021",
+    "question": "Ultimately (Sequential Flow)",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Pada ujung akhir proses**, penanda adverbial kronologis pemungkas yang memberitahukan bahwa seluruh rangkaian tahapan telah tuntas dan diagram alur kini mencapai hasil/produk final.\n\n> *\"At the culmination of a procedural sequence; signifying the emergence of the final end-product or terminal status.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adverb · Terminal Phase Marker",
+      "Pronunciation (IPA)": "/ˈʌl.tɪ.mət.li/ — Tekanan pada suku kata pertama \"UL-ti-mate-ly\"!",
+      "Urutan Tahapan": "Tahap Akhir (Final / Concluding Stage) · Kotak Paling Dasar",
+      "Efek Navigasi di Audio": "Menandakan audio sudah mencapai kotak paling dasar/akhir pada diagram alur.",
+      "Frasa Ekuivalen Tahap Akhir": "• In the final analysis\n• Eventually\n• At the terminal stage",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nIn the end, clean water goes to people's houses.\n\n✅ **Academic Process Script (Band 8.0+)**:\nUltimately, the potable water is pumped through subterranean aqueducts into metropolitan domestic networks.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Mata dan pensil Anda sekarang harus berada di kotak terbawah dari diagram alur!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000022",
+    "question": "The final outcome",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Hasil akhir / Produk jadi**, frasa nomina kulminatif untuk melabeli wujud materi, data, atau produk komersial yang berhasil diciptakan di ujung rantai proses manufaktur.\n\n> *\"The concluding product, terminal result, or ultimate consequence produced by an operational process.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun Phrase · Terminal Outcome Marker",
+      "Pronunciation (IPA)": "/ðə ˈfaɪ.nəl ˈaʊt.kʌm/ — Tekanan pada \"FI-nal\" dan \"OUT-come\"!",
+      "Urutan Tahapan": "Tahap Akhir (Final / Concluding Stage) · Kotak Paling Dasar",
+      "Efek Navigasi di Audio": "Sering mengunci kata rumpang untuk nama produk akhir (misal: *refined petroleum, high-grade ethanol, composite alloy*).",
+      "Frasa Ekuivalen Tahap Akhir": "• The end product\n• The terminal result\n• The definitive deliverable",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe final thing made is bio-plastic pellets.\n\n✅ **Academic Process Script (Band 8.0+)**:\nThe final outcome of this agricultural fermentation process is high-purity biodegradable polymer granules.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "\"Outcome\" = apa yang keluar di ujung (*comes out*). Kotak penutup flow-chart!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000023",
+    "question": "In the last stage",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Pada tahap terakhir**, penanda preposisional kronologis untuk mengumumkan kotak paling akhir pada diagram urutan kerja, menandakan penutupan seluruh operasi.\n\n> *\"During the conclusive or terminal phase of an operational cycle.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Prepositional Phrase · Concluding Phase Marker",
+      "Pronunciation (IPA)": "/ɪn ðə lɑːst steɪdʒ/ (US: /ɪn ðə læst steɪdʒ/) — Tekanan pada \"LAST stage\"!",
+      "Urutan Tahapan": "Tahap Akhir (Final / Concluding Stage) · Kotak Paling Dasar",
+      "Efek Navigasi di Audio": "Sinyal verbal bahwa ini adalah kesempatan terakhir untuk mengisi soal flow-chart.",
+      "Frasa Ekuivalen Tahap Akhir": "• At the concluding stage\n• In the closing phase\n• During the wrap-up step",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nIn the last step, workers put the cars on transport trucks.\n\n✅ **Academic Process Script (Band 8.0+)**:\nIn the last stage, fully assembled electric vehicles are dispatched onto commercial freight carriers for regional distribution.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Begitu mendengar \"In the last stage\", pastikan tidak ada kotak di atas yang terlewat!"
+    }
+  },
+  {
+    "_id": "6904a0010000000000000024",
+    "question": "Concludes with",
+    "answer": "### Definisi & Fungsi Sekuensial\n**Berakhir / Berpuncak dengan**, kata kerja frasal transitif yang menunjukkan tindakan atau kondisi pamungkas yang menyempurnakan seluruh siklus proses sebelum sistem berhenti atau berulang kembali (*cyclical loop*).\n\n> *\"To bring to an end or culminate with a specific final action, procedure, or result.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T17:14:43.248Z",
+    "categories": [
+      "6901a0010000000000000013",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Phrasal Verb · Terminal Action Marker",
+      "Pronunciation (IPA)": "/kənˈkluːdz wɪð/ — Tekanan pada suku kata kedua \"con-CLUDES\"!",
+      "Urutan Tahapan": "Tahap Akhir (Final / Concluding Stage) · Kotak Paling Dasar",
+      "Efek Navigasi di Audio": "Kata setelah \"with\" (Noun atau Verb-ing) hampir selalu adalah **jawaban butir soal flow-chart nomor terakhir**.",
+      "Frasa Ekuivalen Tahap Akhir": "• Culminates in\n• Terminates with\n• Finishes off with",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe cycle ends with drying the grains in the sun.\n\n✅ **Academic Process Script (Band 8.0+)**:\nThe entire manufacturing cycle concludes with natural solar desiccation on elevated wooden drying racks.",
+      "Tips Mengingat & Kunci Sukses Flow-Chart": "Diikuti preposisi \"with\", sehingga kata jawabannya adalah kata benda atau gerund (-ing) setelah kata \"with\"!"
+    }
+  },
+  {
     "_id": "6904a0010000000000000008",
     "question": "Signposting in Section 4",
     "answer": "### Definisi & Fungsi Strategis\n**Penanda Wacana Kuliah Nonstop**, kata atau frasa transisi pemandu arah yang digunakan dosen/pembicara untuk menstrukturkan monolog akademik sepanjang 10 butir soal (soal 31–40) tanpa jeda audio di tengah.\n\n> *\"Verbal guideposts and linguistic transition signals used by academic lecturers to structure continuous monologue, indicating shifts in topic, cause-and-effect relationships, contrasting data, and overall conclusions.\"*",

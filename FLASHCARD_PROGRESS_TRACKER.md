@@ -8,10 +8,10 @@ Dokumen ini melacak status pengayaan bertahap (*batching progress*) seluruh flas
 
 | Metrik | Angka Saat Ini | Target Total | Persentase |
 | :--- | :--- | :--- | :--- |
-| **Total Kartu di Repositori** | 3.503 | 3.503 | 100% |
-| **Kartu Standar Emas Lengkap** | 99 | 3.503 | 2.8% (Kurasi Murni Tanpa Template) |
-| **Kartu Format Minimal (Legacy)** | 3.404 | 0 | 97.2% (Asli Bersih) |
-| **Jumlah Kategori Terdaftar** | 15 Kategori | 15 Kategori | 100% |
+| **Total Kartu di Repositori** | 3.520 | 3.520 | 100% |
+| **Kartu Standar Emas Lengkap** | 116 | 3.520 | 3.3% (Kurasi Murni Tanpa Template) |
+| **Kartu Format Minimal (Legacy)** | 3.404 | 0 | 96.7% (Asli Bersih) |
+| **Jumlah Kategori Terdaftar** | 16 Kategori | 16 Kategori | 100% |
 
 ---
 
@@ -21,19 +21,20 @@ Dokumen ini melacak status pengayaan bertahap (*batching progress*) seluruh flas
 | :---: | :--- | :--- | :---: | :--- |
 | 1 | **Spatial Prepositions & Map Labelling** | `6901a0010000000000000011` | 7 | 🟢 **7 Selesai (100% Standar Emas)** |
 | 2 | **Signposting & Discourse Markers** | `6901a0010000000000000012` | 12 | 🟢 **12 Selesai (100% Standar Emas)** |
-| 3 | **Regular Verbs** | `6886ee8e75b4418c47a47d9b` | 164 | 🟡 Batch 2 (In Progress - 24 Enriched) |
-| 4 | **Irregular Verbs** | `68863c76d911399cd3fb3a4c` | 138 | 🟡 Batch 2 (In Progress - 21 Enriched) |
-| 5 | **Academic Word List (AWL)** | `6901a0010000000000000010` | 570* | 🟡 Batch 2 (In Progress - 15 Enriched) |
-| 6 | **Irregular Plurals & Nouns** | `6901a0010000000000000009` | 20 | 🟢 **20 Selesai (Format Lengkap)** |
-| 7 | **Action Verbs & Expressions** | `6901a0010000000000000007` | 53 | ⚪ Antrean Batch 3 |
-| 8 | **Work, Career & Technology** | `6901a0010000000000000006` | 78 | ⚪ Antrean Batch 3 |
-| 9 | **General Vocabulary & Concepts** | `6901a0010000000000000008` | 748 | ⚪ Antrean Batch 4 |
-| 10 | **Health, Body & Personal Care** | `6901a0010000000000000002` | 282 | ⚪ Antrean Batch 5 |
-| 11 | **Nature, Animals & Environment** | `6901a0010000000000000003` | 217 | ⚪ Antrean Batch 5 |
-| 12 | **Travel, Transport & Places** | `6901a0010000000000000005` | 179 | ⚪ Antrean Batch 6 |
-| 13 | **Food, Drinks & Culinary** | `6901a0010000000000000004` | 142 | ⚪ Antrean Batch 6 |
-| 14 | **Daily Objects, Clothing & Home** | `6901a0010000000000000001` | 118 | ⚪ Antrean Batch 6 |
-| 15 | **Idioms & Figurative Expressions** | `68fdd9f899ff8264aaa016ad` | 1.354 | ⚪ Antrean Batch 7 |
+| 3 | **Sequential Signposts & Flow-Chart Navigation** | `6901a0010000000000000013` | 17 | 🟢 **17 Selesai (100% Standar Emas)** |
+| 4 | **Regular Verbs** | `6886ee8e75b4418c47a47d9b` | 164 | 🟡 Batch 2 (In Progress - 24 Enriched) |
+| 5 | **Irregular Verbs** | `68863c76d911399cd3fb3a4c` | 138 | 🟡 Batch 2 (In Progress - 21 Enriched) |
+| 6 | **Academic Word List (AWL)** | `6901a0010000000000000010` | 570* | 🟡 Batch 2 (In Progress - 15 Enriched) |
+| 7 | **Irregular Plurals & Nouns** | `6901a0010000000000000009` | 20 | 🟢 **20 Selesai (Format Lengkap)** |
+| 8 | **Action Verbs & Expressions** | `6901a0010000000000000007` | 53 | ⚪ Antrean Batch 3 |
+| 9 | **Work, Career & Technology** | `6901a0010000000000000006` | 78 | ⚪ Antrean Batch 3 |
+| 10 | **General Vocabulary & Concepts** | `6901a0010000000000000008` | 748 | ⚪ Antrean Batch 4 |
+| 11 | **Health, Body & Personal Care** | `6901a0010000000000000002` | 282 | ⚪ Antrean Batch 5 |
+| 12 | **Nature, Animals & Environment** | `6901a0010000000000000003` | 217 | ⚪ Antrean Batch 5 |
+| 13 | **Travel, Transport & Places** | `6901a0010000000000000005` | 179 | ⚪ Antrean Batch 6 |
+| 14 | **Food, Drinks & Culinary** | `6901a0010000000000000004` | 142 | ⚪ Antrean Batch 6 |
+| 15 | **Daily Objects, Clothing & Home** | `6901a0010000000000000001` | 118 | ⚪ Antrean Batch 6 |
+| 16 | **Idioms & Figurative Expressions** | `68fdd9f899ff8264aaa016ad` | 1.354 | ⚪ Antrean Batch 7 |
 
 *\*Catatan: Database AWL memiliki 570 kepala keluarga kata di `src/data/awl/awlWords.json` yang secara bertahap dikurasi ke `flashcards.json` secara mendalam dan presisi per batch.*
 

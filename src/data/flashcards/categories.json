@@ -73,5 +73,10 @@
     "_id": "6901a0010000000000000012",
     "name": "Signposting & Discourse Markers",
     "description": "Academic signposting phrases, discourse transition markers, and lecture cues crucial for tracking continuous monologues and sentence completion (IELTS Listening Section 4 & Speaking)"
+  },
+  {
+    "_id": "6901a0010000000000000013",
+    "name": "Sequential Signposts & Flow-Chart Navigation",
+    "description": "Sequential transition signals, procedural process markers, and chronological navigation phrases essential for IELTS Listening Flow-Chart Completion and Writing Task 1 Process diagrams"
   }
 ]
