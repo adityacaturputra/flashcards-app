@@ -40,10 +40,10 @@ export const MermaidDiagram: React.FC<MermaidDiagramProps> = ({
           flowchart: {
             htmlLabels: false,
             curve: 'basis',
-            useMaxWidth: false,
-            padding: 18,
-            nodeSpacing: 40,
-            rankSpacing: 35,
+            useMaxWidth: true,
+            padding: 14,
+            nodeSpacing: 30,
+            rankSpacing: 30,
           },
         });
 
@@ -104,18 +104,18 @@ export const MermaidDiagram: React.FC<MermaidDiagramProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`mermaid-diagram not-prose my-4 w-full overflow-hidden rounded-2xl border p-3 sm:p-5 flex flex-col items-center shadow-xs ${className}`}
+      className={`mermaid-diagram not-prose my-4 w-full max-w-full overflow-hidden rounded-2xl border p-3 sm:p-5 flex flex-col items-center shadow-xs min-w-0 ${className}`}
       style={{
         background: 'var(--card)',
         borderColor: 'var(--border)',
       }}
     >
       <div
-        className='w-full overflow-x-auto flex justify-center py-2'
+        className='w-full max-w-full overflow-x-auto py-2'
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         <div
-          className='min-w-fit flex justify-center [&>svg]:max-w-none [&>svg]:h-auto'
+          className='w-fit mx-auto flex justify-center [&>svg]:h-auto [&>svg]:max-w-full sm:[&>svg]:max-w-none'
           dangerouslySetInnerHTML={{ __html: svg }}
         />
       </div>

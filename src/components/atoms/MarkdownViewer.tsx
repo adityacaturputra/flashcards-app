@@ -126,30 +126,38 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
               let alertType: 'tip' | 'note' | 'warning' | 'important' | 'caution' | null = null;
               let cleanChildren = children;
 
-              if (childrenArray.length > 0) {
-                const firstChild = childrenArray[0];
-                if (React.isValidElement(firstChild)) {
-                  const element = firstChild as React.ReactElement<{ children?: React.ReactNode }>;
-                  if (element.props && element.props.children) {
-                    const pChildren = React.Children.toArray(element.props.children);
-                    if (typeof pChildren[0] === 'string') {
-                      const str = pChildren[0];
-                      if (str.includes('[!TIP]')) alertType = 'tip';
-                      else if (str.includes('[!NOTE]')) alertType = 'note';
-                      else if (str.includes('[!WARNING]')) alertType = 'warning';
-                      else if (str.includes('[!IMPORTANT]')) alertType = 'important';
-                      else if (str.includes('[!CAUTION]')) alertType = 'caution';
+              // Find the first valid React element (typically a <p> tag containing markdown text)
+              const pElementIndex = childrenArray.findIndex((c) => React.isValidElement(c));
+              if (pElementIndex !== -1) {
+                const element = childrenArray[pElementIndex] as React.ReactElement<{ children?: React.ReactNode }>;
+                if (element.props && element.props.children) {
+                  const pChildren = React.Children.toArray(element.props.children);
+                  const firstStrIndex = pChildren.findIndex((c) => typeof c === 'string' && c.trim().length > 0);
+                  if (firstStrIndex !== -1) {
+                    const str = pChildren[firstStrIndex] as string;
+                    if (str.includes('[!TIP]')) alertType = 'tip';
+                    else if (str.includes('[!NOTE]')) alertType = 'note';
+                    else if (str.includes('[!WARNING]')) alertType = 'warning';
+                    else if (str.includes('[!IMPORTANT]')) alertType = 'important';
+                    else if (str.includes('[!CAUTION]')) alertType = 'caution';
 
-                      if (alertType) {
-                        const newFirstStr = str.replace(/\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]\s*/i, '');
-                        cleanChildren = [
-                          React.cloneElement(element, {
-                            key: 'alert-first',
-                            children: [newFirstStr, ...pChildren.slice(1)],
-                          }),
-                          ...childrenArray.slice(1),
-                        ];
+                    if (alertType) {
+                      const newStr = str.replace(/\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]\s*/i, '');
+                      const newPChildren = [...pChildren];
+                      if (newStr.trim().length > 0) {
+                        newPChildren[firstStrIndex] = newStr;
+                      } else {
+                        newPChildren.splice(firstStrIndex, 1);
                       }
+                      const newElement = React.cloneElement(element, {
+                        key: 'alert-element',
+                        children: newPChildren,
+                      });
+                      cleanChildren = [
+                        ...childrenArray.slice(0, pElementIndex),
+                        newElement,
+                        ...childrenArray.slice(pElementIndex + 1),
+                      ];
                     }
                   }
                 }
@@ -216,7 +224,7 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
             ),
             table: ({ children }) => (
               <div
-                className='my-3 w-full overflow-x-auto rounded-xl border shadow-sm'
+                className='my-3 w-full max-w-full overflow-x-auto rounded-xl border shadow-sm min-w-0'
                 style={{
                   borderColor: 'var(--border)',
                   WebkitOverflowScrolling: 'touch',

@@ -334,8 +334,8 @@ textarea:focus {
     backdrop-filter: blur(8px);
   }
 
-  /* Ensure touch targets are at least 44px */
-  button {
+  /* Touch target optimization utility */
+  .touch-target {
     min-height: 44px;
     min-width: 44px;
   }
