@@ -101,6 +101,7 @@ Setiap kartu wajib dikaitkan dengan ID kategori yang relevan:
 - **`6901a0010000000000000001`**: Daily Objects, Clothing & Home
 - **`6901a0010000000000000007`**: Action Verbs & Expressions
 - **`6901a0010000000000000011`**: Spatial Prepositions & Map Labelling
+- **`6901a0010000000000000012`**: Signposting & Discourse Markers
 
 ---
 
