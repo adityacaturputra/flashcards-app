@@ -14,6 +14,7 @@ import { Progression } from '@/types/flashcard';
 import { useSpeechPlayback } from '@/hooks/useSpeechPlayback';
 import { useSearchTemplateContext } from '@/context/searchTemplateContext';
 import { openGoogleSearchInNewTab } from '@/utils/externalLinks';
+import DynamicFieldRenderer from '../DynamicFieldRenderer';
 
 interface AnkiCardDetailModalProps {
   card: ReviewedTodayItem | null;
@@ -28,7 +29,7 @@ export const AnkiCardDetailModal: React.FC<AnkiCardDetailModalProps> = ({
 }) => {
   const { generateSearchQuery } = useSearchTemplateContext();
 
-  const { isPlaying, getAudioButtonProps } = useSpeechPlayback<string>({
+  const { isPlaying, getAudioButtonProps, toggleSpeech } = useSpeechPlayback<string>({
     resetTriggers: [card?.id, isOpen],
   });
 
@@ -231,21 +232,15 @@ export const AnkiCardDetailModal: React.FC<AnkiCardDetailModalProps> = ({
                   </span>
                   <div className='space-y-2'>
                     {dynamicFieldEntries.map(([key, val]) => (
-                      <div
+                      <DynamicFieldRenderer
                         key={key}
-                        className='rounded-xl border p-2.5 sm:p-3 text-xs space-y-0.5'
-                        style={{
-                          background: 'var(--background)',
-                          borderColor: 'var(--border)',
-                        }}
-                      >
-                        <span className='font-bold text-foreground block text-[11px]'>
-                          {key}
-                        </span>
-                        <div className='text-muted-foreground leading-relaxed break-words whitespace-pre-wrap'>
-                          {val}
-                        </div>
-                      </div>
+                        fieldKey={key}
+                        value={val}
+                        cardQuestion={card.question}
+                        onPlaySpeech={(fieldId, text, e) => toggleSpeech(fieldId, text, e)}
+                        isPlaying={(fieldId) => isPlaying(fieldId)}
+                        onSearch={handleSearch}
+                      />
                     ))}
                   </div>
                 </div>

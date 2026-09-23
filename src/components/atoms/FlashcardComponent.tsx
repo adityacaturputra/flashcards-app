@@ -5,7 +5,6 @@ import {
   FlashcardCategory,
   Progression,
   FLASHCARD_FIELD,
-  FlashcardField,
 } from '@/types/flashcard';
 import { calculateAnkiReview } from '@/utils/ankiAlgorithm';
 import dayjs from 'dayjs';
@@ -29,6 +28,7 @@ import styles from './FlashcardComponent.module.css';
 import { FaTrashAlt } from 'react-icons/fa';
 import TextArea from './TextArea';
 import MarkdownViewer from './MarkdownViewer';
+import DynamicFieldRenderer from '../molecules/DynamicFieldRenderer';
 
 dayjs.extend(relativeTime);
 
@@ -52,7 +52,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
     const menuRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
-    const { isPlaying, getAudioButtonProps } = useSpeechPlayback<FlashcardField>({
+    const { isPlaying, getAudioButtonProps, toggleSpeech } = useSpeechPlayback<string>({
       resetTriggers: [flashcard._id],
     });
 
@@ -133,36 +133,25 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
       setIsAnswerHidden(!isAnswerHidden);
     };
 
-    const renderViewModeDynamicFields = () => {
-      return Object.entries(flashcard.dynamicFields || {}).map(
-        ([key, value]) => (
-          <div
-            key={key}
-            className='mt-3 rounded-xl border p-3.5 shadow-xs'
-            style={{
-              background: 'var(--card)',
-              borderColor: 'var(--border)',
-            }}
-          >
-            <div className='mb-1.5 flex items-center justify-between'>
-              <span
-                className='text-[10px] sm:text-xs font-bold uppercase tracking-wider'
-                style={{ color: 'var(--primary)' }}
-              >
-                {key}
-              </span>
-            </div>
-            <div className='text-xs sm:text-sm leading-relaxed'>
-              <MarkdownViewer content={value} showCopyButton={false} />
-            </div>
-          </div>
-        ),
-      );
-    };
-
     const handleSearch = (text: string) => {
       const query = generateSearchQuery(text);
       openGoogleSearchInNewTab(query);
+    };
+
+    const renderViewModeDynamicFields = () => {
+      return Object.entries(flashcard.dynamicFields || {}).map(
+        ([key, value]) => (
+          <DynamicFieldRenderer
+            key={key}
+            fieldKey={key}
+            value={value}
+            cardQuestion={flashcard.question}
+            onPlaySpeech={(fieldId, text, e) => toggleSpeech(fieldId, text, e)}
+            isPlaying={(fieldId) => isPlaying(fieldId)}
+            onSearch={handleSearch}
+          />
+        ),
+      );
     };
 
     const progressionOptions = Object.values(Progression);
