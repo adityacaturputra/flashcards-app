@@ -41,7 +41,11 @@
       "Kolokasi Emas IELTS": "• hold someone in adoration\n• gaze at someone adoringly\n• mutual adoration\n• simply adore",
       "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nMany students like the professor because his lectures are interesting.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nUndergraduates held the distinguished scholar in profound adoration owing to his inspiring pedagogical clarity.",
       "Tips Mengingat": "Berasal dari bahasa Latin \"adorare\" (berdoa/memuja). Ingat kata \"adorable\" (sangat lucu & pantas di-adore/dipuja)!"
-    }
+    },
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0
   },
   {
     "_id": "6886eed375b4418c47a47d9f",
@@ -63,7 +67,11 @@
       "Kolokasi Emas IELTS": "• absorb vast amounts of information\n• absorb economic shocks / costs\n• shock absorber\n• rapid absorption of greenhouse gases",
       "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe ocean takes in a lot of carbon dioxide from the air.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nMarine ecosystems absorb substantial volumes of atmospheric carbon dioxide, thereby mitigating severe climatic disruptions.",
       "Tips Mengingat": "Latin \"absorbere\" (ab- [dari luar] + sorbere [menelan/meneguk]). Mirip SPONGE (spons): fungsi spons adalah me-nyerap (absorb)!"
-    }
+    },
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0
   },
   {
     "_id": "6886eed375b4418c47a47da1",
@@ -85,7 +93,11 @@
       "Kolokasi Emas IELTS": "• provide a coherent explanation of\n• explain the underlying rationale\n• self-explanatory data\n• inexplicable disparity",
       "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe author told us why crime happens in cities.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nThe sociologist explained the complex socioeconomic disparities underpinning modern urban delinquency.",
       "Tips Mengingat": "Latin \"explanare\" (ex- [keluar] + planus [datar/jelas/rata]). Membuat suatu hal yang berbelit menjadi rata dan jelas (plain/clear)! Perhatikan perubahan ejaan: explain -> explanation (huruf \"i\" hilang!)."
-    }
+    },
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0
   },
   {
     "_id": "6886eedaa18bebb306a591bc",
@@ -217,6 +229,226 @@
       "Kolokasi Emas IELTS": "• burning fossil fuels\n• a burning issue / question (isu yang sangat mendesak)\n• burn calories / energy efficiently\n• severe third-degree burns",
       "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nUsing coal and gas makes the world hotter.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nThe relentless burning of fossil fuels releases colossal quantities of greenhouse gases, exacerbating global climate anomalies.",
       "Tips Mengingat": "Bisa ireguler (burnt) ataupun reguler (burned) — keduanya baku! Dalam IELTS Writing, gunakan idiom akademis \"a burning issue\" untuk menyebut isu yang sangat krusial dan butuh solusi cepat."
+    }
+  },
+  {
+    "_id": "6903a00100003b0d463d1a40",
+    "question": "Approach",
+    "answer": "### Definisi & Makna\n**Pendekatan / Menangani Masalah / Mendekati**, cara atau metode khusus dalam menangani isu pelik; atau mendekat dalam jarak, waktu, maupun taraf kualitas.\n\n> *\"A way of dealing with a situation or problem; or to come near or nearer to something in distance, quality, or time.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "6901a0010000000000000010"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun & Transitive/Intransitive Verb · AWL Sublist 1",
+      "Pronunciation (IPA)": "/əˈprəʊtʃ/ — Tekanan pada suku kata kedua \"proach\"! Diftong /əʊ/.",
+      "Verbs (Kata Kerja)": "approach (V1/Base), approaches (3rd person), approached (V2/Past), approached (V3/Participle), approaching (-ing/Gerund)",
+      "Nouns (Kata Benda)": "approach (pendekatan/metode), approaches (pl.)",
+      "Adjectives (Kata Sifat)": "approachable (ramah/mudah didekati), unapproachable (kaku/sulit didekati), approaching",
+      "Adverbs (Kata Keterangan)": "approachably (dengan ramah)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "Tetap pada suku kata kedua: ap-PROACH (/əˈprəʊtʃ/) ➔ ap-PROACH-a-ble (/əˈprəʊ.tʃə.bəl/)",
+      "Kolokasi Emas IELTS": "• adopt a holistic / multidisciplinary approach\n• methodological approach\n• cautious approach to policy reform\n• innovative approach to renewable energy",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nGovernments should find new ways to stop air pollution in cities.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nMunicipal authorities must adopt a holistic multidisciplinary approach to tackle escalating urban atmospheric degradation.",
+      "Tips Mengingat": "Latin \"appropiare\" (ad- [ke arah] + prope [dekat]). Mendekati dari berbagai sudut! Dalam IELTS Writing, variasikan kata \"method\" atau \"way\" menjadi \"a comprehensive approach\"."
+    }
+  },
+  {
+    "_id": "6903a001000078d1f2b69411",
+    "question": "Assess",
+    "answer": "### Definisi & Makna\n**Menilai / Mengevaluasi / Menakar Kualitas**, menimbang secara saksama nilai, kualitas, risiko, atau dampak dari suatu kebijakan, performa siswa, maupun fenomena sosial.\n\n> *\"To judge or decide the amount, value, quality, or importance of something after careful evaluation.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "6901a0010000000000000010"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive Verb · AWL Sublist 1",
+      "Pronunciation (IPA)": "/əˈses/ — Tekanan pada suku kata kedua \"sess\"! Ucapkan \"uh-SESS\".",
+      "Verbs (Kata Kerja)": "assess (V1/Base), assesses (3rd person), assessed (V2/Past), assessed (V3/Participle), assessing (-ing/Gerund)",
+      "Nouns (Kata Benda)": "assessment (penilaian/asesmen), assessor (penilai/penguji), reassessment (evaluasi ulang)",
+      "Adjectives (Kata Sifat)": "assessable (dapat dinilai), unassessed",
+      "Adverbs (Kata Keterangan)": "—",
+      "Pergeseran Penekanan Nada (Stress Shift)": "as-SESS (/əˈses/) ➔ as-SESS-ment (/əˈses.mənt/)",
+      "Kolokasi Emas IELTS": "• conduct an environmental impact assessment\n• accurately assess academic competency\n• risk assessment methodology\n• continuous assessment framework",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nTeachers give tests to see if students understand the lessons.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nEducators utilize continuous assessment frameworks to rigorously evaluate cognitive retention and critical analytical aptitude.",
+      "Tips Mengingat": "Latin \"assidere\" (duduk di samping hakim sebagai penasehat/penilai). Kolokasi akademis nomor 1 di IELTS: \"Environmental Impact Assessment\" (AMDAL / Analisis Mengenai Dampak Lingkungan)."
+    }
+  },
+  {
+    "_id": "6886eedb5b0359ae35ad50dd",
+    "question": "Defend",
+    "answer": "### Definisi & Makna\n**Mempertahankan / Membela**, melindungi seseorang atau sesuatu dari serangan fisik, kritik tajam, atau tuntutan hukum; atau membenarkan suatu argumen/gagasan dengan bukti kuat.\n\n> *\"To protect someone or something against attack, criticism, or legal action; or to support an argument or theory with evidence.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive & Intransitive Verb · Regular Verb",
+      "Pronunciation (IPA)": "/dɪˈfend/ — Tekanan pada suku kata kedua \"fend\"! Ucapkan \"dih-FEND\".",
+      "Verbs (Kata Kerja)": "defend (V1/Base), defends (3rd person), defended (V2/Past), defended (V3/Participle), defending (-ing/Gerund)",
+      "Nouns (Kata Benda)": "defence / defense (pertahanan/pembelaan), defendant (terdakwa), defender (pembela/pemain bertahan)",
+      "Adjectives (Kata Sifat)": "defensive (bersikap bertahan), indefensible (tak dapat dipertahankan/tak bermoral), defensible",
+      "Adverbs (Kata Keterangan)": "defensively (secara bertahan), indefensibly (secara tak dapat dibenarkan)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "de-FEND (/dɪˈfend/) ➔ de-FENSE (/dɪˈfens/) ➔ de-FEN-sive (/dɪˈfen.sɪv/) ➔ in-de-FEN-si-ble (/ˌɪn.dɪˈfen.sə.bəl/)",
+      "Kolokasi Emas IELTS": "• vigorously defend one's thesis / rights\n• mounted a robust legal defence\n• morally indefensible policy\n• defensive mechanisms",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe lawyer fought really hard to save the innocent man in court.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nThe legal counsel vigorously defended the accused by presenting unequivocal empirical evidence of procedural misconduct.",
+      "Tips Mengingat": "Latin \"defendere\" (menangkis/menyerang balik). Ingat kata INDEFENSIBLE (kebijakan yang begitu buruk sampai tidak ada argumen yang bisa membelanya)!"
+    }
+  },
+  {
+    "_id": "6886eedb0a8d109db1847407",
+    "question": "Apply",
+    "answer": "### Definisi & Makna\n**Menerapkan / Mengajukan Permohonan / Mengoleskan**, mengimplementasikan teori atau metode ke situasi praktis; atau mendaftar secara formal untuk pekerjaan/beasiswa/universitas; atau membubuhkan zat ke permukaan.\n\n> *\"To put something into practical operation or use; to make a formal application for a job, grant, or place at a university; or to put or spread something onto a surface.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive & Intransitive Verb · Regular Verb",
+      "Pronunciation (IPA)": "/əˈplaɪ/ — Tekanan pada suku kata kedua \"ply\"! Vokal diftong /aɪ/.",
+      "Verbs (Kata Kerja)": "apply (V1/Base), applies (3rd person), applied (V2/Past), applied (V3/Participle), applying (-ing/Gerund)",
+      "Nouns (Kata Benda)": "application (penerapan/lamaran/aplikasi), applicant (pelamar/pemohon), applicator (alat pengoles)",
+      "Adjectives (Kata Sifat)": "applicable (berlaku/relevan), inapplicable (tidak relevan), applied (terapan, misal applied science)",
+      "Adverbs (Kata Keterangan)": "applicably (secara relevan)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "ap-PLY (/əˈplaɪ/) ➔ ap-pli-CA-tion (/ˌæp.lɪˈkeɪ.ʃən/) ➔ AP-pli-ca-ble (/ˈæp.lɪ.kə.bəl/)",
+      "Kolokasi Emas IELTS": "• apply theoretical concepts to real-world problems\n• universally applicable principles\n• submit a formal scholarship application\n• applied research and development",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nStudents should use what they learned in class in real life.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nHigher education institutions must encourage graduates to systematically apply theoretical paradigms to complex real-world dilemmas.",
+      "Tips Mengingat": "Latin \"applicare\" (menempelkan/menghubungkan). Perhatikan pergeseran ejaan: y -> i saat applied, applies, application. Ingat APPLICABLE = relevan & dapat diterapkan!"
+    }
+  },
+  {
+    "_id": "6886eedc3ec1c8c5958f9546",
+    "question": "Conduct",
+    "answer": "### Definisi & Makna\n**Melaksanakan / Memimpin / Menghantarkan**, mengorganisasi dan menjalankan suatu riset, survei, atau eksperimen; atau memimpin orkestra musik; atau menghantarkan arus listrik/panas secara fisik.\n\n> *\"To organize and carry out a particular activity such as research or an experiment; to direct musicians; or to transmit heat or electricity.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb & Noun · Regular Verb",
+      "Pronunciation (IPA)": "Verba: /kənˈdʌkt/ (tekanan di akhir) | Nomina: /ˈkɒn.dʌkt/ (tekanan di awal)",
+      "Verbs (Kata Kerja)": "conduct (V1/Base), conducts (3rd person), conducted (V2/Past), conducted (V3/Participle), conducting (-ing/Gerund)",
+      "Nouns (Kata Benda)": "conduct (perilaku/tata krama), conduction (konduksi/penghantaran), conductor (konduktor/pemimpin orkestra), conductivity (daya hantar)",
+      "Adjectives (Kata Sifat)": "conductive (bersifat menghantar), conducting",
+      "Adverbs (Kata Keterangan)": "—",
+      "Pergeseran Penekanan Nada (Stress Shift)": "VERB: con-DUCT (/kənˈdʌkt/) ➔ NOUN: CON-duct (/ˈkɒn.dʌkt/) ➔ con-duc-TI-vi-ty (/ˌkɒn.dʌkˈtɪv.ə.ti/)",
+      "Kolokasi Emas IELTS": "• conduct comprehensive empirical research\n• code of professional conduct\n• conduct an impartial inquiry\n• conduct electrical currents",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nScientists did a study to see if the medicine works.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nEpidemiologists conducted an exhaustive clinical trial to evaluate the pharmacological efficacy of the novel vaccine.",
+      "Tips Mengingat": "Latin \"conducere\" (memimpin bersama). PERGESERAN NADA KRUSIAL: Jika kata kerja, tekan belakang (con-DUCT); jika kata benda perilaku, tekan depan (CON-duct)! Kolokasi IELTS paling penting: \"conduct research / survey\" (bukan \"make research\")."
+    }
+  },
+  {
+    "_id": "6886eedb7b455ee47da781e3",
+    "question": "Calculate",
+    "answer": "### Definisi & Makna\n**Menghitung / Memperkirakan secara Matang**, menentukan jumlah atau nilai secara matematis; atau mempertimbangkan secara teliti kemungkinan risiko dan konsekuensi sebelum bertindak.\n\n> *\"To determine mathematically the amount or number of something; or to assess the probable consequences or risks of an action.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive Verb · Regular Verb",
+      "Pronunciation (IPA)": "/ˈkæl.kjə.leɪt/ — Tekanan pada suku kata pertama \"cal\"! Ucapkan \"KAL-kyuh-layt\".",
+      "Verbs (Kata Kerja)": "calculate (V1/Base), calculates (3rd person), calculated (V2/Past), calculated (V3/Participle), calculating (-ing/Gerund)",
+      "Nouns (Kata Benda)": "calculation (perhitungan/kalkulasi), calculator (mesin hitung), calculus (kalkulus)",
+      "Adjectives (Kata Sifat)": "calculated (terencana matang/penuh perhitungan), incalculable (tak terhitung nilainya), calculating (licik/penuh perhitungan)",
+      "Adverbs (Kata Keterangan)": "calculatingly (secara licik/penuh rencana), incalculably (secara tak terhitung)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "CAL-cu-late (/ˈkæl.kjə.leɪt/) ➔ cal-cu-LA-tion (/ˌkæl.kjəˈleɪ.ʃən/) ➔ in-CAL-cu-la-ble (/ɪnˈkæl.kjə.lə.bəl/)",
+      "Kolokasi Emas IELTS": "• take a calculated risk\n• accurately calculate the fiscal impact\n• incalculable damage to biodiversity\n• rigorous mathematical calculation",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe company knew the risk of spending money on new machines.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nThe multinational corporation undertook a calculated risk by heavily allocating venture capital into green energy technology.",
+      "Tips Mengingat": "Latin \"calculus\" (kerikil kecil yang digunakan orang Romawi kuno untuk berhitung pada sempoa). Kolokasi emas: \"a calculated risk\" (risiko yang diambil dengan perhitungan matang)."
+    }
+  },
+  {
+    "_id": "6886eedba4c9e9aae1b82e6e",
+    "question": "Supply",
+    "answer": "### Definisi & Makna\n**Memasok / Menyediakan / Rantai Pasok**, memberikan atau menyediakan barang, modal, atau layanan yang dibutuhkan; atau stok komoditas yang tersedia di pasar ekonomi.\n\n> *\"To provide people with something that is needed or wanted; or an amount of something that is available for use in an economy.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive Verb & Noun · Regular Verb",
+      "Pronunciation (IPA)": "/səˈplaɪ/ — Tekanan pada suku kata kedua \"ply\"! Suku kata pertama berbunyi schwa /sə/.",
+      "Verbs (Kata Kerja)": "supply (V1/Base), supplies (3rd person), supplied (V2/Past), supplied (V3/Participle), supplying (-ing/Gerund)",
+      "Nouns (Kata Benda)": "supply (pasokan/persediaan), supplier (pemasok/distributor), supplies (pl. perbekalan)",
+      "Adjectives (Kata Sifat)": "supplied (yang telah dipasok)",
+      "Adverbs (Kata Keterangan)": "—",
+      "Pergeseran Penekanan Nada (Stress Shift)": "sup-PLY (/səˈplaɪ/) ➔ sup-PLI-er (/səˈplaɪ.ər/)",
+      "Kolokasi Emas IELTS": "• global supply chain disruptions\n• law of supply and demand\n• supply vital humanitarian aid\n• precarious water supply",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nWhen ships got stuck, stores did not have enough goods to sell.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nSevere disruptions across global maritime supply chains triggered acute commodity shortages and escalated inflationary pressures.",
+      "Tips Mengingat": "Latin \"supplere\" (sub- [dari bawah] + plere [mengisi penuh]). Mengisi kembali wadah yang kosong! Pasangan abadi dalam ilmu ekonomi: \"Supply and Demand\" (Penawaran dan Permintaan)."
+    }
+  },
+  {
+    "_id": "6886e6c0f1fa135d72d68218",
+    "question": "Catch",
+    "answer": "### Definisi & Makna\n**Menangkap / Terjangkit / Menarik Perhatian**, menjerat atau memegang benda yang bergerak; atau tertular virus/penyakit; atau menarik minat dan perhatian publik secara masif.\n\n> *\"To intercept and hold something that has been thrown or is moving; to contract an illness or virus; or to capture attention/interest.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "68863c76d911399cd3fb3a4c"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb (Irregular) & Noun",
+      "Pronunciation (IPA)": "/kætʃ/ — Vokal pendek /æ/ seperti \"cat\", diakhiri konsonan afrikat /tʃ/.",
+      "Verbs (Kata Kerja)": "catch (V1/Base), catches (3rd person), caught (V2/Past), caught (V3/Participle), catching (-ing/Gerund)",
+      "Nouns (Kata Benda)": "catch (tangkapan/jebakan tersembunyi), catcher (penangkap)",
+      "Adjectives (Kata Sifat)": "catchy (mudah diingat/menarik, misal catchy tune), catching (menular)",
+      "Adverbs (Kata Keterangan)": "—",
+      "Pergeseran Penekanan Nada (Stress Shift)": "Monosilabel: CATCH (/kætʃ/) ➔ CAUGHT (/kɔːt/)",
+      "Kolokasi Emas IELTS": "• catch the public's attention / imagination\n• caught off guard (terperangah/tak bersiap)\n• catch an infectious disease\n• a catch-22 situation (dilema tanpa solusi)",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe government was not ready when the crisis happened.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nPublic health authorities were caught off guard by the exponential transmission rate of the airborne pathogen.",
+      "Tips Mengingat": "Pola Ireguler: catch -> caught -> caught (bunyi vokal /ɔːt/ berima dengan taught dan bought). Idiom akademis: \"caught off guard\" (lengah menghadapi situasi tak terduga)."
+    }
+  },
+  {
+    "_id": "6886e6bff9eb9b73b40ed878",
+    "question": "Shake",
+    "answer": "### Definisi & Makna\n**Berguncang / Menggoyahkan Kepercayaan**, bergerak gemetar cepat ke depan-belakang; atau merusak dan melemahkan stabilitas politik, ekonomi, atau keyakinan batin seseorang.\n\n> *\"To move or cause to move with quick, short movements up and down or side to side; or to severely undermine someone's confidence, stability, or beliefs.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "68863c76d911399cd3fb3a4c"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb (Irregular) & Noun",
+      "Pronunciation (IPA)": "/ʃeɪk/ — Diawali konsonan /ʃ/ (seperti \"shop\") dan diftong /eɪ/ seperti \"cake\".",
+      "Verbs (Kata Kerja)": "shake (V1/Base), shakes (3rd person), shook (V2/Past), shaken (V3/Participle), shaking (-ing/Gerund)",
+      "Nouns (Kata Benda)": "shake (guncangan), shake-up (perombakan struktur drastis), shaker",
+      "Adjectives (Kata Sifat)": "shaky (tidak stabil/goyah/ragu), shaken (terguncang secara emosional)",
+      "Adverbs (Kata Keterangan)": "shakily (secara goyah/gemetar)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "SHAKE (/ʃeɪk/) ➔ SHOOK (/ʃʊk/) ➔ SHA-ken (/ˈʃeɪ.kən/)",
+      "Kolokasi Emas IELTS": "• shake public confidence in institutions\n• an institutional shake-up\n• economically shaky ground\n• visibly shaken by the catastrophe",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe bank scandal made people stop trusting financial companies.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nThe high-profile banking insolvency profoundly shook public confidence in statutory regulatory oversight.",
+      "Tips Mengingat": "Pola Vokal Ireguler: shake -> shook -> shaken (sama polanya dengan take -> took -> taken). Idiom kolokasi IELTS: \"shake confidence\" (mengguncang rasa percaya diri/kepercayaan publik)."
+    }
+  },
+  {
+    "_id": "6886e6bf824614ced017594b",
+    "question": "Break",
+    "answer": "### Definisi & Makna\n**Memecahkan / Menerobos / Melanggar Aturan**, memisahkan benda padat menjadi bagian-bagian dengan gaya; atau melanggar kesepakatan hukum; atau mencapai terobosan inovasi baru (*breakthrough*).\n\n> *\"To separate into pieces as a result of a blow, shock, or strain; to fail to observe a law or regulation; or to make a major breakthrough.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T14:54:47.017Z",
+    "categories": [
+      "68863c76d911399cd3fb3a4c"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb (Irregular) & Noun",
+      "Pronunciation (IPA)": "/breɪk/ — Homofon dengan \"brake\" (rem). Vokal diftong /eɪ/.",
+      "Verbs (Kata Kerja)": "break (V1/Base), breaks (3rd person), broke (V2/Past), broken (V3/Participle), breaking (-ing/Gerund)",
+      "Nouns (Kata Benda)": "break (istirahat/patahan/pelanggaran), breakthrough (terobosan ilmiah/teknologi), breakage (kerusakan fisik)",
+      "Adjectives (Kata Sifat)": "broken (rusak/patah/bangkrut), unbreakable (tak terpatahkan), breathtaking",
+      "Adverbs (Kata Keterangan)": "brokenly",
+      "Pergeseran Penekanan Nada (Stress Shift)": "BREAK (/breɪk/) ➔ BRO-ken (/ˈbrəʊ.kən/) ➔ BREAK-through (/ˈbreɪk.θruː/)",
+      "Kolokasi Emas IELTS": "• make a monumental scientific breakthrough\n• break the vicious cycle of poverty\n• break environmental regulations\n• breakneck pace of technological advancement",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nEducation is good to stop poor families from staying poor forever.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nAccess to quality tertiary education serves as a pivotal catalyst to decisively break the intergenerational cycle of socioeconomic deprivation.",
+      "Tips Mengingat": "Pola Ireguler: break -> broke -> broken (seperti speak -> spoke -> spoken). Kolokasi Band 8+ mutlak: \"break the cycle of poverty\" (memutus rantai kemiskinan)."
     }
   },
   {
@@ -18469,36 +18701,6 @@
     ]
   },
   {
-    "_id": "6886e6c0f1fa135d72d68218",
-    "question": "Menangkap",
-    "answer": "V1: Catch | V2: Caught | V3: Caught",
-    "progression": "perfect",
-    "nextReviewDate": "2025-09-07T01:45:39.911Z",
-    "categories": [
-      "68863c76d911399cd3fb3a4c"
-    ]
-  },
-  {
-    "_id": "6886e6bff9eb9b73b40ed878",
-    "question": "Berguncang",
-    "answer": "V1: Shake | V2: Shook | V3: Shaken",
-    "progression": "good",
-    "nextReviewDate": "2025-08-22T11:21:09.155Z",
-    "categories": [
-      "68863c76d911399cd3fb3a4c"
-    ]
-  },
-  {
-    "_id": "6886e6bf824614ced017594b",
-    "question": "Memecahkan, mematahkan",
-    "answer": "V1: Break | V2: Broke | V3: Broken",
-    "progression": "perfect",
-    "nextReviewDate": "2025-09-07T01:46:02.723Z",
-    "categories": [
-      "68863c76d911399cd3fb3a4c"
-    ]
-  },
-  {
     "_id": "6886e6c0495a5b968b4541db",
     "question": "Menyembunyikan, menyimpan",
     "answer": "V1: Hide | V2: Hid | V3: Hidden",
@@ -19762,26 +19964,6 @@
     ]
   },
   {
-    "_id": "6886eedba4c9e9aae1b82e6e",
-    "question": "Menyediakan — persediaan",
-    "answer": "V1: Supply | V2: Supplied | V3: Supplied",
-    "progression": "good",
-    "nextReviewDate": "2025-08-28T11:09:48.866Z",
-    "categories": [
-      "6886ee8e75b4418c47a47d9b"
-    ]
-  },
-  {
-    "_id": "6886eedb5b0359ae35ad50dd",
-    "question": "Membela",
-    "answer": "V1: Defend | V2: Defended | V3: Defended",
-    "progression": "good",
-    "nextReviewDate": "2025-08-28T10:51:01.297Z",
-    "categories": [
-      "6886ee8e75b4418c47a47d9b"
-    ]
-  },
-  {
     "_id": "6886eedb1b76959ea75ab794",
     "question": "Mengubah",
     "answer": "V1: Change | V2: Changed | V3: Changed",
@@ -19792,41 +19974,11 @@
     ]
   },
   {
-    "_id": "6886eedb0a8d109db1847407",
-    "question": "Menerapkan, mengajukan",
-    "answer": "V1: Apply | V2: Applied | V3: Applied",
-    "progression": "good",
-    "nextReviewDate": "2025-08-28T01:43:54.695Z",
-    "categories": [
-      "6886ee8e75b4418c47a47d9b"
-    ]
-  },
-  {
-    "_id": "6886eedc3ec1c8c5958f9546",
-    "question": "Memimpin",
-    "answer": "V1: Conduct | V2: Conducted | V3: Conducted",
-    "progression": "good",
-    "nextReviewDate": "2025-08-28T11:03:22.660Z",
-    "categories": [
-      "6886ee8e75b4418c47a47d9b"
-    ]
-  },
-  {
     "_id": "6886eedb169517916bebdb23",
     "question": "Menjawab",
     "answer": "V1: Answer | V2: Answered | V3: Answered",
     "progression": "good",
     "nextReviewDate": "2025-08-25T10:59:30.850Z",
-    "categories": [
-      "6886ee8e75b4418c47a47d9b"
-    ]
-  },
-  {
-    "_id": "6886eedb7b455ee47da781e3",
-    "question": "Menghitung",
-    "answer": "V1: Calculate | V2: Calculated | V3: Calculated",
-    "progression": "good",
-    "nextReviewDate": "2025-08-28T11:05:31.863Z",
     "categories": [
       "6886ee8e75b4418c47a47d9b"
     ]
