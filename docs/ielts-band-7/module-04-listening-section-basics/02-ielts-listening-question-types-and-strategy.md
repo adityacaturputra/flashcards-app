@@ -18,12 +18,17 @@ Strategi dalam IELTS Listening hanya bermanfaat jika dieksekusi secara otomatis 
 
 ```mermaid
 flowchart TD
-    A["IELTS Listening Question Types"] --> B["1. Form / Note / Table Completion"]
-    A --> C["2. Multiple Choice (Standard & Pick 2-from-5)"]
-    A --> D["3. Map / Plan / Diagram Labelling"]
-    A --> E["4. Matching Information / Features"]
-    A --> F["5. Sentence Completion / Short Answers"]
-    A --> G["6. Summary / Flow-chart Completion"]
+    ROOT["6 Tipe Soal Utama IELTS Listening<br>(2 Kategori Dasar Keino Campbell)"]
+    
+    ROOT --> G1["Kategori 1: Fill in the Blank"]
+    G1 --> B1["1. Form / Note / Table Completion"]
+    B1 --> B2["5. Sentence Completion"]
+    B2 --> B3["6. Flow-chart Completion"]
+    
+    ROOT --> G2["Kategori 2: Multiple Choice"]
+    G2 --> M1["2. MCQ (Standard & Pick 2-from-5)"]
+    M1 --> M2["3. Map / Plan Labelling"]
+    M2 --> M3["4. Matching Information"]
 ```
 
 ---
