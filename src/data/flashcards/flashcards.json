@@ -896,6 +896,226 @@
     }
   },
   {
+    "_id": "6903a0010000a1b2c3d4e5f1",
+    "question": "Constitute",
+    "answer": "### Definisi & Makna\n**Membentuk / Merupakan Bagian Penyusun / Menjadi Dasar Hukum**, menjadi bagian-bagian yang bersama-sama menyusun suatu kesatuan utuh; atau dianggap secara sah sebagai sesuatu (misal: pelanggaran hukum, ancaman nyata, atau hak prerogatif).\n\n> *\"To be considered to be something; or to be the parts or elements that combine together to form a whole.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.448Z",
+    "categories": [
+      "6901a0010000000000000010"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Linking & Transitive Verb · AWL Sublist 1",
+      "Pronunciation (IPA)": "/ˈkɒn.stɪ.tʃuːt/ (US: /ˈkɑːn.stə.tuːt/) — Tekanan pada suku kata pertama \"con\"! Ucapkan \"KON-stih-tyoot\".",
+      "Verbs (Kata Kerja)": "constitute (V1/Base), constitutes (3rd person), constituted (V2/Past), constituted (V3/Participle), constituting (-ing/Gerund)",
+      "Nouns (Kata Benda)": "constitution (konstitusi/UUD/komposisi fisik), constituent (elemen penyusun/pemilih daerah), constituency (daerah pemilihan)",
+      "Adjectives (Kata Sifat)": "constitutional (sah menurut konstitusi), unconstitutional (inkonstitusional/melanggar hukum dasar), constituent (penyusun)",
+      "Adverbs (Kata Keterangan)": "constitutionally (secara konstitusional/berdasarkan hukum dasar)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "CON-sti-tute (/ˈkɒn.stɪ.tʃuːt/) ➔ con-sti-TU-tion (/ˌkɒn.stɪˈtʃuː.ʃən/) ➔ con-sti-TU-tion-al (/ˌkɒn.stɪˈtʃuː.ʃən.əl/)",
+      "Kolokasi Emas IELTS": "• constitute a grave threat to biodiversity\n• unconstitutional government surveillance\n• constituent elements / essential parts\n• deemed to constitute an infringement of human rights",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nPollution in the ocean is a very big danger to sea animals.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nUnregulated marine plastic dumping constitutes an existential threat to fragile oceanic biodiversity.",
+      "Tips Mengingat": "Latin \"constituere\" (menempatkan bersama-sama/mendirikan). Di IELTS Writing Task 2, gunakan \"constitute a major challenge / threat\" sebagai pengganti yang jauh lebih akademis daripada sekadar \"is a big problem\"."
+    }
+  },
+  {
+    "_id": "6903a0010000a2b3c4d5e6f2",
+    "question": "Distribute",
+    "answer": "### Definisi & Makna\n**Mendistribusikan / Menyalurkan / Membagikan Secara Merata**, membagikan pasokan bantuan, modal, atau sumber daya kepada kelompok masyarakat atau wilayah; atau menyebar secara merata di suatu bentang geografis.\n\n> *\"To give out shares of something among a number of people or over an area; or to supply goods to retailers.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.450Z",
+    "categories": [
+      "6901a0010000000000000010"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive Verb · AWL Sublist 1",
+      "Pronunciation (IPA)": "/dɪˈstrɪb.juːt/ (US: /ˈdɪs.trɪ.bjuːt/) — Umumnya tekanan pada suku kata kedua \"strib\"! Ucapkan \"dih-STRIB-yoot\".",
+      "Verbs (Kata Kerja)": "distribute (V1/Base), distributes (3rd person), distributed (V2/Past), distributed (V3/Participle), distributing (-ing/Gerund)",
+      "Nouns (Kata Benda)": "distribution (distribusi/penyebaran/agihan), distributor (distributor/penyalur), redistribution (redistribusi kekayaan)",
+      "Adjectives (Kata Sifat)": "distributive (bersifat distributif), distributional, distributed",
+      "Adverbs (Kata Keterangan)": "distributively (secara distribusi)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "dis-TRIB-ute (/dɪˈstrɪb.juːt/) ➔ dis-tri-BU-tion (/ˌdɪs.trɪˈbjuː.ʃən/) ➔ dis-TRI-bu-tive (/dɪˈstrɪb.jə.tɪv/)",
+      "Kolokasi Emas IELTS": "• equitable distribution of wealth / resources\n• geographical distribution of flora and fauna\n• widespread distribution networks\n• normal distribution curve (kurva distribusi Gauss)",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nGovernments should share money fairly so poor people get help.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nProgressive fiscal taxation ensures an equitable distribution of national revenue towards vital public infrastructure.",
+      "Tips Mengingat": "Latin \"distribuere\" (memisahkan menjadi bagian-bagian). Pasangan kolokasi emas IELTS: \"equitable distribution\" (pembagian berkeadilan) vs \"skewed distribution\" (agihan timpang)."
+    }
+  },
+  {
+    "_id": "6903a0010000a3b4c5d6e7f3",
+    "question": "Economy",
+    "answer": "### Definisi & Makna\n**Perekonomian / Sistem Pengelolaan Sumber Daya / Efisiensi Biaya**, sistem produksi, perdagangan, dan konsumsi barang serta jasa di suatu negara; atau pemanfaatan anggaran uang serta energi secara cermat tanpa pemborosan.\n\n> *\"The state of a country or region in terms of the production and consumption of goods and services; or the careful management of available resources.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.450Z",
+    "categories": [
+      "6901a0010000000000000010"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun & Adjective · AWL Sublist 1",
+      "Pronunciation (IPA)": "/ɪˈkɒn.ə.mi/ (US: /ɪˈkɑː.nə.mi/) — Tekanan pada suku kata kedua \"con\"! Ucapkan \"ih-KON-uh-mee\".",
+      "Verbs (Kata Kerja)": "economise / economize (menghemat pengeluaran/melakukan efisiensi)",
+      "Nouns (Kata Benda)": "economy (perekonomian/efisiensi), economics (ilmu ekonomi), economist (ahli ekonomi)",
+      "Adjectives (Kata Sifat)": "economic (terkait ekonomi makro), economical (hemat biaya/tidak boros), socioeconomic (sosio-ekonomi)",
+      "Adverbs (Kata Keterangan)": "economically (secara ekonomis/secara hemat)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "e-CON-o-my (/ɪˈkɒn.ə.mi/) ➔ e-co-NOM-ic (/ˌiː.kəˈnɒm.ɪk/) ➔ e-co-NOM-i-cal (/ˌiː.kəˈnɒm.ɪ.kəl/) ➔ e-CON-o-mist (/ɪˈkɒn.ə.mɪst/)",
+      "Kolokasi Emas IELTS": "• stimulate sustainable economic growth\n• circular economy (sistem ekonomi sirkular ramah lingkungan)\n• knowledge-based economy\n• false economy (penghematan semu yang justru merugikan kemudian)",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nTourism brings a lot of money to the country and makes jobs.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nInternational ecotourism serves as a pivotal catalyst to stimulate domestic economic growth while generating sustainable local employment.",
+      "Tips Mengingat": "Jebakan IELTS paling terkenal: ECONOMIC (terkait keuangan negara, misal economic policy) vs ECONOMICAL (hemat biaya/bensin, misal an economical car). Jangan tertukar!"
+    }
+  },
+  {
+    "_id": "6886eedb8fa95e033e843179",
+    "question": "Dry",
+    "answer": "### Definisi & Makna\n**Mengeringkan / Menjadi Kering / Gersang & Tanpa Minuman Beralkohol**, menghilangkan kandungan cairan atau kelembapan dari suatu benda; atau kondisi atmosfer tanpa curah hujan (musim kemarau/arid); atau gaya humor sarkas datar tanpa ekspresi.\n\n> *\"To free from moisture or liquid; to lose dampness; or lacking rainfall and arid.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.450Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb (Regular) & Adjective",
+      "Pronunciation (IPA)": "/draɪ/ — Diftong /aɪ/ diawali konsonan kluster /dr/.",
+      "Verbs (Kata Kerja)": "dry (V1/Base), dries (3rd person), dried (V2/Past), dried (V3/Participle), drying (-ing/Gerund)",
+      "Nouns (Kata Benda)": "dryness (kekeringan/kegersangan), dryer / drier (mesin pengering)",
+      "Adjectives (Kata Sifat)": "dry (kering/gersang), dried (yang dikeringkan), bone-dry",
+      "Adverbs (Kata Keterangan)": "dryly / drily (dengan nada datar/sarkastis)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "DRY (/draɪ/) ➔ DRIED (/draɪd/) ➔ DRY-ness (/ˈdraɪ.nəs/)",
+      "Kolokasi Emas IELTS": "• prolonged dry spell / severe drought conditions\n• dry up financial liquidity\n• arid and desiccated landscapes\n• dry humour (humor sarkas datar)",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nWhen it does not rain for months, farms have no water and plants die.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nProlonged dry spells and escalating desertification precipitate devastating agricultural failures across vulnerable agrarian regions.",
+      "Tips Mengingat": "Verba reguler dengan perubahan y ➔ i: dry ➔ dried ➔ dried. Kolokasi IELTS lingkungan hidup: \"prolonged dry spell\" (periode kemarau panjang tanpa hujan)."
+    }
+  },
+  {
+    "_id": "6886eed375b4418c47a47da3",
+    "question": "Kill",
+    "answer": "### Definisi & Makna\n**Membunuh / Memusnahkan / Menghentikan Proses Secara Tiba-tiba**, merenggut nyawa organisme hidup; atau memusnahkan rasa sakit/patogen bakteri; atau menghentikan secara paksa suatu usulan kebijakan atau proyek.\n\n> *\"To cause the death of a person, animal, or living organism; or to put an end to something or defeat it conclusively.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.450Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive & Intransitive Verb · Regular Verb",
+      "Pronunciation (IPA)": "/kɪl/ — Vokal pendek /ɪ/ seperti \"sit\" diakhiri dark /l/.",
+      "Verbs (Kata Kerja)": "kill (V1/Base), kills (3rd person), killed (V2/Past), killed (V3/Participle), killing (-ing/Gerund)",
+      "Nouns (Kata Benda)": "killer (pembunuh/faktor mematikan), killing (pembunuhan/keuntungan besar, misal make a killing), overkill (tindakan berlebihan)",
+      "Adjectives (Kata Sifat)": "killing (yang mematikan/melelahkan), killed",
+      "Adverbs (Kata Keterangan)": "killingly",
+      "Pergeseran Penekanan Nada (Stress Shift)": "KILL (/kɪl/) ➔ KIL-ler (/ˈkɪl.ər/) ➔ O-ver-kill (/ˈoʊ.vər.kɪl/)",
+      "Kolokasi Emas IELTS": "• kill off indigenous biodiversity\n• pain-killing medication (analgesik)\n• antibiotic resistance that fails to kill bacterial pathogens\n• make a financial killing",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nUsing too many pesticides will kill helpful insects and birds.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nIndiscriminate pesticide application irrevocably decimates beneficial pollinator populations and disrupts delicate ecological balances.",
+      "Tips Mengingat": "Dalam esai IELTS Band 8+, alih-alih selalu memakai kata biasa \"kill animals/plants\", variasikan dengan sinonim presisi: \"decimate\", \"eradicate\", \"exterminate\", atau \"extinguish\"."
+    }
+  },
+  {
+    "_id": "6886eedb2476826f56a5e49a",
+    "question": "Adopt",
+    "answer": "### Definisi & Makna\n**Mengadopsi / Mengambil Kebijakan / Menerapkan Pola Baru**, mengangkat anak orang lain secara sah ke dalam keluarga; atau memilih untuk menerima, menyetujui, dan menerapkan metode teknologi, strategi bisnis, atau pola hidup baru.\n\n> *\"To legally take another's child and bring it up as one's own; or to choose to follow, implement, or use a particular approach, policy, or lifestyle.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.450Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive Verb · Regular Verb",
+      "Pronunciation (IPA)": "/əˈdɒpt/ (US: /əˈdɑːpt/) — Tekanan pada suku kata kedua \"dopt\"! Jangan tertukar dengan \"adapt\" (/əˈdæpt/).",
+      "Verbs (Kata Kerja)": "adopt (V1/Base), adopts (3rd person), adopted (V2/Past), adopted (V3/Participle), adopting (-ing/Gerund)",
+      "Nouns (Kata Benda)": "adoption (adopsi anak/adopsi teknologi baru), adopter (pengadopsi, misal early adopter)",
+      "Adjectives (Kata Sifat)": "adoptive (orang tua angkat: adoptive parents), adopted (anak adopsi: adopted child), adoptable",
+      "Adverbs (Kata Keterangan)": "adoptively",
+      "Pergeseran Penekanan Nada (Stress Shift)": "a-DOPT (/əˈdɒpt/) ➔ a-DOP-tion (/əˈdɒp.ʃən/) ➔ a-DOP-tive (/əˈdɒp.tɪv/)",
+      "Kolokasi Emas IELTS": "• adopt environmentally sustainable practices\n• early adopters of cutting-edge technology\n• adopt a holistic pedagogical approach\n• formally adopt stringent legislative measures",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nCompanies should start using green methods to help nature.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nCorporations must proactively adopt environmentally sustainable operational frameworks to curtail their aggregate carbon footprint.",
+      "Tips Mengingat": "Jebakan Fonetik IELTS: ADOPT (mengadopsi kebijakan/anak) vs ADAPT (beradaptasi/menyesuaikan) vs ADEPT (mahir/ahli). Tiga kata ini sering mengecoh!"
+    }
+  },
+  {
+    "_id": "6886eedb37f959147ca7b6b3",
+    "question": "Whisper",
+    "answer": "### Definisi & Makna\n**Membisikkan / Berbisik / Desas-desus Samar**, berbicara dengan nada sangat pelan tanpa getaran pita suara demi kerahasiaan; atau suara gemerisik lembut dedaunan ditiup angin; atau rumor dan intrik politik yang beredar tertutup.\n\n> *\"To speak very softly using one's breath without vibrating the vocal cords; or a rustling sound; or a murmured rumour.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.450Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive & Intransitive Verb & Noun · Regular Verb",
+      "Pronunciation (IPA)": "/ˈwɪs.pər/ — Tekanan pada suku kata pertama \"whis\"! Ucapkan \"WHIS-per\".",
+      "Verbs (Kata Kerja)": "whisper (V1/Base), whispers (3rd person), whispered (V2/Past), whispered (V3/Participle), whispering (-ing/Gerund)",
+      "Nouns (Kata Benda)": "whisper (bisikan/rumor samar), whisperer (pembisik)",
+      "Adjectives (Kata Sifat)": "whispering (berbisik/gemerisik), whispered (yang dibisikkan)",
+      "Adverbs (Kata Keterangan)": "whisperingly (secara berbisik-bisik)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "WHIS-per (/ˈwɪs.pər/) ➔ WHIS-per-ing (/ˈwɪs.pər.ɪŋ/)",
+      "Kolokasi Emas IELTS": "• speak in hushed whispers\n• persistent whispers of cabinet reshuffles\n• a mere whisper of wind\n• whispered allegations of embezzlement",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nPeople are talking quietly that the minister will quit soon.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nPersistent whispered rumours regarding imminent ministerial resignations have further destabilised public confidence in fiscal governance.",
+      "Tips Mengingat": "Onomatopoeia (tiruan desau nafas pelan). Kolokasi figuratif formal IELTS: \"whispered rumours\" atau \"in hushed whispers\"."
+    }
+  },
+  {
+    "_id": "6886e6bfbc69eb9d8a80b831",
+    "question": "Kneel",
+    "answer": "### Definisi & Makna\n**Berlutut / Bersujud / Tunduk Tanda Hormat atau Protes**, menekuk lutut dan menopang tubuh dengan lutut menyentuh lantai (dalam ibadah atau ritual khidmat); atau simbol protes hening terhadap ketidakadilan rasial (*take a knee*).\n\n> *\"To be in or move into a position where the body is supported by a knee or both knees; often in submission, prayer, or solemn protest.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.450Z",
+    "categories": [
+      "68863c76d911399cd3fb3a4c"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Intransitive Verb (Irregular)",
+      "Pronunciation (IPA)": "/niːl/ — Huruf \"k\" bisu (silent k)! Vokal panjang /iː/. Ucapkan sama dengan kata \"neel\".",
+      "Verbs (Kata Kerja)": "kneel (V1/Base), kneels (3rd person), knelt / kneeled (V2/Past), knelt / kneeled (V3/Participle), kneeling (-ing/Gerund)",
+      "Nouns (Kata Benda)": "kneeler (bantalan untuk berlutut), kneel",
+      "Adjectives (Kata Sifat)": "kneeling (dalam posisi berlutut)",
+      "Adverbs (Kata Keterangan)": "kneelingly (dalam sikap berlutut)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "KNEEL (/niːl/) ➔ KNELT (/nelt/) ➔ KNEEL-ing (/ˈniː.lɪŋ/)",
+      "Kolokasi Emas IELTS": "• kneel in solemn prayer / reverence\n• take a knee against racial injustice (sikap berlutut memprotes ketidakadilan)\n• bring an empire to its knees (membuat imperium bertekuk lutut)\n• kneeling posture",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe bad economic crisis made the country very weak and ruined.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nThe protracted sovereign debt crisis brought the national economy to its knees, necessitating unprecedented multilateral bailouts.",
+      "Tips Mengingat": "Silent K (huruf K tak dibaca, seperti knight, know, knife). Idiom tingkat tinggi IELTS: \"bring something to its knees\" (melumpuhkan hingga bertekuk lutut)."
+    }
+  },
+  {
+    "_id": "6886e6c07eae4adf976c37a6",
+    "question": "Bite",
+    "answer": "### Definisi & Makna\n**Menggigit / Mematuk / Dampak Buruk yang Mulai Terasa Nyata**, memotong, mencengkeram, atau melukai dengan gigi; atau secara kiasan dampak keras inflasi/sanksi yang mulai menggerogoti daya beli secara nyata (*sanctions are beginning to bite*).\n\n> *\"To use the teeth to cut into something; or figuratively, when an unpleasant situation or policy begins to have a serious, painful, or noticeable effect.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.450Z",
+    "categories": [
+      "68863c76d911399cd3fb3a4c"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive & Intransitive Verb & Noun (Irregular)",
+      "Pronunciation (IPA)": "/baɪt/ — Diftong /aɪ/ seperti \"light\" atau \"site\".",
+      "Verbs (Kata Kerja)": "bite (V1/Base), bites (3rd person), bit (V2/Past), bitten (V3/Participle), biting (-ing/Gerund)",
+      "Nouns (Kata Benda)": "bite (gigitan/daya gigit/rasa pedas tajam), soundbite (kutipan singkat politisi)",
+      "Adjectives (Kata Sifat)": "biting (menusuk/pedas menyengat, misal biting criticism atau biting cold), bitten",
+      "Adverbs (Kata Keterangan)": "bitingly (secara tajam dan menusuk)",
+      "Pergeseran Penekanan Nada (Stress Shift)": "BITE (/baɪt/) ➔ BIT (/bɪt/) ➔ BIT-ten (/ˈbɪt.ən/) ➔ BI-ting (/ˈbaɪ.tɪŋ/)",
+      "Kolokasi Emas IELTS": "• austerity measures are beginning to bite\n• biting criticism of bureaucratic inertia\n• bite the bullet (menelan pil pahit / menghadapi situasi berat dengan tegar)\n• soundbite politics",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nWhen prices went up, normal families felt a lot of financial pain.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nAs inflationary pressures intensified, escalating living costs began to bite deeply into disposable household incomes.",
+      "Tips Mengingat": "Pola Ireguler: BITE ➔ BIT ➔ BITTEN. Di esai ekonomi/sosial IELTS Writing, gunakan frasa kiasan \"policies / costs begin to bite\" untuk efek yang mulai menusuk tajam."
+    }
+  },
+  {
+    "_id": "6886e6c079914fc749e556ff",
+    "question": "Blow",
+    "answer": "### Definisi & Makna\n**Meniup / Mengembus / Meledakkan / Pukulan Telak (Musibah)**, menggerakkan aliran udara dari mulut atau angin atmosfer; atau meletupkan energi; atau pukulan keras, malapetaka, atau kemunduran telak bagi reputasi seseorang (*a devastating blow*).\n\n> *\"To create an air current; to be carried by wind; or an unexpected setback, disaster, or powerful physical impact.\"*",
+    "progression": "new",
+    "nextReviewDate": "2026-09-23T16:33:05.450Z",
+    "categories": [
+      "68863c76d911399cd3fb3a4c"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb (Irregular) & Noun",
+      "Pronunciation (IPA)": "/bləʊ/ (US: /bloʊ/) — Vokal diftong /oʊ/ seperti \"go\" atau \"snow\".",
+      "Verbs (Kata Kerja)": "blow (V1/Base), blows (3rd person), blew (V2/Past), blown (V3/Participle), blowing (-ing/Gerund)",
+      "Nouns (Kata Benda)": "blow (pukulan telak/hembusan/kemunduran), blower (penghembus)",
+      "Adjectives (Kata Sifat)": "blown (hancur tertiup/rusak), blowable",
+      "Adverbs (Kata Keterangan)": "—",
+      "Pergeseran Penekanan Nada (Stress Shift)": "BLOW (/bləʊ/) ➔ BLEW (/bluː/) ➔ BLOWN (/bləʊn/)",
+      "Kolokasi Emas IELTS": "• deal a devastating blow to the tourist sector\n• blow out of proportion (melebih-lebihkan masalah sepele)\n• cushion the blow of economic recession\n• blow the whistle on corporate malfeasance (melakukan whistleblowing)",
+      "Transformasi Kalimat: Bahasa Sehari-hari vs IELTS Band 8+": "❌ **Bahasa Sehari-hari (Band 5.0–6.0)**:\nThe pandemic caused huge damage to airlines and many went bankrupt.\n\n✅ **Academic IELTS Writing Task 2 (Band 8.0+)**:\nThe unprecedented border closures dealt a devastating blow to commercial aviation, precipitating widespread insolvency.",
+      "Tips Mengingat": "Pola Ireguler: BLOW ➔ BLEW ➔ BLOWN. Kolokasi IELTS Band 8+: \"deal a devastating blow to...\" (memberikan pukulan telak yang menghancurkan kepada...)."
+    }
+  },
+  {
     "_id": "6902a0010000000000000035",
     "question": "Phonemic / Phoneme (Adjective & Noun: Linguistic Speech Sounds & Pronunciation Symbols)",
     "answer": "Fonemik / Berkaitan dengan Sistem Lambang Bunyi Suara Bahasa (relating to phonemes — the distinct units of sound in a language)",
@@ -19075,16 +19295,6 @@
     }
   },
   {
-    "_id": "6886e6bfbc69eb9d8a80b831",
-    "question": "Berlutut, bersujud",
-    "answer": "V1: Kneel | V2: Knelt | V3: Knelt",
-    "progression": "normal",
-    "nextReviewDate": "2025-10-30T01:41:00.615Z",
-    "categories": [
-      "68863c76d911399cd3fb3a4c"
-    ]
-  },
-  {
     "_id": "6886e6c0b95d32d2cbb8b7fc",
     "question": "Naik, terbit",
     "answer": "V1: Rise | V2: Rose | V3: Risen",
@@ -19160,16 +19370,6 @@
     "answer": "V1: Let | V2: Let | V3: Let",
     "progression": "normal",
     "nextReviewDate": "2025-10-29T01:08:44.171Z",
-    "categories": [
-      "68863c76d911399cd3fb3a4c"
-    ]
-  },
-  {
-    "_id": "6886e6c079914fc749e556ff",
-    "question": "Bertiup, mengembus",
-    "answer": "V1: Blow | V2: Blew | V3: Blown",
-    "progression": "normal",
-    "nextReviewDate": "2025-10-29T01:08:21.889Z",
     "categories": [
       "68863c76d911399cd3fb3a4c"
     ]
@@ -19310,16 +19510,6 @@
     "answer": "V1: Prove | V2: Proved | V3: Proved, proven",
     "progression": "perfect",
     "nextReviewDate": "2025-09-07T01:35:23.723Z",
-    "categories": [
-      "68863c76d911399cd3fb3a4c"
-    ]
-  },
-  {
-    "_id": "6886e6c07eae4adf976c37a6",
-    "question": "Menggigit",
-    "answer": "V1: Bite | V2: Bit | V3: Bitten, bit",
-    "progression": "perfect",
-    "nextReviewDate": "2025-09-07T01:56:20.904Z",
     "categories": [
       "68863c76d911399cd3fb3a4c"
     ]
@@ -20298,51 +20488,11 @@
     ]
   },
   {
-    "_id": "6886eed375b4418c47a47da3",
-    "question": "Membunuh",
-    "answer": "V1: Kill | V2: Killed | V3: Killed",
-    "progression": "good",
-    "nextReviewDate": "2025-08-27T12:29:28.357Z",
-    "categories": [
-      "6886ee8e75b4418c47a47d9b"
-    ]
-  },
-  {
-    "_id": "6886eedb8fa95e033e843179",
-    "question": "Mengeringkan",
-    "answer": "V1: Dry | V2: Dried | V3: Dried",
-    "progression": "good",
-    "nextReviewDate": "2025-08-27T12:28:29.622Z",
-    "categories": [
-      "6886ee8e75b4418c47a47d9b"
-    ]
-  },
-  {
     "_id": "6886eedbb431e0c2ecf5d268",
     "question": "Berlatih, melatih",
     "answer": "V1: Train | V2: Trained | V3: Trained",
     "progression": "good",
     "nextReviewDate": "2025-08-27T12:33:40.118Z",
-    "categories": [
-      "6886ee8e75b4418c47a47d9b"
-    ]
-  },
-  {
-    "_id": "6886eedb37f959147ca7b6b3",
-    "question": "Membisikkan",
-    "answer": "V1: Whisper | V2: Whispered | V3: Whispered",
-    "progression": "good",
-    "nextReviewDate": "2025-08-26T02:12:00.786Z",
-    "categories": [
-      "6886ee8e75b4418c47a47d9b"
-    ]
-  },
-  {
-    "_id": "6886eedb2476826f56a5e49a",
-    "question": "Memungut (anak)",
-    "answer": "V1: Adopt | V2: Adopted | V3: Adopted",
-    "progression": "good",
-    "nextReviewDate": "2025-08-27T12:16:36.367Z",
     "categories": [
       "6886ee8e75b4418c47a47d9b"
     ]
