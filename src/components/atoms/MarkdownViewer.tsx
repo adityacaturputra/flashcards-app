@@ -6,6 +6,8 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import MermaidDiagram from './MermaidDiagram';
+import AccentAudioLab from '@/components/organisms/AccentAudioLab';
+import { playSpeech, stopSpeech } from '@/utils/speechSynthesis';
 import {
   FaCheck,
   FaCopy,
@@ -13,7 +15,49 @@ import {
   FaCircleInfo,
   FaTriangleExclamation,
   FaCircleExclamation,
+  FaVolumeHigh,
 } from 'react-icons/fa6';
+
+function safeDecode(str: string): string {
+  try {
+    return decodeURIComponent(str.replace(/\+/g, ' '));
+  } catch {
+    return str.replace(/\+/g, ' ');
+  }
+}
+
+function parseAudioHref(href: string): { lang: string; text: string } {
+  const raw = href.replace(/^(audio|speech):/, '');
+  if (raw.includes('?')) {
+    const [lang, query] = raw.split('?');
+    const params = new URLSearchParams(query);
+    const text = params.get('text') || '';
+    return {
+      lang: lang || 'en-GB',
+      text: safeDecode(text),
+    };
+  }
+  const colonIdx = raw.indexOf(':');
+  if (colonIdx !== -1) {
+    const lang = raw.substring(0, colonIdx);
+    const text = raw.substring(colonIdx + 1);
+    return {
+      lang: lang || 'en-GB',
+      text: safeDecode(text),
+    };
+  }
+  return {
+    lang: 'en-GB',
+    text: safeDecode(raw),
+  };
+}
+
+function cleanAudioLabel(children: React.ReactNode): React.ReactNode {
+  if (typeof children === 'string') {
+    return children.replace(/^[🔊▶️🎙️]\s*/, '').trim();
+  }
+  return children;
+}
 
 interface MarkdownViewerProps {
   content: string;
@@ -29,6 +73,7 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   onMappingClick,
 }) => {
   const [copied, setCopied] = useState(false);
+  const [playingAudioKey, setPlayingAudioKey] = useState<string | null>(null);
 
   const processedContent = React.useMemo(() => {
     if (!content) return '';
@@ -79,6 +124,7 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
 
       <div className='markdown-content prose prose-slate dark:prose-invert max-w-none text-xs leading-relaxed sm:text-sm md:text-base break-words'>
         <ReactMarkdown
+          urlTransform={(url) => url}
           remarkPlugins={[remarkGfm, remarkMath]}
           rehypePlugins={[rehypeRaw, rehypeKatex]}
           components={{
@@ -269,6 +315,14 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
                 return <MermaidDiagram chart={String(children)} />;
               }
 
+              const isAccentLab =
+                className === 'language-accent-lab' ||
+                Boolean(className?.includes('language-accent-lab'));
+
+              if (isAccentLab) {
+                return <AccentAudioLab />;
+              }
+
               return isInline ? (
                 <code
                   className='rounded px-1.5 py-0.5 text-[11px] sm:text-xs font-mono font-semibold break-words'
@@ -301,7 +355,140 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
             em: ({ children }) => (
               <em className='italic text-foreground/90'>{children}</em>
             ),
+            button: ({ node, ...props }) => {
+              void node;
+              const customProps = props as Record<string, unknown>;
+              const audioText =
+                (customProps['data-audio'] as string | undefined) ||
+                (customProps['data-speech'] as string | undefined);
+              const audioLang =
+                (customProps['data-lang'] as string | undefined) || 'en-GB';
+
+              if (audioText) {
+                const key = `btn-audio-${audioLang}-${audioText}`;
+                const isPlaying = playingAudioKey === key;
+                const displayLabel = cleanAudioLabel(props.children);
+                const hasLabel = Boolean(
+                  displayLabel && String(displayLabel).trim().length > 0
+                );
+
+                const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+
+                  if (isPlaying) {
+                    stopSpeech();
+                    setPlayingAudioKey(null);
+                    return;
+                  }
+
+                  setPlayingAudioKey(key);
+                  playSpeech({
+                    text: audioText,
+                    lang: audioLang,
+                    rate: 0.88,
+                    onStart: () => setPlayingAudioKey(key),
+                    onEnd: () =>
+                      setPlayingAudioKey((c) => (c === key ? null : c)),
+                    onError: () =>
+                      setPlayingAudioKey((c) => (c === key ? null : c)),
+                  });
+                };
+
+                return (
+                  <button
+                    type='button'
+                    onClick={handleClick}
+                    className={`btn-compact inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-semibold transition-all cursor-pointer select-none active:scale-95 ${
+                      isPlaying
+                        ? 'border-primary bg-primary/15 text-primary shadow-xs ring-1 ring-primary/40'
+                        : 'border-border bg-secondary/80 hover:bg-secondary text-foreground hover:border-primary/50'
+                    }`}
+                    title={
+                      isPlaying
+                        ? 'Hentikan audio'
+                        : `Dengarkan "${audioText}" (${audioLang})`
+                    }
+                    aria-label={`Dengarkan audio ${audioText}`}
+                  >
+                    <FaVolumeHigh
+                      className={`h-3 w-3 shrink-0 ${
+                        isPlaying ? 'animate-pulse text-primary' : 'text-primary'
+                      }`}
+                    />
+                    {hasLabel && <span>{displayLabel}</span>}
+                  </button>
+                );
+              }
+
+              return <button {...props} />;
+            },
             a: ({ href, children }) => {
+              const isAudioLink = Boolean(
+                href && (href.startsWith('audio:') || href.startsWith('speech:'))
+              );
+
+              if (isAudioLink && href) {
+                const isPlaying = playingAudioKey === href;
+                const { lang, text } = parseAudioHref(href);
+                const displayLabel = cleanAudioLabel(children);
+                const hasLabel = Boolean(
+                  displayLabel && String(displayLabel).trim().length > 0
+                );
+
+                const handleAudioClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+
+                  if (isPlaying) {
+                    stopSpeech();
+                    setPlayingAudioKey(null);
+                    return;
+                  }
+
+                  setPlayingAudioKey(href);
+                  playSpeech({
+                    text: text || (typeof displayLabel === 'string' ? displayLabel : ''),
+                    lang,
+                    rate: 0.88,
+                    onStart: () => setPlayingAudioKey(href),
+                    onEnd: () =>
+                      setPlayingAudioKey((curr) =>
+                        curr === href ? null : curr
+                      ),
+                    onError: () =>
+                      setPlayingAudioKey((curr) =>
+                        curr === href ? null : curr
+                      ),
+                  });
+                };
+
+                return (
+                  <button
+                    type='button'
+                    onClick={handleAudioClick}
+                    className={`btn-compact inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-semibold transition-all cursor-pointer select-none active:scale-95 ${
+                      isPlaying
+                        ? 'border-primary bg-primary/15 text-primary shadow-xs ring-1 ring-primary/40'
+                        : 'border-border bg-secondary/80 hover:bg-secondary text-foreground hover:border-primary/50'
+                    }`}
+                    title={
+                      isPlaying
+                        ? 'Hentikan audio'
+                        : `Dengarkan "${text}" (${lang})`
+                    }
+                    aria-label={`Dengarkan audio ${text}`}
+                  >
+                    <FaVolumeHigh
+                      className={`h-3 w-3 shrink-0 ${
+                        isPlaying ? 'animate-pulse text-primary' : 'text-primary'
+                      }`}
+                    />
+                    {hasLabel && <span>{displayLabel}</span>}
+                  </button>
+                );
+              }
+
               const isMappingLink =
                 Boolean(href && (
                   href.startsWith('#mapping:') ||

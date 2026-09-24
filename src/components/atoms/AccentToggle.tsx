@@ -1,14 +1,20 @@
 import React, { memo } from 'react';
 import { AccentPreference, ACCENT_PREFERENCE } from '@/types/phonemic';
+import { useAccentContext } from '@/context/accentContext';
 
-interface AccentToggleProps {
-  value: AccentPreference;
-  onChange: (value: AccentPreference) => void;
+export interface AccentToggleProps {
+  value?: AccentPreference;
+  onChange?: (value: AccentPreference) => void;
   className?: string;
+  compact?: boolean;
 }
 
 export const AccentToggle: React.FC<AccentToggleProps> = memo(
-  ({ value, onChange, className = '' }) => {
+  ({ value, onChange, className = '', compact = false }) => {
+    const { accent: contextAccent, setAccent: contextSetAccent } = useAccentContext();
+    const activeValue = value ?? contextAccent;
+    const handleChange = onChange ?? contextSetAccent;
+
     return (
       <div
         className={`inline-flex items-center gap-1 p-1 rounded-xl border shadow-xs select-none transition-colors ${className}`}
@@ -23,15 +29,15 @@ export const AccentToggle: React.FC<AccentToggleProps> = memo(
         <button
           type='button'
           role='radio'
-          aria-checked={value === ACCENT_PREFERENCE.UK}
-          onClick={() => onChange(ACCENT_PREFERENCE.UK)}
-          className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs transition-all ${
-            value === ACCENT_PREFERENCE.UK
+          aria-checked={activeValue === ACCENT_PREFERENCE.UK}
+          onClick={() => handleChange(ACCENT_PREFERENCE.UK)}
+          className={`relative flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs transition-all ${
+            activeValue === ACCENT_PREFERENCE.UK
               ? 'font-bold border shadow-xs'
               : 'font-medium opacity-65 hover:opacity-100'
           }`}
           style={
-            value === ACCENT_PREFERENCE.UK
+            activeValue === ACCENT_PREFERENCE.UK
               ? {
                   background: 'var(--card)',
                   color: 'var(--foreground)',
@@ -47,23 +53,23 @@ export const AccentToggle: React.FC<AccentToggleProps> = memo(
           <span className='text-sm leading-none' role='img' aria-label='UK flag'>
             🇬🇧
           </span>
-          <span className='hidden xs:inline'>British RP</span>
-          <span className='xs:hidden'>UK</span>
+          {!compact && <span className='hidden xs:inline'>British RP</span>}
+          <span className={compact ? 'inline' : 'xs:hidden'}>UK</span>
         </button>
 
         {/* American English Option */}
         <button
           type='button'
           role='radio'
-          aria-checked={value === ACCENT_PREFERENCE.US}
-          onClick={() => onChange(ACCENT_PREFERENCE.US)}
-          className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs transition-all ${
-            value === ACCENT_PREFERENCE.US
+          aria-checked={activeValue === ACCENT_PREFERENCE.US}
+          onClick={() => handleChange(ACCENT_PREFERENCE.US)}
+          className={`relative flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs transition-all ${
+            activeValue === ACCENT_PREFERENCE.US
               ? 'font-bold border shadow-xs'
               : 'font-medium opacity-65 hover:opacity-100'
           }`}
           style={
-            value === ACCENT_PREFERENCE.US
+            activeValue === ACCENT_PREFERENCE.US
               ? {
                   background: 'var(--card)',
                   color: 'var(--foreground)',
@@ -79,8 +85,8 @@ export const AccentToggle: React.FC<AccentToggleProps> = memo(
           <span className='text-sm leading-none' role='img' aria-label='US flag'>
             🇺🇸
           </span>
-          <span className='hidden xs:inline'>American</span>
-          <span className='xs:hidden'>US</span>
+          {!compact && <span className='hidden xs:inline'>American</span>}
+          <span className={compact ? 'inline' : 'xs:hidden'}>US</span>
         </button>
       </div>
     );

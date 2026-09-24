@@ -12,6 +12,7 @@ import {
   SpeechButtonAriaProps,
 } from '@/utils/speechSynthesis';
 import { AccentPreference } from '@/types/phonemic';
+import { useAccentContext } from '@/context/accentContext';
 import { FlashcardField } from '@/types/flashcard';
 
 export { getSpeechButtonAriaProps };
@@ -74,10 +75,12 @@ export interface SpeechPlaybackReturn<TField extends string = FlashcardField> {
 
 export function useSpeechPlayback<TField extends string = FlashcardField>({
   resetTriggers = [],
-  accent,
+  accent: explicitAccent,
   rate,
   pitch,
 }: UseSpeechPlaybackOptions = {}): SpeechPlaybackReturn<TField> {
+  const { accent: globalAccent } = useAccentContext();
+  const effectiveAccent = explicitAccent ?? globalAccent;
   const [activeField, setActiveField] = useState<TField | null>(null);
 
   // Stable ref to prevent race conditions during rapid clicks
@@ -126,7 +129,7 @@ export function useSpeechPlayback<TField extends string = FlashcardField>({
       setActiveField(field);
       playSpeech({
         text,
-        accent,
+        accent: effectiveAccent,
         rate,
         pitch,
         onStart: () => setActiveField(field),
@@ -142,7 +145,7 @@ export function useSpeechPlayback<TField extends string = FlashcardField>({
         },
       });
     },
-    [accent, rate, pitch, handleStopSpeech]
+    [effectiveAccent, rate, pitch, handleStopSpeech]
   );
 
   const getAudioButtonProps = useCallback(

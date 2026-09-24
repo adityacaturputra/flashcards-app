@@ -5,9 +5,46 @@
 
 import { AccentPreference, ACCENT_PREFERENCE, DEFAULT_ACCENT } from '@/types/phonemic';
 
-interface SpeechOptions {
+export const ACCENT_STORAGE_KEY = 'flashcards_accent_preference';
+
+let currentGlobalAccent: AccentPreference = DEFAULT_ACCENT;
+
+/**
+ * Get current global accent preference (cached in memory, synced from localStorage)
+ */
+export function getGlobalAccent(): AccentPreference {
+  if (typeof window !== 'undefined') {
+    try {
+      const stored = localStorage.getItem(ACCENT_STORAGE_KEY);
+      if (stored === ACCENT_PREFERENCE.UK || stored === ACCENT_PREFERENCE.US) {
+        currentGlobalAccent = stored;
+      }
+    } catch {
+      // ignore localStorage errors (e.g. disabled storage)
+    }
+  }
+  return currentGlobalAccent;
+}
+
+/**
+ * Set current global accent preference (persists to localStorage and notifies listeners)
+ */
+export function setGlobalAccent(accent: AccentPreference): void {
+  currentGlobalAccent = accent;
+  if (typeof window !== 'undefined') {
+    try {
+      localStorage.setItem(ACCENT_STORAGE_KEY, accent);
+      window.dispatchEvent(new CustomEvent('accentchange', { detail: { accent } }));
+    } catch {
+      // ignore
+    }
+  }
+}
+
+export interface SpeechOptions {
   text: string;
   accent?: AccentPreference;
+  lang?: string; // BCP-47 tag, e.g. 'en-GB', 'en-AU', 'en-US', 'en-ZA', 'en-IN'
   rate?: number; // 1.0 = normal, 0.6 = slow motion
   pitch?: number;
   onStart?: () => void;
@@ -26,36 +63,54 @@ export function getAvailableVoices(): SpeechSynthesisVoice[] {
 }
 
 /**
- * Resolve the optimal voice based on desired English accent (UK vs US)
+ * Resolve optimal voice matching a specific BCP-47 locale tag (e.g. en-AU, en-GB, en-US, en-ZA, en-IN)
  */
-export function resolveBestVoice(accent: AccentPreference): SpeechSynthesisVoice | null {
+export function resolveVoiceByLocale(targetLocale: string): SpeechSynthesisVoice | null {
   const voices = getAvailableVoices();
   if (!voices || voices.length === 0) return null;
 
-  const targetLang = accent === ACCENT_PREFERENCE.UK ? 'en-GB' : 'en-US';
+  const normalized = targetLocale.toLowerCase().replace('_', '-');
 
-  // 1. Try to find natural/high-quality voices matching target lang
+  // 1. Try to find natural/high-quality voices matching target locale
   const naturalMatch = voices.find(
     (v) =>
-      v.lang.replace('_', '-').startsWith(targetLang) &&
+      v.lang.toLowerCase().replace('_', '-').startsWith(normalized) &&
       (v.name.includes('Natural') ||
         v.name.includes('Online') ||
         v.name.includes('Google') ||
         v.name.includes('Daniel') ||
         v.name.includes('Samantha') ||
-        v.name.includes('Arthur'))
+        v.name.includes('Karen') ||
+        v.name.includes('Tessa') ||
+        v.name.includes('Rishi') ||
+        v.name.includes('Enhanced') ||
+        v.name.includes('Premium'))
   );
   if (naturalMatch) return naturalMatch;
 
-  // 2. Try exact language match
+  // 2. Try exact language/region match
   const exactMatch = voices.find((v) =>
-    v.lang.replace('_', '-').startsWith(targetLang)
+    v.lang.toLowerCase().replace('_', '-').startsWith(normalized)
   );
   if (exactMatch) return exactMatch;
 
-  // 3. Fallback to any English voice
-  const englishFallback = voices.find((v) => v.lang.startsWith('en'));
+  // 3. Fallback to British if regional accent voice is not installed
+  const fallbackUk = voices.find((v) =>
+    v.lang.toLowerCase().replace('_', '-').startsWith('en-gb')
+  );
+  if (fallbackUk) return fallbackUk;
+
+  // 4. Fallback to any English voice
+  const englishFallback = voices.find((v) => v.lang.toLowerCase().startsWith('en'));
   return englishFallback || null;
+}
+
+/**
+ * Resolve the optimal voice based on desired English accent (UK vs US)
+ */
+export function resolveBestVoice(accent: AccentPreference): SpeechSynthesisVoice | null {
+  const targetLang = accent === ACCENT_PREFERENCE.UK ? 'en-GB' : 'en-US';
+  return resolveVoiceByLocale(targetLang);
 }
 
 /**
@@ -101,7 +156,8 @@ export function stripMarkdownForTTS(text: string): string {
  */
 export function playSpeech({
   text,
-  accent = DEFAULT_ACCENT,
+  accent,
+  lang,
   rate = 0.88,
   pitch = 1.0,
   onStart,
@@ -120,17 +176,26 @@ export function playSpeech({
     return;
   }
 
+  const effectiveAccent = accent ?? getGlobalAccent();
+  const effectiveLang = lang || (effectiveAccent === ACCENT_PREFERENCE.UK ? 'en-GB' : 'en-US');
+
   // Cancel any ongoing utterance to ensure instant response
   window.speechSynthesis.cancel();
+
+  // If paused (e.g. Chrome speech queue stall), resume
+  if (window.speechSynthesis.paused) {
+    window.speechSynthesis.resume();
+  }
 
   const utterance = new SpeechSynthesisUtterance(cleanedText);
   utterance.rate = rate;
   utterance.pitch = pitch;
-  utterance.lang = accent === ACCENT_PREFERENCE.UK ? 'en-GB' : 'en-US';
+  utterance.lang = effectiveLang;
 
-  const selectedVoice = resolveBestVoice(accent);
+  const selectedVoice = resolveVoiceByLocale(effectiveLang);
   if (selectedVoice) {
     utterance.voice = selectedVoice;
+    utterance.lang = selectedVoice.lang;
   }
 
   if (onStart) utterance.onstart = onStart;

@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPlus, FaPlay, FaStop, FaBars, FaXmark } from 'react-icons/fa6';
+import AccentToggle from '@/components/atoms/AccentToggle';
 
 interface HeaderActionsProps {
   isReviewMode: boolean;
@@ -38,6 +39,9 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
           <span>Add Card</span>
         </motion.button>
       )}
+
+      {/* Global Audio Accent Switcher (Desktop & Tablet) */}
+      <AccentToggle className='hidden md:inline-flex' />
 
       {/* Review Mode Toggle Button */}
       <motion.button

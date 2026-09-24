@@ -12,21 +12,20 @@ import {
 } from 'react-icons/fa6';
 import {
   PhonemicViewTab,
-  AccentPreference,
   PHONEMIC_VIEW_TAB,
-  ACCENT_PREFERENCE,
 } from '@/types/phonemic';
 import UnderhillPhonemicBoard from '@/components/organisms/UnderhillPhonemicBoard';
 import MinimalPairsTrainer from '@/components/organisms/MinimalPairsTrainer';
 import ConnectedSpeechLab from '@/components/organisms/ConnectedSpeechLab';
 import ErrorBoundary from '@/components/atoms/ErrorBoundary';
 import AccentToggle from '@/components/atoms/AccentToggle';
+import { useAccentContext } from '@/context/accentContext';
 import { APP_ROUTES } from '@/constants/routes';
 
 export default function PhonemicsPage() {
   const router = useRouter();
+  const { accent, setAccent } = useAccentContext();
   const [activeTab, setActiveTab] = useState<PhonemicViewTab>(PHONEMIC_VIEW_TAB.CHART);
-  const [accent, setAccent] = useState<AccentPreference>(ACCENT_PREFERENCE.US);
 
   return (
     <ErrorBoundary>

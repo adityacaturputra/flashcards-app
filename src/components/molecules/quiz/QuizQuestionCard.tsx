@@ -16,7 +16,6 @@ export const QuizQuestionCard: React.FC<QuizQuestionCardProps> = ({
 }) => {
   const { toggleSpeech, isPlaying } = useSpeechPlayback<string>({
     resetTriggers: [question.id],
-    accent: 'us',
     rate: 0.9,
   });
 

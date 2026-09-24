@@ -15,6 +15,7 @@ import {
   FaAward,
 } from 'react-icons/fa6';
 import DataSourceToggle from '@/components/atoms/DataSourceToggle';
+import AccentToggle from '@/components/atoms/AccentToggle';
 import { APP_ROUTES } from '@/constants/routes';
 
 interface HeaderNavMenuProps {
@@ -127,6 +128,24 @@ export const HeaderNavMenu: React.FC<HeaderNavMenuProps> = ({
                     Sync
                   </span>
                 </button>
+              </div>
+
+              {/* Global Voice Accent Section */}
+              <div
+                className='flex flex-col gap-2 pb-2.5 border-b'
+                style={{ borderColor: 'var(--border)' }}
+              >
+                <div className='flex items-center justify-between px-2 py-0.5'>
+                  <span className='text-[10px] font-bold uppercase tracking-wider text-muted-foreground'>
+                    Audio Voice Accent
+                  </span>
+                  <span className='text-[9px] font-semibold text-muted-foreground bg-slate-500/10 dark:bg-slate-400/10 px-1.5 py-0.5 rounded'>
+                    Global TTS
+                  </span>
+                </div>
+                <div className='flex justify-center px-1'>
+                  <AccentToggle className='w-full justify-center' />
+                </div>
               </div>
 
               {/* Primary Study Suites Section */}

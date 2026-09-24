@@ -33,15 +33,34 @@ Setelah Anda mendengarkan audio latihan menggunakan metode analisis transkrip, d
 ---
 
 ### II. Latihan Telinga Terhadap Berbagai Aksen Bahasa Inggris
-Ujian IELTS tidak hanya menggunakan aksen British (Received Pronunciation). Anda wajib melatih telinga dengan variasi aksen berikut:
+Ujian IELTS tidak hanya menggunakan aksen British (*Received Pronunciation*). Penguji resmi Cambridge sengaja memadukan berbagai ragam aksen penutur asli (*native speaker varieties*) dari seluruh dunia. Klik tombol audio di bawah untuk melatih diskriminasi pendengaran Anda:
 
-| Sumber Siaran | Ragam Aksen | Karakteristik Bunyi yang Perlu Diperhatikan |
-| :--- | :--- | :--- |
-| **BBC News** | British (RP) | Bunyi vokal panjang (*bath* /bɑːθ/), huruf 'r' di akhir kata sering tidak dibunyikan (*non-rhotic*). |
-| **Australian ABC News** | Australian | Vokal bergeser (*day* terdengar mirip *die*, intonasi naik di akhir kalimat pertanyaan). |
-| **CNN / NPR News** | US & Canadian | Bunyi huruf 'r' sangat jelas (*rhotic*), bunyi 't' di tengah kata melunak menjadi bunyi 'd' (*water* -> *wader*). |
-| **SABC News** | South African | Vokal tajam, ritme berdegup, penekanan konsonan yang khas. |
-| **AIR / Indian News** | Indian English | Bunyi konsonan retrofleks (/t/ dan /d/), variasi penekanan suku kata (*stress*). |
+| Sumber Siaran | Ragam Aksen & Frekuensi | Karakteristik Fonetik Kunci | Contoh Kata & Audio | Contoh Kalimat Nyata di IELTS |
+| :--- | :--- | :--- | :--- | :--- |
+| [**BBC News**](https://www.bbc.co.uk/sounds/play/live:bbc_world_service) | **British (RP)**<br>*(~50%–60% Ujian)* | Bunyi vokal panjang *Broad A* (/ɑː/), huruf 'r' setelah vokal tidak dibunyikan (*non-rhotic*), konsonan /t/ diletupkan tegas. | [🔊 bath](audio:en-GB:bath) <br> [🔊 water](audio:en-GB:water) <br> [🔊 car](audio:en-GB:car) | *"I'd like to book a return ticket to Oxford for quarter past four, please."* <br>[🔊 Putar Kalimat UK](audio:en-GB:I'd+like+to+book+a+return+ticket+to+Oxford+for+quarter+past+four,+please.) |
+| [**Australian ABC News**](https://www.abc.net.au/newsradio) | **Australian**<br>*(~20%–30% Ujian)* | Vokal bergeser drastis (*day* terdengar mirip *die*, *eight* mirip *ite*), intonasi naik di akhir kalimat (*High Rising Terminal*). | [🔊 day](audio:en-AU:day) <br> [🔊 today](audio:en-AU:today) <br> [🔊 eight](audio:en-AU:eight) | *"G'day mate, the apartment lease is confirmed for the eighth of May, no worries!"* <br>[🔊 Putar Kalimat AU](audio:en-AU:G'day+mate,+the+apartment+lease+is+confirmed+for+the+eighth+of+May,+no+worries!) |
+| [**CNN / NPR News**](https://www.npr.org/programs/morning-edition/) | **US & Canadian**<br>*(~15%–20% Ujian)* | Bunyi huruf 'r' sangat tebal (*rhotic*), bunyi 't' di tengah kata melunak menjadi bunyi 'd' cepat (*water* ➔ *"wader"*, *city* ➔ *"cidy"*). | [🔊 water](audio:en-US:water) <br> [🔊 city](audio:en-US:city) <br> [🔊 better](audio:en-US:better) | *"Could I get a cold bottle of water in the city and sign up for the winter seminar?"* <br>[🔊 Putar Kalimat US](audio:en-US:Could+I+get+a+cold+bottle+of+water+in+the+city+and+sign+up+for+the+winter+seminar?) |
+| [**SABC News**](https://www.sabcnews.com/sabcnews/category/audio-podcasts/) | **South African**<br>*(~5%–10% Ujian)* | Fenomena *Kit Split* (vokal /ɪ/ bergeser menyerupai schwa /ə/: *sit* terdengar *"suht"*), letupan konsonan tajam, ritme berdegup (*clipped*). | [🔊 sit](audio:en-ZA:sit) <br> [🔊 pin](audio:en-ZA:pin) <br> [🔊 just now](audio:en-ZA:just+now) | *"Just now we will sit at the desk, check the list, and submit the campus application."* <br>[🔊 Putar Kalimat ZA](audio:en-ZA:Just+now+we+will+sit+at+the+desk,+check+the+list,+and+submit+the+campus+application.) |
+| [**AIR / Indian News**](https://newsonair.gov.in/) | **Indian English**<br>*(~5%–10% Ujian)* | Konsonan retrofleks (/ʈ/ dan /ɖ/) dengan lidah melengkung ke atas, ritme berbasis suku kata (*syllable-timed*), variasi penekanan suku kata (*stress shift*). | [🔊 time](audio:en-IN:time) <br> [🔊 date](audio:en-IN:date) <br> [🔊 total](audio:en-IN:total) | *"Kindly confirm the total cost and date of your departure before Wednesday afternoon."* <br>[🔊 Putar Kalimat IN](audio:en-IN:Kindly+confirm+the+total+cost+and+date+of+your+departure+before+Wednesday+afternoon.) |
+
+```accent-lab
+```
+
+#### 🔍 Tabel Komparasi Langsung 1 Kata di Antara 5 Aksen (Minimal Contrast Matrix)
+Dengarkan kata yang sama dilafalkan melintasi berbagai aksen untuk mempertajam kepekaan telinga Anda terhadap perubahan vokal dan konsonan:
+
+| Kata Uji | Standar British (RP) | Australian Shift | US / Canadian (Rhotic/Flap) | South African (Clipped) | Indian (Retroflex) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **water** | [🔊 /ˈwɔːtə/](audio:en-GB:water) <br>*(non-rhotic, 't' tegas)* | [🔊 /ˈwoːtə/](audio:en-AU:water) <br>*(non-rhotic, vokal santai)* | [🔊 /ˈwɑːt̬ər/](audio:en-US:water) <br>*(flap 't' ➔ "wader", 'r' jelas)* | [🔊 /ˈwɔːtə/](audio:en-ZA:water) <br>*(konsonan letup tajam)* | [🔊 /ˈwɑːʈər/](audio:en-IN:water) <br>*(konsonan retrofleks /ʈ/)* |
+| **day / date** | [🔊 /deɪt/](audio:en-GB:date) <br>*(diftong standar)* | [🔊 /daɪt/](audio:en-AU:date) <br>*(bergeser mirip "dite")* | [🔊 /deɪt/](audio:en-US:date) <br>*(diftong kuat)* | [🔊 /deɪt/](audio:en-ZA:date) <br>*(vokal ringkas padat)* | [🔊 /ɖeːt/](audio:en-IN:date) <br>*(retrofleks /ɖ/, vokal murni)* |
+| **car / park** | [🔊 /kɑː/](audio:en-GB:car) <br>*(non-rhotic murni)* | [🔊 /kɑː/](audio:en-AU:car) <br>*(vokal belakang santai)* | [🔊 /kɑːr/](audio:en-US:car) <br>*(rhotic tebal)* | [🔊 /kɑː/](audio:en-ZA:car) <br>*(non-rhotic tajam)* | [🔊 /kɑːr/](audio:en-IN:car) <br>*(ketukan lidah ringan)* |
+| **better** | [🔊 /ˈbetə/](audio:en-GB:better) <br>*(letup 't' tajam)* | [🔊 /ˈbetə/](audio:en-AU:better) <br>*(ritme santai)* | [🔊 /ˈbet̬ər/](audio:en-US:better) <br>*(melunak ➔ "bedder")* | [🔊 /ˈbetə/](audio:en-ZA:better) <br>*(konsonan padat)* | [🔊 /ˈbɛʈər/](audio:en-IN:better) <br>*(retrofleks /ʈ/ kuat)* |
+
+> [!TIP]
+> **Taktik Ujian Menghadapi Variasi Aksen**:
+> 1. **Jangan Menebak Ejaan Berdasarkan Bunyi Aksen Lokal**: Jika mendengar penutur Australia menyebut *"eighth"* (/aɪtθ/), jangan menulis *"height"* atau *"ninth"*. Selalu periksa tata bahasa kalimat (*collocation*: "the eighth of May").
+> 2. **Perhatikan Flapping di Aksen Amerika**: Jika mendengar *"wader"*, otak Anda harus langsung mengonversinya menjadi `WATER` di lembar jawaban, bukan menulis ejaan fonetiknya.
+> 3. **Latihan Siaran Langsung**: Dengarkan siaran radio [BBC World Service](https://www.bbc.co.uk/sounds/play/live:bbc_world_service) atau [Australian ABC Radio](https://www.abc.net.au/newsradio) selama 10–15 menit setiap pagi untuk mengondisikan saraf pendengaran Anda.
 
 ---
 
@@ -81,13 +100,13 @@ IELTS Listening pada hakikatnya adalah **tes pencocokan parafrase secara real-ti
 ---
 
 ### VII. Pahami Fenomena Sambungan Suara (*Connected Speech*)
-Dalam percakapan cepat penutur asli, bunyi kata saling melebur sehingga terdengar sangat berbeda dari bentuk tertulisnya:
+Dalam percakapan cepat penutur asli, bunyi kata saling melebur sehingga terdengar sangat berbeda dari bentuk tertulisnya. Klik tombol audio untuk mendengarkan bunyinya:
 
-| Bentuk Kalimat Tertulis | Cara Pelafalan Penutur Asli (*Connected Speech*) | Terjemahan |
-| :--- | :--- | :--- |
-| *What are you going to do?* | **"Whadya gonna do?"** | Apa yang akan kamu lakukan? |
-| *I'm going to read a book.* | **"I'm gonna re dabook."** | Saya akan membaca buku. |
-| *Come on. Let's go to the park.* | **"Cmon. Let's getethe park."** | Ayo kita pergi ke taman. |
-| *I have to do my homework first.* | **"Ivte dome homework first."** | Saya harus mengerjakan PR dulu. |
+| Bentuk Kalimat Tertulis | Cara Pelafalan Penutur Asli (*Connected Speech*) | Audio Latihan | Terjemahan |
+| :--- | :--- | :--- | :--- |
+| *What are you going to do?* | **"Whadya gonna do?"** | [🔊 Whadya gonna do?](audio:en-GB:Whadya+gonna+do%3F) | Apa yang akan kamu lakukan? |
+| *I'm going to read a book.* | **"I'm gonna re dabook."** | [🔊 I'm gonna read a book](audio:en-GB:I'm+gonna+read+a+book.) | Saya akan membaca buku. |
+| *Come on. Let's go to the park.* | **"Cmon. Let's getethe park."** | [🔊 Cmon let's go to the park](audio:en-GB:Come+on.+Let's+go+to+the+park.) | Ayo kita pergi ke taman. |
+| *I have to do my homework first.* | **"Ivte dome homework first."** | [🔊 I have to do my homework](audio:en-GB:I+have+to+do+my+homework+first.) | Saya harus mengerjakan PR dulu. |
 
 > 💡 **Cara Mengatasi Connected Speech**: Dengarkan podcast penutur asli, tekan jeda (*pause*) pada kalimat yang sulit dipahami, lalu tirukan bunyinya berulang-ulang (*shadowing*) hingga sambungan suaranya terasa wajar di telinga Anda.

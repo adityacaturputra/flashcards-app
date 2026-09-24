@@ -11,8 +11,8 @@ import {
   FaStar,
 } from 'react-icons/fa6';
 import { AwlTabMode, AwlItem, AWL_TAB_MODE } from '@/types/awl';
-import { AccentPreference, ACCENT_PREFERENCE } from '@/types/phonemic';
 import { useAppContext } from '@/context/appContext';
+import { useAccentContext } from '@/context/accentContext';
 import { createAwlFlashcard, generateAwlFlashcardId } from '@/utils/createAwlFlashcard';
 import AwlSublistExplorer from '@/components/organisms/AwlSublistExplorer';
 import AwlParaphraseLab from '@/components/organisms/AwlParaphraseLab';
@@ -24,8 +24,8 @@ import { APP_ROUTES } from '@/constants/routes';
 export default function AwlPage() {
   const router = useRouter();
   const { flashcards, addFlashcard } = useAppContext();
+  const { accent, setAccent } = useAccentContext();
   const [activeTab, setActiveTab] = useState<AwlTabMode>(AWL_TAB_MODE.EXPLORER);
-  const [accent, setAccent] = useState<AccentPreference>(ACCENT_PREFERENCE.US);
 
   // Track which AWL items are already saved in the user's deck
   const deckFlashcardIds = useMemo(() => {

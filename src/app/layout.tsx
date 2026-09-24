@@ -3,6 +3,7 @@ import React from 'react';
 import { AppProvider } from '../context/appContext';
 import { ThemeProvider } from '@/context/themeContext';
 import { SearchTemplateProvider } from '@/context/searchTemplateContext';
+import { AccentProvider } from '@/context/accentContext';
 import './globals.css';
 
 export const metadata = {
@@ -121,9 +122,11 @@ export default function RootLayout({
       </head>
       <body className='antialiased'>
         <ThemeProvider>
-          <AppProvider>
-            <SearchTemplateProvider>{children}</SearchTemplateProvider>
-          </AppProvider>
+          <AccentProvider>
+            <AppProvider>
+              <SearchTemplateProvider>{children}</SearchTemplateProvider>
+            </AppProvider>
+          </AccentProvider>
         </ThemeProvider>
       </body>
     </html>
