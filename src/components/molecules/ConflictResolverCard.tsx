@@ -17,14 +17,19 @@ import {
   CategoriesConflictSection,
   CategoryConflictChoice,
 } from './conflictResolver';
+import { getLatestReviewSource } from '@/utils/syncReviewUtils';
 
 interface ConflictResolverCardProps {
   item: SyncCardDiff;
+  isSelected?: boolean;
+  onToggleSelect?: () => void;
   onResolved?: (cardId: string) => void;
 }
 
 export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
   item,
+  isSelected,
+  onToggleSelect,
   onResolved,
 }) => {
   const localCard = item.localCard;
@@ -56,10 +61,15 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
     return Array.from(keys);
   }, [localCard, cloudCard]);
 
+  const latestReviewSource = useMemo(
+    () => getLatestReviewSource(localCard, cloudCard),
+    [localCard, cloudCard],
+  );
+
   // Track field-by-field choices
   const [questionChoice, setQuestionChoice] = useState<SyncSource>(SYNC_SOURCE.LOCAL);
   const [answerChoice, setAnswerChoice] = useState<SyncSource>(SYNC_SOURCE.LOCAL);
-  const [progressionChoice, setProgressionChoice] = useState<SyncSource>(SYNC_SOURCE.LOCAL);
+  const [progressionChoice, setProgressionChoice] = useState<SyncSource>(latestReviewSource);
   const [categoryChoice, setCategoryChoice] = useState<CategoryConflictChoice>(SYNC_SOURCE.LOCAL);
   const [dynamicChoices, setDynamicChoices] = useState<Record<string, SyncSource>>(() => {
     const initial: Record<string, SyncSource> = {};
@@ -83,6 +93,18 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
     const updated: Record<string, SyncSource> = {};
     allDynamicKeys.forEach((k) => {
       updated[k] = choice;
+    });
+    setDynamicChoices(updated);
+  };
+
+  const handleSelectLatest = () => {
+    setQuestionChoice(latestReviewSource);
+    setAnswerChoice(latestReviewSource);
+    setProgressionChoice(latestReviewSource);
+    setCategoryChoice('both');
+    const updated: Record<string, SyncSource> = {};
+    allDynamicKeys.forEach((k) => {
+      updated[k] = latestReviewSource;
     });
     setDynamicChoices(updated);
   };
@@ -246,6 +268,11 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
     (!hasCategoryDiff || categoryChoice === SYNC_SOURCE.CLOUD) &&
     Object.values(dynamicChoices).every((c) => c === SYNC_SOURCE.CLOUD);
 
+  const isLatestActive =
+    questionChoice === latestReviewSource &&
+    answerChoice === latestReviewSource &&
+    progressionChoice === latestReviewSource;
+
   return (
     <div
       className='rounded-xl border p-3 sm:p-4 space-y-3 sm:space-y-3.5 text-xs transition-all shadow-xs'
@@ -260,7 +287,11 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
         isResolving={isResolving}
         isAllLocalActive={isAllLocalActive}
         isAllCloudActive={isAllCloudActive}
+        isLatestActive={isLatestActive}
+        isSelected={isSelected}
+        onToggleSelect={onToggleSelect}
         onSelectAll={handleSelectAll}
+        onSelectLatest={handleSelectLatest}
       />
 
       {/* Field: Difficulty / Progression & Anki SRS (if differing) */}

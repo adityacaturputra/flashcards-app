@@ -1,8 +1,13 @@
 'use client';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { FaGraduationCap } from 'react-icons/fa6';
 import { Flashcard } from '@/types/flashcard';
 import { SyncSource, SYNC_SOURCE } from '@/types/sync';
+import {
+  formatReviewDate,
+  getLatestReviewSource,
+  hasSrsDifference,
+} from '@/utils/syncReviewUtils';
 
 interface ProgressionConflictSectionProps {
   localCard?: Flashcard;
@@ -11,14 +16,37 @@ interface ProgressionConflictSectionProps {
   onChoiceChange: (choice: SyncSource) => void;
 }
 
-export const ProgressionConflictSection: React.FC<ProgressionConflictSectionProps> = ({
-  localCard,
-  cloudCard,
-  progressionChoice,
-  onChoiceChange,
-}) => {
+export const ProgressionConflictSection: React.FC<
+  ProgressionConflictSectionProps
+> = ({ localCard, cloudCard, progressionChoice, onChoiceChange }) => {
+  const latestSource = useMemo(
+    () => getLatestReviewSource(localCard, cloudCard),
+    [localCard, cloudCard],
+  );
+
+  const hasDiff = useMemo(
+    () => hasSrsDifference(localCard, cloudCard),
+    [localCard, cloudCard],
+  );
+
+  const localReview = useMemo(
+    () => formatReviewDate(localCard?.lastReviewedDate),
+    [localCard?.lastReviewedDate],
+  );
+
+  const cloudReview = useMemo(
+    () => formatReviewDate(cloudCard?.lastReviewedDate),
+    [cloudCard?.lastReviewedDate],
+  );
+
+  const isLocalLatest = hasDiff && latestSource === SYNC_SOURCE.LOCAL;
+  const isCloudLatest = hasDiff && latestSource === SYNC_SOURCE.CLOUD;
+
   return (
-    <div className='rounded-lg border overflow-hidden' style={{ borderColor: 'var(--border)' }}>
+    <div
+      className='rounded-lg border overflow-hidden'
+      style={{ borderColor: 'var(--border)' }}
+    >
       {/* Header Bar */}
       <div
         className='flex items-center justify-between px-3 py-1.5 border-b'
@@ -30,7 +58,8 @@ export const ProgressionConflictSection: React.FC<ProgressionConflictSectionProp
         <div className='flex items-center gap-1.5 min-w-0'>
           <FaGraduationCap className='h-3.5 w-3.5 text-muted-foreground shrink-0' />
           <span className='font-bold uppercase tracking-wider text-[10px] text-muted-foreground truncate'>
-            <span className='hidden xs:inline'>Difficulty / Progression & </span>Anki SRS
+            <span className='hidden xs:inline'>Difficulty / Progression & </span>
+            Anki SRS
           </span>
         </div>
         <div className='flex items-center gap-1.5 shrink-0'>
@@ -43,6 +72,7 @@ export const ProgressionConflictSection: React.FC<ProgressionConflictSectionProp
             }`}
           >
             {progressionChoice === SYNC_SOURCE.LOCAL ? '✓ ' : ''}Local
+            {isLocalLatest ? ' (Latest)' : ''}
           </button>
           <button
             onClick={() => onChoiceChange(SYNC_SOURCE.CLOUD)}
@@ -53,6 +83,7 @@ export const ProgressionConflictSection: React.FC<ProgressionConflictSectionProp
             }`}
           >
             {progressionChoice === SYNC_SOURCE.CLOUD ? '✓ ' : ''}Cloud
+            {isCloudLatest ? ' (Latest)' : ''}
           </button>
         </div>
       </div>
@@ -69,19 +100,38 @@ export const ProgressionConflictSection: React.FC<ProgressionConflictSectionProp
           }`}
         >
           <div className='flex items-center justify-between mb-1.5'>
-            <span className='font-bold select-none text-red-500'>- Local:</span>
+            <div className='flex items-center gap-2'>
+              <span className='font-bold select-none text-red-500'>- Local:</span>
+              {isLocalLatest && (
+                <span className='font-sans font-bold text-[9px] px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30'>
+                  ✨ Latest Review
+                </span>
+              )}
+            </div>
             <span className='font-sans font-bold uppercase text-[10px] px-2 py-0.5 rounded-full bg-red-500/20 text-red-600 dark:text-red-400 border border-red-500/30'>
               {localCard?.progression || 'new'}
             </span>
           </div>
           <div className='text-[10px] font-sans flex flex-wrap items-center gap-2 text-muted-foreground'>
-            <span>Interval: <strong className='text-foreground'>{localCard?.interval ?? 0}d</strong></span>
+            <span>
+              Interval: <strong className='text-foreground'>{localCard?.interval ?? 0}d</strong>
+            </span>
             <span>•</span>
-            <span>Ease: <strong className='text-foreground'>{Math.round((localCard?.easeFactor ?? 2.5) * 100)}%</strong></span>
+            <span>
+              Ease: <strong className='text-foreground'>{Math.round((localCard?.easeFactor ?? 2.5) * 100)}%</strong>
+            </span>
             <span>•</span>
-            <span>Reps: <strong className='text-foreground'>{localCard?.repetitions ?? 0}</strong></span>
+            <span>
+              Reps: <strong className='text-foreground'>{localCard?.repetitions ?? 0}</strong>
+            </span>
             <span>•</span>
-            <span>Lapses: <strong className='text-foreground'>{localCard?.lapses ?? 0}</strong></span>
+            <span>
+              Lapses: <strong className='text-foreground'>{localCard?.lapses ?? 0}</strong>
+            </span>
+            <span>•</span>
+            <span title={localReview?.absolute || 'Never reviewed'}>
+              Reviewed: <strong className='text-foreground'>{localReview?.relative || 'Never'}</strong>
+            </span>
           </div>
         </div>
 
@@ -95,19 +145,38 @@ export const ProgressionConflictSection: React.FC<ProgressionConflictSectionProp
           }`}
         >
           <div className='flex items-center justify-between mb-1.5'>
-            <span className='font-bold select-none text-emerald-500'>+ Cloud:</span>
+            <div className='flex items-center gap-2'>
+              <span className='font-bold select-none text-emerald-500'>+ Cloud:</span>
+              {isCloudLatest && (
+                <span className='font-sans font-bold text-[9px] px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30'>
+                  ✨ Latest Review
+                </span>
+              )}
+            </div>
             <span className='font-sans font-bold uppercase text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30'>
               {cloudCard?.progression || 'new'}
             </span>
           </div>
           <div className='text-[10px] font-sans flex flex-wrap items-center gap-2 text-muted-foreground'>
-            <span>Interval: <strong className='text-foreground'>{cloudCard?.interval ?? 0}d</strong></span>
+            <span>
+              Interval: <strong className='text-foreground'>{cloudCard?.interval ?? 0}d</strong>
+            </span>
             <span>•</span>
-            <span>Ease: <strong className='text-foreground'>{Math.round((cloudCard?.easeFactor ?? 2.5) * 100)}%</strong></span>
+            <span>
+              Ease: <strong className='text-foreground'>{Math.round((cloudCard?.easeFactor ?? 2.5) * 100)}%</strong>
+            </span>
             <span>•</span>
-            <span>Reps: <strong className='text-foreground'>{cloudCard?.repetitions ?? 0}</strong></span>
+            <span>
+              Reps: <strong className='text-foreground'>{cloudCard?.repetitions ?? 0}</strong>
+            </span>
             <span>•</span>
-            <span>Lapses: <strong className='text-foreground'>{cloudCard?.lapses ?? 0}</strong></span>
+            <span>
+              Lapses: <strong className='text-foreground'>{cloudCard?.lapses ?? 0}</strong>
+            </span>
+            <span>•</span>
+            <span title={cloudReview?.absolute || 'Never reviewed'}>
+              Reviewed: <strong className='text-foreground'>{cloudReview?.relative || 'Never'}</strong>
+            </span>
           </div>
         </div>
       </div>

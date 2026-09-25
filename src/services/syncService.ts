@@ -20,7 +20,10 @@ import {
   SYNC_SOURCE,
   SYNC_TARGET,
   SYNC_TARGET_LABEL,
+  BulkResolveStrategy,
+  BULK_RESOLVE_STRATEGY,
 } from '@/types/sync';
+import { buildSmartResolvedCard } from '@/utils/syncReviewUtils';
 
 export * from '@/types/sync';
 
@@ -138,6 +141,20 @@ export function compareFlashcards(
       label: 'Lapses (Retry Count)',
       localValue: localLapses,
       cloudValue: cloudLapses,
+    });
+  }
+
+  // Anki: Last Reviewed Date
+  if (!areDatesEqual(local.lastReviewedDate, cloud.lastReviewedDate)) {
+    diffs.push({
+      field: 'lastReviewedDate',
+      label: 'Last Reviewed Date',
+      localValue: local.lastReviewedDate
+        ? new Date(local.lastReviewedDate).toISOString()
+        : null,
+      cloudValue: cloud.lastReviewedDate
+        ? new Date(cloud.lastReviewedDate).toISOString()
+        : null,
     });
   }
 
@@ -761,6 +778,85 @@ export class SyncService {
       message: success
         ? `Successfully saved and synchronized card to ${targetLabel}.`
         : `Encountered errors while saving card: ${errors.join(', ')}`,
+      errors: errors.length > 0 ? errors : undefined,
+    };
+  }
+
+  /**
+   * Bulk resolves conflicts on modified cards according to a chosen strategy:
+   * - 'latest': Prioritizes the most recently reviewed state for SRS, merges dynamic fields, unions categories
+   * - 'cloud': Adopts cloud version for all modified cards
+   * - 'local': Adopts local version for all modified cards
+   */
+  public static async bulkResolveConflicts(
+    strategy: BulkResolveStrategy = BULK_RESOLVE_STRATEGY.LATEST,
+    cardIds?: string[],
+    target: SyncTarget = SYNC_TARGET.BOTH,
+  ): Promise<{
+    success: boolean;
+    resolvedCount: number;
+    message: string;
+    errors?: string[];
+  }> {
+    const report = await this.computeDiff();
+    const errors: string[] = [];
+    let resolvedCount = 0;
+
+    const cardsToResolve = report.modified.filter((item) =>
+      !cardIds || cardIds.length === 0 || cardIds.includes(item.id),
+    );
+
+    if (cardsToResolve.length === 0) {
+      return {
+        success: true,
+        resolvedCount: 0,
+        message: 'No modified cards matching the criteria were found.',
+      };
+    }
+
+    // Ensure category referential integrity first
+    await this.syncCategories(SYNC_DIRECTION.PUSH);
+    await this.syncCategories(SYNC_DIRECTION.PULL);
+
+    for (const item of cardsToResolve) {
+      if (!item.localCard && !item.cloudCard) continue;
+
+      let cardToSave: Flashcard;
+      if (strategy === BULK_RESOLVE_STRATEGY.CLOUD && item.cloudCard) {
+        cardToSave = { ...item.cloudCard, _id: item.id };
+      } else if (strategy === BULK_RESOLVE_STRATEGY.LOCAL && item.localCard) {
+        cardToSave = { ...item.localCard, _id: item.id };
+      } else if (item.localCard && item.cloudCard) {
+        cardToSave = buildSmartResolvedCard(
+          item.localCard,
+          item.cloudCard,
+          item.id,
+        );
+      } else {
+        cardToSave = (item.cloudCard || item.localCard)!;
+      }
+
+      const res = await this.resolveCardConflict(item.id, cardToSave, target);
+      if (res.success) {
+        resolvedCount++;
+      } else if (res.errors) {
+        errors.push(...res.errors);
+      }
+    }
+
+    const success = errors.length === 0;
+    const strategyLabels: Record<BulkResolveStrategy, string> = {
+      [BULK_RESOLVE_STRATEGY.LATEST]: 'latest review data',
+      [BULK_RESOLVE_STRATEGY.CLOUD]: 'Cloud version',
+      [BULK_RESOLVE_STRATEGY.LOCAL]: 'Local version',
+    };
+
+    return {
+      success,
+      resolvedCount,
+      message: success
+        ? `Successfully resolved and synced ${resolvedCount} cards using ${strategyLabels[strategy]}.`
+        : `Resolved ${resolvedCount} cards with ${errors.length} errors.`,
       errors: errors.length > 0 ? errors : undefined,
     };
   }

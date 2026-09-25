@@ -5,6 +5,7 @@ import {
   SYNC_DIRECTION,
   SYNC_TARGET,
   SyncTarget,
+  BULK_RESOLVE_STRATEGY,
 } from '@/types/sync';
 
 /**
@@ -36,11 +37,13 @@ export async function GET() {
  * Executes two-way synchronization:
  * - direction: 'push' (Local -> MongoDB)
  * - direction: 'pull' (MongoDB -> Local)
+ * - action: 'resolve_conflict' (Individual card resolution)
+ * - action: 'bulk_resolve' (Bulk resolution across modified cards)
  */
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { action, direction, cardIds, cardId, resolvedCard, target } = body;
+    const { action, direction, cardIds, cardId, resolvedCard, target, strategy } = body;
 
     // Handle individual conflict resolution
     if (action === SYNC_ACTION.RESOLVE_CONFLICT) {
@@ -62,11 +65,21 @@ export async function POST(request: Request) {
       return NextResponse.json(result);
     }
 
+    // Handle bulk conflict resolution
+    if (action === SYNC_ACTION.BULK_RESOLVE) {
+      const result = await SyncService.bulkResolveConflicts(
+        strategy || BULK_RESOLVE_STRATEGY.LATEST,
+        cardIds,
+        (target as SyncTarget) || SYNC_TARGET.BOTH,
+      );
+      return NextResponse.json(result);
+    }
+
     if (direction !== SYNC_DIRECTION.PUSH && direction !== SYNC_DIRECTION.PULL) {
       return NextResponse.json(
         {
           success: false,
-          error: `Invalid sync direction. Must be either '${SYNC_DIRECTION.PUSH}' or '${SYNC_DIRECTION.PULL}', or action must be '${SYNC_ACTION.RESOLVE_CONFLICT}'.`,
+          error: `Invalid sync direction. Must be either '${SYNC_DIRECTION.PUSH}' or '${SYNC_DIRECTION.PULL}', or action must be '${SYNC_ACTION.RESOLVE_CONFLICT}' or '${SYNC_ACTION.BULK_RESOLVE}'.`,
         },
         { status: 400 },
       );

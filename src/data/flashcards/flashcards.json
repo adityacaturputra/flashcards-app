@@ -3193,11 +3193,16 @@
     "_id": "6876607beb12fde01aa09224",
     "question": "March",
     "answer": "lagu mars",
-    "progression": "good",
-    "nextReviewDate": "2025-07-31T01:24:06.110Z",
+    "progression": "normal",
+    "nextReviewDate": "2026-09-26T16:18:28.485Z",
     "categories": [
       "6901a0010000000000000007"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:18:28.485Z"
   },
   {
     "_id": "6876607beb12fde01aa09226",
@@ -3884,10 +3889,15 @@
     "question": "Return address",
     "answer": "alamat pengirim",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:22:59.604Z",
+    "nextReviewDate": "2026-09-27T16:17:24.222Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:17:24.222Z"
   },
   {
     "_id": "6876607ceb12fde01aa092a6",
@@ -4113,11 +4123,16 @@
     "_id": "6876607ceb12fde01aa092dc",
     "question": "Truck",
     "answer": "bagasi mobil",
-    "progression": "good",
-    "nextReviewDate": "2025-07-31T01:22:04.241Z",
+    "progression": "normal",
+    "nextReviewDate": "2026-09-26T16:17:08.740Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:17:08.740Z"
   },
   {
     "_id": "6876607ceb12fde01aa092da",
@@ -4134,10 +4149,15 @@
     "question": "Soldier",
     "answer": "tentara",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:23:43.247Z",
+    "nextReviewDate": "2026-09-27T16:18:12.955Z",
     "categories": [
       "6901a0010000000000000006"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:18:12.955Z"
   },
   {
     "_id": "6876607ceb12fde01aa092e0",
@@ -5037,10 +5057,15 @@
     "question": "Foreign affairs",
     "answer": "urusan luar negeri",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:23:21.735Z",
+    "nextReviewDate": "2026-09-27T16:17:28.204Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:17:28.204Z"
   },
   {
     "_id": "6876607deb12fde01aa0938e",
@@ -5079,11 +5104,16 @@
     "_id": "6876607deb12fde01aa0939a",
     "question": "Armored car",
     "answer": "mobil pembawa uang",
-    "progression": "good",
-    "nextReviewDate": "2025-07-31T01:21:25.721Z",
+    "progression": "normal",
+    "nextReviewDate": "2026-09-26T16:16:52.570Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:16:52.570Z"
   },
   {
     "_id": "6876607deb12fde01aa0939c",
@@ -6050,10 +6080,15 @@
     "question": "To get off a bus",
     "answer": "turun bus",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:23:57.593Z",
+    "nextReviewDate": "2026-09-27T16:18:20.885Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:18:20.885Z"
   },
   {
     "_id": "6876607eeb12fde01aa0945a",
@@ -6760,10 +6795,15 @@
     "question": "Fat free milk",
     "answer": "susu tanpa lemak",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:23:52.416Z",
+    "nextReviewDate": "2026-09-27T16:18:16.272Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:18:16.272Z"
   },
   {
     "_id": "6876607eeb12fde01aa094ec",
@@ -7120,10 +7160,15 @@
     "question": "Brake pedal",
     "answer": "pedal rem",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:22:11.031Z",
+    "nextReviewDate": "2026-09-27T16:17:13.054Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:17:13.054Z"
   },
   {
     "_id": "6876607feb12fde01aa09532",
@@ -9888,10 +9933,15 @@
     "question": "Poem",
     "answer": "puisi",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:23:24.281Z",
+    "nextReviewDate": "2026-09-27T16:17:30.604Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:17:30.604Z"
   },
   {
     "_id": "68766081eb12fde01aa0975f",
@@ -10490,11 +10540,16 @@
     "_id": "68766082eb12fde01aa097d4",
     "question": "Brought",
     "answer": "dibawa",
-    "progression": "good",
-    "nextReviewDate": "2025-07-31T01:22:34.441Z",
+    "progression": "normal",
+    "nextReviewDate": "2026-09-26T16:17:21.671Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:17:21.671Z"
   },
   {
     "_id": "68766082eb12fde01aa097d8",
@@ -11441,10 +11496,15 @@
     "question": "Affairs office",
     "answer": "kantor urusan",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:24:47.771Z",
+    "nextReviewDate": "2026-09-27T16:18:32.337Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:18:32.337Z"
   },
   {
     "_id": "68766083eb12fde01aa09898",
@@ -12321,10 +12381,15 @@
     "question": "Five past ten (05.10)",
     "answer": "jam lima lewat sepuluh",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:23:03.998Z",
+    "nextReviewDate": "2026-09-27T16:17:25.920Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:17:25.920Z"
   },
   {
     "_id": "68766084eb12fde01aa09948",
@@ -13351,10 +13416,15 @@
     "question": "Paper shredder",
     "answer": "mesin penghancur kertas",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:22:18.219Z",
+    "nextReviewDate": "2026-09-27T16:17:17.355Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:17:17.355Z"
   },
   {
     "_id": "68766085eb12fde01aa09a14",
@@ -13611,10 +13681,15 @@
     "question": "Painter",
     "answer": "pelukis",
     "progression": "good",
-    "nextReviewDate": "2025-07-31T01:22:14.624Z",
+    "nextReviewDate": "2026-09-27T16:17:14.935Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-09-25T16:17:14.935Z"
   },
   {
     "_id": "68766085eb12fde01aa09a4a",

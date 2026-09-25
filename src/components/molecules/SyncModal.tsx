@@ -19,8 +19,12 @@ import {
   SyncFilterTab,
   SYNC_FILTER_TAB,
   SYNC_DIRECTION,
+  SYNC_ACTION,
+  SYNC_CARD_STATUS,
+  BulkResolveStrategy,
 } from '@/types/sync';
 import SyncDiffViewer from './SyncDiffViewer';
+import { BulkResolveToolbar } from './conflictResolver';
 
 interface SyncModalProps {
   isOpen: boolean;
@@ -39,6 +43,7 @@ export const SyncModal: React.FC<SyncModalProps> = ({
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [isSyncing, setIsSyncing] = useState(false);
   const [activeTab, setActiveTab] = useState<SyncFilterTab>(SYNC_FILTER_TAB.ALL);
+  const [selectedCardIds, setSelectedCardIds] = useState<Set<string>>(new Set());
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -137,7 +142,71 @@ export const SyncModal: React.FC<SyncModalProps> = ({
     }
   };
 
-  const handleCardResolved = useCallback(() => {
+  const handleToggleSelectCard = useCallback((cardId: string) => {
+    setSelectedCardIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(cardId)) {
+        next.delete(cardId);
+      } else {
+        next.add(cardId);
+      }
+      return next;
+    });
+  }, []);
+
+  const handleToggleSelectAll = useCallback(() => {
+    if (!report || report.modified.length === 0) return;
+    setSelectedCardIds((prev) => {
+      if (prev.size === report.modified.length) {
+        return new Set();
+      }
+      return new Set(report.modified.map((m) => m.id));
+    });
+  }, [report]);
+
+  const handleBulkResolve = async (strategy: BulkResolveStrategy) => {
+    if (isSyncing || !report || report.modified.length === 0) return;
+    setIsSyncing(true);
+    setError(null);
+    setSuccessMessage(null);
+    try {
+      const cardIds =
+        selectedCardIds.size > 0 ? Array.from(selectedCardIds) : undefined;
+      const res = await fetch('/api/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: SYNC_ACTION.BULK_RESOLVE,
+          strategy,
+          cardIds,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'Failed to bulk resolve conflicts.');
+      }
+      setSuccessMessage(data.message || 'Conflicts resolved successfully!');
+      setSelectedCardIds(new Set());
+      await fetchDiff();
+      onSyncComplete?.();
+    } catch (err: unknown) {
+      console.error('Bulk resolve error:', err);
+      const message =
+        err instanceof Error ? err.message : 'Error resolving conflicts.';
+      setError(message);
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
+  const handleCardResolved = useCallback((resolvedCardId?: string) => {
+    if (resolvedCardId) {
+      setSelectedCardIds((prev) => {
+        const next = new Set(prev);
+        next.delete(resolvedCardId);
+        return next;
+      });
+    }
     fetchDiff();
     onSyncComplete?.();
     setSuccessMessage('Conflict on card resolved and synchronized successfully!');
@@ -458,6 +527,23 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                   </button>
                 </div>
 
+                {/* Bulk Conflict Resolution Bar for Modified Cards */}
+                {(activeTab === SYNC_FILTER_TAB.ALL ||
+                  activeTab === SYNC_FILTER_TAB.MODIFIED) &&
+                  report.modified.length > 0 && (
+                    <BulkResolveToolbar
+                      totalModified={report.modified.length}
+                      selectedCount={selectedCardIds.size}
+                      isAllSelected={
+                        report.modified.length > 0 &&
+                        selectedCardIds.size === report.modified.length
+                      }
+                      isResolving={isSyncing}
+                      onToggleSelectAll={handleToggleSelectAll}
+                      onBulkResolve={handleBulkResolve}
+                    />
+                  )}
+
                 {/* Diff Items List */}
                 <div className='space-y-2.5'>
                   {visibleItems.length > 0 ? (
@@ -465,6 +551,12 @@ export const SyncModal: React.FC<SyncModalProps> = ({
                       <SyncDiffViewer
                         key={item.id}
                         item={item}
+                        isSelected={selectedCardIds.has(item.id)}
+                        onToggleSelect={
+                          item.status === SYNC_CARD_STATUS.MODIFIED
+                            ? handleToggleSelectCard
+                            : undefined
+                        }
                         onResolved={handleCardResolved}
                       />
                     ))

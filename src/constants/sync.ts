@@ -44,8 +44,18 @@ export const SYNC_FILTER_TAB = {
 
 export type SyncFilterTab = (typeof SYNC_FILTER_TAB)[keyof typeof SYNC_FILTER_TAB];
 
+export const BULK_RESOLVE_STRATEGY = {
+  LATEST: 'latest',
+  CLOUD: 'cloud',
+  LOCAL: 'local',
+} as const;
+
+export type BulkResolveStrategy =
+  (typeof BULK_RESOLVE_STRATEGY)[keyof typeof BULK_RESOLVE_STRATEGY];
+
 export const SYNC_ACTION = {
   RESOLVE_CONFLICT: 'resolve_conflict',
+  BULK_RESOLVE: 'bulk_resolve',
 } as const;
 
 export type SyncAction = (typeof SYNC_ACTION)[keyof typeof SYNC_ACTION];

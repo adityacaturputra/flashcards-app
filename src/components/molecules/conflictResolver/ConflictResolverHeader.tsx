@@ -8,7 +8,11 @@ interface ConflictResolverHeaderProps {
   isResolving: boolean;
   isAllLocalActive: boolean;
   isAllCloudActive: boolean;
+  isLatestActive?: boolean;
+  isSelected?: boolean;
+  onToggleSelect?: () => void;
   onSelectAll: (choice: SyncSource) => void;
+  onSelectLatest?: () => void;
 }
 
 export const ConflictResolverHeader: React.FC<ConflictResolverHeaderProps> = ({
@@ -16,7 +20,11 @@ export const ConflictResolverHeader: React.FC<ConflictResolverHeaderProps> = ({
   isResolving,
   isAllLocalActive,
   isAllCloudActive,
+  isLatestActive,
+  isSelected,
+  onToggleSelect,
   onSelectAll,
+  onSelectLatest,
 }) => {
   return (
     <div
@@ -24,6 +32,16 @@ export const ConflictResolverHeader: React.FC<ConflictResolverHeaderProps> = ({
       style={{ borderColor: 'var(--border)' }}
     >
       <div className='flex items-center gap-2 min-w-0'>
+        {onToggleSelect && (
+          <input
+            type='checkbox'
+            checked={isSelected || false}
+            onChange={onToggleSelect}
+            disabled={isResolving}
+            className='h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer disabled:opacity-50 shrink-0'
+            title='Select card for bulk resolution'
+          />
+        )}
         <div className='flex h-7 w-7 items-center justify-center rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 shrink-0'>
           <FaCodeFork className='h-3.5 w-3.5' />
         </div>
@@ -35,8 +53,22 @@ export const ConflictResolverHeader: React.FC<ConflictResolverHeaderProps> = ({
       {/* Bulk Card Level Shortcuts */}
       <div className='flex items-center justify-end gap-1.5 shrink-0 w-full sm:w-auto'>
         <span className='text-[10px] text-muted-foreground uppercase font-bold tracking-wider mr-1 hidden xs:inline'>
-          Bulk Card:
+          Card:
         </span>
+        {onSelectLatest && (
+          <button
+            onClick={onSelectLatest}
+            disabled={isResolving}
+            className={`flex-1 sm:flex-initial rounded-lg px-2.5 py-1.5 sm:py-1 text-[11px] font-bold border transition-all text-center ${
+              isLatestActive
+                ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/40 shadow-2xs'
+                : 'bg-slate-100 dark:bg-slate-800 text-muted-foreground hover:text-foreground border-transparent'
+            }`}
+            title='Reset card choices to latest review and newest edits'
+          >
+            ✨ Latest
+          </button>
+        )}
         <button
           onClick={() => onSelectAll(SYNC_SOURCE.LOCAL)}
           disabled={isResolving}
@@ -54,7 +86,7 @@ export const ConflictResolverHeader: React.FC<ConflictResolverHeaderProps> = ({
           disabled={isResolving}
           className={`flex-1 sm:flex-initial rounded-lg px-2.5 py-1.5 sm:py-1 text-[11px] font-bold border transition-all text-center ${
             isAllCloudActive
-              ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/40 shadow-2xs'
+              ? 'bg-blue-500/15 text-blue-600 dark:text-blue-400 border-blue-500/40 shadow-2xs'
               : 'bg-slate-100 dark:bg-slate-800 text-muted-foreground hover:text-foreground border-transparent'
           }`}
           title='Set Question, Answer, Difficulty/SRS, and Dynamic Fields to Cloud'

@@ -10,3 +10,4 @@ export * from './DynamicFieldsConflictSection';
 export * from './MergedCardPreview';
 export * from './ConflictResolverFooter';
 export * from './CategoriesConflictSection';
+export * from './BulkResolveToolbar';

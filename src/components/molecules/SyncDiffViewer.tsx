@@ -5,16 +5,27 @@ import ConflictResolverCard from './ConflictResolverCard';
 
 interface SyncDiffViewerProps {
   item: SyncCardDiff;
+  isSelected?: boolean;
+  onToggleSelect?: (cardId: string) => void;
   onResolved?: (cardId: string) => void;
 }
 
 export const SyncDiffViewer: React.FC<SyncDiffViewerProps> = ({
   item,
+  isSelected,
+  onToggleSelect,
   onResolved,
 }) => {
   // If card is modified, render interactive conflict resolver
   if (item.status === SYNC_CARD_STATUS.MODIFIED) {
-    return <ConflictResolverCard item={item} onResolved={onResolved} />;
+    return (
+      <ConflictResolverCard
+        item={item}
+        isSelected={isSelected}
+        onToggleSelect={onToggleSelect ? () => onToggleSelect(item.id) : undefined}
+        onResolved={onResolved}
+      />
+    );
   }
 
   // Local Only or Cloud Only card presentation
