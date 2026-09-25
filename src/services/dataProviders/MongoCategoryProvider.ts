@@ -3,6 +3,8 @@ import { FlashcardCategory } from '@/types/flashcard';
 import FlashcardCategoryModel from '@/models/FlashcardCategoryModel';
 import dbConnect from '@/lib/dbConnect';
 
+import mongoose from 'mongoose';
+
 export class MongoCategoryProvider implements ICategoryDataProvider {
   private static instance: MongoCategoryProvider;
 
@@ -24,7 +26,11 @@ export class MongoCategoryProvider implements ICategoryDataProvider {
     category: FlashcardCategory,
   ): Promise<FlashcardCategory> {
     await dbConnect();
-    return await FlashcardCategoryModel.create(category);
+    const payload = { ...category };
+    if (payload._id && !mongoose.isValidObjectId(payload._id)) {
+      delete payload._id;
+    }
+    return await FlashcardCategoryModel.create(payload);
   }
 
   public async updateCategory(

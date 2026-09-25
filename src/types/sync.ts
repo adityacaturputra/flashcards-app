@@ -23,6 +23,15 @@ export interface SyncCardDiff {
   cloudCard?: Flashcard;
 }
 
+export interface SyncCategorySummary {
+  totalLocal: number;
+  totalCloud: number;
+  localOnlyCount: number;
+  cloudOnlyCount: number;
+  localOnlyNames: string[];
+  cloudOnlyNames: string[];
+}
+
 export interface SyncDiffReport {
   localOnly: SyncCardDiff[];
   cloudOnly: SyncCardDiff[];
@@ -31,6 +40,7 @@ export interface SyncDiffReport {
   totalLocal: number;
   totalCloud: number;
   timestamp: string;
+  categorySummary?: SyncCategorySummary;
 }
 
 export interface SyncExecutionResult {
@@ -38,6 +48,8 @@ export interface SyncExecutionResult {
   direction: SyncDirection;
   createdCount: number;
   updatedCount: number;
+  categoriesCreated?: number;
+  categoriesUpdated?: number;
   message: string;
   errors?: string[];
 }

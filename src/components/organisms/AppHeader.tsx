@@ -53,7 +53,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
             />
 
             {/* Right: Actions, Review Toggle, and Drawer Trigger */}
-            <div className='relative'>
+            <div className='relative shrink-0'>
               <HeaderActions
                 isReviewMode={isReviewMode}
                 onToggleReviewMode={() => setIsReviewMode((prev) => !prev)}

@@ -15,13 +15,13 @@ export const HeaderBrand: React.FC<HeaderBrandProps> = ({
   onOpenSyncModal,
 }) => {
   return (
-    <div className='flex items-center gap-2.5 sm:gap-4 min-w-0'>
+    <div className='flex items-center gap-2.5 sm:gap-4 shrink-0'>
       {/* Brand Logo / Title */}
       <div
         onClick={onNavigateHome}
-        className='cursor-pointer flex items-center gap-2 min-w-0'
+        className='cursor-pointer flex items-center gap-2 shrink-0'
       >
-        <h1 className='gradient-text-accent text-lg sm:text-2xl font-bold tracking-tight whitespace-nowrap'>
+        <h1 className='gradient-text-accent text-lg sm:text-2xl font-bold tracking-tight whitespace-nowrap shrink-0'>
           Flashcards
         </h1>
       </div>
@@ -38,8 +38,8 @@ export const HeaderBrand: React.FC<HeaderBrandProps> = ({
         {flashcardsCount}
       </span>
 
-      {/* Desktop Data Source Toggle & Sync Button (Visible on sm and up) */}
-      <div className='hidden sm:flex items-center gap-1.5'>
+      {/* Desktop Data Source Toggle & Sync Button (Visible on lg and up) */}
+      <div className='hidden lg:flex items-center gap-1.5 shrink-0'>
         <DataSourceToggle compact={false} />
         <button
           onClick={onOpenSyncModal}

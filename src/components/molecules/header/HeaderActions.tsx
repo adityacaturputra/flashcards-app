@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPlus, FaPlay, FaStop, FaBars, FaXmark } from 'react-icons/fa6';
-import AccentToggle from '@/components/atoms/AccentToggle';
 
 interface HeaderActionsProps {
   isReviewMode: boolean;
@@ -22,12 +21,12 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
   buttonRef,
 }) => {
   return (
-    <div className='flex items-center gap-2 sm:gap-2.5'>
+    <div className='flex items-center gap-2 sm:gap-2.5 shrink-0'>
       {/* Desktop Quick Add Button */}
       {!isReviewMode && (
         <motion.button
           onClick={onAddFlashcard}
-          className='hidden sm:flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold shadow-xs transition-all hover:scale-102 active:scale-98'
+          className='hidden sm:flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold shadow-xs transition-all hover:scale-102 active:scale-98 shrink-0'
           style={{
             background: 'var(--primary)',
             color: 'var(--primary-foreground)',
@@ -40,13 +39,11 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
         </motion.button>
       )}
 
-      {/* Global Audio Accent Switcher (Desktop & Tablet) */}
-      <AccentToggle className='hidden md:inline-flex' />
 
       {/* Review Mode Toggle Button */}
       <motion.button
         onClick={onToggleReviewMode}
-        className='flex items-center gap-1.5 rounded-xl border px-3 py-2 text-xs sm:text-sm font-semibold transition-all hover:scale-102 active:scale-98'
+        className='flex items-center gap-1.5 rounded-xl border px-3 py-2 text-xs sm:text-sm font-semibold transition-all hover:scale-102 active:scale-98 shrink-0'
         style={{
           background: isReviewMode
             ? 'var(--destructive)'
@@ -68,7 +65,7 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
         ) : (
           <>
             <FaPlay className='h-3 w-3' />
-            <span className='hidden xs:inline sm:inline'>Review</span>
+            <span className='hidden sm:inline'>Review</span>
           </>
         )}
       </motion.button>

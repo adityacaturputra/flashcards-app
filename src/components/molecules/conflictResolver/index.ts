@@ -9,3 +9,4 @@ export * from './TextFieldConflictSection';
 export * from './DynamicFieldsConflictSection';
 export * from './MergedCardPreview';
 export * from './ConflictResolverFooter';
+export * from './CategoriesConflictSection';

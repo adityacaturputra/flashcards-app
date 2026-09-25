@@ -1,19 +1,36 @@
 'use client';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa6';
 import { Flashcard } from '@/types/flashcard';
+import { useAppContext } from '@/context/appContext';
 
 interface MergedCardPreviewProps {
   mergedCard: Flashcard;
   showPreview: boolean;
   onTogglePreview: () => void;
+  categoryNameMap?: Map<string, string>;
 }
 
 export const MergedCardPreview: React.FC<MergedCardPreviewProps> = ({
   mergedCard,
   showPreview,
   onTogglePreview,
+  categoryNameMap,
 }) => {
+  const { categories: contextCategories = [] } = useAppContext();
+
+  const nameLookup = useMemo(() => {
+    const map = new Map<string, string>(categoryNameMap || []);
+    contextCategories.forEach((c) => {
+      if (c._id && !map.has(c._id.toString())) {
+        map.set(c._id.toString(), c.name);
+      }
+      if (!map.has(c.name)) {
+        map.set(c.name, c.name);
+      }
+    });
+    return map;
+  }, [categoryNameMap, contextCategories]);
   return (
     <div className='pt-1'>
       <button
@@ -70,6 +87,23 @@ export const MergedCardPreview: React.FC<MergedCardPreviewProps> = ({
               <pre className='text-foreground text-[10px] overflow-x-auto whitespace-pre-wrap font-mono'>
                 {JSON.stringify(mergedCard.dynamicFields, null, 2)}
               </pre>
+            </div>
+          )}
+          {mergedCard.categories && mergedCard.categories.length > 0 && (
+            <div>
+              <span className='text-muted-foreground font-sans font-bold uppercase text-[9px] block'>
+                Resolved Categories:
+              </span>
+              <div className='flex flex-wrap gap-1 mt-1 font-sans'>
+                {mergedCard.categories.map((catId) => (
+                  <span
+                    key={catId}
+                    className='rounded px-1.5 py-0.5 text-[10px] bg-slate-200 dark:bg-slate-700 text-foreground font-medium'
+                  >
+                    {nameLookup.get(catId) || catId}
+                  </span>
+                ))}
+              </div>
             </div>
           )}
         </div>

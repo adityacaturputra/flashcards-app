@@ -297,48 +297,106 @@ export const SyncModal: React.FC<SyncModalProps> = ({
               </div>
             )}
 
+            {/* Category Sync Notice (if categories differ) */}
+            {report?.categorySummary &&
+              (report.categorySummary.localOnlyCount > 0 ||
+                report.categorySummary.cloudOnlyCount > 0) && (
+                <div
+                  className='rounded-xl border p-2.5 sm:p-3 text-xs flex items-center justify-between gap-3'
+                  style={{
+                    background: 'var(--secondary)',
+                    borderColor: 'var(--border)',
+                  }}
+                >
+                  <div className='flex items-center gap-2 min-w-0'>
+                    <FaFolderClosed className='h-3.5 w-3.5 text-amber-500 shrink-0' />
+                    <div className='truncate'>
+                      <span className='font-bold text-foreground'>
+                        Category Master Data:
+                      </span>{' '}
+                      <span className='text-muted-foreground'>
+                        {report.categorySummary.localOnlyCount > 0 &&
+                          `${report.categorySummary.localOnlyCount} local-only (${report.categorySummary.localOnlyNames.slice(0, 2).join(', ')}${report.categorySummary.localOnlyNames.length > 2 ? '...' : ''})`}
+                        {report.categorySummary.localOnlyCount > 0 &&
+                          report.categorySummary.cloudOnlyCount > 0 &&
+                          ' • '}
+                        {report.categorySummary.cloudOnlyCount > 0 &&
+                          `${report.categorySummary.cloudOnlyCount} cloud-only (${report.categorySummary.cloudOnlyNames.slice(0, 2).join(', ')}${report.categorySummary.cloudOnlyNames.length > 2 ? '...' : ''})`}
+                      </span>
+                    </div>
+                  </div>
+                  <span className='text-[10px] font-semibold text-muted-foreground shrink-0'>
+                    Auto-reconciled on Push / Pull
+                  </span>
+                </div>
+              )}
+
             {/* Quick Actions Bar */}
             <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1'>
               <div className='grid grid-cols-2 gap-2 w-full sm:w-auto'>
                 {/* Push Local to Cloud */}
                 <button
                   onClick={handlePush}
-                  disabled={isSyncing || !report || (report.localOnly.length === 0 && report.modified.length === 0)}
+                  disabled={
+                    isSyncing ||
+                    !report ||
+                    (report.localOnly.length === 0 &&
+                      report.modified.length === 0 &&
+                      (report.categorySummary?.localOnlyCount ?? 0) === 0)
+                  }
                   className='flex items-center justify-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition-all shadow-sm active:scale-95 disabled:opacity-50'
                   style={{
                     background: 'var(--primary)',
                     color: 'var(--primary-foreground)',
                   }}
-                  title='Upload local additions and modifications to MongoDB'
+                  title='Upload local additions, modifications, and categories to MongoDB'
                 >
                   <FaCloudArrowUp className={`h-3.5 w-3.5 shrink-0 ${isSyncing ? 'animate-bounce' : ''}`} />
                   <span className='truncate'>Push Local ➔ Cloud</span>
-                  {report && (report.localOnly.length + report.modified.length > 0) && (
-                    <span className='rounded-full bg-white/20 px-1.5 py-0.2 text-[10px] font-bold shrink-0'>
-                      {report.localOnly.length + report.modified.length}
-                    </span>
-                  )}
+                  {report &&
+                    report.localOnly.length +
+                      report.modified.length +
+                      (report.categorySummary?.localOnlyCount ?? 0) >
+                      0 && (
+                      <span className='rounded-full bg-white/20 px-1.5 py-0.2 text-[10px] font-bold shrink-0'>
+                        {report.localOnly.length +
+                          report.modified.length +
+                          (report.categorySummary?.localOnlyCount ?? 0)}
+                      </span>
+                    )}
                 </button>
 
                 {/* Pull Cloud to Local */}
                 <button
                   onClick={handlePull}
-                  disabled={isSyncing || !report || (report.cloudOnly.length === 0 && report.modified.length === 0)}
+                  disabled={
+                    isSyncing ||
+                    !report ||
+                    (report.cloudOnly.length === 0 &&
+                      report.modified.length === 0 &&
+                      (report.categorySummary?.cloudOnlyCount ?? 0) === 0)
+                  }
                   className='flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2 text-xs font-bold transition-all shadow-xs active:scale-95 disabled:opacity-50 hover:bg-slate-100 dark:hover:bg-slate-800'
                   style={{
                     background: 'var(--card)',
                     borderColor: 'var(--border)',
                     color: 'var(--foreground)',
                   }}
-                  title='Download cloud cards and mobile reviews into local flashcards.json'
+                  title='Download cloud cards, reviews, and categories into local repository'
                 >
                   <FaCloudArrowDown className={`h-3.5 w-3.5 shrink-0 ${isSyncing ? 'animate-bounce' : ''}`} />
                   <span className='truncate'>Pull Cloud ➔ Local</span>
-                  {report && (report.cloudOnly.length + report.modified.length > 0) && (
-                    <span className='rounded-full bg-blue-500/15 px-1.5 py-0.2 text-[10px] font-bold text-blue-600 dark:text-blue-400 shrink-0'>
-                      {report.cloudOnly.length + report.modified.length}
-                    </span>
-                  )}
+                  {report &&
+                    report.cloudOnly.length +
+                      report.modified.length +
+                      (report.categorySummary?.cloudOnlyCount ?? 0) >
+                      0 && (
+                      <span className='rounded-full bg-blue-500/15 px-1.5 py-0.2 text-[10px] font-bold text-blue-600 dark:text-blue-400 shrink-0'>
+                        {report.cloudOnly.length +
+                          report.modified.length +
+                          (report.categorySummary?.cloudOnlyCount ?? 0)}
+                      </span>
+                    )}
                 </button>
               </div>
 

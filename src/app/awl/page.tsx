@@ -67,42 +67,46 @@ export default function AwlPage() {
           }}
         >
           <div className='mx-auto max-w-7xl px-3.5 py-2.5 sm:px-6 sm:py-3.5'>
-            <div className='flex items-center justify-between gap-3'>
+            <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3'>
               {/* Left: Back button & Title */}
-              <div className='flex items-center gap-2.5 sm:gap-3.5 min-w-0'>
-                <motion.button
-                  onClick={() => router.push(APP_ROUTES.HOME)}
-                  className='rounded-xl border p-2 sm:p-2.5 transition-all hover:scale-105 shrink-0'
-                  style={{
-                    background: 'var(--secondary)',
-                    color: 'var(--foreground)',
-                    borderColor: 'var(--border)',
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  title='Kembali ke Beranda Flashcards'
-                  aria-label='Back to home'
-                >
-                  <FaArrowLeft className='h-4 w-4' />
-                </motion.button>
+              <div className='flex items-center gap-2.5 sm:gap-3.5 min-w-0 w-full sm:w-auto justify-between sm:justify-start'>
+                <div className='flex items-center gap-2.5 sm:gap-3.5 min-w-0'>
+                  <motion.button
+                    onClick={() => router.push(APP_ROUTES.HOME)}
+                    className='rounded-xl border p-2 sm:p-2.5 transition-all hover:scale-105 shrink-0'
+                    style={{
+                      background: 'var(--secondary)',
+                      color: 'var(--foreground)',
+                      borderColor: 'var(--border)',
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    title='Kembali ke Beranda Flashcards'
+                    aria-label='Back to home'
+                  >
+                    <FaArrowLeft className='h-4 w-4' />
+                  </motion.button>
 
-                <div className='min-w-0'>
-                  <div className='flex items-center gap-2'>
-                    <h1 className='text-base sm:text-xl font-bold tracking-tight truncate'>
-                      Academic Word List (AWL) Studio
-                    </h1>
-                    <span className='hidden xs:inline rounded-md bg-purple-500/10 text-purple-700 dark:text-purple-400 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider'>
-                      570 Families
-                    </span>
+                  <div className='min-w-0'>
+                    <div className='flex items-center gap-2'>
+                      <h1 className='text-base sm:text-xl font-bold tracking-tight truncate'>
+                        Academic Word List (AWL) Studio
+                      </h1>
+                      <span className='hidden xs:inline rounded-md bg-purple-500/10 text-purple-700 dark:text-purple-400 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider'>
+                        570 Families
+                      </span>
+                    </div>
+                    <p className='text-xs text-muted-foreground hidden sm:block truncate'>
+                      Averil Coxhead Research · 10% Kosakata Teks Akademis IELTS Band 7.0–8.5+
+                    </p>
                   </div>
-                  <p className='text-xs text-muted-foreground hidden sm:block truncate'>
-                    Averil Coxhead Research · 10% Kosakata Teks Akademis IELTS Band 7.0–8.5+
-                  </p>
                 </div>
               </div>
 
-              {/* Right: Accent Switcher (UK vs US) */}
-              <AccentToggle value={accent} onChange={setAccent} />
+              {/* Right: Accent Switcher (5 IELTS Accents) */}
+              <div className='w-full sm:w-auto flex justify-end'>
+                <AccentToggle value={accent} onChange={setAccent} className='w-full sm:w-auto justify-center' />
+              </div>
             </div>
           </div>
         </header>

@@ -45,7 +45,7 @@ export default function PhonemicsPage() {
           }}
         >
           <div className='mx-auto max-w-7xl px-3.5 py-2.5 sm:px-6 sm:py-3.5'>
-            <div className='flex items-center justify-between gap-3'>
+            <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3'>
               {/* Left: Back button & Title */}
               <div className='flex items-center gap-2.5 sm:gap-3.5 min-w-0'>
                 <motion.button
@@ -79,8 +79,10 @@ export default function PhonemicsPage() {
                 </div>
               </div>
 
-              {/* Right: Accent Toggle (UK vs US) */}
-              <AccentToggle value={accent} onChange={setAccent} />
+              {/* Right: Accent Switcher (5 IELTS Accents) */}
+              <div className='w-full sm:w-auto flex justify-end'>
+                <AccentToggle value={accent} onChange={setAccent} className='w-full sm:w-auto justify-center' />
+              </div>
             </div>
           </div>
         </header>

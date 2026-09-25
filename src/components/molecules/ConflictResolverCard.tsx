@@ -14,6 +14,8 @@ import {
   DynamicFieldsConflictSection,
   MergedCardPreview,
   ConflictResolverFooter,
+  CategoriesConflictSection,
+  CategoryConflictChoice,
 } from './conflictResolver';
 
 interface ConflictResolverCardProps {
@@ -27,6 +29,20 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
 }) => {
   const localCard = item.localCard;
   const cloudCard = item.cloudCard;
+
+  // Track category arrays and check if they differ
+  const localCats = useMemo(
+    () => Array.from(new Set(localCard?.categories || [])).sort(),
+    [localCard?.categories],
+  );
+  const cloudCats = useMemo(
+    () => Array.from(new Set(cloudCard?.categories || [])).sort(),
+    [cloudCard?.categories],
+  );
+  const hasCategoryDiff = useMemo(() => {
+    if (localCats.length !== cloudCats.length) return true;
+    return localCats.some((cat, i) => cat !== cloudCats[i]);
+  }, [localCats, cloudCats]);
 
   // Collect all unique keys across local and cloud dynamic fields
   const allDynamicKeys = useMemo(() => {
@@ -44,6 +60,7 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
   const [questionChoice, setQuestionChoice] = useState<SyncSource>(SYNC_SOURCE.LOCAL);
   const [answerChoice, setAnswerChoice] = useState<SyncSource>(SYNC_SOURCE.LOCAL);
   const [progressionChoice, setProgressionChoice] = useState<SyncSource>(SYNC_SOURCE.LOCAL);
+  const [categoryChoice, setCategoryChoice] = useState<CategoryConflictChoice>(SYNC_SOURCE.LOCAL);
   const [dynamicChoices, setDynamicChoices] = useState<Record<string, SyncSource>>(() => {
     const initial: Record<string, SyncSource> = {};
     allDynamicKeys.forEach((k) => {
@@ -62,6 +79,7 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
     setQuestionChoice(choice);
     setAnswerChoice(choice);
     setProgressionChoice(choice);
+    setCategoryChoice(choice);
     const updated: Record<string, SyncSource> = {};
     allDynamicKeys.forEach((k) => {
       updated[k] = choice;
@@ -121,6 +139,23 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
       }
     });
 
+    let chosenCategories = localCard?.categories || cloudCard?.categories || [];
+    if (hasCategoryDiff) {
+      if (categoryChoice === SYNC_SOURCE.LOCAL) {
+        chosenCategories = localCard?.categories || [];
+      } else if (categoryChoice === SYNC_SOURCE.CLOUD) {
+        chosenCategories = cloudCard?.categories || [];
+      } else {
+        // Union / merge both
+        chosenCategories = Array.from(
+          new Set([
+            ...(localCard?.categories || []),
+            ...(cloudCard?.categories || []),
+          ]),
+        );
+      }
+    }
+
     const base = localCard || cloudCard!;
     return {
       ...base,
@@ -135,11 +170,14 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
       nextReviewDate: chosenNextReview,
       lastReviewedDate: chosenLastReviewed,
       dynamicFields: chosenDynamic,
+      categories: chosenCategories,
     };
   }, [
     questionChoice,
     answerChoice,
     progressionChoice,
+    categoryChoice,
+    hasCategoryDiff,
     dynamicChoices,
     localCard,
     cloudCard,
@@ -198,12 +236,14 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
     questionChoice === SYNC_SOURCE.LOCAL &&
     answerChoice === SYNC_SOURCE.LOCAL &&
     progressionChoice === SYNC_SOURCE.LOCAL &&
+    (!hasCategoryDiff || categoryChoice === SYNC_SOURCE.LOCAL) &&
     Object.values(dynamicChoices).every((c) => c === SYNC_SOURCE.LOCAL);
 
   const isAllCloudActive =
     questionChoice === SYNC_SOURCE.CLOUD &&
     answerChoice === SYNC_SOURCE.CLOUD &&
     progressionChoice === SYNC_SOURCE.CLOUD &&
+    (!hasCategoryDiff || categoryChoice === SYNC_SOURCE.CLOUD) &&
     Object.values(dynamicChoices).every((c) => c === SYNC_SOURCE.CLOUD);
 
   return (
@@ -230,6 +270,16 @@ export const ConflictResolverCard: React.FC<ConflictResolverCardProps> = ({
           cloudCard={cloudCard}
           progressionChoice={progressionChoice}
           onChoiceChange={setProgressionChoice}
+        />
+      )}
+
+      {/* Field: Categories Conflict (if differing) */}
+      {hasCategoryDiff && (
+        <CategoriesConflictSection
+          localCategories={localCard?.categories}
+          cloudCategories={cloudCard?.categories}
+          choice={categoryChoice}
+          onChoiceChange={setCategoryChoice}
         />
       )}
 

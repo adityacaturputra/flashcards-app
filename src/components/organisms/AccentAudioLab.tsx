@@ -132,7 +132,7 @@ export const AccentAudioLab: React.FC = () => {
           aria-label='Pilihan Aksen Bahasa Inggris'
           className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2'
         >
-          {IELTS_ACCENT_ITEMS.map((item) => {
+          {IELTS_ACCENT_ITEMS.map((item, idx) => {
             const isActive = item.id === selectedAccentId;
             return (
               <button
@@ -144,11 +144,11 @@ export const AccentAudioLab: React.FC = () => {
                   stopSpeech();
                   setPlayingKey(null);
                 }}
-                className={`flex flex-col items-start gap-1 p-3 rounded-xl border text-left transition-all relative overflow-hidden ${
+                className={`flex flex-col items-start gap-1 p-2.5 sm:p-3 rounded-xl border text-left transition-all relative overflow-hidden active:scale-95 cursor-pointer ${
                   isActive
                     ? 'border-purple-500 bg-purple-500/10 shadow-sm ring-2 ring-purple-500/30'
                     : 'border-border bg-card/60 hover:bg-muted/60 text-muted-foreground hover:text-foreground'
-                }`}
+                } ${idx === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
               >
                 <div className='flex items-center justify-between w-full'>
                   <span className='text-lg'>{item.flag}</span>

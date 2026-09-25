@@ -4,10 +4,11 @@
  * Computes granular field-by-field diffs and executes push/pull synchronization.
  */
 
-import { Flashcard } from '@/types/flashcard';
+import { Flashcard, FlashcardCategory } from '@/types/flashcard';
 import { DataProviderFactory } from './dataProviders/DataProviderFactory';
 import {
   SyncCardDiff,
+  SyncCategorySummary,
   SyncDiffReport,
   SyncExecutionResult,
   SyncFieldDiff,
@@ -15,6 +16,7 @@ import {
   SyncTarget,
   SYNC_CARD_STATUS,
   SYNC_DIRECTION,
+  SyncDirection,
   SYNC_SOURCE,
   SYNC_TARGET,
   SYNC_TARGET_LABEL,
@@ -44,7 +46,11 @@ function areDatesEqual(d1?: Date | string, d2?: Date | string): boolean {
 /**
  * Compare two flashcard objects and extract granular field differences
  */
-export function compareFlashcards(local: Flashcard, cloud: Flashcard): SyncFieldDiff[] {
+export function compareFlashcards(
+  local: Flashcard,
+  cloud: Flashcard,
+  categoryNameMap?: Map<string, string>,
+): SyncFieldDiff[] {
   const diffs: SyncFieldDiff[] = [];
 
   // Question
@@ -147,17 +153,91 @@ export function compareFlashcards(local: Flashcard, cloud: Flashcard): SyncField
     });
   }
 
+  // Categories
+  const localCats = Array.from(new Set(local.categories || [])).sort();
+  const cloudCats = Array.from(new Set(cloud.categories || [])).sort();
+  const areCategoriesEqual =
+    localCats.length === cloudCats.length &&
+    localCats.every((c, idx) => c === cloudCats[idx]);
+
+  if (!areCategoriesEqual) {
+    const formatCategories = (catIds: string[]) => {
+      if (catIds.length === 0) return '(None)';
+      if (!categoryNameMap) return catIds.join(', ');
+      return catIds.map((id) => categoryNameMap.get(id) || id).join(', ');
+    };
+
+    diffs.push({
+      field: 'categories',
+      label: 'Categories',
+      localValue: formatCategories(localCats),
+      cloudValue: formatCategories(cloudCats),
+    });
+  }
+
   return diffs;
 }
 
 export class SyncService {
   /**
-   * Generates a comprehensive comparison report between Local and MongoDB flashcards
+   * Generates a comprehensive comparison report between Local and MongoDB flashcards & categories
    */
   public static async computeDiff(): Promise<SyncDiffReport> {
     const localProvider = DataProviderFactory.getLocalFlashcardProvider();
     const cloudProvider = DataProviderFactory.getCloudFlashcardProvider();
+    const localCatProvider = DataProviderFactory.getLocalCategoryProvider();
+    const cloudCatProvider = DataProviderFactory.getCloudCategoryProvider();
 
+    // 1. Fetch categories to build name lookup and category diff summary
+    let localCategories: FlashcardCategory[] = [];
+    let cloudCategories: FlashcardCategory[] = [];
+    try {
+      [localCategories, cloudCategories] = await Promise.all([
+        localCatProvider.getCategories(),
+        cloudCatProvider.getCategories().catch(() => []),
+      ]);
+    } catch (e) {
+      console.warn('Failed to fetch categories for sync diff:', e);
+    }
+
+    const categoryNameMap = new Map<string, string>();
+    localCategories.forEach((c) => {
+      if (c._id) categoryNameMap.set(c._id.toString(), c.name);
+      categoryNameMap.set(c.name, c.name);
+    });
+    cloudCategories.forEach((c) => {
+      if (c._id && !categoryNameMap.has(c._id.toString())) {
+        categoryNameMap.set(c._id.toString(), c.name);
+      }
+      if (!categoryNameMap.has(c.name)) {
+        categoryNameMap.set(c.name, c.name);
+      }
+    });
+
+    const cloudCatNames = new Set(
+      cloudCategories.map((c) => c.name.trim().toLowerCase()),
+    );
+    const localCatNames = new Set(
+      localCategories.map((c) => c.name.trim().toLowerCase()),
+    );
+
+    const localOnlyCats = localCategories.filter(
+      (c) => !cloudCatNames.has(c.name.trim().toLowerCase()),
+    );
+    const cloudOnlyCats = cloudCategories.filter(
+      (c) => !localCatNames.has(c.name.trim().toLowerCase()),
+    );
+
+    const categorySummary: SyncCategorySummary = {
+      totalLocal: localCategories.length,
+      totalCloud: cloudCategories.length,
+      localOnlyCount: localOnlyCats.length,
+      cloudOnlyCount: cloudOnlyCats.length,
+      localOnlyNames: localOnlyCats.map((c) => c.name),
+      cloudOnlyNames: cloudOnlyCats.map((c) => c.name),
+    };
+
+    // 2. Fetch cards
     const localCards = await localProvider.getFlashcards();
     const cloudCards = await cloudProvider.getFlashcards();
 
@@ -205,7 +285,7 @@ export class SyncService {
         });
       } else {
         matchedCloudIds.add(matchedCloud._id?.toString() || '');
-        const diffs = compareFlashcards(localCard, matchedCloud);
+        const diffs = compareFlashcards(localCard, matchedCloud, categoryNameMap);
 
         if (diffs.length > 0) {
           modified.push({
@@ -244,99 +324,321 @@ export class SyncService {
       totalLocal: localCards.length,
       totalCloud: cloudCards.length,
       timestamp: new Date().toISOString(),
+      categorySummary,
     };
   }
 
   /**
-   * Push Local cards to Cloud (MongoDB):
+   * Synchronizes category definitions between Local Repository and Cloud MongoDB.
+   * Ensures referential integrity so cards never reference orphaned category IDs.
+   */
+  public static async syncCategories(direction: SyncDirection): Promise<{
+    created: number;
+    updated: number;
+    localToCloudMap: Map<string, string>;
+    cloudToLocalMap: Map<string, string>;
+    errors: string[];
+  }> {
+    const localCatProvider = DataProviderFactory.getLocalCategoryProvider();
+    const cloudCatProvider = DataProviderFactory.getCloudCategoryProvider();
+    const errors: string[] = [];
+    let created = 0;
+    let updated = 0;
+
+    const localToCloudMap = new Map<string, string>();
+    const cloudToLocalMap = new Map<string, string>();
+
+    try {
+      const [localCats, cloudCats] = await Promise.all([
+        localCatProvider.getCategories(),
+        cloudCatProvider.getCategories().catch(() => []),
+      ]);
+
+      const cloudCatById = new Map<string, FlashcardCategory>();
+      const cloudCatByName = new Map<string, FlashcardCategory>();
+      for (const cat of cloudCats) {
+        if (cat._id) cloudCatById.set(cat._id.toString(), cat);
+        cloudCatByName.set(cat.name.trim().toLowerCase(), cat);
+      }
+
+      const localCatById = new Map<string, FlashcardCategory>();
+      const localCatByName = new Map<string, FlashcardCategory>();
+      for (const cat of localCats) {
+        if (cat._id) localCatById.set(cat._id.toString(), cat);
+        localCatByName.set(cat.name.trim().toLowerCase(), cat);
+      }
+
+      if (direction === SYNC_DIRECTION.PUSH) {
+        // Push Local categories -> Cloud MongoDB
+        for (const localCat of localCats) {
+          const localId = localCat._id?.toString() || '';
+          const normName = localCat.name.trim().toLowerCase();
+          const matchedCloud =
+            (localId ? cloudCatById.get(localId) : undefined) ||
+            cloudCatByName.get(normName);
+
+          if (!matchedCloud) {
+            try {
+              const newCloudCat = await cloudCatProvider.addCategory({
+                _id: localCat._id,
+                name: localCat.name,
+                description: localCat.description,
+              });
+              created++;
+              if (localId && newCloudCat._id) {
+                localToCloudMap.set(localId, newCloudCat._id.toString());
+                cloudToLocalMap.set(newCloudCat._id.toString(), localId);
+              }
+            } catch (err) {
+              errors.push(
+                `Failed to push category "${localCat.name}": ${String(err)}`,
+              );
+            }
+          } else {
+            const cloudId = matchedCloud._id?.toString() || '';
+            if (localId && cloudId) {
+              localToCloudMap.set(localId, cloudId);
+              cloudToLocalMap.set(cloudId, localId);
+            }
+            if (
+              matchedCloud._id &&
+              localCat.description &&
+              localCat.description.trim() !==
+                (matchedCloud.description || '').trim()
+            ) {
+              try {
+                await cloudCatProvider.updateCategory(
+                  matchedCloud._id.toString(),
+                  {
+                    description: localCat.description,
+                  },
+                );
+                updated++;
+              } catch (err) {
+                errors.push(
+                  `Failed to update cloud category "${matchedCloud.name}": ${String(err)}`,
+                );
+              }
+            }
+          }
+        }
+      } else {
+        // Pull Cloud categories -> Local Repository
+        for (const cloudCat of cloudCats) {
+          const cloudId = cloudCat._id?.toString() || '';
+          const normName = cloudCat.name.trim().toLowerCase();
+          const matchedLocal =
+            (cloudId ? localCatById.get(cloudId) : undefined) ||
+            localCatByName.get(normName);
+
+          if (!matchedLocal) {
+            try {
+              const newLocalCat = await localCatProvider.addCategory({
+                _id: cloudCat._id?.toString(),
+                name: cloudCat.name,
+                description: cloudCat.description,
+              });
+              created++;
+              if (cloudId && newLocalCat._id) {
+                cloudToLocalMap.set(cloudId, newLocalCat._id.toString());
+                localToCloudMap.set(newLocalCat._id.toString(), cloudId);
+              }
+            } catch (err) {
+              errors.push(
+                `Failed to pull category "${cloudCat.name}" locally: ${String(err)}`,
+              );
+            }
+          } else {
+            const localId = matchedLocal._id?.toString() || '';
+            if (cloudId && localId) {
+              cloudToLocalMap.set(cloudId, localId);
+              localToCloudMap.set(localId, cloudId);
+            }
+            if (
+              matchedLocal._id &&
+              cloudCat.description &&
+              cloudCat.description.trim() !==
+                (matchedLocal.description || '').trim()
+            ) {
+              try {
+                await localCatProvider.updateCategory(
+                  matchedLocal._id.toString(),
+                  {
+                    description: cloudCat.description,
+                  },
+                );
+                updated++;
+              } catch (err) {
+                errors.push(
+                  `Failed to update local category "${matchedLocal.name}": ${String(err)}`,
+                );
+              }
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.error('Error synchronizing categories:', err);
+      errors.push(`Category sync error: ${String(err)}`);
+    }
+
+    return { created, updated, localToCloudMap, cloudToLocalMap, errors };
+  }
+
+  /**
+   * Push Local cards & categories to Cloud (MongoDB):
+   * - Reconciles categories first
    * - Inserts local-only cards into MongoDB
    * - Updates modified cards in MongoDB with local data
    */
-  public static async pushLocalToCloud(cardIds?: string[]): Promise<SyncExecutionResult> {
+  public static async pushLocalToCloud(
+    cardIds?: string[],
+  ): Promise<SyncExecutionResult> {
+    const errors: string[] = [];
+
+    // 1. Sync Categories first to maintain referential integrity
+    const catSync = await this.syncCategories(SYNC_DIRECTION.PUSH);
+    if (catSync.errors.length > 0) {
+      errors.push(...catSync.errors);
+    }
+
     const report = await this.computeDiff();
     const cloudProvider = DataProviderFactory.getCloudFlashcardProvider();
-    const errors: string[] = [];
     let createdCount = 0;
     let updatedCount = 0;
 
-    const shouldSync = (id: string) => !cardIds || cardIds.length === 0 || cardIds.includes(id);
+    const shouldSync = (id: string) =>
+      !cardIds || cardIds.length === 0 || cardIds.includes(id);
 
-    // 1. Insert localOnly cards into MongoDB
+    // 2. Insert localOnly cards into MongoDB
     for (const item of report.localOnly) {
       if (!shouldSync(item.id) || !item.localCard) continue;
       try {
-        await cloudProvider.addFlashcard(item.localCard);
+        const payload: Flashcard = {
+          ...item.localCard,
+          categories: (item.localCard.categories || []).map(
+            (id) => catSync.localToCloudMap.get(id) || id,
+          ),
+        };
+        await cloudProvider.addFlashcard(payload);
         createdCount++;
       } catch (err) {
-        errors.push(`Failed to insert local card "${item.question}": ${String(err)}`);
+        errors.push(
+          `Failed to insert local card "${item.question}": ${String(err)}`,
+        );
       }
     }
 
-    // 2. Update modified cards in MongoDB
+    // 3. Update modified cards in MongoDB
     for (const item of report.modified) {
       if (!shouldSync(item.id) || !item.localCard) continue;
       try {
         const cloudId = item.cloudCard?._id || item.id;
-        await cloudProvider.updateFlashcard(cloudId, item.localCard);
+        const payload: Flashcard = {
+          ...item.localCard,
+          categories: (item.localCard.categories || []).map(
+            (id) => catSync.localToCloudMap.get(id) || id,
+          ),
+        };
+        await cloudProvider.updateFlashcard(cloudId, payload);
         updatedCount++;
       } catch (err) {
-        errors.push(`Failed to update cloud card "${item.question}": ${String(err)}`);
+        errors.push(
+          `Failed to update cloud card "${item.question}": ${String(err)}`,
+        );
       }
     }
+
+    const catMsg =
+      catSync.created > 0 ? ` and ${catSync.created} new categories` : '';
 
     return {
       success: errors.length === 0,
       direction: SYNC_DIRECTION.PUSH,
       createdCount,
       updatedCount,
-      message: `Successfully pushed ${createdCount} new cards and updated ${updatedCount} existing cards to MongoDB Cloud.`,
+      categoriesCreated: catSync.created,
+      categoriesUpdated: catSync.updated,
+      message: `Successfully pushed ${createdCount} new cards and updated ${updatedCount} existing cards${catMsg} to MongoDB Cloud.`,
       errors: errors.length > 0 ? errors : undefined,
     };
   }
 
   /**
-   * Pull Cloud (MongoDB) cards to Local (flashcards.json):
+   * Pull Cloud (MongoDB) cards & categories to Local (flashcards.json & categories.json):
+   * - Reconciles categories first
    * - Inserts cloud-only cards into flashcards.json
    * - Updates modified cards in flashcards.json with cloud review data
    */
-  public static async pullCloudToLocal(cardIds?: string[]): Promise<SyncExecutionResult> {
+  public static async pullCloudToLocal(
+    cardIds?: string[],
+  ): Promise<SyncExecutionResult> {
+    const errors: string[] = [];
+
+    // 1. Sync Categories first to maintain referential integrity
+    const catSync = await this.syncCategories(SYNC_DIRECTION.PULL);
+    if (catSync.errors.length > 0) {
+      errors.push(...catSync.errors);
+    }
+
     const report = await this.computeDiff();
     const localProvider = DataProviderFactory.getLocalFlashcardProvider();
-    const errors: string[] = [];
     let createdCount = 0;
     let updatedCount = 0;
 
-    const shouldSync = (id: string) => !cardIds || cardIds.length === 0 || cardIds.includes(id);
+    const shouldSync = (id: string) =>
+      !cardIds || cardIds.length === 0 || cardIds.includes(id);
 
-    // 1. Insert cloudOnly cards into local
+    // 2. Insert cloudOnly cards into local
     for (const item of report.cloudOnly) {
       if (!shouldSync(item.id) || !item.cloudCard) continue;
       try {
-        await localProvider.addFlashcard(item.cloudCard);
+        const payload: Flashcard = {
+          ...item.cloudCard,
+          categories: (item.cloudCard.categories || []).map(
+            (id) => catSync.cloudToLocalMap.get(id) || id,
+          ),
+        };
+        await localProvider.addFlashcard(payload);
         createdCount++;
       } catch (err) {
-        errors.push(`Failed to insert cloud card "${item.question}" locally: ${String(err)}`);
+        errors.push(
+          `Failed to insert cloud card "${item.question}" locally: ${String(err)}`,
+        );
       }
     }
 
-    // 2. Update modified cards in local with cloud data
+    // 3. Update modified cards in local with cloud data
     for (const item of report.modified) {
       if (!shouldSync(item.id) || !item.cloudCard) continue;
       try {
         const localId = item.localCard?._id || item.id;
-        await localProvider.updateFlashcard(localId, item.cloudCard);
+        const payload: Flashcard = {
+          ...item.cloudCard,
+          categories: (item.cloudCard.categories || []).map(
+            (id) => catSync.cloudToLocalMap.get(id) || id,
+          ),
+        };
+        await localProvider.updateFlashcard(localId, payload);
         updatedCount++;
       } catch (err) {
-        errors.push(`Failed to update local card "${item.question}": ${String(err)}`);
+        errors.push(
+          `Failed to update local card "${item.question}": ${String(err)}`,
+        );
       }
     }
+
+    const catMsg =
+      catSync.created > 0 ? ` and ${catSync.created} new categories` : '';
 
     return {
       success: errors.length === 0,
       direction: SYNC_DIRECTION.PULL,
       createdCount,
       updatedCount,
-      message: `Successfully pulled ${createdCount} new cards and updated ${updatedCount} cards in Local Repository.`,
+      categoriesCreated: catSync.created,
+      categoriesUpdated: catSync.updated,
+      message: `Successfully pulled ${createdCount} new cards and updated ${updatedCount} cards${catMsg} in Local Repository.`,
       errors: errors.length > 0 ? errors : undefined,
     };
   }
@@ -348,9 +650,27 @@ export class SyncService {
   public static async resolveCardConflict(
     cardId: string,
     resolvedCard: Flashcard,
-    target: SyncTarget = SYNC_TARGET.BOTH
+    target: SyncTarget = SYNC_TARGET.BOTH,
   ): Promise<{ success: boolean; message: string; errors?: string[] }> {
     const errors: string[] = [];
+
+    // Ensure category referential integrity
+    if (resolvedCard.categories && resolvedCard.categories.length > 0) {
+      try {
+        if (target === SYNC_TARGET.BOTH || target === SYNC_SOURCE.CLOUD) {
+          await this.syncCategories(SYNC_DIRECTION.PUSH);
+        }
+        if (target === SYNC_TARGET.BOTH || target === SYNC_SOURCE.LOCAL) {
+          await this.syncCategories(SYNC_DIRECTION.PULL);
+        }
+      } catch (catErr) {
+        console.warn(
+          'Warning syncing categories for conflict resolution:',
+          catErr,
+        );
+      }
+    }
+
     const cardToSave: Flashcard = {
       ...resolvedCard,
     };

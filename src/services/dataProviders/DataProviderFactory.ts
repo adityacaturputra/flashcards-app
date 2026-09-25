@@ -59,6 +59,17 @@ export class DataProviderFactory {
         return LocalCategoryProvider.getInstance();
     }
   }
+
+  /**
+   * Semantic factory helpers for explicit Local vs Cloud category data sources
+   */
+  public static getLocalCategoryProvider(): ICategoryDataProvider {
+    return this.getCategoryProvider(DataSource.Local);
+  }
+
+  public static getCloudCategoryProvider(): ICategoryDataProvider {
+    return this.getCategoryProvider(DataSource.MongoDB);
+  }
 }
 
 export default DataProviderFactory;

@@ -16,6 +16,9 @@ export type PhonemicViewTab =
 export const ACCENT_PREFERENCE = {
   UK: 'uk',
   US: 'us',
+  AU: 'au',
+  ZA: 'za',
+  IN: 'in',
 } as const;
 
 export type AccentPreference =

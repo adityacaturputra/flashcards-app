@@ -16,8 +16,11 @@ export function getGlobalAccent(): AccentPreference {
   if (typeof window !== 'undefined') {
     try {
       const stored = localStorage.getItem(ACCENT_STORAGE_KEY);
-      if (stored === ACCENT_PREFERENCE.UK || stored === ACCENT_PREFERENCE.US) {
-        currentGlobalAccent = stored;
+      if (
+        stored &&
+        Object.values(ACCENT_PREFERENCE).includes(stored as AccentPreference)
+      ) {
+        currentGlobalAccent = stored as AccentPreference;
       }
     } catch {
       // ignore localStorage errors (e.g. disabled storage)
@@ -106,10 +109,29 @@ export function resolveVoiceByLocale(targetLocale: string): SpeechSynthesisVoice
 }
 
 /**
- * Resolve the optimal voice based on desired English accent (UK vs US)
+ * Map an AccentPreference to its standard BCP-47 locale tag
+ */
+export function getLocaleFromAccent(accent: AccentPreference): string {
+  switch (accent) {
+    case ACCENT_PREFERENCE.UK:
+      return 'en-GB';
+    case ACCENT_PREFERENCE.AU:
+      return 'en-AU';
+    case ACCENT_PREFERENCE.ZA:
+      return 'en-ZA';
+    case ACCENT_PREFERENCE.IN:
+      return 'en-IN';
+    case ACCENT_PREFERENCE.US:
+    default:
+      return 'en-US';
+  }
+}
+
+/**
+ * Resolve the optimal voice based on desired English accent (US, UK, AU, ZA, IN)
  */
 export function resolveBestVoice(accent: AccentPreference): SpeechSynthesisVoice | null {
-  const targetLang = accent === ACCENT_PREFERENCE.UK ? 'en-GB' : 'en-US';
+  const targetLang = getLocaleFromAccent(accent);
   return resolveVoiceByLocale(targetLang);
 }
 
@@ -177,7 +199,7 @@ export function playSpeech({
   }
 
   const effectiveAccent = accent ?? getGlobalAccent();
-  const effectiveLang = lang || (effectiveAccent === ACCENT_PREFERENCE.UK ? 'en-GB' : 'en-US');
+  const effectiveLang = lang || getLocaleFromAccent(effectiveAccent);
 
   // Cancel any ongoing utterance to ensure instant response
   window.speechSynthesis.cancel();
