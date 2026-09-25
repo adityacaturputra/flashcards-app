@@ -38,7 +38,9 @@ export class MongoCategoryProvider implements ICategoryDataProvider {
     updates: Partial<FlashcardCategory>,
   ): Promise<FlashcardCategory | null> {
     await dbConnect();
-    return await FlashcardCategoryModel.findByIdAndUpdate(id, updates, {
+    const payload = { ...updates };
+    delete payload._id;
+    return await FlashcardCategoryModel.findByIdAndUpdate(id, payload, {
       new: true,
     });
   }

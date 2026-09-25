@@ -36,7 +36,9 @@ export class MongoFlashcardProvider implements IFlashcardDataProvider {
     updates: Partial<Flashcard>,
   ): Promise<Flashcard | null> {
     await dbConnect();
-    return await FlashcardModel.findByIdAndUpdate(id, updates, { new: true });
+    const payload = { ...updates };
+    delete payload._id;
+    return await FlashcardModel.findByIdAndUpdate(id, payload, { new: true });
   }
 
   public async deleteFlashcard(id: string): Promise<Flashcard | null> {

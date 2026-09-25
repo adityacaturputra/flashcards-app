@@ -154,8 +154,16 @@ export function compareFlashcards(
   }
 
   // Categories
-  const localCats = Array.from(new Set(local.categories || [])).sort();
-  const cloudCats = Array.from(new Set(cloud.categories || [])).sort();
+  const localCats = Array.from(
+    new Set((local.categories || []).map((c) => c?.toString() || '')),
+  )
+    .filter(Boolean)
+    .sort();
+  const cloudCats = Array.from(
+    new Set((cloud.categories || []).map((c) => c?.toString() || '')),
+  )
+    .filter(Boolean)
+    .sort();
   const areCategoriesEqual =
     localCats.length === cloudCats.length &&
     localCats.every((c, idx) => c === cloudCats[idx]);
@@ -261,17 +269,62 @@ export class SyncService {
     }
 
     const matchedCloudIds = new Set<string>();
+    const matchedLocalIndices = new Set<number>();
 
-    // Process all local cards
-    for (const localCard of localCards) {
+    // Pass 1: Match all local cards by exact _id
+    for (let i = 0; i < localCards.length; i++) {
+      const localCard = localCards[i];
       const localId = localCard._id?.toString() || '';
-      let matchedCloud = localId ? cloudById.get(localId) : undefined;
+      if (!localId) continue;
 
-      if (!matchedCloud) {
-        // Fallback: match by normalized question
-        const normQ = normalizeQuestion(localCard.question);
-        if (normQ) {
-          matchedCloud = cloudByQuestion.get(normQ);
+      const matchedCloud = cloudById.get(localId);
+      if (matchedCloud && matchedCloud._id) {
+        matchedLocalIndices.add(i);
+        const cloudIdStr = matchedCloud._id.toString();
+        matchedCloudIds.add(cloudIdStr);
+
+        const diffs = compareFlashcards(
+          localCard,
+          matchedCloud,
+          categoryNameMap,
+        );
+        if (diffs.length > 0) {
+          modified.push({
+            id: localId,
+            question: localCard.question,
+            status: SYNC_CARD_STATUS.MODIFIED,
+            diffs,
+            localCard,
+            cloudCard: matchedCloud,
+          });
+        } else {
+          identicalCount++;
+        }
+      }
+    }
+
+    // Pass 2: For remaining unmatched local cards, attempt fallback match by question
+    for (let i = 0; i < localCards.length; i++) {
+      if (matchedLocalIndices.has(i)) continue;
+      const localCard = localCards[i];
+      const localId = localCard._id?.toString() || '';
+
+      let matchedCloud: Flashcard | undefined;
+      const normQ = normalizeQuestion(localCard.question);
+      if (normQ) {
+        const candidate = cloudByQuestion.get(normQ);
+        if (candidate && candidate._id) {
+          const candidateIdStr = candidate._id.toString();
+          // Only match candidate if:
+          // 1. Candidate cloud card is not already matched to another card by ID
+          // 2. Local card doesn't have a distinct valid ObjectId that differs from candidate
+          if (!matchedCloudIds.has(candidateIdStr)) {
+            const isLocalValidObjectId =
+              localId && /^[0-9a-fA-F]{24}$/.test(localId);
+            if (!isLocalValidObjectId || localId === candidateIdStr) {
+              matchedCloud = candidate;
+            }
+          }
         }
       }
 
@@ -284,12 +337,17 @@ export class SyncService {
           localCard,
         });
       } else {
-        matchedCloudIds.add(matchedCloud._id?.toString() || '');
-        const diffs = compareFlashcards(localCard, matchedCloud, categoryNameMap);
+        const cloudIdStr = matchedCloud._id?.toString() || '';
+        matchedCloudIds.add(cloudIdStr);
+        const diffs = compareFlashcards(
+          localCard,
+          matchedCloud,
+          categoryNameMap,
+        );
 
         if (diffs.length > 0) {
           modified.push({
-            id: localId || matchedCloud._id?.toString() || '',
+            id: localId || cloudIdStr,
             question: localCard.question,
             status: SYNC_CARD_STATUS.MODIFIED,
             diffs,
@@ -533,13 +591,14 @@ export class SyncService {
     for (const item of report.modified) {
       if (!shouldSync(item.id) || !item.localCard) continue;
       try {
-        const cloudId = item.cloudCard?._id || item.id;
-        const payload: Flashcard = {
+        const cloudId = (item.cloudCard?._id || item.id).toString();
+        const payload: Partial<Flashcard> = {
           ...item.localCard,
           categories: (item.localCard.categories || []).map(
             (id) => catSync.localToCloudMap.get(id) || id,
           ),
         };
+        delete payload._id;
         await cloudProvider.updateFlashcard(cloudId, payload);
         updatedCount++;
       } catch (err) {
@@ -612,13 +671,16 @@ export class SyncService {
     for (const item of report.modified) {
       if (!shouldSync(item.id) || !item.cloudCard) continue;
       try {
-        const localId = item.localCard?._id || item.id;
+        const localId = (item.localCard?._id || item.id).toString();
         const payload: Flashcard = {
           ...item.cloudCard,
           categories: (item.cloudCard.categories || []).map(
             (id) => catSync.cloudToLocalMap.get(id) || id,
           ),
         };
+        if (item.localCard?._id) {
+          payload._id = item.localCard._id;
+        }
         await localProvider.updateFlashcard(localId, payload);
         updatedCount++;
       } catch (err) {
@@ -683,7 +745,9 @@ export class SyncService {
     for (const t of targetsToUpdate) {
       const provider = DataProviderFactory.getFlashcardProviderByTarget(t);
       try {
-        await provider.updateFlashcard(cardId, cardToSave);
+        const payload = { ...cardToSave };
+        delete payload._id;
+        await provider.updateFlashcard(cardId, payload);
       } catch (err) {
         errors.push(`Failed to update ${t} card: ${String(err)}`);
       }
