@@ -15,7 +15,6 @@ const activeUtterances = new Set<SpeechSynthesisUtterance>();
 // Cached voice list populated eagerly and refreshed via 'voiceschanged'
 let cachedVoices: SpeechSynthesisVoice[] = [];
 let isVoiceListenerAttached = false;
-let pendingSpeakTimer: ReturnType<typeof setTimeout> | null = null;
 
 /**
  * Initialize and cache available voices with automatic 'voiceschanged' listener.
@@ -99,46 +98,61 @@ export function getAvailableVoices(): SpeechSynthesisVoice[] {
 }
 
 /**
- * Resolve optimal voice matching a specific BCP-47 locale tag (e.g. en-AU, en-GB, en-US, en-ZA, en-IN)
+ * Resolve optimal voice matching a specific BCP-47 locale tag (e.g. en-AU, en-GB, en-US, en-ZA, en-IN).
+ * Strictly prioritizes local OS-native offline voices (Samantha, Daniel, Karen, Tessa, Rishi)
+ * over remote cloud 'Google' voices which frequently hang or play no sound on macOS Chrome.
  */
 export function resolveVoiceByLocale(targetLocale: string): SpeechSynthesisVoice | null {
   const voices = getAvailableVoices();
   if (!voices || voices.length === 0) return null;
 
   const normalized = targetLocale.toLowerCase().replace('_', '-');
+  const matching = voices.filter((v) =>
+    v.lang.toLowerCase().replace('_', '-').startsWith(normalized)
+  );
 
-  // 1. Preferred high-quality/natural voices matching locale
-  const naturalMatch = voices.find(
+  // 1. Preferred local OS system voices (Samantha, Daniel, Karen, Tessa, Rishi)
+  // Strictly excludes remote cloud 'Google' voices from this tier
+  const preferredSystemVoice = matching.find(
     (v) =>
-      v.lang.toLowerCase().replace('_', '-').startsWith(normalized) &&
-      (v.name.includes('Natural') ||
-        v.name.includes('Online') ||
-        v.name.includes('Google') ||
+      !v.name.includes('Google') &&
+      !v.name.includes('Online') &&
+      (v.name.includes('Samantha') ||
         v.name.includes('Daniel') ||
-        v.name.includes('Samantha') ||
         v.name.includes('Karen') ||
         v.name.includes('Tessa') ||
         v.name.includes('Rishi') ||
         v.name.includes('Enhanced') ||
-        v.name.includes('Premium'))
+        v.name.includes('Premium') ||
+        v.name.includes('Natural'))
   );
-  if (naturalMatch) return naturalMatch;
+  if (preferredSystemVoice) return preferredSystemVoice;
 
-  // 2. Exact language/region match
-  const exactMatch = voices.find((v) =>
-    v.lang.toLowerCase().replace('_', '-').startsWith(normalized)
+  // 2. Any local/offline system voice matching the locale (non-Google)
+  const localMatch = matching.find(
+    (v) => !v.name.includes('Google') && !v.name.includes('Online')
   );
-  if (exactMatch) return exactMatch;
+  if (localMatch) return localMatch;
 
-  // 3. Fallback to British if regional accent voice is not installed
-  const fallbackUk = voices.find((v) =>
-    v.lang.toLowerCase().replace('_', '-').startsWith('en-gb')
+  // 3. Fallback to British system voice if regional accent voice is not installed
+  const fallbackUk = voices.find(
+    (v) =>
+      !v.name.includes('Google') &&
+      v.lang.toLowerCase().replace('_', '-').startsWith('en-gb')
   );
   if (fallbackUk) return fallbackUk;
 
-  // 4. Fallback to any English voice
-  const englishFallback = voices.find((v) => v.lang.toLowerCase().startsWith('en'));
-  return englishFallback || null;
+  // 4. Fallback to any local English voice
+  const localEnglish = voices.find(
+    (v) => !v.name.includes('Google') && v.lang.toLowerCase().startsWith('en')
+  );
+  if (localEnglish) return localEnglish;
+
+  // 5. Ultimate fallback: any matching voice (including Google voices if no OS voice exists)
+  if (matching.length > 0) return matching[0];
+
+  const anyEnglish = voices.find((v) => v.lang.toLowerCase().startsWith('en'));
+  return anyEnglish || voices[0] || null;
 }
 
 /**
@@ -195,8 +209,9 @@ export function stripMarkdownForTTS(text: string): string {
 }
 
 /**
- * Play synthesized speech audio with garbage-collection protection,
- * async cancel flush delay, queue unpause, and voice matching.
+ * Play synthesized speech audio synchronously within user gesture stack.
+ * Features garbage-collection protection, local OS voice preference,
+ * queue unpause, and an automatic stall watchdog timer.
  */
 export function playSpeech({
   text,
@@ -220,18 +235,11 @@ export function playSpeech({
     return;
   }
 
-  // Clear any existing pending speak timer from rapid clicks
-  if (pendingSpeakTimer) {
-    clearTimeout(pendingSpeakTimer);
-    pendingSpeakTimer = null;
-  }
-
   const effectiveAccent = accent ?? getGlobalAccent();
   const effectiveLang = lang || getLocaleFromAccent(effectiveAccent);
 
-  // If already speaking or pending, cancel prior audio
-  const wasActive = window.speechSynthesis.speaking || window.speechSynthesis.pending;
-  if (wasActive) {
+  // If already speaking or pending, cancel prior audio immediately
+  if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
     window.speechSynthesis.cancel();
   }
 
@@ -240,65 +248,59 @@ export function playSpeech({
     window.speechSynthesis.resume();
   }
 
-  const executeSpeak = () => {
-    // Re-verify after micro-delay
-    if (window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-    }
+  const utterance = new SpeechSynthesisUtterance(cleanedText);
+  utterance.rate = rate;
+  utterance.pitch = pitch;
+  utterance.lang = effectiveLang;
 
-    const utterance = new SpeechSynthesisUtterance(cleanedText);
-    utterance.rate = rate;
-    utterance.pitch = pitch;
-    utterance.lang = effectiveLang;
+  const selectedVoice = resolveVoiceByLocale(effectiveLang);
+  if (selectedVoice) {
+    utterance.voice = selectedVoice;
+    utterance.lang = selectedVoice.lang;
+  }
 
-    const selectedVoice = resolveVoiceByLocale(effectiveLang);
-    if (selectedVoice) {
-      utterance.voice = selectedVoice;
-      utterance.lang = selectedVoice.lang;
-    }
+  // Retain strong reference in Set to prevent V8/WebKit GC destruction
+  activeUtterances.add(utterance);
 
-    // Retain strong reference in Set to prevent V8/WebKit GC destruction
-    activeUtterances.add(utterance);
-
-    utterance.onstart = () => {
-      onStart?.();
-    };
-
-    utterance.onend = () => {
+  // Safety watchdog: In case any browser speech engine ever stalls without firing onend/onerror,
+  // ensure the active state is guaranteed to reset after a generous timeout so UI never freezes
+  const watchdogMs = Math.max(3000, Math.ceil((cleanedText.length / 4) * 1000));
+  const watchdogTimer = setTimeout(() => {
+    if (activeUtterances.has(utterance)) {
       activeUtterances.delete(utterance);
       onEnd?.();
-    };
+    }
+  }, watchdogMs);
 
-    utterance.onerror = (event: SpeechSynthesisErrorEvent) => {
-      activeUtterances.delete(utterance);
-      // 'interrupted' and 'canceled' are expected when a new utterance supersedes an active one
-      if (event.error !== 'interrupted' && event.error !== 'canceled') {
-        onError?.(event);
-      } else {
-        onEnd?.();
-      }
-    };
-
-    window.speechSynthesis.speak(utterance);
+  utterance.onstart = () => {
+    onStart?.();
   };
 
-  // If we had to cancel a running utterance, give the browser's IPC dispatcher
-  // a short 35ms tick to flush the cancellation before enqueueing the new utterance.
-  if (wasActive) {
-    pendingSpeakTimer = setTimeout(executeSpeak, 35);
-  } else {
-    executeSpeak();
-  }
+  utterance.onend = () => {
+    clearTimeout(watchdogTimer);
+    activeUtterances.delete(utterance);
+    onEnd?.();
+  };
+
+  utterance.onerror = (event: SpeechSynthesisErrorEvent) => {
+    clearTimeout(watchdogTimer);
+    activeUtterances.delete(utterance);
+    // 'interrupted' and 'canceled' are expected when a new utterance supersedes an active one
+    if (event.error !== 'interrupted' && event.error !== 'canceled') {
+      onError?.(event);
+    } else {
+      onEnd?.();
+    }
+  };
+
+  // Synchronous execution ensures user gesture activation is never lost in Chrome
+  window.speechSynthesis.speak(utterance);
 }
 
 /**
  * Stop any ongoing speech playback safely
  */
 export function stopSpeech(): void {
-  if (pendingSpeakTimer) {
-    clearTimeout(pendingSpeakTimer);
-    pendingSpeakTimer = null;
-  }
   activeUtterances.clear();
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
     window.speechSynthesis.cancel();
