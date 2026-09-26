@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { FaFilePdf, FaArrowUpRightFromSquare, FaRotate } from 'react-icons/fa6';
 import { PDF_VIEWER_MODE, PdfViewerMode } from '@/types/cambridgeTests';
+import { useCambridgeMediaDownloader } from '@/hooks/useCambridgeMediaDownloader';
+import CambridgeDownloadProgressBar from '@/components/atoms/CambridgeDownloadProgressBar';
 
 interface IeltsPdfViewerProps {
   pdfUrl: string;
@@ -22,8 +24,15 @@ export const IeltsPdfViewer: React.FC<IeltsPdfViewerProps> = ({
     PDF_VIEWER_MODE.NATIVE
   );
 
-  const nativeSrc = pageHint ? `${pdfUrl}#page=${pageHint}` : pdfUrl;
-  const gdocsTarget = remotePdfUrl || pdfUrl;
+  const { resolvedUrl, isDownloading, progressPercent, loadedMb, totalMb } =
+    useCambridgeMediaDownloader({
+      localUrl: pdfUrl,
+      remoteUrl: remotePdfUrl,
+      mimeType: 'application/pdf',
+    });
+
+  const nativeSrc = pageHint ? `${resolvedUrl}#page=${pageHint}` : resolvedUrl;
+  const gdocsTarget = remotePdfUrl || resolvedUrl;
   const gdocsSrc = `https://docs.google.com/viewer?url=${encodeURIComponent(
     gdocsTarget
   )}&embedded=true`;
@@ -33,22 +42,14 @@ export const IeltsPdfViewer: React.FC<IeltsPdfViewerProps> = ({
 
   return (
     <div
-      className='relative flex flex-col w-full rounded-2xl border shadow-sm overflow-hidden'
+      className='relative flex flex-col w-full rounded-2xl border border-border shadow-sm overflow-hidden bg-card'
       style={{
-        background: 'var(--card)',
-        borderColor: 'var(--border)',
         height: 'calc(100vh - 210px)',
         minHeight: '520px',
       }}
     >
       {/* Top Bar Controls */}
-      <div
-        className='flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b'
-        style={{
-          background: 'var(--secondary)',
-          borderColor: 'var(--border)',
-        }}
-      >
+      <div className='flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-border bg-secondary'>
         <div className='flex items-center gap-2 min-w-0'>
           <FaFilePdf className='h-4 w-4 text-red-500 shrink-0' />
           <div className='truncate text-xs font-semibold text-foreground'>
@@ -63,7 +64,6 @@ export const IeltsPdfViewer: React.FC<IeltsPdfViewerProps> = ({
         </div>
 
         <div className='flex items-center gap-2 shrink-0'>
-          {/* Viewer Mode Switcher */}
           <button
             type='button'
             onClick={() =>
@@ -79,14 +79,13 @@ export const IeltsPdfViewer: React.FC<IeltsPdfViewerProps> = ({
             <FaRotate className='h-3 w-3' />
             <span className='hidden sm:inline'>
               {viewerMode === PDF_VIEWER_MODE.NATIVE
-                ? 'Pakai Google Docs Viewer'
+                ? 'Pakai Google Docs'
                 : 'Pakai Native PDF'}
             </span>
           </button>
 
-          {/* Open in New Tab Button */}
           <a
-            href={pdfUrl}
+            href={resolvedUrl}
             target='_blank'
             rel='noopener noreferrer'
             className='flex items-center gap-1.5 rounded-lg bg-card px-2.5 py-1 text-xs font-bold text-foreground border border-border shadow-2xs hover:bg-slate-50 dark:hover:bg-slate-800 transition-all'
@@ -97,16 +96,25 @@ export const IeltsPdfViewer: React.FC<IeltsPdfViewerProps> = ({
         </div>
       </div>
 
-      {/* PDF Iframe Canvas */}
-      <div className='relative flex-1 w-full bg-slate-900/5 dark:bg-black/20'>
-        <iframe
-          key={`${pdfUrl}-${viewerMode}`}
-          src={currentIframeSrc}
-          title={`${bookTitle} ${testTitle} PDF`}
-          className='w-full h-full border-none'
-          allow='fullscreen'
-          loading='lazy'
-        />
+      {/* PDF Canvas or Download Progress */}
+      <div className='relative flex-1 w-full bg-slate-900/5 dark:bg-black/20 flex items-center justify-center p-4'>
+        {isDownloading ? (
+          <CambridgeDownloadProgressBar
+            title={`${bookTitle} PDF`}
+            loadedMb={loadedMb}
+            totalMb={totalMb}
+            progressPercent={progressPercent}
+          />
+        ) : (
+          <iframe
+            key={`${resolvedUrl}-${viewerMode}`}
+            src={currentIframeSrc}
+            title={`${bookTitle} ${testTitle} PDF`}
+            className='w-full h-full border-none'
+            allow='fullscreen'
+            loading='lazy'
+          />
+        )}
       </div>
     </div>
   );
