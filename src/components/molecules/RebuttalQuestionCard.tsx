@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FaCheck,
   FaXmark,
@@ -33,6 +33,11 @@ export const RebuttalQuestionCard: React.FC<RebuttalQuestionCardProps> = ({
   onToggleReveal,
 }) => {
   const [showTranscript, setShowTranscript] = useState<boolean>(false);
+
+  useEffect(() => {
+    setShowTranscript(false);
+  }, [item.id]);
+
   const categoryMeta = REBUTTAL_CATEGORY_META[item.category];
 
   const isAnswered = selectedAnswer !== null;
@@ -126,11 +131,17 @@ export const RebuttalQuestionCard: React.FC<RebuttalQuestionCardProps> = ({
 
       {/* Pencil Strikeout Badge & Action Buttons */}
       <div className='flex flex-wrap items-center justify-between gap-3 pt-2'>
-        <PencilStrikeoutBadge
-          distractor={item.distractorValue}
-          correctAnswer={item.targetAnswer}
-          fieldLabel={item.formFieldLabel}
-        />
+        {isAnswered || isRevealed ? (
+          <PencilStrikeoutBadge
+            distractor={item.distractorValue}
+            correctAnswer={item.targetAnswer}
+            fieldLabel={item.formFieldLabel}
+          />
+        ) : (
+          <div className='text-xs text-muted-foreground italic flex items-center gap-1.5'>
+            <span>Dengarkan audio & pilih opsi untuk melihat teknik coret pensil</span>
+          </div>
+        )}
 
         <div className='flex items-center gap-2'>
           <button
