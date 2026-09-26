@@ -105,33 +105,42 @@ export const AlphabetListeningQuiz: React.FC<AlphabetListeningQuizProps> = ({ ac
     }
   }, [quizMode]);
 
+  const [hasStarted, setHasStarted] = useState(false);
+
   // Start question
-  const startNewQuestion = useCallback(() => {
-    const q = generateQuestion();
-    setCurrentQuestion(q);
-    setSelectedChar(null);
+  const startNewQuestion = useCallback(
+    (autoPlay: boolean = true) => {
+      const q = generateQuestion();
+      setCurrentQuestion(q);
+      setSelectedChar(null);
 
-    // Play target letter audio after short visual render delay
-    setTimeout(() => {
-      setIsPlayingAudio(true);
-      playAlphabetLetter({
-        letter: q.target,
-        accent,
-        slow: false,
-        onEnd: () => setIsPlayingAudio(false),
-        onError: () => setIsPlayingAudio(false),
-      });
-    }, 280);
-  }, [generateQuestion, accent]);
+      if (autoPlay) {
+        setHasStarted(true);
+        // Play target letter audio after short visual render delay
+        setTimeout(() => {
+          setIsPlayingAudio(true);
+          playAlphabetLetter({
+            letter: q.target,
+            accent,
+            slow: false,
+            onEnd: () => setIsPlayingAudio(false),
+            onError: () => setIsPlayingAudio(false),
+          });
+        }, 280);
+      }
+    },
+    [generateQuestion, accent]
+  );
 
-  // Initial load or mode switch
+  // Initial load or mode switch: generate question without unpermitted autoplay
   useEffect(() => {
-    startNewQuestion();
+    startNewQuestion(false);
   }, [quizMode, startNewQuestion]);
 
   // Play audio on demand
   const handleReplayAudio = (slow: boolean = false) => {
     if (!currentQuestion) return;
+    setHasStarted(true);
     setIsPlayingAudio(true);
     playAlphabetLetter({
       letter: currentQuestion.target,
@@ -176,7 +185,8 @@ export const AlphabetListeningQuiz: React.FC<AlphabetListeningQuizProps> = ({ ac
     setScore(0);
     setTotalAttempts(0);
     setStreak(0);
-    startNewQuestion();
+    setHasStarted(false);
+    startNewQuestion(false);
   };
 
   const accuracyPct = totalAttempts > 0 ? Math.round((score / totalAttempts) * 100) : 0;
@@ -259,7 +269,11 @@ export const AlphabetListeningQuiz: React.FC<AlphabetListeningQuizProps> = ({ ac
           <div>
             <span className='inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-teal-500/10 text-teal-600 dark:text-teal-400'>
               <FaEarListen className='h-3 w-3' />
-              <span>Dengarkan audio, pilih huruf yang diucapkan:</span>
+              <span>
+                {hasStarted
+                  ? 'Dengarkan audio, pilih huruf yang diucapkan:'
+                  : 'Klik tombol di bawah untuk mendengarkan huruf:'}
+              </span>
             </span>
           </div>
 
@@ -399,7 +413,7 @@ export const AlphabetListeningQuiz: React.FC<AlphabetListeningQuizProps> = ({ ac
 
                   {/* Next Question Button */}
                   <button
-                    onClick={startNewQuestion}
+                    onClick={() => startNewQuestion(true)}
                     className='inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-teal-500 text-white text-xs font-bold hover:bg-teal-600 shadow-xs transition-all'
                   >
                     <span>Lanjut Soal Berikutnya</span>

@@ -1,6 +1,6 @@
 /**
  * Web Speech API Utility for Phonemics & Pronunciation Audio Playback
- * Zero-dependency, offline-ready browser speech synthesis.
+ * Zero-dependency, offline-ready, browser-resilient speech synthesis.
  */
 
 import { AccentPreference, ACCENT_PREFERENCE, DEFAULT_ACCENT } from '@/types/phonemic';
@@ -8,6 +8,36 @@ import { AccentPreference, ACCENT_PREFERENCE, DEFAULT_ACCENT } from '@/types/pho
 export const ACCENT_STORAGE_KEY = 'flashcards_accent_preference';
 
 let currentGlobalAccent: AccentPreference = DEFAULT_ACCENT;
+
+// Strong reference cache to prevent Chromium/WebKit garbage-collection drop bug
+const activeUtterances = new Set<SpeechSynthesisUtterance>();
+
+// Cached voice list populated eagerly and refreshed via 'voiceschanged'
+let cachedVoices: SpeechSynthesisVoice[] = [];
+let isVoiceListenerAttached = false;
+let pendingSpeakTimer: ReturnType<typeof setTimeout> | null = null;
+
+/**
+ * Initialize and cache available voices with automatic 'voiceschanged' listener.
+ */
+export function warmVoices(): SpeechSynthesisVoice[] {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+    return [];
+  }
+  cachedVoices = window.speechSynthesis.getVoices() || [];
+  if (!isVoiceListenerAttached) {
+    isVoiceListenerAttached = true;
+    window.speechSynthesis.addEventListener('voiceschanged', () => {
+      cachedVoices = window.speechSynthesis.getVoices() || [];
+    });
+  }
+  return cachedVoices;
+}
+
+// Auto-warm on browser script evaluation
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+  warmVoices();
+}
 
 /**
  * Get current global accent preference (cached in memory, synced from localStorage)
@@ -56,13 +86,16 @@ export interface SpeechOptions {
 }
 
 /**
- * Get available browser voices safely
+ * Get available browser voices safely (using cached list if available)
  */
 export function getAvailableVoices(): SpeechSynthesisVoice[] {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
     return [];
   }
-  return window.speechSynthesis.getVoices() || [];
+  if (!cachedVoices || cachedVoices.length === 0) {
+    cachedVoices = window.speechSynthesis.getVoices() || [];
+  }
+  return cachedVoices;
 }
 
 /**
@@ -74,7 +107,7 @@ export function resolveVoiceByLocale(targetLocale: string): SpeechSynthesisVoice
 
   const normalized = targetLocale.toLowerCase().replace('_', '-');
 
-  // 1. Try to find natural/high-quality voices matching target locale
+  // 1. Preferred high-quality/natural voices matching locale
   const naturalMatch = voices.find(
     (v) =>
       v.lang.toLowerCase().replace('_', '-').startsWith(normalized) &&
@@ -91,7 +124,7 @@ export function resolveVoiceByLocale(targetLocale: string): SpeechSynthesisVoice
   );
   if (naturalMatch) return naturalMatch;
 
-  // 2. Try exact language/region match
+  // 2. Exact language/region match
   const exactMatch = voices.find((v) =>
     v.lang.toLowerCase().replace('_', '-').startsWith(normalized)
   );
@@ -142,39 +175,28 @@ export function stripMarkdownForTTS(text: string): string {
   if (!text) return '';
   return (
     text
-      // Remove code blocks
       .replace(/```[\s\S]*?```/g, '')
-      // Remove inline code
       .replace(/`([^`]+)`/g, '$1')
-      // Remove KaTeX math formulas: $$formula$$ or $formula$
       .replace(/\$\$?([\s\S]*?)\$\$?/g, '$1')
-      // Replace arrow symbols (-> or →) with comma for natural speech pause
       .replace(/\s*(?:->|→)\s*/g, ', ')
-      // Remove images
       .replace(/!\[.*?\]\(.*?\)/g, '')
-      // Replace links [text](url) with just text
       .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-      // Remove headings (#, ##, etc.)
       .replace(/^#{1,6}\s+/gm, '')
-      // Remove blockquotes (> )
       .replace(/^>\s+/gm, '')
-      // Remove bold/italic markers
       .replace(/(\*\*|__)(.*?)\1/g, '$2')
       .replace(/(\*|_)(.*?)\1/g, '$2')
       .replace(/~~(.*?)~~/g, '$1')
-      // Remove list bullets
       .replace(/^[\s*+-]+(?=\S)/gm, '')
       .replace(/^\d+\.\s+/gm, '')
-      // Remove HTML tags
       .replace(/<[^>]*>/g, '')
-      // Normalize multiple spaces and newlines to a single space
       .replace(/\s+/g, ' ')
       .trim()
   );
 }
 
 /**
- * Play synthesized speech audio for a phoneme, word, or sentence
+ * Play synthesized speech audio with garbage-collection protection,
+ * async cancel flush delay, queue unpause, and voice matching.
  */
 export function playSpeech({
   text,
@@ -198,39 +220,86 @@ export function playSpeech({
     return;
   }
 
+  // Clear any existing pending speak timer from rapid clicks
+  if (pendingSpeakTimer) {
+    clearTimeout(pendingSpeakTimer);
+    pendingSpeakTimer = null;
+  }
+
   const effectiveAccent = accent ?? getGlobalAccent();
   const effectiveLang = lang || getLocaleFromAccent(effectiveAccent);
 
-  // Cancel any ongoing utterance to ensure instant response
-  window.speechSynthesis.cancel();
+  // If already speaking or pending, cancel prior audio
+  const wasActive = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+  if (wasActive) {
+    window.speechSynthesis.cancel();
+  }
 
-  // If paused (e.g. Chrome speech queue stall), resume
+  // Unpause if the speech synthesis queue was stalled by the browser
   if (window.speechSynthesis.paused) {
     window.speechSynthesis.resume();
   }
 
-  const utterance = new SpeechSynthesisUtterance(cleanedText);
-  utterance.rate = rate;
-  utterance.pitch = pitch;
-  utterance.lang = effectiveLang;
+  const executeSpeak = () => {
+    // Re-verify after micro-delay
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
 
-  const selectedVoice = resolveVoiceByLocale(effectiveLang);
-  if (selectedVoice) {
-    utterance.voice = selectedVoice;
-    utterance.lang = selectedVoice.lang;
+    const utterance = new SpeechSynthesisUtterance(cleanedText);
+    utterance.rate = rate;
+    utterance.pitch = pitch;
+    utterance.lang = effectiveLang;
+
+    const selectedVoice = resolveVoiceByLocale(effectiveLang);
+    if (selectedVoice) {
+      utterance.voice = selectedVoice;
+      utterance.lang = selectedVoice.lang;
+    }
+
+    // Retain strong reference in Set to prevent V8/WebKit GC destruction
+    activeUtterances.add(utterance);
+
+    utterance.onstart = () => {
+      onStart?.();
+    };
+
+    utterance.onend = () => {
+      activeUtterances.delete(utterance);
+      onEnd?.();
+    };
+
+    utterance.onerror = (event: SpeechSynthesisErrorEvent) => {
+      activeUtterances.delete(utterance);
+      // 'interrupted' and 'canceled' are expected when a new utterance supersedes an active one
+      if (event.error !== 'interrupted' && event.error !== 'canceled') {
+        onError?.(event);
+      } else {
+        onEnd?.();
+      }
+    };
+
+    window.speechSynthesis.speak(utterance);
+  };
+
+  // If we had to cancel a running utterance, give the browser's IPC dispatcher
+  // a short 35ms tick to flush the cancellation before enqueueing the new utterance.
+  if (wasActive) {
+    pendingSpeakTimer = setTimeout(executeSpeak, 35);
+  } else {
+    executeSpeak();
   }
-
-  if (onStart) utterance.onstart = onStart;
-  if (onEnd) utterance.onend = onEnd;
-  if (onError) utterance.onerror = onError;
-
-  window.speechSynthesis.speak(utterance);
 }
 
 /**
- * Stop any ongoing speech playback
+ * Stop any ongoing speech playback safely
  */
 export function stopSpeech(): void {
+  if (pendingSpeakTimer) {
+    clearTimeout(pendingSpeakTimer);
+    pendingSpeakTimer = null;
+  }
+  activeUtterances.clear();
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
     window.speechSynthesis.cancel();
   }
@@ -243,8 +312,6 @@ export interface SpeechButtonAriaProps {
 
 /**
  * Generates standardized accessible title and aria-label attributes for speech playback buttons.
- * @param isPlaying Whether speech is currently playing for this target
- * @param descriptor Optional target name (e.g., 'question', 'answer', 'word')
  */
 export function getSpeechButtonAriaProps(
   isPlaying: boolean,
