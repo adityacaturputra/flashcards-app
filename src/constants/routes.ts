@@ -15,6 +15,7 @@ export const APP_ROUTES = {
   QUIZ: '/quiz',
   ALPHABET: '/alphabet',
   REBUTTAL: '/rebuttal',
+  CAMBRIDGE_TESTS: '/cambridge-tests',
 } as const;
 
 export type AppRoute = (typeof APP_ROUTES)[keyof typeof APP_ROUTES];
