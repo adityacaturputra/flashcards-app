@@ -14,7 +14,21 @@ export interface MappingItem {
   notes?: string;
 }
 
-export type MappingViewMode = 'table' | 'flashcard';
+export const MAPPING_VIEW_MODE = {
+  TABLE: 'table',
+  FLASHCARD: 'flashcard',
+} as const;
+
+export type MappingViewMode =
+  (typeof MAPPING_VIEW_MODE)[keyof typeof MAPPING_VIEW_MODE];
+
+export const MAPPING_SORT_ORDER = {
+  DESC: 'desc',
+  ASC: 'asc',
+} as const;
+
+export type MappingSortOrder =
+  (typeof MAPPING_SORT_ORDER)[keyof typeof MAPPING_SORT_ORDER];
 
 export interface MappingFilterState {
   module: string | null;

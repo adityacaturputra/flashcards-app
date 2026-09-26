@@ -63,16 +63,22 @@ export interface SpellingConventionItem {
   example: string;
 }
 
+export const SPELLING_CATEGORY = {
+  SURNAME: 'Surname',
+  POSTCODE: 'Postcode',
+  REFERENCE_CODE: 'Reference Code',
+  STREET_NAME: 'Street Name',
+  AIRPORT_CODE: 'Airport Code',
+  FLIGHT_CODE: 'Flight Code',
+} as const;
+
+export type SpellingCategory =
+  (typeof SPELLING_CATEGORY)[keyof typeof SPELLING_CATEGORY];
+
 export interface SpellingExercise {
   id: string;
   target: string; // Word or alphanumeric code to spell out, e.g. "BRADFORD"
-  category:
-    | 'Surname'
-    | 'Postcode'
-    | 'Reference Code'
-    | 'Street Name'
-    | 'Airport Code'
-    | 'Flight Code';
+  category: SpellingCategory;
   context: string;
   hint: string;
 }
@@ -82,6 +88,24 @@ export const ALPHABET_VIEW_TAB = {
   QUIZ: 'quiz',
   CONFUSION: 'confusion',
   SPELLING: 'spelling',
+  NUMBERS: 'numbers',
 } as const;
 
 export type AlphabetViewTab = (typeof ALPHABET_VIEW_TAB)[keyof typeof ALPHABET_VIEW_TAB];
+
+export const ALPHABET_QUIZ_MODE = {
+  CONFUSION: 'confusion',
+  ALL: 'all',
+} as const;
+
+export type AlphabetQuizMode = (typeof ALPHABET_QUIZ_MODE)[keyof typeof ALPHABET_QUIZ_MODE];
+
+export const ALPHABET_FILTER_CATEGORY = {
+  ALL: 'all',
+  VOWELS: 'vowels',
+  CONSONANTS: 'consonants',
+  CONFUSION: 'confusion',
+} as const;
+
+export type AlphabetFilterCategory =
+  (typeof ALPHABET_FILTER_CATEGORY)[keyof typeof ALPHABET_FILTER_CATEGORY];

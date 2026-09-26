@@ -10,7 +10,7 @@ import {
   FaGem,
 } from 'react-icons/fa6';
 import { MAPPING_ITEMS, getModules } from '@/data/mappings';
-import { MappingItem, MappingViewMode } from '@/types/mapping';
+import { MappingItem, MappingViewMode, MAPPING_VIEW_MODE } from '@/types/mapping';
 import MappingTable from '@/components/organisms/MappingTable';
 import MappingFlashcards from '@/components/organisms/MappingFlashcards';
 import ErrorBoundary from '@/components/atoms/ErrorBoundary';
@@ -18,7 +18,7 @@ import { APP_ROUTES } from '@/constants/routes';
 
 export default function MappingPage() {
   const router = useRouter();
-  const [viewMode, setViewMode] = useState<MappingViewMode>('table');
+  const [viewMode, setViewMode] = useState<MappingViewMode>(MAPPING_VIEW_MODE.TABLE);
   const [flashcardItems, setFlashcardItems] = useState<MappingItem[]>(MAPPING_ITEMS);
   const [showAgentGuide, setShowAgentGuide] = useState(false);
 
@@ -30,7 +30,7 @@ export default function MappingPage() {
     } else {
       setFlashcardItems(MAPPING_ITEMS);
     }
-    setViewMode('flashcard');
+    setViewMode(MAPPING_VIEW_MODE.FLASHCARD);
   };
 
   return (
@@ -96,19 +96,19 @@ export default function MappingPage() {
                   }}
                 >
                   <button
-                    onClick={() => setViewMode('table')}
+                    onClick={() => setViewMode(MAPPING_VIEW_MODE.TABLE)}
                     className={`flex flex-1 sm:flex-initial items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
-                      viewMode === 'table'
+                      viewMode === MAPPING_VIEW_MODE.TABLE
                         ? 'shadow-sm'
                         : 'opacity-70 hover:opacity-100'
                     }`}
                     style={{
                       background:
-                        viewMode === 'table'
+                        viewMode === MAPPING_VIEW_MODE.TABLE
                           ? 'var(--card)'
                           : 'transparent',
                       color:
-                        viewMode === 'table'
+                        viewMode === MAPPING_VIEW_MODE.TABLE
                           ? 'var(--primary)'
                           : 'var(--foreground)',
                     }}
@@ -120,20 +120,20 @@ export default function MappingPage() {
                   <button
                     onClick={() => {
                       setFlashcardItems(MAPPING_ITEMS);
-                      setViewMode('flashcard');
+                      setViewMode(MAPPING_VIEW_MODE.FLASHCARD);
                     }}
                     className={`flex flex-1 sm:flex-initial items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
-                      viewMode === 'flashcard'
+                      viewMode === MAPPING_VIEW_MODE.FLASHCARD
                         ? 'shadow-sm'
                         : 'opacity-70 hover:opacity-100'
                     }`}
                     style={{
                       background:
-                        viewMode === 'flashcard'
+                        viewMode === MAPPING_VIEW_MODE.FLASHCARD
                           ? 'var(--card)'
                           : 'transparent',
                       color:
-                        viewMode === 'flashcard'
+                        viewMode === MAPPING_VIEW_MODE.FLASHCARD
                           ? 'var(--primary)'
                           : 'var(--foreground)',
                     }}
@@ -276,7 +276,7 @@ export default function MappingPage() {
                 Active View
               </span>
               <p className='mt-1 text-sm font-bold text-foreground sm:text-base capitalize'>
-                {viewMode === 'table' ? 'Table Mode' : 'Flashcard Mode'}
+                {viewMode === MAPPING_VIEW_MODE.TABLE ? 'Table Mode' : 'Flashcard Mode'}
               </p>
             </div>
 
@@ -301,7 +301,7 @@ export default function MappingPage() {
           </div>
 
           {/* Active View Component */}
-          {viewMode === 'table' ? (
+          {viewMode === MAPPING_VIEW_MODE.TABLE ? (
             <MappingTable
               items={MAPPING_ITEMS}
               onStartFlashcardMode={handleStartFlashcardMode}
@@ -309,7 +309,7 @@ export default function MappingPage() {
           ) : (
             <MappingFlashcards
               items={flashcardItems}
-              onBackToTable={() => setViewMode('table')}
+              onBackToTable={() => setViewMode(MAPPING_VIEW_MODE.TABLE)}
             />
           )}
         </main>

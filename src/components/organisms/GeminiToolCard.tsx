@@ -17,7 +17,7 @@ import {
   FaChevronUp,
   FaGem,
 } from 'react-icons/fa6';
-import { GeminiStudyTool } from '@/types/geminiTool';
+import { GeminiStudyTool, GEMINI_TOOL_ICON } from '@/types/geminiTool';
 import MarkdownViewer from '@/components/atoms/MarkdownViewer';
 
 interface GeminiToolCardProps {
@@ -27,21 +27,21 @@ interface GeminiToolCardProps {
 const renderIcon = (iconName: GeminiStudyTool['iconName']) => {
   const props = { className: 'h-5 w-5 sm:h-6 sm:w-6' };
   switch (iconName) {
-    case 'microphone':
+    case GEMINI_TOOL_ICON.MICROPHONE:
       return <FaMicrophone {...props} />;
-    case 'stethoscope':
+    case GEMINI_TOOL_ICON.STETHOSCOPE:
       return <FaStethoscope {...props} />;
-    case 'briefcase':
+    case GEMINI_TOOL_ICON.BRIEFCASE:
       return <FaBriefcase {...props} />;
-    case 'lightbulb':
+    case GEMINI_TOOL_ICON.LIGHTBULB:
       return <FaLightbulb {...props} />;
-    case 'headphones':
+    case GEMINI_TOOL_ICON.HEADPHONES:
       return <FaHeadphones {...props} />;
-    case 'graduation':
+    case GEMINI_TOOL_ICON.GRADUATION:
       return <FaGraduationCap {...props} />;
-    case 'dumbbell':
+    case GEMINI_TOOL_ICON.DUMBBELL:
       return <FaDumbbell {...props} />;
-    case 'database':
+    case GEMINI_TOOL_ICON.DATABASE:
       return <FaDatabase {...props} />;
     default:
       return <FaGem {...props} />;

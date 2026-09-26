@@ -1,4 +1,8 @@
-import { GeminiStudyTool } from '@/types/geminiTool';
+import {
+  GeminiStudyTool,
+  GEMINI_TOOL_ICON,
+  GEMINI_TOOL_RECOMMENDED_MODE,
+} from '@/types/geminiTool';
 
 export const GEMINI_STUDY_TOOLS: GeminiStudyTool[] = [
   {
@@ -6,14 +10,14 @@ export const GEMINI_STUDY_TOOLS: GeminiStudyTool[] = [
     number: 1,
     title: 'The Interactive Speaking Partner',
     category: 'Speaking & Fluency',
-    iconName: 'microphone',
+    iconName: GEMINI_TOOL_ICON.MICROPHONE,
     badge: 'Fluency & Confidence',
     tagline: 'Latihan ngobrol santai harian tanpa takut salah dan memecah lidah kaku',
     description:
       'Didesain khusus untuk melatih refleks percakapan harian (CEFR B1-B2). AI memberikan respon ringkas (2-4 kalimat) agar tidak memonopoli percakapan, mengoreksi 1-2 kesalahan utama secara halus, dan selalu memancing Anda dengan pertanyaan lanjutan.',
     bestPracticeTip:
       'Sangat disarankan memakai Voice Mode (ikon mikrofon) di aplikasi Gemini ponsel. Anggap seperti menelepon teman bule selama 15 menit setiap hari.',
-    recommendedMode: 'Voice Preferred',
+    recommendedMode: GEMINI_TOOL_RECOMMENDED_MODE.VOICE_PREFERRED,
     prompt: `Role: You are Alex, a supportive, witty, and engaging English speaking partner. Your goal is to help me practice spoken English naturally, fluently, and without fear of making mistakes.
 
 Operational Guidelines:
@@ -34,14 +38,14 @@ Kickoff: Say a warm hello in 2 sentences, introduce yourself as Alex, and ask me
     number: 2,
     title: 'The Grammar Surgeon',
     category: 'Grammar & Accuracy',
-    iconName: 'stethoscope',
+    iconName: GEMINI_TOOL_ICON.STETHOSCOPE,
     badge: 'Formula & Error Analysis',
     tagline: 'Bedah tuntas kalimat janggal, soal kuis yang membingungkan, dan rumus baku',
     description:
       'Tool diagnostik untuk membedah struktur kalimat atau soal ujian yang keliru. Memberikan status vonis langsung, penyebab kesalahan, rumus matematis universal, dan 3 variasi kalimat native (santai, profesional, dan idiomatis).',
     bestPracticeTip:
       'Gunakan tool ini setiap kali Anda ragu dengan kalimat yang Anda tulis di email kerja, tugas kuliah, atau saat salah menjawab kuis latihan.',
-    recommendedMode: 'Text Preferred',
+    recommendedMode: GEMINI_TOOL_RECOMMENDED_MODE.TEXT_PREFERRED,
     prompt: `Role: You are a Master English Linguist and Grammar Specialist. Your mission is to analyze any English sentence or quiz error submitted by the user with utmost pedagogical clarity.
 
 Whenever I provide a sentence or a multiple-choice question:
@@ -66,14 +70,14 @@ Kickoff: Acknowledge readiness and invite me to paste any sentence, quiz questio
     number: 3,
     title: 'Situational Roleplay Simulator',
     category: 'Roleplay & Career',
-    iconName: 'briefcase',
+    iconName: GEMINI_TOOL_ICON.BRIEFCASE,
     badge: 'Job Interview & Real World',
     tagline: 'Simulasi situasi bertekanan tinggi: wawancara kerja, imigrasi bandara, dan meeting bisnis',
     description:
       'AI berperan sebagai lawan bicara nyata (pewawancara kerja, petugas bandara, atau klien negosiasi). AI tidak keluar dari karakter selama percakapan, memberikan catatan pelatih di luar karakter (OOC), dan menyajikan kartu skor evaluasi performa.',
     bestPracticeTip:
       'Pilih skenario "Job Interview" sebelum wawancara kerja yang sesungguhnya untuk melatih ketenangan dan kesiapan menjawab pertanyaan tak terduga.',
-    recommendedMode: 'Voice & Text',
+    recommendedMode: GEMINI_TOOL_RECOMMENDED_MODE.VOICE_AND_TEXT,
     prompt: `Role: You are an immersive English Roleplay Facilitator. You will play a specific character in a real-life situation to train my functional English communication skills.
 
 Available Scenarios (Ask me to pick one, or let me specify a custom one):
@@ -100,14 +104,14 @@ Kickoff: Greet me, display the scenario options (A to E), and ask me which rolep
     number: 4,
     title: 'Vocabulary & Idiom Upgrader',
     category: 'Vocabulary & Idioms',
-    iconName: 'lightbulb',
+    iconName: GEMINI_TOOL_ICON.LIGHTBULB,
     badge: 'A2 to C1 Progression',
     tagline: 'Ubah kosakata pasaran yang kaku dan harfiah menjadi frasa elegan serta idiom natural',
     description:
       'Membantu Anda keluar dari lingkaran kata membosankan seperti "very good", "bad", "happy", atau "problem". Menyajikan tabel spektrum 3 level (Basic -> Natural -> Advanced), 3 idiom relevan, dan peringatan kolokasi kata yang salah kaprah.',
     bestPracticeTip:
       'Setiap selesai mempelajari frasa level C1, langsung gunakan fitur mini-drill di akhir respon untuk menuliskan kalimat buatan Anda sendiri.',
-    recommendedMode: 'Text Preferred',
+    recommendedMode: GEMINI_TOOL_RECOMMENDED_MODE.TEXT_PREFERRED,
     prompt: `Role: You are a Native English Stylist & Lexical Coach. Your purpose is to expand my active vocabulary by transforming plain, repetitive, or literal Indonesian-translated English into rich, natural, and idiomatic English.
 
 When I give you a sentence, phrase, or topic:
@@ -131,14 +135,14 @@ Kickoff: Say hello and invite me to share any paragraph, sentence, or word I wan
     number: 5,
     title: 'Pronunciation & Phonetics Coach',
     category: 'Pronunciation & Accent',
-    iconName: 'headphones',
+    iconName: GEMINI_TOOL_ICON.HEADPHONES,
     badge: 'IPA & Clarity Drill',
     tagline: 'Pelatih penempatan lidah, simbol fonetik IPA, minimal pairs, dan penekanan suku kata',
     description:
       'Fokus melatih kejelasan artikulasi (*accent clarity*) khusus untuk penutur Indonesia. Membedakan bunyi rawan tertukar (/θ/ vs /t/, /v/ vs /f/, /iː/ vs /ɪ/), panduan posisi lidah dan bibir, serta penekanan suku kata (*syllable stress*).',
     bestPracticeTip:
       'Ucapkan kalimat *tongue-twister* yang diberikan secara berulang dengan kecepatan bertahap: lambat, sedang, lalu cepat.',
-    recommendedMode: 'Voice & Text',
+    recommendedMode: GEMINI_TOOL_RECOMMENDED_MODE.VOICE_AND_TEXT,
     prompt: `Role: You are an Expert Pronunciation and Phonetics Coach specializing in English clarity for Southeast Asian / Indonesian speakers.
 
 Capabilities & Training Modules:
@@ -166,14 +170,14 @@ Kickoff: Introduce yourself and ask me which English sounds or words I find hard
     number: 6,
     title: 'IELTS / TOEFL Speaking Examiner',
     category: 'Exam & IELTS',
-    iconName: 'graduation',
+    iconName: GEMINI_TOOL_ICON.GRADUATION,
     badge: 'Official Band Diagnostic',
     tagline: 'Simulasi resmi ujian speaking IELTS Part 1, 2, dan 3 dengan evaluasi band skor 4 kriteria',
     description:
       'Simulasi ujian berstandar British Council / IDP. AI bertindak sebagai examiner ketat tanpa interupsi selama tes berlangsung, lalu memberikan laporan diagnostik skor band lengkap berdasarkan 4 kriteria resmi.',
     bestPracticeTip:
       'Jangan berhenti bicara di Part 2 sampai AI menyuruh Anda berhenti. Latih kemampuan elaborasi ide menggunakan kata penghubung alami.',
-    recommendedMode: 'Voice Preferred',
+    recommendedMode: GEMINI_TOOL_RECOMMENDED_MODE.VOICE_PREFERRED,
     prompt: `Role: You are an official, certified IELTS Speaking Examiner. You will conduct a mock IELTS Speaking Test with me under strict test conditions.
 
 Test Structure:
@@ -198,14 +202,14 @@ Kickoff: Welcome me to the IELTS Speaking Test, ask for my full name, and ask if
     number: 7,
     title: 'Sentence Drilling Master',
     category: 'Drilling & Reflex',
-    iconName: 'dumbbell',
+    iconName: GEMINI_TOOL_ICON.DUMBBELL,
     badge: 'Kampung Inggris Muscle Memory',
     tagline: 'Metode drilling legendaris Pare: 1 pola tata bahasa, tantangan 5 variasi kalimat cepat',
     description:
       "Mengadopsi metode pembiasaan refleks Kampung Inggris Pare: *Grammar isn't for memorizing, it's for muscle memory!* AI memberikan satu pola kalimat inti, lalu menantang Anda membuat 5 variasi kalimat kilat berdasarkan skenario kontekstual.",
     bestPracticeTip:
       'Jangan terlalu banyak berpikir atau overthinking! Paksa diri Anda untuk langsung menjawab secepat mungkin agar pola grammar tertanam di alam bawah sadar.',
-    recommendedMode: 'Voice & Text',
+    recommendedMode: GEMINI_TOOL_RECOMMENDED_MODE.VOICE_AND_TEXT,
     prompt: `Role: You are "Coach Pare", a high-energy Sentence Drilling Instructor from Kampung Inggris Pare. Your philosophy is: "Grammar isn't for memorizing, it's for muscle memory!"
 
 Drilling Protocol:
@@ -229,14 +233,14 @@ Kickoff: Introduce the concept of "Reflex Drilling", give a spirited shout-out f
     number: 8,
     title: 'Flashcard & Study Mapping Exporter',
     category: 'App Integration',
-    iconName: 'database',
+    iconName: GEMINI_TOOL_ICON.DATABASE,
     badge: 'Direct Database Sync',
     tagline: 'Format otomatis hasil belajar di Gemini agar siap di-paste langsung ke aplikasi lokal Anda',
     description:
       'Jembatan antara obrolan di Gemini dengan aplikasi Flashcards & Study Mapping yang Anda miliki. Mengubah materi grammar atau kosakata yang baru saja dipelajari menjadi format TypeScript MappingItem atau Flashcard JSON dengan dynamicFields lengkap.',
     bestPracticeTip:
       'Ketik perintah: "Export to Study Mapping format" atau "Export to Flashcard format" di tengah chat Gemini kapan pun Anda menemukan poin penting.',
-    recommendedMode: 'Text Preferred',
+    recommendedMode: GEMINI_TOOL_RECOMMENDED_MODE.TEXT_PREFERRED,
     prompt: `Role: You are a Study Mapping Data Curator for the Flashcards & Study Mapping Application. Your job is to transform any English concept, vocabulary pair, or error we discuss into the application's native dataset schema.
 
 When requested (or after every key learning point), format the output as:

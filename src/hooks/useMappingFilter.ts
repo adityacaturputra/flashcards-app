@@ -1,14 +1,14 @@
 // src/hooks/useMappingFilter.ts
 import { useState, useMemo, useCallback, useEffect } from 'react';
-import { MappingItem } from '@/types/mapping';
+import { MappingItem, MappingSortOrder, MAPPING_SORT_ORDER } from '@/types/mapping';
 
 interface UseMappingFilterReturn {
   selectedModule: string | null;
   setSelectedModule: (mod: string | null) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  sortOrder: 'desc' | 'asc';
-  setSortOrder: (order: 'desc' | 'asc') => void;
+  sortOrder: MappingSortOrder;
+  setSortOrder: (order: MappingSortOrder) => void;
   toggleSortOrder: () => void;
   moduleStats: Record<string, number>;
   uniqueModules: string[];
@@ -29,7 +29,7 @@ interface UseMappingFilterReturn {
 export function useMappingFilter(items: MappingItem[]): UseMappingFilterReturn {
   const [selectedModule, setSelectedModule] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
+  const [sortOrder, setSortOrder] = useState<MappingSortOrder>(MAPPING_SORT_ORDER.DESC);
   const [activeModalItem, setActiveModalItem] = useState<MappingItem | null>(null);
 
   // Check URL query parameters on client mount for deep-linking (e.g. ?id=... or ?search=...)
@@ -53,7 +53,9 @@ export function useMappingFilter(items: MappingItem[]): UseMappingFilterReturn {
   }, [items]);
 
   const toggleSortOrder = useCallback(() => {
-    setSortOrder((prev) => (prev === 'desc' ? 'asc' : 'desc'));
+    setSortOrder((prev) =>
+      prev === MAPPING_SORT_ORDER.DESC ? MAPPING_SORT_ORDER.ASC : MAPPING_SORT_ORDER.DESC
+    );
   }, []);
 
   // Extract unique modules with counts
@@ -89,7 +91,7 @@ export function useMappingFilter(items: MappingItem[]): UseMappingFilterReturn {
       return matchModule && matchSearch;
     });
 
-    return sortOrder === 'desc' ? [...list].reverse() : list;
+    return sortOrder === MAPPING_SORT_ORDER.DESC ? [...list].reverse() : list;
   }, [items, selectedModule, searchQuery, sortOrder]);
 
   // Modal navigation index

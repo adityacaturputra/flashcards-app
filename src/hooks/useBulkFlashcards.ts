@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Flashcard } from '@/types/flashcard';
+import { Flashcard, BulkProgressionAction } from '@/types/flashcard';
 import { DataSource } from '@/types/dataSource';
 import { API_ENDPOINTS } from '@/constants/endpoints';
 
@@ -66,7 +66,7 @@ export const useBulkFlashcards = (source?: DataSource) => {
 
   const bulkUpdateProgression = useCallback(
     async (
-      action: 'increase' | 'current' | 'decrease',
+      action: BulkProgressionAction,
     ): Promise<BulkUpdateResult | null> => {
       if (selectedFlashcards.size === 0) {
         throw new Error('No flashcards selected');

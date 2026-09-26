@@ -1,5 +1,10 @@
 import { useState, useMemo } from 'react';
-import { Flashcard, FlashcardSortOption, progressionOrder } from '@/types/flashcard';
+import {
+  Flashcard,
+  FlashcardSortOption,
+  FLASHCARD_SORT_OPTION,
+  progressionOrder,
+} from '@/types/flashcard';
 
 export interface UseFlashcardSortReturn {
   sortOption: FlashcardSortOption;
@@ -18,7 +23,7 @@ export function useFlashcardSort(
   allFlashcards: Flashcard[],
   filteredFlashcards: Flashcard[],
   isReviewMode: boolean = false,
-  initialSort: FlashcardSortOption = 'recent'
+  initialSort: FlashcardSortOption = FLASHCARD_SORT_OPTION.RECENT
 ): UseFlashcardSortReturn {
   const [sortOption, setSortOption] = useState<FlashcardSortOption>(initialSort);
 
@@ -37,7 +42,7 @@ export function useFlashcardSort(
     if (isReviewMode) return filteredFlashcards;
 
     return [...filteredFlashcards].sort((a, b) => {
-      if (sortOption === 'recent') {
+      if (sortOption === FLASHCARD_SORT_OPTION.RECENT) {
         const aIndex = a._id ? (cardIndexMap.get(a._id) ?? 999999) : 999999;
         const bIndex = b._id ? (cardIndexMap.get(b._id) ?? 999999) : 999999;
 
@@ -56,7 +61,7 @@ export function useFlashcardSort(
         return aIndex - bIndex;
       }
 
-      if (sortOption === 'alphabetical') {
+      if (sortOption === FLASHCARD_SORT_OPTION.ALPHABETICAL) {
         return a.question.localeCompare(b.question);
       }
 

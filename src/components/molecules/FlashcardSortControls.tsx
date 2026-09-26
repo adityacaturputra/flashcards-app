@@ -1,6 +1,6 @@
 'use client';
 import React, { memo } from 'react';
-import { FlashcardSortOption } from '@/types/flashcard';
+import { FlashcardSortOption, FLASHCARD_SORT_OPTION } from '@/types/flashcard';
 
 interface FlashcardSortControlsProps {
   sortOption: FlashcardSortOption;
@@ -30,17 +30,17 @@ export const FlashcardSortControls: React.FC<FlashcardSortControlsProps> = memo(
             }}
           >
             <button
-              onClick={() => onSortChange('recent')}
+              onClick={() => onSortChange(FLASHCARD_SORT_OPTION.RECENT)}
               className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
-                sortOption === 'recent'
+                sortOption === FLASHCARD_SORT_OPTION.RECENT
                   ? 'shadow-xs'
                   : 'opacity-70 hover:opacity-100'
               }`}
               style={{
                 background:
-                  sortOption === 'recent' ? 'var(--card)' : 'transparent',
+                  sortOption === FLASHCARD_SORT_OPTION.RECENT ? 'var(--card)' : 'transparent',
                 color:
-                  sortOption === 'recent'
+                  sortOption === FLASHCARD_SORT_OPTION.RECENT
                     ? 'var(--primary)'
                     : 'var(--foreground)',
               }}
@@ -50,17 +50,17 @@ export const FlashcardSortControls: React.FC<FlashcardSortControlsProps> = memo(
             </button>
 
             <button
-              onClick={() => onSortChange('progression')}
+              onClick={() => onSortChange(FLASHCARD_SORT_OPTION.PROGRESSION)}
               className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
-                sortOption === 'progression'
+                sortOption === FLASHCARD_SORT_OPTION.PROGRESSION
                   ? 'shadow-xs'
                   : 'opacity-70 hover:opacity-100'
               }`}
               style={{
                 background:
-                  sortOption === 'progression' ? 'var(--card)' : 'transparent',
+                  sortOption === FLASHCARD_SORT_OPTION.PROGRESSION ? 'var(--card)' : 'transparent',
                 color:
-                  sortOption === 'progression'
+                  sortOption === FLASHCARD_SORT_OPTION.PROGRESSION
                     ? 'var(--primary)'
                     : 'var(--foreground)',
               }}
@@ -70,17 +70,17 @@ export const FlashcardSortControls: React.FC<FlashcardSortControlsProps> = memo(
             </button>
 
             <button
-              onClick={() => onSortChange('alphabetical')}
+              onClick={() => onSortChange(FLASHCARD_SORT_OPTION.ALPHABETICAL)}
               className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold transition-all ${
-                sortOption === 'alphabetical'
+                sortOption === FLASHCARD_SORT_OPTION.ALPHABETICAL
                   ? 'shadow-xs'
                   : 'opacity-70 hover:opacity-100'
               }`}
               style={{
                 background:
-                  sortOption === 'alphabetical' ? 'var(--card)' : 'transparent',
+                  sortOption === FLASHCARD_SORT_OPTION.ALPHABETICAL ? 'var(--card)' : 'transparent',
                 color:
-                  sortOption === 'alphabetical'
+                  sortOption === FLASHCARD_SORT_OPTION.ALPHABETICAL
                     ? 'var(--primary)'
                     : 'var(--foreground)',
               }}

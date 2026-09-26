@@ -9,7 +9,12 @@ import {
   FaVolumeHigh,
   FaWandMagicSparkles,
 } from 'react-icons/fa6';
-import { AlphabetLetter, RhymeGroupId } from '@/types/alphabet';
+import {
+  AlphabetLetter,
+  RhymeGroupId,
+  ALPHABET_FILTER_CATEGORY,
+  AlphabetFilterCategory,
+} from '@/types/alphabet';
 import { ALPHABET_LETTERS, RHYME_GROUPS } from '@/data/alphabet';
 import { AccentPreference } from '@/types/phonemic';
 import AlphabetCard from '@/components/atoms/AlphabetCard';
@@ -20,11 +25,13 @@ interface AlphabetExplorerProps {
   accent: AccentPreference;
 }
 
-type FilterCategory = 'all' | 'vowels' | 'consonants' | 'confusion' | RhymeGroupId;
+type FilterCategory = AlphabetFilterCategory | RhymeGroupId;
 
 export const AlphabetExplorer: React.FC<AlphabetExplorerProps> = ({ accent }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedFilter, setSelectedFilter] = useState<FilterCategory>('all');
+  const [selectedFilter, setSelectedFilter] = useState<FilterCategory>(
+    ALPHABET_FILTER_CATEGORY.ALL
+  );
   const [playingLetterChar, setPlayingLetterChar] = useState<string | null>(null);
   const [modalLetter, setModalLetter] = useState<AlphabetLetter | null>(null);
 
@@ -245,10 +252,10 @@ export const AlphabetExplorer: React.FC<AlphabetExplorerProps> = ({ accent }) =>
             </span>
 
             {[
-              { id: 'all' as FilterCategory, label: 'Semua (26)' },
-              { id: 'vowels' as FilterCategory, label: 'Vokal (5)' },
-              { id: 'consonants' as FilterCategory, label: 'Konsonan (21)' },
-              { id: 'confusion' as FilterCategory, label: 'Jebakan Dikte' },
+              { id: ALPHABET_FILTER_CATEGORY.ALL as FilterCategory, label: 'Semua (26)' },
+              { id: ALPHABET_FILTER_CATEGORY.VOWELS as FilterCategory, label: 'Vokal (5)' },
+              { id: ALPHABET_FILTER_CATEGORY.CONSONANTS as FilterCategory, label: 'Konsonan (21)' },
+              { id: ALPHABET_FILTER_CATEGORY.CONFUSION as FilterCategory, label: 'Jebakan Dikte' },
             ].map((pill) => {
               const isActive = selectedFilter === pill.id;
               return (
@@ -279,7 +286,7 @@ export const AlphabetExplorer: React.FC<AlphabetExplorerProps> = ({ accent }) =>
             return (
               <button
                 key={rg.id}
-                onClick={() => setSelectedFilter(isActive ? 'all' : rg.id)}
+                onClick={() => setSelectedFilter(isActive ? ALPHABET_FILTER_CATEGORY.ALL : rg.id)}
                 className={`shrink-0 px-2 py-0.5 rounded-md text-[11px] font-mono border transition-all ${
                   isActive
                     ? 'bg-amber-500 text-white border-amber-600 font-bold'
@@ -304,7 +311,7 @@ export const AlphabetExplorer: React.FC<AlphabetExplorerProps> = ({ accent }) =>
           <button
             onClick={() => {
               setSearchQuery('');
-              setSelectedFilter('all');
+              setSelectedFilter(ALPHABET_FILTER_CATEGORY.ALL);
             }}
             className='mt-3 inline-flex items-center gap-1 text-xs font-bold text-teal-600 dark:text-teal-400 hover:underline'
           >

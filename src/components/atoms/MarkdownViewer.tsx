@@ -18,6 +18,17 @@ import {
   FaVolumeHigh,
 } from 'react-icons/fa6';
 
+export const GITHUB_ALERT_TYPE = {
+  TIP: 'tip',
+  NOTE: 'note',
+  WARNING: 'warning',
+  IMPORTANT: 'important',
+  CAUTION: 'caution',
+} as const;
+
+export type GitHubAlertType =
+  (typeof GITHUB_ALERT_TYPE)[keyof typeof GITHUB_ALERT_TYPE];
+
 function safeDecode(str: string): string {
   try {
     return decodeURIComponent(str.replace(/\+/g, ' '));
@@ -169,7 +180,7 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
             blockquote: ({ children }) => {
               // Check for GitHub Alerts: [!TIP], [!NOTE], [!WARNING], [!IMPORTANT], [!CAUTION]
               const childrenArray = React.Children.toArray(children);
-              let alertType: 'tip' | 'note' | 'warning' | 'important' | 'caution' | null = null;
+              let alertType: GitHubAlertType | null = null;
               let cleanChildren = children;
 
               // Find the first valid React element (typically a <p> tag containing markdown text)
@@ -181,11 +192,11 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
                   const firstStrIndex = pChildren.findIndex((c) => typeof c === 'string' && c.trim().length > 0);
                   if (firstStrIndex !== -1) {
                     const str = pChildren[firstStrIndex] as string;
-                    if (str.includes('[!TIP]')) alertType = 'tip';
-                    else if (str.includes('[!NOTE]')) alertType = 'note';
-                    else if (str.includes('[!WARNING]')) alertType = 'warning';
-                    else if (str.includes('[!IMPORTANT]')) alertType = 'important';
-                    else if (str.includes('[!CAUTION]')) alertType = 'caution';
+                    if (str.includes('[!TIP]')) alertType = GITHUB_ALERT_TYPE.TIP;
+                    else if (str.includes('[!NOTE]')) alertType = GITHUB_ALERT_TYPE.NOTE;
+                    else if (str.includes('[!WARNING]')) alertType = GITHUB_ALERT_TYPE.WARNING;
+                    else if (str.includes('[!IMPORTANT]')) alertType = GITHUB_ALERT_TYPE.IMPORTANT;
+                    else if (str.includes('[!CAUTION]')) alertType = GITHUB_ALERT_TYPE.CAUTION;
 
                     if (alertType) {
                       const newStr = str.replace(/\[!(TIP|NOTE|WARNING|IMPORTANT|CAUTION)\]\s*/i, '');
@@ -209,7 +220,7 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
                 }
               }
 
-              if (alertType === 'tip') {
+              if (alertType === GITHUB_ALERT_TYPE.TIP) {
                 return (
                   <div className='my-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-xs leading-relaxed sm:text-sm text-foreground'>
                     <div className='mb-1 flex items-center gap-1.5 font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider text-[11px] sm:text-xs'>
@@ -221,7 +232,10 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
                 );
               }
 
-              if (alertType === 'warning' || alertType === 'caution') {
+              if (
+                alertType === GITHUB_ALERT_TYPE.WARNING ||
+                alertType === GITHUB_ALERT_TYPE.CAUTION
+              ) {
                 return (
                   <div className='my-3 rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-xs leading-relaxed sm:text-sm text-foreground'>
                     <div className='mb-1 flex items-center gap-1.5 font-bold text-red-600 dark:text-red-400 uppercase tracking-wider text-[11px] sm:text-xs'>
@@ -233,16 +247,19 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
                 );
               }
 
-              if (alertType === 'note' || alertType === 'important') {
+              if (
+                alertType === GITHUB_ALERT_TYPE.NOTE ||
+                alertType === GITHUB_ALERT_TYPE.IMPORTANT
+              ) {
                 return (
                   <div className='my-3 rounded-xl border border-blue-500/30 bg-blue-500/10 p-3 text-xs leading-relaxed sm:text-sm text-foreground'>
                     <div className='mb-1 flex items-center gap-1.5 font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider text-[11px] sm:text-xs'>
-                      {alertType === 'important' ? (
+                      {alertType === GITHUB_ALERT_TYPE.IMPORTANT ? (
                         <FaCircleExclamation className='h-3.5 w-3.5 shrink-0' />
                       ) : (
                         <FaCircleInfo className='h-3.5 w-3.5 shrink-0' />
                       )}
-                      <span>{alertType === 'important' ? 'Penting' : 'Catatan'}</span>
+                      <span>{alertType === GITHUB_ALERT_TYPE.IMPORTANT ? 'Penting' : 'Catatan'}</span>
                     </div>
                     <div>{cleanChildren}</div>
                   </div>

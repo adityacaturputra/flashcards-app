@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Flashcard } from '@/types/flashcard';
+import {
+  Flashcard,
+  DynamicFieldPosition,
+  DYNAMIC_FIELD_POSITION,
+  MoveDirection,
+  MOVE_DIRECTION,
+} from '@/types/flashcard';
 import newKeyGen from '@/utils/keyGenIterator';
 
 type UseEditFlashcardProps = {
@@ -54,31 +60,31 @@ const useEditFlashcard = ({
   };
 
   const addDynamicField = (
-    position: 'start' | 'end' | 'before' | 'after',
+    position: DynamicFieldPosition,
     referenceKey?: string,
   ) => {
     const newKey = newKeyGen(0, dynamicFields);
     const dynamicFieldEntries = Object.entries(dynamicFields);
     const newFields: { [key: string]: string } = {};
 
-    if (position === 'start') {
+    if (position === DYNAMIC_FIELD_POSITION.START) {
       newFields[newKey] = '';
       dynamicFieldEntries.forEach(([key, value]) => {
         newFields[key] = value;
       });
-    } else if (position === 'end') {
+    } else if (position === DYNAMIC_FIELD_POSITION.END) {
       dynamicFieldEntries.forEach(([key, value]) => {
         newFields[key] = value;
       });
       newFields[newKey] = '';
-    } else if (position === 'before' && referenceKey) {
+    } else if (position === DYNAMIC_FIELD_POSITION.BEFORE && referenceKey) {
       dynamicFieldEntries.forEach(([key, value]) => {
         if (key === referenceKey) {
           newFields[newKey] = '';
         }
         newFields[key] = value;
       });
-    } else if (position === 'after' && referenceKey) {
+    } else if (position === DYNAMIC_FIELD_POSITION.AFTER && referenceKey) {
       dynamicFieldEntries.forEach(([key, value]) => {
         newFields[key] = value;
         if (key === referenceKey) {
@@ -96,18 +102,18 @@ const useEditFlashcard = ({
     setDynamicFields(updatedFields);
   };
 
-  const moveDynamicField = (key: string, direction: 'up' | 'down') => {
+  const moveDynamicField = (key: string, direction: MoveDirection) => {
     const dynamicFieldEntries = Object.entries(dynamicFields);
     const index = dynamicFieldEntries.findIndex(([k]) => k === key);
 
     if (index === -1) return;
 
-    if (direction === 'up' && index > 0) {
+    if (direction === MOVE_DIRECTION.UP && index > 0) {
       [dynamicFieldEntries[index], dynamicFieldEntries[index - 1]] = [
         dynamicFieldEntries[index - 1],
         dynamicFieldEntries[index],
       ];
-    } else if (direction === 'down' && index < dynamicFieldEntries.length - 1) {
+    } else if (direction === MOVE_DIRECTION.DOWN && index < dynamicFieldEntries.length - 1) {
       [dynamicFieldEntries[index], dynamicFieldEntries[index + 1]] = [
         dynamicFieldEntries[index + 1],
         dynamicFieldEntries[index],

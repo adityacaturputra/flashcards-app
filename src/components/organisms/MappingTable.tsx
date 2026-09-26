@@ -11,7 +11,7 @@ import {
   FaArrowDownWideShort,
   FaArrowUpWideShort,
 } from 'react-icons/fa6';
-import { MappingItem } from '@/types/mapping';
+import { MappingItem, MAPPING_SORT_ORDER } from '@/types/mapping';
 import { useMappingFilter } from '@/hooks/useMappingFilter';
 import MappingDetailModal from '../molecules/MappingDetailModal';
 
@@ -172,12 +172,12 @@ export const MappingTable: React.FC<MappingTableProps> = ({
                 color: 'var(--foreground)',
               }}
               title={
-                sortOrder === 'desc'
+                sortOrder === MAPPING_SORT_ORDER.DESC
                   ? 'Sorted: Newest First (Click to switch to Oldest First)'
                   : 'Sorted: Oldest First (Click to switch to Newest First)'
               }
             >
-              {sortOrder === 'desc' ? (
+              {sortOrder === MAPPING_SORT_ORDER.DESC ? (
                 <>
                   <FaArrowDownWideShort className='h-3.5 w-3.5 text-blue-500' />
                   <span className='hidden sm:inline'>Newest First</span>

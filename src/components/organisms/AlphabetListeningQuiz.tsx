@@ -12,7 +12,7 @@ import {
   FaEarListen,
   FaForward,
 } from 'react-icons/fa6';
-import { AlphabetLetter } from '@/types/alphabet';
+import { AlphabetLetter, ALPHABET_QUIZ_MODE, AlphabetQuizMode } from '@/types/alphabet';
 import { ALPHABET_LETTERS, CONFUSION_PAIRS, getAlphabetLetter } from '@/data/alphabet';
 import { AccentPreference } from '@/types/phonemic';
 import { playAlphabetLetter } from '@/utils/alphabetAudio';
@@ -20,8 +20,6 @@ import { playAlphabetLetter } from '@/utils/alphabetAudio';
 interface AlphabetListeningQuizProps {
   accent: AccentPreference;
 }
-
-type QuizMode = 'confusion' | 'all';
 
 interface QuizQuestion {
   target: AlphabetLetter;
@@ -31,7 +29,7 @@ interface QuizQuestion {
 }
 
 export const AlphabetListeningQuiz: React.FC<AlphabetListeningQuizProps> = ({ accent }) => {
-  const [quizMode, setQuizMode] = useState<QuizMode>('confusion');
+  const [quizMode, setQuizMode] = useState<AlphabetQuizMode>(ALPHABET_QUIZ_MODE.CONFUSION);
   const [currentQuestion, setCurrentQuestion] = useState<QuizQuestion | null>(null);
   const [selectedChar, setSelectedChar] = useState<string | null>(null);
   const [score, setScore] = useState(0);
@@ -42,7 +40,7 @@ export const AlphabetListeningQuiz: React.FC<AlphabetListeningQuizProps> = ({ ac
 
   // Generate a quiz question based on current mode
   const generateQuestion = useCallback((): QuizQuestion => {
-    if (quizMode === 'confusion') {
+    if (quizMode === ALPHABET_QUIZ_MODE.CONFUSION) {
       // Pick random confusion pair
       const pair = CONFUSION_PAIRS[Math.floor(Math.random() * CONFUSION_PAIRS.length)];
       const targetChar = pair.letters[Math.floor(Math.random() * pair.letters.length)];
@@ -207,9 +205,9 @@ export const AlphabetListeningQuiz: React.FC<AlphabetListeningQuizProps> = ({ ac
         {/* Mode Toggle */}
         <div className='flex items-center gap-1.5 p-1 rounded-xl border bg-secondary/40' style={{ borderColor: 'var(--border)' }}>
           <button
-            onClick={() => setQuizMode('confusion')}
+            onClick={() => setQuizMode(ALPHABET_QUIZ_MODE.CONFUSION)}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              quizMode === 'confusion'
+              quizMode === ALPHABET_QUIZ_MODE.CONFUSION
                 ? 'bg-teal-500 text-white shadow-xs'
                 : 'text-muted-foreground hover:text-foreground'
             }`}
@@ -217,9 +215,9 @@ export const AlphabetListeningQuiz: React.FC<AlphabetListeningQuizProps> = ({ ac
             Jebakan Dikte (G/J, B/P/V)
           </button>
           <button
-            onClick={() => setQuizMode('all')}
+            onClick={() => setQuizMode(ALPHABET_QUIZ_MODE.ALL)}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              quizMode === 'all'
+              quizMode === ALPHABET_QUIZ_MODE.ALL
                 ? 'bg-teal-500 text-white shadow-xs'
                 : 'text-muted-foreground hover:text-foreground'
             }`}

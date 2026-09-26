@@ -8,6 +8,7 @@ import {
   FaEarListen,
   FaArrowsSplitUpAndLeft,
   FaKeyboard,
+  FaHashtag,
 } from 'react-icons/fa6';
 import {
   AlphabetViewTab,
@@ -17,6 +18,7 @@ import AlphabetExplorer from '@/components/organisms/AlphabetExplorer';
 import AlphabetListeningQuiz from '@/components/organisms/AlphabetListeningQuiz';
 import AlphabetConfusionGuide from '@/components/organisms/AlphabetConfusionGuide';
 import AlphabetSpellingTrainer from '@/components/organisms/AlphabetSpellingTrainer';
+import NumericPrecisionGuide from '@/components/organisms/NumericPrecisionGuide';
 import ErrorBoundary from '@/components/atoms/ErrorBoundary';
 import AccentToggle from '@/components/atoms/AccentToggle';
 import { useAccentContext } from '@/context/accentContext';
@@ -116,6 +118,12 @@ export default function AlphabetPage() {
                 sub: 'Spelling Dictation',
                 icon: FaKeyboard,
               },
+              {
+                id: ALPHABET_VIEW_TAB.NUMBERS,
+                label: 'Angka & Telepon',
+                sub: 'Pilar 2: -teen vs -ty & Telepon',
+                icon: FaHashtag,
+              },
             ].map((tab) => {
               const isActive = activeTab === tab.id;
               const Icon = tab.icon;
@@ -164,6 +172,9 @@ export default function AlphabetPage() {
             )}
             {activeTab === ALPHABET_VIEW_TAB.SPELLING && (
               <AlphabetSpellingTrainer accent={accent} />
+            )}
+            {activeTab === ALPHABET_VIEW_TAB.NUMBERS && (
+              <NumericPrecisionGuide accent={accent} />
             )}
           </div>
         </main>

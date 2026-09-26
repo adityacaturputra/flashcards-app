@@ -5,7 +5,11 @@ import {
   FaArrowUp,
   FaTrashAlt,
 } from 'react-icons/fa';
-import { Flashcard } from '@/types/flashcard';
+import {
+  Flashcard,
+  DYNAMIC_FIELD_POSITION,
+  MOVE_DIRECTION,
+} from '@/types/flashcard';
 import useEditFlashcard from '@/hooks/useEditFlashcard';
 import { useAppContext } from '@/context/appContext';
 import InputField from '../atoms/InputField';
@@ -75,7 +79,7 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
               background: 'var(--primary)',
               color: 'var(--primary-foreground)',
             }}
-            onClick={() => addDynamicField('before', key)}
+            onClick={() => addDynamicField(DYNAMIC_FIELD_POSITION.BEFORE, key)}
             title='Add field before'
           >
             <FaPlusCircle className='h-3 w-3' />
@@ -86,7 +90,7 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
               background: 'var(--secondary)',
               color: 'var(--secondary-foreground)',
             }}
-            onClick={() => moveDynamicField(key, 'up')}
+            onClick={() => moveDynamicField(key, MOVE_DIRECTION.UP)}
             disabled={index === 0}
             title='Move up'
           >
@@ -98,7 +102,7 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
               background: 'var(--secondary)',
               color: 'var(--secondary-foreground)',
             }}
-            onClick={() => moveDynamicField(key, 'down')}
+            onClick={() => moveDynamicField(key, MOVE_DIRECTION.DOWN)}
             disabled={index === length - 1}
             title='Move down'
           >
@@ -231,7 +235,7 @@ const FlashcardFormEdit: React.FC<FlashcardFormEditProps> = ({
               Explanations
             </h3>
             <Button
-              onClick={() => addDynamicField('end')}
+              onClick={() => addDynamicField(DYNAMIC_FIELD_POSITION.END)}
               className={`rounded-lg px-4 py-2 transition-all hover:scale-105 ${styles.modernButton} text-sm`}
             >
               + Add Explanation

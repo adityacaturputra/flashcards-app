@@ -20,7 +20,41 @@ export const progressionOrder: { [key in Progression]: number } = {
   [Progression.Perfect]: 5,
 };
 
-export type FlashcardSortOption = 'recent' | 'progression' | 'alphabetical';
+export const FLASHCARD_SORT_OPTION = {
+  RECENT: 'recent',
+  PROGRESSION: 'progression',
+  ALPHABETICAL: 'alphabetical',
+} as const;
+
+export type FlashcardSortOption =
+  (typeof FLASHCARD_SORT_OPTION)[keyof typeof FLASHCARD_SORT_OPTION];
+
+export const BULK_PROGRESSION_ACTION = {
+  INCREASE: 'increase',
+  CURRENT: 'current',
+  DECREASE: 'decrease',
+} as const;
+
+export type BulkProgressionAction =
+  (typeof BULK_PROGRESSION_ACTION)[keyof typeof BULK_PROGRESSION_ACTION];
+
+export const DYNAMIC_FIELD_POSITION = {
+  START: 'start',
+  END: 'end',
+  BEFORE: 'before',
+  AFTER: 'after',
+} as const;
+
+export type DynamicFieldPosition =
+  (typeof DYNAMIC_FIELD_POSITION)[keyof typeof DYNAMIC_FIELD_POSITION];
+
+export const MOVE_DIRECTION = {
+  UP: 'up',
+  DOWN: 'down',
+} as const;
+
+export type MoveDirection =
+  (typeof MOVE_DIRECTION)[keyof typeof MOVE_DIRECTION];
 
 export interface Flashcard {
   _id?: string;

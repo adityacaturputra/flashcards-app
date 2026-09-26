@@ -1,17 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Progression } from '@/types/flashcard';
+import {
+  Progression,
+  BulkProgressionAction,
+  BULK_PROGRESSION_ACTION,
+} from '@/types/flashcard';
 import { DataProviderFactory } from '@/services/dataProviders';
 import { resolveDataSource } from '@/utils/resolveDataSource';
 
 interface BulkUpdateRequest {
   flashcardIds: string[];
-  action: 'increase' | 'current' | 'decrease';
+  action: BulkProgressionAction;
 }
 
 // Progression mapping based on current state and action
 const getNewProgression = (
   currentProgression: Progression,
-  action: 'increase' | 'current' | 'decrease',
+  action: BulkProgressionAction,
   categoryId?: string,
 ): Progression => {
   const progressionOrder: Progression[] = [
@@ -25,18 +29,18 @@ const getNewProgression = (
   const currentIndex = progressionOrder.indexOf(currentProgression);
 
   switch (action) {
-    case 'increase':
+    case BULK_PROGRESSION_ACTION.INCREASE:
       const maxIndex = categoryId
         ? Math.min(progressionOrder.length - 2, currentIndex + 1)
         : currentIndex + 1;
       return progressionOrder[Math.min(maxIndex, progressionOrder.length - 1)];
 
-    case 'current':
+    case BULK_PROGRESSION_ACTION.CURRENT:
       return currentProgression === Progression.Normal
         ? currentProgression
         : Progression.Normal;
 
-    case 'decrease':
+    case BULK_PROGRESSION_ACTION.DECREASE:
       const minIndex = Math.max(1, currentIndex - 1);
       return progressionOrder[minIndex];
 
