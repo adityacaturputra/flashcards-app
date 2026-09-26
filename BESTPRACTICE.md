@@ -97,6 +97,15 @@ A maintainable codebase maintains clear boundaries between layers:
 - **Touch Targets**:
   Ensure interactive buttons have a minimum touch target size of **44x44px** on mobile devices.
 
+### 5.1 Container-Defensive Toggles & The `compact` Prop Pattern
+- **Viewport Breakpoints Do Not Equal Container Widths**:
+  CSS media queries (e.g. `hidden xl:inline`) only reflect the overall browser viewport width, **NOT** the width of the parent container.
+  - *Anti-Pattern*: A toggle displaying full labels (`"South African"`, `"British RP"`) on desktop viewports (`xl`) will catastrophically overflow if placed inside a 350px dropdown popover, modal, or drawer.
+- **The Mandatory Solution**:
+  - Toggles with multiple items (e.g. `AccentToggle`, `DataSourceToggle`) MUST support an explicit `compact?: boolean` prop.
+  - When `compact={true}`, always render compact tokens (e.g. `US`, `UK`, `AU`, `ZA`, `IN`), enforce `flex-1 min-w-0` on child items, and protect parent containers with `overflow-hidden`.
+  - In popovers, dropdowns, and narrow sidebars, always pass `compact={true}` regardless of screen size.
+
 ---
 
 ## ⚡ 6. Performance & Rendering Optimization
@@ -194,43 +203,40 @@ When supporting multiple data backends (e.g. **Local Repository** vs. **MongoDB 
 
 ---
 
-## 🧩 12. Component & Hook Decomposition (Keeping Files Lean & Modular)
+## 🧩 12. Component Separation & Decomposition (Strict File Shortness Policy)
 
-### 12.1 Organism Decomposition & Custom Hooks (< 300–400 Lines Target)
-- **Keep Organism Components Lean**:
-  When an organism handles multiple UI concerns (such as search bars, category filters, multi-criteria sorting, bulk selection, pagination, and card rendering), never cram all state algorithms and JSX blocks into a single monolithic file.
-- **Extract Complex List Logics into Custom Hooks (`src/hooks/`)**:
-  - Multi-criteria sorting (e.g. `useFlashcardSort` for recent/progression/alphabetical order) and complex filtering must be encapsulated in dedicated hooks.
-  - The organism component simply calls the hook:
-    ```ts
-    const { sortOption, setSortOption, sortedFlashcards, totalCount } =
-      useFlashcardSort(flashcards, filteredFlashcards, isReviewMode);
-    ```
-- **Extract Sub-Controls into Molecules (`src/components/molecules/`)**:
-  - Sub-control bars (such as `FlashcardSortControls`, `BulkActionButtons`, `MappingFilters`) must be extracted into focused molecular components.
-  - Wrap molecular controls with `React.memo` and communicate via explicit event props (`onSortChange`, `onFilterChange`) to ensure clean separation of concerns and prevent unnecessary re-renders.
+> [!IMPORTANT]
+> **THE GOLDEN RULE OF FILE SHORTNESS (< 100–150 LINES TARGET):**
+> Every component file must remain **short, focused, and readable at a single glance**.
+> If a file begins exceeding 150 lines, it is an architectural code smell. You **MUST separate its visual parts and sub-sections into dedicated, smaller component files**. Never let monolithic files balloon.
 
-### 12.2 Complex Molecular Card & Widget Decomposition (< 150–200 Lines Target)
-When an individual card or molecular widget handles intricate workflows (such as 3-way merge conflict resolution, multi-field diffing, multi-section cards, or detailed interactive modals):
-- **Never Let Files Balloon Past 250–300 Lines**:
-  Monolithic card files (e.g. 700+ lines) hinder readability, introduce merge conflicts, and make testing individual visual states nearly impossible.
-- **Feature Sub-Directories (`src/components/molecules/<feature>/`)**:
-  Group tightly-coupled sub-components into a dedicated feature folder (e.g., `src/components/molecules/conflictResolver/`, `src/components/molecules/header/`).
-- **Consolidate Symmetric Patterns (DRY Component Extraction)**:
-  If multiple sections share identical structures (e.g., Question and Answer diff blocks), consolidate them into a single reusable sub-component (e.g., `TextFieldConflictSection`) parameterized via props (`label`, `localValue`, `cloudValue`, `choice`, `onChoiceChange`, `isPreWrap`).
-- **Barrel Export Pattern (`index.ts`)**:
-  Provide an `index.ts` barrel file inside the feature directory to keep imports tidy and self-contained:
-  ```ts
-  export * from './ConflictResolverHeader';
-  export * from './ProgressionConflictSection';
-  export * from './TextFieldConflictSection';
-  export * from './DynamicFieldsConflictSection';
-  export * from './MergedCardPreview';
-  export * from './ConflictResolverFooter';
-  ```
-- **The Orchestrator Role**:
-  The main card component acts purely as an **orchestrator** (< 150 lines): it manages state, executes computations (`mergedCard`), triggers network actions (`handleResolve`), and renders declarative sub-components.
+### 12.1 Why Component Separation & Short Files Matter
+- **Readability & Cognitive Load**: Nobody should have to scroll through 300–700 lines of mixed code (cards, tables, buttons, rule blocks) to understand a feature. Short files (50–120 lines) are self-explanatory and take seconds to comprehend.
+- **Clean Git Diffs & Zero Conflicts**: When each section is an isolated file, features can be modified, tested, and reviewed without touching unrelated UI pieces.
+- **Accidental Reusability**: When you separate components cleanly (e.g. `RhymeClustersMatrix`, `ConfusionPairCard`), other parts of the application (like the IELTS preparation hub or Phonemics soundboard) can instantly reuse them without code duplication.
 
+### 12.2 How to Separate Components (The Orchestrator Pattern)
+1. **Identify Each Visual Concern**:
+   Look at the layout: Are there cards? A table? A rules/conventions box? Control toggles? Each of these distinct concerns belongs in its own dedicated file under `src/components/molecules/` or `src/components/atoms/`.
+2. **Move Sub-Components into Focused Files**:
+   Give each component a clear, single responsibility and pass data/callbacks explicitly via typed props (`onPlayLetter`, `activeLetterPlaying`, etc.).
+3. **Keep the Parent as a Lean Orchestrator (< 100–120 Lines)**:
+   The parent organism or page should do only two things:
+   - Hold high-level state or call custom hooks.
+   - Declaratively render the imported sub-components in the desired layout order.
+
+### 12.3 Concrete Case Study: `AlphabetConfusionGuide`
+- **❌ Before (Monolithic & Bloated ~300+ Lines)**:
+  A single file containing the page header, 7 detailed confusion cards, an entire tabular matrix, and multiple speed spelling convention boxes. Extremely long and difficult to scan.
+- **✅ After (Separated into Modular, Short Files)**:
+  - [`ConfusionPairCard.tsx`](./src/components/molecules/ConfusionPairCard.tsx) (~90 lines): Handles individual sound-alike cards.
+  - [`RhymeClustersMatrix.tsx`](./src/components/molecules/RhymeClustersMatrix.tsx) (~85 lines): Handles the tabular matrix of rhyming letter sounds and cluster playback.
+  - [`SpeedSpellingRulesCard.tsx`](./src/components/molecules/SpeedSpellingRulesCard.tsx) (~50 lines): Handles the quick IELTS spelling convention cards.
+  - [`AlphabetConfusionGuide.tsx`](./src/components/organisms/AlphabetConfusionGuide.tsx) (Reduced to ~95 lines): Operates as a pristine, ultra-clean orchestrator assembling the three molecules.
+
+### 12.4 Ergonomic Layout Hierarchy (Primary Action Top, Reference Tables Bottom)
+- **Top Priority (Immediate Engagement)**: Place actionable, interactive cards and drill trainers at the top of the viewport.
+- **Bottom Priority (Reference Material)**: Place cheat sheets, reference matrices, and conventions at the bottom so they never obstruct active practice.
 
 ---
 

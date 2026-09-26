@@ -6,22 +6,35 @@ Welcome to the **Flashcards & Study Mapping Application** repository. This docum
 
 ## 🧭 Core Architectural Principles
 
-Before writing or refactoring any code in this project, **you must read and strictly adhere to [BESTPRACTICE.md](./BESTPRACTICE.md)**.
+> [!IMPORTANT]
+> **MANDATORY PREREQUISITE FOR ALL CODING TASKS:**
+> Whenever you are assigned a coding task (implementing features, UI components, pages, custom hooks, utilities, bugfixes, or refactoring), **you MUST FIRST read and strictly adhere to [BESTPRACTICE.md](./BESTPRACTICE.md)**.
+> Never write or modify application code without referencing the engineering patterns established in `BESTPRACTICE.md`.
 
-### Key Rules for Agents:
-1. **DRY (Don't Repeat Yourself)**:
+### Key Rules for Agents on Coding Tasks:
+1. **Always Read `BESTPRACTICE.md` First**:
+   - AI agents must inspect `BESTPRACTICE.md` before generating or refactoring code to ensure conformity with established architectural conventions.
+2. **Aggressive Component Separation (Keep Files Short & Never Long - Target < 120–150 Lines)**:
+   - **Strict File Shortness Rule**: Every file must remain short, focused, and immediately readable without endless vertical scrolling.
+   - **Separate Sub-Components Promptly**: Whenever a component handles more than one visual concern (e.g. cards, a table, rules/conventions boxes, or sub-control bars), **you MUST immediately extract each section into its own dedicated file** under `src/components/molecules/` or `src/components/atoms/`.
+   - **Never Write Monolithic Files**: Never dump multiple tables, cards, rules, and controls into a single giant 200+ line organism.
+   - **The Orchestrator Pattern**: The parent organism or page must act purely as a lean orchestrator (< 100–120 lines) that simply imports and renders the modular child components.
+3. **Ergonomic Layout Hierarchy (Primary Actions Top, Reference Tables Bottom)**:
+   - Place primary actionable items (cards, interactive drill trainers, core inputs) at the top of the viewport for immediate user interaction.
+   - Place secondary reference matrices, cheat sheets, and speed conventions at the bottom.
+4. **Container-Defensive Responsiveness & The `compact` Pattern**:
+   - Never rely solely on viewport breakpoints (`hidden xl:inline`) inside narrow sidebars, popovers, or modal drawers.
+   - For multi-choice toggles and pill selectors, provide and pass `compact={true}` with `flex-1 min-w-0` to prevent horizontal overflow on desktop viewports.
+5. **DRY (Don't Repeat Yourself)**:
    - Never copy-paste utility functions across components (e.g. TTS helpers, link builders, parsers).
    - Place pure, reusable logic in `src/utils/`.
    - Place reusable state and side-effect logic in custom React hooks in `src/hooks/`.
-2. **Atomic Component Hierarchy**:
+6. **Atomic Component Hierarchy**:
    - `src/components/atoms/`: Pure, dumb UI building blocks (`Button`, `Card`, `MarkdownViewer`, etc.).
-   - `src/components/molecules/`: Compositions of atoms (`CategoryForm`, `MappingDetailModal`, etc.).
-   - `src/components/organisms/`: Feature-complete widgets (`MappingTable`, `MappingFlashcards`, `FlashcardList`, etc.).
+   - `src/components/molecules/`: Compositions of atoms (`CategoryForm`, `MappingDetailModal`, `ConfusionPairCard`, etc.).
+   - `src/components/organisms/`: Feature-complete widgets (`MappingTable`, `MappingFlashcards`, `AlphabetExplorer`, etc.).
    - `src/app/`: Next.js App Router pages and route handlers.
-3. **Mobile-First & Defensive Responsiveness**:
-   - Every feature must look stellar on mobile viewports (e.g. 375px–430px iPhone) as well as wide desktop screens.
-   - For wide datasets on mobile, prefer responsive cards or dedicated touch-scrolling containers over cramped multi-column tables.
-4. **Single Source of Truth & Deterministic Contracts (No Speculative Multi-Fallbacks)**:
+7. **Single Source of Truth & Deterministic Contracts (No Speculative Multi-Fallbacks)**:
    - Never invent speculative multi-fallback chains (e.g. checking query params -> body -> headers -> ID pattern guessing).
    - Establish and adhere to one deterministic contract (e.g. `?source=local` via `API_ENDPOINTS` & `resolveDataSource`).
    - Extract pure parameter resolution logic into `src/utils/` instead of duplicate inline parsing.

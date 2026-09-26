@@ -40,6 +40,13 @@ export interface RhymeGroupInfo {
   articulationTip: string;
 }
 
+export interface RhymeClusterTrap {
+  soundCategory: string; // e.g. '/eɪ/ Sound'
+  ipa: string; // e.g. '/eɪ/'
+  letters: string[]; // e.g. ['A', 'H', 'J', 'K']
+  nonNativeTrap: string; // Titik rawan kebingungan bagi non-native
+}
+
 export interface ConfusionPairItem {
   id: string;
   title: string;
@@ -48,6 +55,12 @@ export interface ConfusionPairItem {
   acousticClue: string;
   articulatoryDifference: string;
   ieltsTrapContext: string;
+}
+
+export interface SpellingConventionItem {
+  title: string;
+  rule: string;
+  example: string;
 }
 
 export interface SpellingExercise {

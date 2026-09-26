@@ -1,6 +1,7 @@
 import {
   AlphabetLetter,
   RhymeGroupInfo,
+  RhymeClusterTrap,
   ConfusionPairItem,
   SpellingExercise,
   RHYME_GROUP_ID,
@@ -438,6 +439,64 @@ export const RHYME_GROUPS: RhymeGroupInfo[] = [
     letters: ['R'],
     description: 'Huruf mandiri dengan vokal belakang terbuka /ɑː/ seperti kata "car" atau "far".',
     articulationTip: 'Jatuhkan rahang ke bawah secara rileks. Pada aksen American, tarik lidah ke belakang.',
+  },
+];
+
+/**
+ * Matriks Bunyi Huruf Berirama Sama (Rhyming Letter Clusters)
+ * Rangkuman titik rawan kebingungan non-native dari Kurikulum IELTS Listening Section 1.
+ */
+export const RHYMING_LETTER_CLUSTERS_TABLE: RhymeClusterTrap[] = [
+  {
+    soundCategory: '/eɪ/ Sound',
+    ipa: '/eɪ/',
+    letters: ['A', 'H', 'J', 'K'],
+    nonNativeTrap:
+      'Huruf A sering tertukar dengan E atau I. Huruf H sering diucapkan /eɪtʃ/ dan dikira dimulai dengan A.',
+  },
+  {
+    soundCategory: '/iː/ Sound',
+    ipa: '/iː/',
+    letters: ['B', 'C', 'D', 'E', 'G', 'P', 'T', 'V', 'Z'],
+    nonNativeTrap:
+      'Huruf E sering tertukar dengan I. Huruf G sering tertukar dengan J. Huruf B tertukar dengan V atau P.',
+  },
+  {
+    soundCategory: '/e/ Sound',
+    ipa: '/e/',
+    letters: ['F', 'L', 'M', 'N', 'S', 'X', 'Z'],
+    nonNativeTrap:
+      'Pasangan M dan N harus diperhatikan gerakan bibir penutur atau konteks audio.',
+  },
+  {
+    soundCategory: '/aɪ/ Sound',
+    ipa: '/aɪ/',
+    letters: ['I', 'Y'],
+    nonNativeTrap:
+      'Huruf I sering ditulis E oleh pembelajar bahasa Indonesia/Melayu karena transfer bunyi bahasa ibu.',
+  },
+  {
+    soundCategory: '/uː/ Sound',
+    ipa: '/uː/',
+    letters: ['Q', 'U', 'W'],
+    nonNativeTrap:
+      'Huruf W (/ˈdʌbəl.juː/) memerlukan waktu penulisan lebih lama; antisipasi bunyi konsonan berikutnya.',
+  },
+];
+
+/**
+ * Kaidah Pengucapan Ejaan Cepat (IELTS Listening Speed Spelling Conventions)
+ */
+export const SPELLING_CONVENTIONS = [
+  {
+    title: '"Double" Letter',
+    rule: 'Penutur asli Inggris hampir selalu menggunakan kata "double" daripada menyebut huruf dua kali berturut-turut.',
+    example: 'Pembicara: "It\'s Miller: M - I - double L - E - R." ➔ Tulis: MILLER',
+  },
+  {
+    title: 'Penyebutan Karakter Spesifik',
+    rule: 'Simbol khusus dieja dengan istilah baku:',
+    example: 'Tanda hubung: "hyphen" / "dash" (ANNE-MARIE) • Garis bawah: "underscore" (_) • Titik: "dot" (bukan "point" / "period")',
   },
 ];
 
