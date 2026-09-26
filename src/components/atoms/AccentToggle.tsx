@@ -52,10 +52,11 @@ export interface AccentToggleProps {
   value?: AccentPreference;
   onChange?: (value: AccentPreference) => void;
   className?: string;
+  compact?: boolean;
 }
 
 export const AccentToggle: React.FC<AccentToggleProps> = memo(
-  ({ value, onChange, className = '' }) => {
+  ({ value, onChange, className = '', compact = false }) => {
     const { accent: contextAccent, setAccent: contextSetAccent } =
       useAccentContext();
     const activeValue = value ?? contextAccent;
@@ -63,7 +64,11 @@ export const AccentToggle: React.FC<AccentToggleProps> = memo(
 
     return (
       <div
-        className={`inline-flex items-center gap-1 p-1 rounded-xl border shadow-xs select-none transition-colors ${className}`}
+        className={`${
+          compact
+            ? 'flex items-center w-full gap-1 p-1 rounded-xl border shadow-xs select-none transition-colors'
+            : 'inline-flex items-center gap-1 p-1 rounded-xl border shadow-xs select-none transition-colors'
+        } ${className}`}
         style={{
           background: 'var(--secondary)',
           borderColor: 'var(--border)',
@@ -80,7 +85,9 @@ export const AccentToggle: React.FC<AccentToggleProps> = memo(
               role='radio'
               aria-checked={isSelected}
               onClick={() => handleChange(opt.value)}
-              className={`relative flex-1 sm:flex-initial flex items-center justify-center gap-1 px-1.5 sm:px-2.5 py-1.5 min-h-[36px] rounded-lg text-xs transition-all active:scale-95 cursor-pointer ${
+              className={`relative ${
+                compact ? 'flex-1 min-w-0' : 'flex-1 sm:flex-initial'
+              } flex items-center justify-center gap-1 px-1 sm:px-2 py-1.5 min-h-[36px] rounded-lg text-xs transition-all active:scale-95 cursor-pointer ${
                 isSelected
                   ? 'font-bold border shadow-xs'
                   : 'font-medium opacity-65 hover:opacity-100'
@@ -101,14 +108,22 @@ export const AccentToggle: React.FC<AccentToggleProps> = memo(
               title={opt.title}
             >
               <span
-                className='text-sm leading-none'
+                className='text-sm leading-none shrink-0'
                 role='img'
                 aria-label={`${opt.shortLabel} flag`}
               >
                 {opt.flag}
               </span>
-              <span className='hidden xl:inline'>{opt.label}</span>
-              <span className='xl:hidden'>{opt.shortLabel}</span>
+              {compact ? (
+                <span className='text-[11px] sm:text-xs font-semibold truncate'>
+                  {opt.shortLabel}
+                </span>
+              ) : (
+                <>
+                  <span className='hidden xl:inline truncate'>{opt.label}</span>
+                  <span className='xl:hidden truncate'>{opt.shortLabel}</span>
+                </>
+              )}
             </button>
           );
         })}

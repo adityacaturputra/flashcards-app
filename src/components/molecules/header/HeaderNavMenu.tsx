@@ -339,7 +339,7 @@ export const HeaderNavMenu: React.FC<HeaderNavMenuProps> = ({
 
                 {/* Dedicated Global Voice Accent Card */}
                 <div
-                  className='rounded-xl border p-2.5 space-y-2'
+                  className='rounded-xl border p-2.5 space-y-2 overflow-hidden'
                   style={{
                     background: 'var(--secondary)',
                     borderColor: 'var(--border)',
@@ -359,8 +359,8 @@ export const HeaderNavMenu: React.FC<HeaderNavMenuProps> = ({
                   <p className='text-[11px] text-muted-foreground leading-snug'>
                     Pilih aksen penutur bawaan untuk pemutaran audio kartu & IELTS lab
                   </p>
-                  <div className='pt-0.5'>
-                    <AccentToggle className='w-full justify-center' />
+                  <div className='pt-0.5 overflow-hidden'>
+                    <AccentToggle compact className='w-full' />
                   </div>
                 </div>
 
