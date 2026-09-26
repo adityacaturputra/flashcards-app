@@ -9,6 +9,7 @@ import {
 } from 'react-icons/fa6';
 import { IeltsChapter } from '@/types/ielts';
 import MarkdownViewer from '@/components/atoms/MarkdownViewer';
+import RebuttalTrainerBanner from '@/components/atoms/RebuttalTrainerBanner';
 
 interface IeltsChapterReaderProps {
   chapter: IeltsChapter;
@@ -126,6 +127,9 @@ export const IeltsChapterReader: React.FC<IeltsChapterReaderProps> = memo(
             </div>
           )}
         </div>
+
+        {/* Interactive Distractor Trainer Banner for Module 5 Chapter 5 */}
+        {chapter.id === 'm5-05' && <RebuttalTrainerBanner />}
 
         {/* Markdown Content Viewer */}
         <div

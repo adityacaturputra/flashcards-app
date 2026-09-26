@@ -14,6 +14,7 @@ export const APP_ROUTES = {
   AWL: '/awl',
   QUIZ: '/quiz',
   ALPHABET: '/alphabet',
+  REBUTTAL: '/rebuttal',
 } as const;
 
 export type AppRoute = (typeof APP_ROUTES)[keyof typeof APP_ROUTES];

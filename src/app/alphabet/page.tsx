@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import {
@@ -28,6 +28,16 @@ export default function AlphabetPage() {
   const router = useRouter();
   const { accent, setAccent } = useAccentContext();
   const [activeTab, setActiveTab] = useState<AlphabetViewTab>(ALPHABET_VIEW_TAB.EXPLORER);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get('tab') as AlphabetViewTab | null;
+      if (tabParam && Object.values(ALPHABET_VIEW_TAB).includes(tabParam)) {
+        setActiveTab(tabParam);
+      }
+    }
+  }, []);
 
   return (
     <ErrorBoundary>
