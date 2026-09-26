@@ -14,6 +14,7 @@ import {
   FaRotate,
   FaAward,
   FaHeadphones,
+  FaFont,
 } from 'react-icons/fa6';
 import DataSourceToggle from '@/components/atoms/DataSourceToggle';
 import AccentToggle from '@/components/atoms/AccentToggle';
@@ -245,6 +246,32 @@ export const HeaderNavMenu: React.FC<HeaderNavMenuProps> = ({
                       </div>
                       <div className='text-xs text-muted-foreground text-left'>
                         Rumpun kata akademik & paraphrase lab
+                      </div>
+                    </div>
+                  </div>
+                  <FaChevronRight className='h-3 w-3 text-muted-foreground opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all' />
+                </button>
+
+                {/* Alphabet Lab & Letter Recognition */}
+                <button
+                  onClick={() => onNavigate(APP_ROUTES.ALPHABET)}
+                  className='group flex items-center justify-between rounded-xl p-2.5 text-left transition-all hover:bg-slate-100 dark:hover:bg-slate-800'
+                >
+                  <div className='flex items-center gap-3'>
+                    <div className='flex h-9 w-9 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400 group-hover:scale-105 transition-transform'>
+                      <FaFont className='h-4 w-4' />
+                    </div>
+                    <div className='flex flex-col items-start text-left'>
+                      <div className='flex items-center gap-1.5 text-left'>
+                        <span className='text-sm font-semibold text-foreground text-left'>
+                          Alphabet Lab
+                        </span>
+                        <span className='rounded-md bg-teal-500/10 text-teal-600 dark:text-teal-400 px-1.5 py-0.2 text-[9px] font-bold uppercase'>
+                          A–Z Audio
+                        </span>
+                      </div>
+                      <div className='text-xs text-muted-foreground text-left'>
+                        Pengenalan audio huruf satu per satu & dikte
                       </div>
                     </div>
                   </div>
