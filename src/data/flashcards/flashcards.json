@@ -1,5 +1,173 @@
 [
   {
+    "_id": "6904a0010000000000000001",
+    "question": "Pursue",
+    "answer": "**Mengejar / menekuni / melanjutkan** (tujuan, karier, pendidikan, atau impian).\n\n- *Example*: I moved abroad to **pursue** my master's degree.\n- *Note*: Kata kerja formal (AWL) yang sangat sering dipakai di IELTS Speaking & Writing.",
+    "progression": "new",
+    "nextReviewDate": "2026-11-13T10:03:54.941Z",
+    "categories": [
+      "6886ee8e75b4418c47a47d9b",
+      "6901a0010000000000000010"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Transitive Verb (Regular: pursued, pursuing)",
+      "Pronunciation": "/pəˈsjuː/ (UK) · /pərˈsuː/ (US)",
+      "Arti Utama / Definisi": "Mengejar, menekuni, atau melanjutkan sesuatu dengan tekad (studi, karier, cita-cita, hobi).",
+      "Contoh Kalimat": "She left her home on her own for the first time to pursue higher education.",
+      "Common Collocations": "pursue higher education, pursue a career, pursue a dream, pursue a degree",
+      "Tips Mengingat": "Mirip kata \"pursuit\" (pengejaran, seperti \"in pursuit of happiness\")."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000002",
+    "question": "Out of those",
+    "answer": "**Dari sekian banyak itu / di antara pilihan-pilihan tersebut**.\n\n- *Example*: **Out of those**, I'd like to talk about the year 2010.\n- *Usage*: Frasa transisi (*signposting*) untuk memilih satu hal spesifik dari beberapa opsi yang baru saja disebutkan.",
+    "progression": "new",
+    "nextReviewDate": "2026-11-13T10:03:54.941Z",
+    "categories": [
+      "6901a0010000000000000012",
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Prepositional Phrase (Discourse Marker)",
+      "Pronunciation": "/aʊt əv ðoʊz/",
+      "Arti Utama / Definisi": "Dari antara hal-hal tersebut; digunakan untuk mengerucutkan pilihan dari daftar yang sudah disebut sebelumnya.",
+      "Contoh Kalimat": "However, out of those, I'd like to talk about the year 2010, which I consider one of the most important years in my life.",
+      "Common Collocations": "out of all those, out of those options, out of those years",
+      "Tips Mengingat": "\"Out of\" (keluar dari / di antara) + \"those\" (hal-hal itu) → memilih satu keluar dari kumpulan itu."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000003",
+    "question": "Didn't know back then",
+    "answer": "**Tidak tahu waktu itu / dulu belum sadar**.\n\n- *Example*: I met a guy who I **didn't know back then** was going to turn my world upside down.\n- *Nuance*: \"Back then\" merujuk ke titik waktu di masa lalu yang sedang diceritakan.",
+    "progression": "new",
+    "nextReviewDate": "2026-11-13T10:03:54.941Z",
+    "categories": [
+      "6901a0010000000000000008",
+      "68fdd9f899ff8264aaa016ad"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Past Clause + Time Adverbial",
+      "Pronunciation": "/ˈdɪd.ənt noʊ bæk ðen/",
+      "Arti Utama / Definisi": "Tidak mengetahui pada masa itu (dulu); sering dipakai dalam storytelling untuk membangun plot twist retrospektif.",
+      "Contoh Kalimat": "It was the year I started my first job and met someone who I didn't know back then would become my best friend.",
+      "Common Collocations": "back then, little did I know back then, I didn't realize back then",
+      "Tips Mengingat": "\"Back\" (mundur ke masa lalu) + \"then\" (saat itu) = pada saat itu di masa lalu."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000004",
+    "question": "Afterward",
+    "answer": "**Setelah itu / kemudian / sesudahnya**.\n\n- *Example*: He asked me out for ice cream **afterward**.\n- *Note*: **Afterward** (US) dan **Afterwards** (UK) memiliki arti yang sama persis.",
+    "progression": "new",
+    "nextReviewDate": "2026-11-13T10:03:54.941Z",
+    "categories": [
+      "6901a0010000000000000008",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adverb",
+      "Pronunciation": "/ˈæf.tər.wərd/ (US) · /ˈɑːf.tə.wəd/ (UK)",
+      "Arti Utama / Definisi": "Setelah itu; pada waktu berikutnya sesudah kejadian yang baru saja disebut.",
+      "Contoh Kalimat": "We finished our shift together and went for ice cream afterward.",
+      "Common Collocations": "shortly afterward, immediately afterward, years afterward",
+      "Tips Mengingat": "After (setelah) + -ward (arah ke depan) = bergerak ke waktu setelahnya."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000005",
+    "question": "Cheesy",
+    "answer": "**Klise / gombal / terlalu romantis atau murahan**.\n\n- *Example*: Please bear with me, because this story might sound **cheesy**.\n- *Nuance*: Dipakai saat pembicara sadar ceritanya terdengar terlalu manis, klise, atau berlebihan.",
+    "progression": "new",
+    "nextReviewDate": "2026-11-13T10:03:54.941Z",
+    "categories": [
+      "6901a0010000000000000008"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjective",
+      "Pronunciation": "/ˈtʃiː.zi/",
+      "Arti Utama / Definisi": "Klise, gombal, terlalu romantis/sentimental sehingga terasa agak murahan atau berlebihan.",
+      "Contoh Kalimat": "Please bear with me, because this story might sound cheesy.",
+      "Common Collocations": "sound cheesy, cheesy pickup line, cheesy movie, a bit cheesy",
+      "Tips Mengingat": "Cheese (keju) → terlalu banyak keju bikin enek/lebay → \"cheesy\" = lebay/gombal/klise."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000006",
+    "question": "Long story short",
+    "answer": "**Singkat cerita / intinya**.\n\n- *Example*: **Long story short**, I got married to this guy in 2012.\n- *Usage*: Idiom percakapan untuk melompati detail panjang dan langsung menuju kesimpulan.",
+    "progression": "new",
+    "nextReviewDate": "2026-11-13T10:03:54.941Z",
+    "categories": [
+      "68fdd9f899ff8264aaa016ad",
+      "6901a0010000000000000012"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Idiom / Discourse Marker",
+      "Pronunciation": "/lɔːŋ ˈstɔː.ri ʃɔːrt/",
+      "Arti Utama / Definisi": "Singkat cerita / pendek kata; digunakan untuk meringkas cerita panjang langsung ke intinya.",
+      "Contoh Kalimat": "Long story short, we worked together for months and eventually launched our own company.",
+      "Common Collocations": "long story short, to make a long story short",
+      "Tips Mengingat": "Mengubah \"long story\" (cerita panjang) menjadi \"short\" (pendek) → singkat cerita."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000007",
+    "question": "Highs and lows",
+    "answer": "**Pasang surut** (masa-masa bahagia/sukses dan masa-masa sulit/terpuruk).\n\n- *Example*: Every startup journey has its **highs and lows**.\n- *Nuance*: Sangat natural untuk menceritakan perjalanan hidup, hubungan, atau karier.",
+    "progression": "new",
+    "nextReviewDate": "2026-11-13T10:03:54.941Z",
+    "categories": [
+      "68fdd9f899ff8264aaa016ad"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun Phrase / Idiom (Plural)",
+      "Pronunciation": "/haɪz ənd loʊz/",
+      "Arti Utama / Definisi": "Pasang surut kehidupan; kombinasi momen terbaik (highs) dan momen tersulit (lows).",
+      "Contoh Kalimat": "Every startup journey has its highs and its lows.",
+      "Common Collocations": "have highs and lows, through the highs and lows, emotional highs and lows",
+      "Tips Mengingat": "High (puncak/atas) + Low (lembah/bawah) = naik-turun / pasang surut."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000008",
+    "question": "Keep one's calm",
+    "answer": "**Menjaga ketenangan / tetap tenang** di situasi genting atau penuh tekanan.\n\n- *Example*: A good leader knows how to **keep their calm** during crises.\n- *Note*: Ganti *one's* dengan possessive pronoun (*my, your, his, her, their*).",
+    "progression": "new",
+    "nextReviewDate": "2026-11-13T10:03:54.941Z",
+    "categories": [
+      "68fdd9f899ff8264aaa016ad",
+      "6901a0010000000000000007"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb Phrase / Idiom",
+      "Pronunciation": "/kiːp wʌnz kɑːm/",
+      "Arti Utama / Definisi": "Tetap tenang dan tidak panik saat menghadapi masalah, konflik, atau situasi sulit.",
+      "Contoh Kalimat": "He taught me a lot about keeping my calm when facing difficult situations.",
+      "Common Collocations": "keep my calm, keep their calm, keep your calm under pressure",
+      "Tips Mengingat": "Keep (menjaga) + calm (ketenangan) = menjaga ketenangan diri."
+    }
+  },
+  {
+    "_id": "6904a0010000000000000009",
+    "question": "Stormy days",
+    "answer": "**Hari-hari penuh badai / masa-masa sulit atau penuh konflik**.\n\n- *Example*: He taught me how to keep my calm when facing our **stormy days**.\n- *Nuance*: Metafora puitis untuk menggambarkan periode penuh ujian dalam hidup.",
+    "progression": "new",
+    "nextReviewDate": "2026-11-13T10:03:54.941Z",
+    "categories": [
+      "68fdd9f899ff8264aaa016ad"
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun Phrase (Figurative / Metaphor)",
+      "Pronunciation": "/ˈstɔːr.mi deɪz/",
+      "Arti Utama / Definisi": "Masa-masa kelam, penuh ujian, atau penuh badai masalah (arti kiasan).",
+      "Contoh Kalimat": "During those early years, we learned how to stay united through our stormy days.",
+      "Common Collocations": "face stormy days, weather the stormy days, through stormy days",
+      "Tips Mengingat": "Stormy (berbadai) + days (hari-hari) = hari-hari yang penuh badai cobaan."
+    }
+  },
+  {
     "_id": "6904a0010000000000000014",
     "question": "Flow-Chart Completion (Sequential Signposts)",
     "answer": "### Definisi & Taktik Navigasi\n**Taktik Diagram Alur & Penanda Sekuensial**, strategi mengikuti kronologi proses langkah-demi-langkah pada soal IELTS Listening berformat *flow-chart* melalui 4 fase penanda transisi (*Tahap Awal, Tahap Lanjutan, Tahap Prasyarat, dan Tahap Akhir*).\n\n> *\"A chronological listening comprehension strategy for tracking step-by-step process diagrams, ensuring seamless vertical navigation from top initiation to bottom final outcome.\"*",
@@ -34945,12 +35113,20 @@
   {
     "_id": "68fe26ac7d58a8a70a6005f2",
     "question": "Upside down",
-    "answer": "terbalik",
+    "answer": "**Terbalik / jungkir balik**; secara kiasan berarti **mengubah hidup atau situasi secara drastis** (*turn someone's world upside down*).\n\n- *Literal*: The painting was hung upside down.\n- *Figurative*: Moving to this new tech company completely turned my world upside down.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
       "68fdd9f899ff8264aaa016ad"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adverb / Adjective / Idiom",
+      "Pronunciation": "/ˌʌp.saɪd ˈdaʊn/",
+      "Arti Utama / Definisi": "Terbalik (atas di bawah); dalam idiom \"turn someone's world upside down\" berarti mengubah hidup seseorang secara drastis dan tak terduga.",
+      "Contoh Kalimat": "I met a guy who I didn't know back then was going to turn my world upside down.",
+      "Common Collocations": "turn (something/someone's world) upside down, hang upside down, flip upside down",
+      "Tips Mengingat": "Up-side (sisi atas) + down (di bawah) = sisi atasnya jadi di bawah → terbalik / jungkir balik."
+    }
   },
   {
     "_id": "68fe26ac7d58a8a70a6005f6",
@@ -35375,12 +35551,20 @@
   {
     "_id": "68fe26ac7d58a8a70a6003f9",
     "question": "Look back",
-    "answer": "mengingat kembali, memikirkan kembali",
+    "answer": "**Menoleh ke belakang / merenungkan masa lalu** (*retrospective reflection*).\n\n- *Example*: If I **look back** now, every mistake was a hidden lesson.\n- *Collocation*: **look back on** (something) = mengenang kembali sesuatu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
       "68fdd9f899ff8264aaa016ad"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Phrasal Verb",
+      "Pronunciation": "/lʊk bæk/",
+      "Arti Utama / Definisi": "Menoleh ke belakang secara kiasan: merenungkan, mengevaluasi, atau mengenang masa lalu.",
+      "Contoh Kalimat": "If I look back now, every mistake was a hidden lesson.",
+      "Common Collocations": "look back on [the past], if I look back now, never look back",
+      "Tips Mengingat": "Look (melihat) + back (ke belakang) = melihat ke belakang ke arah masa lalu."
+    }
   },
   {
     "_id": "68fe26ac7d58a8a70a6003fc",
@@ -36255,12 +36439,20 @@
   {
     "_id": "68fe26ac7d58a8a70a60057c",
     "question": "Take place",
-    "answer": "terjadi, berlangsung",
+    "answer": "**Terjadi / terselenggara / berlangsung** (biasanya untuk acara, pertemuan, atau peristiwa penting).\n\n- *Example*: Many milestone events **took place** in that specific year.\n- *Note*: Bentuk lampaunya adalah **took place**, bukan *taked place*.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
       "68fdd9f899ff8264aaa016ad"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Phrasal Verb / Idiom (Intransitive)",
+      "Pronunciation": "/teɪk pleɪs/",
+      "Arti Utama / Definisi": "Terjadi, berlangsung, atau terselenggara (lebih formal/naratif dibanding \"happen\" untuk event terencana atau milestone).",
+      "Contoh Kalimat": "Many milestone events took place in that specific year.",
+      "Common Collocations": "take place in [year/location], scheduled to take place, take place between",
+      "Tips Mengingat": "Take (mengambil) + place (tempat/ruang) = mengambil tempat di waktu/ruang → terjadi / berlangsung."
+    }
   },
   {
     "_id": "68fe26ac7d58a8a70a60057e",
