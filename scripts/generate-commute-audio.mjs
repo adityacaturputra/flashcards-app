@@ -1,15 +1,20 @@
 #!/usr/bin/env node
 /**
- * Mac Pre-Generator for Commute Audio Neural MP3s
+ * Checksum-Aware Mac Pre-Generator for Commute Audio Neural MP3s (Manifest v2)
  * Generates 24kHz / 48kbps / Mono Microsoft Neural MP3s organized by flashcard ID:
  *   public/audio/commute/{cardId}/{word|meaning|example|collocations|tips}.mp3
- *   public/audio/commute/manifest.json
+ *   public/audio/commute/manifest.json  (stores 12-char SHA-256 checksum per cardId/field)
+ *
+ * Automatically skips clips whose checksum matches voice+rate+pitch+sanitizedText and file exists.
+ * Automatically regenerates clips whenever card text or voice/pacing parameters change.
  *
  * Usage:
- *   npm run commute:generate -- --limit=40 --filter=new
- *   npm run commute:generate -- --limit=100 --filter=all --accent=us
+ *   npm run commute:generate -- --all
+ *   npm run commute:generate -- --all --dry-run
+ *   npm run commute:generate -- --limit=50 --filter=new
  *   npm run commute:generate -- --ids=6904a0010000000000000001,6904a0010000000000000002
  */
+import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { MsEdgeTTS, OUTPUT_FORMAT } from 'msedge-tts';
@@ -18,6 +23,8 @@ const ROOT_DIR = process.cwd();
 const FLASHCARDS_PATH = path.join(ROOT_DIR, 'src/data/flashcards/flashcards.json');
 const OUTPUT_ROOT = path.join(ROOT_DIR, 'public/audio/commute');
 const MANIFEST_PATH = path.join(OUTPUT_ROOT, 'manifest.json');
+const CHECKPOINT_EVERY = 50;
+const MAX_RETRIES = 2;
 
 // Tuned Tri-Voice Duet parameters from other-english-materials/AUDIOBOOK_RULES.md
 const EN_VOICES = {
@@ -38,21 +45,25 @@ const PROSODY = {
 
 function parseArgs(argv) {
   const args = {
+    all: false,
+    dryRun: false,
     limit: 40,
-    filter: 'new', // new | hard | all
+    filter: 'all', // all | new | hard
     category: 'all',
     accent: 'us',
-    concurrency: 4,
+    concurrency: 5,
     force: false,
     ids: null,
   };
   for (const raw of argv) {
-    if (raw === '--force') args.force = true;
+    if (raw === '--all') args.all = true;
+    else if (raw === '--dry-run') args.dryRun = true;
+    else if (raw === '--force') args.force = true;
     else if (raw.startsWith('--limit=')) args.limit = Number(raw.slice(8)) || 40;
     else if (raw.startsWith('--filter=')) args.filter = raw.slice(9);
     else if (raw.startsWith('--category=')) args.category = raw.slice(11);
     else if (raw.startsWith('--accent=')) args.accent = raw.slice(9);
-    else if (raw.startsWith('--concurrency=')) args.concurrency = Number(raw.slice(14)) || 4;
+    else if (raw.startsWith('--concurrency=')) args.concurrency = Number(raw.slice(14)) || 5;
     else if (raw.startsWith('--ids=')) {
       args.ids = new Set(raw.slice(6).split(',').map((s) => s.trim()).filter(Boolean));
     }
@@ -81,40 +92,61 @@ function stripMarkdown(text) {
     .trim();
 }
 
-async function synthesizeToFile(text, voice, prosody, outPath) {
-  const tts = new MsEdgeTTS();
-  try {
-    await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
-    const isId = voice.toLowerCase().startsWith('id-');
-    const conj = isId ? ' dan ' : ' and ';
-    let safeText = text
-      .slice(0, 800)
-      .replace(/<break[^>]*>/gi, ' ')
-      .replace(/&/g, conj)
-      .replace(/[<>]/g, ' ');
-    if (isId) {
-      safeText = safeText
-        .replace(/\bnggak\b/gi, 'tidak')
-        .replace(/\bgak\b/gi, 'tidak')
-        .replace(/\bmendadak\b/gi, 'tiba-tiba');
-    }
-    safeText = safeText.replace(/\s+/g, ' ').trim();
-    const { audioStream } = tts.toStream(safeText, prosody);
-    const chunks = [];
-    for await (const chunk of audioStream) {
-      chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
-    }
-    const buf = Buffer.concat(chunks);
-    if (buf.length === 0) throw new Error('Empty audio buffer');
-    await fs.mkdir(path.dirname(outPath), { recursive: true });
-    await fs.writeFile(outPath, buf);
-  } finally {
+function sanitizeTextForVoice(text, voice) {
+  const isId = voice.toLowerCase().startsWith('id-');
+  const conj = isId ? ' dan ' : ' and ';
+  let safe = stripMarkdown(text)
+    .slice(0, 800)
+    .replace(/<break[^>]*>/gi, ' ')
+    .replace(/&/g, conj)
+    .replace(/[<>]/g, ' ');
+  if (isId) {
+    safe = safe
+      .replace(/\bnggak\b/gi, 'tidak')
+      .replace(/\bgak\b/gi, 'tidak')
+      .replace(/\bmendadak\b/gi, 'tiba-tiba');
+  }
+  return safe.replace(/\s+/g, ' ').trim();
+}
+
+function computeClipChecksum(voice, prosody, sanitizedText) {
+  return crypto
+    .createHash('sha256')
+    .update(`${voice}|${prosody.rate}|${prosody.pitch}|${sanitizedText}`)
+    .digest('hex')
+    .slice(0, 12);
+}
+
+async function synthesizeToFile(sanitizedText, voice, prosody, outPath) {
+  let lastErr = null;
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    const tts = new MsEdgeTTS();
     try {
-      tts.close();
-    } catch {
-      // ignore
+      await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
+      const { audioStream } = tts.toStream(sanitizedText, prosody);
+      const chunks = [];
+      for await (const chunk of audioStream) {
+        chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+      }
+      const buf = Buffer.concat(chunks);
+      if (buf.length === 0) throw new Error('Empty audio buffer');
+      await fs.mkdir(path.dirname(outPath), { recursive: true });
+      await fs.writeFile(outPath, buf);
+      return;
+    } catch (err) {
+      lastErr = err;
+      if (attempt < MAX_RETRIES) {
+        await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+      }
+    } finally {
+      try {
+        tts.close();
+      } catch {
+        // ignore
+      }
     }
   }
+  throw lastErr;
 }
 
 async function fileExists(filePath) {
@@ -126,31 +158,40 @@ async function fileExists(filePath) {
   }
 }
 
-async function rebuildManifest(accent) {
-  await fs.mkdir(OUTPUT_ROOT, { recursive: true });
-  const entries = await fs.readdir(OUTPUT_ROOT, { withFileTypes: true });
-  const cards = {};
+async function loadExistingManifest() {
+  try {
+    const raw = await fs.readFile(MANIFEST_PATH, 'utf8');
+    const parsed = JSON.parse(raw);
+    const normalizedCards = {};
+    if (parsed?.cards && typeof parsed.cards === 'object') {
+      for (const [cardId, entry] of Object.entries(parsed.cards)) {
+        if (entry && !Array.isArray(entry) && typeof entry === 'object') {
+          normalizedCards[cardId] = { ...entry };
+        }
+      }
+    }
+    return normalizedCards;
+  } catch {
+    return {};
+  }
+}
 
-  for (const entry of entries) {
-    if (!entry.isDirectory()) continue;
-    const cardDir = path.join(OUTPUT_ROOT, entry.name);
-    const files = await fs.readdir(cardDir);
-    const fields = files
-      .filter((f) => f.endsWith('.mp3'))
-      .map((f) => f.replace(/\.mp3$/, ''))
-      .sort();
-    if (fields.length > 0) {
-      cards[entry.name] = fields;
+async function writeManifest(cardsMap, accent) {
+  await fs.mkdir(OUTPUT_ROOT, { recursive: true });
+  const sortedCards = {};
+  for (const cardId of Object.keys(cardsMap).sort()) {
+    const fields = cardsMap[cardId];
+    if (fields && Object.keys(fields).length > 0) {
+      sortedCards[cardId] = fields;
     }
   }
-
   const manifest = {
+    version: 2,
     generatedAt: new Date().toISOString(),
     accent,
-    cards,
+    cards: sortedCards,
   };
   await fs.writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
-  return Object.keys(cards).length;
 }
 
 async function main() {
@@ -173,14 +214,15 @@ async function main() {
         (c) => c.progression === 'hard' || c.progression === 'retry'
       );
     }
-    selected = selected.slice(0, args.limit);
+    if (!args.all) {
+      selected = selected.slice(0, args.limit);
+    }
   }
 
-  console.log(
-    `[commute:generate] Preparing ${selected.length} cards (EN=${enVoice}, ID=${ID_VOICE})...`
-  );
-
+  const manifestCards = await loadExistingManifest();
   const tasks = [];
+  let upToDate = 0;
+
   for (const card of selected) {
     const cardId = card._id;
     if (!cardId) continue;
@@ -196,58 +238,85 @@ async function main() {
     const exampleVoice = args.accent === 'us' ? EN_COHOST_VOICE : enVoice;
     const exampleProsody = args.accent === 'us' ? PROSODY.EN_COHOST : PROSODY.EN_HOST;
 
-    const fieldMap = [
-      { field: 'word', text: stripMarkdown(card.question), voice: enVoice, prosody: PROSODY.EN_HOST },
-      { field: 'meaning', text: stripMarkdown(rawMeaning), voice: ID_VOICE, prosody: PROSODY.ID_HOST },
-      { field: 'example', text: stripMarkdown(df['Contoh Kalimat'] ?? ''), voice: exampleVoice, prosody: exampleProsody },
-      { field: 'collocations', text: stripMarkdown(df['Common Collocations'] ?? ''), voice: enVoice, prosody: PROSODY.EN_HOST },
-      { field: 'tips', text: stripMarkdown(df['Tips Mengingat'] ?? ''), voice: ID_VOICE, prosody: PROSODY.ID_HOST },
+    const fieldDefs = [
+      { field: 'word', rawText: card.question, voice: enVoice, prosody: PROSODY.EN_HOST },
+      { field: 'meaning', rawText: rawMeaning, voice: ID_VOICE, prosody: PROSODY.ID_HOST },
+      { field: 'example', rawText: df['Contoh Kalimat'] ?? '', voice: exampleVoice, prosody: exampleProsody },
+      { field: 'collocations', rawText: df['Common Collocations'] ?? '', voice: enVoice, prosody: PROSODY.EN_HOST },
+      { field: 'tips', rawText: df['Tips Mengingat'] ?? '', voice: ID_VOICE, prosody: PROSODY.ID_HOST },
     ];
 
-    for (const item of fieldMap) {
-      if (!item.text) continue;
-      const outPath = path.join(OUTPUT_ROOT, cardId, `${item.field}.mp3`);
-      tasks.push({ cardId, ...item, outPath });
+    for (const def of fieldDefs) {
+      const sanitized = sanitizeTextForVoice(def.rawText, def.voice);
+      if (!sanitized) continue;
+      const checksum = computeClipChecksum(def.voice, def.prosody, sanitized);
+      const outPath = path.join(OUTPUT_ROOT, cardId, `${def.field}.mp3`);
+      const existingChecksum = manifestCards[cardId]?.[def.field];
+
+      if (!args.force && existingChecksum === checksum && (await fileExists(outPath))) {
+        upToDate += 1;
+        continue;
+      }
+
+      tasks.push({
+        cardId,
+        field: def.field,
+        sanitizedText: sanitized,
+        voice: def.voice,
+        prosody: def.prosody,
+        checksum,
+        outPath,
+      });
     }
+  }
+
+  console.log(
+    `[commute:generate] Cards=${selected.length} | Up-to-date=${upToDate} | Need generate/update=${tasks.length} (EN=${enVoice}, ID=${ID_VOICE})`
+  );
+
+  if (args.dryRun) {
+    console.log('[commute:generate] --dry-run enabled; no files written.');
+    return;
   }
 
   let cursor = 0;
   let generated = 0;
-  let skipped = 0;
   let failed = 0;
 
   const worker = async () => {
     while (cursor < tasks.length) {
       const idx = cursor++;
       const task = tasks[idx];
-      if (!args.force && (await fileExists(task.outPath))) {
-        skipped += 1;
-        continue;
-      }
       try {
-        await synthesizeToFile(task.text, task.voice, task.prosody, task.outPath);
+        await synthesizeToFile(task.sanitizedText, task.voice, task.prosody, task.outPath);
+        if (!manifestCards[task.cardId]) {
+          manifestCards[task.cardId] = {};
+        }
+        manifestCards[task.cardId][task.field] = task.checksum;
         generated += 1;
-        if (generated % 15 === 0 || generated === tasks.length - skipped) {
+
+        if (generated % CHECKPOINT_EVERY === 0) {
+          await writeManifest(manifestCards, args.accent);
           console.log(
-            `  Progress: ${generated} generated, ${skipped} skipped, ${failed} failed (total ${tasks.length})`
+            `  Checkpoint: ${generated}/${tasks.length} generated, ${failed} failed (up-to-date=${upToDate})`
           );
         }
       } catch (err) {
         failed += 1;
-        console.error(`  Failed ${task.cardId}/${task.field}:`, err.message);
+        console.error(`  Failed ${task.cardId}/${task.field}:`, err?.message ?? err);
       }
     }
   };
 
-  await Promise.all(
-    Array.from({ length: Math.min(args.concurrency, Math.max(tasks.length, 1)) }, () =>
-      worker()
-    )
-  );
+  if (tasks.length > 0) {
+    await Promise.all(
+      Array.from({ length: Math.min(args.concurrency, tasks.length) }, () => worker())
+    );
+  }
 
-  const totalCardsInManifest = await rebuildManifest(args.accent);
+  await writeManifest(manifestCards, args.accent);
   console.log(
-    `[commute:generate] Done! Generated=${generated}, Skipped=${skipped}, Failed=${failed}. Total cards in manifest: ${totalCardsInManifest}`
+    `[commute:generate] Done! Generated=${generated}, UpToDate=${upToDate}, Failed=${failed}. Total cards in manifest: ${Object.keys(manifestCards).length}`
   );
 }
 

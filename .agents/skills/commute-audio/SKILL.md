@@ -18,9 +18,15 @@ Follow the full operational guide in [COMMUTE_AUDIO_WORKFLOW.md](../../../COMMUT
 - **Silences**: `900ms` inter-speaker turn, `1200ms` shadowing pause, `3500–4000ms` Active Recall pause.
 - **Format**: Uniform `24kHz / 48kbps / Mono` MPEG-2 Layer III (`144 bytes / 24ms` frame) stitched client-side into one continuous MP3 Blob for iOS Safari background playback alongside Maps.
 
-## 2. Incremental Mac Generation Commands
+## 2. Checksum-Aware Mac Generation Commands
 ```bash
-# Next 40 New cards (skips existing MP3s, updates public/audio/commute/manifest.json)
+# Preview up-to-date vs stale/missing clips (no TTS calls)
+npm run commute:generate -- --all --dry-run
+
+# Generate/update ALL flashcards (SHA-256 checksum per cardId/field, auto-checkpoints every 50 clips)
+npm run commute:generate -- --all
+
+# Next 40 New cards (skips unchanged checksums, updates public/audio/commute/manifest.json)
 npm run commute:generate -- --limit=40 --filter=new
 
 # Specific newly-added card IDs

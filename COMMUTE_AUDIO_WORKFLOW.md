@@ -51,8 +51,14 @@ Designed for **~2–2.5 hour daily motorcycle round-trip commutes (~1h berangkat
 
 When the user asks an agent to pre-generate commute audio for new/hard/category cards (or right after adding flashcards via `FLASHCARD_WORKFLOW.md`):
 
-1. **Run the Incremental Generator** (automatically skips existing MP3s and updates `public/audio/commute/manifest.json`):
+1. **Run the Checksum-Aware Incremental Generator** (computes 12-char SHA-256 of `voice|rate|pitch|sanitizedText` per `(cardId, field)`, skips up-to-date clips, automatically regenerates edited cards, and checkpoints `public/audio/commute/manifest.json` every 50 clips):
    ```bash
+   # Preview how many clips are up-to-date vs need update (no TTS calls)
+   npm run commute:generate -- --all --dry-run
+
+   # Generate/update ALL flashcards in flashcards.json (resumable & checksum-based)
+   npm run commute:generate -- --all
+
    # Generate next 40 New cards (default US Tri-Voice Duet)
    npm run commute:generate -- --limit=40 --filter=new
 

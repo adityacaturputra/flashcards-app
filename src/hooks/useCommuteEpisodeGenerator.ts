@@ -83,10 +83,14 @@ export function useCommuteEpisodeGenerator() {
     setIsGenerating(false);
   }, []);
 
-  const hasStaticClip = useCallback(
-    (cardId: string, field: CommuteAudioField): boolean => {
-      const fields = manifest?.cards?.[cardId];
-      return Array.isArray(fields) && fields.includes(field);
+  const getStaticClipVersion = useCallback(
+    (cardId: string, field: CommuteAudioField): string | null => {
+      const entry = manifest?.cards?.[cardId];
+      if (!entry) return null;
+      if (Array.isArray(entry)) {
+        return entry.includes(field) ? '1' : null;
+      }
+      return entry[field] ?? null;
     },
     [manifest]
   );
@@ -116,19 +120,19 @@ export function useCommuteEpisodeGenerator() {
           throw new Error('Gagal menyusun naskah audio dari kartu terpilih.');
         }
 
-        // Deduplicate clip fetches; prefer pre-generated static Neural MP3 by cardId/field
+        // Deduplicate clip fetches; prefer pre-generated static Neural MP3 by cardId/field + checksum cache-bust
         const uniqueTasks = new Map<string, ClipFetchTask>();
         for (const seg of segments) {
           const profile = resolveCommuteVoiceProfile(seg.lang, accent, seg.field);
-          const staticAvailable = hasStaticClip(seg.cardId, seg.field);
-          const cacheKey = staticAvailable
-            ? `static::${seg.cardId}/${seg.field}`
+          const staticVersion = getStaticClipVersion(seg.cardId, seg.field);
+          const cacheKey = staticVersion
+            ? `static::${seg.cardId}/${seg.field}@${staticVersion}`
             : `tts::${profile.voice}::${profile.rate}::${seg.text}`;
 
           if (!uniqueTasks.has(cacheKey) && !clipCacheRef.current.has(cacheKey)) {
             uniqueTasks.set(cacheKey, {
-              staticUrl: staticAvailable
-                ? `${COMMUTE_AUDIO_BASE_PATH}/${seg.cardId}/${seg.field}.mp3`
+              staticUrl: staticVersion
+                ? `${COMMUTE_AUDIO_BASE_PATH}/${seg.cardId}/${seg.field}.mp3?v=${staticVersion}`
                 : null,
               voice: profile.voice,
               rate: profile.rate,
@@ -202,9 +206,12 @@ export function useCommuteEpisodeGenerator() {
 
         const stitched = stitchEpisodeMp3(segments, (seg) => {
           const profile = resolveCommuteVoiceProfile(seg.lang, accent, seg.field);
-          const staticKey = `static::${seg.cardId}/${seg.field}`;
+          const staticVersion = getStaticClipVersion(seg.cardId, seg.field);
+          const staticKey = staticVersion
+            ? `static::${seg.cardId}/${seg.field}@${staticVersion}`
+            : '';
           return (
-            clipCacheRef.current.get(staticKey) ??
+            (staticKey ? clipCacheRef.current.get(staticKey) : undefined) ??
             clipCacheRef.current.get(`tts::${profile.voice}::${profile.rate}::${seg.text}`)
           );
         });
@@ -245,7 +252,7 @@ export function useCommuteEpisodeGenerator() {
         setIsGenerating(false);
       }
     },
-    [hasStaticClip]
+    [getStaticClipVersion]
   );
 
   return {

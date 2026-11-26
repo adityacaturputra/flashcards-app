@@ -13,10 +13,15 @@ import {
 
 export * from '@/constants/commute';
 
+export type CommuteCardManifestEntry =
+  | CommuteAudioField[]
+  | Partial<Record<CommuteAudioField, string>>;
+
 export interface CommuteAudioManifest {
+  version?: number;
   generatedAt: string;
   accent: string;
-  cards: Record<string, CommuteAudioField[]>;
+  cards: Record<string, CommuteCardManifestEntry>;
 }
 
 export interface CommuteConfig {
