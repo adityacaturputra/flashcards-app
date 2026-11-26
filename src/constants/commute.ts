@@ -12,6 +12,7 @@ export const COMMUTE_MODE = {
 export type CommuteMode = (typeof COMMUTE_MODE)[keyof typeof COMMUTE_MODE];
 
 export const COMMUTE_CARD_FILTER = {
+  PREGENERATED: 'pregenerated',
   DUE_TODAY: 'due-today',
   NEW_ONLY: 'new-only',
   HARD_AND_RETRY: 'hard-and-retry',
@@ -20,6 +21,20 @@ export const COMMUTE_CARD_FILTER = {
 
 export type CommuteCardFilter =
   (typeof COMMUTE_CARD_FILTER)[keyof typeof COMMUTE_CARD_FILTER];
+
+export const COMMUTE_AUDIO_FIELD = {
+  WORD: 'word',
+  MEANING: 'meaning',
+  EXAMPLE: 'example',
+  COLLOCATIONS: 'collocations',
+  TIPS: 'tips',
+} as const;
+
+export type CommuteAudioField =
+  (typeof COMMUTE_AUDIO_FIELD)[keyof typeof COMMUTE_AUDIO_FIELD];
+
+export const COMMUTE_AUDIO_BASE_PATH = '/audio/commute';
+export const COMMUTE_AUDIO_MANIFEST_URL = `${COMMUTE_AUDIO_BASE_PATH}/manifest.json`;
 
 export const COMMUTE_SEGMENT_PHASE = {
   INTRO: 'intro',
@@ -76,6 +91,7 @@ export const COMMUTE_MODE_META: Record<
 };
 
 export const COMMUTE_FILTER_LABELS: Record<CommuteCardFilter, string> = {
+  [COMMUTE_CARD_FILTER.PREGENERATED]: 'Audio Neural Siap (Pre-generated)',
   [COMMUTE_CARD_FILTER.DUE_TODAY]: 'Due Today (Anki)',
   [COMMUTE_CARD_FILTER.NEW_ONLY]: 'New Cards',
   [COMMUTE_CARD_FILTER.HARD_AND_RETRY]: 'Hard & Retry',

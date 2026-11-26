@@ -33,7 +33,7 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     }
   }, []);
 
-  // Reset player only when a new episode is loaded
+  // Reset player state only when a new episode is loaded
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -41,7 +41,7 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     setIsPlaying(false);
     setCurrentTime(0);
     setDuration(episode?.totalDurationSec ?? 0);
-    if (episode) {
+    if (episode && audio.src !== episode.blobUrl) {
       audio.src = episode.blobUrl;
       audio.load();
     }
@@ -55,10 +55,10 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     audio.playbackRate = playbackSpeed;
   }, [isLooping, playbackSpeed]);
 
-  // Audio element event listeners
+  // Audio element event listeners — MUST re-run when `episode` changes because <audio> mounts lazily
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio || !episode) return;
 
     const handleTimeUpdate = () => setCurrentTime(audio.currentTime);
     const handleLoadedMetadata = () => {
@@ -66,6 +66,7 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
         setDuration(audio.duration);
       }
       audio.playbackRate = playbackSpeed;
+      audio.loop = isLooping;
     };
     const handlePlay = () => setIsPlaying(true);
     const handlePause = () => setIsPlaying(false);
@@ -84,7 +85,7 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
       audio.removeEventListener('pause', handlePause);
       audio.removeEventListener('ended', handleEnded);
     };
-  }, [playbackSpeed]);
+  }, [episode, playbackSpeed, isLooping]);
 
   const activeChapterIndex = useMemo(() => {
     if (!episode || episode.chapters.length === 0) return -1;
@@ -107,9 +108,13 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     ensureIosAudioSession();
 
     if (audio.paused) {
-      audio.play().catch(() => setIsPlaying(false));
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false));
     } else {
       audio.pause();
+      setIsPlaying(false);
     }
   }, [episode, ensureIosAudioSession]);
 
@@ -136,10 +141,18 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
 
   const jumpToChapter = useCallback(
     (index: number) => {
+      const audio = audioRef.current;
       if (!episode || !episode.chapters[index]) return;
       seek(episode.chapters[index].startTimeSec);
+      if (audio && audio.paused) {
+        ensureIosAudioSession();
+        audio
+          .play()
+          .then(() => setIsPlaying(true))
+          .catch(() => {});
+      }
     },
-    [episode, seek]
+    [episode, seek, ensureIosAudioSession]
   );
 
   const setPlaybackSpeed = useCallback((speed: CommutePlaybackSpeed) => {

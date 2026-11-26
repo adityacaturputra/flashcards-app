@@ -9,7 +9,12 @@ const ALLOWED_VOICE_PATTERN = /^[a-z]{2,3}-[A-Z]{2}-[A-Za-z0-9]+Neural$/;
 interface TtsRequestBody {
   text?: string;
   voice?: string;
+  rate?: string;
+  pitch?: string;
 }
+
+const ALLOWED_RATE_PATTERN = /^[+-]?\d{1,2}%$/;
+const ALLOWED_PITCH_PATTERN = /^[+-]?\d{1,2}Hz$/;
 
 export async function POST(request: Request) {
   try {
@@ -18,7 +23,15 @@ export async function POST(request: Request) {
     const voice =
       typeof body.voice === 'string' && ALLOWED_VOICE_PATTERN.test(body.voice)
         ? body.voice
-        : 'en-US-AndrewNeural';
+        : 'en-US-BrianNeural';
+    const rate =
+      typeof body.rate === 'string' && ALLOWED_RATE_PATTERN.test(body.rate)
+        ? body.rate
+        : undefined;
+    const pitch =
+      typeof body.pitch === 'string' && ALLOWED_PITCH_PATTERN.test(body.pitch)
+        ? body.pitch
+        : undefined;
 
     if (!text) {
       return NextResponse.json(
@@ -33,7 +46,12 @@ export async function POST(request: Request) {
     let lastError: unknown = null;
     for (const provider of providers) {
       try {
-        const audioBytes = await provider.synthesize({ text: safeText, voice });
+        const audioBytes = await provider.synthesize({
+          text: safeText,
+          voice,
+          rate,
+          pitch,
+        });
         return new NextResponse(new Uint8Array(audioBytes), {
           status: 200,
           headers: {

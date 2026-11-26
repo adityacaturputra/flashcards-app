@@ -73,15 +73,26 @@ export const CommuteEpisodePlayer: React.FC<CommuteEpisodePlayerProps> = ({
         borderColor: 'var(--border)',
       }}
     >
-      <audio ref={audioRef} preload='metadata' playsInline className='hidden' />
+      <audio
+        ref={audioRef}
+        src={episode.blobUrl}
+        preload='auto'
+        playsInline
+        className='hidden'
+      />
 
       {/* Top status bar */}
       <div className='flex items-start justify-between gap-3'>
         <div className='min-w-0'>
           <div className='flex flex-wrap items-center gap-2'>
             <span className='inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2.5 py-0.5 text-[11px] font-bold'>
+              <span
+                className={`h-2 w-2 rounded-full ${
+                  isPlaying ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400'
+                }`}
+              />
               <FaHeadphones className='h-3 w-3' />
-              iOS Safari Background Ready
+              {isPlaying ? 'Sedang Diputar' : 'Siap Diputar (iOS BG)'}
             </span>
             {activeChapter && (
               <span

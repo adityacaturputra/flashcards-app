@@ -1,15 +1,19 @@
 'use client';
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import { Flashcard } from '@/types/flashcard';
 import { AccentPreference } from '@/types/phonemic';
 import {
+  COMMUTE_AUDIO_BASE_PATH,
+  COMMUTE_AUDIO_MANIFEST_URL,
+  COMMUTE_MODE_META,
+  CommuteAudioField,
+  CommuteAudioManifest,
   CommuteConfig,
   CommuteEpisode,
-  COMMUTE_MODE_META,
 } from '@/types/commute';
 import { API_ENDPOINTS } from '@/constants/endpoints';
 import { buildCommuteScript } from '@/utils/commuteScriptBuilder';
-import { resolveCommuteVoice } from '@/utils/commuteVoices';
+import { resolveCommuteVoiceProfile } from '@/utils/commuteVoices';
 import { stitchEpisodeMp3 } from '@/utils/mp3Stitcher';
 
 const CONCURRENCY_LIMIT = 4;
@@ -17,6 +21,14 @@ const CONCURRENCY_LIMIT = 4;
 interface GenerationProgress {
   completed: number;
   total: number;
+}
+
+interface ClipFetchTask {
+  staticUrl: string | null;
+  voice: string;
+  rate: string;
+  pitch: string;
+  text: string;
 }
 
 export function useCommuteEpisodeGenerator() {
@@ -27,10 +39,34 @@ export function useCommuteEpisodeGenerator() {
     total: 0,
   });
   const [error, setError] = useState<string | null>(null);
+  const [manifest, setManifest] = useState<CommuteAudioManifest | null>(null);
 
   const abortControllerRef = useRef<AbortController | null>(null);
   const clipCacheRef = useRef<Map<string, Uint8Array>>(new Map());
   const activeBlobUrlRef = useRef<string | null>(null);
+
+  // Load pre-generated static Neural audio manifest once
+  useEffect(() => {
+    let active = true;
+    fetch(COMMUTE_AUDIO_MANIFEST_URL)
+      .then((res) => (res.ok ? (res.json() as Promise<CommuteAudioManifest>) : null))
+      .then((data) => {
+        if (active && data?.cards) {
+          setManifest(data);
+        }
+      })
+      .catch(() => {
+        // Manifest optional when no static clips have been generated yet
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const pregeneratedCardIds = useMemo(
+    () => new Set<string>(manifest ? Object.keys(manifest.cards) : []),
+    [manifest]
+  );
 
   // Clean up object URL on unmount
   useEffect(() => {
@@ -46,6 +82,14 @@ export function useCommuteEpisodeGenerator() {
     abortControllerRef.current?.abort();
     setIsGenerating(false);
   }, []);
+
+  const hasStaticClip = useCallback(
+    (cardId: string, field: CommuteAudioField): boolean => {
+      const fields = manifest?.cards?.[cardId];
+      return Array.isArray(fields) && fields.includes(field);
+    },
+    [manifest]
+  );
 
   const generateEpisode = useCallback(
     async (
@@ -72,13 +116,25 @@ export function useCommuteEpisodeGenerator() {
           throw new Error('Gagal menyusun naskah audio dari kartu terpilih.');
         }
 
-        // Deduplicate (voice, text) pairs so repeated Pimsleur words are fetched only once
-        const uniqueTasks = new Map<string, { voice: string; text: string }>();
+        // Deduplicate clip fetches; prefer pre-generated static Neural MP3 by cardId/field
+        const uniqueTasks = new Map<string, ClipFetchTask>();
         for (const seg of segments) {
-          const voice = resolveCommuteVoice(seg.lang, accent);
-          const key = `${voice}::${seg.text}`;
-          if (!uniqueTasks.has(key) && !clipCacheRef.current.has(key)) {
-            uniqueTasks.set(key, { voice, text: seg.text });
+          const profile = resolveCommuteVoiceProfile(seg.lang, accent, seg.field);
+          const staticAvailable = hasStaticClip(seg.cardId, seg.field);
+          const cacheKey = staticAvailable
+            ? `static::${seg.cardId}/${seg.field}`
+            : `tts::${profile.voice}::${profile.rate}::${seg.text}`;
+
+          if (!uniqueTasks.has(cacheKey) && !clipCacheRef.current.has(cacheKey)) {
+            uniqueTasks.set(cacheKey, {
+              staticUrl: staticAvailable
+                ? `${COMMUTE_AUDIO_BASE_PATH}/${seg.cardId}/${seg.field}.mp3`
+                : null,
+              voice: profile.voice,
+              rate: profile.rate,
+              pitch: profile.pitch,
+              text: seg.text,
+            });
           }
         }
 
@@ -87,27 +143,46 @@ export function useCommuteEpisodeGenerator() {
         let completed = 0;
         setProgress({ completed: 0, total: Math.max(total, 1) });
 
-        // Concurrency pool worker
         let cursor = 0;
         const worker = async () => {
           while (cursor < queue.length) {
             if (controller.signal.aborted) return;
             const currentIdx = cursor++;
-            const [cacheKey, payload] = queue[currentIdx];
+            const [cacheKey, task] = queue[currentIdx];
 
-            const response = await fetch(API_ENDPOINTS.COMMUTE_TTS, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
-              signal: controller.signal,
-            });
+            let bytes: Uint8Array | null = null;
 
-            if (!response.ok) {
-              throw new Error(`TTS gagal (${response.status}). Coba lagi.`);
+            // 1. Try static pre-generated Neural MP3 first (instant from CDN, zero 403)
+            if (task.staticUrl) {
+              const staticRes = await fetch(task.staticUrl, {
+                signal: controller.signal,
+              });
+              if (staticRes.ok) {
+                bytes = new Uint8Array(await staticRes.arrayBuffer());
+              }
             }
 
-            const arrayBuffer = await response.arrayBuffer();
-            clipCacheRef.current.set(cacheKey, new Uint8Array(arrayBuffer));
+            // 2. Fallback to dynamic /api/commute/tts for cards not yet pre-generated
+            if (!bytes) {
+              const response = await fetch(API_ENDPOINTS.COMMUTE_TTS, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  voice: task.voice,
+                  rate: task.rate,
+                  pitch: task.pitch,
+                  text: task.text,
+                }),
+                signal: controller.signal,
+              });
+
+              if (!response.ok) {
+                throw new Error(`TTS gagal (${response.status}). Coba lagi.`);
+              }
+              bytes = new Uint8Array(await response.arrayBuffer());
+            }
+
+            clipCacheRef.current.set(cacheKey, bytes);
             completed += 1;
             setProgress({ completed, total: Math.max(total, 1) });
           }
@@ -126,11 +201,14 @@ export function useCommuteEpisodeGenerator() {
         }
 
         const stitched = stitchEpisodeMp3(segments, (seg) => {
-          const voice = resolveCommuteVoice(seg.lang, accent);
-          return clipCacheRef.current.get(`${voice}::${seg.text}`);
+          const profile = resolveCommuteVoiceProfile(seg.lang, accent, seg.field);
+          const staticKey = `static::${seg.cardId}/${seg.field}`;
+          return (
+            clipCacheRef.current.get(staticKey) ??
+            clipCacheRef.current.get(`tts::${profile.voice}::${profile.rate}::${seg.text}`)
+          );
         });
 
-        // Revoke previous Blob URL to prevent memory leak
         if (activeBlobUrlRef.current) {
           URL.revokeObjectURL(activeBlobUrlRef.current);
         }
@@ -167,7 +245,7 @@ export function useCommuteEpisodeGenerator() {
         setIsGenerating(false);
       }
     },
-    []
+    [hasStaticClip]
   );
 
   return {
@@ -175,6 +253,8 @@ export function useCommuteEpisodeGenerator() {
     isGenerating,
     progress,
     error,
+    pregeneratedCardIds,
+    pregeneratedCount: pregeneratedCardIds.size,
     generateEpisode,
     cancelGeneration,
   };

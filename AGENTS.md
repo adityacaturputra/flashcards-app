@@ -47,6 +47,8 @@ Welcome to the **Flashcards & Study Mapping Application** repository. This docum
 flashcards/
 ├── AGENTS.md                  # This operational guide for agents
 ├── BESTPRACTICE.md            # Senior Software Engineer standards & patterns
+├── OTHER_MATERIALS.md         # Guide for external personal self-study materials
+├── other-english-materials/   # (Gitignored) External courses, videos, srt, and study books
 ├── src/
 │   ├── app/                   # Next.js App Router (pages & API routes)
 │   │   ├── mapping/           # English Journey Mapping Flashcards feature
@@ -89,4 +91,7 @@ When a user asks the agent to add a new question, error analysis, or English rul
 ## 🔗 Related Documentation
 - 📖 **[MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)**: Complete guide to the agentic study mapping workflow.
 - 🗂️ **[FLASHCARD_WORKFLOW.md](./FLASHCARD_WORKFLOW.md)**: Complete guide to adding and maintaining local flashcards.
+- 🎧 **[COMMUTE_AUDIO_WORKFLOW.md](./COMMUTE_AUDIO_WORKFLOW.md)**: Complete agentic guide for pre-generating Tri-Voice Duet Neural commute audio & operating `/commute`.
 - 📘 **[BESTPRACTICE.md](./BESTPRACTICE.md)**: Full Senior Software Engineer standards and coding guidelines.
+- 📚 **[OTHER_MATERIALS.md](./OTHER_MATERIALS.md)**: Guide for external personal self-study materials (`other-english-materials/`).
+

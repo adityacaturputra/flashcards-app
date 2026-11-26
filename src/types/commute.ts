@@ -2,6 +2,7 @@
  * Commute Audio Vocabulary Module Type Definitions
  */
 import {
+  CommuteAudioField,
   CommuteMode,
   CommuteCardFilter,
   CommuteSegmentPhase,
@@ -11,6 +12,12 @@ import {
 } from '@/constants/commute';
 
 export * from '@/constants/commute';
+
+export interface CommuteAudioManifest {
+  generatedAt: string;
+  accent: string;
+  cards: Record<string, CommuteAudioField[]>;
+}
 
 export interface CommuteConfig {
   mode: CommuteMode;
@@ -24,7 +31,7 @@ export interface CommuteConfig {
 
 export const DEFAULT_COMMUTE_CONFIG: CommuteConfig = {
   mode: COMMUTE_MODE.PIMSLEUR_MICRO_BATCH,
-  filter: COMMUTE_CARD_FILTER.NEW_ONLY,
+  filter: COMMUTE_CARD_FILTER.PREGENERATED,
   categoryId: 'all',
   cardCount: 20,
   includeCollocations: false,
@@ -36,6 +43,7 @@ export interface CommuteAudioSegment {
   id: string;
   cardId: string;
   cardQuestion: string;
+  field: CommuteAudioField;
   phase: CommuteSegmentPhase;
   lang: CommuteVoiceLang;
   text: string;

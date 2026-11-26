@@ -1,29 +1,67 @@
 /**
- * Bilingual Microsoft Neural Voice Mapping for Commute Audio
- * Syncs English voice selection with the app's global AccentPreference.
+ * Tri-Voice Duet Microsoft Neural Voice & Relaxed Tempo Mapping (AUDIOBOOK_RULES.md)
+ * - Host ID (Arti & Tips): id-ID-ArdiNeural (-10%, +0Hz)
+ * - Host EN (Vocab & Collocations): en-US-BrianNeural / accent-matched (-12%, +0Hz)
+ * - Co-Host EN (Contoh Kalimat): en-US-AvaMultilingualNeural (-14%, +0Hz)
  */
 import { ACCENT_PREFERENCE, AccentPreference } from '@/types/phonemic';
-import { COMMUTE_VOICE_LANG, CommuteVoiceLang } from '@/types/commute';
+import {
+  COMMUTE_AUDIO_FIELD,
+  COMMUTE_VOICE_LANG,
+  CommuteAudioField,
+  CommuteVoiceLang,
+} from '@/types/commute';
 
-export const INDONESIAN_NEURAL_VOICE = 'id-ID-ArdiNeural';
+export interface CommuteVoiceProfile {
+  voice: string;
+  rate: string;
+  pitch: string;
+}
+
+export const INDONESIAN_HOST_VOICE = 'id-ID-ArdiNeural';
+export const ENGLISH_COHOST_VOICE = 'en-US-AvaMultilingualNeural';
 
 export const ENGLISH_NEURAL_VOICES: Record<AccentPreference, string> = {
-  [ACCENT_PREFERENCE.US]: 'en-US-AndrewNeural',
+  [ACCENT_PREFERENCE.US]: 'en-US-BrianNeural',
   [ACCENT_PREFERENCE.UK]: 'en-GB-RyanNeural',
   [ACCENT_PREFERENCE.AU]: 'en-AU-WilliamNeural',
   [ACCENT_PREFERENCE.ZA]: 'en-ZA-LukeNeural',
   [ACCENT_PREFERENCE.IN]: 'en-IN-PrabhatNeural',
 };
 
-/**
- * Resolve Microsoft Neural Voice ID for a given segment language and English accent.
- */
+export function resolveCommuteVoiceProfile(
+  lang: CommuteVoiceLang,
+  accent: AccentPreference,
+  field?: CommuteAudioField
+): CommuteVoiceProfile {
+  if (lang === COMMUTE_VOICE_LANG.ID) {
+    return {
+      voice: INDONESIAN_HOST_VOICE,
+      rate: '-10%',
+      pitch: '+0Hz',
+    };
+  }
+
+  // Co-Host Ava (-14%) delivers authentic US example sentences per AUDIOBOOK_RULES.md
+  if (field === COMMUTE_AUDIO_FIELD.EXAMPLE && accent === ACCENT_PREFERENCE.US) {
+    return {
+      voice: ENGLISH_COHOST_VOICE,
+      rate: '-14%',
+      pitch: '+0Hz',
+    };
+  }
+
+  return {
+    voice: ENGLISH_NEURAL_VOICES[accent] ?? ENGLISH_NEURAL_VOICES[ACCENT_PREFERENCE.US],
+    rate: '-12%',
+    pitch: '+0Hz',
+  };
+}
+
 export function resolveCommuteVoice(
   lang: CommuteVoiceLang,
-  accent: AccentPreference
+  accent: AccentPreference,
+  field?: CommuteAudioField
 ): string {
-  if (lang === COMMUTE_VOICE_LANG.ID) {
-    return INDONESIAN_NEURAL_VOICE;
-  }
-  return ENGLISH_NEURAL_VOICES[accent] ?? ENGLISH_NEURAL_VOICES[ACCENT_PREFERENCE.US];
+  return resolveCommuteVoiceProfile(lang, accent, field).voice;
 }

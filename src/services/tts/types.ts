@@ -14,6 +14,8 @@ export type TtsProviderType = (typeof TTS_PROVIDER)[keyof typeof TTS_PROVIDER];
 export interface TtsSynthesizeRequest {
   text: string;
   voice: string;
+  rate?: string;
+  pitch?: string;
 }
 
 export interface ITtsProvider {

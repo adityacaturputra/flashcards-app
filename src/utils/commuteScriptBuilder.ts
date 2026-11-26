@@ -4,11 +4,13 @@
  */
 import { Flashcard, Progression } from '@/types/flashcard';
 import {
+  COMMUTE_AUDIO_FIELD,
   COMMUTE_BATCH_SIZE,
   COMMUTE_CARD_FILTER,
   COMMUTE_MODE,
   COMMUTE_SEGMENT_PHASE,
   COMMUTE_VOICE_LANG,
+  CommuteAudioField,
   CommuteAudioSegment,
   CommuteCardFilter,
   CommuteConfig,
@@ -26,35 +28,52 @@ export interface CardNarrationFields {
 }
 
 /**
+ * Pronunciation-safe Indonesian sanitizer per AUDIOBOOK_RULES.md:
+ * avoids glottal-stop words clipped by Indonesian TTS and raw SSML tags.
+ */
+export function sanitizeIndonesianForTTS(text: string): string {
+  return text
+    .replace(/<break[^>]*>/gi, ' ')
+    .replace(/\bnggak\b/gi, 'tidak')
+    .replace(/\bgak\b/gi, 'tidak')
+    .replace(/\bmendadak\b/gi, 'tiba-tiba')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
  * Extract clean, TTS-friendly bilingual fields from a Flashcard.
  */
 export function extractFlashcardNarrationFields(
   card: Flashcard
 ): CardNarrationFields {
   const df = card.dynamicFields ?? {};
+  const firstContentLine =
+    card.answer
+      .split('\n')
+      .map((line) => line.trim())
+      .find((line) => line.length > 0 && !line.startsWith('#')) ?? card.answer;
   const rawMeaning =
-    df['Arti Utama / Definisi'] ||
-    df['Arti'] ||
-    card.answer.split('\n')[0] ||
-    card.answer;
+    df['Arti Utama / Definisi'] || df['Arti'] || firstContentLine;
 
   return {
     cardId: card._id ?? card.question,
     word: stripMarkdownForTTS(card.question),
-    meaningId: stripMarkdownForTTS(rawMeaning),
+    meaningId: sanitizeIndonesianForTTS(stripMarkdownForTTS(rawMeaning)),
     exampleEn: stripMarkdownForTTS(df['Contoh Kalimat'] ?? ''),
     collocationsEn: stripMarkdownForTTS(df['Common Collocations'] ?? ''),
-    tipsId: stripMarkdownForTTS(df['Tips Mengingat'] ?? ''),
+    tipsId: sanitizeIndonesianForTTS(stripMarkdownForTTS(df['Tips Mengingat'] ?? '')),
   };
 }
 
 /**
- * Filter flashcards based on CommuteCardFilter & optional categoryId.
+ * Filter flashcards based on CommuteCardFilter, optional categoryId, and optional pre-generated audio IDs.
  */
 export function filterCommuteCards(
   flashcards: Flashcard[],
   filter: CommuteCardFilter,
-  categoryId: string
+  categoryId: string,
+  pregeneratedCardIds?: Set<string>
 ): Flashcard[] {
   const now = Date.now();
   const byCategory =
@@ -63,6 +82,13 @@ export function filterCommuteCards(
       : flashcards.filter((c) => c.categories?.includes(categoryId));
 
   switch (filter) {
+    case COMMUTE_CARD_FILTER.PREGENERATED:
+      if (!pregeneratedCardIds || pregeneratedCardIds.size === 0) {
+        return [];
+      }
+      return byCategory.filter((c) =>
+        pregeneratedCardIds.has(c._id ?? c.question)
+      );
     case COMMUTE_CARD_FILTER.DUE_TODAY:
       return byCategory.filter((c) => {
         if (!c.nextReviewDate) return true;
@@ -103,6 +129,7 @@ function createIntroSegments(
   let seq = seqStart;
 
   const push = (
+    field: CommuteAudioField,
     lang: CommuteAudioSegment['lang'],
     text: string,
     pauseAfterMs: number,
@@ -113,6 +140,7 @@ function createIntroSegments(
       id: `seg-${seq++}`,
       cardId: fields.cardId,
       cardQuestion: fields.word,
+      field,
       phase,
       lang,
       text: text.trim(),
@@ -121,26 +149,31 @@ function createIntroSegments(
     });
   };
 
-  // Word twice for phonological encoding
-  push(COMMUTE_VOICE_LANG.EN, fields.word, 600, true);
-  push(COMMUTE_VOICE_LANG.EN, fields.word, 500);
+  // Word twice for phonological encoding + 0.9s inter-speaker silence (AUDIOBOOK_RULES.md)
+  push(COMMUTE_AUDIO_FIELD.WORD, COMMUTE_VOICE_LANG.EN, fields.word, 650, true);
+  push(COMMUTE_AUDIO_FIELD.WORD, COMMUTE_VOICE_LANG.EN, fields.word, 900);
 
-  // Indonesian meaning
+  // Indonesian meaning (Host ID) -> 0.9s inter-speaker silence
   if (fields.meaningId) {
-    push(COMMUTE_VOICE_LANG.ID, fields.meaningId, 700);
+    push(COMMUTE_AUDIO_FIELD.MEANING, COMMUTE_VOICE_LANG.ID, fields.meaningId, 900);
   }
 
-  // English example sentence + short shadowing pause
+  // English example sentence (Co-Host EN) -> 1.2s shadowing pause
   if (fields.exampleEn) {
-    push(COMMUTE_VOICE_LANG.EN, fields.exampleEn, 1200);
+    push(COMMUTE_AUDIO_FIELD.EXAMPLE, COMMUTE_VOICE_LANG.EN, fields.exampleEn, 1200);
   }
 
   if (config.includeCollocations && fields.collocationsEn) {
-    push(COMMUTE_VOICE_LANG.EN, fields.collocationsEn, 800);
+    push(
+      COMMUTE_AUDIO_FIELD.COLLOCATIONS,
+      COMMUTE_VOICE_LANG.EN,
+      fields.collocationsEn,
+      900
+    );
   }
 
   if (config.includeTips && fields.tipsId) {
-    push(COMMUTE_VOICE_LANG.ID, fields.tipsId, 900);
+    push(COMMUTE_AUDIO_FIELD.TIPS, COMMUTE_VOICE_LANG.ID, fields.tipsId, 1100);
   }
 
   return segments;
@@ -161,6 +194,7 @@ function createRecallSegments(
     id: `seg-${seq++}`,
     cardId: fields.cardId,
     cardQuestion: fields.word,
+    field: COMMUTE_AUDIO_FIELD.WORD,
     phase,
     lang: COMMUTE_VOICE_LANG.EN,
     text: fields.word,
@@ -173,6 +207,7 @@ function createRecallSegments(
       id: `seg-${seq++}`,
       cardId: fields.cardId,
       cardQuestion: fields.word,
+      field: COMMUTE_AUDIO_FIELD.MEANING,
       phase,
       lang: COMMUTE_VOICE_LANG.ID,
       text: fields.meaningId,
@@ -185,6 +220,7 @@ function createRecallSegments(
       id: `seg-${seq++}`,
       cardId: fields.cardId,
       cardQuestion: fields.word,
+      field: COMMUTE_AUDIO_FIELD.EXAMPLE,
       phase,
       lang: COMMUTE_VOICE_LANG.EN,
       text: fields.exampleEn,

@@ -32,14 +32,21 @@ export const CommuteAudioStudio: React.FC = () => {
     isGenerating,
     progress,
     error,
+    pregeneratedCardIds,
     generateEpisode,
     cancelGeneration,
   } = useCommuteEpisodeGenerator();
   const player = useCommuteAudioPlayer(episode);
 
   const matchingCards = useMemo(
-    () => filterCommuteCards(flashcards, config.filter, config.categoryId),
-    [flashcards, config.filter, config.categoryId]
+    () =>
+      filterCommuteCards(
+        flashcards,
+        config.filter,
+        config.categoryId,
+        pregeneratedCardIds
+      ),
+    [flashcards, config.filter, config.categoryId, pregeneratedCardIds]
   );
 
   const selectedCards = useMemo(
