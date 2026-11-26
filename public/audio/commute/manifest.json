@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-11-26T07:23:09.564Z",
+  "generatedAt": "2026-11-26T07:41:38.519Z",
   "accent": "us",
   "cards": {
     "6876607beb12fde01aa091dc": {
@@ -89,7 +89,10 @@
     },
     "6876607beb12fde01aa09206": {
       "word": "1ab6f3008d3f",
-      "meaning": "27fe02ff11d3"
+      "meaning": "167f19c31542",
+      "collocations": "838d10c525f1",
+      "example": "753628748b11",
+      "tips": "bc263ccabe80"
     },
     "6876607beb12fde01aa09207": {
       "word": "1c6ae5d94248",
@@ -125,7 +128,10 @@
     },
     "6876607beb12fde01aa09215": {
       "word": "b4320939c930",
-      "meaning": "92d152fc8861"
+      "meaning": "c5c5dda9bb73",
+      "collocations": "ebe5d29b1c60",
+      "example": "ba78b5e103a2",
+      "tips": "6e9fc81a7bb6"
     },
     "6876607beb12fde01aa0921a": {
       "word": "8c5c5ffddaea",
@@ -237,7 +243,10 @@
     },
     "6876607beb12fde01aa0924f": {
       "word": "1d0ab5c3648a",
-      "meaning": "c8f709130156"
+      "meaning": "a04726eea8bd",
+      "collocations": "91be80054e40",
+      "example": "cd1730b1ac64",
+      "tips": "d1a8aa0e871d"
     },
     "6876607beb12fde01aa09250": {
       "word": "ca1149bbd5c6",
@@ -281,7 +290,10 @@
     },
     "6876607beb12fde01aa09265": {
       "word": "e3b3bba94600",
-      "meaning": "8d7b8e0c4d29"
+      "meaning": "9d53deafdebf",
+      "example": "aabd28d3d02e",
+      "collocations": "db5f4e0ec737",
+      "tips": "641630f4ff7a"
     },
     "6876607beb12fde01aa09268": {
       "word": "7b63943f58db",
@@ -409,7 +421,10 @@
     },
     "6876607ceb12fde01aa092a5": {
       "word": "9c06afc684b2",
-      "meaning": "8e6ad1516675"
+      "meaning": "f64b608760d3",
+      "collocations": "76209819c11e",
+      "tips": "5df19585420c",
+      "example": "58f04a13cef0"
     },
     "6876607ceb12fde01aa092a6": {
       "word": "cef4a1d87b08",
@@ -505,7 +520,10 @@
     },
     "6876607ceb12fde01aa092d6": {
       "word": "5f70ab57d5a5",
-      "meaning": "c905040b08fe"
+      "meaning": "d477374bf85e",
+      "example": "c4d3d4444821",
+      "collocations": "653c2728076e",
+      "tips": "1e83a8cf167d"
     },
     "6876607ceb12fde01aa092d8": {
       "word": "46e28119082a",
@@ -513,7 +531,10 @@
     },
     "6876607ceb12fde01aa092da": {
       "word": "99b8d24d2b10",
-      "meaning": "9e1fd55eed68"
+      "meaning": "cc8c81ba9350",
+      "collocations": "81ec6d0ac2cb",
+      "example": "60475ae90ed7",
+      "tips": "a7bff85d78d6"
     },
     "6876607ceb12fde01aa092db": {
       "word": "25a7c0edca1e",
@@ -581,7 +602,10 @@
     },
     "6876607ceb12fde01aa092fc": {
       "word": "3e81513f49aa",
-      "meaning": "fe83e00386d1"
+      "meaning": "8d022a120b8e",
+      "collocations": "fccce7cbe13a",
+      "example": "aca983853163",
+      "tips": "2c7921024133"
     },
     "6876607ceb12fde01aa092fe": {
       "word": "142126c2f275",
@@ -589,11 +613,17 @@
     },
     "6876607ceb12fde01aa09300": {
       "word": "030ce6f2f2a5",
-      "meaning": "d616e1c732c5"
+      "meaning": "7f850f0592e8",
+      "collocations": "dbd8bbf0f8f6",
+      "example": "55f28d56d803",
+      "tips": "5984d2cce7dc"
     },
     "6876607ceb12fde01aa09302": {
       "word": "77eeb9554b0f",
-      "meaning": "b7da41e5c71b"
+      "meaning": "73c019b95302",
+      "collocations": "0f7ef4a12789",
+      "example": "db8782582303",
+      "tips": "d54919f8d4a0"
     },
     "6876607ceb12fde01aa09304": {
       "word": "3476870361bb",
@@ -605,7 +635,10 @@
     },
     "6876607ceb12fde01aa09308": {
       "word": "6f7624142956",
-      "meaning": "3df50a2d50b1"
+      "meaning": "9fc46caf9349",
+      "collocations": "bad20b1493e1",
+      "example": "0bbe62fadc0a",
+      "tips": "6e0dbfb623ce"
     },
     "6876607ceb12fde01aa0930a": {
       "word": "8ed3f191cb16",
@@ -657,7 +690,10 @@
     },
     "6876607ceb12fde01aa09322": {
       "word": "08278bc48656",
-      "meaning": "d064040822ac"
+      "meaning": "92ee9796d3fc",
+      "example": "ad7b645eab7e",
+      "collocations": "edabd01868db",
+      "tips": "b809d48ba8de"
     },
     "6876607ceb12fde01aa09324": {
       "word": "1c0ebb6f6ee8",
@@ -833,7 +869,10 @@
     },
     "6876607deb12fde01aa0937a": {
       "word": "a5b3387a4671",
-      "meaning": "a472d8056b69"
+      "meaning": "bc91cc0d16ef",
+      "collocations": "be13db588755",
+      "example": "20ed0afd87c1",
+      "tips": "7991b3f39317"
     },
     "6876607deb12fde01aa0937b": {
       "word": "b5f09f0f39e4",
@@ -917,7 +956,10 @@
     },
     "6876607deb12fde01aa093a4": {
       "word": "43ebe2aea16e",
-      "meaning": "f4f57d7df233"
+      "meaning": "5ab12c2eb66c",
+      "collocations": "6e0b112761cc",
+      "example": "aeb95106669c",
+      "tips": "c9baa0556e99"
     },
     "6876607deb12fde01aa093a6": {
       "word": "e21d9164cb13",
@@ -993,7 +1035,10 @@
     },
     "6876607deb12fde01aa093ca": {
       "word": "f70fb6b20ebb",
-      "meaning": "5b0cb53d880f"
+      "meaning": "fe52555fa176",
+      "example": "0815039236c2",
+      "collocations": "2a7689044dbc",
+      "tips": "59efffdeaa75"
     },
     "6876607deb12fde01aa093cc": {
       "word": "30c29621c6b4",
@@ -1025,7 +1070,10 @@
     },
     "6876607deb12fde01aa093da": {
       "word": "96c85f4a4260",
-      "meaning": "b9bebd1d609c"
+      "meaning": "c4db0fe3099d",
+      "collocations": "91e6ee11e4d9",
+      "example": "7e5b8f9b0d27",
+      "tips": "36a8557755b1"
     },
     "6876607deb12fde01aa093dc": {
       "word": "bf4efbe56107",
@@ -1152,8 +1200,11 @@
       "meaning": "14180e9190bd"
     },
     "6876607deb12fde01aa0941a": {
-      "meaning": "6cfd613ca7ba",
-      "word": "85b0f87f4950"
+      "meaning": "f9abbfffa51a",
+      "word": "85b0f87f4950",
+      "collocations": "b7de6800a947",
+      "example": "e77413e611d8",
+      "tips": "686c83ed0a1c"
     },
     "6876607deb12fde01aa0941c": {
       "word": "4a2428451bc0",
@@ -1313,7 +1364,10 @@
     },
     "6876607eeb12fde01aa09469": {
       "word": "181706de5f99",
-      "meaning": "ada169746258"
+      "meaning": "e625eaac31ee",
+      "collocations": "07e800b581ca",
+      "tips": "27bbce7c6817",
+      "example": "ecddf50a09af"
     },
     "6876607eeb12fde01aa0946a": {
       "word": "f91a4a9e550f",
@@ -1325,7 +1379,10 @@
     },
     "6876607eeb12fde01aa09470": {
       "word": "3c1d9a4cb821",
-      "meaning": "a25c9b984201"
+      "meaning": "f6b101160546",
+      "example": "37f296c4596c",
+      "collocations": "6177ad427d42",
+      "tips": "88eb41a03771"
     },
     "6876607eeb12fde01aa09472": {
       "word": "487db990361a",
@@ -1509,7 +1566,10 @@
     },
     "6876607eeb12fde01aa094cc": {
       "word": "1d6fa5e58a7d",
-      "meaning": "7abb3173fe7c"
+      "meaning": "36a318dad6a1",
+      "collocations": "57f25973b5a3",
+      "example": "db70d4f58a04",
+      "tips": "bec98086662c"
     },
     "6876607eeb12fde01aa094cd": {
       "word": "5369b384281e",
@@ -1677,7 +1737,10 @@
     },
     "6876607feb12fde01aa09520": {
       "word": "6f9b17ea56b8",
-      "meaning": "a6af68658107"
+      "meaning": "af070ca12493",
+      "collocations": "e6dfbd463bb6",
+      "example": "9213fdaeabe2",
+      "tips": "dcaaab890702"
     },
     "6876607feb12fde01aa09522": {
       "word": "666492c60156",
@@ -1697,7 +1760,10 @@
     },
     "6876607feb12fde01aa09527": {
       "word": "4afab16d6365",
-      "meaning": "718c2496ced8"
+      "meaning": "f466f95f74b6",
+      "example": "ce0ca81f945a",
+      "collocations": "d1b249c4e84a",
+      "tips": "5089373c016d"
     },
     "6876607feb12fde01aa09528": {
       "word": "2474f25a9e01",
@@ -1789,7 +1855,10 @@
     },
     "6876607feb12fde01aa09558": {
       "word": "b8b2ebfeece7",
-      "meaning": "c2f94efa5bf0"
+      "meaning": "618d6f71c295",
+      "collocations": "509603770ae7",
+      "example": "4e14c557d5da",
+      "tips": "13c3a9915ce1"
     },
     "6876607feb12fde01aa0955a": {
       "word": "5e7521699a7e",
@@ -1825,7 +1894,10 @@
     },
     "6876607feb12fde01aa0956a": {
       "word": "5e76cbb68775",
-      "meaning": "5792843e282f"
+      "meaning": "96ea7fe17b11",
+      "collocations": "db5300bd3713",
+      "example": "689efc3f22b2",
+      "tips": "867606b21bf8"
     },
     "6876607feb12fde01aa0956c": {
       "word": "ab61c3fcb099",
@@ -1845,7 +1917,10 @@
     },
     "6876607feb12fde01aa09574": {
       "word": "d188696d6bd6",
-      "meaning": "43721ea1eb7a"
+      "meaning": "944f75a07035",
+      "collocations": "3e7405807f75",
+      "example": "9876a874d540",
+      "tips": "96f7eb72c750"
     },
     "6876607feb12fde01aa09576": {
       "word": "d5a3854cb032",
@@ -1921,7 +1996,10 @@
     },
     "6876607feb12fde01aa0959a": {
       "word": "257f0fae2b24",
-      "meaning": "ec6df734f2a5"
+      "meaning": "17d99ee1bb2f",
+      "collocations": "e29fd7793498",
+      "tips": "add85fa0212c",
+      "example": "63e56dc0b748"
     },
     "6876607feb12fde01aa0959c": {
       "word": "81afc3ed28ba",
@@ -1933,11 +2011,17 @@
     },
     "6876607feb12fde01aa095a0": {
       "word": "9a2367f0f578",
-      "meaning": "57425d23197d"
+      "meaning": "43856e2d6e1c",
+      "collocations": "525bb96a9ac3",
+      "example": "d2da8d3aff18",
+      "tips": "116fd5bbc27d"
     },
     "6876607feb12fde01aa095a2": {
       "word": "e64db3971cf3",
-      "meaning": "15fdf67d4cfc"
+      "meaning": "9fdf4b074be8",
+      "collocations": "fce195b006a3",
+      "example": "d8cd9851189a",
+      "tips": "a93cca15a98f"
     },
     "6876607feb12fde01aa095a3": {
       "word": "4fe7798293a1",
@@ -1949,7 +2033,10 @@
     },
     "6876607feb12fde01aa095a5": {
       "word": "2f72517ee701",
-      "meaning": "89d1f6902a2b"
+      "meaning": "4627003faa53",
+      "collocations": "86335ca88cb2",
+      "example": "b3572e70fa10",
+      "tips": "a77e5779e053"
     },
     "6876607feb12fde01aa095aa": {
       "word": "b8840a3482a4",
@@ -1957,7 +2044,10 @@
     },
     "6876607feb12fde01aa095ac": {
       "word": "e0c048e653ef",
-      "meaning": "8be486128d60"
+      "meaning": "8407fe1c1bf0",
+      "collocations": "420fb4790a15",
+      "tips": "dc2d0ac77626",
+      "example": "18f34c90b3ed"
     },
     "6876607feb12fde01aa095ae": {
       "word": "05aa582800f8",
@@ -2101,7 +2191,10 @@
     },
     "68766080eb12fde01aa095f4": {
       "word": "f87a09accf23",
-      "meaning": "9c3f5db60387"
+      "meaning": "7d6850513906",
+      "collocations": "e2849376c5a5",
+      "example": "f93add97fca1",
+      "tips": "d27f5277a50d"
     },
     "68766080eb12fde01aa095f6": {
       "word": "b2ab1d4d3738",
@@ -2113,7 +2206,10 @@
     },
     "68766080eb12fde01aa095fa": {
       "word": "57f2330a3aa1",
-      "meaning": "5b89f054c529"
+      "meaning": "d114049687ec",
+      "collocations": "b2ec691448d1",
+      "example": "0c341c523d39",
+      "tips": "004788f86ad0"
     },
     "68766080eb12fde01aa095fc": {
       "word": "e1bc7074e1f4",
@@ -2137,7 +2233,10 @@
     },
     "68766080eb12fde01aa09606": {
       "word": "8f85c5670c5e",
-      "meaning": "1cb7bdb99edb"
+      "meaning": "f75c6a744a24",
+      "collocations": "4c2c9134fa41",
+      "example": "9529e0dac9f3",
+      "tips": "f300d6bc6494"
     },
     "68766080eb12fde01aa09608": {
       "word": "2a335fe2c3f4",
@@ -2269,7 +2368,10 @@
     },
     "68766080eb12fde01aa09649": {
       "word": "eb61ec23c512",
-      "meaning": "a464beae5287"
+      "meaning": "8469225c1f71",
+      "collocations": "944e0987d709",
+      "tips": "5ae0c7f21010",
+      "example": "28887b2d624e"
     },
     "68766080eb12fde01aa0964c": {
       "word": "451d3fe20e1d",
@@ -2301,7 +2403,10 @@
     },
     "68766080eb12fde01aa0965a": {
       "word": "756130cafcc7",
-      "meaning": "b4fabb526f04"
+      "meaning": "974fd7c5656c",
+      "collocations": "7aada647dc28",
+      "example": "17ba052af619",
+      "tips": "b12eeb30bd63"
     },
     "68766080eb12fde01aa0965c": {
       "word": "c50bbfedc063",
@@ -2489,11 +2594,17 @@
     },
     "68766081eb12fde01aa096b8": {
       "word": "09b598411dff",
-      "meaning": "240be22a7750"
+      "meaning": "92dbc93b98f8",
+      "collocations": "df4bc33b5f4d",
+      "example": "8b3181a24095",
+      "tips": "0a6068597cf8"
     },
     "68766081eb12fde01aa096bc": {
       "word": "4cc45ac88237",
-      "meaning": "f93f4d68db72"
+      "meaning": "1c1b10d4c934",
+      "collocations": "3fb90d1a33ab",
+      "example": "c9bf4c53a543",
+      "tips": "4f9c4f1ce72d"
     },
     "68766081eb12fde01aa096be": {
       "word": "e9f008932231",
@@ -2521,7 +2632,10 @@
     },
     "68766081eb12fde01aa096ca": {
       "word": "f221c3228b3a",
-      "meaning": "14b5a0b6e9d6"
+      "meaning": "22a07e0f4125",
+      "collocations": "5fa8b964bc51",
+      "example": "c2100708887b",
+      "tips": "050b920ccc6a"
     },
     "68766081eb12fde01aa096cc": {
       "word": "eed594e6717a",
@@ -2553,7 +2667,10 @@
     },
     "68766081eb12fde01aa096da": {
       "word": "e06a077c9a94",
-      "meaning": "52291cd8594e"
+      "meaning": "b1111ad7defe",
+      "collocations": "26d9fe2dc0c1",
+      "example": "ec540a1a3db2",
+      "tips": "ff722a437a2f"
     },
     "68766081eb12fde01aa096dc": {
       "word": "e18727b56600",
@@ -2633,7 +2750,10 @@
     },
     "68766081eb12fde01aa09702": {
       "word": "0025e9176906",
-      "meaning": "6a642b3a0401"
+      "meaning": "f08c22a6ff6c",
+      "collocations": "bcf11bcb90d4",
+      "example": "2ad217f71ad4",
+      "tips": "6985c537a9a4"
     },
     "68766081eb12fde01aa09704": {
       "word": "89837937d3e8",
@@ -2701,7 +2821,10 @@
     },
     "68766081eb12fde01aa09724": {
       "word": "f16dac769d7f",
-      "meaning": "37a9349b2e83"
+      "meaning": "cb16e056244c",
+      "collocations": "1664e8b6ed2e",
+      "tips": "2b1d6aa5258a",
+      "example": "40537d696d26"
     },
     "68766081eb12fde01aa09726": {
       "word": "71a8094e3dd2",
@@ -2717,7 +2840,10 @@
     },
     "68766081eb12fde01aa0972b": {
       "word": "c2afc4bd3d73",
-      "meaning": "d89f141a3879"
+      "meaning": "ae8b6515e3c2",
+      "collocations": "5b53e02e40dd",
+      "example": "4d4137bcdbc6",
+      "tips": "2c9430d0974b"
     },
     "68766081eb12fde01aa0972c": {
       "word": "115ec47097d4",
@@ -3001,7 +3127,10 @@
     },
     "68766082eb12fde01aa097ba": {
       "word": "4bf8bcb666c7",
-      "meaning": "1a65dc684374"
+      "meaning": "6a0f1967d176",
+      "collocations": "3a110c6fd27a",
+      "example": "24542c28b61c",
+      "tips": "b53224278d33"
     },
     "68766082eb12fde01aa097bc": {
       "word": "a751f8c01f2c",
@@ -3265,7 +3394,10 @@
     },
     "68766083eb12fde01aa09840": {
       "word": "c2f1e1874a99",
-      "meaning": "5eaaa069e563"
+      "meaning": "8dafb915c367",
+      "collocations": "b7be2b18bc97",
+      "example": "829476d2e051",
+      "tips": "74ad57dd58df"
     },
     "68766083eb12fde01aa09842": {
       "word": "784417afc985",
@@ -3389,7 +3521,10 @@
     },
     "68766083eb12fde01aa0987e": {
       "word": "217b63c9a19f",
-      "meaning": "9b5fbe32e65e"
+      "meaning": "ff35891dfc04",
+      "collocations": "0fb0092d16e3",
+      "example": "04df1300d419",
+      "tips": "c6b12be807c1"
     },
     "68766083eb12fde01aa09880": {
       "word": "b3bd609500c5",
@@ -3569,7 +3704,10 @@
     },
     "68766083eb12fde01aa098d8": {
       "word": "f46b587b87bb",
-      "meaning": "ed76b284c056"
+      "meaning": "6b412c68b1b7",
+      "collocations": "4281db8b03cc",
+      "example": "dd08be3c3db5",
+      "tips": "d70dc58b848e"
     },
     "68766083eb12fde01aa098da": {
       "word": "a75a30e0d2d5",
@@ -3669,7 +3807,10 @@
     },
     "68766084eb12fde01aa09908": {
       "word": "2438a1581890",
-      "meaning": "8f831242ebea"
+      "meaning": "9e9640c8757f",
+      "collocations": "1919c441a7cf",
+      "example": "12160afc22dc",
+      "tips": "f2ce63ce0a90"
     },
     "68766084eb12fde01aa0990c": {
       "word": "d8764e50c30d",
@@ -3777,7 +3918,10 @@
     },
     "68766084eb12fde01aa09940": {
       "word": "206c88f29115",
-      "meaning": "1c1163c0e760"
+      "meaning": "826e32a011fe",
+      "collocations": "7ce54315f92a",
+      "example": "02fc8a014ad0",
+      "tips": "0cf5e43d40cc"
     },
     "68766084eb12fde01aa09942": {
       "word": "f2926d9976e4",
@@ -3801,7 +3945,10 @@
     },
     "68766084eb12fde01aa0994c": {
       "word": "70dc83180d90",
-      "meaning": "0ec88411b21a"
+      "meaning": "f09d3e258bd7",
+      "collocations": "4452dd4d4931",
+      "example": "2aaa59eb70bd",
+      "tips": "9432df64d0eb"
     },
     "68766084eb12fde01aa0994e": {
       "word": "622ad7d311fd",
@@ -4013,7 +4160,10 @@
     },
     "68766084eb12fde01aa099b6": {
       "word": "f54d948ec431",
-      "meaning": "63e5ff64f62f"
+      "meaning": "9d76a9f032c3",
+      "collocations": "67b9f4242c42",
+      "example": "e02cde72ea8a",
+      "tips": "1c0df918a53d"
     },
     "68766084eb12fde01aa099b8": {
       "word": "4cfafc92fb6e",

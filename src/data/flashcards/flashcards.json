@@ -3190,12 +3190,20 @@
   {
     "_id": "6876607beb12fde01aa09206",
     "question": "To dye hair",
-    "answer": "mewarnai rambut",
+    "answer": "**Mewarnai rambut** — mengubah warna rambut memakai cat rambut di salon atau di rumah.\n\n- *Example*: She decided **to dye her hair** bright copper before starting her new job next Monday.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:22:54.676Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb Phrase",
+      "Pronunciation": "/tə daɪ hɛr/",
+      "Arti Utama / Definisi": "Artinya mewarnai atau mengecat rambut supaya warnanya berubah sesuai keinginan. Biasanya dipakai saat seseorang pergi ke salon atau memakai cat rambut sendiri di rumah.",
+      "Contoh Kalimat": "She decided to dye her hair bright copper before starting her new job next Monday.",
+      "Common Collocations": "dye your hair blonde, hair dye kit, freshly dyed hair, bleach and dye",
+      "Tips Mengingat": "Bunyi kata dye persis sama seperti die, bayangkan rambut yang warnanya pudar lalu dihidupkan lagi dengan warna baru."
+    }
   },
   {
     "_id": "6876607beb12fde01aa09207",
@@ -3275,12 +3283,20 @@
   {
     "_id": "6876607beb12fde01aa09215",
     "question": "Catch a glimpse",
-    "answer": "melihat sekilas",
+    "answer": "**Melihat sekilas** — melihat sesuatu hanya sekelebat mata sebelum menghilang.\n\n- *Example*: I managed to **catch a glimpse** of the famous singer stepping out of her black car.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:38:46.512Z",
     "categories": [
       "6901a0010000000000000007"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Idiom / Verb Phrase",
+      "Pronunciation": "/kætʃ ə ɡlɪmps/",
+      "Arti Utama / Definisi": "Artinya melihat sesuatu secara sangat singkat atau hanya sekelebat mata saja. Biasanya terjadi saat objeknya lewat cepat atau tertutup keramaian.",
+      "Contoh Kalimat": "I managed to catch a glimpse of the famous singer stepping out of her black car.",
+      "Common Collocations": "catch a brief glimpse, catch a glimpse of, fleeting glimpse, get a glimpse",
+      "Tips Mengingat": "Bayangkan kita seperti menangkap bayangan yang cuma lewat sedetik di depan mata, jadi harus cepat menangkapnya."
+    }
   },
   {
     "_id": "6876607beb12fde01aa09214",
@@ -3605,12 +3621,20 @@
   {
     "_id": "6876607beb12fde01aa0924f",
     "question": "Rapid",
-    "answer": "cepat sekali",
+    "answer": "**Cepat sekali** — terjadi atau bergerak dengan kecepatan tinggi dalam waktu singkat.\n\n- *Example*: The city experienced **rapid** growth after the new high-speed train station opened downtown.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T12:06:48.687Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Adjective",
+      "Pronunciation": "/ˈræpɪd/",
+      "Arti Utama / Definisi": "Artinya bergerak, terjadi, atau berkembang dengan sangat cepat dalam waktu singkat. Kata ini sering dipakai untuk menggambarkan perubahan, pertumbuhan, atau aliran yang deras.",
+      "Contoh Kalimat": "The city experienced rapid growth after the new high-speed train station opened downtown.",
+      "Common Collocations": "rapid growth, rapid change, rapid response, rapid pace",
+      "Tips Mengingat": "Ingat saja wahana arung jeram yang dalam bahasa Inggris disebut rapids karena arus airnya mengalir sangat cepat."
+    }
   },
   {
     "_id": "6876607beb12fde01aa0924e",
@@ -3715,12 +3739,20 @@
   {
     "_id": "6876607beb12fde01aa09265",
     "question": "Meter",
-    "answer": "argometer",
+    "answer": "**Argometer / meteran** — alat pengukur otomatis untuk tarif taksi, parkir, listrik, atau air.\n\n- *Example*: The taxi driver forgot to turn on the **meter** before we left the airport terminal.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T12:06:36.823Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈmiːtər/",
+      "Arti Utama / Definisi": "Dalam konteks transportasi dan utilitas, meter berarti alat pengukur otomatis seperti argometer taksi, meteran listrik, atau meteran air. Alat ini menghitung pemakaian jarak atau daya secara langsung.",
+      "Contoh Kalimat": "The taxi driver forgot to turn on the meter before we left the airport terminal.",
+      "Common Collocations": "taxi meter, parking meter, electric meter, read the meter",
+      "Tips Mengingat": "Kata argometer di Indonesia langsung memakai akhiran meter, yaitu alat penghitung tarif perjalanan atau pemakaian listrik."
+    }
   },
   {
     "_id": "6876607beb12fde01aa09268",
@@ -4085,12 +4117,20 @@
   {
     "_id": "6876607ceb12fde01aa092a5",
     "question": "Spouting",
-    "answer": "menyemburkan",
+    "answer": "**Menyemburkan** — memancarkan cairan dengan deras atau berbicara terus-menerus.\n\n- *Example*: The broken garden pipe was **spouting** water high into the air across the front lawn.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:37:23.496Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb (Present Participle) / Noun",
+      "Pronunciation": "/ˈspaʊtɪŋ/",
+      "Arti Utama / Definisi": "Artinya menyemburkan air atau cairan dengan deras ke udara seperti air mancur atau paus. Kata ini juga sering dipakai secara kiasan untuk orang yang berbicara terus-menerus tanpa henti.",
+      "Contoh Kalimat": "The broken garden pipe was spouting water high into the air across the front lawn.",
+      "Common Collocations": "spouting water, spouting nonsense, spouting steam, water spout",
+      "Tips Mengingat": "Ingat corong teko yang disebut spout, jadi spouting berarti menyembur deras keluar dari corong."
+    }
   },
   {
     "_id": "6876607ceb12fde01aa092a7",
@@ -4340,12 +4380,20 @@
   {
     "_id": "6876607ceb12fde01aa092d6",
     "question": "Dread",
-    "answer": "cemas",
+    "answer": "**Sangat cemas / ngeri** — merasa takut atau berat hati menanti sesuatu yang akan datang.\n\n- *Example*: I always **dread** waking up early on rainy Monday mornings for the long commute.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:37:14.146Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb / Noun",
+      "Pronunciation": "/drɛd/",
+      "Arti Utama / Definisi": "Artinya merasa sangat takut, cemas, atau berat hati menghadapi sesuatu yang akan terjadi. Biasanya dipakai saat kita membayangkan hal buruk atau tugas berat yang tidak ingin dijalani.",
+      "Contoh Kalimat": "I always dread waking up early on rainy Monday mornings for the long commute.",
+      "Common Collocations": "dread the thought, fill with dread, pure dread, dread doing something",
+      "Tips Mengingat": "Dread mirip dengan kata dead, rasanya seperti mati kutu atau cemas luar biasa sebelum menghadapi hal yang menakutkan."
+    }
   },
   {
     "_id": "6876607ceb12fde01aa092d8",
@@ -4375,12 +4423,20 @@
   {
     "_id": "6876607ceb12fde01aa092da",
     "question": "Lotus root",
-    "answer": "akar teratai",
+    "answer": "**Akar teratai** — rimpang teratai berlubang yang renyah dan sering diolah dalam masakan Asia.\n\n- *Example*: My grandmother always adds thin slices of crunchy **lotus root** to her warm pork soup.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T12:06:40.118Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈloʊtəs ruːt/",
+      "Arti Utama / Definisi": "Artinya akar atau rimpang tanaman teratai yang sering dimasak dalam hidangan Asia. Bentuknya berlubang-lubang cantik saat diiris tipis dan teksturnya renyah saat digoreng atau direbus.",
+      "Contoh Kalimat": "My grandmother always adds thin slices of crunchy lotus root to her warm pork soup.",
+      "Common Collocations": "sliced lotus root, braised lotus root, crispy lotus root, lotus root soup",
+      "Tips Mengingat": "Lotus adalah bunga teratai dan root berarti akar, persis seperti terjemahan langsungnya yaitu akar teratai."
+    }
   },
   {
     "_id": "6876607ceb12fde01aa092db",
@@ -4540,12 +4596,20 @@
   {
     "_id": "6876607ceb12fde01aa092fc",
     "question": "Purpose",
-    "answer": "tujuan",
+    "answer": "**Tujuan** — alasan atau sasaran utama di balik suatu tindakan atau benda.\n\n- *Example*: The main **purpose** of this morning meeting is to finalize our product launch schedule.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:34:39.136Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈpɜːrpəs/",
+      "Arti Utama / Definisi": "Artinya tujuan utama atau alasan mengapa sesuatu dibuat, dilakukan, atau ada. Kata ini juga sering digunakan untuk menggambarkan makna hidup atau niat yang disengaja.",
+      "Contoh Kalimat": "The main purpose of this morning meeting is to finalize our product launch schedule.",
+      "Common Collocations": "main purpose, sense of purpose, on purpose, serve a purpose",
+      "Tips Mengingat": "Bunyinya mirip dengan kata propose atau mengusulkan, karena setiap usulan pasti punya tujuan yang jelas."
+    }
   },
   {
     "_id": "6876607ceb12fde01aa092fe",
@@ -4560,22 +4624,38 @@
   {
     "_id": "6876607ceb12fde01aa09300",
     "question": "Core",
-    "answer": "inti bumi",
+    "answer": "**Inti / pusat** — bagian paling tengah atau paling pokok, seperti inti bumi atau nilai utama.\n\n- *Example*: Scientists study earthquakes to learn more about the molten iron inside the Earth's **core**.",
     "progression": "retry",
     "nextReviewDate": "2025-10-23T12:50:44.188Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun / Adjective",
+      "Pronunciation": "/kɔːr/",
+      "Arti Utama / Definisi": "Artinya bagian paling tengah, paling dalam, atau paling penting dari sesuatu, seperti inti bumi atau inti buah apel. Dalam percakapan sehari-hari juga berarti hal pokok yang menjadi dasar.",
+      "Contoh Kalimat": "Scientists study earthquakes to learn more about the molten iron inside the Earth's core.",
+      "Common Collocations": "Earth's core, core values, apple core, to the core",
+      "Tips Mengingat": "Ingat istilah core muscles atau otot inti perut yang ada di tengah tubuh, sama seperti inti bumi di tengah planet."
+    }
   },
   {
     "_id": "6876607ceb12fde01aa09302",
     "question": "Hairpin",
-    "answer": "peniti, jepit rambut",
+    "answer": "**Jepit rambut / peniti rambut** — penjepit tipis untuk merapikan rambut atau tikungan jalan berbentuk huruf U.\n\n- *Example*: She secured her messy bun with a simple black **hairpin** before walking into the office.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:39:30.791Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈhɛrpɪn/",
+      "Arti Utama / Definisi": "Artinya jepit rambut tipis berbentuk huruf U yang dipakai untuk menahan sanggul atau rambut agar tetap rapi. Dalam dunia berkendara, kata ini juga dipakai untuk tikungan jalan yang sangat tajam.",
+      "Contoh Kalimat": "She secured her messy bun with a simple black hairpin before walking into the office.",
+      "Common Collocations": "black hairpin, hairpin turn, hairpin bend, bobby pin and hairpin",
+      "Tips Mengingat": "Gabungan kata hair yang berarti rambut dan pin yang berarti jarum atau peniti, jadi peniti khusus penahan rambut."
+    }
   },
   {
     "_id": "6876607ceb12fde01aa09304",
@@ -4600,12 +4680,20 @@
   {
     "_id": "6876607ceb12fde01aa09308",
     "question": "Face brush",
-    "answer": "sikat rias",
+    "answer": "**Kuas rias atau sikat wajah** — alat berbulu lembut untuk merias atau membersihkan area wajah.\n\n- *Example*: She always washes her soft **face brush** with gentle soap every Sunday morning.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:38:53.633Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun phrase",
+      "Pronunciation": "/ˈfeɪs brʌʃ/",
+      "Arti Utama / Definisi": "Kuas atau sikat lembut yang digunakan untuk meratakan bedak, perona pipi, atau membersihkan kulit wajah. Alat ini sangat umum ditemukan di meja rias atau tas kosmetik sehari-hari.",
+      "Contoh Kalimat": "She always washes her soft face brush with gentle soap every Sunday morning.",
+      "Common Collocations": "soft face brush, makeup face brush, clean a face brush, use a face brush",
+      "Tips Mengingat": "Bayangkan kata face berarti wajah dan brush berarti kuas atau sikat, jadi artinya langsung tergambar sebagai kuas untuk merawat atau merias wajah."
+    }
   },
   {
     "_id": "6876607ceb12fde01aa0930a",
@@ -4723,12 +4811,20 @@
   {
     "_id": "6876607ceb12fde01aa09322",
     "question": "Music chart",
-    "answer": "tangga lagu",
+    "answer": "**Tangga lagu** — daftar peringkat lagu terpopuler berdasarkan penjualan, siaran radio, atau streaming.\n\n- *Example*: Their catchy new single climbed straight to the top of the national **music chart** yesterday.",
     "progression": "retry",
     "nextReviewDate": "2025-10-23T12:51:25.473Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun phrase",
+      "Pronunciation": "/ˈmjuːzɪk tʃɑːrt/",
+      "Arti Utama / Definisi": "Daftar peringkat lagu-lagu paling populer selama periode tertentu, biasanya diperbarui setiap minggu. Tangga lagu ini dihitung dari jumlah pemutaran di radio, penjualan, dan streaming digital.",
+      "Contoh Kalimat": "Their catchy new single climbed straight to the top of the national music chart yesterday.",
+      "Common Collocations": "top the music chart, enter the music chart, weekly music chart, climb the music chart",
+      "Tips Mengingat": "Ingat kata chart yang mirip grafik atau daftar peringkat, sehingga music chart berarti daftar peringkat lagu populer atau tangga lagu."
+    }
   },
   {
     "_id": "6876607ceb12fde01aa09324",
@@ -5188,7 +5284,7 @@
   {
     "_id": "6876607deb12fde01aa0937a",
     "question": "Drought",
-    "answer": "kemarau",
+    "answer": "**Kemarau atau kekeringan** — periode panjang tanpa hujan yang membuat persediaan air menipis.\n\n- *Example*: Local farmers lost half of their rice harvest after a severe **drought** hit the region.",
     "progression": "hard",
     "nextReviewDate": "2026-09-28T13:04:47.195Z",
     "categories": [
@@ -5198,7 +5294,15 @@
     "interval": 1,
     "easeFactor": 2.35,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:04:47.195Z"
+    "lastReviewedDate": "2026-09-27T13:04:47.195Z",
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/draʊt/",
+      "Arti Utama / Definisi": "Musim kemarau panjang atau kondisi kekeringan parah ketika hujan hampir tidak turun dalam waktu lama. Akibatnya, sungai menjadi surut dan tanah pertanian kesulitan mendapatkan air.",
+      "Contoh Kalimat": "Local farmers lost half of their rice harvest after a severe drought hit the region.",
+      "Common Collocations": "severe drought, prolonged drought, suffer from drought, drought relief",
+      "Tips Mengingat": "Bunyinya mirip kata dry yang berarti kering, sehingga drought mudah diingat sebagai kekeringan panjang atau musim kemarau."
+    }
   },
   {
     "_id": "6876607deb12fde01aa0937b",
@@ -5421,12 +5525,20 @@
   {
     "_id": "6876607deb12fde01aa093a4",
     "question": "Evening",
-    "answer": "malam",
+    "answer": "**Petang atau awal malam** — rentang waktu dari matahari terbenam hingga menjelang larut malam.\n\n- *Example*: We usually take a relaxing walk around the neighborhood park every Friday **evening**.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:31:39.832Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈiːvnɪŋ/",
+      "Arti Utama / Definisi": "Waktu petang hingga awal malam, biasanya dimulai saat matahari terbenam sampai menjelang jam tidur. Kata ini sering dipakai untuk menyapa orang atau menyebut kegiatan santai sepulang kerja.",
+      "Contoh Kalimat": "We usually take a relaxing walk around the neighborhood park every Friday evening.",
+      "Common Collocations": "good evening, in the evening, Friday evening, spend the evening",
+      "Tips Mengingat": "Ingat sapaan sopan good evening yang diucapkan saat matahari sudah terbenam menuju malam hari."
+    }
   },
   {
     "_id": "6876607deb12fde01aa093a6",
@@ -5626,12 +5738,20 @@
   {
     "_id": "6876607deb12fde01aa093ca",
     "question": "Total solar eclipse",
-    "answer": "gerhana matahari total",
+    "answer": "**Gerhana matahari total** — peristiwa saat bulan menutupi seluruh cahaya matahari dari pandangan di bumi.\n\n- *Example*: Thousands of travelers gathered on the beach to watch the rare **total solar eclipse** together.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:30:34.686Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun phrase",
+      "Pronunciation": "/ˈtoʊtəl ˈsoʊlər ɪˈklɪps/",
+      "Arti Utama / Definisi": "Fenomena alam langka ketika bulan berada tepat di antara bumi dan matahari sehingga menutupi seluruh piringan matahari. Saat peristiwa ini terjadi, langit di siang hari bisa berubah gelap seperti senja.",
+      "Contoh Kalimat": "Thousands of travelers gathered on the beach to watch the rare total solar eclipse together.",
+      "Common Collocations": "watch a total solar eclipse, rare total solar eclipse, path of a total solar eclipse",
+      "Tips Mengingat": "Pecah tiga katanya: total berarti penuh, solar berarti matahari, dan eclipse berarti gerhana, jadi artinya gerhana matahari total."
+    }
   },
   {
     "_id": "6876607deb12fde01aa093cc",
@@ -5716,12 +5836,20 @@
   {
     "_id": "6876607deb12fde01aa093da",
     "question": "Toilet seat",
-    "answer": "dudukan toilet",
+    "answer": "**Dudukan kloset** — bagian berbentuk cincin tempat duduk pada kloset kamar mandi.\n\n- *Example*: Please remember to put the **toilet seat** down and wash your hands before leaving.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:35:38.623Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun phrase",
+      "Pronunciation": "/ˈtɔɪlət siːt/",
+      "Arti Utama / Definisi": "Bagian dudukan berbentuk cincin yang dipasang di atas kloset duduk agar pengguna merasa nyaman. Biasanya dudukan ini dilengkapi penutup di atasnya yang bisa dibuka dan ditutup.",
+      "Contoh Kalimat": "Please remember to put the toilet seat down and wash your hands before leaving.",
+      "Common Collocations": "lift the toilet seat, put the toilet seat down, heated toilet seat, clean the toilet seat",
+      "Tips Mengingat": "Kata seat berarti tempat duduk, jadi toilet seat adalah bagian tempat duduk pada kloset."
+    }
   },
   {
     "_id": "6876607deb12fde01aa093dc",
@@ -6046,12 +6174,20 @@
   {
     "_id": "6876607deb12fde01aa0941a",
     "question": "Bags under the eyes",
-    "answer": "kantung mata",
+    "answer": "**Kantung mata** — area bengkak atau cekung di bawah kelopak mata karena kurang tidur atau lelah.\n\n- *Example*: Drinking plenty of water and getting enough sleep can reduce dark **bags under the eyes**.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:30:52.823Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun phrase",
+      "Pronunciation": "/bæɡz ˈʌndər ði aɪz/",
+      "Arti Utama / Definisi": "Pembengkakan ringan atau kulit kendur di area bawah mata yang biasa disebut kantung mata. Kondisi ini sering muncul ketika seseorang kurang tidur, kelelahan, atau faktor usia.",
+      "Contoh Kalimat": "Drinking plenty of water and getting enough sleep can reduce dark bags under the eyes.",
+      "Common Collocations": "puffy bags under the eyes, reduce bags under the eyes, dark bags under the eyes",
+      "Tips Mengingat": "Bayangkan kantong kecil yang menggantung di bawah mata, persis seperti terjemahan harfiahnya yaitu bags under the eyes."
+    }
   },
   {
     "_id": "6876607deb12fde01aa0941d",
@@ -6461,12 +6597,20 @@
   {
     "_id": "6876607eeb12fde01aa09469",
     "question": "To blow dry",
-    "answer": "mengeringkan rambut",
+    "answer": "**Mengeringkan rambut (dengan hair dryer)** — mengeringkan dan menata rambut basah memakai hembusan angin hangat.\n\n- *Example*: She prefers **to blow dry** her wet hair on low heat before heading to work.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:35:52.086Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb phrase",
+      "Pronunciation": "/tuː bloʊ draɪ/",
+      "Arti Utama / Definisi": "Mengeringkan sekaligus menata rambut yang masih basah dengan hembusan udara hangat dari alat pengering rambut. Cara ini sering dipakai setelah keramas agar rambut cepat kering dan rapi.",
+      "Contoh Kalimat": "She prefers to blow dry her wet hair on low heat before heading to work.",
+      "Common Collocations": "blow dry your hair, blow dry on low heat, wash and blow dry, blow dry straight",
+      "Tips Mengingat": "Gabungkan kata blow yang berarti meniup dan dry yang berarti kering, artinya mengeringkan rambut dengan tiupan angin pengering."
+    }
   },
   {
     "_id": "6876607eeb12fde01aa0946a",
@@ -6481,12 +6625,20 @@
   {
     "_id": "6876607eeb12fde01aa09470",
     "question": "Pavement",
-    "answer": "trotoar",
+    "answer": "**Trotoar** — jalur khusus pejalan kaki di sisi jalan raya (terutama dalam British English).\n\n- *Example*: Children should always walk safely on the **pavement** instead of stepping onto the busy road.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:36:42.167Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈpeɪvmənt/",
+      "Arti Utama / Definisi": "Jalur pejalan kaki yang diperkeras di pinggir jalan raya, atau yang biasa kita sebut trotoar dalam bahasa Inggris gaya Inggris. Di Amerika Serikat, kata ini juga bisa berarti permukaan jalan beraspal.",
+      "Contoh Kalimat": "Children should always walk safely on the pavement instead of stepping onto the busy road.",
+      "Common Collocations": "walk on the pavement, cracked pavement, busy pavement, narrow pavement",
+      "Tips Mengingat": "Ingat kata paving block yang sering dipasang untuk trotoar, jadi pavement mudah diingat sebagai trotoar untuk pejalan kaki."
+    }
   },
   {
     "_id": "6876607eeb12fde01aa09476",
@@ -6961,12 +7113,20 @@
   {
     "_id": "6876607eeb12fde01aa094cc",
     "question": "Service charge",
-    "answer": "ongkos kirim",
+    "answer": "**Biaya layanan** — biaya tambahan atas jasa pelayanan di restoran, hotel, atau platform pemesanan.\n\n- *Example*: Our dinner bill already included a ten percent **service charge**, so tipping was completely optional.",
     "progression": "hard",
     "nextReviewDate": "2025-10-24T11:51:05.622Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun phrase",
+      "Pronunciation": "/ˈsɜːrvɪs tʃɑːrdʒ/",
+      "Arti Utama / Definisi": "Biaya layanan tambahan yang dibebankan kepada pelanggan atas jasa yang diberikan, seperti di restoran, hotel, atau aplikasi pesan antar. Biaya ini biasanya dihitung berdasarkan persentase tertentu dari total tagihan.",
+      "Contoh Kalimat": "Our dinner bill already included a ten percent service charge, so tipping was completely optional.",
+      "Common Collocations": "include a service charge, pay a service charge, monthly service charge, ten percent service charge",
+      "Tips Mengingat": "Kata service berarti pelayanan dan charge berarti biaya, jadi service charge adalah biaya tambahan untuk pelayanan."
+    }
   },
   {
     "_id": "6876607eeb12fde01aa094cf",
@@ -7391,12 +7551,20 @@
   {
     "_id": "6876607feb12fde01aa09520",
     "question": "Hair dresser",
-    "answer": "tukang rambut",
+    "answer": "**Penata atau tukang potong rambut** — Orang yang bekerja di salon untuk memotong dan menata rambut.\n\n- *Example*: I booked an appointment with my favorite **hair dresser** before attending the wedding this weekend.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:38:25.179Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈhɛərˌdrɛsər/",
+      "Arti Utama / Definisi": "Penata rambut atau tukang potong rambut profesional yang bekerja di salon. Biasanya mereka melayani potong rambut, pewarnaan, hingga penataan gaya rambut sesuai permintaan.",
+      "Contoh Kalimat": "I booked an appointment with my favorite hair dresser before attending the wedding this weekend.",
+      "Common Collocations": "book a hair dresser, experienced hair dresser, visit the hair dresser, local hair dresser",
+      "Tips Mengingat": "Gabungan kata hair yang berarti rambut dan dresser yang berarti penata, jadi orang yang menata rambut Anda."
+    }
   },
   {
     "_id": "6876607feb12fde01aa0951d",
@@ -7426,12 +7594,20 @@
   {
     "_id": "6876607feb12fde01aa09527",
     "question": "Luggage cart",
-    "answer": "troli bagasi",
+    "answer": "**Troli bagasi** — Kereta dorong untuk membawa koper dan barang berat di bandara atau hotel.\n\n- *Example*: After picking up our heavy suitcases, we grabbed a **luggage cart** near the airport exit.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T12:18:26.571Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈlʌɡɪdʒ kɑːrt/",
+      "Arti Utama / Definisi": "Troli dorong khusus untuk mengangkut koper dan barang bawaan berat di bandara, stasiun, atau hotel. Alat ini sangat membantu saat Anda membawa banyak tas sekaligus.",
+      "Contoh Kalimat": "After picking up our heavy suitcases, we grabbed a luggage cart near the airport exit.",
+      "Common Collocations": "push a luggage cart, airport luggage cart, free luggage cart, load the luggage cart",
+      "Tips Mengingat": "Luggage artinya bagasi, sedangkan cart artinya kereta dorong, jadi kereta untuk mendorong bagasi."
+    }
   },
   {
     "_id": "6876607feb12fde01aa09526",
@@ -7731,12 +7907,20 @@
   {
     "_id": "6876607feb12fde01aa09558",
     "question": "Boast",
-    "answer": "membual",
+    "answer": "**Membual atau menyombongkan diri** — Berbicara terlalu bangga tentang diri sendiri atau pencapaian.\n\n- *Example*: He likes to **boast** about his expensive new car whenever he meets his old friends.",
     "progression": "hard",
     "nextReviewDate": "2025-10-24T11:51:11.329Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb / Noun",
+      "Pronunciation": "/boʊst/",
+      "Arti Utama / Definisi": "Membual atau menyombongkan diri dengan membicarakan prestasi dan barang milik sendiri secara berlebihan. Kata ini juga bisa berarti memiliki sesuatu yang patut dibanggakan.",
+      "Contoh Kalimat": "He likes to boast about his expensive new car whenever he meets his old friends.",
+      "Common Collocations": "boast about, boast of, empty boast, nothing to boast about",
+      "Tips Mengingat": "Bunyinya mirip kata bos, bayangkan seseorang yang suka pamer dan membual seolah dirinya seorang bos besar."
+    }
   },
   {
     "_id": "6876607feb12fde01aa0955c",
@@ -7836,12 +8020,20 @@
   {
     "_id": "6876607feb12fde01aa0956a",
     "question": "Blizzard",
-    "answer": "bencana badai salju",
+    "answer": "**Badai salju dahsyat** — Cuaca ekstrem dengan salju lebat, angin kencang, dan jarak pandang rendah.\n\n- *Example*: All flights were canceled tonight because a severe **blizzard** completely covered the runway in snow.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:34:53.080Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈblɪzərd/",
+      "Arti Utama / Definisi": "Badai salju dahsyat yang disertai angin sangat kencang dan jarak pandang yang amat terbatas. Kondisi cuaca ekstrem ini sering membuat jalanan tertutup salju dan perjalanan terhenti.",
+      "Contoh Kalimat": "All flights were canceled tonight because a severe blizzard completely covered the runway in snow.",
+      "Common Collocations": "severe blizzard, winter blizzard, trapped in a blizzard, blizzard warning",
+      "Tips Mengingat": "Bayangkan angin dingin yang berembus kencang dengan suara bzz, itulah badai salju blizzard."
+    }
   },
   {
     "_id": "6876607feb12fde01aa0956c",
@@ -7886,12 +8078,20 @@
   {
     "_id": "6876607feb12fde01aa09574",
     "question": "Coat",
-    "answer": "mantel (jaket panjang)",
+    "answer": "**Mantel atau jaket panjang** — Pakaian luar tebal untuk melindungi tubuh dari udara dingin atau hujan.\n\n- *Example*: Please put on your warm winter **coat** before stepping outside into the freezing morning air.",
     "progression": "hard",
     "nextReviewDate": "2025-10-24T12:11:23.461Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun / Verb",
+      "Pronunciation": "/koʊt/",
+      "Arti Utama / Definisi": "Mantel atau jaket panjang berlengan yang dipakai di luar baju untuk menghangatkan tubuh saat cuaca dingin. Selain itu, kata ini juga bisa berarti lapisan cat atau bulu hewan.",
+      "Contoh Kalimat": "Please put on your warm winter coat before stepping outside into the freezing morning air.",
+      "Common Collocations": "winter coat, put on a coat, thick coat, fresh coat of paint",
+      "Tips Mengingat": "Bunyinya mirip kata kut atau kot, ingat saja jas atau mantel hangat yang menutupi baju Anda."
+    }
   },
   {
     "_id": "6876607feb12fde01aa09578",
@@ -8106,7 +8306,7 @@
   {
     "_id": "6876607feb12fde01aa0959a",
     "question": "South frigid zone",
-    "answer": "wilayah selatan dingin",
+    "answer": "**Zona dingin selatan (kutub selatan)** — Wilayah bumi paling selatan di sekitar Antarktika yang bersuhu beku.\n\n- *Example*: Emperor penguins are uniquely adapted to survive the harsh winters of the **South frigid zone**.",
     "progression": "hard",
     "nextReviewDate": "2026-09-28T13:04:30.205Z",
     "categories": [
@@ -8116,7 +8316,15 @@
     "interval": 1,
     "easeFactor": 2.35,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:04:30.205Z"
+    "lastReviewedDate": "2026-09-27T13:04:30.205Z",
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/saʊθ ˈfrɪdʒɪd zoʊn/",
+      "Arti Utama / Definisi": "Zona dingin selatan atau kawasan kutub selatan bumi yang membentang dari Lingkar Antarktika hingga titik Kutub Selatan. Wilayah ini bersuhu beku sepanjang tahun dan sebagian besar tertutup es.",
+      "Contoh Kalimat": "Emperor penguins are uniquely adapted to survive the harsh winters of the South frigid zone.",
+      "Common Collocations": "within the South frigid zone, explore the South frigid zone, climate of the South frigid zone, North and South frigid zones",
+      "Tips Mengingat": "South artinya selatan, frigid mirip kata fridge atau kulkas yang sangat dingin, dan zone adalah wilayah."
+    }
   },
   {
     "_id": "6876607feb12fde01aa0959c",
@@ -8131,12 +8339,20 @@
   {
     "_id": "6876607feb12fde01aa095a0",
     "question": "Carry on baggage",
-    "answer": "bagasi kabin",
+    "answer": "**Bagasi kabin** — Tas atau koper kecil yang dibawa langsung penumpang ke dalam kabin pesawat.\n\n- *Example*: Make sure your **carry on baggage** fits inside the overhead bin before the plane departs.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:32:12.282Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈkæri ɑːn ˈbæɡɪdʒ/",
+      "Arti Utama / Definisi": "Bagasi kabin, yaitu tas atau koper berukuran kecil yang boleh Anda bawa langsung ke dalam kabin pesawat. Barang ini biasanya disimpan di kompartemen atas atau di bawah kursi.",
+      "Contoh Kalimat": "Make sure your carry on baggage fits inside the overhead bin before the plane departs.",
+      "Common Collocations": "carry on baggage allowance, overhead carry on baggage, pack carry on baggage, weight limit for carry on baggage",
+      "Tips Mengingat": "Carry on berarti dibawa terus ke dalam pesawat, bukan dititipkan ke bagasi bawah."
+    }
   },
   {
     "_id": "6876607feb12fde01aa095a4",
@@ -8151,12 +8367,20 @@
   {
     "_id": "6876607feb12fde01aa095a2",
     "question": "Shore",
-    "answer": "pantai",
+    "answer": "**Tepi pantai atau pesisir** — Daratan yang berada tepat di pinggir laut atau danau.\n\n- *Example*: We walked slowly along the quiet sandy **shore** while watching the gentle waves roll in.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:38:08.256Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ʃɔːr/",
+      "Arti Utama / Definisi": "Tepi pantai atau daratan yang berbatasan langsung dengan laut, danau besar, atau sungai. Istilah ini sering dipakai saat melihat ombak pecah atau kapal merapat ke daratan.",
+      "Contoh Kalimat": "We walked slowly along the quiet sandy shore while watching the gentle waves roll in.",
+      "Common Collocations": "along the shore, sandy shore, rocky shore, reach the shore",
+      "Tips Mengingat": "Ingat frasa seashore yang berarti tepi laut, kata shore merujuk pada daratan tepat di pinggir air."
+    }
   },
   {
     "_id": "6876607feb12fde01aa095a3",
@@ -8181,22 +8405,38 @@
   {
     "_id": "6876607feb12fde01aa095a5",
     "question": "Rhinoceros",
-    "answer": "badak",
+    "answer": "**Badak** — Mamalia darat bertubuh besar, berkulit tebal, dan memiliki cula di bagian hidungnya.\n\n- *Example*: During our safari trip, we spotted a massive **rhinoceros** resting peacefully under a shady tree.",
     "progression": "hard",
     "nextReviewDate": "2025-10-24T12:11:27.373Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/raɪˈnɑːsərəs/",
+      "Arti Utama / Definisi": "Badak, yaitu hewan mamalia darat berukuran sangat besar yang memiliki kulit tebal dan satu atau dua cula di hidungnya. Di Indonesia, satwa langka ini hidup dilindungi di Ujung Kulon.",
+      "Contoh Kalimat": "During our safari trip, we spotted a massive rhinoceros resting peacefully under a shady tree.",
+      "Common Collocations": "one-horned rhinoceros, endangered rhinoceros, black rhinoceros, rhinoceros horn",
+      "Tips Mengingat": "Kata rhino berasal dari bahasa Yunani yang berarti hidung, mengacu pada cula besar di hidung badak."
+    }
   },
   {
     "_id": "6876607feb12fde01aa095ac",
     "question": "Fisherman",
-    "answer": "nelayan",
+    "answer": "**Nelayan** — Orang yang bekerja menangkap ikan di laut, sungai, atau danau.\n\n- *Example*: Every morning before sunrise, the hardworking **fisherman** sails out to sea to catch fresh fish.",
     "progression": "hard",
     "nextReviewDate": "2025-10-24T12:07:53.572Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈfɪʃərmən/",
+      "Arti Utama / Definisi": "Nelayan, yaitu orang yang bekerja menangkap ikan dan hasil laut lainnya, baik sebagai mata pencaharian maupun hobi. Biasanya mereka melaut memakai perahu, jaring, atau alat pancing.",
+      "Contoh Kalimat": "Every morning before sunrise, the hardworking fisherman sails out to sea to catch fresh fish.",
+      "Common Collocations": "local fisherman, commercial fisherman, deep-sea fisherman, experienced fisherman",
+      "Tips Mengingat": "Gabungan kata fish yang berarti ikan dan man yang berarti orang, jadi orang yang pekerjaannya mencari ikan."
+    }
   },
   {
     "_id": "6876607feb12fde01aa095ae",
@@ -8561,7 +8801,7 @@
   {
     "_id": "68766080eb12fde01aa095f4",
     "question": "Emery machine",
-    "answer": "mesin amplas",
+    "answer": "**Mesin amplas atau gerinda** — alat listrik beroda abrasif untuk menghaluskan dan mengasah permukaan logam atau kayu.\n\n- *Example*: The mechanic smoothed the rough iron edge using an electric **emery machine** in the workshop.",
     "progression": "hard",
     "nextReviewDate": "2026-09-28T13:05:39.008Z",
     "categories": [
@@ -8571,7 +8811,15 @@
     "interval": 1,
     "easeFactor": 2.35,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:05:39.008Z"
+    "lastReviewedDate": "2026-09-27T13:05:39.008Z",
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈɛməri məˈʃiːn/",
+      "Arti Utama / Definisi": "Mesin pengampelas atau gerinda listrik yang memakai roda abrasif berbahan amril untuk menghaluskan serta mengasah permukaan logam atau kayu. Alat ini biasanya dipakai di bengkel teknik dan pertukangan.",
+      "Contoh Kalimat": "The mechanic smoothed the rough iron edge using an electric emery machine in the workshop.",
+      "Common Collocations": "electric emery machine, bench emery machine, operate an emery machine, sharpen tools on an emery machine",
+      "Tips Mengingat": "Bayangkan amplas kuku yang disebut emery board, lalu bayangkan versi mesin bengkelnya untuk menggerinda besi."
+    }
   },
   {
     "_id": "68766080eb12fde01aa095f6",
@@ -8586,7 +8834,7 @@
   {
     "_id": "68766080eb12fde01aa095fa",
     "question": "Seashore",
-    "answer": "tepi laut",
+    "answer": "**Tepi laut atau pesisir** — area daratan berpasir atau berbatu yang berbatasan langsung dengan laut.\n\n- *Example*: We collected colorful shells while walking slowly along the quiet **seashore** early this morning.",
     "progression": "hard",
     "nextReviewDate": "2026-09-28T13:03:46.310Z",
     "categories": [
@@ -8596,7 +8844,15 @@
     "interval": 1,
     "easeFactor": 2.35,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:03:46.310Z"
+    "lastReviewedDate": "2026-09-27T13:03:46.310Z",
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈsiːʃɔːr/",
+      "Arti Utama / Definisi": "Tepi laut atau daerah pesisir tempat daratan bertemu langsung dengan air laut, baik berupa pasir maupun bebatuan. Kata ini sering muncul saat membicarakan suasana pantai atau liburan di pinggir laut.",
+      "Contoh Kalimat": "We collected colorful shells while walking slowly along the quiet seashore early this morning.",
+      "Common Collocations": "along the seashore, sandy seashore, walk by the seashore, rocky seashore",
+      "Tips Mengingat": "Gabungan kata sea yang berarti laut dan shore yang berarti tepi pantai, jadi artinya langsung tertebak sebagai tepi laut."
+    }
   },
   {
     "_id": "68766080eb12fde01aa095f8",
@@ -8661,12 +8917,20 @@
   {
     "_id": "68766080eb12fde01aa09606",
     "question": "Chicken leg",
-    "answer": "paha ayam",
+    "answer": "**Paha ayam** — potongan daging bagian kaki ayam yang biasa diolah dengan cara digoreng atau dipanggang.\n\n- *Example*: She ordered two crispy fried **chicken legs** with warm rice and spicy sauce for dinner.",
     "progression": "retry",
     "nextReviewDate": "2025-10-23T13:08:01.560Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈtʃɪkɪn lɛɡ/",
+      "Arti Utama / Definisi": "Bagian potongan kaki ayam utuh yang terdiri dari paha atas dan paha bawah dalam masakan sehari-hari. Istilah ini sering dipakai saat memesan makanan di restoran atau membeli daging di pasar.",
+      "Contoh Kalimat": "She ordered two crispy fried chicken legs with warm rice and spicy sauce for dinner.",
+      "Common Collocations": "fried chicken leg, roasted chicken leg, crispy chicken leg, grill a chicken leg",
+      "Tips Mengingat": "Sangat mudah diingat karena chicken berarti ayam dan leg berarti kaki atau bagian paha hingga tungkai."
+    }
   },
   {
     "_id": "68766080eb12fde01aa09608",
@@ -9021,12 +9285,20 @@
   {
     "_id": "68766080eb12fde01aa09649",
     "question": "Eyelash curler",
-    "answer": "penjepit bulu mata",
+    "answer": "**Penjepit bulu mata** — alat rias kecil berujung karet untuk melentikkan bulu mata sebelum memakai maskara.\n\n- *Example*: Before applying mascara, she gently pressed her eyelashes with a clean metal **eyelash curler**.",
     "progression": "retry",
     "nextReviewDate": "2025-10-23T12:43:39.969Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈaɪlæʃ ˈkɜːrlər/",
+      "Arti Utama / Definisi": "Alat rias berukuran kecil yang dipakai untuk menjepit dan melentikkan bulu mata sebelum mengoleskan maskara. Bentuknya mirip gunting kecil dengan bantalan karet lembut di bagian penjepitnya.",
+      "Contoh Kalimat": "Before applying mascara, she gently pressed her eyelashes with a clean metal eyelash curler.",
+      "Common Collocations": "metal eyelash curler, heated eyelash curler, use an eyelash curler, eyelash curler pad",
+      "Tips Mengingat": "Eyelash adalah bulu mata dan curler berasal dari kata curl yang berarti melengkung, jadi artinya alat pelentik bulu mata."
+    }
   },
   {
     "_id": "68766080eb12fde01aa0964c",
@@ -9111,12 +9383,20 @@
   {
     "_id": "68766080eb12fde01aa0965a",
     "question": "T junction",
-    "answer": "pertigaan",
+    "answer": "**Pertigaan jalan** — persimpangan berbentuk huruf T tempat satu ruas jalan berakhir dan bertemu jalan utama.\n\n- *Example*: Turn left at the next **T junction**, and you will see the pharmacy right ahead.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:34:59.771Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈtiː ˈdʒʌŋkʃən/",
+      "Arti Utama / Definisi": "Persimpangan jalan berbentuk huruf T, yaitu saat sebuah jalan kecil berakhir dan bertemu tegak lurus dengan jalan utama. Di Indonesia, kita biasa menyebutnya sebagai pertigaan jalan.",
+      "Contoh Kalimat": "Turn left at the next T junction, and you will see the pharmacy right ahead.",
+      "Common Collocations": "busy T junction, turn at the T junction, approach a T junction, blind T junction",
+      "Tips Mengingat": "Bayangkan bentuk huruf T kapital dari atas, persis seperti bentuk pertigaan tempat satu jalan bertemu jalan lain."
+    }
   },
   {
     "_id": "68766080eb12fde01aa0965e",
@@ -9581,12 +9861,20 @@
   {
     "_id": "68766081eb12fde01aa096bc",
     "question": "Waste paper basket",
-    "answer": "keranjang sampah kertas",
+    "answer": "**Keranjang sampah kertas** — tempat sampah kecil di kantor atau kamar untuk membuang kertas bekas dan sampah kering.\n\n- *Example*: He crumpled the wrong draft letter and tossed it straight into the **waste paper basket**.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:30:20.525Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/weɪst ˈpeɪpər ˈbæskɪt/",
+      "Arti Utama / Definisi": "Keranjang atau tempat sampah kecil yang diletakkan di bawah meja kerja atau di sudut kamar untuk membuang kertas bekas dan sampah kering. Istilah ini lebih sering dipakai dalam bahasa Inggris British untuk menyebut tempat sampah ruangan.",
+      "Contoh Kalimat": "He crumpled the wrong draft letter and tossed it straight into the waste paper basket.",
+      "Common Collocations": "empty the waste paper basket, throw into the waste paper basket, small waste paper basket, office waste paper basket",
+      "Tips Mengingat": "Waste berarti buangan, paper berarti kertas, dan basket berarti keranjang, jadi artinya keranjang tempat membuang kertas bekas."
+    }
   },
   {
     "_id": "68766081eb12fde01aa096b6",
@@ -9606,12 +9894,20 @@
   {
     "_id": "68766081eb12fde01aa096b8",
     "question": "Hose",
-    "answer": "selang",
+    "answer": "**Selang** — pipa lentur berbahan karet atau plastik untuk mengalirkan air saat menyiram tanaman atau mencuci.\n\n- *Example*: My father connected the long green garden **hose** to the tap to wash his car.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:31:24.840Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/hoʊz/",
+      "Arti Utama / Definisi": "Pipa lentur berbahan karet atau plastik yang dipakai untuk mengalirkan air, seperti saat menyiram taman atau mencuci kendaraan. Kata ini juga bisa menjadi kata kerja yang berarti menyemprot atau mencuci memakai selang.",
+      "Contoh Kalimat": "My father connected the long green garden hose to the tap to wash his car.",
+      "Common Collocations": "garden hose, fire hose, water hose, spray with a hose",
+      "Tips Mengingat": "Bunyinya mirip kata house, bayangkan selang panjang yang selalu tergulung rapi di halaman depan rumah."
+    }
   },
   {
     "_id": "68766081eb12fde01aa096be",
@@ -9676,12 +9972,20 @@
   {
     "_id": "68766081eb12fde01aa096ca",
     "question": "Hobble",
-    "answer": "jalan pincang",
+    "answer": "**Berjalan pincang** — melangkah terseok-seok dengan susah payah akibat cedera kaki atau memakai sepatu yang menyakitkan.\n\n- *Example*: After twisting his ankle during the match, he had to **hobble** slowly off the field.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:39:23.819Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Verb",
+      "Pronunciation": "/ˈhɒbəl/",
+      "Arti Utama / Definisi": "Berjalan dengan langkah pincang atau terseok-seok karena kaki terasa sakit, keseleo, atau memakai sepatu yang terlalu sempit. Kata ini juga bisa bermakna menghambat kelancaran sesuatu agar tidak bergerak bebas.",
+      "Contoh Kalimat": "After twisting his ankle during the match, he had to hobble slowly off the field.",
+      "Common Collocations": "hobble along, hobble around, hobble on crutches, hobble off the field",
+      "Tips Mengingat": "Bunyinya terdengar goyang dan goyah, bayangkan orang yang kakinya cedera sehingga jalannya goyah dan pincang."
+    }
   },
   {
     "_id": "68766081eb12fde01aa096cc",
@@ -9736,12 +10040,20 @@
   {
     "_id": "68766081eb12fde01aa096da",
     "question": "Traffic jam",
-    "answer": "kemacetan lalu lintas",
+    "answer": "**Kemacetan lalu lintas** — kondisi ketika kendaraan menumpuk padat di jalan raya sehingga berhenti atau merayap lambat.\n\n- *Example*: I arrived twenty minutes late to the morning meeting because of a terrible **traffic jam**.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T12:07:26.807Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈtræfɪk dʒæm/",
+      "Arti Utama / Definisi": "Kemacetan lalu lintas ketika deretan kendaraan berhenti atau bergerak sangat lambat di jalan raya karena terlalu padat. Ungkapan ini sangat sering dipakai saat mengeluh terlambat tiba di kantor atau sekolah.",
+      "Contoh Kalimat": "I arrived twenty minutes late to the morning meeting because of a terrible traffic jam.",
+      "Common Collocations": "stuck in a traffic jam, heavy traffic jam, avoid a traffic jam, cause a traffic jam",
+      "Tips Mengingat": "Kata jam berarti selai atau berjejal padat, jadi traffic jam berarti kendaraan yang saling berjejal padat di jalan."
+    }
   },
   {
     "_id": "68766081eb12fde01aa096d7",
@@ -9976,12 +10288,20 @@
   {
     "_id": "68766081eb12fde01aa09702",
     "question": "Quail egg",
-    "answer": "telur puyuh",
+    "answer": "**Telur puyuh** — telur burung puyuh berukuran mungil dengan cangkang berbintik yang populer untuk lauk atau sate.\n\n- *Example*: The street vendor served warm skewers of boiled **quail eggs** brushed with sweet soy sauce.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:31:34.724Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/kweɪl ɛɡ/",
+      "Arti Utama / Definisi": "Telur burung puyuh yang berukuran mungil dengan cangkang bercorak bintik cokelat atau keabu-abuan. Telur ini sering dijadikan bahan campuran sup, sate angkringan, atau camilan rebus sehari-hari.",
+      "Contoh Kalimat": "The street vendor served warm skewers of boiled quail eggs brushed with sweet soy sauce.",
+      "Common Collocations": "boiled quail egg, fried quail egg, pickled quail egg, skewer of quail eggs",
+      "Tips Mengingat": "Kata quail terdengar seperti kutil atau bintik kecil, persis seperti cangkang telur puyuh yang berbintik-bintik."
+    }
   },
   {
     "_id": "68766081eb12fde01aa09704",
@@ -10136,7 +10456,7 @@
   {
     "_id": "68766081eb12fde01aa09724",
     "question": "Airsickness bag",
-    "answer": "kantong muntah",
+    "answer": "**Kantong muntah di pesawat** — kantong kertas di saku kursi untuk penumpang yang mual saat terbang.\n\n- *Example*: The flight attendant quickly handed me an **airsickness bag** when the plane hit heavy turbulence.",
     "progression": "hard",
     "nextReviewDate": "2026-09-28T13:05:07.463Z",
     "categories": [
@@ -10146,7 +10466,15 @@
     "interval": 1,
     "easeFactor": 2.35,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:05:07.463Z"
+    "lastReviewedDate": "2026-09-27T13:05:07.463Z",
+    "dynamicFields": {
+      "Part of Speech": "Noun (Compound)",
+      "Pronunciation": "/ˈɛər.sɪk.nəs bæɡ/",
+      "Arti Utama / Definisi": "Kantong muntah di pesawat yang disediakan di saku kursi penumpang. Biasanya dipakai saat seseorang merasa mual karena guncangan udara selama penerbangan.",
+      "Contoh Kalimat": "The flight attendant quickly handed me an airsickness bag when the plane hit heavy turbulence.",
+      "Common Collocations": "seatback airsickness bag, grab an airsickness bag, paper airsickness bag, provide an airsickness bag",
+      "Tips Mengingat": "Ingat saja air artinya udara, sickness artinya sakit atau mual, dan bag artinya kantong, jadi kantong khusus kalau mual di udara."
+    }
   },
   {
     "_id": "68766081eb12fde01aa09727",
@@ -10201,12 +10529,20 @@
   {
     "_id": "68766081eb12fde01aa0972b",
     "question": "Ten to six (05.50)",
-    "answer": "jam enam kurang sepuluh",
+    "answer": "**Pukul enam kurang sepuluh (05.50)** — cara menyebut sepuluh menit sebelum jam enam.\n\n- *Example*: We need to leave the house by **ten to six** to catch the first morning train.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:31:56.273Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Time Expression",
+      "Pronunciation": "/tɛn tə sɪks/",
+      "Arti Utama / Definisi": "Ungkapan waktu yang berarti pukul enam kurang sepuluh menit, atau pukul lima lima puluh. Kata to di sini menandakan sisa menit menuju jam berikutnya.",
+      "Contoh Kalimat": "We need to leave the house by ten to six to catch the first morning train.",
+      "Common Collocations": "at ten to six, by ten to six, around ten to six, until ten to six",
+      "Tips Mengingat": "Bayangkan kata to seperti menuju, jadi ten to six artinya tinggal sepuluh menit lagi menuju jam enam."
+    }
   },
   {
     "_id": "68766081eb12fde01aa09732",
@@ -10917,12 +11253,20 @@
   {
     "_id": "68766082eb12fde01aa097ba",
     "question": "A quarter to six (05.45)",
-    "answer": "jam enam kurang seperempat",
+    "answer": "**Pukul enam kurang seperempat (05.45)** — cara menyebut lima belas menit sebelum jam enam.\n\n- *Example*: My alarm always rings at **a quarter to six** so I have enough time for breakfast.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:22:39.632Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Time Expression",
+      "Pronunciation": "/ə ˈkwɔːr.tər tə sɪks/",
+      "Arti Utama / Definisi": "Ungkapan waktu yang berarti pukul enam kurang seperempat, atau pukul lima empat puluh lima. Dalam bahasa Inggris, a quarter berarti seperempat jam atau lima belas menit.",
+      "Contoh Kalimat": "My alarm always rings at a quarter to six so I have enough time for breakfast.",
+      "Common Collocations": "at a quarter to six, by a quarter to six, around a quarter to six, before a quarter to six",
+      "Tips Mengingat": "Ingat quarter itu seperempat dari enam puluh menit alias lima belas menit, jadi a quarter to six berarti lima belas menit menuju jam enam."
+    }
   },
   {
     "_id": "68766082eb12fde01aa097bc",
@@ -11617,12 +11961,20 @@
   {
     "_id": "68766083eb12fde01aa09840",
     "question": "Humidity",
-    "answer": "kelembapan",
+    "answer": "**Kelembapan** — kadar uap air di udara yang membuat cuaca terasa gerah atau sejuk.\n\n- *Example*: The high **humidity** in Jakarta often makes my shirt stick to my back after walking outside.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:39:18.228Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/hjuːˈmɪd.ə.ti/",
+      "Arti Utama / Definisi": "Kelembapan, yaitu jumlah uap air yang ada di udara. Saat kelembapan tinggi, cuaca terasa gerah dan pakaian lebih lama keringnya.",
+      "Contoh Kalimat": "The high humidity in Jakarta often makes my shirt stick to my back after walking outside.",
+      "Common Collocations": "high humidity, relative humidity, tropical humidity, humidity level",
+      "Tips Mengingat": "Ingat kata humid yang bunyinya mirip dengan udara yang hangat dan basah, jadi humidity adalah tingkat kebasahan atau kelembapan udara."
+    }
   },
   {
     "_id": "68766083eb12fde01aa09845",
@@ -11937,7 +12289,7 @@
   {
     "_id": "68766083eb12fde01aa0987e",
     "question": "Departure",
-    "answer": "keberangkatan",
+    "answer": "**Keberangkatan** — waktu atau proses berangkatnya transportasi maupun seseorang dari suatu tempat.\n\n- *Example*: Please arrive at the airport at least two hours before your scheduled **departure** time.",
     "progression": "hard",
     "nextReviewDate": "2026-09-28T13:02:07.950Z",
     "categories": [
@@ -11947,7 +12299,15 @@
     "interval": 1,
     "easeFactor": 2.35,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:02:07.950Z"
+    "lastReviewedDate": "2026-09-27T13:02:07.950Z",
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/dɪˈpɑːr.tʃər/",
+      "Arti Utama / Definisi": "Keberangkatan, terutama untuk perjalanan menggunakan pesawat, kereta, atau bus. Anda akan sering melihat kata ini di papan jadwal bandara atau stasiun.",
+      "Contoh Kalimat": "Please arrive at the airport at least two hours before your scheduled departure time.",
+      "Common Collocations": "departure time, departure gate, scheduled departure, delayed departure",
+      "Tips Mengingat": "Ingat kata part yang artinya berpisah, jadi departure adalah momen berpisah dari suatu tempat untuk memulai keberangkatan."
+    }
   },
   {
     "_id": "68766083eb12fde01aa09888",
@@ -12407,12 +12767,20 @@
   {
     "_id": "68766083eb12fde01aa098d8",
     "question": "Cauliflower",
-    "answer": "kembang kol",
+    "answer": "**Kembang kol** — sayuran berwarna putih yang berbentuk seperti bunga padat, mirip brokoli.\n\n- *Example*: My mother bought fresh **cauliflower** at the market to cook a warm vegetable soup tonight.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:36:33.482Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈkɒl.ɪ.flaʊ.ər/",
+      "Arti Utama / Definisi": "Kembang kol atau bunga kol, sayuran berwarna putih pucat yang bentuknya mirip brokoli. Sayuran ini sering dimasak menjadi tumisan, sup, atau digoreng tepung.",
+      "Contoh Kalimat": "My mother bought fresh cauliflower at the market to cook a warm vegetable soup tonight.",
+      "Common Collocations": "fresh cauliflower, roasted cauliflower, cauliflower soup, cauliflower rice",
+      "Tips Mengingat": "Bunyi cauli mirip kata kol dan flower artinya kembang atau bunga, jadi cauliflower langsung berarti kembang kol."
+    }
   },
   {
     "_id": "68766083eb12fde01aa098da",
@@ -12662,12 +13030,20 @@
   {
     "_id": "68766084eb12fde01aa09908",
     "question": "Delivery address",
-    "answer": "alamat penerima",
+    "answer": "**Alamat pengiriman** — alamat tujuan tempat paket atau pesanan makanan harus diantar.\n\n- *Example*: Make sure you double check your **delivery address** before placing an order on that shopping app.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:30:58.765Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun (Compound)",
+      "Pronunciation": "/dɪˈlɪv.ər.i ˈæd.res/",
+      "Arti Utama / Definisi": "Alamat pengiriman atau alamat penerima yang kita tulis saat memesan paket atau makanan secara daring. Kurir memakai alamat ini agar barang sampai ke tujuan yang tepat.",
+      "Contoh Kalimat": "Make sure you double check your delivery address before placing an order on that shopping app.",
+      "Common Collocations": "enter a delivery address, confirm the delivery address, wrong delivery address, home delivery address",
+      "Tips Mengingat": "Delivery artinya pengantaran dan address adalah alamat, jadi delivery address adalah alamat tujuan pengantaran barang."
+    }
   },
   {
     "_id": "68766084eb12fde01aa0990c",
@@ -12952,12 +13328,20 @@
   {
     "_id": "68766084eb12fde01aa09940",
     "question": "Fatty meat",
-    "answer": "daging berlemak",
+    "answer": "**Daging berlemak** — potongan daging yang mengandung banyak jaringan lemak.\n\n- *Example*: The doctor advised my uncle to eat less **fatty meat** to keep his cholesterol under control.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T02:30:42.757Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun Phrase",
+      "Pronunciation": "/ˈfæt.i miːt/",
+      "Arti Utama / Definisi": "Daging berlemak, yaitu potongan daging yang memiliki banyak lapisan lemak putih di dalamnya. Daging jenis ini terasa lebih gurih dan empuk saat dimasak, misalnya untuk bakso atau sate.",
+      "Contoh Kalimat": "The doctor advised my uncle to eat less fatty meat to keep his cholesterol under control.",
+      "Common Collocations": "cut of fatty meat, avoid fatty meat, grill fatty meat, rich fatty meat",
+      "Tips Mengingat": "Kata fat artinya lemak dan meat adalah daging, jadi fatty meat tinggal diartikan daging yang berlemak."
+    }
   },
   {
     "_id": "68766084eb12fde01aa09942",
@@ -13022,12 +13406,20 @@
   {
     "_id": "68766084eb12fde01aa0994c",
     "question": "Light rain",
-    "answer": "gerimis",
+    "answer": "**Hujan ringan** — hujan gerimis dengan rintik air kecil dan intensitas rendah.\n\n- *Example*: We decided to keep riding our motorcycles because it was only a **light rain** outside.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T12:06:31.181Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun Phrase",
+      "Pronunciation": "/laɪt reɪn/",
+      "Arti Utama / Definisi": "Hujan ringan atau gerimis yang turun perlahan dengan rintik air kecil. Biasanya Anda masih bisa berjalan sebentar atau berkendara tanpa terganggu seperti saat hujan deras.",
+      "Contoh Kalimat": "We decided to keep riding our motorcycles because it was only a light rain outside.",
+      "Common Collocations": "expect light rain, caught in light rain, steady light rain, scattered light rain",
+      "Tips Mengingat": "Light di sini bukan berarti cahaya, melainkan ringan, jadi light rain adalah hujan yang ringan alias gerimis."
+    }
   },
   {
     "_id": "68766084eb12fde01aa0994e",
@@ -13597,12 +13989,20 @@
   {
     "_id": "68766084eb12fde01aa099b6",
     "question": "Parrot",
-    "answer": "burung beo",
+    "answer": "**Burung beo** — burung berbulu cerah yang pintar menirukan suara manusia.\n\n- *Example*: My neighbor owns a colorful **parrot** that loves to greet everyone passing by his front porch.",
     "progression": "retry",
     "nextReviewDate": "2025-10-24T12:07:04.943Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {
+      "Part of Speech": "Noun",
+      "Pronunciation": "/ˈpær.ət/",
+      "Arti Utama / Definisi": "Burung beo atau burung nuri, yaitu jenis burung berbulu cerah yang cerdas dan bisa menirukan suara manusia. Kata ini juga dipakai secara kiasan untuk orang yang hanya mengulang ucapan orang lain.",
+      "Contoh Kalimat": "My neighbor owns a colorful parrot that loves to greet everyone passing by his front porch.",
+      "Common Collocations": "colorful parrot, talking parrot, pet parrot, tropical parrot",
+      "Tips Mengingat": "Ingat suara burung beo yang cerewet seperti mengulang kata terus-terusan, mirip bunyi parrot yang terdengar cepat dan lincah."
+    }
   },
   {
     "_id": "68766084eb12fde01aa099b8",
