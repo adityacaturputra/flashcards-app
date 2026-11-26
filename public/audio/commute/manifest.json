@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-11-26T06:48:10.187Z",
+  "generatedAt": "2026-11-26T07:23:09.564Z",
   "accent": "us",
   "cards": {
     "6876607beb12fde01aa091dc": {
@@ -37,7 +37,7 @@
     },
     "6876607beb12fde01aa091ec": {
       "word": "ce268975902b",
-      "meaning": "b322082e5319"
+      "meaning": "512a6b08236b"
     },
     "6876607beb12fde01aa091ee": {
       "word": "3261b4a91636",
@@ -5232,9 +5232,9 @@
       "meaning": "9cb10ab3c03b"
     },
     "688539b741f03f8fc042b34f": {
-      "word": "2618a67b8ef2",
+      "word": "a3b5f55191a2",
       "tips": "09fc95ae4fbc",
-      "meaning": "d71a026a2fbc"
+      "meaning": "9a5bffbb860c"
     },
     "688539b741f03f8fc042b351": {
       "word": "d1bf08311569",
@@ -5953,7 +5953,7 @@
       "meaning": "3ec3d3936c2a"
     },
     "688539b941f03f8fc042b4b5": {
-      "word": "fe6954c16da1",
+      "word": "28e7bb379c55",
       "meaning": "e7d985821d8d"
     },
     "688539b941f03f8fc042b4b6": {
@@ -6346,7 +6346,7 @@
     },
     "688539ba41f03f8fc042b57b": {
       "word": "6aba08fb3df3",
-      "meaning": "b9d6c12454f9"
+      "meaning": "d969687b7684"
     },
     "688539ba41f03f8fc042b57d": {
       "word": "d99c19c5b48b",
@@ -6358,7 +6358,7 @@
     },
     "688539ba41f03f8fc042b57f": {
       "word": "2718ea97e7de",
-      "meaning": "af562dd8a370"
+      "meaning": "b2ea7c1670ab"
     },
     "688539ba41f03f8fc042b580": {
       "word": "eaf6d326fb65",
@@ -6927,1243 +6927,1288 @@
     "6886e6b81f84f9a640adcfdb": {
       "word": "8ec6c6e8d1f2",
       "meaning": "4390cf36d95e",
-      "tips": "63a3eb84adb8"
+      "tips": "63a3eb84adb8",
+      "collocations": "25947dfa1cb2"
     },
     "6886e6b81f84f9a640adcfdd": {
       "word": "29a44a6df141",
       "tips": "8c5b1cdddb63",
-      "meaning": "80204e808696"
+      "meaning": "80204e808696",
+      "collocations": "fd2ec854ef1a"
     },
     "6886e6bf16b5218474c37c14": {
       "word": "9e8bdf754c4b",
       "meaning": "b4d8804a0b11",
-      "tips": "cfed773d06e3"
+      "tips": "cfed773d06e3",
+      "collocations": "9ab554cbf9d6"
     },
     "6886e6bf2f4eb71c535d5170": {
       "word": "58b17464b69f",
       "meaning": "8a526002f757",
-      "tips": "7c911f3c93be"
+      "tips": "7c911f3c93be",
+      "collocations": "aed9fd06c13b"
     },
     "6886e6bf4ddb3b1e729f3491": {
       "word": "c08db465cd79",
       "meaning": "d7b8c1d933dc",
-      "tips": "5ad9705473fa"
+      "tips": "5ad9705473fa",
+      "collocations": "9deeba32b157"
     },
     "6886e6bf6cba8a0a6d2ded54": {
       "word": "5d5e1e16113a",
       "meaning": "be626aecef20",
-      "tips": "3c7183f5e003"
+      "tips": "3c7183f5e003",
+      "collocations": "b8b207e2e6bd"
     },
     "6886e6bf78f846706f3c30b8": {
       "word": "e416183e4cbe",
       "meaning": "bb183797dbe8",
-      "tips": "e0afebe0ca5f"
+      "tips": "e0afebe0ca5f",
+      "collocations": "1b26ac2d5be6"
     },
     "6886e6bf824614ced017594b": {
       "word": "2b765f50522a",
       "meaning": "df4c7f52286d",
-      "tips": "c771c00629f3"
+      "tips": "c771c00629f3",
+      "collocations": "1e40e24cd326"
     },
     "6886e6bf8bda7b1aa31c5b87": {
-      "word": "67f53c37f330",
-      "meaning": "96614c5da3ac"
+      "word": "73f148b9f4f7",
+      "meaning": "ecd193ababfa"
     },
     "6886e6bfb4837142be048d03": {
       "word": "a8b9ef3a7571",
       "meaning": "a6978338b918",
-      "tips": "c2d1c6218a99"
+      "tips": "c2d1c6218a99",
+      "collocations": "119b882c5d61"
     },
     "6886e6bfbc69eb9d8a80b831": {
       "word": "41332e83e653",
       "meaning": "f9922b4a7407",
-      "tips": "d66c7b05aebf"
+      "tips": "d66c7b05aebf",
+      "collocations": "00c0956eded9"
     },
     "6886e6bfe07ef0f8d2122d62": {
       "word": "beb63287708a",
       "tips": "3dbc2b678a53",
-      "meaning": "2c023f68ad0f"
+      "meaning": "2c023f68ad0f",
+      "collocations": "b6b67b4db7fd"
     },
     "6886e6bfe7e4a6d5a96b6592": {
-      "word": "2bf2c597f71a",
-      "meaning": "83f130ce747a"
+      "word": "8c995cc08923",
+      "meaning": "fa94d4b770a5"
     },
     "6886e6bfe87f1fe5afee4d3e": {
       "word": "9a698ba61e06",
       "meaning": "e55e9690a478",
-      "tips": "ab2aaf8a8532"
+      "tips": "ab2aaf8a8532",
+      "collocations": "c0d005979f7f"
     },
     "6886e6bff9eb9b73b40ed878": {
       "word": "2f9fe44901ed",
       "meaning": "82da16202b21",
-      "tips": "6069ceec1fd6"
+      "tips": "6069ceec1fd6",
+      "collocations": "f87dddf006c3"
     },
     "6886e6bffdcf6d12eb1bf886": {
       "word": "f5953045241b",
       "meaning": "bcbed64682bd",
-      "tips": "80ea8e6cf9da"
+      "tips": "80ea8e6cf9da",
+      "collocations": "d5c9281a9a74"
     },
     "6886e6c0120536f73a2bfb2d": {
-      "word": "e00a9d38b800",
-      "meaning": "e643c1304084"
+      "word": "495719710d5d",
+      "meaning": "418d1001c021"
     },
     "6886e6c019cef740a9d0c379": {
-      "word": "a1a123607a44",
-      "meaning": "906d9a0edfac"
+      "word": "47db372582dd",
+      "meaning": "763c7e901a1a"
     },
     "6886e6c019eb45b1c449939c": {
-      "word": "a38ccabbd39e",
-      "meaning": "46dfa1aae402"
+      "word": "33535bea178b",
+      "meaning": "4a82e3f738de"
     },
     "6886e6c01c39c7462391fa3c": {
-      "word": "b33c4e846c53",
-      "meaning": "bcabd921fd01"
+      "word": "dd60f1959fd5",
+      "meaning": "60b5c748ba9a"
     },
     "6886e6c037dcf7a79b9aa50e": {
-      "word": "77daf29e99ca",
-      "meaning": "844df1381922"
+      "word": "54af8fcbafd0",
+      "meaning": "59755457cfee"
     },
     "6886e6c039b434bf09b2c615": {
-      "word": "67f53c37f330",
-      "meaning": "f7114b8598fb"
+      "word": "bb4f89ac29bd",
+      "meaning": "ecd193ababfa"
     },
     "6886e6c03a3fa8d9d8db39e2": {
-      "word": "336d028d155e",
-      "meaning": "e4844f2b0691"
+      "word": "490cdf16b061",
+      "meaning": "47ddc2ae89d7"
     },
     "6886e6c0421159af59228db3": {
-      "word": "834b97523f6a",
-      "meaning": "c22a72dcdecb"
+      "word": "da5da229d3d8",
+      "meaning": "11a8a8164f5f"
     },
     "6886e6c0495a5b968b4541db": {
       "word": "45a761300fd0",
       "meaning": "655bb5b3db1d",
-      "tips": "18ec47119e9d"
+      "tips": "18ec47119e9d",
+      "collocations": "5db9a0fa9a5c"
     },
     "6886e6c04cf9aa9a5c764cff": {
-      "word": "b5436c7b7109",
-      "meaning": "be2d31d1b6d6"
+      "word": "79fee9cc341f",
+      "meaning": "13d6b40ab929"
     },
     "6886e6c04f815a6381a58c42": {
-      "word": "84dca3fa3411",
-      "meaning": "a608df91e2f1"
+      "word": "24910c557aa3",
+      "meaning": "c3fccfea942a"
     },
     "6886e6c066ecf603ae2b8962": {
-      "word": "60b1ebb1e59c",
-      "meaning": "acba8a08f2d7"
+      "word": "e3af3e8cf3bf",
+      "meaning": "ee5c16f3bb61"
     },
     "6886e6c06cf14dbf11dce6ac": {
-      "word": "da97ab3b634c",
-      "meaning": "e8d52d37c3a4"
+      "word": "59f2582c3025",
+      "meaning": "c6365e42d5ba"
     },
     "6886e6c078864fba63a7c69f": {
       "word": "d6b5759485f8",
       "meaning": "d2243e7959f9",
-      "tips": "5c3b1981e89d"
+      "tips": "5c3b1981e89d",
+      "collocations": "376f9da5932e"
     },
     "6886e6c079914fc749e556ff": {
       "word": "3ccf526483b4",
       "meaning": "b8ec32897df9",
-      "tips": "f8d17915cf86"
+      "tips": "f8d17915cf86",
+      "collocations": "c4fa53d370d3"
     },
     "6886e6c07a08ab8e4e4c55aa": {
-      "word": "ec7379133b82",
-      "meaning": "9fcf33fecf3a"
+      "word": "be79ab7f0670",
+      "meaning": "051cdf5d5196"
     },
     "6886e6c07d8f877969c3ee3d": {
-      "word": "bde356789d7a",
-      "meaning": "3f8d2180886a"
+      "word": "2c67f0ed53b3",
+      "meaning": "ee5fb12f14c5"
     },
     "6886e6c07eae4adf976c37a6": {
       "word": "7484d4a33c8d",
       "tips": "c91353eeac51",
-      "meaning": "b1a91b01bee6"
+      "meaning": "b1a91b01bee6",
+      "collocations": "3f5a12caadd9"
     },
     "6886e6c0818afc0e555ca2f4": {
-      "word": "e08899929d02",
-      "meaning": "e984b18edbcd"
+      "word": "65aa81703178",
+      "meaning": "19d89652b813"
     },
     "6886e6c084666911ed578912": {
-      "word": "17efb210c8e9",
-      "meaning": "d3192bf575c2"
+      "word": "b31221a8602e",
+      "meaning": "c834906bb13f"
     },
     "6886e6c086530b4cea2182a9": {
       "word": "d9ea924ad3e6",
       "meaning": "d077acbe2fae",
-      "tips": "821952a1273a"
+      "tips": "821952a1273a",
+      "collocations": "690164bda033"
     },
     "6886e6c08701e534fd0cdac1": {
-      "word": "46fcf15ea127",
-      "meaning": "3db3a5239ba2"
+      "word": "c3be267c4f6c",
+      "meaning": "e99a2688d042"
     },
     "6886e6c0a920e918c76a634e": {
-      "word": "b286839693e4",
-      "meaning": "93726640fe12"
+      "word": "581b640762dc",
+      "meaning": "4ec92502cf3a"
     },
     "6886e6c0aaaa7e274017388d": {
-      "word": "8ffaa0d8403d",
-      "meaning": "f2dac1860b28"
+      "word": "c917542b41b3",
+      "meaning": "22b3d99a8adb"
     },
     "6886e6c0adc6020c587e37aa": {
-      "word": "30cfffd9ae51",
-      "meaning": "8fc0fd9bf3e6"
+      "word": "ab5722b50c4d",
+      "meaning": "92833d92b67b"
     },
     "6886e6c0b842373cefc6f6e2": {
-      "word": "926b8066464d",
-      "meaning": "010ab016e478"
+      "word": "6c0f90ecabd0",
+      "meaning": "c6d4dd97abbf"
     },
     "6886e6c0b95d32d2cbb8b7fc": {
-      "word": "8d0216e30059",
-      "meaning": "5cc136dcb675"
+      "word": "d4b4e38a23e7",
+      "meaning": "ade9999155b1"
     },
     "6886e6c0c809cac7ef8c81af": {
-      "word": "2bf2c597f71a",
-      "meaning": "31b995728b00"
+      "word": "62a4bb686c60",
+      "meaning": "fa94d4b770a5"
     },
     "6886e6c0cc558ae6f579495c": {
-      "word": "7c7068430590",
-      "meaning": "1bf4330b06fa"
+      "word": "8a80a1119b17",
+      "meaning": "10777e8e8088"
     },
     "6886e6c0e17a3d17ab15b881": {
-      "word": "dcae64b1e8af",
-      "meaning": "69426e06e1c2"
+      "word": "25cf2b45cbf3",
+      "meaning": "77a8170cb9e0"
     },
     "6886e6c0f1fa135d72d68218": {
       "word": "58f1d1029ea5",
       "meaning": "4175ec8c73ec",
-      "tips": "0240b96da6bd"
+      "tips": "0240b96da6bd",
+      "collocations": "84e1199a7d7c"
     },
     "6886e6c1151cbc45159288fb": {
-      "word": "971f938775f9",
-      "meaning": "da5ecfc5032e"
+      "word": "878c5a826e3f",
+      "meaning": "406f494ac67a"
     },
     "6886e6c11770ee44442c77b1": {
-      "word": "a1edf0fd70c5",
-      "meaning": "c345a45b3888"
+      "word": "0a29706da5ea",
+      "meaning": "266496ac4f54"
     },
     "6886e6c11debfaf5b9d905f8": {
-      "word": "e45a82cb6e1c",
-      "meaning": "a7ddff2f3158"
+      "word": "23ca67e65e45",
+      "meaning": "3db91ba71589"
     },
     "6886e6c11e0c6c33e101075d": {
-      "word": "0505603144bf",
-      "meaning": "1087e1f76b2b"
+      "word": "bbc5b8ec3927",
+      "meaning": "7d498a8d08d6"
     },
     "6886e6c12995db795897e4f1": {
-      "word": "058aa0c20fdd",
-      "meaning": "6447f0438510"
+      "word": "a9ce70425c6e",
+      "meaning": "5a0c0dffc4e7"
     },
     "6886e6c12a78817e6795dfdc": {
-      "word": "510322e4a14e",
-      "meaning": "ec6f25d8097e"
+      "word": "a39a07ba187f",
+      "meaning": "41665c9bf963"
     },
     "6886e6c12cf3d3db26ae80a7": {
-      "word": "7772328abe12",
-      "meaning": "4a53581e9775"
+      "word": "1a6f07df3bd8",
+      "meaning": "60b6343318b0"
     },
     "6886e6c13245a88aae9acaee": {
-      "word": "05916bbd32b2",
-      "meaning": "29edc4c3582c"
+      "word": "3ec95ae0a128",
+      "meaning": "0e6435535d1a"
     },
     "6886e6c1411611cb79f1bfdd": {
-      "word": "89faab21b050",
-      "meaning": "66c71589f783"
+      "word": "6e31efb8701a",
+      "meaning": "61271df3abb7"
     },
     "6886e6c14928bd067f786bed": {
-      "word": "8ba03e977b5b",
-      "meaning": "3164fbb68057"
+      "word": "5348c6256839",
+      "meaning": "75176313f843"
     },
     "6886e6c14b2d79e64ab7b33f": {
-      "word": "da6732ff0c30",
-      "meaning": "5b011dd41d81"
+      "word": "777b4ecd1b06",
+      "meaning": "57ea6a3935f7"
     },
     "6886e6c150273fb8d87c28a8": {
-      "word": "830ab8355b99",
-      "meaning": "925a53a6f658"
+      "word": "1d16ab885af6",
+      "meaning": "036c18f7d958"
     },
     "6886e6c15427a4ba9f7386c0": {
-      "word": "a6c7a3f7aa2b",
-      "meaning": "ce817481484d"
+      "word": "fca53fd90869",
+      "meaning": "51ac8a0b1ecd"
     },
     "6886e6c165f1c2b73a3cf683": {
-      "word": "0a56b8925a63",
-      "meaning": "19c119362480"
+      "word": "889708328149",
+      "meaning": "b1ef05335c3a"
     },
     "6886e6c1674f2ed1ce378b6e": {
-      "word": "59a104065178",
-      "meaning": "596a36e2b526"
+      "word": "7585422a4b79",
+      "meaning": "1b59617f9850"
     },
     "6886e6c1684a7e296119080b": {
-      "word": "d0770df6a053",
-      "meaning": "7b205ac9f742"
+      "word": "42e3a203dc09",
+      "meaning": "aa37f0dfc49b"
     },
     "6886e6c17b451b9248737e87": {
-      "word": "2f0157a7a05a",
-      "meaning": "5eaa2eb29123"
+      "word": "149e688f00f7",
+      "meaning": "c2329a6b7787"
     },
     "6886e6c17fb6f1a56c654082": {
-      "word": "6c6f8badde6f",
-      "meaning": "e3e91f78a91e"
+      "word": "4d92233a3339",
+      "meaning": "438f84ea3a6f"
     },
     "6886e6c1845c2d087e7cb217": {
-      "word": "4811ddfa796a",
-      "meaning": "4e3112b9bfb8"
+      "word": "48abf35ad016",
+      "meaning": "956b146e7133"
     },
     "6886e6c1851cae951abba752": {
-      "word": "495ee37d06fc",
-      "meaning": "df0e457f593e"
+      "word": "bc19c6470f2b",
+      "meaning": "20ce0ede3de4"
     },
     "6886e6c1a6ca01e39b5a22bc": {
-      "word": "65dd139e9a4d",
-      "meaning": "e1b65a37200d"
+      "word": "2c6aa4d97178",
+      "meaning": "de23aa058e3d"
     },
     "6886e6c1abbb6e65d0d5abe3": {
-      "word": "9db9887a23a9",
-      "meaning": "b8a9d09ce274"
+      "word": "d70ee49ad04f",
+      "meaning": "fb222aafb952"
     },
     "6886e6c1b365887d141604e9": {
-      "word": "eba797fa7e41",
-      "meaning": "96259a864982"
+      "word": "b666e5f92c5f",
+      "meaning": "f988390fc443"
     },
     "6886e6c1c2c47cf22850fa89": {
-      "word": "3436e6667136",
-      "meaning": "15ea428678ba"
+      "word": "4fefe67dbac3",
+      "meaning": "75b492002f09"
     },
     "6886e6c1c67fd8b89728939b": {
-      "word": "d3b5dbcc6973",
-      "meaning": "e180df445cbc"
+      "word": "a80431c6812b",
+      "meaning": "0c1a34f16dec"
     },
     "6886e6c1ca38a6edaafc810a": {
-      "word": "5cb5a3213104",
-      "meaning": "ce7de13e79f0"
+      "word": "6f62984920c7",
+      "meaning": "eb94e936328c"
     },
     "6886e6c1cbfabdb072299e4f": {
-      "word": "2eae887773f9",
-      "meaning": "4c18de20c353"
+      "word": "1b8df9b5b9e6",
+      "meaning": "5198002e898d"
     },
     "6886e6c1cd9d2f1f596d1e46": {
-      "word": "ccec3f010a0e",
-      "meaning": "f188139ea974"
+      "word": "88a30ddc6e45",
+      "meaning": "c471ed4ead6f"
     },
     "6886e6c1ce76bd475c99dd43": {
-      "word": "032f2b2b80be",
-      "meaning": "dbd8c9496f06"
+      "word": "2f35fa919e84",
+      "meaning": "fa9798107e21"
     },
     "6886e6c1d127357c09b58681": {
-      "word": "b3f9b3b3c27c",
-      "meaning": "084e636b5ab0"
+      "word": "f167acf55f93",
+      "meaning": "4553873cc5f0"
     },
     "6886e6c1d82299f4a6000742": {
-      "word": "b145ba4422a4",
-      "meaning": "79727600747c"
+      "word": "9906085ed88a",
+      "meaning": "e378612e305f"
     },
     "6886e6c1e29bd92be0f54e34": {
-      "word": "bee141e82fe8",
-      "meaning": "4aa343a91897"
+      "word": "d90c53da7820",
+      "meaning": "fb22e816a8ca"
     },
     "6886e6c1e96180d5619210cd": {
-      "word": "1dfaa418bac6",
-      "meaning": "a5399604cf9b"
+      "word": "31f5c97e2a89",
+      "meaning": "3b004ce3ea5e"
     },
     "6886e6c1ec1409c7e74731d5": {
-      "word": "292d77f795fe",
-      "meaning": "14fe844df562"
+      "word": "b48dee06fba7",
+      "meaning": "bcae8e113fa9"
     },
     "6886e6c1ee55b01e1eef3fa6": {
-      "word": "1f3fc370272e",
-      "meaning": "d4776b6b180a"
+      "word": "ab2d760a3a1f",
+      "meaning": "5ddc4aaf2555"
     },
     "6886e6c20df2610c6fa6fcc2": {
-      "word": "25963d1cf497",
-      "meaning": "fcf703d4fd78"
+      "word": "151e84d91309",
+      "meaning": "33b15dd7c773"
     },
     "6886e6c20ecc810ef5383a1c": {
-      "word": "03d9e6f8aa69",
-      "meaning": "b683b5e27031"
+      "word": "8e664e398884",
+      "meaning": "d21377e6d232"
     },
     "6886e6c21357cd27db94097c": {
-      "word": "76d757481351",
-      "meaning": "e3a808c687c5"
+      "word": "fc2300db5c0f",
+      "meaning": "39c08adf5ec1"
     },
     "6886e6c218ec2c58dfb2ce85": {
-      "word": "71032e7d19b1",
-      "meaning": "0ed63e09b871"
+      "word": "bf86ed2d8237",
+      "meaning": "e78df94e1c37"
     },
     "6886e6c21d790f7b82bd43d5": {
-      "word": "00b036564a97",
-      "meaning": "41106df86850"
+      "word": "dd67daf83232",
+      "meaning": "b3cc8502f88a"
     },
     "6886e6c2231d06501a040053": {
-      "word": "6731564310ed",
-      "meaning": "a28a4d55a16f"
+      "word": "aeee5dec9055",
+      "meaning": "5639039c5959"
     },
     "6886e6c2270c921f724419f1": {
-      "word": "13ad72cedcdc",
-      "meaning": "ba78a3fc9d44"
+      "word": "e69f9f566f72",
+      "meaning": "1b35d1b8cf34"
     },
     "6886e6c2289f8ecec552ed8b": {
-      "word": "ccec3f010a0e",
-      "meaning": "a13ffeb3e8af"
+      "word": "7b0797433460",
+      "meaning": "c471ed4ead6f"
     },
     "6886e6c22b2abe5066d92ba3": {
-      "word": "6dd9f904fb84",
-      "meaning": "cefcda367d17"
+      "word": "cff27faf61bf",
+      "meaning": "383725ea3df3"
     },
     "6886e6c22e75f4a93bdc236d": {
-      "word": "3c43cbf1e7cb",
-      "meaning": "fb67537742f4"
+      "word": "684463124651",
+      "meaning": "ecc7c4a7da7f"
     },
     "6886e6c232dd5f8303e51178": {
-      "word": "3e5bb43ee8fa",
-      "meaning": "d197d064bea7"
+      "word": "11c49b7c6f4e",
+      "meaning": "3d91149f20c1"
     },
     "6886e6c2330c440f9b1c2392": {
-      "word": "75c1a456c75d",
-      "meaning": "1bfbf75f94b0"
+      "word": "860acbf1365d",
+      "meaning": "ddfc6dd1cd12"
     },
     "6886e6c233a892324fb2d6e9": {
-      "word": "1bb547c21426",
-      "meaning": "8740600f2fcf"
+      "word": "db3d0d07cd7c",
+      "meaning": "f555e19677f4"
     },
     "6886e6c23c95f68ff934b569": {
-      "word": "45e9dafa2638",
-      "meaning": "0b65564bcf5f"
+      "word": "b778f61d2a9c",
+      "meaning": "0a4346db8ecd"
     },
     "6886e6c2422f74229d8972b4": {
-      "word": "3231f7af1fb8",
-      "meaning": "ffcf06ccbf55"
+      "word": "aed59bcac0fc",
+      "meaning": "c7b0c8c00a7b"
     },
     "6886e6c247298e57d4796746": {
-      "word": "ddeb38aa213b",
-      "meaning": "410428dfe472"
+      "word": "0c3a21337330",
+      "meaning": "bf7a05bb1560"
     },
     "6886e6c24e0617900113a003": {
-      "word": "25b2aed87d71",
-      "meaning": "20d154be7a6e"
+      "word": "8713293abd81",
+      "meaning": "31e536a92509"
     },
     "6886e6c2578aba1cda3c2573": {
-      "word": "b070c1501f03",
-      "meaning": "7272a67809e7"
+      "word": "91cdb15bacea",
+      "meaning": "ccd77fe81822"
     },
     "6886e6c25d31e839850245ec": {
-      "word": "7f5ae9deecbf",
-      "meaning": "6e7ea527ef92"
+      "word": "5866ffc76915",
+      "meaning": "c3490bc0d3ff"
     },
     "6886e6c266ffb2a37f212d65": {
-      "word": "047211df9e59",
-      "meaning": "43c4d4370169"
+      "word": "e4d9fd54efa4",
+      "meaning": "932f31401463"
     },
     "6886e6c269767d84f3330ffd": {
-      "word": "bb6e533b064d",
-      "meaning": "f74b86cbab87"
+      "word": "a7b1944ee937",
+      "meaning": "98cdbd17c9b6"
     },
     "6886e6c26abf4bfe6da9fdac": {
-      "word": "d5e671dca7e2",
-      "meaning": "c3d29abbb6c8"
+      "word": "4e56e1cac54a",
+      "meaning": "f88ce935f254"
     },
     "6886e6c26dc9018c2757d8c7": {
-      "word": "631d5ccf2b71",
-      "meaning": "960308fc254e"
+      "word": "f799f88d41bb",
+      "meaning": "d8bcf3bd2a41"
     },
     "6886e6c273b67e7199c9d1ce": {
-      "word": "69878e09f1d8",
-      "meaning": "f8a57d8e192a"
+      "word": "00ca65c438eb",
+      "meaning": "23b6ee67e644"
     },
     "6886e6c288fc0a3536334cae": {
-      "word": "3e2898912d7c",
-      "meaning": "456cff66a22d"
+      "word": "bef5ea4b366d",
+      "meaning": "f5f4138415fb"
     },
     "6886e6c296aeb92930825dc5": {
-      "word": "19e81ff24b68",
-      "meaning": "3aedb2f8991d"
+      "word": "4279cf1f5a61",
+      "meaning": "ed737aaa596a"
     },
     "6886e6c2a5c22effe9ddecdd": {
-      "word": "30289f38ae68",
-      "meaning": "2796cabb16ec"
+      "word": "cbe38cdb5bca",
+      "meaning": "e303ef6a1cab"
     },
     "6886e6c2aaef8076e9b206e6": {
-      "word": "6ab57b3eacaa",
-      "meaning": "7901c5d493de"
+      "word": "3f06a7c3cab2",
+      "meaning": "3d98431f5a4f"
     },
     "6886e6c2af1aba0854984a2a": {
-      "word": "3c1e1a421f0a",
-      "meaning": "4badcfa9d48a"
+      "word": "5111ab4eddae",
+      "meaning": "a3749d07a36b"
     },
     "6886e6c2c18899d1eec4b309": {
-      "word": "a6303d3c1891",
-      "meaning": "007aaa225c96"
+      "word": "c5f89ee1da9e",
+      "meaning": "5a743cae20f2"
     },
     "6886e6c2c1db1768e9bb8a66": {
-      "word": "9e90a1b79d86",
-      "meaning": "98179762b3e5"
+      "word": "31a456652e1e",
+      "meaning": "f6dd998ae41d"
     },
     "6886e6c2c439937efca95389": {
-      "word": "58ce6ac529c5",
-      "meaning": "04bedccb0798"
+      "word": "141186932c7b",
+      "meaning": "3403dc0c585b"
     },
     "6886e6c2c6f75349d7b4b009": {
-      "word": "407871206cf3",
-      "meaning": "c05cbb8e3dbd"
+      "word": "0db1e692d450",
+      "meaning": "647835052968"
     },
     "6886e6c2c8aee44d4adf361b": {
-      "word": "f997902cca87",
-      "meaning": "0946cf2262d4"
+      "word": "4bfab1efb84e",
+      "meaning": "be018a9ae716"
     },
     "6886e6c2cb139f7f40bec330": {
-      "word": "7f6afc8c1ae3",
-      "meaning": "78e6d6bf49cf"
+      "word": "194bb25360ca",
+      "meaning": "0bb35bbfde44"
     },
     "6886e6c2d0aee47ac6344854": {
-      "word": "a399ee392cb2",
-      "meaning": "b7c59f8feada"
+      "word": "b1b707f22b10",
+      "meaning": "0c6931830828"
     },
     "6886e6c2d1c5e2c481b89eb7": {
-      "word": "bffbb4cb2b32",
-      "meaning": "6371ed6820a5"
+      "word": "886676c98d8f",
+      "meaning": "1f261c9411e6"
     },
     "6886e6c2d466b2d2ae170340": {
-      "word": "48fcbf775eab",
-      "meaning": "2e975167ac18"
+      "word": "9597e73993ae",
+      "meaning": "49aa31aa6264"
     },
     "6886e6c2d5f0ce1b0df0d5fc": {
-      "word": "5b12775d7b47",
-      "meaning": "64a9bcddfe50"
+      "word": "334381e33b8f",
+      "meaning": "1b9fae686189"
     },
     "6886e6c2d82b6bf10f363782": {
-      "word": "096a2a0c1301",
-      "meaning": "357df3805fb2"
+      "word": "03a6c8138817",
+      "meaning": "9640b34f5303"
     },
     "6886e6c2ea36da56a6f656fa": {
-      "word": "9b394b1cc21e",
-      "meaning": "e81c0e09d0a8"
+      "word": "4cbf458dd7c7",
+      "meaning": "9fa618884996"
     },
     "6886e6c2f74c99c631c08b9a": {
-      "word": "d596ad85548a",
-      "meaning": "f45ecb2c2bce"
+      "word": "7298a5faea6e",
+      "meaning": "03df000dd7fc"
     },
     "6886e6c2faeb2faae5fe5ecf": {
-      "word": "33fd5481d8ec",
-      "meaning": "8e167d1d3159"
+      "word": "dcfa5d9f6965",
+      "meaning": "0b1580cd3447"
     },
     "6886e6c33a0771f38651a9b3": {
-      "word": "db513a0860f4",
-      "meaning": "0db0128b310c"
+      "word": "ec38b9384121",
+      "meaning": "7876470970bc"
     },
     "6886e6c33cf8a563142416f3": {
-      "word": "3c43cbf1e7cb",
-      "meaning": "fb67537742f4"
+      "word": "684463124651",
+      "meaning": "ecc7c4a7da7f"
     },
     "6886e6c345900ce2a11be599": {
-      "word": "fe3f49a365a3",
-      "meaning": "8df13ad615a8"
+      "word": "dc2394696483",
+      "meaning": "ed12f98029f7"
     },
     "6886e6c34666c95768e2c5a5": {
       "word": "f97cf7b0c6f2",
       "meaning": "4cca098cb648",
-      "tips": "65a60c97be8c"
+      "tips": "65a60c97be8c",
+      "collocations": "f8625d1055e7"
     },
     "6886e6c36fea2551a79d3daa": {
-      "word": "2869da05bfe8",
-      "meaning": "1bb9336f6c40"
+      "word": "63328dea735c",
+      "meaning": "0f225c9751b2"
     },
     "6886e6c3796eb3fe77d5fdb4": {
-      "word": "4bd1f8a4fca8",
-      "meaning": "8b1f7dd07d10"
+      "word": "3838c4e6e5b1",
+      "meaning": "868dbbe2db21"
     },
     "6886e6c39779697502fedb36": {
-      "word": "b75e736c2920",
-      "meaning": "95268cf6c5c2"
+      "word": "2f218c2af489",
+      "meaning": "123e4d4ad2ff"
     },
     "6886e6c3b5a78c0df666742e": {
-      "word": "8bc85bed2c97",
-      "meaning": "2af029fd8456"
+      "word": "d4db71325855",
+      "meaning": "3734a8bbf15f"
     },
     "6886e6c3bef9088cd78910e4": {
-      "word": "59b9f0df1f68",
-      "meaning": "597ce7a1b70d"
+      "word": "de6887b8d3d3",
+      "meaning": "1e1d10093066"
     },
     "6886e6c3d65581ce75163a79": {
-      "word": "3c1e1a421f0a",
-      "meaning": "341eb64fb564"
+      "word": "af06017eb7cd",
+      "meaning": "a3749d07a36b"
     },
     "6886e6c3f1454c4611324db8": {
-      "word": "6714baa652e0",
-      "meaning": "34f30c97da5e"
+      "word": "319958f79d62",
+      "meaning": "935fd7edbc3c"
     },
     "6886e6c3f97ee444cd2fcb92": {
-      "word": "6150960f9f3a",
-      "meaning": "dd91c62f0a65"
+      "word": "ea9fe91e4d36",
+      "meaning": "86ddaab3a474"
     },
     "6886e6c3ffa0f222f7b4a552": {
-      "word": "c42f604ef7ea",
-      "meaning": "5b4802d2114f"
+      "word": "f54c61153377",
+      "meaning": "fdc45033e067"
     },
     "6886eed375b4418c47a47d9d": {
       "word": "23a41de97eff",
       "meaning": "40a16e5b2ffa",
-      "tips": "8521e9ed3ec1"
+      "tips": "8521e9ed3ec1",
+      "collocations": "8e040a5cd7aa"
     },
     "6886eed375b4418c47a47d9f": {
       "word": "fbbd168173b9",
       "tips": "55738e59474e",
-      "meaning": "c6f7aac26daf"
+      "meaning": "c6f7aac26daf",
+      "collocations": "add95988c056"
     },
     "6886eed375b4418c47a47da1": {
       "word": "09ece8779bc5",
       "meaning": "a6ad9263926a",
-      "tips": "9b511cd007ff"
+      "tips": "9b511cd007ff",
+      "collocations": "570d0efee2fb"
     },
     "6886eed375b4418c47a47da3": {
       "word": "648425109279",
       "meaning": "9b32fe547066",
-      "tips": "8d00a116095c"
+      "tips": "8d00a116095c",
+      "collocations": "1a87c5bce066"
     },
     "6886eed475b4418c47a47da5": {
       "word": "6eb1791331cd",
       "meaning": "7881acb1689a",
-      "tips": "22064030f318"
+      "tips": "22064030f318",
+      "collocations": "81106bb50fe7"
     },
     "6886eedaa18bebb306a591bc": {
       "word": "a8f538d30927",
       "meaning": "1da20f289844",
-      "tips": "2938b59dd7f9"
+      "tips": "2938b59dd7f9",
+      "collocations": "cba09de9c42c"
     },
     "6886eedb09548dac57989414": {
-      "word": "b1853b727f0e",
-      "meaning": "09afad0c8cef"
+      "word": "b2d4552ac3d0",
+      "meaning": "73d5f6f940c2"
     },
     "6886eedb0a8d109db1847407": {
       "word": "1e7b5fefea3d",
       "meaning": "3537f709ed27",
-      "tips": "ea6e9069b83b"
+      "tips": "ea6e9069b83b",
+      "collocations": "80141e0c0c9b"
     },
     "6886eedb169517916bebdb23": {
       "word": "513626fbe714",
       "meaning": "3af5e6069583",
-      "tips": "ef24c37d7ff6"
+      "tips": "ef24c37d7ff6",
+      "collocations": "2b6877cdd0d2"
     },
     "6886eedb1b76959ea75ab794": {
       "word": "93461bd41fb5",
       "meaning": "3a7cba6a7509",
-      "tips": "d165c8f983cc"
+      "tips": "d165c8f983cc",
+      "collocations": "275c82d9e524"
     },
     "6886eedb1c66e1767885dbe1": {
       "word": "e201099b17f8",
       "tips": "f76ffeff2250",
-      "meaning": "28e72bd1eaf2"
+      "meaning": "28e72bd1eaf2",
+      "collocations": "c8b7fddada32"
     },
     "6886eedb2476826f56a5e49a": {
       "word": "5fc38dd6cffc",
       "meaning": "24a218d044ab",
-      "tips": "c8ae55b1c33b"
+      "tips": "c8ae55b1c33b",
+      "collocations": "9acf6c2098b1"
     },
     "6886eedb2b8298d50515241b": {
-      "word": "d677e5329397",
-      "meaning": "a0a92e2c3ce8"
+      "word": "e404f9cbbd1c",
+      "meaning": "6a217e7ccb23"
     },
     "6886eedb3053663d78ac2be0": {
-      "word": "80b75bac3670",
-      "meaning": "981dc69c4827"
+      "word": "ab3c2da69177",
+      "meaning": "33a468290f66"
     },
     "6886eedb37f959147ca7b6b3": {
       "word": "2778875096bb",
       "tips": "951d1bd0d07b",
-      "meaning": "41226b6595e1"
+      "meaning": "41226b6595e1",
+      "collocations": "5c8e69d9ef03"
     },
     "6886eedb5b0359ae35ad50dd": {
       "word": "cba54b4f026c",
       "tips": "26108f0f6eed",
-      "meaning": "9a6e1571e153"
+      "meaning": "9a6e1571e153",
+      "collocations": "91cbb54b6def"
     },
     "6886eedb5e341ace7320ae13": {
-      "word": "0b3ee73e39c1",
-      "meaning": "4c8bdba7196d"
+      "word": "ddca94d6a134",
+      "meaning": "58e35ed25a5e"
     },
     "6886eedb5e67d3286ad91b37": {
-      "word": "5c7b606ea77e",
-      "meaning": "0cd6c5c63997"
+      "word": "f180b4d89198",
+      "meaning": "c3d970f1cf18"
     },
     "6886eedb7aebc0dea33f3052": {
-      "word": "9861439b5b11",
-      "meaning": "a20dc950b212"
+      "word": "de9084e553a8",
+      "meaning": "cb7307084da8"
     },
     "6886eedb7b455ee47da781e3": {
       "word": "515667a0aa44",
       "meaning": "f2c427c144d8",
-      "tips": "8b211a625130"
+      "tips": "8b211a625130",
+      "collocations": "c3d46eba4291"
     },
     "6886eedb817630389f4a1e63": {
-      "word": "6ae131a83f48",
-      "meaning": "c86271f215c7"
+      "word": "4b8270075941",
+      "meaning": "ae7059da6963"
     },
     "6886eedb8fa95e033e843179": {
       "word": "469400078e79",
       "tips": "1a4786fd46c0",
-      "meaning": "cd1ada599ed9"
+      "meaning": "cd1ada599ed9",
+      "collocations": "2b549d4d6909"
     },
     "6886eedb92768f3c0b2c39d2": {
-      "word": "fd55ab2e9423",
-      "meaning": "96746e96e24f"
+      "word": "def9f6a239bd",
+      "meaning": "ba8da2b895ff"
     },
     "6886eedba3cd00c611c2462b": {
       "word": "9dacaade6fbe",
       "meaning": "a42c7c975543",
-      "tips": "6f58c792f784"
+      "tips": "6f58c792f784",
+      "collocations": "e119bad41ff3"
     },
     "6886eedba4c9e9aae1b82e6e": {
       "word": "d1c3e31ef530",
       "meaning": "d8f32aa9be6f",
-      "tips": "94399798616e"
+      "tips": "94399798616e",
+      "collocations": "cac249f1e2c6"
     },
     "6886eedbb388dcd41df63df6": {
-      "word": "f0a7f46c1216",
-      "meaning": "b0321306bc1e"
+      "word": "535c243fcaaa",
+      "meaning": "e63067f30b0c"
     },
     "6886eedbb431e0c2ecf5d268": {
       "word": "637b9834f6e8",
       "meaning": "266ecbadf065",
-      "tips": "55fe7afc32fd"
+      "tips": "55fe7afc32fd",
+      "collocations": "2030f6582b5a"
     },
     "6886eedbd1c3cd92c1ac91dc": {
-      "word": "a5648e869977",
-      "meaning": "b61e93d46836"
+      "word": "ce20508e2974",
+      "meaning": "8e86760e5d45"
     },
     "6886eedbd229beb24cb23acd": {
-      "word": "a5c5e7d85bf0",
-      "meaning": "81afe862c842"
+      "word": "73cb6ee26765",
+      "meaning": "a6ef361799f0"
     },
     "6886eedbe02b61887a6f7b11": {
       "word": "3de2da786020",
       "meaning": "748fb092a626",
-      "tips": "4ddc9c84e20a"
+      "tips": "4ddc9c84e20a",
+      "collocations": "0c0efbf43806"
     },
     "6886eedbf2a88993273c5d15": {
       "word": "4dbaeedc8ef2",
       "meaning": "e20757e36065",
-      "tips": "5b0233e2bcac"
+      "tips": "5b0233e2bcac",
+      "collocations": "68c42f2ac5d8"
     },
     "6886eedbf4c0e813708d18a6": {
       "word": "50ebfc384fab",
       "meaning": "a91bdf3f2f3b",
-      "tips": "c1c50533a9f4"
+      "tips": "c1c50533a9f4",
+      "collocations": "dcc78233d87c"
     },
     "6886eedbf8c576367b2eca6d": {
-      "word": "0607a50b0b38",
-      "meaning": "85c0c470d499"
+      "word": "b5ac215e62f9",
+      "meaning": "10d079336a92"
     },
     "6886eedbfa70dabefb269a02": {
       "word": "c4e6d3c86399",
       "meaning": "6501a73995fc",
-      "tips": "6849c45d5cbc"
+      "tips": "6849c45d5cbc",
+      "collocations": "2e1580b1131c"
     },
     "6886eedc009796649a8049ec": {
-      "word": "e9078199ff60",
-      "meaning": "55e94afa8003"
+      "word": "0a4f378c1c86",
+      "meaning": "692f96555d6d"
     },
     "6886eedc04818f58b0815e0d": {
       "word": "07f127ee86fa",
       "tips": "6e5be4d8599c",
-      "meaning": "3542cd53bd2c"
+      "meaning": "3542cd53bd2c",
+      "collocations": "5755e81f4e13"
     },
     "6886eedc06af0cb12f6e709e": {
-      "word": "0c2da82e40ae",
-      "meaning": "63e231febeff"
+      "word": "706e54675d5a",
+      "meaning": "6a471157feee"
     },
     "6886eedc09d3008e11bda726": {
-      "word": "5711ca6715a8",
-      "meaning": "3a3dc18fa1cd"
+      "word": "e2e9adf9037e",
+      "meaning": "d58802bcfbdf"
     },
     "6886eedc176f9c24e02f1ef7": {
-      "word": "e50e770d34ea",
-      "meaning": "be367795cf13"
+      "word": "28e1e16dcd43",
+      "meaning": "443b4da89481"
     },
     "6886eedc203d06fed7b457ff": {
-      "word": "07403c53bd5e",
-      "meaning": "7e7f43760faf"
+      "word": "f69e207a3924",
+      "meaning": "98a86c1cf98e"
     },
     "6886eedc31d167a0fb5a79da": {
-      "word": "b2ebf18d262f",
-      "meaning": "5cc132144f64"
+      "word": "29ee81d756e8",
+      "meaning": "068cb8105bab"
     },
     "6886eedc3326a3b15c42692d": {
-      "word": "12198ad021ac",
-      "meaning": "02f3c54e2519"
+      "word": "1b27f81dd9d2",
+      "meaning": "2b096af4725b"
     },
     "6886eedc3392782a690ace0c": {
-      "word": "5ebfd5cf17e3",
-      "meaning": "111dc2fd14d6"
+      "word": "a1b5e876267e",
+      "meaning": "69560da7639d"
     },
     "6886eedc3bfec18a01783c40": {
-      "word": "9fe2569442db",
-      "meaning": "84a6181e7ac7"
+      "word": "401abcaecbd7",
+      "meaning": "d8142944a24c"
     },
     "6886eedc3ec1c8c5958f9546": {
       "word": "1ddc39e63a6b",
       "meaning": "290b94f56474",
-      "tips": "02ddf93a3a04"
+      "tips": "02ddf93a3a04",
+      "collocations": "44b3a07b2a17"
     },
     "6886eedc3f082e5888c164d9": {
-      "word": "2ab3504b7eaa",
-      "meaning": "8ce5f7a307f2"
+      "word": "6011d6b917a2",
+      "meaning": "211d6324a33c"
     },
     "6886eedc4362ad3e5ab841ce": {
-      "word": "18ac5acab37a",
-      "meaning": "7cf6cccd85f3"
+      "word": "317699586389",
+      "meaning": "55559d84dbe0"
     },
     "6886eedc46b00380d9e67ccd": {
-      "word": "10710ec78220",
-      "meaning": "52ffc689bda7"
+      "word": "0a4fc8411be6",
+      "meaning": "a8e6a61a7bcd"
     },
     "6886eedc4894a1fa5167b40e": {
-      "word": "3436e6667136",
-      "meaning": "b0348b5ac701"
+      "word": "4d673d7d4ecc",
+      "meaning": "75b492002f09"
     },
     "6886eedc61156cd044edb2bc": {
-      "word": "d58e774b7c3c",
-      "meaning": "3453b85a3eff"
+      "word": "67f0618acbfa",
+      "meaning": "4ae8bf559aa6"
     },
     "6886eedc695047e0ba61e5e8": {
-      "word": "97bb8f683eee",
-      "meaning": "4a14dde1e4f1"
+      "word": "d64f7ee6deaf",
+      "meaning": "e702bb3edc81"
     },
     "6886eedc6988cc6ee0c0e1b3": {
-      "word": "4fa8d0e2981b",
-      "meaning": "366c60b67765"
+      "word": "ebf5989d0f75",
+      "meaning": "e751aef315b8"
     },
     "6886eedc74d145453ee88c62": {
-      "word": "7b48962c8e79",
-      "meaning": "c629f36f8b0f"
+      "word": "bfd74c7b2084",
+      "meaning": "b18173b1427f"
     },
     "6886eedc77142358cf142d3a": {
-      "word": "d968e8e3e5c4",
-      "meaning": "caf8c50daf64"
+      "word": "0600ef5e1c79",
+      "meaning": "d7ec33b71fee"
     },
     "6886eedc81d74a91ac5ca403": {
-      "word": "cd19349f9ee7",
-      "meaning": "ff3921df19cc"
+      "word": "6725b4369ab9",
+      "meaning": "398f99d0d5a7"
     },
     "6886eedc978540f45fdda86d": {
-      "word": "67f53c37f330",
-      "meaning": "9513484153dd"
+      "word": "c4723b5adbc2",
+      "meaning": "ecd193ababfa"
     },
     "6886eedc98f1347916e70d99": {
-      "word": "613cd0c54dda",
-      "meaning": "882a38372932"
+      "word": "a31cd000145e",
+      "meaning": "f65a26ea609d"
     },
     "6886eedc9f15f35795dbda77": {
-      "word": "297e55edc8c4",
-      "meaning": "3ffeb3cfe274"
+      "word": "a74a62a6a8c2",
+      "meaning": "8e475b1a614e"
     },
     "6886eedca2d0d0a8fa4082ce": {
-      "word": "b2ebf18d262f",
-      "meaning": "981c6a689667"
+      "word": "243706a84a98",
+      "meaning": "068cb8105bab"
     },
     "6886eedca69206147a7636a9": {
-      "word": "c8b7f44fb98e",
-      "meaning": "c8e1e7f1322b"
+      "word": "101ee7f982b4",
+      "meaning": "98303b8f8b7d"
     },
     "6886eedcad0b9f7e61d75731": {
-      "word": "90acf8ce55e1",
-      "meaning": "a6d9cddd3728"
+      "word": "d9277e284cd0",
+      "meaning": "f2cfb9c791ff"
     },
     "6886eedcad5a0c3a56e7cbbe": {
-      "word": "da949dcca111",
-      "meaning": "54d0679fe28a"
+      "word": "231a9d4ed09a",
+      "meaning": "c02266841a0d"
     },
     "6886eedcb628662cd4e67de8": {
-      "word": "e50e770d34ea",
-      "meaning": "15e837a295fa"
+      "word": "2776b1a74026",
+      "meaning": "443b4da89481"
     },
     "6886eedcba7e409411336456": {
-      "word": "a3d5b895d249",
-      "meaning": "9ba72bd9d9ba"
+      "word": "da443180e6d1",
+      "meaning": "8739c6e10ead"
     },
     "6886eedcbe74e284eb7cf9f9": {
-      "word": "3dacbad33d36",
-      "meaning": "7a4357601f15"
+      "word": "ed75130d89dd",
+      "meaning": "28e96f107dc9"
     },
     "6886eedccadac50540a4f717": {
-      "word": "0229358aa1e9",
-      "meaning": "ddeca88519d3"
+      "word": "0cbcb20877d1",
+      "meaning": "0da1e6534043"
     },
     "6886eedcce9af1422395f177": {
-      "word": "d55f8037e71c",
-      "meaning": "7272e2609c1c"
+      "word": "ad511c79cffb",
+      "meaning": "7a9b5bf9109c"
     },
     "6886eedcd6236f0c58fd2869": {
-      "word": "9dae0f44cc21",
-      "meaning": "929a4ebf6ae0"
+      "word": "32b783f26ba4",
+      "meaning": "f8dc04793ff1"
     },
     "6886eedcdc1ae7640b06f18b": {
-      "word": "3a21c1386928",
-      "meaning": "f63242125d2f"
+      "word": "f24aa2dbcee4",
+      "meaning": "7a9c20deb37c"
     },
     "6886eedcdcbb3d6394f39f4a": {
-      "word": "b205e15602d1",
-      "meaning": "5e558c8e9a43"
+      "word": "cd2462d77385",
+      "meaning": "2ece68775c46"
     },
     "6886eedcdd464e941cf67f9b": {
-      "word": "c1673e340a3d",
-      "meaning": "53fd811bfc24"
+      "word": "43d41f7ebc39",
+      "meaning": "9299fe7d93d3"
     },
     "6886eedcdd91f270012ee56b": {
-      "word": "736214001795",
-      "meaning": "d1c3615d1001"
+      "word": "1b2d505c6920",
+      "meaning": "40d1e4ac9a43"
     },
     "6886eedce300fb23a7392c7d": {
-      "word": "59a104065178",
-      "meaning": "c2c5b2ca50fb"
+      "word": "23e7b3e2757d",
+      "meaning": "1b59617f9850"
     },
     "6886eedce41a9430fc7fe9f9": {
-      "word": "c10e89c3542b",
-      "meaning": "45e12478f07f"
+      "word": "e2a7ba4d19cf",
+      "meaning": "a21470b2ce0c"
     },
     "6886eedce59075ebd206fb1c": {
-      "word": "7a686232aa61",
-      "meaning": "92cbb0722e1c"
+      "word": "2d3b01f57c7b",
+      "meaning": "aa107aada9de"
     },
     "6886eedce60ed0e757f5207c": {
-      "word": "9e73344f68ba",
-      "meaning": "5952f7126d0a"
+      "word": "003c4d71806c",
+      "meaning": "a3cf83c9302c"
     },
     "6886eedceb33fca0e9237f21": {
-      "word": "c149089b0a77",
-      "meaning": "2e695d0c7636"
+      "word": "6dfbea08c4a9",
+      "meaning": "986e68fbaa44"
     },
     "6886eedcee627646c3e148cb": {
-      "word": "1788c74787a1",
-      "meaning": "6168d174564f"
+      "word": "136fa0572830",
+      "meaning": "bd85c9bd34cd"
     },
     "6886eedcf3a353385b2eb95b": {
-      "word": "402563ca52b0",
-      "meaning": "f5b003183ed1"
+      "word": "65d3f7d784cd",
+      "meaning": "d8071ff413d7"
     },
     "6886eedcf8139ca0928e4196": {
-      "word": "ef720371d952",
-      "meaning": "c43c541f3cae"
+      "word": "5a3dde0b3976",
+      "meaning": "035bbf4f936f"
     },
     "6886eedcffbcabb55956a953": {
-      "word": "9eebd22955ae",
-      "meaning": "b6753287b446"
+      "word": "3b8af29e36ae",
+      "meaning": "a73449fe3274"
     },
     "6886eedd02194bc5c3d26665": {
-      "word": "f30cae6b409f",
-      "meaning": "67f7e119cceb"
+      "word": "2efa2596ff92",
+      "meaning": "6af155f45dcf"
     },
     "6886eedd02d5d01a2e91dc7b": {
-      "word": "45ecfbce81ec",
-      "meaning": "24c129a0e5bc"
+      "word": "045ae9904b4f",
+      "meaning": "d93fda2b6a30"
     },
     "6886eedd0c6a5881ae09f86e": {
-      "word": "68f97af621b6",
-      "meaning": "7b6229731252"
+      "word": "814b93299b1a",
+      "meaning": "d8cbd646cddd"
     },
     "6886eedd2bea68b790241f13": {
-      "word": "c363ca623306",
-      "meaning": "f25f61417b13"
+      "word": "4541778c99f4",
+      "meaning": "cb115ba55672"
     },
     "6886eedd2c7b331bd05e4a15": {
-      "word": "bfc2d902b59a",
-      "meaning": "a08648f1248f"
+      "word": "792f5c50980e",
+      "meaning": "08e11ee74556"
     },
     "6886eedd45e1fb4cc61870d4": {
-      "word": "75587c3004ce",
-      "meaning": "7942ab8a67d7"
+      "word": "690053fcbf7a",
+      "meaning": "d76ec7f9787d"
     },
     "6886eedd510d49fdd58ddaea": {
-      "word": "b5136ed0dd04",
-      "meaning": "752bd3ef0cb2"
+      "word": "8fdbcdc9636b",
+      "meaning": "e9882ee40956"
     },
     "6886eedd66eb05b9d1033c44": {
-      "word": "bc6bf4180713",
-      "meaning": "e181842d739e"
+      "word": "73a82af09cd4",
+      "meaning": "3a95f787c1ec"
     },
     "6886eedd6cf0b0252e8de95b": {
-      "word": "2397899e58f3",
-      "meaning": "372e956174c3"
+      "word": "d69f9a22e8d7",
+      "meaning": "c27e6b0582e3"
     },
     "6886eedd739995f8ca4dffac": {
-      "word": "18751bdfcb9b",
-      "meaning": "a1e69964ab12"
+      "word": "52ed4d3eddd4",
+      "meaning": "310d96adff19"
     },
     "6886eedd7e645a5eca721a6e": {
-      "word": "8b0dabe50193",
-      "meaning": "8c834d5ec505"
+      "word": "fe0b501485a4",
+      "meaning": "0eb0f248f9b7"
     },
     "6886eedd7fc2e7e3d8dbc585": {
-      "word": "183ce0f491c3",
-      "meaning": "18e9c15fb966"
+      "word": "086350f539e1",
+      "meaning": "c12996e59977"
     },
     "6886eedd870b7fd133c42059": {
-      "word": "dc265b34d5b7",
-      "meaning": "c1e0d9588aee"
+      "word": "e4bcb7e1e1ca",
+      "meaning": "81c1e05b7601"
     },
     "6886eedd8d1d616c31bc2357": {
-      "word": "00a7c9ed4c7e",
-      "meaning": "a22fabe0ff05"
+      "word": "2e6f7343bd5b",
+      "meaning": "7fa291f19ccf"
     },
     "6886eedd8d246c3f339b8cf9": {
-      "word": "2dbee29008d9",
-      "meaning": "0bafbfb026f6"
+      "word": "7b3517c5ce03",
+      "meaning": "0cb358cfb57e"
     },
     "6886eedd8d475a2df77449cb": {
-      "word": "eeb8d49d62eb",
-      "meaning": "c9f789445d19"
+      "word": "fc1974f1ca0a",
+      "meaning": "98d6a49ea819"
     },
     "6886eedd926d97395c9cc060": {
-      "word": "7972e1d4c507",
-      "meaning": "28a1e63583ae"
+      "word": "df988d5ecf5e",
+      "meaning": "322b66fbbd2c"
     },
     "6886eedd946cbf46ef0a216d": {
-      "word": "af92d873e4e7",
-      "meaning": "6ff0d34baac8"
+      "word": "7f6c2fd08375",
+      "meaning": "dedb5a1f8b3c"
     },
     "6886eedda7530b03c1ec8d0c": {
-      "word": "fda9895b7dc3",
-      "meaning": "fc21c2d28325"
+      "word": "8c3c20433ba9",
+      "meaning": "ef12eb72fc35"
     },
     "6886eeddb03b157aedaf3310": {
-      "word": "2637dc1ab6d3",
-      "meaning": "b7f47d687b3c"
+      "word": "0620a49def94",
+      "meaning": "56bbf6b0c0e2"
     },
     "6886eeddb3f73bba692bc993": {
-      "word": "09525daa260c",
-      "meaning": "37d7df8ad4f3"
+      "word": "98b12d7a8b9b",
+      "meaning": "1b2e7eb8ed45"
     },
     "6886eeddb9bc33383f79d519": {
-      "word": "25bccaa7c471",
-      "meaning": "03f86ba38160"
+      "word": "5c570cb94346",
+      "meaning": "a5943f4ece0b"
     },
     "6886eeddcd9fef89d1b4c671": {
-      "word": "49adba9eab35",
-      "meaning": "17b16d9e3463"
+      "word": "78ac1780ff7f",
+      "meaning": "4ea94943f8d3"
     },
     "6886eeddd3036e713a3a35af": {
-      "word": "5254a3c01c84",
-      "meaning": "50d060623884"
+      "word": "2e9b7e637d12",
+      "meaning": "341f68cbc95f"
     },
     "6886eeddd845482bacc13e4c": {
-      "word": "61a62c8d7f72",
-      "meaning": "eaa2d5706b0b"
+      "word": "5f6a15b1693a",
+      "meaning": "f7a79bcdb092"
     },
     "6886eedddc21b2e07a7343e8": {
-      "word": "d4c8978fb5ec",
-      "meaning": "af6ce070cf8a"
+      "word": "6b6f30586d7e",
+      "meaning": "a7e09057d6a5"
     },
     "6886eedde2ae77bf371a77cc": {
-      "word": "c77b81026b48",
-      "meaning": "2735bf39dee5"
+      "word": "309f35836067",
+      "meaning": "25429e152332"
     },
     "6886eeddeb6e4d467f083c17": {
-      "word": "b8ddfa7c8f1c",
-      "meaning": "917e2009ea31"
+      "word": "7918d94d6dde",
+      "meaning": "49ac3697e4b8"
     },
     "6886eeddf0368d7b011ca5e9": {
-      "word": "61a62c8d7f72",
-      "meaning": "2e4ca7e2b0bb"
+      "word": "dbf167d3aed6",
+      "meaning": "f7a79bcdb092"
     },
     "6886eeddf6790f91671234f5": {
-      "word": "1797c5ff2645",
-      "meaning": "29eed168d871"
+      "word": "44fa76e9a194",
+      "meaning": "f41fb86da23f"
     },
     "6886eeddf692500b74f0d89c": {
-      "word": "20f0bace5169",
-      "meaning": "095746336699"
+      "word": "be44ec1e9266",
+      "meaning": "49c78fc294b5"
     },
     "6886eeddfb37066ee57b95a6": {
-      "word": "8a67023e7089",
-      "meaning": "f451f648e7d4"
+      "word": "4711f0268b7a",
+      "meaning": "5ebceae3fd67"
     },
     "6886eede0113075fa786171a": {
-      "word": "7eb76a413c31",
-      "meaning": "1a84f736d733"
+      "word": "c3c53f5663c4",
+      "meaning": "846f1011164e"
     },
     "6886eede05d28f539c779957": {
-      "word": "9e73344f68ba",
-      "meaning": "2c8510164f1c"
+      "word": "f611f572bae6",
+      "meaning": "a3cf83c9302c"
     },
     "6886eede0707c9f8c0043e21": {
-      "word": "3914d01c4549",
-      "meaning": "2608c5a2c69c"
+      "word": "71cb1505e755",
+      "meaning": "c557907a10d9"
     },
     "6886eede2075dee4842e99e9": {
-      "word": "377fe79d7580",
-      "meaning": "f0668a000f30"
+      "word": "72aeb9404143",
+      "meaning": "a84f999798bb"
     },
     "6886eede227216692331ea5e": {
-      "word": "bee2b728f66f",
-      "meaning": "90732cf4b279"
+      "word": "4932dbc4ebe0",
+      "meaning": "d027237f1bc0"
     },
     "6886eede233efa155eadca49": {
-      "word": "71f09ef0855a",
-      "meaning": "251a49f94e7a"
+      "word": "11a1a694381b",
+      "meaning": "98f529c312b7"
     },
     "6886eede304012a891ed0e29": {
-      "word": "4bf5ecb1d1e2",
-      "meaning": "ba6e193a72f1"
+      "word": "b56f442eab54",
+      "meaning": "297bed42f0dd"
     },
     "6886eede3abfda94f553af37": {
-      "word": "f75732802347",
-      "meaning": "3bad111988a5"
+      "word": "9dfc46da2be9",
+      "meaning": "8125a5045e6f"
     },
     "6886eede3e5473cacdfb718e": {
-      "word": "324560028687",
-      "meaning": "0b7c860ed9b5"
+      "word": "468d2ee36165",
+      "meaning": "01799f56766a"
     },
     "6886eede41fa0f6bfe285eca": {
-      "word": "e03d15b9c47c",
-      "meaning": "75d46bd7a101"
+      "word": "386e8ed557e2",
+      "meaning": "b60db3a37c70"
     },
     "6886eede4900d8a164be9bfe": {
-      "word": "fad557526bd1",
-      "meaning": "8ee9de05b0e4"
+      "word": "1464d07fb8cc",
+      "meaning": "e9119f3de741"
     },
     "6886eede4d2d2bcae6d9cc84": {
-      "word": "b674d3f3989a",
-      "meaning": "8e54d633f3cc"
+      "word": "79be95cfff95",
+      "meaning": "d2c1f7f7f4dd"
     },
     "6886eede4fe023cd8c466c25": {
-      "word": "02e006586444",
-      "meaning": "7a21d9623ab2"
+      "word": "16c85af379db",
+      "meaning": "8212efe6bdad"
     },
     "6886eede592ccfa516e3bdb5": {
-      "word": "047211df9e59",
-      "meaning": "0b4e487591d0"
+      "word": "acef7c4d3434",
+      "meaning": "932f31401463"
     },
     "6886eede59bbeca92a55aa4f": {
-      "word": "920956fe9268",
-      "meaning": "b43b03ac49b8"
+      "word": "a31262ecaa57",
+      "meaning": "822f9d5c23c4"
     },
     "6886eede5d81a48fa48a8c99": {
-      "word": "6150fef3bef1",
-      "meaning": "0e40c6dafd83"
+      "word": "bc00292e5a57",
+      "meaning": "5ef5fb7fb4a7"
     },
     "6886eede6135ac6df2ab51ab": {
-      "word": "5ef65b0b227c",
-      "meaning": "89ebfb912f58"
+      "word": "556ab5b7f9c9",
+      "meaning": "e621b5db5666"
     },
     "6886eede627c3444f5b6c1eb": {
-      "word": "1da4e68d26f1",
-      "meaning": "424956df306a"
+      "word": "20da71cc4700",
+      "meaning": "f607eb8d08f1"
     },
     "6886eede62d9b3514c015739": {
-      "word": "15ed8d779db8",
-      "meaning": "2ff1351ddee2"
+      "word": "bc0c4a07a8b8",
+      "meaning": "5740bd98c95e"
     },
     "6886eede668a0bb17f80a7e5": {
-      "word": "084d1c11273f",
-      "meaning": "7fd97c842147"
+      "word": "70efab784e8f",
+      "meaning": "223bb9f86fb5"
     },
     "6886eede67b47fdcda4a7c04": {
-      "word": "b51f1a81868d",
-      "meaning": "119334a111ca"
+      "word": "8a667bb52135",
+      "meaning": "1ae723f01309"
     },
     "6886eede696d94908318a999": {
-      "word": "258c81d229ee",
-      "meaning": "306d188d6a54"
+      "word": "99b68b5f796b",
+      "meaning": "0cd44f28b66c"
     },
     "6886eede6f7aa20432502a45": {
-      "word": "4e73f767349d",
-      "meaning": "d449dad8bf60"
+      "word": "22e11a4b526c",
+      "meaning": "3f6a3cc661e6"
     },
     "6886eede74eabc6e5c814bdc": {
-      "word": "afe675cf5476",
-      "meaning": "9f5edc39b7bd"
+      "word": "057ef7deb2b7",
+      "meaning": "7b3055e80bcc"
     },
     "6886eede754bdd3257525f70": {
-      "word": "77a670b44ca8",
-      "meaning": "6deef4456d20"
+      "word": "b61a97f7d1d4",
+      "meaning": "be4dfb7c94f4"
     },
     "6886eede7d854adee16db94f": {
-      "word": "736fd6bc6f2e",
-      "meaning": "f27f26eea8fa"
+      "word": "13d7855cd4d5",
+      "meaning": "fe510a485b23"
     },
     "6886eede7fffc9a0a8b3b577": {
-      "word": "ec97d8e9b080",
-      "meaning": "39ccd945fdaa"
+      "word": "10dc2f164a3b",
+      "meaning": "52f46dbc0b33"
     },
     "6886eede8214827a3d33a7b0": {
-      "word": "125277a63397",
-      "meaning": "fc188edd9d50"
+      "word": "b5dd0d483331",
+      "meaning": "7dc9ccac5218"
     },
     "6886eede8982ac049573bb5c": {
-      "word": "b5dec2d4aff0",
-      "meaning": "73a06fb30fa8"
+      "word": "2babb464fd3a",
+      "meaning": "f5ae982ca419"
     },
     "6886eede8efd7eee8350acea": {
-      "word": "02930aff603b",
-      "meaning": "36b2a0c56e8a"
+      "word": "82dddfa42a55",
+      "meaning": "218c2da3b8b4"
     },
     "6886eede8f8c378d4655cce0": {
-      "word": "b8ddfa7c8f1c",
-      "meaning": "00a26a75f482"
+      "word": "66463906dd9e",
+      "meaning": "49ac3697e4b8"
     },
     "6886eede9c12de3536bb6c43": {
-      "word": "071cf72b6b5a",
-      "meaning": "5c464a0522a0"
+      "word": "aa180f74eda2",
+      "meaning": "792b59c1d7ba"
     },
     "6886eedea38264a4bbce4f3a": {
-      "word": "97442348360a",
-      "meaning": "8b76644919a7"
+      "word": "ac1ac15f01c4",
+      "meaning": "a3e9b62af54e"
     },
     "6886eedea4eba07e43f24596": {
-      "word": "60b1ebb1e59c",
-      "meaning": "44ef095b5679"
+      "word": "ce7054fd31d7",
+      "meaning": "ee5c16f3bb61"
     },
     "6886eedeabf0d0a7bb38108b": {
-      "word": "e56f757f504b",
-      "meaning": "433dde2ad142"
+      "word": "fc8175295e04",
+      "meaning": "cd10e44deaec"
     },
     "6886eedec323002e1ad73ae8": {
-      "word": "9299b1feda20",
-      "meaning": "a879a65c92e7"
+      "word": "7cf446d7a0c8",
+      "meaning": "3b1a302355cb"
     },
     "6886eedecfb7926e9b894113": {
-      "word": "bd682e824006",
-      "meaning": "82562a11ed73"
+      "word": "b62552bd8130",
+      "meaning": "2a5b95e7f422"
     },
     "6886eeded0e83bdb377c82ac": {
-      "word": "98c737b1599b",
-      "meaning": "9e466108bf17"
+      "word": "2495361d0e1d",
+      "meaning": "06a6fa4eb3a5"
     },
     "6886eeded19d5fa031443abe": {
-      "word": "4c277c5b1cca",
-      "meaning": "3bf5b786b22d"
+      "word": "c72f1a0639c2",
+      "meaning": "007796593333"
     },
     "6886eeded25f774ac4b68c7d": {
-      "word": "d781d89f0737",
-      "meaning": "00433fd0c97c"
+      "word": "8631d578bec1",
+      "meaning": "f63f9983798d"
     },
     "6886eededbbdd8b6bee48a52": {
-      "word": "7d857af61d45",
-      "meaning": "a5bf9cc9c62e"
+      "word": "da5837b6682f",
+      "meaning": "3fb9edaee7f1"
     },
     "6886eededf8f10c830dfbc0e": {
-      "word": "4b736c94d773",
-      "meaning": "cd13397dfdcd"
+      "word": "8a92b121dc16",
+      "meaning": "09e151c4cc54"
     },
     "6886eededfbd093a9c635086": {
-      "word": "b8ddfa7c8f1c",
-      "meaning": "ecdd09f403ff"
+      "word": "dc370c828254",
+      "meaning": "49ac3697e4b8"
     },
     "6886eedee88aed95c7abfef2": {
-      "word": "99c5fc9c7fbc",
-      "meaning": "9ac074d12533"
+      "word": "79962f0ad3b5",
+      "meaning": "4bb8cea9b789"
     },
     "6886eedeee2679a6b6498c8d": {
-      "word": "4ecd3c73f8f2",
-      "meaning": "6b8fbd62dbd0"
+      "word": "3d540aada035",
+      "meaning": "e70dc2111f45"
     },
     "6886eedeee8d9510e1b7df52": {
-      "word": "8034bcdbeed6",
-      "meaning": "5c6b7f7ed83b"
+      "word": "1c6647d61813",
+      "meaning": "e9d3935a6fa2"
     },
     "6886eedef26c293a9613569d": {
-      "word": "19a739f53d5b",
-      "meaning": "26dca100e80c"
+      "word": "285d99b0e36f",
+      "meaning": "fc46722b50db"
     },
     "6886eedef8c0cb374bb2ebc0": {
-      "word": "4a3667bb5690",
-      "meaning": "384c76b060d7"
+      "word": "95dc8e2f2ec3",
+      "meaning": "705be705db1a"
     },
     "688c17677de508703057d29b": {
       "word": "0de13eab62f6",
@@ -8299,7 +8344,7 @@
     },
     "68fddc9899ff8264aaa0174a": {
       "word": "a327541fedc1",
-      "meaning": "95043b464b07"
+      "meaning": "13d94eae0702"
     },
     "68fddc9899ff8264aaa0174b": {
       "word": "604497633b7a",
@@ -9639,259 +9684,259 @@
     },
     "68fe26ac7d58a8a70a600275": {
       "word": "2171bd367c5e",
-      "meaning": "8b76497c3c0b"
+      "meaning": "eb01e1a87125"
     },
     "68fe26ac7d58a8a70a600276": {
       "word": "3d688f5ca450",
-      "meaning": "ffd963c89420"
+      "meaning": "493d8f684e63"
     },
     "68fe26ac7d58a8a70a600277": {
       "word": "214c993c392c",
-      "meaning": "1e332d9758b0"
+      "meaning": "7c20ec0566de"
     },
     "68fe26ac7d58a8a70a600278": {
       "word": "d379f429e9ba",
-      "meaning": "e5616b4d5364"
+      "meaning": "667832f58c54"
     },
     "68fe26ac7d58a8a70a600279": {
       "word": "e3535a9754e0",
-      "meaning": "5a286eefe5b3"
+      "meaning": "76bd51d7fc92"
     },
     "68fe26ac7d58a8a70a60027a": {
       "word": "114b8d00521a",
-      "meaning": "97d6cc1bf5de"
+      "meaning": "cbd47b7d6cbb"
     },
     "68fe26ac7d58a8a70a60027b": {
       "word": "c65cb30d8816",
-      "meaning": "d8478bf32328"
+      "meaning": "0402d0180aba"
     },
     "68fe26ac7d58a8a70a60027c": {
       "word": "55341244da8f",
-      "meaning": "88f7119c7903"
+      "meaning": "d85f95aa9fd6"
     },
     "68fe26ac7d58a8a70a60027d": {
       "word": "2e979a995304",
-      "meaning": "effabe25089c"
+      "meaning": "d9bf051df103"
     },
     "68fe26ac7d58a8a70a60027e": {
       "word": "246e667305e5",
-      "meaning": "c8aca4c7819a"
+      "meaning": "c0daff845c4e"
     },
     "68fe26ac7d58a8a70a60027f": {
       "word": "f28f0af3d8e8",
-      "meaning": "ea05c3e458a5"
+      "meaning": "60ff28401b88"
     },
     "68fe26ac7d58a8a70a600280": {
       "word": "f79b9dce813e",
-      "meaning": "1fa6d038f583"
+      "meaning": "76455d1ba92c"
     },
     "68fe26ac7d58a8a70a600281": {
       "word": "1588107b05e4",
-      "meaning": "ac4355ff2e7c"
+      "meaning": "6122d587615b"
     },
     "68fe26ac7d58a8a70a600282": {
       "word": "1985cd75b04d",
-      "meaning": "493b4d2c6383"
+      "meaning": "b73cffc17a67"
     },
     "68fe26ac7d58a8a70a600283": {
       "word": "5e2b32a5bdcf",
-      "meaning": "5c0955da0b0b"
+      "meaning": "e2de2ffea725"
     },
     "68fe26ac7d58a8a70a600284": {
       "word": "4d487cc27664",
-      "meaning": "12be362315ba"
+      "meaning": "1d897300a044"
     },
     "68fe26ac7d58a8a70a600285": {
       "word": "f7f63decf101",
-      "meaning": "732efeacd49b"
+      "meaning": "f5c723942ee6"
     },
     "68fe26ac7d58a8a70a600286": {
       "word": "76de51a8790d",
-      "meaning": "73981a885b7e"
+      "meaning": "20dc0b497e0c"
     },
     "68fe26ac7d58a8a70a600287": {
       "word": "b8e374759c9e",
-      "meaning": "c3449673602d"
+      "meaning": "bdbe5c53ba82"
     },
     "68fe26ac7d58a8a70a600288": {
       "word": "69f469e166f6",
-      "meaning": "a8434c8eab02"
+      "meaning": "b80ebc72a30a"
     },
     "68fe26ac7d58a8a70a600289": {
       "word": "0cd8ccbda658",
-      "meaning": "7a5b1705dc44"
+      "meaning": "adf3af678e90"
     },
     "68fe26ac7d58a8a70a60028a": {
       "word": "fbd3276e7a56",
-      "meaning": "c98a04cebc78"
+      "meaning": "48b1cf5cc183"
     },
     "68fe26ac7d58a8a70a60028b": {
       "word": "3a64e7cad453",
-      "meaning": "8f3bf55e67d8"
+      "meaning": "95a2a4316430"
     },
     "68fe26ac7d58a8a70a60028c": {
       "word": "5133b22ba1c7",
-      "meaning": "0ead45115d75"
+      "meaning": "6a75819bd988"
     },
     "68fe26ac7d58a8a70a60028d": {
       "word": "140fc2fb7d17",
-      "meaning": "b11436e3aaef"
+      "meaning": "895e99c8a270"
     },
     "68fe26ac7d58a8a70a60028e": {
       "word": "4ce3cd7dcc2b",
-      "meaning": "fee747ac5ad5"
+      "meaning": "a6c4507f864a"
     },
     "68fe26ac7d58a8a70a60028f": {
       "word": "f8a59fda4c9b",
-      "meaning": "d263bde732c9"
+      "meaning": "ee2361972b18"
     },
     "68fe26ac7d58a8a70a600290": {
       "word": "c75fd6a66634",
-      "meaning": "fbf4a1334376"
+      "meaning": "3e8f0e1421e6"
     },
     "68fe26ac7d58a8a70a600291": {
       "word": "eb6619b6f2ed",
-      "meaning": "01d648867f83"
+      "meaning": "c6a126a86e7d"
     },
     "68fe26ac7d58a8a70a600292": {
       "word": "fcf7f86eb0df",
-      "meaning": "74afb290b1c8"
+      "meaning": "2f3f29dff047"
     },
     "68fe26ac7d58a8a70a600293": {
       "word": "18eb24567ce5",
-      "meaning": "49259fa55298"
+      "meaning": "5ea07761c903"
     },
     "68fe26ac7d58a8a70a600294": {
       "word": "3c41c72c9f85",
-      "meaning": "56ed6330e7f8"
+      "meaning": "86de516cf9a1"
     },
     "68fe26ac7d58a8a70a600295": {
       "word": "ea060fad786a",
-      "meaning": "3c1200b5517b"
+      "meaning": "7f9cc553a03f"
     },
     "68fe26ac7d58a8a70a600296": {
       "word": "c8fd1acbadd5",
-      "meaning": "8082e5c48814"
+      "meaning": "4ab78af29e01"
     },
     "68fe26ac7d58a8a70a600297": {
       "word": "e32fd0893d20",
-      "meaning": "f805a8ac0224"
+      "meaning": "2bddb5a2d1cb"
     },
     "68fe26ac7d58a8a70a600298": {
       "word": "1b11547fd7fe",
-      "meaning": "71ebf5a249df"
+      "meaning": "beaeb5850560"
     },
     "68fe26ac7d58a8a70a600299": {
       "word": "fb0f203d54bf",
-      "meaning": "21a49c3eb7a4"
+      "meaning": "992afb2760a2"
     },
     "68fe26ac7d58a8a70a60029a": {
       "word": "a0445565f381",
-      "meaning": "6f950b00c28e"
+      "meaning": "d6c20ea36176"
     },
     "68fe26ac7d58a8a70a60029b": {
       "word": "06d6593972a8",
-      "meaning": "f1f2b2df27c2"
+      "meaning": "6cd1c5a226aa"
     },
     "68fe26ac7d58a8a70a60029c": {
       "word": "50017b49f37d",
-      "meaning": "8a8a62b0417e"
+      "meaning": "172cad4df3c0"
     },
     "68fe26ac7d58a8a70a60029d": {
       "word": "b56fc605f3ae",
-      "meaning": "b2127d85b081"
+      "meaning": "89f5eeb6e658"
     },
     "68fe26ac7d58a8a70a60029e": {
       "word": "1a822a419f52",
-      "meaning": "e2217626359c"
+      "meaning": "a961f2bbe99a"
     },
     "68fe26ac7d58a8a70a60029f": {
       "word": "94b0edc4f59d",
-      "meaning": "b0ad70a9de75"
+      "meaning": "13a7ba20596f"
     },
     "68fe26ac7d58a8a70a6002a0": {
       "word": "743b0028ffa2",
-      "meaning": "6111969cbbdc"
+      "meaning": "3dec1afd32c2"
     },
     "68fe26ac7d58a8a70a6002a1": {
       "word": "6d5fe2a8b9fd",
-      "meaning": "1ee56f461bfa"
+      "meaning": "bff897abb262"
     },
     "68fe26ac7d58a8a70a6002a2": {
       "word": "36e6e17991d5",
-      "meaning": "1374a7b5afda"
+      "meaning": "b9da683092bd"
     },
     "68fe26ac7d58a8a70a6002a3": {
       "word": "c82d1ba1163a",
-      "meaning": "e21ae4876492"
+      "meaning": "f92ea9d75766"
     },
     "68fe26ac7d58a8a70a6002a4": {
       "word": "418a8cb2b6fd",
-      "meaning": "a7842405b623"
+      "meaning": "0de665c12fe8"
     },
     "68fe26ac7d58a8a70a6002a5": {
       "word": "c4f1be3799df",
-      "meaning": "fc0eea39fde6"
+      "meaning": "8e317528358b"
     },
     "68fe26ac7d58a8a70a6002a6": {
       "word": "dc1a91393a2a",
-      "meaning": "e805aed17d4a"
+      "meaning": "33d0a934a80c"
     },
     "68fe26ac7d58a8a70a6002a7": {
       "word": "0cefb88d8a19",
-      "meaning": "5f1f987acf36"
+      "meaning": "3d3fa0630609"
     },
     "68fe26ac7d58a8a70a6002a8": {
       "word": "55bd64bde3fd",
-      "meaning": "8dc8374198dc"
+      "meaning": "527a808972a9"
     },
     "68fe26ac7d58a8a70a6002a9": {
       "word": "3b4e0e894f4c",
-      "meaning": "d5063d90420a"
+      "meaning": "30390bc07889"
     },
     "68fe26ac7d58a8a70a6002aa": {
       "word": "c3dcf9c02814",
-      "meaning": "e939e4efb69a"
+      "meaning": "8d21922b8011"
     },
     "68fe26ac7d58a8a70a6002ab": {
       "word": "2d5778e13352",
-      "meaning": "46b6bbb49f12"
+      "meaning": "811a77e19622"
     },
     "68fe26ac7d58a8a70a6002ac": {
       "word": "d6f6eebc0afa",
-      "meaning": "e656f2996a62"
+      "meaning": "c6650f903c8a"
     },
     "68fe26ac7d58a8a70a6002ad": {
       "word": "45a44d1b380b",
-      "meaning": "4a492762d612"
+      "meaning": "7eff579251cc"
     },
     "68fe26ac7d58a8a70a6002ae": {
       "word": "a7dc9a25ccd3",
-      "meaning": "426201b1d259"
+      "meaning": "262d77f7e002"
     },
     "68fe26ac7d58a8a70a6002af": {
       "word": "1a9c5e64f048",
-      "meaning": "0026e222c4ba"
+      "meaning": "238818f41ba3"
     },
     "68fe26ac7d58a8a70a6002b0": {
       "word": "9f6bf4583ce7",
-      "meaning": "99032933de22"
+      "meaning": "dacf578714cb"
     },
     "68fe26ac7d58a8a70a6002b1": {
       "word": "841c61fe8f44",
-      "meaning": "7d614ed166bd"
+      "meaning": "1c42362e0cea"
     },
     "68fe26ac7d58a8a70a6002b2": {
       "word": "1cb86237ae23",
-      "meaning": "5b43e6847ba3"
+      "meaning": "820045ef145e"
     },
     "68fe26ac7d58a8a70a6002b3": {
       "word": "3727031fbc62",
-      "meaning": "88097a5402ab"
+      "meaning": "5b9931dfe0b0"
     },
     "68fe26ac7d58a8a70a6002b4": {
       "word": "73354cc689a8",
-      "meaning": "49ec82627f96"
+      "meaning": "e25434897187"
     },
     "68fe26ac7d58a8a70a6002b5": {
       "word": "706f5f36cd23",
@@ -13628,107 +13673,127 @@
     },
     "6902a0010000000000000001": {
       "word": "7f22a1fa8655",
-      "meaning": "d02c8edfb90d",
-      "tips": "fbbaaf3e0e02"
+      "meaning": "dace05907b79",
+      "tips": "fbbaaf3e0e02",
+      "example": "f0adbb3bdc3f"
     },
     "6902a0010000000000000002": {
       "word": "33bae27dc1f9",
-      "meaning": "44211d129a1e",
-      "tips": "5bef75fb232b"
+      "meaning": "a27ee99171da",
+      "tips": "5bef75fb232b",
+      "example": "b811d4962bef"
     },
     "6902a0010000000000000003": {
       "word": "a7801f6722af",
-      "meaning": "75961ae5da97",
-      "tips": "3295f1b3d841"
+      "meaning": "cadc76dc7d83",
+      "tips": "3295f1b3d841",
+      "example": "a52f70056a48"
     },
     "6902a0010000000000000004": {
       "word": "03b091b0c4a6",
-      "meaning": "0c7b3f150794",
-      "tips": "91c67211305b"
+      "meaning": "21a051cdc3ea",
+      "tips": "91c67211305b",
+      "example": "012b4d0b6245"
     },
     "6902a0010000000000000005": {
       "word": "c99a40616949",
-      "meaning": "0e45bb0ab72a",
-      "tips": "c2e588259770"
+      "meaning": "a549ae120199",
+      "tips": "c2e588259770",
+      "example": "b40287433cf2"
     },
     "6902a0010000000000000006": {
       "word": "9aaba64e6a29",
-      "meaning": "4dd83876b6b6",
-      "tips": "3281dd2a9ae0"
+      "meaning": "bad4c37dcf26",
+      "tips": "3281dd2a9ae0",
+      "example": "bb69b223c48e"
     },
     "6902a0010000000000000007": {
       "word": "77f94ebd40c9",
-      "meaning": "6e3503c43e37",
-      "tips": "89b2248ddb1f"
+      "meaning": "53d18d69ea61",
+      "tips": "89b2248ddb1f",
+      "example": "8961f0b8d787"
     },
     "6902a0010000000000000008": {
       "word": "b3d0c223d411",
-      "meaning": "e67cda32b8c1",
-      "tips": "77362782d1c2"
+      "meaning": "14fe04ba620e",
+      "tips": "77362782d1c2",
+      "example": "8086270e6215"
     },
     "6902a0010000000000000009": {
       "word": "5b51db2f6845",
-      "meaning": "f888227179d2",
-      "tips": "dfb963e5d621"
+      "meaning": "367da552e241",
+      "tips": "dfb963e5d621",
+      "example": "bbeaed9d3c3d"
     },
     "6902a0010000000000000010": {
       "word": "41d3ceac7ad4",
-      "meaning": "8f0753237a3b",
-      "tips": "03dc34665cb5"
+      "meaning": "29ae1eed4f19",
+      "tips": "03dc34665cb5",
+      "example": "bbe533e95682"
     },
     "6902a0010000000000000011": {
       "word": "b533e704e1b5",
-      "meaning": "f69922f4dc65",
-      "tips": "d5aec5e6db75"
+      "meaning": "4565ea4d8825",
+      "tips": "d5aec5e6db75",
+      "example": "d257b12b5b0b"
     },
     "6902a0010000000000000012": {
       "word": "8fb187146f76",
-      "meaning": "fb7d75f20bb5",
-      "tips": "1b84f7e31627"
+      "meaning": "8729c2fa80b3",
+      "tips": "1b84f7e31627",
+      "example": "8c8732794a2b"
     },
     "6902a0010000000000000013": {
       "word": "b3e60509aac6",
-      "meaning": "ee36867a48d0",
-      "tips": "fd72fbd9f6c0"
+      "meaning": "e13bc069b179",
+      "tips": "fd72fbd9f6c0",
+      "example": "3fada0cc16ee"
     },
     "6902a0010000000000000014": {
       "word": "ad3cdfb7bd98",
-      "meaning": "135ba2202b5e",
-      "tips": "da5889654435"
+      "meaning": "668b5d4b5970",
+      "tips": "da5889654435",
+      "example": "c393851da964"
     },
     "6902a0010000000000000015": {
       "word": "30e5847d0199",
-      "meaning": "61b267973acb",
-      "tips": "02d31be8ab7c"
+      "meaning": "2b9a9059d2b5",
+      "tips": "02d31be8ab7c",
+      "example": "d9e563f2788a"
     },
     "6902a0010000000000000016": {
       "word": "7994194d13e6",
-      "meaning": "141f57f6393d",
-      "tips": "4a80c78b08b0"
+      "meaning": "e564bb7be2d2",
+      "tips": "4a80c78b08b0",
+      "example": "cd1d6b259e29"
     },
     "6902a0010000000000000017": {
       "word": "b063614fd4f8",
-      "meaning": "d9a396b303d9",
-      "tips": "62670e5393ab"
+      "meaning": "00486a6f4a9b",
+      "tips": "62670e5393ab",
+      "example": "e57a8db55218"
     },
     "6902a0010000000000000018": {
       "word": "6a944936a3e4",
-      "meaning": "342aaf4c47bb",
-      "tips": "dd0f64a1b3ba"
+      "meaning": "399395101fc1",
+      "tips": "dd0f64a1b3ba",
+      "example": "8881931b51d7"
     },
     "6902a0010000000000000019": {
       "word": "d8f51e4ffae5",
-      "meaning": "a863ff73e935",
-      "tips": "97402b0d75ee"
+      "meaning": "b5418a78c311",
+      "tips": "97402b0d75ee",
+      "example": "414caacf026b"
     },
     "6902a0010000000000000020": {
       "word": "667e96c1b98d",
-      "meaning": "856e7a52999b",
-      "tips": "3d9057735db7"
+      "meaning": "d661cd00cf54",
+      "tips": "3d9057735db7",
+      "example": "3dd5b018b069"
     },
     "6902a0010000000000000021": {
       "word": "7b1f5764a3c0",
-      "meaning": "161146b79198",
+      "meaning": "485a6be11926",
       "tips": "07383bbea01a",
       "example": "49b10146e25d"
     },
@@ -13746,357 +13811,399 @@
     },
     "6902a0010000000000000024": {
       "word": "a0e77a9f9a8c",
-      "meaning": "d4f75afcb7b9",
+      "meaning": "2de8642ccfd4",
       "tips": "eb657999651d",
       "example": "18c237126586"
     },
     "6902a0010000000000000025": {
       "word": "6319736481c6",
-      "meaning": "48ec397512c4",
+      "meaning": "ed4507d4ea19",
       "tips": "c0e1dacfebb1",
       "example": "cca0e0c61264"
     },
     "6902a0010000000000000026": {
       "word": "3a563b17b7e8",
-      "meaning": "fc54295e8060",
+      "meaning": "f068761292d7",
       "tips": "d882d8e5ccc5",
       "example": "9256b6a94aed"
     },
     "6902a0010000000000000027": {
       "word": "50f237a3670e",
-      "meaning": "4e12ebe3473e",
+      "meaning": "2438fd9f257d",
       "tips": "22f31e2de1a9",
       "example": "d1b94dfcc9bb"
     },
     "6902a0010000000000000028": {
       "word": "6a60157f1c05",
-      "meaning": "bf04eedb4cb9",
+      "meaning": "ce638689c781",
       "tips": "17895825f9c1",
       "example": "036f4abfb27d"
     },
     "6902a0010000000000000029": {
       "word": "d64cb29b1b51",
-      "meaning": "3e6b3804587f",
+      "meaning": "e115bf01fd6f",
       "tips": "e6eb867ee82d",
       "example": "d219afcf6f59"
     },
     "6902a001000000000000002a": {
       "word": "e18c27c59993",
-      "meaning": "0616df727852",
+      "meaning": "18b6f2772d4d",
       "tips": "4b2c045c786b",
       "example": "2ef6e0dbc09c"
     },
     "6902a001000000000000002b": {
       "word": "dbb51eaaf9c3",
-      "meaning": "ed5d5e5227ad",
+      "meaning": "be2826f72129",
       "tips": "abd34367904d",
       "example": "a3ddc2ddb237"
     },
     "6902a001000000000000002c": {
       "word": "2f53ed01f758",
-      "meaning": "93ed80b393b0",
+      "meaning": "02da08b4b9a8",
       "tips": "9290d620369e",
       "example": "b3a048a735fd"
     },
     "6902a001000000000000002d": {
       "word": "9b6f6519567b",
-      "meaning": "f30dbcb06926",
+      "meaning": "061ea71fe7ba",
       "tips": "d5e36fd3c55e",
       "example": "5624b030de12"
     },
     "6902a001000000000000002e": {
       "word": "dc92d0a24cac",
-      "meaning": "0ae5c1f7e725",
+      "meaning": "b3dd6728ea76",
       "tips": "9a9f0ca1ea64",
       "example": "78775fbf72f8"
     },
     "6902a001000000000000002f": {
       "word": "04b7573bf15c",
-      "meaning": "f90e80028fbc",
+      "meaning": "3e205d7398b7",
       "tips": "1de4e599d939",
       "example": "970498ff9f4e"
     },
     "6902a0010000000000000030": {
       "word": "5938db8435d7",
-      "meaning": "5c7447b3665b",
+      "meaning": "81259d24d9ff",
       "tips": "97781be05b5a",
       "example": "484eefd1fa1a"
     },
     "6902a0010000000000000031": {
       "word": "9603463d4b70",
-      "meaning": "dc5fcc87c102",
+      "meaning": "bf4c1fad90b6",
       "tips": "b8db67f5968b",
       "example": "e00f6fc1c20d"
     },
     "6902a0010000000000000032": {
       "word": "40ef8fd1d7f9",
       "tips": "d70172428315",
-      "meaning": "39c4c50783de",
+      "meaning": "a0d1db4af39f",
       "example": "66a970defef5"
     },
     "6902a0010000000000000033": {
       "word": "e885e6ee2641",
-      "meaning": "fc824f9b66df",
+      "meaning": "be11f54604c4",
       "tips": "0f32c7ea4d55",
       "example": "28b0884a0a70"
     },
     "6902a0010000000000000034": {
       "word": "5f95b22f325a",
-      "meaning": "bab5628d000f",
+      "meaning": "cbc5b8e9b974",
       "tips": "fd45ce504382",
       "example": "2d4b01d5451b"
     },
     "6902a0010000000000000035": {
       "word": "5a9c4533ca56",
-      "meaning": "905f2dfd78c3",
+      "meaning": "74f5f9ebe3fc",
       "tips": "ad9c15faca08",
       "example": "de0c2a89e635"
     },
     "6903a00100002d4e8c1b9a71": {
       "word": "79461f40c2ba",
       "tips": "97abd8873a99",
-      "meaning": "47cdec222230"
+      "meaning": "47cdec222230",
+      "collocations": "7da0c36b761a"
     },
     "6903a00100003b0d463d1a40": {
       "word": "3314ee516e1c",
       "tips": "752f4826aef1",
-      "meaning": "e91f9efc9c0c"
+      "meaning": "e91f9efc9c0c",
+      "collocations": "5b74c744c747"
     },
     "6903a001000048e9a26511e0": {
       "word": "2a0ce00dd616",
       "meaning": "f29d5f6449a9",
-      "tips": "33f8e08767af"
+      "tips": "33f8e08767af",
+      "collocations": "43deb306944e"
     },
     "6903a00100005a1d7f8c2b31": {
       "word": "54356562e0c2",
       "meaning": "1343ad93c8ed",
-      "tips": "580cd73cb946"
+      "tips": "580cd73cb946",
+      "collocations": "22894c66d9aa"
     },
     "6903a00100006c3e9a4d8b12": {
       "word": "6e9c18e57cab",
       "meaning": "d3e34e1d4e2c",
-      "tips": "5634fafc61f9"
+      "tips": "5634fafc61f9",
+      "collocations": "7ab122a7519f"
     },
     "6903a001000078d1f2b69411": {
       "word": "076ec76f503a",
       "meaning": "5b99b55855e6",
-      "tips": "2c9258a331a9"
+      "tips": "2c9258a331a9",
+      "collocations": "d8b52acdd276"
     },
     "6903a00100007e2c4b8d1f93": {
       "word": "5953f47511a9",
       "meaning": "1b0b72d8c080",
-      "tips": "9b9bb1e9d44a"
+      "tips": "9b9bb1e9d44a",
+      "collocations": "4ca60a70a06a"
     },
     "6903a00100008f4b1e9c7a22": {
       "word": "3012c5ade6d9",
       "meaning": "3884e0caab47",
-      "tips": "3ba21f562ff0"
+      "tips": "3ba21f562ff0",
+      "collocations": "e7bf5015be59"
     },
     "6903a00100009c2a3e5f1d88": {
       "word": "5a13ade1bff1",
       "tips": "958cc0ff857a",
-      "meaning": "83f34a51abd7"
+      "meaning": "83f34a51abd7",
+      "collocations": "2fdb29601460"
     },
     "6903a0010000a1b2c3d4e5f1": {
       "word": "627124af7560",
       "meaning": "09c9e55f5c1f",
-      "tips": "68d47904244f"
+      "tips": "68d47904244f",
+      "collocations": "3c0fa9a23fef"
     },
     "6903a0010000a2b3c4d5e6f2": {
       "word": "1a9501d0dd35",
       "tips": "7d8c212bf6dc",
-      "meaning": "626b82e5a982"
+      "meaning": "626b82e5a982",
+      "collocations": "4e6ca27e9980"
     },
     "6903a0010000a3b4c5d6e7f3": {
       "word": "69ed7f3481e7",
       "meaning": "16be8c2831e5",
-      "tips": "03afd2cac387"
+      "tips": "03afd2cac387",
+      "collocations": "e1ad075f60ba"
     },
     "6903a0010000b1c2d3e4f5a1": {
       "word": "4fd9c9c9c32f",
       "tips": "3dac7782a001",
-      "meaning": "e2402c236b2b"
+      "meaning": "e2402c236b2b",
+      "collocations": "4f902f0abbf6"
     },
     "6903a0010000b2c3d4e5f6a2": {
       "word": "4bb1d9c9846e",
       "meaning": "b586e9555643",
-      "tips": "2d4028929f7c"
+      "tips": "2d4028929f7c",
+      "collocations": "023843eb7c98"
     },
     "6903a0010000b3c4d5e6f7a3": {
       "word": "e155d616959e",
       "meaning": "55e1ed62fb41",
-      "tips": "db8f3cc2eeb3"
+      "tips": "db8f3cc2eeb3",
+      "collocations": "653bbbc035c5"
     },
     "6904a0010000000000000001": {
       "word": "7cf28e6ac581",
-      "collocations": "b9cfaca03e87",
-      "tips": "5eb036704bca",
+      "collocations": "4ea1d0093003",
+      "tips": "4087b4cbb6ae",
       "example": "9bd252f07bd7",
       "meaning": "11bbe8d6fef0"
     },
     "6904a0010000000000000002": {
       "word": "9b558cec50a9",
       "example": "3ef917dad20c",
-      "collocations": "bf8f65aacbfd",
+      "collocations": "aee2e71ced66",
       "meaning": "f2d1093155d8",
-      "tips": "af7c3f048314"
+      "tips": "316331c4f627"
     },
     "6904a0010000000000000003": {
       "word": "4a396cfa4dd7",
       "meaning": "09c07cf07a37",
-      "collocations": "2648a74ceb1d",
+      "collocations": "f908290a041a",
       "example": "0221dfbe5db6",
-      "tips": "07817b22b56d"
+      "tips": "1fc3f2c11caf"
     },
     "6904a0010000000000000004": {
       "word": "d5c0f784a795",
       "meaning": "650667a07093",
       "example": "48ed40310874",
-      "collocations": "94b9ee6d75ac",
-      "tips": "8e9aba4265b4"
+      "collocations": "96f5b9ba2b71",
+      "tips": "d64eb6655179"
     },
     "6904a0010000000000000005": {
       "example": "c81cd697dc84",
       "word": "a0b94f15c66f",
       "meaning": "566eb9b3781c",
-      "collocations": "d223e688552e",
-      "tips": "43cdf14d0d63"
+      "collocations": "b68357373663",
+      "tips": "c5512dabc0bf"
     },
     "6904a0010000000000000006": {
       "word": "4594db0abf75",
-      "collocations": "a056f481c373",
+      "collocations": "55db018898fa",
       "example": "33a0a0e41a48",
       "meaning": "48f9c7abee3a",
-      "tips": "224cba844989"
+      "tips": "6bffc5b8cd7a"
     },
     "6904a0010000000000000007": {
       "word": "92f0543c2d3c",
       "meaning": "1523e83eb2b1",
       "example": "b6a08aeb8471",
-      "collocations": "3956daaa89f5",
-      "tips": "28ffd0f843a9"
+      "collocations": "0063576d8ad5",
+      "tips": "88ce30329014"
     },
     "6904a0010000000000000008": {
       "word": "9837b8945677",
       "meaning": "036cd6eddc5c",
       "collocations": "8403d9579c6f",
       "example": "97e7ae4bad71",
-      "tips": "9f2d5ef25f70"
+      "tips": "c5380870b2da"
     },
     "6904a0010000000000000009": {
       "meaning": "d1fff26023a8",
       "word": "a26729868f64",
       "example": "b0f01336e1eb",
-      "tips": "399afe1dd1ec",
+      "tips": "4d10052eaaf8",
       "collocations": "f3e77b12d000"
     },
     "6904a001000000000000000a": {
       "word": "332c7e97b88a",
-      "meaning": "30aeace3d0ce"
+      "meaning": "30aeace3d0ce",
+      "tips": "ff174e510c73"
     },
     "6904a001000000000000000b": {
       "word": "5f5f9697f432",
-      "meaning": "f71e5202a686"
+      "meaning": "f71e5202a686",
+      "tips": "9c8c04627a6b"
     },
     "6904a001000000000000000c": {
       "word": "9c8711e68a1d",
-      "meaning": "0bbaaf32d524"
+      "meaning": "0bbaaf32d524",
+      "tips": "8d74aad27c2b"
     },
     "6904a001000000000000000d": {
       "word": "636cdf2483c6",
-      "meaning": "9eb7da6a279b"
+      "meaning": "9eb7da6a279b",
+      "tips": "46b5dac398c4"
     },
     "6904a001000000000000000e": {
       "word": "dadde5e8aecc",
-      "meaning": "ac89fb9cbf73"
+      "meaning": "ac89fb9cbf73",
+      "tips": "39f09bd65f19"
     },
     "6904a001000000000000000f": {
       "word": "f55b6a0d65ec",
-      "meaning": "64d6e77c0ea1"
+      "meaning": "64d6e77c0ea1",
+      "tips": "c1a9aebd63a9"
     },
     "6904a0010000000000000010": {
       "word": "9a69dd7e81a7",
-      "meaning": "1d8c6c69d4f4"
+      "meaning": "1d8c6c69d4f4",
+      "tips": "b9973d90e35e"
     },
     "6904a0010000000000000011": {
       "word": "8aa4dc031aff",
-      "meaning": "5d75477c6de9"
+      "meaning": "5d75477c6de9",
+      "tips": "ce95f384cda5"
     },
     "6904a0010000000000000012": {
       "word": "e2c1e5c030ff",
-      "meaning": "6286c5adc9b0"
+      "meaning": "6286c5adc9b0",
+      "tips": "6c743d66be48"
     },
     "6904a0010000000000000013": {
       "word": "74d6bc9782e6",
-      "meaning": "7c30c3a7fc23"
+      "meaning": "7c30c3a7fc23",
+      "tips": "0eebdebb99cc"
     },
     "6904a0010000000000000014": {
       "word": "067e91540162",
-      "meaning": "6e0e9ca93e90"
+      "meaning": "6e0e9ca93e90",
+      "tips": "aac6c5309217"
     },
     "6904a0010000000000000015": {
       "word": "b03334cc5b2b",
-      "meaning": "bf2bfd9d05d7"
+      "meaning": "bf2bfd9d05d7",
+      "tips": "cc383e456740"
     },
     "6904a0010000000000000016": {
       "word": "22116d70deb0",
-      "meaning": "deaa8191671d"
+      "meaning": "deaa8191671d",
+      "tips": "c7a62f2edde4"
     },
     "6904a0010000000000000017": {
       "word": "f7f564964db4",
-      "meaning": "5fecd974861b"
+      "meaning": "5fecd974861b",
+      "tips": "b50795a1541b"
     },
     "6904a0010000000000000018": {
       "word": "232d66765d95",
-      "meaning": "594382ac0ee2"
+      "meaning": "594382ac0ee2",
+      "tips": "b354d7ec7424"
     },
     "6904a0010000000000000019": {
       "word": "ac1d806ae9f4",
-      "meaning": "78804603ff25"
+      "meaning": "78804603ff25",
+      "tips": "f23309c4fdb6"
     },
     "6904a001000000000000001a": {
       "word": "58cc4a4b58b0",
-      "meaning": "4232172ca0d6"
+      "meaning": "4232172ca0d6",
+      "tips": "65bc4a4f2bbc"
     },
     "6904a001000000000000001b": {
       "word": "14dcae83e830",
-      "meaning": "83fa092a6754"
+      "meaning": "83fa092a6754",
+      "tips": "39e9b700d366"
     },
     "6904a001000000000000001c": {
       "word": "a370461bac5e",
-      "meaning": "81fe61186cf2"
+      "meaning": "81fe61186cf2",
+      "tips": "b6e4e57d10a9"
     },
     "6904a001000000000000001d": {
       "word": "97a33b2f862e",
-      "meaning": "88354b1ccacc"
+      "meaning": "88354b1ccacc",
+      "tips": "67aaf2634ba3"
     },
     "6904a001000000000000001e": {
       "word": "5349d02b73e1",
-      "meaning": "33d7316ba648"
+      "meaning": "33d7316ba648",
+      "tips": "cade95483977"
     },
     "6904a001000000000000001f": {
       "word": "2251cfb81338",
-      "meaning": "55e0085f65db"
+      "meaning": "55e0085f65db",
+      "tips": "33fc98701220"
     },
     "6904a0010000000000000020": {
       "word": "f3b95626c20f",
-      "meaning": "19631163efcd"
+      "meaning": "19631163efcd",
+      "tips": "a825c3fc60b7"
     },
     "6904a0010000000000000021": {
       "word": "dd1e902596ff",
-      "meaning": "8fd19104b77a"
+      "meaning": "8fd19104b77a",
+      "tips": "535e728ca177"
     },
     "6904a0010000000000000022": {
       "word": "80324fe63843",
-      "meaning": "c810fc6803ef"
+      "meaning": "c810fc6803ef",
+      "tips": "b77fb84dd30a"
     },
     "6904a0010000000000000023": {
       "word": "c4ee7ee58916",
-      "meaning": "b0594e9fda9a"
+      "meaning": "b0594e9fda9a",
+      "tips": "5fc3db1f8150"
     },
     "6904a0010000000000000024": {
       "word": "84f8245b725e",
-      "meaning": "856e31b3bf82"
+      "meaning": "856e31b3bf82",
+      "tips": "7051f2bb5e52"
     },
     "6905a0010000000000000001": {
       "word": "300bf5c716da",
@@ -14267,7 +14374,7 @@
     },
     "6a1c0501ed36e70e737e7860": {
       "word": "9e3d31932b5d",
-      "meaning": "a2be52d5d5d2"
+      "meaning": "d68a1bf070ec"
     },
     "6a1c051ced36e70e737e7866": {
       "word": "4997a0096b05",
