@@ -1,0 +1,405 @@
+/* ==========================================================================
+   VS Code Markdown Preview — Ergonomic Reading Mode (Research-Backed)
+   ==========================================================================
+   Berdasarkan riset ergonomi visual (Rello & Bigham CMU Study, W3C Contrast,
+   Amazon Kindle Sepia, dan Flexoki oleh CEO Obsidian Steph Ango), kombinasi
+   paling optimal untuk membaca durasi panjang memiliki:
+   1. Latar hangat ber-saturasi rendah (memangkas gelombang blue-light layar LED).
+   2. Teks Charcoal/Inky Black (bukan #000000 murni) agar rasio kontras berada
+      di "sweet spot" 10:1 – 13:1 (menghindari efek silau / halation 21:1).
+
+   PILIHAN PRESET (Saat ini aktif: #1 Kindle Sepia `#F4ECD8`):
+   - Preset 1 (Kindle & Apple Books Sepia) : bg #F4ECD8 | text #2C2621
+   - Preset 2 (CMU Study "Creme" Optimal)  : bg #F8F1E4 | text #24201C
+   - Preset 3 (CMU Study "Warm Peach")     : bg #EDD1B0 | text #231D18
+   - Preset 4 (Flexoki Paper - Obsidian)   : bg #FFFCF0 | text #100F0F
+   ========================================================================== */
+
+:root,
+html,
+body,
+.vscode-body,
+.vscode-dark,
+.vscode-light {
+  /* Preset Aktif: Kindle & Apple Books Sepia (#F4ECD8) + CMU Ergonomic Contrast */
+  --bg-paper: #F4ECD8;
+  --bg-paper-elevated: #ECE2C8;
+  --bg-code-inline: #E5D9BC;
+  --bg-code-block: #EBE1C7;
+  --bg-table-stripe: #EFE6CE;
+  --bg-table-header: #E2D6B8;
+  --bg-blockquote: #EDE3C9;
+
+  --text-primary: #2C2621;
+  --text-secondary: #594E43;
+  --text-heading: #1A1612;
+  --text-link: #125887;
+  --text-link-hover: #0B3C5D;
+  --text-code-inline: #822B0D;
+  --border-warm: #D5C7A9;
+  --accent-warm: #B06522;
+
+  /* Override variabel internal VS Code agar tidak kembali ke warna Dark Mode */
+  --vscode-editor-background: var(--bg-paper) !important;
+  --vscode-editor-foreground: var(--text-primary) !important;
+  --vscode-textLink-foreground: var(--text-link) !important;
+  --vscode-textLink-activeForeground: var(--text-link-hover) !important;
+  --vscode-textPreformat-foreground: var(--text-code-inline) !important;
+  --vscode-textPreformat-background: var(--bg-code-inline) !important;
+  --vscode-textBlockQuote-background: var(--bg-blockquote) !important;
+  --vscode-textBlockQuote-border: var(--accent-warm) !important;
+  --vscode-textCodeBlock-background: var(--bg-code-block) !important;
+  --vscode-widget-border: var(--border-warm) !important;
+}
+
+html,
+body,
+body.vscode-body,
+body.vscode-dark,
+body.vscode-light {
+  background-color: var(--bg-paper) !important;
+  color: var(--text-primary) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 16.5px !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0.01em !important;
+  max-width: 840px !important;
+  margin: 0 auto !important;
+  padding: 36px 44px 80px !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* Heading / Judul Bab */
+h1, h2, h3, h4, h5, h6,
+.vscode-dark h1, .vscode-dark h2, .vscode-dark h3,
+.vscode-dark h4, .vscode-dark h5, .vscode-dark h6 {
+  color: var(--text-heading) !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  margin-top: 1.6em !important;
+  margin-bottom: 0.6em !important;
+  border-color: var(--border-warm) !important;
+}
+
+h1 {
+  font-size: 1.85em !important;
+  padding-bottom: 0.35em !important;
+  border-bottom: 2px solid var(--border-warm) !important;
+}
+
+h2 {
+  font-size: 1.42em !important;
+  padding-bottom: 0.25em !important;
+  border-bottom: 1px solid var(--border-warm) !important;
+}
+
+h3 {
+  font-size: 1.18em !important;
+}
+
+/* Teks Tebal & Miring */
+strong, b {
+  color: #14100C !important;
+  font-weight: 650 !important;
+}
+
+p, li {
+  color: var(--text-primary) !important;
+}
+
+li + li {
+  margin-top: 0.32em;
+}
+
+/* Tautan / Link */
+a,
+.vscode-dark a {
+  color: var(--text-link) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+}
+
+a:hover,
+.vscode-dark a:hover {
+  color: var(--text-link-hover) !important;
+}
+
+/* Garis Pemisah */
+hr,
+.vscode-dark hr {
+  border: 0 !important;
+  border-top: 1px solid var(--border-warm) !important;
+  margin: 2em 0 !important;
+}
+
+/* Blockquote & Callout Box (Catatan, Tips, Analogi) */
+blockquote,
+.vscode-dark blockquote {
+  background-color: var(--bg-blockquote) !important;
+  color: var(--text-primary) !important;
+  border-left: 4px solid var(--accent-warm) !important;
+  border-radius: 0 8px 8px 0 !important;
+  padding: 12px 18px !important;
+  margin: 1.2em 0 !important;
+  box-shadow: 0 1px 3px rgba(44, 38, 33, 0.05) !important;
+}
+
+blockquote p {
+  margin: 0.4em 0 !important;
+}
+
+/* Inline Code (`...`) */
+code,
+.vscode-dark code {
+  background-color: var(--bg-code-inline) !important;
+  color: var(--text-code-inline) !important;
+  padding: 0.18em 0.42em !important;
+  border-radius: 4px !important;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+  font-size: 0.88em !important;
+}
+
+/* Code Block (```...```) */
+pre,
+.vscode-dark pre {
+  background-color: var(--bg-code-block) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-warm) !important;
+  border-radius: 8px !important;
+  padding: 14px 18px !important;
+  overflow-x: auto !important;
+}
+
+pre code,
+.vscode-dark pre code {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  padding: 0 !important;
+  font-size: 0.9em !important;
+}
+
+/* Penyesuaian warna syntax highlighting di dalam Code Block saat VS Code Dark Mode */
+.vscode-dark .hljs {
+  color: #2C2621 !important;
+  background: transparent !important;
+}
+.vscode-dark .hljs-keyword,
+.vscode-dark .hljs-selector-tag,
+.vscode-dark .hljs-literal,
+.vscode-dark .hljs-Tag {
+  color: #7C2D12 !important;
+  font-weight: 600 !important;
+}
+.vscode-dark .hljs-string,
+.vscode-dark .hljs-attr,
+.vscode-dark .hljs-template-tag {
+  color: #166534 !important;
+}
+.vscode-dark .hljs-number,
+.vscode-dark .hljs-built_in,
+.vscode-dark .hljs-type {
+  color: #125887 !important;
+}
+.vscode-dark .hljs-title,
+.vscode-dark .hljs-section,
+.vscode-dark .hljs-function {
+  color: #6B21A8 !important;
+}
+.vscode-dark .hljs-comment,
+.vscode-dark .hljs-quote {
+  color: #706352 !important;
+  font-style: italic !important;
+}
+
+/* Tabel */
+table,
+.vscode-dark table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin: 1.4em 0 !important;
+  background-color: var(--bg-paper) !important;
+  border: 1px solid var(--border-warm) !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+}
+
+th,
+.vscode-dark th {
+  background-color: var(--bg-table-header) !important;
+  color: var(--text-heading) !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+  padding: 10px 14px !important;
+  border: 1px solid var(--border-warm) !important;
+}
+
+td,
+.vscode-dark td {
+  padding: 10px 14px !important;
+  border: 1px solid var(--border-warm) !important;
+  color: var(--text-primary) !important;
+}
+
+tr:nth-child(even) td,
+.vscode-dark tr:nth-child(even) td {
+  background-color: var(--bg-table-stripe) !important;
+}
+
+/* Gambar & Ilustrasi */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(44, 38, 33, 0.1) !important;
+  margin: 0.6em 0 !important;
+}
+
+/* Accordion Kunci Jawaban (<details> & <summary>) */
+details {
+  background-color: var(--bg-paper-elevated) !important;
+  border: 1px solid var(--border-warm) !important;
+  border-radius: 8px !important;
+  padding: 10px 16px !important;
+  margin: 1em 0 !important;
+}
+
+summary {
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  color: var(--text-heading) !important;
+}
+
+details[open] summary {
+  margin-bottom: 10px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px dashed var(--border-warm) !important;
+}
+
+/* GitHub Alerts ([!NOTE], [!TIP], [!IMPORTANT], [!WARNING], [!CAUTION]) */
+.markdown-alert {
+  background-color: var(--bg-blockquote) !important;
+  color: var(--text-primary) !important;
+  border-radius: 0 8px 8px 0 !important;
+  padding: 12px 18px !important;
+  margin: 1.2em 0 !important;
+}
+
+.markdown-alert p {
+  color: var(--text-primary) !important;
+}
+
+/* ==========================================================================
+   Mermaid Diagrams — Ergonomic Kindle Sepia Theme Harmonization
+   ========================================================================== */
+
+/* Container Diagram Mermaid */
+.md-mermaid,
+.mermaid,
+div[data-code-block-language="mermaid"],
+.vscode-mermaid {
+  background-color: var(--bg-paper-elevated) !important;
+  border: 1px solid var(--border-warm) !important;
+  border-radius: 10px !important;
+  padding: 24px 20px 36px !important;
+  margin: 1.6em 0 !important;
+  box-shadow: 0 2px 6px rgba(44, 38, 33, 0.06) !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  text-align: center !important;
+}
+
+.md-mermaid svg,
+.mermaid svg,
+svg[id^="mermaid-"] {
+  background: transparent !important;
+  max-width: 100% !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Default Node Rect / Shape (kartu node tanpa custom styling) */
+.md-mermaid .node:not([style*="fill"]) rect,
+.md-mermaid .node:not([style*="fill"]) circle,
+.md-mermaid .node:not([style*="fill"]) ellipse,
+.md-mermaid .node:not([style*="fill"]) polygon,
+.md-mermaid .node:not([style*="fill"]) path,
+.mermaid .node:not([style*="fill"]) rect,
+.mermaid .node:not([style*="fill"]) circle,
+.mermaid .node:not([style*="fill"]) ellipse,
+.mermaid .node:not([style*="fill"]) polygon,
+.mermaid .node:not([style*="fill"]) path,
+.md-mermaid .node.default rect,
+.mermaid .node.default rect {
+  fill: #FAF6ED !important;
+  stroke: #B5A688 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Node Label & Text (jika tanpa custom style color) */
+.md-mermaid .node:not([style*="color"]) .label,
+.md-mermaid .node:not([style*="color"]) .nodeLabel,
+.mermaid .node:not([style*="color"]) .label,
+.mermaid .node:not([style*="color"]) .nodeLabel {
+  color: #1A1612 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.45 !important;
+}
+
+.md-mermaid .label text,
+.mermaid .label text {
+  fill: #1A1612 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Garis Penghubung / Edges */
+.md-mermaid .edgePath .path,
+.md-mermaid .flowchart-link,
+.mermaid .edgePath .path,
+.mermaid .flowchart-link {
+  stroke: #8C7D68 !important;
+  stroke-width: 1.75px !important;
+}
+
+/* Kepala Panah (Arrowheads) */
+.md-mermaid .arrowheadPath,
+.mermaid .arrowheadPath,
+.md-mermaid marker path,
+.mermaid marker path {
+  fill: #8C7D68 !important;
+  stroke: #8C7D68 !important;
+}
+
+/* Label pada Garis Penghubung (Edge Labels) */
+.md-mermaid .edgeLabel,
+.md-mermaid .edgeLabel span,
+.mermaid .edgeLabel,
+.mermaid .edgeLabel span {
+  background-color: var(--bg-paper) !important;
+  color: var(--text-secondary) !important;
+  font-size: 12px !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--border-warm) !important;
+}
+
+/* Subgraph / Clusters */
+.md-mermaid .cluster rect,
+.mermaid .cluster rect {
+  fill: #EFE7D2 !important;
+  stroke: #D5C7A9 !important;
+  stroke-width: 1.5px !important;
+  rx: 8px !important;
+  ry: 8px !important;
+}
+
+.md-mermaid .cluster-label span,
+.mermaid .cluster-label span,
+.md-mermaid .cluster-label text,
+.mermaid .cluster-label text {
+  color: #594E43 !important;
+  fill: #594E43 !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+}
+

@@ -48,4 +48,8 @@ qodana-results/
 # Cambridge local offline media cache
 /public/cambridge/
 
+# External study materials for personal learning (transcripts, videos, books)
+/other-english-materials/
+
+
 
