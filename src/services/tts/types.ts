@@ -6,7 +6,6 @@
 export const TTS_PROVIDER = {
   EDGE_TTS: 'edge-tts',
   GOOGLE_FREE: 'google-free',
-  AZURE_SPEECH: 'azure-speech',
 } as const;
 
 export type TtsProviderType = (typeof TTS_PROVIDER)[keyof typeof TTS_PROVIDER];

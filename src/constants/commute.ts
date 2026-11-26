@@ -12,8 +12,8 @@ export const COMMUTE_MODE = {
 export type CommuteMode = (typeof COMMUTE_MODE)[keyof typeof COMMUTE_MODE];
 
 export const COMMUTE_CARD_FILTER = {
-  PREGENERATED: 'pregenerated',
   DUE_TODAY: 'due-today',
+  RICH_ONLY: 'rich-only',
   NEW_ONLY: 'new-only',
   HARD_AND_RETRY: 'hard-and-retry',
   ALL: 'all',
@@ -91,8 +91,8 @@ export const COMMUTE_MODE_META: Record<
 };
 
 export const COMMUTE_FILTER_LABELS: Record<CommuteCardFilter, string> = {
-  [COMMUTE_CARD_FILTER.PREGENERATED]: 'Audio Neural Siap (Pre-generated)',
   [COMMUTE_CARD_FILTER.DUE_TODAY]: 'Due Today (Anki)',
+  [COMMUTE_CARD_FILTER.RICH_ONLY]: 'Kartu Lengkap (Ada Contoh & Penjelasan)',
   [COMMUTE_CARD_FILTER.NEW_ONLY]: 'New Cards',
   [COMMUTE_CARD_FILTER.HARD_AND_RETRY]: 'Hard & Retry',
   [COMMUTE_CARD_FILTER.ALL]: 'Semua Kartu',

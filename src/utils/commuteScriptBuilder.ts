@@ -27,13 +27,17 @@ export interface CardNarrationFields {
   tipsId: string;
 }
 
+const VERB_TRIPLE_PATTERN =
+  /V1:\s*([^|]+?)\s*\|\s*V2:\s*([^|]+?)(?:\s*\|\s*V3:\s*([^|\n]+))?/i;
+
 /**
  * Pronunciation-safe Indonesian sanitizer per AUDIOBOOK_RULES.md:
- * avoids glottal-stop words clipped by Indonesian TTS and raw SSML tags.
+ * avoids glottal-stop words clipped by Indonesian TTS, pipe noise, and raw SSML tags.
  */
 export function sanitizeIndonesianForTTS(text: string): string {
   return text
     .replace(/<break[^>]*>/gi, ' ')
+    .replace(/\s*\|\s*/g, ', ')
     .replace(/\bnggak\b/gi, 'tidak')
     .replace(/\bgak\b/gi, 'tidak')
     .replace(/\bmendadak\b/gi, 'tiba-tiba')
@@ -41,39 +45,88 @@ export function sanitizeIndonesianForTTS(text: string): string {
     .trim();
 }
 
+function resolveTipsField(df: Record<string, string>): string {
+  if (df['Tips Mengingat']) return df['Tips Mengingat'];
+  const key = Object.keys(df).find((k) =>
+    k.toLowerCase().startsWith('tips mengingat')
+  );
+  return key ? df[key] : '';
+}
+
+function resolveExampleField(df: Record<string, string>): string {
+  if (df['Contoh Kalimat']) return df['Contoh Kalimat'];
+  if (df['Contoh Kalimat Singular']) return df['Contoh Kalimat Singular'];
+  const transformKey = Object.keys(df).find((k) =>
+    k.toLowerCase().startsWith('transformasi kalimat')
+  );
+  if (transformKey) {
+    const quoted = df[transformKey].match(/[""]([^""]{12,220})[""]/);
+    if (quoted?.[1]) return quoted[1];
+  }
+  return '';
+}
+
 /**
  * Extract clean, TTS-friendly bilingual fields from a Flashcard.
+ * Automatically swaps reversed V1/V2/V3 verb cards (ID question -> EN V1/V2/V3 answer)
+ * and resolves alternate dynamicFields key names.
  */
 export function extractFlashcardNarrationFields(
   card: Flashcard
 ): CardNarrationFields {
   const df = card.dynamicFields ?? {};
+  const rawAnswer = String(card.answer || '');
+  const verbMatch = rawAnswer.match(VERB_TRIPLE_PATTERN);
+
+  // Reversed-language V1/V2/V3 verb cards: question is Indonesian, answer has EN V1 | V2 | V3
+  if (verbMatch) {
+    const forms = [verbMatch[1], verbMatch[2], verbMatch[3]]
+      .filter(Boolean)
+      .map((f) => stripMarkdownForTTS(f).trim())
+      .filter(Boolean);
+    return {
+      cardId: card._id ?? card.question,
+      word: forms.join('. ') + '.',
+      meaningId: sanitizeIndonesianForTTS(stripMarkdownForTTS(card.question)),
+      exampleEn: stripMarkdownForTTS(resolveExampleField(df)),
+      collocationsEn: stripMarkdownForTTS(
+        df['Common Collocations'] || df['Kolokasi Emas IELTS'] || ''
+      ),
+      tipsId: sanitizeIndonesianForTTS(stripMarkdownForTTS(resolveTipsField(df))),
+    };
+  }
+
   const firstContentLine =
-    card.answer
+    rawAnswer
       .split('\n')
       .map((line) => line.trim())
-      .find((line) => line.length > 0 && !line.startsWith('#')) ?? card.answer;
+      .find((line) => line.length > 0 && !line.startsWith('#')) ?? rawAnswer;
   const rawMeaning =
-    df['Arti Utama / Definisi'] || df['Arti'] || firstContentLine;
+    df['Arti Utama / Definisi'] ||
+    df['Arti Utama'] ||
+    df['Arti'] ||
+    df['Penjelasan Lengkap'] ||
+    firstContentLine;
 
   return {
     cardId: card._id ?? card.question,
     word: stripMarkdownForTTS(card.question),
     meaningId: sanitizeIndonesianForTTS(stripMarkdownForTTS(rawMeaning)),
-    exampleEn: stripMarkdownForTTS(df['Contoh Kalimat'] ?? ''),
-    collocationsEn: stripMarkdownForTTS(df['Common Collocations'] ?? ''),
-    tipsId: sanitizeIndonesianForTTS(stripMarkdownForTTS(df['Tips Mengingat'] ?? '')),
+    exampleEn: stripMarkdownForTTS(resolveExampleField(df)),
+    collocationsEn: stripMarkdownForTTS(
+      df['Common Collocations'] || df['Kolokasi Emas IELTS'] || ''
+    ),
+    tipsId: sanitizeIndonesianForTTS(stripMarkdownForTTS(resolveTipsField(df))),
   };
 }
 
 /**
- * Filter flashcards based on CommuteCardFilter, optional categoryId, and optional pre-generated audio IDs.
+ * Filter flashcards based on CommuteCardFilter & optional categoryId.
  */
 export function filterCommuteCards(
   flashcards: Flashcard[],
   filter: CommuteCardFilter,
-  categoryId: string,
-  pregeneratedCardIds?: Set<string>
+  categoryId: string
 ): Flashcard[] {
   const now = Date.now();
   const byCategory =
@@ -82,13 +135,13 @@ export function filterCommuteCards(
       : flashcards.filter((c) => c.categories?.includes(categoryId));
 
   switch (filter) {
-    case COMMUTE_CARD_FILTER.PREGENERATED:
-      if (!pregeneratedCardIds || pregeneratedCardIds.size === 0) {
-        return [];
-      }
-      return byCategory.filter((c) =>
-        pregeneratedCardIds.has(c._id ?? c.question)
-      );
+    case COMMUTE_CARD_FILTER.RICH_ONLY:
+      return byCategory.filter((c) => {
+        const fields = extractFlashcardNarrationFields(c);
+        return Boolean(
+          fields.exampleEn || fields.collocationsEn || fields.tipsId
+        );
+      });
     case COMMUTE_CARD_FILTER.DUE_TODAY:
       return byCategory.filter((c) => {
         if (!c.nextReviewDate) return true;

@@ -11,6 +11,7 @@ import {
 import {
   buildCommuteScript,
   estimateEpisodeDurationSec,
+  extractFlashcardNarrationFields,
   filterCommuteCards,
 } from '@/utils/commuteScriptBuilder';
 import { useCommuteHistory } from '@/hooks/useCommuteHistory';
@@ -32,27 +33,31 @@ export const CommuteAudioStudio: React.FC = () => {
     isGenerating,
     progress,
     error,
-    pregeneratedCardIds,
     generateEpisode,
     cancelGeneration,
   } = useCommuteEpisodeGenerator();
   const player = useCommuteAudioPlayer(episode);
 
   const matchingCards = useMemo(
-    () =>
-      filterCommuteCards(
-        flashcards,
-        config.filter,
-        config.categoryId,
-        pregeneratedCardIds
-      ),
-    [flashcards, config.filter, config.categoryId, pregeneratedCardIds]
+    () => filterCommuteCards(flashcards, config.filter, config.categoryId),
+    [flashcards, config.filter, config.categoryId]
   );
 
   const selectedCards = useMemo(
     () => matchingCards.slice(0, config.cardCount),
     [matchingCards, config.cardCount]
   );
+
+  const { collocationsAvailable, tipsAvailable } = useMemo(() => {
+    let collocations = 0;
+    let tips = 0;
+    for (const card of selectedCards) {
+      const fields = extractFlashcardNarrationFields(card);
+      if (fields.collocationsEn) collocations += 1;
+      if (fields.tipsId) tips += 1;
+    }
+    return { collocationsAvailable: collocations, tipsAvailable: tips };
+  }, [selectedCards]);
 
   const estimatedMinutes = useMemo(() => {
     const previewSegments = buildCommuteScript(selectedCards, config);
@@ -146,6 +151,9 @@ export const CommuteAudioStudio: React.FC = () => {
         config={config}
         categories={categories}
         matchingCount={matchingCards.length}
+        selectedBatchSize={selectedCards.length}
+        collocationsAvailable={collocationsAvailable}
+        tipsAvailable={tipsAvailable}
         estimatedMinutes={estimatedMinutes}
         isGenerating={isGenerating}
         progress={progress}

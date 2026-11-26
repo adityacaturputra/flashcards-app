@@ -3080,7 +3080,7 @@
   {
     "_id": "6876607beb12fde01aa091ec",
     "question": "Wither",
-    "answer": "To become dry and shriveled, often referring to plants losing freshness and vitality",
+    "answer": "Layu, mengering, dan mengerut (biasanya pada tanaman yang kehilangan kesegarannya).",
     "progression": "good",
     "nextReviewDate": "2025-09-09T01:28:07.762Z",
     "categories": [
@@ -26532,7 +26532,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600275",
     "question": "Hard dealing with",
-    "answer": "bergauli dengan yang rig= menangguhankan, menunda",
+    "answer": "Sulit berurusan dengan seseorang atau menghadapi sesuatu.",
     "progression": "retry",
     "nextReviewDate": "2026-02-10T02:36:43.859Z",
     "categories": [
@@ -26542,7 +26542,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600276",
     "question": "Hard going",
-    "answer": "yang rig= tunggu",
+    "answer": "Sulit dijalani, berat, atau terasa lambat kemajuannya.",
     "progression": "retry",
     "nextReviewDate": "2026-02-10T02:38:16.679Z",
     "categories": [
@@ -26552,7 +26552,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600279",
     "question": "Have a ball",
-    "answer": "Happen to know= kebetulan tahu",
+    "answer": "Sangat bersenang-senang atau menikmati acara dengan seru.",
     "progression": "retry",
     "nextReviewDate": "2026-02-10T02:41:30.157Z",
     "categories": [
@@ -26562,7 +26562,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60027e",
     "question": "Have a good time",
-    "answer": "Have a beef about= mengeluh",
+    "answer": "Bersenang-senang atau menikmati waktu dengan baik.",
     "progression": "retry",
     "nextReviewDate": "2026-02-10T12:04:32.843Z",
     "categories": [
@@ -26572,7 +26572,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60027f",
     "question": "Have a lot on my plate",
-    "answer": "Have a date with= ada janji dengan",
+    "answer": "Sedang sangat sibuk atau punya terlalu banyak tanggung jawab yang harus ditangani.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T02:13:37.382Z",
     "categories": [
@@ -26582,7 +26582,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600281",
     "question": "Have broad shoulders",
-    "answer": "Have a fit= sangat heran",
+    "answer": "Tegar, tabah, dan sanggup memikul tanggung jawab atau kritik berat.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T02:16:23.574Z",
     "categories": [
@@ -26592,7 +26592,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600282",
     "question": "Have butterflies in the stomach",
-    "answer": "Have a good time= bersenang-senang",
+    "answer": "Sangat gugup, deg-degan, atau cemas sebelum melakukan sesuatu.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T02:19:07.263Z",
     "categories": [
@@ -26602,7 +26602,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600285",
     "question": "Have guts",
-    "answer": "Have broad shoulders= sabar dan tegar",
+    "answer": "Punya keberanian besar atau nyali tinggi.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T02:24:54.830Z",
     "categories": [
@@ -26612,7 +26612,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60028c",
     "question": "Have nothing to lose",
-    "answer": "Have it in for= tak suka",
+    "answer": "Tidak ada ruginya jika mencoba; tidak takut kehilangan apa pun.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T02:29:30.670Z",
     "categories": [
@@ -26622,7 +26622,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60028d",
     "question": "Have on",
-    "answer": "Have it to my neck= sudah bosan, sudah jemu",
+    "answer": "Sedang memakai pakaian, atau sedang punya jadwal kegiatan.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T02:31:03.060Z",
     "categories": [
@@ -26632,7 +26632,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60028e",
     "question": "Have over",
-    "answer": "Have no regrets= tidak menyesal",
+    "answer": "Mengundang seseorang untuk berkunjung ke rumah.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T03:00:42.669Z",
     "categories": [
@@ -26642,7 +26642,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60028f",
     "question": "Have time off",
-    "answer": "Have to do with= memiliki hubungannya",
+    "answer": "Cuti, libur, atau punya waktu luang dari pekerjaan.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T11:45:13.172Z",
     "categories": [
@@ -26652,7 +26652,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600290",
     "question": "Have what it takes",
-    "answer": "Have nothing to lose= tak takut kalah/kehilangan",
+    "answer": "Punya kemampuan, kualitas, dan mental yang dibutuhkan untuk berhasil.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T12:09:12.184Z",
     "categories": [
@@ -26662,7 +26662,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600291",
     "question": "Have not got a clue",
-    "answer": "Have on= memakai",
+    "answer": "Sama sekali tidak tahu atau tidak punya petunjuk sedikit pun.",
     "progression": "retry",
     "nextReviewDate": "2026-02-11T12:16:50.204Z",
     "categories": [
@@ -26672,7 +26672,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600292",
     "question": "Have not got the whole day",
-    "answer": "Have over= mengundang",
+    "answer": "Tidak punya banyak waktu; harus cepat-cepat.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -26682,7 +26682,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600295",
     "question": "Head to head",
-    "answer": "Have not got a clue= tidak paham",
+    "answer": "Berhadap-hadapan langsung atau bersaing ketat satu lawan satu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -26692,7 +26692,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600298",
     "question": "Heavy on hand",
-    "answer": "Head over heels= tergila-gila",
+    "answer": "Sulit diatasi, merepotkan, atau menjadi beban berat.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -26702,7 +26702,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a0",
     "question": "Hold down",
-    "answer": "Hit the ceiling= sangat marah",
+    "answer": "Mempertahankan pekerjaan, atau menekan agar sesuatu tetap rendah/terkendali.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -26712,7 +26712,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a1",
     "question": "Hold good",
-    "answer": "Hit the road= melanjutkan perjalanan",
+    "answer": "Tetap berlaku, tetap sah, atau masih relevan.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -26722,7 +26722,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a3",
     "question": "Hold on",
-    "answer": "Hit the sack= pergi tidur",
+    "answer": "Tunggu sebentar, atau berpegangan erat.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -26732,7 +26732,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a8",
     "question": "Hold with",
-    "answer": "Hold out= tetap mempukupi",
+    "answer": "Setuju atau mendukung suatu pendapat atau kebiasaan.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -26742,7 +26742,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002af",
     "question": "I am not myself",
-    "answer": "Hot money= uang panas",
+    "answer": "Sedang tidak enak badan atau suasana hati sedang tidak seperti biasanya.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -26752,7 +26752,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002b1",
     "question": "I can't help",
-    "answer": "How about= bagaimana kalau",
+    "answer": "Tidak bisa menahan diri (misalnya tidak bisa berhenti tertawa atau memikirkan sesuatu).",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27112,7 +27112,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600277",
     "question": "Hard luck",
-    "answer": "hang over= menggantungkan, berhenti hang up= menggantungkan, bicara (melalui telepon)",
+    "answer": "Nasib buruk, kurang beruntung, atau sial.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27122,7 +27122,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600283",
     "question": "Have charge of",
-    "answer": "Have a lot on my plate= terlalu banyak masalah yang harus dihadapi",
+    "answer": "Bertanggung jawab penuh atas, memimpin, atau mengelola sesuatu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27132,7 +27132,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600284",
     "question": "Have got",
-    "answer": "Have a voice in= memiliki arah/janji",
+    "answer": "Mempunyai atau memiliki sesuatu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27142,7 +27142,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600286",
     "question": "Have in mind",
-    "answer": "Have butterflies in the stomach= sangat gugup",
+    "answer": "Mempunyai rencana, niat, atau sedang memikirkan sesuatu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27152,7 +27152,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600293",
     "question": "Head hunter",
-    "answer": "Have time off= berhenti bekerja, bebas",
+    "answer": "Perekrut tenaga kerja profesional (pencari kandidat berbakat untuk perusahaan).",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27162,7 +27162,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60029b",
     "question": "Hit and miss",
-    "answer": "Heavens= aduh",
+    "answer": "Untung-untungan, coba-coba, atau hasilnya tidak menentu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27172,7 +27172,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60029c",
     "question": "Hit the ceiling",
-    "answer": "Heavy on hand= sulit diatasi",
+    "answer": "Sangat marah atau meledak emosinya.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27182,7 +27182,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60029e",
     "question": "Hit the roof",
-    "answer": "Here you are= ini (barangnya)",
+    "answer": "Marah besar atau naik pitam.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27192,7 +27192,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a4",
     "question": "Hold out",
-    "answer": "Hold down= menindas",
+    "answer": "Bertahan di situasi sulit, atau tetap mencukupi.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27202,7 +27202,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a6",
     "question": "Hold still",
-    "answer": "Hold off= menunda",
+    "answer": "Diam di tempat, jangan bergerak.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27212,7 +27212,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002aa",
     "question": "Hot air",
-    "answer": "Hold still= diam, tidak bergerak",
+    "answer": "Omong kosong, bualan, atau janji kosong tanpa bukti.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27222,7 +27222,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002ae",
     "question": "How come",
-    "answer": "Hot air= omong kosong",
+    "answer": "Bagaimana bisa, atau kenapa begitu?",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27232,7 +27232,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002b3",
     "question": "I dare say",
-    "answer": "I am not myself= saya tidak seperti biasa",
+    "answer": "Saya berani bilang, atau menurut perkiraan saya kemungkinan besar begitu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -27242,7 +27242,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002b4",
     "question": "I don't give a damn",
-    "answer": "I can't be bothered= aku tidak ambil pusing",
+    "answer": "Saya sama sekali tidak peduli atau masa bodoh.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29152,7 +29152,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60027d",
     "question": "Have a fit",
-    "answer": "Have a ball= sedang bersenang-senang (pesta)",
+    "answer": "Sangat marah, kesal sekali, atau kaget luar biasa.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29162,7 +29162,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600287",
     "question": "Have in stock",
-    "answer": "Have charge of= bertanggung jawab, mengatur",
+    "answer": "Tersedia dalam persediaan atau stok barang masih ada.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29172,7 +29172,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600289",
     "question": "Have it to my neck",
-    "answer": "Have guts= memiliki keberanian besar",
+    "answer": "Sudah sangat bosan, muak, atau kewalahan sampai batas kesabaran.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29182,7 +29182,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600294",
     "question": "Head over heels",
-    "answer": "Have what it takes= dapat melakukannya secara efisien dan efektif",
+    "answer": "Jatuh cinta berat atau tergila-gila pada seseorang.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29192,7 +29192,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600296",
     "question": "Hear of",
-    "answer": "Have not got the whole day= harus cepat-cepat",
+    "answer": "Pernah mendengar atau mengetahui tentang seseorang atau sesuatu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29202,7 +29202,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600297",
     "question": "Heavens",
-    "answer": "Head hunter= pengacau",
+    "answer": "Ya ampun, astaga, atau aduh (ungkapan terkejut).",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29212,7 +29212,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60029f",
     "question": "Hit the sack",
-    "answer": "Hit and miss= coba-coba",
+    "answer": "Pergi tidur (bahasa santai sehari-hari).",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29222,7 +29222,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a2",
     "question": "Hold off",
-    "answer": "Hit the roof= marah sekali",
+    "answer": "Menunda dulu atau menahan diri untuk tidak langsung bertindak.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29232,7 +29232,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a7",
     "question": "Hold up",
-    "answer": "Hold on= memegang erat, tahan sebentar",
+    "answer": "Menghambat, membuat terlambat, atau merampok.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29242,7 +29242,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a9",
     "question": "Hold your breath",
-    "answer": "Hold over= menunda",
+    "answer": "Menunggu dengan sangat tegang atau penuh harap.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29252,7 +29252,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002b2",
     "question": "I can't wait",
-    "answer": "How come= bagaimana bisa, kenapa",
+    "answer": "Sudah tidak sabar lagi menantikan sesuatu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29802,7 +29802,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600278",
     "question": "Hard of hearing",
-    "answer": "Happen to= kebetulan, melimpa",
+    "answer": "Agak tuli atau pendengarannya kurang tajam.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29812,7 +29812,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60027a",
     "question": "Have a beef about",
-    "answer": "Hard gee= sukar majú",
+    "answer": "Punya keluhan, unek-unek, atau masalah dengan sesuatu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29822,7 +29822,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60027b",
     "question": "Have a date with",
-    "answer": "Hard luck= sialan",
+    "answer": "Punya janji kencan atau janji temu dengan seseorang.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29832,7 +29832,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60027c",
     "question": "Have a few to many",
-    "answer": "Hard of hearing= agak tuli",
+    "answer": "Minum alkohol terlalu banyak sampai mabuk.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29842,7 +29842,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600280",
     "question": "Have a voice in",
-    "answer": "Have a few to many= mabuk",
+    "answer": "Punya hak suara atau ikut berperan dalam mengambil keputusan.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29852,7 +29852,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600288",
     "question": "Have it in for",
-    "answer": "Have got= mempunyai, memiliki",
+    "answer": "Dendam, tidak suka, atau sengaja mencari-cari kesalahan seseorang.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29862,7 +29862,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60028a",
     "question": "Have no regrets",
-    "answer": "Have in mind= merencanakan, bermaksud",
+    "answer": "Tidak menyesal sedikit pun atas keputusan yang sudah diambil.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29872,7 +29872,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60028b",
     "question": "Have to do with",
-    "answer": "Have in stock= ada dalam persediaan",
+    "answer": "Ada hubungannya atau berkaitan dengan sesuatu.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29882,7 +29882,7 @@
   {
     "_id": "68fe26ac7d58a8a70a600299",
     "question": "Here it is in",
-    "answer": "Head to head= berhadap-hadapan, satu lawan satu",
+    "answer": "Ini dia barangnya (saat menyerahkan atau menemukan sesuatu).",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29892,7 +29892,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60029a",
     "question": "Here you are",
-    "answer": "Hear of= tahu tentang",
+    "answer": "Ini dia, silakan (saat memberikan sesuatu kepada seseorang).",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29902,7 +29902,7 @@
   {
     "_id": "68fe26ac7d58a8a70a60029d",
     "question": "Hit the road",
-    "answer": "Here it is in= ini (barangnya)",
+    "answer": "Berangkat atau mulai menempuh perjalanan.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29912,7 +29912,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002a5",
     "question": "Hold over",
-    "answer": "Hold good= tetap baik, tetap valid",
+    "answer": "Menunda ke waktu lain, atau memperpanjang jadwal.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29922,7 +29922,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002ab",
     "question": "Hot money",
-    "answer": "Hold up= merampok",
+    "answer": "Uang panas (dana spekulatif jangka pendek atau uang hasil ilegal).",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29932,7 +29932,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002ac",
     "question": "Hot potato",
-    "answer": "Hold with= menerima, setuju",
+    "answer": "Masalah sensitif atau kontroversial yang sulit ditangani semua pihak.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29942,7 +29942,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002ad",
     "question": "How about",
-    "answer": "Hold your breath= menunggu dengan tidak sabar",
+    "answer": "Bagaimana kalau... (dipakai untuk memberi saran atau menanyakan pendapat).",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [
@@ -29952,7 +29952,7 @@
   {
     "_id": "68fe26ac7d58a8a70a6002b0",
     "question": "I can't be bothered",
-    "answer": "Hot potato= masalah hangat",
+    "answer": "Malas repot, tidak mau ambil pusing, atau sedang tidak bersemangat melakukannya.",
     "progression": "new",
     "nextReviewDate": "2025-10-26T13:48:28.382Z",
     "categories": [

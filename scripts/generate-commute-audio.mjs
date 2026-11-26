@@ -98,6 +98,7 @@ function sanitizeTextForVoice(text, voice) {
   let safe = stripMarkdown(text)
     .slice(0, 800)
     .replace(/<break[^>]*>/gi, ' ')
+    .replace(/\s*\|\s*/g, ', ')
     .replace(/&/g, conj)
     .replace(/[<>]/g, ' ');
   if (isId) {
@@ -107,6 +108,30 @@ function sanitizeTextForVoice(text, voice) {
       .replace(/\bmendadak\b/gi, 'tiba-tiba');
   }
   return safe.replace(/\s+/g, ' ').trim();
+}
+
+const VERB_TRIPLE_PATTERN =
+  /V1:\s*([^|]+?)\s*\|\s*V2:\s*([^|]+?)(?:\s*\|\s*V3:\s*([^|\n]+))?/i;
+
+function resolveTipsField(df) {
+  if (df['Tips Mengingat']) return df['Tips Mengingat'];
+  const key = Object.keys(df).find((k) =>
+    k.toLowerCase().startsWith('tips mengingat')
+  );
+  return key ? df[key] : '';
+}
+
+function resolveExampleField(df) {
+  if (df['Contoh Kalimat']) return df['Contoh Kalimat'];
+  if (df['Contoh Kalimat Singular']) return df['Contoh Kalimat Singular'];
+  const transformKey = Object.keys(df).find((k) =>
+    k.toLowerCase().startsWith('transformasi kalimat')
+  );
+  if (transformKey) {
+    const quoted = String(df[transformKey]).match(/[""]([^""]{12,220})[""]/);
+    if (quoted?.[1]) return quoted[1];
+  }
+  return '';
 }
 
 function computeClipChecksum(voice, prosody, sanitizedText) {
@@ -227,23 +252,41 @@ async function main() {
     const cardId = card._id;
     if (!cardId) continue;
     const df = card.dynamicFields ?? {};
-    const firstContentLine =
-      String(card.answer || '')
-        .split('\n')
-        .map((line) => line.trim())
-        .find((line) => line.length > 0 && !line.startsWith('#')) || card.answer;
-    const rawMeaning =
-      df['Arti Utama / Definisi'] || df['Arti'] || firstContentLine;
+    const rawAnswer = String(card.answer || '');
+    const verbMatch = rawAnswer.match(VERB_TRIPLE_PATTERN);
+
+    let wordRaw = card.question;
+    let meaningRaw = '';
+    if (verbMatch) {
+      const forms = [verbMatch[1], verbMatch[2], verbMatch[3]]
+        .filter(Boolean)
+        .map((f) => stripMarkdown(f).trim())
+        .filter(Boolean);
+      wordRaw = forms.join('. ') + '.';
+      meaningRaw = card.question;
+    } else {
+      const firstContentLine =
+        rawAnswer
+          .split('\n')
+          .map((line) => line.trim())
+          .find((line) => line.length > 0 && !line.startsWith('#')) || rawAnswer;
+      meaningRaw =
+        df['Arti Utama / Definisi'] ||
+        df['Arti Utama'] ||
+        df['Arti'] ||
+        df['Penjelasan Lengkap'] ||
+        firstContentLine;
+    }
 
     const exampleVoice = args.accent === 'us' ? EN_COHOST_VOICE : enVoice;
     const exampleProsody = args.accent === 'us' ? PROSODY.EN_COHOST : PROSODY.EN_HOST;
 
     const fieldDefs = [
-      { field: 'word', rawText: card.question, voice: enVoice, prosody: PROSODY.EN_HOST },
-      { field: 'meaning', rawText: rawMeaning, voice: ID_VOICE, prosody: PROSODY.ID_HOST },
-      { field: 'example', rawText: df['Contoh Kalimat'] ?? '', voice: exampleVoice, prosody: exampleProsody },
-      { field: 'collocations', rawText: df['Common Collocations'] ?? '', voice: enVoice, prosody: PROSODY.EN_HOST },
-      { field: 'tips', rawText: df['Tips Mengingat'] ?? '', voice: ID_VOICE, prosody: PROSODY.ID_HOST },
+      { field: 'word', rawText: wordRaw, voice: enVoice, prosody: PROSODY.EN_HOST },
+      { field: 'meaning', rawText: meaningRaw, voice: ID_VOICE, prosody: PROSODY.ID_HOST },
+      { field: 'example', rawText: resolveExampleField(df), voice: exampleVoice, prosody: exampleProsody },
+      { field: 'collocations', rawText: df['Common Collocations'] || df['Kolokasi Emas IELTS'] || '', voice: enVoice, prosody: PROSODY.EN_HOST },
+      { field: 'tips', rawText: resolveTipsField(df), voice: ID_VOICE, prosody: PROSODY.ID_HOST },
     ];
 
     for (const def of fieldDefs) {

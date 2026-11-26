@@ -36,7 +36,7 @@ export interface CommuteConfig {
 
 export const DEFAULT_COMMUTE_CONFIG: CommuteConfig = {
   mode: COMMUTE_MODE.PIMSLEUR_MICRO_BATCH,
-  filter: COMMUTE_CARD_FILTER.PREGENERATED,
+  filter: COMMUTE_CARD_FILTER.DUE_TODAY,
   categoryId: 'all',
   cardCount: 20,
   includeCollocations: false,

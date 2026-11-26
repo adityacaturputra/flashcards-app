@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { FaWandMagicSparkles, FaStop } from 'react-icons/fa6';
+import { FaWandMagicSparkles, FaStop, FaHeadphones } from 'react-icons/fa6';
 import { FlashcardCategory } from '@/types/flashcard';
 import {
   COMMUTE_CARD_FILTER,
@@ -12,12 +12,14 @@ import {
   CommuteConfig,
   CommuteMode,
 } from '@/types/commute';
-import AccentToggle from '@/components/atoms/AccentToggle';
 
 interface CommuteSessionConfiguratorProps {
   config: CommuteConfig;
   categories: FlashcardCategory[];
   matchingCount: number;
+  selectedBatchSize: number;
+  collocationsAvailable: number;
+  tipsAvailable: number;
   estimatedMinutes: number;
   isGenerating: boolean;
   progress: { completed: number; total: number };
@@ -33,6 +35,9 @@ export const CommuteSessionConfigurator: React.FC<
   config,
   categories,
   matchingCount,
+  selectedBatchSize,
+  collocationsAvailable,
+  tipsAvailable,
   estimatedMinutes,
   isGenerating,
   progress,
@@ -195,36 +200,60 @@ export const CommuteSessionConfigurator: React.FC<
 
         <div className='space-y-1.5'>
           <label className='text-xs font-bold uppercase tracking-wider text-muted-foreground'>
-            Aksen Suara Inggris (Neural)
+            Suara Narator (Pre-Generated)
           </label>
-          <div className='overflow-hidden'>
-            <AccentToggle compact className='w-full' />
+          <div
+            className='min-h-[44px] rounded-xl border px-3 py-2 flex items-center gap-2 text-xs font-medium text-foreground'
+            style={{ background: 'var(--secondary)', borderColor: 'var(--border)' }}
+          >
+            <FaHeadphones className='h-3.5 w-3.5 shrink-0 text-emerald-600 dark:text-emerald-400' />
+            <span className='truncate'>
+              Tri-Voice Neural · US (Brian &amp; Ava) + ID (Ardi)
+            </span>
           </div>
         </div>
       </div>
 
-      {/* 4. Optional Fields */}
+      {/* 4. Contextual Optional Fields (with live batch counts) */}
       <div className='flex flex-wrap items-center gap-4 pt-1'>
-        <label className='inline-flex items-center gap-2 text-sm text-foreground cursor-pointer select-none min-h-[36px]'>
+        <label
+          className={`inline-flex items-center gap-2 text-sm select-none min-h-[36px] ${
+            collocationsAvailable === 0
+              ? 'opacity-45 cursor-not-allowed text-muted-foreground'
+              : 'cursor-pointer text-foreground'
+          }`}
+        >
           <input
             type='checkbox'
-            checked={config.includeCollocations}
+            disabled={collocationsAvailable === 0}
+            checked={collocationsAvailable > 0 && config.includeCollocations}
             onChange={(e) =>
               onChangeConfig({ includeCollocations: e.target.checked })
             }
             className='rounded'
           />
-          <span>Bacakan Common Collocations</span>
+          <span>
+            Bacakan Collocations ({collocationsAvailable}/{selectedBatchSize} kartu)
+          </span>
         </label>
 
-        <label className='inline-flex items-center gap-2 text-sm text-foreground cursor-pointer select-none min-h-[36px]'>
+        <label
+          className={`inline-flex items-center gap-2 text-sm select-none min-h-[36px] ${
+            tipsAvailable === 0
+              ? 'opacity-45 cursor-not-allowed text-muted-foreground'
+              : 'cursor-pointer text-foreground'
+          }`}
+        >
           <input
             type='checkbox'
-            checked={config.includeTips}
+            disabled={tipsAvailable === 0}
+            checked={tipsAvailable > 0 && config.includeTips}
             onChange={(e) => onChangeConfig({ includeTips: e.target.checked })}
             className='rounded'
           />
-          <span>Bacakan Tips Mengingat</span>
+          <span>
+            Bacakan Tips Mengingat ({tipsAvailable}/{selectedBatchSize} kartu)
+          </span>
         </label>
       </div>
 
