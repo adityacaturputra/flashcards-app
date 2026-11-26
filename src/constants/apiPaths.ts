@@ -14,6 +14,7 @@ export const API_PATHS = {
   GENERATE_FLASHCARDS: `${API_BASE}/generateFlashcards`,
   SEARCH_TEMPLATES: `${API_BASE}/searchTemplates`,
   QUIZ: `${API_BASE}/quiz`,
+  COMMUTE_TTS: `${API_BASE}/commute/tts`,
 } as const;
 
 export type ApiPath = (typeof API_PATHS)[keyof typeof API_PATHS];

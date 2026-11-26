@@ -58,6 +58,7 @@ export const API_ENDPOINTS = {
   CATEGORY_BY_ID: (id: string, source?: DataSource) =>
     buildUrl(API_PATHS.FLASHCARD_CATEGORIES, { id, [SOURCE_QUERY_PARAM]: source }),
   GENERATE_FLASHCARDS: API_PATHS.GENERATE_FLASHCARDS,
+  COMMUTE_TTS: API_PATHS.COMMUTE_TTS,
   SEARCH_TEMPLATES: (params?: SearchTemplateQueryParams | string) => {
     if (!params) return API_PATHS.SEARCH_TEMPLATES;
     const userId = typeof params === 'string' ? params : params.userId;
