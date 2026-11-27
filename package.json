@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commute:generate": "node scripts/generate-commute-audio.mjs"
+    "commute:generate": "node scripts/generate-commute-audio.mjs",
+    "sync:audiobooks": "node scripts/sync-audiobooks.mjs"
   },
   "dependencies": {
     "dayjs": "^1.11.13",
