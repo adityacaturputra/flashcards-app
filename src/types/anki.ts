@@ -24,6 +24,17 @@ export interface AnkiReviewResult {
   nextReviewDate: Date;
 }
 
+export interface AnkiAudioExposureResult {
+  progression: Progression;
+  repetitions: number;
+  interval: number;
+  easeFactor: number;
+  lapses: number;
+  lastReviewedDate?: Date;
+  nextReviewDate?: Date;
+  skipped: boolean;
+}
+
 export interface ReviewedTodayItem {
   id: string;
   question: string;

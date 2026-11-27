@@ -7,6 +7,7 @@ import {
   CommuteCardFilter,
   CommuteSegmentPhase,
   CommuteVoiceLang,
+  CommuteSoftSyncStatus,
   COMMUTE_MODE,
   COMMUTE_CARD_FILTER,
 } from '@/constants/commute';
@@ -29,9 +30,11 @@ export interface CommuteConfig {
   filter: CommuteCardFilter;
   categoryId: string; // 'all' or specific category _id
   cardCount: number;
+  startIndex: number; // 1-based batch offset
   includeCollocations: boolean;
   includeTips: boolean;
   recallPauseSec: number;
+  syncToAnki: boolean;
 }
 
 export const DEFAULT_COMMUTE_CONFIG: CommuteConfig = {
@@ -39,10 +42,22 @@ export const DEFAULT_COMMUTE_CONFIG: CommuteConfig = {
   filter: COMMUTE_CARD_FILTER.DUE_TODAY,
   categoryId: 'all',
   cardCount: 20,
+  startIndex: 1,
   includeCollocations: false,
   includeTips: false,
   recallPauseSec: 3.5,
+  syncToAnki: true,
 };
+
+export interface CommuteSoftSyncSummary {
+  enabled: boolean;
+  listenedCount: number;
+  syncedCount: number;
+  pendingCount: number;
+  totalCards: number;
+  status: CommuteSoftSyncStatus;
+  onSyncNow: () => void;
+}
 
 export interface CommuteAudioSegment {
   id: string;

@@ -17,7 +17,14 @@ import {
   CommuteChapterMarker,
   CommuteEpisode,
   CommutePlaybackSpeed,
+  CommuteSoftSyncSummary,
 } from '@/types/commute';
+import CommuteSoftSyncBadge from './CommuteSoftSyncBadge';
+import {
+  AudioPlaybackProgress,
+  formatAudioClock,
+} from '@/utils/audioPlaybackProgress';
+import CommuteResumeBanner from '@/components/molecules/commute/CommuteResumeBanner';
 
 interface CommuteEpisodePlayerProps {
   episode: CommuteEpisode;
@@ -29,6 +36,8 @@ interface CommuteEpisodePlayerProps {
   isLooping: boolean;
   activeChapter: CommuteChapterMarker | null;
   activeChapterIndex: number;
+  savedProgress?: AudioPlaybackProgress | null;
+  showResumePrompt?: boolean;
   onTogglePlay: () => void;
   onSeek: (timeSec: number) => void;
   onSkip: (deltaSec: number) => void;
@@ -36,13 +45,9 @@ interface CommuteEpisodePlayerProps {
   onSetPlaybackSpeed: (speed: CommutePlaybackSpeed) => void;
   onToggleLoop: () => void;
   onDownloadMp3: () => void;
-}
-
-function formatClock(sec: number): string {
-  const safe = Math.max(0, Math.floor(sec));
-  const mins = Math.floor(safe / 60);
-  const rem = safe % 60;
-  return `${mins}:${rem.toString().padStart(2, '0')}`;
+  onResume?: () => void;
+  onRestart?: () => void;
+  softSync?: CommuteSoftSyncSummary;
 }
 
 export const CommuteEpisodePlayer: React.FC<CommuteEpisodePlayerProps> = ({
@@ -55,6 +60,8 @@ export const CommuteEpisodePlayer: React.FC<CommuteEpisodePlayerProps> = ({
   isLooping,
   activeChapter,
   activeChapterIndex,
+  savedProgress,
+  showResumePrompt,
   onTogglePlay,
   onSeek,
   onSkip,
@@ -62,6 +69,9 @@ export const CommuteEpisodePlayer: React.FC<CommuteEpisodePlayerProps> = ({
   onSetPlaybackSpeed,
   onToggleLoop,
   onDownloadMp3,
+  onResume,
+  onRestart,
+  softSync,
 }) => {
   const totalSec = duration || episode.totalDurationSec;
 
@@ -128,6 +138,15 @@ export const CommuteEpisodePlayer: React.FC<CommuteEpisodePlayerProps> = ({
         </button>
       </div>
 
+      {/* 1-Tap Motor-Friendly Resume Prompt */}
+      {showResumePrompt && savedProgress && onResume && onRestart && (
+        <CommuteResumeBanner
+          savedProgress={savedProgress}
+          onResume={onResume}
+          onRestart={onRestart}
+        />
+      )}
+
       {/* Scrubber */}
       <div className='space-y-1.5'>
         <input
@@ -141,8 +160,8 @@ export const CommuteEpisodePlayer: React.FC<CommuteEpisodePlayerProps> = ({
           className='w-full accent-foreground cursor-pointer h-2'
         />
         <div className='flex justify-between text-xs font-medium text-muted-foreground tabular-nums'>
-          <span>{formatClock(currentTime)}</span>
-          <span>{formatClock(totalSec)}</span>
+          <span>{formatAudioClock(currentTime)}</span>
+          <span>{formatAudioClock(totalSec)}</span>
         </div>
       </div>
 
@@ -262,6 +281,8 @@ export const CommuteEpisodePlayer: React.FC<CommuteEpisodePlayerProps> = ({
           <span>{isLooping ? 'Loop Aktif' : 'Loop Episode'}</span>
         </button>
       </div>
+
+      {softSync && <CommuteSoftSyncBadge softSync={softSync} />}
 
       <p className='text-[11px] text-muted-foreground leading-relaxed'>
         Tips iOS Safari: Tekan <strong>Play</strong> dulu, lalu langsung pindah ke{' '}

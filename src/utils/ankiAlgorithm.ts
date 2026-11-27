@@ -4,9 +4,11 @@
  */
 
 import { Flashcard, Progression } from '@/types/flashcard';
+import { CommuteMode } from '@/constants/commute';
 import {
   AnkiCardState,
   AnkiReviewResult,
+  AnkiAudioExposureResult,
   AnkiDailyQueue,
   AnkiForecastDay,
   ReviewedTodayItem,
@@ -333,6 +335,90 @@ export function getAnkiForecast(
   }
 
   return forecast;
+}
+
+/**
+ * Calculates partial-credit SRS progression for hands-free audio exposure (/commute).
+ * Divided-attention listening never mutates easeFactor or lapses, never auto-promotes
+ * to Good/Perfect, and skips cards already reviewed today (anti double-credit).
+ */
+export function calculateAudioExposureCredit(
+  card: Flashcard,
+  _mode: CommuteMode,
+  referenceDate: Date = new Date(),
+): AnkiAudioExposureResult {
+  const currentProgression = card.progression ?? Progression.New;
+  const currentReps = card.repetitions ?? 0;
+  const currentInterval = card.interval ?? 0;
+  const currentEase = card.easeFactor ?? ANKI_DEFAULT_EASE_FACTOR;
+  const currentLapses = card.lapses ?? 0;
+
+  if (isCardReviewedToday(card, referenceDate)) {
+    return {
+      progression: currentProgression,
+      repetitions: currentReps,
+      interval: currentInterval,
+      easeFactor: currentEase,
+      lapses: currentLapses,
+      lastReviewedDate: card.lastReviewedDate
+        ? new Date(card.lastReviewedDate)
+        : undefined,
+      nextReviewDate: card.nextReviewDate
+        ? new Date(card.nextReviewDate)
+        : undefined,
+      skipped: true,
+    };
+  }
+
+  const DAY_MS = 24 * 60 * 60 * 1000;
+
+  if (
+    currentProgression === Progression.New ||
+    currentProgression === Progression.Retry
+  ) {
+    const newInterval = 1;
+    return {
+      progression: Progression.Hard,
+      repetitions: Math.max(1, currentReps),
+      interval: newInterval,
+      easeFactor: currentEase,
+      lapses: currentLapses,
+      lastReviewedDate: referenceDate,
+      nextReviewDate: new Date(referenceDate.getTime() + newInterval * DAY_MS),
+      skipped: false,
+    };
+  }
+
+  if (currentProgression === Progression.Hard) {
+    const newInterval = Math.min(3, Math.max(1, Math.round(currentInterval * 1.15)));
+    return {
+      progression: Progression.Hard,
+      repetitions: Math.max(1, currentReps),
+      interval: newInterval,
+      easeFactor: currentEase,
+      lapses: currentLapses,
+      lastReviewedDate: referenceDate,
+      nextReviewDate: new Date(referenceDate.getTime() + newInterval * DAY_MS),
+      skipped: false,
+    };
+  }
+
+  // Normal / Good / Perfect: maintenance exposure (+1 day), never auto-promote
+  const existingNextTime = card.nextReviewDate
+    ? new Date(card.nextReviewDate).getTime()
+    : 0;
+  const baseTime = Math.max(referenceDate.getTime(), existingNextTime);
+
+  return {
+    progression: currentProgression,
+    repetitions: currentReps,
+    interval: currentInterval,
+    easeFactor: currentEase,
+    lapses: currentLapses,
+    lastReviewedDate: referenceDate,
+    nextReviewDate: new Date(baseTime + DAY_MS),
+    skipped: false,
+  };
 }
 
 export default calculateAnkiReview;

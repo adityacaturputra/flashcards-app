@@ -61,6 +61,13 @@ export type CommutePlaybackSpeed = (typeof COMMUTE_PLAYBACK_SPEEDS)[number];
 
 export const COMMUTE_SESSION_SIZES = [10, 20, 30, 40] as const;
 
+export const COMMUTE_CARD_LIMITS = {
+  MIN_COUNT: 1,
+  MIN_START_INDEX: 1,
+  LARGE_BATCH_WARNING_THRESHOLD: 60,
+  ESTIMATED_MB_PER_MINUTE: 0.35, // 48kbps mono MP3 ≈ 360 KB/min
+} as const;
+
 export const COMMUTE_BATCH_SIZE = 5;
 
 export const COMMUTE_HISTORY_STORAGE_KEY = 'flashcards_commute_history_v1';
@@ -105,3 +112,22 @@ export const COMMUTE_PHASE_LABELS: Record<CommuteSegmentPhase, string> = {
   [COMMUTE_SEGMENT_PHASE.FINAL_SWEEP]: 'Final Consolidation',
   [COMMUTE_SEGMENT_PHASE.PODCAST]: 'Podcast Flow',
 };
+
+export const COMMUTE_SOFT_SYNC_STATUS = {
+  OFF: 'off',
+  IDLE: 'idle',
+  SYNCING: 'syncing',
+  SYNCED: 'synced',
+} as const;
+
+export type CommuteSoftSyncStatus =
+  (typeof COMMUTE_SOFT_SYNC_STATUS)[keyof typeof COMMUTE_SOFT_SYNC_STATUS];
+
+export const COMMUTE_AUTO_SYNC_FILTERS: readonly CommuteCardFilter[] = [
+  COMMUTE_CARD_FILTER.DUE_TODAY,
+  COMMUTE_CARD_FILTER.HARD_AND_RETRY,
+] as const;
+
+export function shouldDefaultSoftSync(filter: CommuteCardFilter): boolean {
+  return COMMUTE_AUTO_SYNC_FILTERS.includes(filter);
+}

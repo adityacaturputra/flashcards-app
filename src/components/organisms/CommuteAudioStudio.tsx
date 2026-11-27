@@ -3,10 +3,13 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { useAppContext } from '@/context/appContext';
 import { useAccentContext } from '@/context/accentContext';
 import {
+  COMMUTE_CARD_LIMITS,
   COMMUTE_MODE,
+  COMMUTE_MODE_META,
   CommuteConfig,
   CommuteSessionRecord,
   DEFAULT_COMMUTE_CONFIG,
+  shouldDefaultSoftSync,
 } from '@/types/commute';
 import {
   buildCommuteScript,
@@ -14,16 +17,22 @@ import {
   extractFlashcardNarrationFields,
   filterCommuteCards,
 } from '@/utils/commuteScriptBuilder';
+import { resolveCommuteBatchWindow } from '@/utils/commuteBatch';
+import {
+  buildCommuteEpisodeKey,
+  loadAudioProgress,
+} from '@/utils/audioPlaybackProgress';
 import { useCommuteHistory } from '@/hooks/useCommuteHistory';
 import { useCommuteEpisodeGenerator } from '@/hooks/useCommuteEpisodeGenerator';
 import { useCommuteAudioPlayer } from '@/hooks/useCommuteAudioPlayer';
+import { useCommuteSoftSync } from '@/hooks/useCommuteSoftSync';
 import CommuteHistoryBanner from '@/components/molecules/commute/CommuteHistoryBanner';
 import CommuteEpisodePlayer from '@/components/molecules/commute/CommuteEpisodePlayer';
 import CommuteSessionConfigurator from '@/components/molecules/commute/CommuteSessionConfigurator';
 import CommuteTranscriptTimeline from '@/components/molecules/commute/CommuteTranscriptTimeline';
 
 export const CommuteAudioStudio: React.FC = () => {
-  const { flashcards, categories, loading } = useAppContext();
+  const { flashcards, categories, loading, updateFlashcard } = useAppContext();
   const { accent } = useAccentContext();
   const [config, setConfig] = useState<CommuteConfig>(DEFAULT_COMMUTE_CONFIG);
 
@@ -37,15 +46,37 @@ export const CommuteAudioStudio: React.FC = () => {
     cancelGeneration,
   } = useCommuteEpisodeGenerator();
   const player = useCommuteAudioPlayer(episode);
+  const softSync = useCommuteSoftSync({
+    episode,
+    currentTime: player.currentTime,
+    isPlaying: player.isPlaying,
+    enabled: config.syncToAnki,
+    flashcards,
+    updateFlashcard,
+  });
 
   const matchingCards = useMemo(
     () => filterCommuteCards(flashcards, config.filter, config.categoryId),
     [flashcards, config.filter, config.categoryId]
   );
 
+  const batchWindow = useMemo(
+    () =>
+      resolveCommuteBatchWindow(
+        matchingCards.length,
+        config.startIndex,
+        config.cardCount
+      ),
+    [matchingCards.length, config.startIndex, config.cardCount]
+  );
+
   const selectedCards = useMemo(
-    () => matchingCards.slice(0, config.cardCount),
-    [matchingCards, config.cardCount]
+    () =>
+      matchingCards.slice(
+        batchWindow.startOffset,
+        batchWindow.startOffset + batchWindow.effectiveCount
+      ),
+    [matchingCards, batchWindow.startOffset, batchWindow.effectiveCount]
   );
 
   const { collocationsAvailable, tipsAvailable } = useMemo(() => {
@@ -66,11 +97,29 @@ export const CommuteAudioStudio: React.FC = () => {
   }, [selectedCards, config]);
 
   const handleChangeConfig = useCallback((patch: Partial<CommuteConfig>) => {
-    setConfig((prev) => ({ ...prev, ...patch }));
+    setConfig((prev) => {
+      const resetStart =
+        patch.filter !== undefined || patch.categoryId !== undefined;
+      return {
+        ...prev,
+        ...patch,
+        ...(patch.filter !== undefined && patch.syncToAnki === undefined
+          ? { syncToAnki: shouldDefaultSoftSync(patch.filter) }
+          : {}),
+        ...(resetStart && patch.startIndex === undefined
+          ? { startIndex: COMMUTE_CARD_LIMITS.MIN_START_INDEX }
+          : {}),
+      };
+    });
   }, []);
 
   const handleGenerate = useCallback(async () => {
-    const created = await generateEpisode(selectedCards, config, accent);
+    const modeTitle = COMMUTE_MODE_META[config.mode].title;
+    const customTitle =
+      batchWindow.safeStartIndex > 1
+        ? `${modeTitle} (${selectedCards.length} kartu · #${batchWindow.safeStartIndex}–${batchWindow.endIndex})`
+        : undefined;
+    const created = await generateEpisode(selectedCards, config, accent, customTitle);
     if (created) {
       saveSession({
         id: created.id,
@@ -81,7 +130,15 @@ export const CommuteAudioStudio: React.FC = () => {
         createdAt: created.createdAt,
       });
     }
-  }, [selectedCards, config, accent, generateEpisode, saveSession]);
+  }, [
+    selectedCards,
+    config,
+    accent,
+    batchWindow.safeStartIndex,
+    batchWindow.endIndex,
+    generateEpisode,
+    saveSession,
+  ]);
 
   const handleQuickRecallSession = useCallback(
     async (record: CommuteSessionRecord) => {
@@ -104,6 +161,14 @@ export const CommuteAudioStudio: React.FC = () => {
     [flashcards, config, accent, generateEpisode]
   );
 
+  const latestSessionProgress = useMemo(() => {
+    if (!latestSession) return null;
+    const key = buildCommuteEpisodeKey(latestSession.mode, latestSession.cardIds);
+    return loadAudioProgress(key);
+    // Re-read when playback state or savedProgress changes so the banner stays fresh
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [latestSession, player.isPlaying, player.savedProgress]);
+
   if (loading) {
     return (
       <div className='rounded-2xl border p-8 text-center text-sm text-muted-foreground' style={{ borderColor: 'var(--border)' }}>
@@ -118,6 +183,7 @@ export const CommuteAudioStudio: React.FC = () => {
       {latestSession && (
         <CommuteHistoryBanner
           latestSession={latestSession}
+          lastProgress={latestSessionProgress}
           isGenerating={isGenerating}
           onQuickRecallSession={handleQuickRecallSession}
           onClearHistory={clearHistory}
@@ -136,6 +202,8 @@ export const CommuteAudioStudio: React.FC = () => {
           isLooping={player.isLooping}
           activeChapter={player.activeChapter}
           activeChapterIndex={player.activeChapterIndex}
+          savedProgress={player.savedProgress}
+          showResumePrompt={player.showResumePrompt}
           onTogglePlay={player.togglePlay}
           onSeek={player.seek}
           onSkip={player.skip}
@@ -143,6 +211,9 @@ export const CommuteAudioStudio: React.FC = () => {
           onSetPlaybackSpeed={player.setPlaybackSpeed}
           onToggleLoop={player.toggleLoop}
           onDownloadMp3={player.downloadEpisodeMp3}
+          softSync={softSync}
+          onResume={player.resumeFromSaved}
+          onRestart={player.restartFromBeginning}
         />
       )}
 
@@ -151,7 +222,7 @@ export const CommuteAudioStudio: React.FC = () => {
         config={config}
         categories={categories}
         matchingCount={matchingCards.length}
-        selectedBatchSize={selectedCards.length}
+        batchWindow={batchWindow}
         collocationsAvailable={collocationsAvailable}
         tipsAvailable={tipsAvailable}
         estimatedMinutes={estimatedMinutes}
