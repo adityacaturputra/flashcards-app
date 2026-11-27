@@ -35,6 +35,7 @@ export const CommuteAudioStudio: React.FC = () => {
   const { flashcards, categories, loading, updateFlashcard } = useAppContext();
   const { accent } = useAccentContext();
   const [config, setConfig] = useState<CommuteConfig>(DEFAULT_COMMUTE_CONFIG);
+  const [excludedCardIds, setExcludedCardIds] = useState<Set<string>>(() => new Set());
 
   const { latestSession, saveSession, clearHistory } = useCommuteHistory();
   const {
@@ -60,23 +61,33 @@ export const CommuteAudioStudio: React.FC = () => {
     [flashcards, config.filter, config.categoryId]
   );
 
+  const eligibleCards = useMemo(
+    () => matchingCards.filter((c) => !excludedCardIds.has(c._id ?? c.question)),
+    [matchingCards, excludedCardIds]
+  );
+
   const batchWindow = useMemo(
     () =>
       resolveCommuteBatchWindow(
-        matchingCards.length,
+        eligibleCards.length,
         config.startIndex,
         config.cardCount
       ),
-    [matchingCards.length, config.startIndex, config.cardCount]
+    [eligibleCards.length, config.startIndex, config.cardCount]
   );
 
   const selectedCards = useMemo(
     () =>
-      matchingCards.slice(
+      eligibleCards.slice(
         batchWindow.startOffset,
         batchWindow.startOffset + batchWindow.effectiveCount
       ),
-    [matchingCards, batchWindow.startOffset, batchWindow.effectiveCount]
+    [eligibleCards, batchWindow.startOffset, batchWindow.effectiveCount]
+  );
+
+  const reserveCount = Math.max(
+    0,
+    batchWindow.availableFromStart - selectedCards.length
   );
 
   const { collocationsAvailable, tipsAvailable } = useMemo(() => {
@@ -97,20 +108,33 @@ export const CommuteAudioStudio: React.FC = () => {
   }, [selectedCards, config]);
 
   const handleChangeConfig = useCallback((patch: Partial<CommuteConfig>) => {
-    setConfig((prev) => {
-      const resetStart =
-        patch.filter !== undefined || patch.categoryId !== undefined;
-      return {
-        ...prev,
-        ...patch,
-        ...(patch.filter !== undefined && patch.syncToAnki === undefined
-          ? { syncToAnki: shouldDefaultSoftSync(patch.filter) }
-          : {}),
-        ...(resetStart && patch.startIndex === undefined
-          ? { startIndex: COMMUTE_CARD_LIMITS.MIN_START_INDEX }
-          : {}),
-      };
+    const resetScope =
+      patch.filter !== undefined || patch.categoryId !== undefined;
+    if (resetScope) {
+      setExcludedCardIds(new Set());
+    }
+    setConfig((prev) => ({
+      ...prev,
+      ...patch,
+      ...(patch.filter !== undefined && patch.syncToAnki === undefined
+        ? { syncToAnki: shouldDefaultSoftSync(patch.filter) }
+        : {}),
+      ...(resetScope && patch.startIndex === undefined
+        ? { startIndex: COMMUTE_CARD_LIMITS.MIN_START_INDEX }
+        : {}),
+    }));
+  }, []);
+
+  const handleExcludeCard = useCallback((cardId: string) => {
+    setExcludedCardIds((prev) => {
+      const next = new Set(prev);
+      next.add(cardId);
+      return next;
     });
+  }, []);
+
+  const handleResetExcluded = useCallback(() => {
+    setExcludedCardIds(new Set());
   }, []);
 
   const handleGenerate = useCallback(async () => {
@@ -221,8 +245,11 @@ export const CommuteAudioStudio: React.FC = () => {
       <CommuteSessionConfigurator
         config={config}
         categories={categories}
-        matchingCount={matchingCards.length}
+        matchingCount={eligibleCards.length}
         batchWindow={batchWindow}
+        selectedCards={selectedCards}
+        reserveCount={reserveCount}
+        excludedCount={excludedCardIds.size}
         collocationsAvailable={collocationsAvailable}
         tipsAvailable={tipsAvailable}
         estimatedMinutes={estimatedMinutes}
@@ -230,6 +257,8 @@ export const CommuteAudioStudio: React.FC = () => {
         progress={progress}
         error={error}
         onChangeConfig={handleChangeConfig}
+        onExcludeCard={handleExcludeCard}
+        onResetExcluded={handleResetExcluded}
         onGenerate={handleGenerate}
         onCancel={cancelGeneration}
       />

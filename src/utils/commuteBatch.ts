@@ -2,6 +2,30 @@
  * Pure Batch Window & Estimation Helpers for Commute Audio Sessions
  */
 import { COMMUTE_CARD_LIMITS } from '@/constants/commute';
+import { Flashcard, Progression } from '@/types/flashcard';
+
+export interface CommuteCardStatusBadge {
+  label: string;
+  className: string;
+}
+
+export function getCommuteCardStatusBadge(card: Flashcard): CommuteCardStatusBadge {
+  if (card.progression === Progression.New) {
+    return { label: 'New', className: 'bg-sky-500/15 text-sky-600 dark:text-sky-400' };
+  }
+  if (card.progression === Progression.Retry) {
+    return { label: 'Retry', className: 'bg-rose-500/15 text-rose-600 dark:text-rose-400' };
+  }
+  if (card.progression === Progression.Hard) {
+    return { label: 'Hard', className: 'bg-amber-500/15 text-amber-600 dark:text-amber-400' };
+  }
+  const isDue = card.nextReviewDate ? new Date(card.nextReviewDate).getTime() <= Date.now() : false;
+  if (isDue) {
+    return { label: 'Due', className: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400' };
+  }
+  const label = card.progression.charAt(0).toUpperCase() + card.progression.slice(1);
+  return { label, className: 'bg-zinc-500/15 text-muted-foreground' };
+}
 
 export interface CommuteBatchWindow {
   safeStartIndex: number;
