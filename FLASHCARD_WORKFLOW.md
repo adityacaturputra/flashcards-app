@@ -51,25 +51,14 @@ When the user asks to add vocabulary, phrases, idioms, or grammar pairs as flash
 > - If no card exists, generate a new deterministic 24-char hex `_id` (e.g. incrementing `6902a0010000000000000021`) and unshift.
 
 > [!TIP]
-> **5. Strict Auto-Commit Policy (Pure Data ONLY)**:
-> - The agent is **authorized to auto-commit** pure data updates in `src/data/flashcards/` and related documentation.
-> - **FORBIDDEN**: The agent must NEVER auto-commit changes to UI components, pages, hooks, or application logic without explicit user instruction.
+> **5. Auto-Commit Policy**:
+> Ikuti kebijakan commit di [`AGENTS.md`](./AGENTS.md) (pure data di `src/data/flashcards/` boleh auto-commit; kode aplikasi dilarang auto-commit).
 
 ---
 
-## 📋 Standard Flashcard Schema
+## 📋 Standard Flashcard Schema & Gold-Standard Rules
 
-```typescript
-export interface Flashcard {
-  _id: string;                         // 24-char hex string (e.g. "6902a0010000000000000021")
-  question: string;                    // Word, phrase, or term with grammatical label
-  answer: string;                      // Markdown explanation rendered with MarkdownViewer
-  progression: 'new' | 'retry' | 'hard' | 'normal' | 'good' | 'perfect';
-  nextReviewDate: string;              // ISO date string (e.g. new Date().toISOString())
-  categories: string[];                // Category _id references from categories.json
-  dynamicFields: Record<string, string>; // Rich metadata key-value pairs
-}
-```
+Skema lengkap `Flashcard`, standar `dynamicFields`, aturan `question` murni (tanpa bocoran IPA/kelas kata), serta daftar ID kategori resmi merujuk pada **Single Source of Truth** di [`FLASHCARD_RULES.md`](./FLASHCARD_RULES.md).
 
 ---
 

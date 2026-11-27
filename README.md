@@ -35,9 +35,13 @@ Designed for high-yield vocabulary retention, agentic dataset management, and in
 
 ```text
 flashcards/
-├── AGENTS.md                  # Operational protocol for AI agents
+├── .agents/skills/            # On-demand AI agent skills (coding-standards, study-mapping, local-flashcard, commute-audio, workspace-authoring)
+├── AGENTS.md                  # Always-on AI agent guardrails & skill routing
 ├── BESTPRACTICE.md            # Senior Software Engineer standards & patterns
+├── FLASHCARD_RULES.md         # Gold-Standard flashcard schema & category IDs
+├── FLASHCARD_WORKFLOW.md      # Protocol for adding local flashcards
 ├── MAPPING_WORKFLOW.md        # Protocol for adding English error analyses
+├── COMMUTE_AUDIO_WORKFLOW.md  # Guide for pre-generating Neural commute audio
 ├── README.md                  # Project documentation
 ├── src/
 │   ├── app/                   # Next.js App Router (pages & API routes)
