@@ -4,6 +4,8 @@ import {
   CommuteEpisode,
   CommutePlaybackSpeed,
 } from '@/types/commute';
+import { buildCommuteEpisodeKey } from '@/utils/audioPlaybackProgress';
+import { useAudioPlaybackProgress } from '@/hooks/useAudioPlaybackProgress';
 
 interface NavigatorWithAudioSession extends Navigator {
   audioSession?: {
@@ -102,21 +104,28 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
       ? episode.chapters[activeChapterIndex]
       : null;
 
+  const play = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio || !episode) return;
+    ensureIosAudioSession();
+    audio
+      .play()
+      .then(() => setIsPlaying(true))
+      .catch(() => setIsPlaying(false));
+  }, [episode, ensureIosAudioSession]);
+
   const togglePlay = useCallback(() => {
     const audio = audioRef.current;
     if (!audio || !episode) return;
     ensureIosAudioSession();
 
     if (audio.paused) {
-      audio
-        .play()
-        .then(() => setIsPlaying(true))
-        .catch(() => setIsPlaying(false));
+      play();
     } else {
       audio.pause();
       setIsPlaying(false);
     }
-  }, [episode, ensureIosAudioSession]);
+  }, [episode, ensureIosAudioSession, play]);
 
   const seek = useCallback(
     (timeSec: number) => {
@@ -237,8 +246,30 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     document.body.removeChild(anchor);
   }, [episode]);
 
+  const episodeKey = useMemo(
+    () => (episode ? buildCommuteEpisodeKey(episode.mode, episode.cardIds) : null),
+    [episode]
+  );
+
+  const {
+    savedProgress,
+    showResumePrompt,
+    handleResume,
+    handleStartFromBeginning,
+  } = useAudioPlaybackProgress({
+    episodeKey,
+    audioRef,
+    isPlaying,
+    currentTime,
+    duration,
+    activeChapterIndex,
+    onSeek: seek,
+    onPlay: play,
+  });
+
   return {
     audioRef,
+    episodeKey,
     isPlaying,
     currentTime,
     duration,
@@ -246,6 +277,8 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     isLooping,
     activeChapterIndex,
     activeChapter,
+    savedProgress,
+    showResumePrompt,
     togglePlay,
     seek,
     skip,
@@ -253,5 +286,7 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     setPlaybackSpeed,
     toggleLoop,
     downloadEpisodeMp3,
+    resumeFromSaved: handleResume,
+    restartFromBeginning: handleStartFromBeginning,
   };
 }

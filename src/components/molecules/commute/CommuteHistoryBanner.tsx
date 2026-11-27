@@ -2,9 +2,14 @@
 import React from 'react';
 import { FaRotateLeft, FaTrashCan } from 'react-icons/fa6';
 import { CommuteSessionRecord } from '@/types/commute';
+import {
+  AudioPlaybackProgress,
+  formatAudioClock,
+} from '@/utils/audioPlaybackProgress';
 
 interface CommuteHistoryBannerProps {
   latestSession: CommuteSessionRecord;
+  lastProgress?: AudioPlaybackProgress | null;
   isGenerating: boolean;
   onQuickRecallSession: (record: CommuteSessionRecord) => void;
   onClearHistory: () => void;
@@ -12,6 +17,7 @@ interface CommuteHistoryBannerProps {
 
 export const CommuteHistoryBanner: React.FC<CommuteHistoryBannerProps> = ({
   latestSession,
+  lastProgress,
   isGenerating,
   onQuickRecallSession,
   onClearHistory,
@@ -44,6 +50,14 @@ export const CommuteHistoryBanner: React.FC<CommuteHistoryBannerProps> = ({
         <p className='text-xs text-muted-foreground'>
           Tes ulang {latestSession.cardCount} kartu terakhir pakai mode Quick Recall (jeda 4 detik).
         </p>
+        {lastProgress && lastProgress.currentTimeSec > 0 && (
+          <p className='mt-1 text-xs font-medium text-foreground tabular-nums'>
+            Terakhir di {formatAudioClock(lastProgress.currentTimeSec)}
+            {lastProgress.durationSec > 0
+              ? ` / ${formatAudioClock(lastProgress.durationSec)}`
+              : ''}
+          </p>
+        )}
       </div>
 
       <div className='flex items-center gap-2 shrink-0'>
