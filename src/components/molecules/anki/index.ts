@@ -2,4 +2,8 @@ export { AnkiReviewHeader } from './AnkiReviewHeader';
 export { AnkiForecastModal } from './AnkiForecastModal';
 export { AnkiDeckComplete } from './AnkiDeckComplete';
 export { AnkiTodayReviewedBox } from './AnkiTodayReviewedBox';
+export { AnkiHistoryActivityStrip } from './AnkiHistoryActivityStrip';
+export { AnkiHistoryHealthBar } from './AnkiHistoryHealthBar';
+export { AnkiHistoryCardRow } from './AnkiHistoryCardRow';
+export { AnkiHistoryTimelineList } from './AnkiHistoryTimelineList';
 export { AnkiCardDetailModal } from './AnkiCardDetailModal';

@@ -10,10 +10,12 @@ import {
   FaClock,
   FaWandMagicSparkles,
 } from 'react-icons/fa6';
+import { Flashcard } from '@/types/flashcard';
 import { AnkiForecastDay, ReviewedTodayItem } from '@/types/anki';
 import { AnkiTodayReviewedBox } from './AnkiTodayReviewedBox';
 
 interface AnkiDeckCompleteProps {
+  allFlashcards?: Flashcard[];
   completedCount: number;
   todayReviewedCards: ReviewedTodayItem[];
   tomorrowForecast?: AnkiForecastDay;
@@ -25,6 +27,7 @@ interface AnkiDeckCompleteProps {
 }
 
 export const AnkiDeckComplete: React.FC<AnkiDeckCompleteProps> = ({
+  allFlashcards = [],
   completedCount,
   todayReviewedCards,
   tomorrowForecast,
@@ -122,6 +125,7 @@ export const AnkiDeckComplete: React.FC<AnkiDeckCompleteProps> = ({
       {/* Kotak Today: Reviewed Cards History */}
       <AnkiTodayReviewedBox
         reviewedCards={todayReviewedCards}
+        allFlashcards={allFlashcards}
         dailyTarget={dailyTarget}
         isCollapsible={true}
         defaultExpanded={true}

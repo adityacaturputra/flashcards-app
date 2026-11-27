@@ -218,6 +218,7 @@ const FlashcardList: React.FC<FlashcardListProps> = ({
       {/* Review Mode View vs Browsing Mode View */}
       {isReviewMode? (
         <FlashcardReviewSection
+          allFlashcards={flashcards}
           remainingDueCount={remainingDueCount}
           remainingNewCount={remainingNewCount}
           completedCount={completedCount}

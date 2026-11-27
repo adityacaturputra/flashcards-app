@@ -14,6 +14,7 @@ import {
 import { applyReverseQA, unreverseUpdates } from '@/utils/flashcardReverseQA';
 
 export interface FlashcardReviewSectionProps {
+  allFlashcards: Flashcard[];
   remainingDueCount: number;
   remainingNewCount: number;
   completedCount: number;
@@ -40,6 +41,7 @@ export interface FlashcardReviewSectionProps {
 }
 
 export const FlashcardReviewSection: React.FC<FlashcardReviewSectionProps> = ({
+  allFlashcards,
   remainingDueCount,
   remainingNewCount,
   completedCount,
@@ -85,6 +87,7 @@ export const FlashcardReviewSection: React.FC<FlashcardReviewSectionProps> = ({
         <div className='mb-4'>
           <AnkiTodayReviewedBox
             reviewedCards={todayReviewedCards}
+            allFlashcards={allFlashcards}
             dailyTarget={dailyTarget}
             defaultExpanded={true}
           />
@@ -103,6 +106,7 @@ export const FlashcardReviewSection: React.FC<FlashcardReviewSectionProps> = ({
       {/* Active Card or Deck Completion Screen */}
       {isDeckComplete ? (
         <AnkiDeckComplete
+          allFlashcards={allFlashcards}
           completedCount={completedCount}
           todayReviewedCards={todayReviewedCards}
           tomorrowForecast={forecast[1]}

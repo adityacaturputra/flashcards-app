@@ -11,8 +11,14 @@ import {
   AnkiAudioExposureResult,
   AnkiDailyQueue,
   AnkiForecastDay,
+  AnkiHistoryDayGroup,
+  AnkiActivityStripDay,
+  AnkiHistoryHealthSummary,
+  AnkiProgressionBreakdown,
+  AnkiHistoryRange,
   ReviewedTodayItem,
   ANKI_CONFIG,
+  ANKI_HISTORY_RANGE,
 } from '@/types/anki';
 
 export * from '@/types/anki';
@@ -207,6 +213,7 @@ export function getAnkiDailyQueue(
         repetitions: card.repetitions,
         interval: card.interval,
         easeFactor: card.easeFactor,
+        lapses: card.lapses,
         nextReviewDate: card.nextReviewDate,
         lastReviewedDate: card.lastReviewedDate!,
         dynamicFields: card.dynamicFields,
@@ -418,6 +425,280 @@ export function calculateAudioExposureCredit(
     lastReviewedDate: referenceDate,
     nextReviewDate: new Date(baseTime + DAY_MS),
     skipped: false,
+  };
+}
+
+/**
+ * Formats a local calendar date key as YYYY-MM-DD.
+ */
+function toLocalDateKey(date: Date): string {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
+/**
+ * Maps a Flashcard with lastReviewedDate into a ReviewedTodayItem.
+ */
+function toReviewedHistoryItem(card: Flashcard): ReviewedTodayItem {
+  return {
+    id: card._id || '',
+    question: card.question,
+    answer: card.answer,
+    progression: card.progression,
+    repetitions: card.repetitions,
+    interval: card.interval,
+    easeFactor: card.easeFactor,
+    lapses: card.lapses,
+    nextReviewDate: card.nextReviewDate,
+    lastReviewedDate: card.lastReviewedDate!,
+    dynamicFields: card.dynamicFields,
+  };
+}
+
+/**
+ * Creates an empty progression breakdown counter object.
+ */
+function createEmptyBreakdown(): AnkiProgressionBreakdown {
+  return { perfect: 0, good: 0, normal: 0, hard: 0, retry: 0 };
+}
+
+/**
+ * Increments the appropriate progression bucket in a breakdown object.
+ */
+function incrementBreakdown(
+  breakdown: AnkiProgressionBreakdown,
+  progression?: Progression,
+): void {
+  switch (progression) {
+    case Progression.Perfect:
+      breakdown.perfect += 1;
+      break;
+    case Progression.Good:
+      breakdown.good += 1;
+      break;
+    case Progression.Hard:
+      breakdown.hard += 1;
+      break;
+    case Progression.Retry:
+      breakdown.retry += 1;
+      break;
+    case Progression.Normal:
+    default:
+      breakdown.normal += 1;
+      break;
+  }
+}
+
+/**
+ * Formats human-readable next review timing label (DRY across history rows & detail modal).
+ */
+export function formatNextReviewLabel(
+  nextDateStr?: Date | string,
+  referenceDate: Date = new Date(),
+): string {
+  if (!nextDateStr) return 'Due now';
+  const next = new Date(nextDateStr);
+  const diffMs = next.getTime() - referenceDate.getTime();
+  if (diffMs <= 0) return 'Due now';
+
+  const diffHours = Math.round(diffMs / (1000 * 60 * 60));
+  if (diffHours <= 1) return 'in 1h';
+  if (diffHours < 24) return `in ${diffHours}h`;
+
+  const diffDays = Math.round(diffHours / 24);
+  if (diffDays === 1) return 'Tomorrow';
+  return `in ${diffDays}d`;
+}
+
+/**
+ * Groups all flashcards that have a lastReviewedDate by local calendar day (newest first).
+ * Supports range filter ('7' | '30' | 'all' or numeric day count).
+ */
+export function getAnkiReviewHistoryByDate(
+  flashcards: Flashcard[],
+  range: AnkiHistoryRange | number = ANKI_HISTORY_RANGE.DAYS_30,
+  dailyTarget: number = ANKI_CONFIG.DAILY_TARGET,
+  referenceDate: Date = new Date(),
+): AnkiHistoryDayGroup[] {
+  const todayKey = toLocalDateKey(referenceDate);
+  const yesterday = new Date(referenceDate);
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayKey = toLocalDateKey(yesterday);
+
+  let cutoffTime: number | null = null;
+  if (range !== ANKI_HISTORY_RANGE.ALL) {
+    const days = typeof range === 'number' ? range : Number(range);
+    if (!Number.isNaN(days) && days > 0) {
+      const cutoff = new Date(referenceDate);
+      cutoff.setHours(0, 0, 0, 0);
+      cutoff.setDate(cutoff.getDate() - (days - 1));
+      cutoffTime = cutoff.getTime();
+    }
+  }
+
+  const groupMap = new Map<string, { date: Date; cards: ReviewedTodayItem[] }>();
+
+  for (const card of flashcards) {
+    if (!card.lastReviewedDate) continue;
+    const reviewedDate = new Date(card.lastReviewedDate);
+    if (Number.isNaN(reviewedDate.getTime())) continue;
+    if (cutoffTime !== null && reviewedDate.getTime() < cutoffTime) continue;
+
+    const key = toLocalDateKey(reviewedDate);
+    let bucket = groupMap.get(key);
+    if (!bucket) {
+      const normalized = new Date(
+        reviewedDate.getFullYear(),
+        reviewedDate.getMonth(),
+        reviewedDate.getDate(),
+      );
+      bucket = { date: normalized, cards: [] };
+      groupMap.set(key, bucket);
+    }
+    bucket.cards.push(toReviewedHistoryItem(card));
+  }
+
+  const groups: AnkiHistoryDayGroup[] = [];
+  groupMap.forEach(({ date, cards }, dateKey) => {
+    cards.sort(
+      (a, b) =>
+        new Date(b.lastReviewedDate).getTime() - new Date(a.lastReviewedDate).getTime(),
+    );
+
+    const breakdown = createEmptyBreakdown();
+    cards.forEach((c) => incrementBreakdown(breakdown, c.progression));
+
+    const dateFormatted = date.toLocaleDateString('id-ID', {
+      day: 'numeric',
+      month: 'short',
+    });
+    const weekdayFormatted = date.toLocaleDateString('id-ID', {
+      weekday: 'short',
+    });
+
+    let label = dateFormatted;
+    let subLabel = weekdayFormatted;
+    if (dateKey === todayKey) {
+      label = 'Hari Ini';
+      subLabel = dateFormatted;
+    } else if (dateKey === yesterdayKey) {
+      label = 'Kemarin';
+      subLabel = dateFormatted;
+    }
+
+    groups.push({
+      dateKey,
+      date,
+      label,
+      subLabel,
+      cards,
+      totalCount: cards.length,
+      isGoalMet: cards.length >= dailyTarget,
+      breakdown,
+    });
+  });
+
+  groups.sort((a, b) => b.date.getTime() - a.date.getTime());
+  return groups;
+}
+
+/**
+ * Produces a contiguous N-day activity strip (oldest -> newest) for the heatmap / mini bar strip.
+ */
+export function getAnkiActivityStrip(
+  flashcards: Flashcard[],
+  days: number = ANKI_CONFIG.ACTIVITY_STRIP_DAYS,
+  dailyTarget: number = ANKI_CONFIG.DAILY_TARGET,
+  referenceDate: Date = new Date(),
+): AnkiActivityStripDay[] {
+  const countsByKey = new Map<string, number>();
+  for (const card of flashcards) {
+    if (!card.lastReviewedDate) continue;
+    const d = new Date(card.lastReviewedDate);
+    if (Number.isNaN(d.getTime())) continue;
+    const key = toLocalDateKey(d);
+    countsByKey.set(key, (countsByKey.get(key) ?? 0) + 1);
+  }
+
+  const todayKey = toLocalDateKey(referenceDate);
+  const strip: AnkiActivityStripDay[] = [];
+
+  for (let i = days - 1; i >= 0; i--) {
+    const d = new Date(referenceDate);
+    d.setHours(0, 0, 0, 0);
+    d.setDate(d.getDate() - i);
+    const dateKey = toLocalDateKey(d);
+    const count = countsByKey.get(dateKey) ?? 0;
+
+    strip.push({
+      dateKey,
+      date: d,
+      shortDay: d.toLocaleDateString('id-ID', { weekday: 'narrow' }),
+      dayNum: d.getDate(),
+      count,
+      isGoalMet: count >= dailyTarget,
+      isToday: dateKey === todayKey,
+    });
+  }
+
+  return strip;
+}
+
+/**
+ * Computes overall Current vs Historical Health metrics across all reviewed flashcards.
+ */
+export function getAnkiHistoryHealthSummary(
+  flashcards: Flashcard[],
+  referenceDate: Date = new Date(),
+): AnkiHistoryHealthSummary {
+  const masteryBreakdown = createEmptyBreakdown();
+  const activeDateKeys = new Set<string>();
+  const highLapseCards: ReviewedTodayItem[] = [];
+  let totalEverReviewed = 0;
+  let easeSum = 0;
+
+  for (const card of flashcards) {
+    if (!card.lastReviewedDate) continue;
+    const d = new Date(card.lastReviewedDate);
+    if (Number.isNaN(d.getTime())) continue;
+
+    totalEverReviewed += 1;
+    activeDateKeys.add(toLocalDateKey(d));
+    incrementBreakdown(masteryBreakdown, card.progression);
+    easeSum += card.easeFactor ?? ANKI_DEFAULT_EASE_FACTOR;
+
+    if ((card.lapses ?? 0) >= ANKI_CONFIG.HIGH_LAPSE_THRESHOLD) {
+      highLapseCards.push(toReviewedHistoryItem(card));
+    }
+  }
+
+  highLapseCards.sort((a, b) => (b.lapses ?? 0) - (a.lapses ?? 0));
+
+  // Count consecutive active days ending today (or yesterday if not yet reviewed today)
+  let activeStreakDays = 0;
+  const cursor = new Date(referenceDate);
+  cursor.setHours(0, 0, 0, 0);
+  if (!activeDateKeys.has(toLocalDateKey(cursor))) {
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  while (activeDateKeys.has(toLocalDateKey(cursor))) {
+    activeStreakDays += 1;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+
+  const avgEaseFactor =
+    totalEverReviewed > 0
+      ? Number((easeSum / totalEverReviewed).toFixed(2))
+      : ANKI_DEFAULT_EASE_FACTOR;
+
+  return {
+    activeStreakDays,
+    totalEverReviewed,
+    avgEaseFactor,
+    masteryBreakdown,
+    highLapseCards,
   };
 }
 

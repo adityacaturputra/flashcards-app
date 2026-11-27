@@ -12,6 +12,8 @@ export const ANKI_CONFIG = {
   EXTRA_NEW_INCREMENT: 5,
   EXTRA_REVIEW_INCREMENT: 5,
   FORECAST_DAYS: 7,
+  ACTIVITY_STRIP_DAYS: 14,
+  HIGH_LAPSE_THRESHOLD: 2,
   DEFAULT_EASE_FACTOR: 2.5,
   MIN_EASE_FACTOR: 1.3,
 } as const;
@@ -22,3 +24,18 @@ export const ANKI_CARD_QUEUE = {
 } as const;
 
 export type AnkiCardQueue = (typeof ANKI_CARD_QUEUE)[keyof typeof ANKI_CARD_QUEUE];
+
+export const ANKI_HISTORY_TAB = {
+  TODAY: 'today',
+  TIMELINE: 'timeline',
+} as const;
+
+export type AnkiHistoryTab = (typeof ANKI_HISTORY_TAB)[keyof typeof ANKI_HISTORY_TAB];
+
+export const ANKI_HISTORY_RANGE = {
+  DAYS_7: '7',
+  DAYS_30: '30',
+  ALL: 'all',
+} as const;
+
+export type AnkiHistoryRange = (typeof ANKI_HISTORY_RANGE)[keyof typeof ANKI_HISTORY_RANGE];

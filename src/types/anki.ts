@@ -43,9 +43,47 @@ export interface ReviewedTodayItem {
   repetitions?: number;
   interval?: number;
   easeFactor?: number;
+  lapses?: number;
   nextReviewDate?: Date | string;
   lastReviewedDate: Date | string;
   dynamicFields?: Record<string, string>;
+}
+
+export interface AnkiProgressionBreakdown {
+  perfect: number;
+  good: number;
+  normal: number;
+  hard: number;
+  retry: number;
+}
+
+export interface AnkiHistoryDayGroup {
+  dateKey: string;
+  date: Date;
+  label: string;
+  subLabel: string;
+  cards: ReviewedTodayItem[];
+  totalCount: number;
+  isGoalMet: boolean;
+  breakdown: AnkiProgressionBreakdown;
+}
+
+export interface AnkiActivityStripDay {
+  dateKey: string;
+  date: Date;
+  shortDay: string;
+  dayNum: number;
+  count: number;
+  isGoalMet: boolean;
+  isToday: boolean;
+}
+
+export interface AnkiHistoryHealthSummary {
+  activeStreakDays: number;
+  totalEverReviewed: number;
+  avgEaseFactor: number;
+  masteryBreakdown: AnkiProgressionBreakdown;
+  highLapseCards: ReviewedTodayItem[];
 }
 
 export interface AnkiDailyQueue {
