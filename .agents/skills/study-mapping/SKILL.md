@@ -8,7 +8,7 @@ description: >-
 
 # Study Mapping Workflow Skill
 
-Follow the full protocol in [MAPPING_WORKFLOW.md](../../../MAPPING_WORKFLOW.md) and these core rules:
+Follow the full protocol in [MAPPING_WORKFLOW.md](references/MAPPING_WORKFLOW.md) and these core rules:
 
 1. **Immediate Educational Delivery First**: Always explain the rule, formula breakdown, comparison table, and correct answer directly in chat BEFORE any repo edits.
 2. **Search-First Deduplication**: Grep `src/data/mappings/index.ts` for the topic/phrase first. If an entry exists, **edit and expand** it rather than creating a duplicate.

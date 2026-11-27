@@ -8,7 +8,7 @@ description: >-
 
 # Local Flashcard Workflow Skill
 
-Follow the operational protocol in [FLASHCARD_WORKFLOW.md](../../../FLASHCARD_WORKFLOW.md) and the Gold-Standard schema & category IDs in [FLASHCARD_RULES.md](../../../FLASHCARD_RULES.md):
+Follow the operational protocol in [FLASHCARD_WORKFLOW.md](references/FLASHCARD_WORKFLOW.md) and the Gold-Standard schema & category IDs in [FLASHCARD_RULES.md](../../../FLASHCARD_RULES.md):
 
 1. **Immediate Lexical Coaching**: Deliver definition, IPA pronunciation, natural examples, and memory hooks immediately in chat.
 2. **Search-First Deduplication**: Grep `src/data/flashcards/flashcards.json` first; enrich existing cards instead of duplicating.

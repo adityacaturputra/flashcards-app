@@ -52,13 +52,13 @@ When the user asks to add vocabulary, phrases, idioms, or grammar pairs as flash
 
 > [!TIP]
 > **5. Auto-Commit Policy**:
-> Ikuti kebijakan commit di [`AGENTS.md`](./AGENTS.md) (pure data di `src/data/flashcards/` boleh auto-commit; kode aplikasi dilarang auto-commit).
+> Ikuti kebijakan commit di [`AGENTS.md`](../../../../AGENTS.md) (pure data di `src/data/flashcards/` boleh auto-commit; kode aplikasi dilarang auto-commit).
 
 ---
 
 ## 📋 Standard Flashcard Schema & Gold-Standard Rules
 
-Skema lengkap `Flashcard`, standar `dynamicFields`, aturan `question` murni (tanpa bocoran IPA/kelas kata), serta daftar ID kategori resmi merujuk pada **Single Source of Truth** di [`FLASHCARD_RULES.md`](./FLASHCARD_RULES.md).
+Skema lengkap `Flashcard`, standar `dynamicFields`, aturan `question` murni (tanpa bocoran IPA/kelas kata), serta daftar ID kategori resmi merujuk pada **Single Source of Truth** di [`FLASHCARD_RULES.md`](../../../../FLASHCARD_RULES.md).
 
 ---
 

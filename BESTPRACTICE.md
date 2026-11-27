@@ -310,6 +310,6 @@ This section documents the specific engineering philosophy, coding habits, and r
 ---
 
 ## 🔗 Related Documentation
-- 📖 **[MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)**: Step-by-step study mapping workflow for AI agents.
-- 🗂️ **[FLASHCARD_WORKFLOW.md](./FLASHCARD_WORKFLOW.md)**: Step-by-step local flashcard addition and schema guide.
+- 📖 **[MAPPING_WORKFLOW.md](.agents/skills/study-mapping/references/MAPPING_WORKFLOW.md)**: Step-by-step study mapping workflow for AI agents.
+- 🗂️ **[FLASHCARD_WORKFLOW.md](.agents/skills/local-flashcard/references/FLASHCARD_WORKFLOW.md)**: Step-by-step local flashcard addition and schema guide.
 - 📘 **[AGENTS.md](./AGENTS.md)**: Main operational guide for AI agents and developers.

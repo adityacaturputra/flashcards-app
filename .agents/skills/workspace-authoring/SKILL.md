@@ -22,7 +22,7 @@ Gunakan **The Rule of Inversion**: *Pertahankan root `AGENTS.md` se-minimal mung
 | **Tier 1: Root Guardrails** | [`AGENTS.md`](../../../AGENTS.md) | Always-on (~40–50 baris) | Keamanan secrets, portabilitas tautan, kebijakan auto-commit, session hygiene, skill routing. |
 | **Tier 2: Scoped Rules** | Subfolder `AGENTS.md` (jika diperlukan) | Aktif saat path disentuh | Aturan spesifik sub-direktori tertentu. |
 | **Tier 3: On-Demand Skills** | `.agents/skills/<nama-skill>/SKILL.md` | Progressive Disclosure | Prosedur langkah demi langkah, checklist aksi, dan pointer ke referensi mendalam. |
-| **Tier 4: Deep References** | Root `*_WORKFLOW.md`, `BESTPRACTICE.md`, `FLASHCARD_RULES.md` | Dibaca saat butuh | Skema lengkap, tabel kategori, contoh panjang, dan standar rekayasa mendalam. |
+| **Tier 4: Deep References** | `.agents/skills/*/references/`, `BESTPRACTICE.md`, `FLASHCARD_RULES.md` | Dibaca saat butuh | Skema lengkap, tabel kategori, contoh panjang, dan standar rekayasa mendalam. |
 
 ---
 

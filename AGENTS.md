@@ -17,9 +17,9 @@ Jangan menebak prosedur panjang — baca skill terkait saat tugasnya muncul:
 | Jenis Tugas | Skill Wajib Dibaca | Referensi Mendalam |
 | :--- | :--- | :--- |
 | **Coding, UI, Refactor, Bugfix** | [`coding-standards`](.agents/skills/coding-standards/SKILL.md) | [`BESTPRACTICE.md`](BESTPRACTICE.md) |
-| **Study Mapping / Grammar IELTS** | [`study-mapping`](.agents/skills/study-mapping/SKILL.md) | [`MAPPING_WORKFLOW.md`](MAPPING_WORKFLOW.md) |
-| **Tambah / Perkaya Flashcards** | [`local-flashcard`](.agents/skills/local-flashcard/SKILL.md) | [`FLASHCARD_RULES.md`](FLASHCARD_RULES.md), [`FLASHCARD_WORKFLOW.md`](FLASHCARD_WORKFLOW.md) |
-| **Commute Audio MP3 (`/commute`)** | [`commute-audio`](.agents/skills/commute-audio/SKILL.md) | [`COMMUTE_AUDIO_WORKFLOW.md`](COMMUTE_AUDIO_WORKFLOW.md) |
+| **Study Mapping / Grammar IELTS** | [`study-mapping`](.agents/skills/study-mapping/SKILL.md) | [`MAPPING_WORKFLOW.md`](.agents/skills/study-mapping/references/MAPPING_WORKFLOW.md) |
+| **Tambah / Perkaya Flashcards** | [`local-flashcard`](.agents/skills/local-flashcard/SKILL.md) | [`FLASHCARD_RULES.md`](FLASHCARD_RULES.md), [`FLASHCARD_WORKFLOW.md`](.agents/skills/local-flashcard/references/FLASHCARD_WORKFLOW.md) |
+| **Commute Audio MP3 (`/commute`)** | [`commute-audio`](.agents/skills/commute-audio/SKILL.md) | [`COMMUTE_AUDIO_WORKFLOW.md`](.agents/skills/commute-audio/references/COMMUTE_AUDIO_WORKFLOW.md) |
 | **Menulis / Merapikan `.md` & Skill** | [`workspace-authoring`](.agents/skills/workspace-authoring/SKILL.md) | — |
 
 ## 4. Session Hygiene, `.tmp/` & Auto Compound Engineering

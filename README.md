@@ -35,13 +35,10 @@ Designed for high-yield vocabulary retention, agentic dataset management, and in
 
 ```text
 flashcards/
-├── .agents/skills/            # On-demand AI agent skills (coding-standards, study-mapping, local-flashcard, commute-audio, workspace-authoring)
+├── .agents/skills/            # On-demand AI agent skills & workflow references
 ├── AGENTS.md                  # Always-on AI agent guardrails & skill routing
 ├── BESTPRACTICE.md            # Senior Software Engineer standards & patterns
 ├── FLASHCARD_RULES.md         # Gold-Standard flashcard schema & category IDs
-├── FLASHCARD_WORKFLOW.md      # Protocol for adding local flashcards
-├── MAPPING_WORKFLOW.md        # Protocol for adding English error analyses
-├── COMMUTE_AUDIO_WORKFLOW.md  # Guide for pre-generating Neural commute audio
 ├── README.md                  # Project documentation
 ├── src/
 │   ├── app/                   # Next.js App Router (pages & API routes)
@@ -132,7 +129,7 @@ const url = API_ENDPOINTS.SEARCH_TEMPLATES(userId);
 For code contributions, architectural standards, and agentic workflows, please refer to:
 - 📖 **[BESTPRACTICE.md](./BESTPRACTICE.md)**: Full Senior Software Engineering best practices.
 - 🤖 **[AGENTS.md](./AGENTS.md)**: Operational guide and strict auto-commit policies for AI agents.
-- 🗺️ **[MAPPING_WORKFLOW.md](./MAPPING_WORKFLOW.md)**: 6-step protocol for curriculum updates and grammar error mappings.
+- 🗺️ **[MAPPING_WORKFLOW.md](.agents/skills/study-mapping/references/MAPPING_WORKFLOW.md)**: 6-step protocol for curriculum updates and grammar error mappings.
 
 ---
 

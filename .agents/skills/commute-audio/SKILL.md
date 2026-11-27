@@ -9,7 +9,7 @@ description: >-
 
 # Commute Audio Studio Skill
 
-Follow the full operational guide in [COMMUTE_AUDIO_WORKFLOW.md](../../../COMMUTE_AUDIO_WORKFLOW.md) and `other-english-materials/AUDIOBOOK_RULES.md`.
+Follow the full operational guide in [COMMUTE_AUDIO_WORKFLOW.md](references/COMMUTE_AUDIO_WORKFLOW.md) and `other-english-materials/AUDIOBOOK_RULES.md`.
 
 ## 1. Tri-Voice Duet & Pacing Contract
 - **EN Vocab & Collocations (`word.mp3`, `collocations.mp3`)**: `en-US-BrianNeural` (`rate: -12%`, `pitch: +0Hz`)
