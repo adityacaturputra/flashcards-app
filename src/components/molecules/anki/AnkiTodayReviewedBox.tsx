@@ -202,7 +202,7 @@ export const AnkiTodayReviewedBox: React.FC<AnkiTodayReviewedBoxProps> = ({
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder='Search reviewed cards today...'
-                      className='w-full rounded-xl border py-1.5 pl-8 pr-7 text-xs transition-colors focus:outline-hidden focus:border-blue-500'
+                      className='w-full rounded-xl border py-2 sm:py-1.5 pl-8 pr-8 text-base sm:text-xs transition-colors focus:outline-hidden focus:border-blue-500'
                       style={{
                         background: 'var(--card)',
                         borderColor: 'var(--border)',

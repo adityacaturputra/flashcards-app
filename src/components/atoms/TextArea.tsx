@@ -138,7 +138,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       )}
       <textarea
         ref={textareaRef}
-        className={`flex-1 resize-none border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none ${
+        className={`flex-1 resize-none border border-gray-300 px-4 py-2 text-base sm:text-sm focus:border-blue-500 focus:outline-none ${
           showToolbar ? 'rounded-b-lg rounded-t-none' : 'rounded-lg'
         }`}
         placeholder={placeholder}

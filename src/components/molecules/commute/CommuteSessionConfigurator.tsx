@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { FaWandMagicSparkles, FaStop, FaHeadphones } from 'react-icons/fa6';
-import { FlashcardCategory } from '@/types/flashcard';
+import { Flashcard, FlashcardCategory } from '@/types/flashcard';
 import {
   COMMUTE_CARD_FILTER,
   COMMUTE_FILTER_LABELS,
@@ -11,12 +11,16 @@ import {
 import { CommuteBatchWindow } from '@/utils/commuteBatch';
 import CommuteModeSelector from '@/components/molecules/commute/CommuteModeSelector';
 import CommuteCardRangeSelector from '@/components/molecules/commute/CommuteCardRangeSelector';
+import CommuteCardQueuePreview from '@/components/molecules/commute/CommuteCardQueuePreview';
 
 interface CommuteSessionConfiguratorProps {
   config: CommuteConfig;
   categories: FlashcardCategory[];
   matchingCount: number;
   batchWindow: CommuteBatchWindow;
+  selectedCards: Flashcard[];
+  reserveCount: number;
+  excludedCount: number;
   collocationsAvailable: number;
   tipsAvailable: number;
   estimatedMinutes: number;
@@ -24,6 +28,8 @@ interface CommuteSessionConfiguratorProps {
   progress: { completed: number; total: number };
   error: string | null;
   onChangeConfig: (patch: Partial<CommuteConfig>) => void;
+  onExcludeCard: (cardId: string) => void;
+  onResetExcluded: () => void;
   onGenerate: () => void;
   onCancel: () => void;
 }
@@ -35,6 +41,9 @@ export const CommuteSessionConfigurator: React.FC<
   categories,
   matchingCount,
   batchWindow,
+  selectedCards,
+  reserveCount,
+  excludedCount,
   collocationsAvailable,
   tipsAvailable,
   estimatedMinutes,
@@ -42,6 +51,8 @@ export const CommuteSessionConfigurator: React.FC<
   progress,
   error,
   onChangeConfig,
+  onExcludeCard,
+  onResetExcluded,
   onGenerate,
   onCancel,
 }) => {
@@ -76,7 +87,7 @@ export const CommuteSessionConfigurator: React.FC<
             onChange={(e) =>
               onChangeConfig({ filter: e.target.value as CommuteCardFilter })
             }
-            className='w-full min-h-[44px] py-0 rounded-xl border px-3 text-sm font-medium text-foreground leading-normal'
+            className='w-full min-h-[44px] py-0 rounded-xl border px-3 text-base sm:text-sm font-medium text-foreground leading-normal'
             style={{ background: 'var(--secondary)', borderColor: 'var(--border)' }}
           >
             {(Object.values(COMMUTE_CARD_FILTER) as CommuteCardFilter[]).map((f) => (
@@ -94,7 +105,7 @@ export const CommuteSessionConfigurator: React.FC<
           <select
             value={config.categoryId}
             onChange={(e) => onChangeConfig({ categoryId: e.target.value })}
-            className='w-full min-h-[44px] py-0 rounded-xl border px-3 text-sm font-medium text-foreground leading-normal'
+            className='w-full min-h-[44px] py-0 rounded-xl border px-3 text-base sm:text-sm font-medium text-foreground leading-normal'
             style={{ background: 'var(--secondary)', borderColor: 'var(--border)' }}
           >
             <option value='all'>Semua Kategori</option>
@@ -134,6 +145,16 @@ export const CommuteSessionConfigurator: React.FC<
           </div>
         </div>
       </div>
+
+      {/* 3b. Collapsible Queue Preview + Skip/Auto-Replace */}
+      <CommuteCardQueuePreview
+        cards={selectedCards}
+        startIndex={batchWindow.safeStartIndex}
+        reserveCount={reserveCount}
+        excludedCount={excludedCount}
+        onExcludeCard={onExcludeCard}
+        onResetExcluded={onResetExcluded}
+      />
 
       {/* 4. Contextual Optional Fields */}
       <div className='flex flex-wrap items-center gap-4 pt-1'>

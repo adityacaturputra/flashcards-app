@@ -28,7 +28,7 @@ const Select: React.FC<SelectProps> = ({
       <select
         value={value}
         onChange={onChange}
-        className={`w-full rounded border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none ${className}`}
+        className={`w-full rounded border border-gray-300 px-4 py-2 text-base sm:text-sm focus:border-blue-500 focus:outline-none ${className ?? ''}`}
       >
         <option value='' disabled>
           Select an Option

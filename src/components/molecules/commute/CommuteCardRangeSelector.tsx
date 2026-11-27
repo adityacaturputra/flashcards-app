@@ -143,7 +143,7 @@ export const CommuteCardRangeSelector: React.FC<CommuteCardRangeSelectorProps> =
             onBlur={handleCountBlur}
             aria-label='Jumlah kartu custom'
             placeholder='mis. 50'
-            className='w-full min-h-[44px] rounded-xl border px-3 text-sm font-semibold text-foreground'
+            className='w-full min-h-[44px] rounded-xl border px-3 text-base sm:text-sm font-semibold text-foreground'
             style={{ background: 'var(--secondary)', borderColor: 'var(--border)' }}
           />
         </div>
@@ -164,7 +164,7 @@ export const CommuteCardRangeSelector: React.FC<CommuteCardRangeSelectorProps> =
             onBlur={handleStartBlur}
             aria-label='Mulai dari kartu ke'
             placeholder='1'
-            className='w-full min-h-[44px] rounded-xl border px-3 text-sm font-semibold text-foreground'
+            className='w-full min-h-[44px] rounded-xl border px-3 text-base sm:text-sm font-semibold text-foreground'
             style={{ background: 'var(--secondary)', borderColor: 'var(--border)' }}
           />
         </div>
