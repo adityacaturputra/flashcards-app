@@ -15,6 +15,7 @@ interface NavigatorWithAudioSession extends Navigator {
 
 export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const applyPendingAutoResumeRef = useRef<() => boolean>(() => false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -108,6 +109,7 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     const audio = audioRef.current;
     if (!audio || !episode) return;
     ensureIosAudioSession();
+    applyPendingAutoResumeRef.current();
     audio
       .play()
       .then(() => setIsPlaying(true))
@@ -131,8 +133,11 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     (timeSec: number) => {
       const audio = audioRef.current;
       if (!audio) return;
-      const maxDuration = duration || episode?.totalDurationSec || 0;
-      const clamped = Math.max(0, Math.min(timeSec, maxDuration));
+      const liveDuration =
+        Number.isFinite(audio.duration) && audio.duration > 0
+          ? audio.duration
+          : duration || episode?.totalDurationSec || 0;
+      const clamped = Math.max(0, Math.min(timeSec, liveDuration));
       audio.currentTime = clamped;
       setCurrentTime(clamped);
     },
@@ -205,8 +210,7 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     };
 
     safeSetHandler('play', () => {
-      ensureIosAudioSession();
-      audioRef.current?.play().catch(() => {});
+      play();
     });
     safeSetHandler('pause', () => {
       audioRef.current?.pause();
@@ -230,7 +234,7 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
       safeSetHandler('previoustrack', null);
       safeSetHandler('nexttrack', null);
     };
-  }, [episode, activeChapter, activeChapterIndex, ensureIosAudioSession, skip, jumpToChapter]);
+  }, [episode, activeChapter, activeChapterIndex, play, skip, jumpToChapter]);
 
   const downloadEpisodeMp3 = useCallback(() => {
     if (!episode) return;
@@ -254,10 +258,12 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
   const {
     savedProgress,
     showResumePrompt,
+    applyPendingAutoResume,
     handleResume,
     handleStartFromBeginning,
   } = useAudioPlaybackProgress({
     episodeKey,
+    audioSrc: episode?.blobUrl ?? null,
     audioRef,
     isPlaying,
     currentTime,
@@ -266,6 +272,8 @@ export function useCommuteAudioPlayer(episode: CommuteEpisode | null) {
     onSeek: seek,
     onPlay: play,
   });
+
+  applyPendingAutoResumeRef.current = applyPendingAutoResume;
 
   return {
     audioRef,

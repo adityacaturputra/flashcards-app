@@ -71,7 +71,16 @@ export const COMMUTE_CARD_LIMITS = {
 export const COMMUTE_BATCH_SIZE = 5;
 
 export const COMMUTE_HISTORY_STORAGE_KEY = 'flashcards_commute_history_v1';
+export const COMMUTE_CONFIG_STORAGE_KEY = 'flashcards_commute_config_v1';
+export const COMMUTE_SOFT_SYNC_QUEUE_STORAGE_KEY =
+  'flashcards_commute_pending_sync_v1';
 export const COMMUTE_MAX_HISTORY_ITEMS = 5;
+
+export const COMMUTE_SOFT_SYNC_CONFIG = {
+  AUTO_FLUSH_BATCH_SIZE: 5,
+  KEEPALIVE_CHUNK_SIZE: 50,
+  CHAPTER_COMPLETION_TOLERANCE_SEC: 0.5,
+} as const;
 
 export const COMMUTE_MODE_META: Record<
   CommuteMode,

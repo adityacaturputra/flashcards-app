@@ -100,4 +100,9 @@ export interface CommuteSessionRecord {
   cardIds: string[];
   cardCount: number;
   createdAt: string;
+  includeCollocations?: boolean;
+  includeTips?: boolean;
+  recallPauseSec?: number;
+  filter?: CommuteCardFilter;
+  startIndex?: number;
 }

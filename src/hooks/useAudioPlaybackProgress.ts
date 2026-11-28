@@ -12,6 +12,7 @@ import {
 
 export interface UseAudioPlaybackProgressOptions {
   episodeKey: string | null;
+  audioSrc?: string | null;
   audioRef: React.RefObject<HTMLAudioElement | null>;
   isPlaying: boolean;
   currentTime: number;
@@ -23,10 +24,12 @@ export interface UseAudioPlaybackProgressOptions {
 
 /**
  * Reusable hook for throttled audio progress persistence (every 4s while playing,
- * on pause, on seek, and on iOS Safari visibilitychange/pagehide) plus 1-tap resume.
+ * on pause, on seek, and on iOS Safari visibilitychange/pagehide) plus hands-free
+ * auto-resume on `loadedmetadata` with anti-overwrite protection.
  */
 export function useAudioPlaybackProgress({
   episodeKey,
+  audioSrc,
   audioRef,
   isPlaying,
   currentTime,
@@ -39,6 +42,8 @@ export function useAudioPlaybackProgress({
   const [showResumePrompt, setShowResumePrompt] = useState(false);
 
   const lastSavedAtRef = useRef<number>(0);
+  const pendingAutoResumeSecRef = useRef<number | null>(null);
+  const onSeekRef = useRef(onSeek);
   const latestStateRef = useRef({
     episodeKey,
     currentTime,
@@ -46,6 +51,7 @@ export function useAudioPlaybackProgress({
     activeChapterIndex,
   });
 
+  onSeekRef.current = onSeek;
   latestStateRef.current = {
     episodeKey,
     currentTime,
@@ -53,21 +59,63 @@ export function useAudioPlaybackProgress({
     activeChapterIndex,
   };
 
-  // Load saved progress whenever a new episodeKey is mounted
+  const applyPendingAutoResume = useCallback(() => {
+    const targetSec = pendingAutoResumeSecRef.current;
+    const audio = audioRef.current;
+    if (targetSec === null || !audio) return false;
+    if (audio.readyState < 1) return false;
+
+    pendingAutoResumeSecRef.current = null;
+    onSeekRef.current(targetSec);
+    return true;
+  }, [audioRef]);
+
+  // Load saved progress and arm hands-free auto-resume whenever a new episode or audioSrc mounts
   useEffect(() => {
     lastSavedAtRef.current = 0;
+    pendingAutoResumeSecRef.current = null;
+
     if (!episodeKey) {
       setSavedProgress(null);
       setShowResumePrompt(false);
       return;
     }
+
     const existing = loadAudioProgress(episodeKey);
+    const resumable = isResumableProgress(existing);
     setSavedProgress(existing);
-    setShowResumePrompt(isResumableProgress(existing));
-  }, [episodeKey]);
+    setShowResumePrompt(resumable);
+
+    if (!resumable || !existing) return;
+
+    const targetSec = getResumeTargetSec(existing.currentTimeSec);
+    pendingAutoResumeSecRef.current = targetSec;
+
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleLoadedMetadata = () => {
+      applyPendingAutoResume();
+    };
+
+    if (audio.readyState >= 1) {
+      applyPendingAutoResume();
+    } else {
+      audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    }
+
+    return () => {
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+    };
+  }, [episodeKey, audioSrc, audioRef, applyPendingAutoResume]);
 
   const persistNow = useCallback(
     (overrideTimeSec?: number) => {
+      // Block auto-save while initial auto-resume seek is still pending (prevents 0:00 overwrite)
+      if (pendingAutoResumeSecRef.current !== null && overrideTimeSec === undefined) {
+        return;
+      }
+
       const {
         episodeKey: key,
         currentTime: stateTime,
@@ -103,6 +151,13 @@ export function useAudioPlaybackProgress({
     },
     [audioRef]
   );
+
+  // Dismiss the auto-resume status strip once playback actively begins
+  useEffect(() => {
+    if (isPlaying && showResumePrompt) {
+      setShowResumePrompt(false);
+    }
+  }, [isPlaying, showResumePrompt]);
 
   // Throttled auto-save every 4s while playing
   useEffect(() => {
@@ -145,6 +200,7 @@ export function useAudioPlaybackProgress({
 
   const handleResume = useCallback(() => {
     if (!savedProgress) return;
+    pendingAutoResumeSecRef.current = null;
     const targetSec = getResumeTargetSec(savedProgress.currentTimeSec);
     onSeek(targetSec);
     setShowResumePrompt(false);
@@ -153,6 +209,7 @@ export function useAudioPlaybackProgress({
   }, [savedProgress, onSeek, onPlay, persistNow]);
 
   const handleStartFromBeginning = useCallback(() => {
+    pendingAutoResumeSecRef.current = null;
     if (episodeKey) {
       clearAudioProgress(episodeKey);
     }
@@ -165,6 +222,7 @@ export function useAudioPlaybackProgress({
     savedProgress,
     showResumePrompt,
     persistNow,
+    applyPendingAutoResume,
     handleResume,
     handleStartFromBeginning,
   };

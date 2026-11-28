@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { useAppContext } from '@/context/appContext';
 import { useAccentContext } from '@/context/accentContext';
 import {
@@ -19,6 +19,10 @@ import {
 } from '@/utils/commuteScriptBuilder';
 import { resolveCommuteBatchWindow } from '@/utils/commuteBatch';
 import {
+  loadCommuteConfig,
+  saveCommuteConfig,
+} from '@/utils/commuteConfigStorage';
+import {
   buildCommuteEpisodeKey,
   loadAudioProgress,
 } from '@/utils/audioPlaybackProgress';
@@ -32,10 +36,20 @@ import CommuteSessionConfigurator from '@/components/molecules/commute/CommuteSe
 import CommuteTranscriptTimeline from '@/components/molecules/commute/CommuteTranscriptTimeline';
 
 export const CommuteAudioStudio: React.FC = () => {
-  const { flashcards, categories, loading, updateFlashcard } = useAppContext();
+  const {
+    flashcards,
+    categories,
+    loading,
+    dataSource,
+    applyBulkFlashcardPatches,
+  } = useAppContext();
   const { accent } = useAccentContext();
   const [config, setConfig] = useState<CommuteConfig>(DEFAULT_COMMUTE_CONFIG);
   const [excludedCardIds, setExcludedCardIds] = useState<Set<string>>(() => new Set());
+
+  useEffect(() => {
+    setConfig(loadCommuteConfig());
+  }, []);
 
   const { latestSession, saveSession, clearHistory } = useCommuteHistory();
   const {
@@ -53,7 +67,8 @@ export const CommuteAudioStudio: React.FC = () => {
     isPlaying: player.isPlaying,
     enabled: config.syncToAnki,
     flashcards,
-    updateFlashcard,
+    dataSource,
+    onFlashcardsSynced: applyBulkFlashcardPatches,
   });
 
   const matchingCards = useMemo(
@@ -113,16 +128,20 @@ export const CommuteAudioStudio: React.FC = () => {
     if (resetScope) {
       setExcludedCardIds(new Set());
     }
-    setConfig((prev) => ({
-      ...prev,
-      ...patch,
-      ...(patch.filter !== undefined && patch.syncToAnki === undefined
-        ? { syncToAnki: shouldDefaultSoftSync(patch.filter) }
-        : {}),
-      ...(resetScope && patch.startIndex === undefined
-        ? { startIndex: COMMUTE_CARD_LIMITS.MIN_START_INDEX }
-        : {}),
-    }));
+    setConfig((prev) => {
+      const next: CommuteConfig = {
+        ...prev,
+        ...patch,
+        ...(patch.filter !== undefined && patch.syncToAnki === undefined
+          ? { syncToAnki: shouldDefaultSoftSync(patch.filter) }
+          : {}),
+        ...(resetScope && patch.startIndex === undefined
+          ? { startIndex: COMMUTE_CARD_LIMITS.MIN_START_INDEX }
+          : {}),
+      };
+      saveCommuteConfig(next);
+      return next;
+    });
   }, []);
 
   const handleExcludeCard = useCallback((cardId: string) => {
@@ -152,6 +171,11 @@ export const CommuteAudioStudio: React.FC = () => {
         cardIds: created.cardIds,
         cardCount: created.cardCount,
         createdAt: created.createdAt,
+        includeCollocations: config.includeCollocations,
+        includeTips: config.includeTips,
+        recallPauseSec: config.recallPauseSec,
+        filter: config.filter,
+        startIndex: batchWindow.safeStartIndex,
       });
     }
   }, [
@@ -164,10 +188,40 @@ export const CommuteAudioStudio: React.FC = () => {
     saveSession,
   ]);
 
+  const resolveOrderedSessionCards = useCallback(
+    (cardIds: readonly string[]) => {
+      const cardMap = new Map(flashcards.map((c) => [c._id ?? c.question, c]));
+      return cardIds
+        .map((id) => cardMap.get(id))
+        .filter((card): card is (typeof flashcards)[number] => Boolean(card));
+    },
+    [flashcards]
+  );
+
+  const handleContinueSession = useCallback(
+    async (record: CommuteSessionRecord) => {
+      const orderedCards = resolveOrderedSessionCards(record.cardIds);
+      if (orderedCards.length === 0) return;
+
+      const sessionConfig: CommuteConfig = {
+        ...config,
+        mode: record.mode,
+        filter: record.filter ?? config.filter,
+        cardCount: orderedCards.length,
+        startIndex: record.startIndex ?? config.startIndex,
+        includeCollocations:
+          record.includeCollocations ?? config.includeCollocations,
+        includeTips: record.includeTips ?? config.includeTips,
+        recallPauseSec: record.recallPauseSec ?? config.recallPauseSec,
+      };
+      await generateEpisode(orderedCards, sessionConfig, accent, record.title);
+    },
+    [resolveOrderedSessionCards, config, accent, generateEpisode]
+  );
+
   const handleQuickRecallSession = useCallback(
     async (record: CommuteSessionRecord) => {
-      const idSet = new Set(record.cardIds);
-      const matched = flashcards.filter((c) => idSet.has(c._id ?? c.question));
+      const matched = resolveOrderedSessionCards(record.cardIds);
       if (matched.length === 0) return;
 
       const recallConfig: CommuteConfig = {
@@ -182,7 +236,7 @@ export const CommuteAudioStudio: React.FC = () => {
         `Quick Recall Pulang (${matched.length} kartu)`
       );
     },
-    [flashcards, config, accent, generateEpisode]
+    [resolveOrderedSessionCards, config, accent, generateEpisode]
   );
 
   const latestSessionProgress = useMemo(() => {
@@ -203,12 +257,13 @@ export const CommuteAudioStudio: React.FC = () => {
 
   return (
     <div className='space-y-5'>
-      {/* 1-Tap Ride-Home Quick Recall Banner */}
+      {/* 1-Tap Continue Session & Ride-Home Quick Recall Banner */}
       {latestSession && (
         <CommuteHistoryBanner
           latestSession={latestSession}
           lastProgress={latestSessionProgress}
           isGenerating={isGenerating}
+          onContinueSession={handleContinueSession}
           onQuickRecallSession={handleQuickRecallSession}
           onClearHistory={clearHistory}
         />
