@@ -19,7 +19,7 @@ Designed for **~2–2.5 hour daily motorcycle round-trip commutes (~1h berangkat
        ├── word.mp3                  # EN Host (en-US-BrianNeural, -12%, +0Hz)
        ├── meaning.mp3               # ID Host (id-ID-ArdiNeural, -10%, +0Hz)
        ├── example.mp3               # EN Co-Host (en-US-AvaMultilingualNeural, -14%, +0Hz)
-       ├── collocations.mp3          # EN Host (en-US-BrianNeural, -12%, +0Hz)
+       ├── collocations.mp3          # EN Host (en-US-BrianNeural, -16%, +0Hz, split per phrase + 950ms pause)
        └── tips.mp3                  # ID Host (id-ID-ArdiNeural, -10%, +0Hz)
    ```
 3. **TTS Provider Factory (`src/services/tts/`)**:
@@ -37,8 +37,16 @@ Designed for **~2–2.5 hour daily motorcycle round-trip commutes (~1h berangkat
 | **`word` (EN Vocab)** | `en-US-BrianNeural` *(or accent-matched)* | `-12%` | `+0Hz` | `650ms` (1st) / `900ms` (2nd) / `3500–4000ms` (Active Recall) |
 | **`meaning` (ID Arti)** | `id-ID-ArdiNeural` | `-10%` | `+0Hz` | `900ms` (inter-speaker breathing space) |
 | **`example` (EN Contoh)** | `en-US-AvaMultilingualNeural` | `-14%` | `+0Hz` | `1200ms` (shadowing pause) |
-| **`collocations` (EN)** | `en-US-BrianNeural` | `-12%` | `+0Hz` | `900ms` |
+| **`collocations` (EN)** | `en-US-BrianNeural` | `-16%` | `+0Hz` | `950ms` inter-phrase + `900ms` post-segment |
 | **`tips` (ID Tips)** | `id-ID-ArdiNeural` | `-10%` | `+0Hz` | `1100ms` |
+
+### Collocations Natural-Pause Synthesis Rules (`collocations-v2`)
+- **Split Before Markdown Stripping**: Always split raw `Common Collocations` / `Kolokasi Emas IELTS` on `\n`, `•`, `;`, or `,` *before* `stripMarkdown` collapses newlines; strip leading bullets/numbering (`- `, `* `, `1. `).
+- **Calm Falling Intonation**: Ensure every phrase ends with `.`, `!`, or `?` (append `.` if missing) so `en-US-BrianNeural` drops pitch cleanly per collocation instead of reading a rushed comma list.
+- **Frame-Accurate Stitching**: Synthesize each phrase at `rate: -16%`, strip ID3v2/ID3v1 tags, and interleave `950ms` of valid silent MPEG-2 Layer III frames (`144 bytes / 24ms`, header `0xff 0xf3 0x64 0xc4`) between phrases into a single `collocations.mp3`.
+- **Checksum Versioning & Dynamic Fallback Parity**:
+  - Generator checksum includes `collocations-v2|pause=950|` so pacing/format updates trigger targeted regeneration of `collocations.mp3` only.
+  - Runtime fallback (`useCommuteEpisodeGenerator.ts`) fetches pre-stitched static `collocations.mp3` in 1 request when present in `manifest.json`, and falls back to per-phrase `/api/commute/tts` + client-side `950ms` silent stitching when absent.
 
 ### Mandatory Text Sanitization Rules
 - **XML/SSML Safety**: Replace `&` with `dan` (ID) or `and` (EN); strip `<` and `>`; never emit raw `<break .../>` tags.

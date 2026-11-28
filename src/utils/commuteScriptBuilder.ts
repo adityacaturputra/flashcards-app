@@ -17,6 +17,7 @@ import {
   CommuteSegmentPhase,
 } from '@/types/commute';
 import { stripMarkdownForTTS } from '@/utils/speechSynthesis';
+import { COLLOCATION_PAUSE_MS } from '@/utils/commuteVoices';
 
 export interface CardNarrationFields {
   cardId: string;
@@ -25,6 +26,25 @@ export interface CardNarrationFields {
   exampleEn: string;
   collocationsEn: string;
   tipsId: string;
+}
+
+/**
+ * Split raw collocations text into clean individual phrases with terminal punctuation
+ * so Neural TTS uses a calm falling intonation per phrase instead of rushed list prosody.
+ */
+export function splitCollocationPhrases(rawText: string): string[] {
+  if (!rawText) return [];
+  return rawText
+    .split(/[\n•;,]+/)
+    .map((chunk) =>
+      chunk
+        .replace(/^[\s*•\-–—]+/, '')
+        .replace(/^\d+[.)]\s+/, '')
+        .trim()
+    )
+    .map((chunk) => stripMarkdownForTTS(chunk).trim())
+    .filter(Boolean)
+    .map((phrase) => (/[.!?]$/.test(phrase) ? phrase : `${phrase}.`));
 }
 
 const VERB_TRIPLE_PATTERN =
@@ -89,9 +109,9 @@ export function extractFlashcardNarrationFields(
       word: forms.join('. ') + '.',
       meaningId: sanitizeIndonesianForTTS(stripMarkdownForTTS(card.question)),
       exampleEn: stripMarkdownForTTS(resolveExampleField(df)),
-      collocationsEn: stripMarkdownForTTS(
+      collocationsEn: splitCollocationPhrases(
         df['Common Collocations'] || df['Kolokasi Emas IELTS'] || ''
-      ),
+      ).join('; '),
       tipsId: sanitizeIndonesianForTTS(stripMarkdownForTTS(resolveTipsField(df))),
     };
   }
@@ -113,9 +133,9 @@ export function extractFlashcardNarrationFields(
     word: stripMarkdownForTTS(card.question),
     meaningId: sanitizeIndonesianForTTS(stripMarkdownForTTS(rawMeaning)),
     exampleEn: stripMarkdownForTTS(resolveExampleField(df)),
-    collocationsEn: stripMarkdownForTTS(
+    collocationsEn: splitCollocationPhrases(
       df['Common Collocations'] || df['Kolokasi Emas IELTS'] || ''
-    ),
+    ).join('; '),
     tipsId: sanitizeIndonesianForTTS(stripMarkdownForTTS(resolveTipsField(df))),
   };
 }
@@ -404,12 +424,20 @@ export function buildCommuteScript(
 }
 
 /**
- * Rough duration estimate (seconds) before synthesis, based on ~13 chars/sec speech rate.
+ * Rough duration estimate (seconds) before synthesis, based on ~13 chars/sec speech rate
+ * (and inter-phrase 950ms pauses for collocations).
  */
 export function estimateEpisodeDurationSec(
   segments: CommuteAudioSegment[]
 ): number {
   return segments.reduce((total, seg) => {
+    if (seg.field === COMMUTE_AUDIO_FIELD.COLLOCATIONS) {
+      const phrases = splitCollocationPhrases(seg.text);
+      const speechSec = Math.max(0.8, seg.text.length / 11.5);
+      const interPhrasePauseSec =
+        Math.max(0, phrases.length - 1) * (COLLOCATION_PAUSE_MS / 1000);
+      return total + speechSec + interPhrasePauseSec + seg.pauseAfterMs / 1000;
+    }
     const speechSec = Math.max(0.8, seg.text.length / 13);
     return total + speechSec + seg.pauseAfterMs / 1000;
   }, 0);

@@ -1,7 +1,8 @@
 /**
  * Tri-Voice Duet Microsoft Neural Voice & Relaxed Tempo Mapping (AUDIOBOOK_RULES.md)
  * - Host ID (Arti & Tips): id-ID-ArdiNeural (-10%, +0Hz)
- * - Host EN (Vocab & Collocations): en-US-BrianNeural / accent-matched (-12%, +0Hz)
+ * - Host EN (Vocab): en-US-BrianNeural / accent-matched (-12%, +0Hz)
+ * - Host EN (Collocations): en-US-BrianNeural / accent-matched (-16%, +0Hz, 950ms inter-phrase pause)
  * - Co-Host EN (Contoh Kalimat): en-US-AvaMultilingualNeural (-14%, +0Hz)
  */
 import { ACCENT_PREFERENCE, AccentPreference } from '@/types/phonemic';
@@ -11,6 +12,8 @@ import {
   CommuteAudioField,
   CommuteVoiceLang,
 } from '@/types/commute';
+
+export const COLLOCATION_PAUSE_MS = 950;
 
 export interface CommuteVoiceProfile {
   voice: string;
@@ -47,6 +50,15 @@ export function resolveCommuteVoiceProfile(
     return {
       voice: ENGLISH_COHOST_VOICE,
       rate: '-14%',
+      pitch: '+0Hz',
+    };
+  }
+
+  // Collocations use a slightly slower tempo (-16%) with inter-phrase pauses for natural recall
+  if (field === COMMUTE_AUDIO_FIELD.COLLOCATIONS) {
+    return {
+      voice: ENGLISH_NEURAL_VOICES[accent] ?? ENGLISH_NEURAL_VOICES[ACCENT_PREFERENCE.US],
+      rate: '-16%',
       pitch: '+0Hz',
     };
   }

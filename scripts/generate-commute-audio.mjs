@@ -40,8 +40,17 @@ const ID_VOICE = 'id-ID-ArdiNeural';
 const PROSODY = {
   ID_HOST: { rate: '-10%', pitch: '+0Hz' },
   EN_HOST: { rate: '-12%', pitch: '+0Hz' },
+  EN_COLLOCATIONS: { rate: '-16%', pitch: '+0Hz' },
   EN_COHOST: { rate: '-14%', pitch: '+0Hz' },
 };
+
+const COLLOCATION_PAUSE_MS = 950;
+const COLLOCATION_FORMAT_VERSION = 'collocations-v2';
+
+// MPEG-2 Layer III, 24kHz, 48kbps, Mono: 144 bytes = 24ms per frame (matches src/utils/mp3Stitcher.ts)
+const MP3_FRAME_BYTES = 144;
+const MP3_FRAME_DURATION_MS = 24;
+const SILENT_FRAME_HEADER = [0xff, 0xf3, 0x64, 0xc4];
 
 function parseArgs(argv) {
   const args = {
@@ -134,6 +143,65 @@ function resolveExampleField(df) {
   return '';
 }
 
+function splitCollocationPhrases(rawText, voice) {
+  if (!rawText) return [];
+  return String(rawText)
+    .split(/[\n•;,]+/)
+    .map((chunk) =>
+      chunk
+        .replace(/^[\s*•\-–—]+/, '')
+        .replace(/^\d+[.)]\s+/, '')
+        .trim()
+    )
+    .map((chunk) => sanitizeTextForVoice(chunk, voice))
+    .filter(Boolean)
+    .map((phrase) => (/[.!?]$/.test(phrase) ? phrase : `${phrase}.`));
+}
+
+function createSilentMp3Buffer(durationMs) {
+  const frameCount = Math.max(0, Math.round(durationMs / MP3_FRAME_DURATION_MS));
+  if (frameCount === 0) return Buffer.alloc(0);
+
+  const singleFrame = Buffer.alloc(MP3_FRAME_BYTES);
+  singleFrame[0] = SILENT_FRAME_HEADER[0];
+  singleFrame[1] = SILENT_FRAME_HEADER[1];
+  singleFrame[2] = SILENT_FRAME_HEADER[2];
+  singleFrame[3] = SILENT_FRAME_HEADER[3];
+
+  const output = Buffer.alloc(frameCount * MP3_FRAME_BYTES);
+  for (let i = 0; i < frameCount; i++) {
+    singleFrame.copy(output, i * MP3_FRAME_BYTES);
+  }
+  return output;
+}
+
+function stripId3Tags(buf) {
+  let start = 0;
+  let end = buf.length;
+
+  // ID3v2 header starts with "ID3"
+  if (buf.length > 10 && buf[0] === 0x49 && buf[1] === 0x44 && buf[2] === 0x33) {
+    const tagSize =
+      ((buf[6] & 0x7f) << 21) |
+      ((buf[7] & 0x7f) << 14) |
+      ((buf[8] & 0x7f) << 7) |
+      (buf[9] & 0x7f);
+    start = Math.min(buf.length, 10 + tagSize);
+  }
+
+  // ID3v1 footer is last 128 bytes starting with "TAG"
+  if (
+    end - start > 128 &&
+    buf[end - 128] === 0x54 &&
+    buf[end - 127] === 0x41 &&
+    buf[end - 126] === 0x47
+  ) {
+    end -= 128;
+  }
+
+  return buf.subarray(start, end);
+}
+
 function computeClipChecksum(voice, prosody, sanitizedText) {
   return crypto
     .createHash('sha256')
@@ -142,7 +210,7 @@ function computeClipChecksum(voice, prosody, sanitizedText) {
     .slice(0, 12);
 }
 
-async function synthesizeToFile(sanitizedText, voice, prosody, outPath) {
+async function synthesizeToBuffer(sanitizedText, voice, prosody) {
   let lastErr = null;
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
     const tts = new MsEdgeTTS();
@@ -155,9 +223,7 @@ async function synthesizeToFile(sanitizedText, voice, prosody, outPath) {
       }
       const buf = Buffer.concat(chunks);
       if (buf.length === 0) throw new Error('Empty audio buffer');
-      await fs.mkdir(path.dirname(outPath), { recursive: true });
-      await fs.writeFile(outPath, buf);
-      return;
+      return buf;
     } catch (err) {
       lastErr = err;
       if (attempt < MAX_RETRIES) {
@@ -172,6 +238,28 @@ async function synthesizeToFile(sanitizedText, voice, prosody, outPath) {
     }
   }
   throw lastErr;
+}
+
+async function synthesizeToFile(sanitizedText, voice, prosody, outPath) {
+  const buf = await synthesizeToBuffer(sanitizedText, voice, prosody);
+  await fs.mkdir(path.dirname(outPath), { recursive: true });
+  await fs.writeFile(outPath, buf);
+}
+
+async function synthesizeCollocationsToFile(phrases, voice, prosody, pauseMs, outPath) {
+  const silenceBuf = createSilentMp3Buffer(pauseMs);
+  const parts = [];
+  for (let i = 0; i < phrases.length; i++) {
+    const rawBuf = await synthesizeToBuffer(phrases[i], voice, prosody);
+    parts.push(stripId3Tags(rawBuf));
+    if (i < phrases.length - 1 && silenceBuf.length > 0) {
+      parts.push(silenceBuf);
+    }
+  }
+  const merged = Buffer.concat(parts);
+  if (merged.length === 0) throw new Error('Empty stitched collocations audio buffer');
+  await fs.mkdir(path.dirname(outPath), { recursive: true });
+  await fs.writeFile(outPath, merged);
 }
 
 async function fileExists(filePath) {
@@ -285,14 +373,26 @@ async function main() {
       { field: 'word', rawText: wordRaw, voice: enVoice, prosody: PROSODY.EN_HOST },
       { field: 'meaning', rawText: meaningRaw, voice: ID_VOICE, prosody: PROSODY.ID_HOST },
       { field: 'example', rawText: resolveExampleField(df), voice: exampleVoice, prosody: exampleProsody },
-      { field: 'collocations', rawText: df['Common Collocations'] || df['Kolokasi Emas IELTS'] || '', voice: enVoice, prosody: PROSODY.EN_HOST },
+      { field: 'collocations', rawText: df['Common Collocations'] || df['Kolokasi Emas IELTS'] || '', voice: enVoice, prosody: PROSODY.EN_COLLOCATIONS },
       { field: 'tips', rawText: resolveTipsField(df), voice: ID_VOICE, prosody: PROSODY.ID_HOST },
     ];
 
     for (const def of fieldDefs) {
-      const sanitized = sanitizeTextForVoice(def.rawText, def.voice);
-      if (!sanitized) continue;
-      const checksum = computeClipChecksum(def.voice, def.prosody, sanitized);
+      let sanitized = '';
+      let phrases = null;
+      let checksumInput = '';
+
+      if (def.field === 'collocations') {
+        phrases = splitCollocationPhrases(def.rawText, def.voice);
+        if (phrases.length === 0) continue;
+        checksumInput = `${COLLOCATION_FORMAT_VERSION}|pause=${COLLOCATION_PAUSE_MS}|${phrases.join('||')}`;
+      } else {
+        sanitized = sanitizeTextForVoice(def.rawText, def.voice);
+        if (!sanitized) continue;
+        checksumInput = sanitized;
+      }
+
+      const checksum = computeClipChecksum(def.voice, def.prosody, checksumInput);
       const outPath = path.join(OUTPUT_ROOT, cardId, `${def.field}.mp3`);
       const existingChecksum = manifestCards[cardId]?.[def.field];
 
@@ -305,6 +405,7 @@ async function main() {
         cardId,
         field: def.field,
         sanitizedText: sanitized,
+        phrases,
         voice: def.voice,
         prosody: def.prosody,
         checksum,
@@ -331,7 +432,17 @@ async function main() {
       const idx = cursor++;
       const task = tasks[idx];
       try {
-        await synthesizeToFile(task.sanitizedText, task.voice, task.prosody, task.outPath);
+        if (task.field === 'collocations' && task.phrases?.length) {
+          await synthesizeCollocationsToFile(
+            task.phrases,
+            task.voice,
+            task.prosody,
+            COLLOCATION_PAUSE_MS,
+            task.outPath
+          );
+        } else {
+          await synthesizeToFile(task.sanitizedText, task.voice, task.prosody, task.outPath);
+        }
         if (!manifestCards[task.cardId]) {
           manifestCards[task.cardId] = {};
         }

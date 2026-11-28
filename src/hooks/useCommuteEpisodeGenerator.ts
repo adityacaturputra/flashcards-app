@@ -4,6 +4,7 @@ import { Flashcard } from '@/types/flashcard';
 import { AccentPreference } from '@/types/phonemic';
 import {
   COMMUTE_AUDIO_BASE_PATH,
+  COMMUTE_AUDIO_FIELD,
   COMMUTE_AUDIO_MANIFEST_URL,
   COMMUTE_MODE_META,
   CommuteAudioField,
@@ -12,9 +13,19 @@ import {
   CommuteEpisode,
 } from '@/types/commute';
 import { API_ENDPOINTS } from '@/constants/endpoints';
-import { buildCommuteScript } from '@/utils/commuteScriptBuilder';
-import { resolveCommuteVoiceProfile } from '@/utils/commuteVoices';
-import { stitchEpisodeMp3 } from '@/utils/mp3Stitcher';
+import {
+  buildCommuteScript,
+  splitCollocationPhrases,
+} from '@/utils/commuteScriptBuilder';
+import {
+  COLLOCATION_PAUSE_MS,
+  resolveCommuteVoiceProfile,
+} from '@/utils/commuteVoices';
+import {
+  createSilentMp3Bytes,
+  stitchEpisodeMp3,
+  stripId3Tags,
+} from '@/utils/mp3Stitcher';
 
 const CONCURRENCY_LIMIT = 4;
 
@@ -24,11 +35,78 @@ interface GenerationProgress {
 }
 
 interface ClipFetchTask {
+  field: CommuteAudioField;
   staticUrl: string | null;
   voice: string;
   rate: string;
   pitch: string;
   text: string;
+}
+
+async function fetchDynamicTtsClip(
+  voice: string,
+  rate: string,
+  pitch: string,
+  text: string,
+  signal: AbortSignal
+): Promise<Uint8Array> {
+  const response = await fetch(API_ENDPOINTS.COMMUTE_TTS, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ voice, rate, pitch, text }),
+    signal,
+  });
+
+  if (!response.ok) {
+    throw new Error(`TTS gagal (${response.status}). Coba lagi.`);
+  }
+  return new Uint8Array(await response.arrayBuffer());
+}
+
+async function fetchDynamicCollocationsClip(
+  task: ClipFetchTask,
+  signal: AbortSignal
+): Promise<Uint8Array> {
+  const phrases = splitCollocationPhrases(task.text);
+  if (phrases.length <= 1) {
+    return fetchDynamicTtsClip(
+      task.voice,
+      task.rate,
+      task.pitch,
+      phrases[0] ?? task.text,
+      signal
+    );
+  }
+
+  const silence = createSilentMp3Bytes(COLLOCATION_PAUSE_MS);
+  const parts: Uint8Array[] = [];
+  let totalBytes = 0;
+
+  for (let i = 0; i < phrases.length; i++) {
+    const rawClip = await fetchDynamicTtsClip(
+      task.voice,
+      task.rate,
+      task.pitch,
+      phrases[i],
+      signal
+    );
+    const cleanClip = stripId3Tags(rawClip);
+    parts.push(cleanClip);
+    totalBytes += cleanClip.length;
+
+    if (i < phrases.length - 1 && silence.length > 0) {
+      parts.push(silence);
+      totalBytes += silence.length;
+    }
+  }
+
+  const merged = new Uint8Array(totalBytes);
+  let offset = 0;
+  for (const part of parts) {
+    merged.set(part, offset);
+    offset += part.length;
+  }
+  return merged;
 }
 
 export function useCommuteEpisodeGenerator() {
@@ -131,6 +209,7 @@ export function useCommuteEpisodeGenerator() {
 
           if (!uniqueTasks.has(cacheKey) && !clipCacheRef.current.has(cacheKey)) {
             uniqueTasks.set(cacheKey, {
+              field: seg.field,
               staticUrl: staticVersion
                 ? `${COMMUTE_AUDIO_BASE_PATH}/${seg.cardId}/${seg.field}.mp3?v=${staticVersion}`
                 : null,
@@ -168,22 +247,16 @@ export function useCommuteEpisodeGenerator() {
 
             // 2. Fallback to dynamic /api/commute/tts for cards not yet pre-generated
             if (!bytes) {
-              const response = await fetch(API_ENDPOINTS.COMMUTE_TTS, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  voice: task.voice,
-                  rate: task.rate,
-                  pitch: task.pitch,
-                  text: task.text,
-                }),
-                signal: controller.signal,
-              });
-
-              if (!response.ok) {
-                throw new Error(`TTS gagal (${response.status}). Coba lagi.`);
-              }
-              bytes = new Uint8Array(await response.arrayBuffer());
+              bytes =
+                task.field === COMMUTE_AUDIO_FIELD.COLLOCATIONS
+                  ? await fetchDynamicCollocationsClip(task, controller.signal)
+                  : await fetchDynamicTtsClip(
+                      task.voice,
+                      task.rate,
+                      task.pitch,
+                      task.text,
+                      controller.signal
+                    );
             }
 
             clipCacheRef.current.set(cacheKey, bytes);
