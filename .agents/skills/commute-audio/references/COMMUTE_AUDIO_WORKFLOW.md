@@ -11,18 +11,23 @@ Designed for **~2–2.5 hour daily motorcycle round-trip commutes (~1h berangkat
 1. **iOS Safari Background-Safe Playback**:
    - Individual MP3 clips (`24kHz / 48kbps / Mono`, 144 bytes / 24ms frame) are stitched client-side with valid silent MP3 frames (`src/utils/mp3Stitcher.ts`) into **one continuous MP3 `Blob`**.
    - Played via HTML5 `<audio>` with `navigator.audioSession.type = 'playback'` and full **Media Session API** (`navigator.mediaSession`) controls (Lock Screen / Control Center / Bluetooth helmet intercom).
-2. **Mac Pre-Generated Neural MP3s by Card ID (Zero Robot, Zero 403 on Vercel)**:
+2. **Mac Pre-Generated Broadcast-Mastered Neural MP3s by Card ID (Zero Robot, Zero 403 on Vercel)**:
    ```text
    public/audio/commute/
-   ├── manifest.json                 # Auto-indexed cardIds & available fields
+   ├── manifest.json                 # Auto-indexed cardIds & SHA-256 checksums (natural-v3)
    └── {cardId}/                     # 24-char hex _id from flashcards.json
-       ├── word.mp3                  # EN Host (en-US-BrianNeural, -12%, +0Hz)
-       ├── meaning.mp3               # ID Host (id-ID-ArdiNeural, -10%, +0Hz)
-       ├── example.mp3               # EN Co-Host (en-US-AvaMultilingualNeural, -14%, +0Hz)
-       ├── collocations.mp3          # EN Host (en-US-BrianNeural, -16%, +0Hz, split per phrase + 950ms pause)
-       └── tips.mp3                  # ID Host (id-ID-ArdiNeural, -10%, +0Hz)
+       ├── word.mp3                  # EN Host (en-US-BrianNeural, -14%, +0Hz, FFmpeg -16 LUFS)
+       ├── meaning.mp3               # ID Host (id-ID-ArdiNeural, -12%, +0Hz, 550ms clause pauses)
+       ├── example.mp3               # EN Co-Host (en-US-AvaMultilingualNeural, -14%, +0Hz, 550ms clause pauses)
+       ├── collocations.mp3          # EN Host (en-US-BrianNeural, -16%, +0Hz, 950ms inter-phrase pauses)
+       └── tips.mp3                  # ID Host (id-ID-ArdiNeural, -12%, +0Hz, 550ms clause pauses)
    ```
-3. **TTS Provider Factory (`src/services/tts/`)**:
+3. **App-Wide Neural MP3-First Playback (`src/utils/neuralAudioCache.ts` + `src/hooks/useSpeechPlayback.ts`)**:
+   - Flashcards (`FlashcardComponent`), Anki Review/History (`AnkiCardDetailModal`, `AnkiTodayReviewedBox`, `AnkiHistoryTimelineList`), Quiz (`QuizQuestionCard`), and Mapping share one unified playback priority chain:
+     1. **Static Broadcast-Mastered MP3** (`/audio/commute/{cardId}/{field}.mp3`) via lazy singleton `manifest.json` (when `cardId` & `accent === 'us'` match).
+     2. **Dynamic `/api/commute/tts`** (`TtsProviderFactory`) with LRU-bounded in-memory Blob URL cache (for non-US accents, individual chips/collocations, quiz sentences, or un-generated cards).
+     3. **Offline Web Speech API (`playSpeech`)** automatic fallback if offline or API unavailable.
+4. **TTS Provider Factory (`src/services/tts/`)**:
    - Client first fetches static `/audio/commute/{cardId}/{field}.mp3` whenever listed in `manifest.json`.
    - For un-generated cards, falls back to `POST /api/commute/tts` backed by `TtsProviderFactory`:
      - Default Free Chain: `EdgeTtsProvider` → `GoogleFreeTtsProvider`.
@@ -30,27 +35,31 @@ Designed for **~2–2.5 hour daily motorcycle round-trip commutes (~1h berangkat
 
 ---
 
-## 🎙️ Tri-Voice Duet & Pacing Standards (Aligned with `AUDIOBOOK_RULES.md`)
+## 🎙️ Tri-Voice Duet, Clause Pauses & Broadcast Mastering (`natural-v3`)
 
-| Field / Role | Neural Voice | Rate | Pitch | Post-Segment Silence |
-| :--- | :--- | :---: | :---: | :---: |
-| **`word` (EN Vocab)** | `en-US-BrianNeural` *(or accent-matched)* | `-12%` | `+0Hz` | `650ms` (1st) / `900ms` (2nd) / `3500–4000ms` (Active Recall) |
-| **`meaning` (ID Arti)** | `id-ID-ArdiNeural` | `-10%` | `+0Hz` | `900ms` (inter-speaker breathing space) |
-| **`example` (EN Contoh)** | `en-US-AvaMultilingualNeural` | `-14%` | `+0Hz` | `1200ms` (shadowing pause) |
-| **`collocations` (EN)** | `en-US-BrianNeural` | `-16%` | `+0Hz` | `950ms` inter-phrase + `900ms` post-segment |
-| **`tips` (ID Tips)** | `id-ID-ArdiNeural` | `-10%` | `+0Hz` | `1100ms` |
+| Field / Role | Neural Voice | Rate | Pitch | Intra-Clip Pause | Post-Segment Silence |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **`word` (EN Vocab)** | `en-US-BrianNeural` *(or accent-matched)* | `-14%` | `+0Hz` | — | `650ms` (1st) / `900ms` (2nd) / `3500–4000ms` (Active Recall) |
+| **`meaning` (ID Arti)** | `id-ID-ArdiNeural` | `-12%` | `+0Hz` | `550ms` per clause | `900ms` (inter-speaker breathing space) |
+| **`example` (EN Contoh)** | `en-US-AvaMultilingualNeural` | `-14%` | `+0Hz` | `550ms` per clause | `1200ms` (shadowing pause) |
+| **`collocations` (EN)** | `en-US-BrianNeural` | `-16%` | `+0Hz` | `950ms` per phrase | `900ms` post-segment |
+| **`tips` (ID Tips)** | `id-ID-ArdiNeural` | `-12%` | `+0Hz` | `550ms` per clause | `1100ms` |
 
-### Collocations Natural-Pause Synthesis Rules (`collocations-v2`)
-- **Split Before Markdown Stripping**: Always split raw `Common Collocations` / `Kolokasi Emas IELTS` on `\n`, `•`, `;`, or `,` *before* `stripMarkdown` collapses newlines; strip leading bullets/numbering (`- `, `* `, `1. `).
-- **Calm Falling Intonation**: Ensure every phrase ends with `.`, `!`, or `?` (append `.` if missing) so `en-US-BrianNeural` drops pitch cleanly per collocation instead of reading a rushed comma list.
-- **Frame-Accurate Stitching**: Synthesize each phrase at `rate: -16%`, strip ID3v2/ID3v1 tags, and interleave `950ms` of valid silent MPEG-2 Layer III frames (`144 bytes / 24ms`, header `0xff 0xf3 0x64 0xc4`) between phrases into a single `collocations.mp3`.
-- **Checksum Versioning & Dynamic Fallback Parity**:
-  - Generator checksum includes `collocations-v2|pause=950|` so pacing/format updates trigger targeted regeneration of `collocations.mp3` only.
-  - Runtime fallback (`useCommuteEpisodeGenerator.ts`) fetches pre-stitched static `collocations.mp3` in 1 request when present in `manifest.json`, and falls back to per-phrase `/api/commute/tts` + client-side `950ms` silent stitching when absent.
+### Natural Clause Chunking & FFmpeg Studio Broadcast Mastering
+- **Sentence & Clause Chunking (`meaning`, `example`, `tips`)**:
+  - Split long narration on `. ! ?`, `;`, and long comma/em-dash spans (> 8 words, minimum 4 words per side).
+  - Synthesize each clause, strip ID3 tags, and stitch with `550ms` silent MP3 frames before mastering so the narrator breathes naturally.
+- **FFmpeg Broadcast Mastering Chain (Auto-Enabled when `ffmpeg` exists; `--master` / `--no-master`)**:
+  - Applies `AUDIOBOOK_RULES.md` Section 2B: `highpass=f=80`, Warmth EQ (`+3dB @ 160Hz`, `-1.5dB @ 400Hz`, `+1.5dB @ 3.5kHz`), De-Esser (`-2.5dB @ 7kHz`), Broadcast Compressor (`threshold=-20dB:ratio=3:attack=5:release=50`), subtle studio room ambience (`aecho=0.8:0.88:18:0.08`), and `loudnorm=I=-16:TP=-1.5:LRA=11`.
+  - **Strict MP3 Stitcher Compatibility**: Re-encodes with `-ar 24000 -b:a 48k -ac 1 -c:a libmp3lame -write_xing 0 -id3v2_version 0` so every file stays exact `144 bytes / 24ms` MPEG-2 Layer III CBR (`bytes % 144 === 0`, sync header `ff f3 64 c4`) with zero clicks in `mp3Stitcher.ts`.
+- **Collocations Natural-Pause Synthesis Rules (`collocations-v3`)**:
+  - **Split Before Markdown Stripping**: Always split raw `Common Collocations` / `Kolokasi Emas IELTS` on `\n`, `•`, `;`, or `,` *before* `stripMarkdown` collapses newlines; strip leading bullets/numbering (`- `, `* `, `1. `).
+  - **Calm Falling Intonation**: Ensure every phrase ends with `.`, `!`, or `?` (append `.` if missing) so `en-US-BrianNeural` drops pitch cleanly per collocation.
+  - **Checksum Versioning**: Generator checksum includes `natural-v3|mastered|...` so raw/older clips are cleanly detected for incremental upgrade without re-generating already-mastered clips.
 
 ### Mandatory Text Sanitization Rules
 - **XML/SSML Safety**: Replace `&` with `dan` (ID) or `and` (EN); strip `<` and `>`; never emit raw `<break .../>` tags.
-- **Pronunciation-Safe Indonesian**: Replace glottal-stop words clipped by Indonesian TTS (`nggak`/`gak` → `tidak`, `mendadak` → `tiba-tiba`).
+- **Pronunciation-Safe Indonesian**: Replace glottal-stop words clipped by Indonesian TTS (`nggak`/`gak` → `tidak`, `mendadak` → `tiba-tiba`) and replace `...` right after a single short word (`Tenang...` → `Tenang,`).
 - **Markdown Heading Guard**: When `dynamicFields["Arti Utama / Definisi"]` is absent, skip `#` heading lines in `card.answer` and use the first real content paragraph.
 
 ---

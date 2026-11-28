@@ -13,6 +13,7 @@ interface AnkiHistoryTimelineListProps {
     field: string,
     text: string,
     label: string,
+    overrideCardId?: string,
   ) => React.ButtonHTMLAttributes<HTMLButtonElement>;
   onSelectCard: (card: ReviewedTodayItem) => void;
   onQuickSearch: (e: React.MouseEvent, question: string) => void;
@@ -108,6 +109,7 @@ export const AnkiHistoryTimelineList: React.FC<AnkiHistoryTimelineListProps> = (
                     audioKey,
                     card.question,
                     'Pronounce word',
+                    card.id,
                   )}
                   onSelect={onSelectCard}
                   onQuickSearch={onQuickSearch}

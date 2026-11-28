@@ -1,7 +1,7 @@
 /**
- * Tri-Voice Duet Microsoft Neural Voice & Relaxed Tempo Mapping (AUDIOBOOK_RULES.md)
- * - Host ID (Arti & Tips): id-ID-ArdiNeural (-10%, +0Hz)
- * - Host EN (Vocab): en-US-BrianNeural / accent-matched (-12%, +0Hz)
+ * Tri-Voice Duet Microsoft Neural Voice & Relaxed Tempo Mapping (PLAN-05 + AUDIOBOOK_RULES.md)
+ * - Host ID (Arti & Tips): id-ID-ArdiNeural (-12%, +0Hz)
+ * - Host EN (Vocab): en-US-BrianNeural / accent-matched (-14%, +0Hz)
  * - Host EN (Collocations): en-US-BrianNeural / accent-matched (-16%, +0Hz, 950ms inter-phrase pause)
  * - Co-Host EN (Contoh Kalimat): en-US-AvaMultilingualNeural (-14%, +0Hz)
  */
@@ -14,6 +14,7 @@ import {
 } from '@/types/commute';
 
 export const COLLOCATION_PAUSE_MS = 950;
+export const CLAUSE_PAUSE_MS = 550;
 
 export interface CommuteVoiceProfile {
   voice: string;
@@ -40,7 +41,7 @@ export function resolveCommuteVoiceProfile(
   if (lang === COMMUTE_VOICE_LANG.ID) {
     return {
       voice: INDONESIAN_HOST_VOICE,
-      rate: '-10%',
+      rate: '-12%',
       pitch: '+0Hz',
     };
   }
@@ -65,7 +66,7 @@ export function resolveCommuteVoiceProfile(
 
   return {
     voice: ENGLISH_NEURAL_VOICES[accent] ?? ENGLISH_NEURAL_VOICES[ACCENT_PREFERENCE.US],
-    rate: '-12%',
+    rate: '-14%',
     pitch: '+0Hz',
   };
 }

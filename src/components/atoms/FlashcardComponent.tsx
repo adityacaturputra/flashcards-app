@@ -54,6 +54,7 @@ const FlashcardComponent: React.FC<FlashcardProps> = memo(
 
     const { isPlaying, getAudioButtonProps, toggleSpeech } = useSpeechPlayback<string>({
       resetTriggers: [flashcard._id],
+      cardId: flashcard._id,
     });
 
     // Use the global search template context

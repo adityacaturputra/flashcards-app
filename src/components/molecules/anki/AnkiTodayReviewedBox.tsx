@@ -325,6 +325,7 @@ export const AnkiTodayReviewedBox: React.FC<AnkiTodayReviewedBoxProps> = ({
                             audioKey,
                             card.question,
                             'Pronounce word',
+                            card.id,
                           )}
                           onSelect={setSelectedCard}
                           onQuickSearch={handleQuickSearch}

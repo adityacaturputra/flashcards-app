@@ -31,6 +31,7 @@ export const AnkiCardDetailModal: React.FC<AnkiCardDetailModalProps> = ({
 
   const { isPlaying, getAudioButtonProps, toggleSpeech } = useSpeechPlayback<string>({
     resetTriggers: [card?.id, isOpen],
+    cardId: card?.id,
   });
 
   // Close on Escape key press
