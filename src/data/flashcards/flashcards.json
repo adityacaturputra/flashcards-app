@@ -3012,10 +3012,16 @@
     "question": "Robe",
     "answer": "jubah",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:56:54.505Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa091dd",
@@ -3032,10 +3038,16 @@
     "question": "Police office",
     "answer": "kantor polisi",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-14T15:52:46.647Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa091e1",
@@ -3062,10 +3074,16 @@
     "question": "Gritted",
     "answer": "mengatupkan (gigi), bertekad",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:24:25.300Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa091ee",
@@ -3102,10 +3120,16 @@
     "question": "Translate",
     "answer": "menerjemahkan",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-15T01:58:57.581Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000007"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa091f4",
@@ -3132,10 +3156,16 @@
     "question": "Sore throat",
     "answer": "sakit tenggorokan",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:28:12.561Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa091fa",
@@ -3182,10 +3212,16 @@
     "question": "(of wind) blow",
     "answer": "angin bertiup",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:24:54.168Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09206",
@@ -3210,7 +3246,7 @@
     "question": "Accelerator pedal",
     "answer": "pedal gas",
     "progression": "normal",
-    "nextReviewDate": "2026-09-28T13:02:20.812Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
     ],
@@ -3218,17 +3254,24 @@
     "interval": 1,
     "easeFactor": 2.5,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:02:20.812Z"
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607beb12fde01aa09204",
     "question": "Mesosphere",
     "answer": "lapisan mesosfer",
     "progression": "good",
-    "nextReviewDate": "2026-03-30T01:39:46.409Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa0920d",
@@ -3275,10 +3318,16 @@
     "question": "Ponytail",
     "answer": "ikat ekor kuda",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:30:55.938Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09215",
@@ -3303,20 +3352,32 @@
     "question": "Morning",
     "answer": "pagi",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-15T01:48:41.101Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09213",
     "question": "Thumbtack",
     "answer": "paku payung",
     "progression": "normal",
-    "nextReviewDate": "2026-04-22T01:39:54.547Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000006"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa0921e",
@@ -3353,20 +3414,32 @@
     "question": "Longitude",
     "answer": "bujur",
     "progression": "good",
-    "nextReviewDate": "2026-04-14T01:44:56.288Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09222",
     "question": "Buzz cut",
     "answer": "gunting cepak",
     "progression": "normal",
-    "nextReviewDate": "2026-03-23T01:22:40.455Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09225",
@@ -3383,7 +3456,7 @@
     "question": "March",
     "answer": "lagu mars",
     "progression": "normal",
-    "nextReviewDate": "2026-09-26T16:18:28.485Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000007"
     ],
@@ -3391,14 +3464,15 @@
     "interval": 1,
     "easeFactor": 2.5,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-25T16:18:28.485Z"
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607beb12fde01aa09226",
     "question": "Worker",
     "answer": "buruh",
     "progression": "normal",
-    "nextReviewDate": "2026-10-08T14:52:24.141Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000006"
     ],
@@ -3406,7 +3480,8 @@
     "interval": 1,
     "easeFactor": 2.5,
     "lapses": 0,
-    "lastReviewedDate": "2026-10-07T14:52:24.141Z"
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607beb12fde01aa09200",
@@ -3433,10 +3508,16 @@
     "question": "Line 1,2,3,...",
     "answer": "jalur 1,2,3,...",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:50:16.887Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa0922d",
@@ -3453,20 +3534,32 @@
     "question": "Seaweed",
     "answer": "rumput laut",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:50:47.688Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa0922a",
     "question": "Tailor",
     "answer": "penjahit",
     "progression": "good",
-    "nextReviewDate": "2025-09-23T01:47:47.857Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000006"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09232",
@@ -3483,10 +3576,16 @@
     "question": "Stuffy",
     "answer": "pengap",
     "progression": "good",
-    "nextReviewDate": "2025-09-17T02:00:18.208Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09236",
@@ -3513,10 +3612,16 @@
     "question": "Runway",
     "answer": "landasan pacu",
     "progression": "normal",
-    "nextReviewDate": "2025-10-28T10:59:32.741Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa0923c",
@@ -3533,10 +3638,16 @@
     "question": "Bamboo shoot",
     "answer": "rebung",
     "progression": "good",
-    "nextReviewDate": "2025-09-17T01:24:06.316Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09240",
@@ -3563,10 +3674,16 @@
     "question": "Courtship",
     "answer": "masa pacaran",
     "progression": "good",
-    "nextReviewDate": "2025-09-10T01:37:04.238Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09246",
@@ -3613,10 +3730,16 @@
     "question": "Onion",
     "answer": "bawang",
     "progression": "normal",
-    "nextReviewDate": "2026-04-06T11:19:20.845Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa0924f",
@@ -3651,10 +3774,16 @@
     "question": "Lily",
     "answer": "lili",
     "progression": "good",
-    "nextReviewDate": "2026-03-30T01:22:20.784Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09256",
@@ -3671,20 +3800,32 @@
     "question": "Wages",
     "answer": "upah",
     "progression": "good",
-    "nextReviewDate": "2026-03-24T10:32:59.978Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000006"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa0925c",
     "question": "Basin",
     "answer": "lembah",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T11:12:12.461Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa0925a",
@@ -3711,10 +3852,16 @@
     "question": "Gaze",
     "answer": "memandang dengan tajam",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:25:09.508Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09262",
@@ -3779,7 +3926,7 @@
     "question": "Blue sky",
     "answer": "langit biru",
     "progression": "good",
-    "nextReviewDate": "2026-10-09T14:52:04.225Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000003"
     ],
@@ -3787,7 +3934,8 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-10-07T14:52:04.225Z"
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607beb12fde01aa0926e",
@@ -3804,20 +3952,32 @@
     "question": "Passbook",
     "answer": "buku tabungan",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:30:12.532Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09272",
     "question": "Lace",
     "answer": "renda",
     "progression": "good",
-    "nextReviewDate": "2025-09-23T01:55:58.450Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09276",
@@ -3834,30 +3994,48 @@
     "question": "Window blind",
     "answer": "penutup jendela",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T11:17:20.652Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09279",
     "question": "Breakneck",
     "answer": "berkecepatan tinggi",
     "progression": "normal",
-    "nextReviewDate": "2026-05-26T01:11:40.426Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09278",
     "question": "Avert",
     "answer": "menghindarkan",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:55:33.184Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa0927c",
@@ -3884,10 +4062,16 @@
     "question": "Hail",
     "answer": "hujan es",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:46:34.518Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09282",
@@ -3929,20 +4113,32 @@
     "question": "Flesh",
     "answer": "daging",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:43:21.858Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09288",
     "question": "Partial solar eclipse",
     "answer": "ger. matahari sebagian",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:47:55.298Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09293",
@@ -3974,37 +4170,55 @@
     "question": "Lighting",
     "answer": "berpetir",
     "progression": "normal",
-    "nextReviewDate": "2025-10-28T11:03:10.843Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa09290",
     "question": "Hand cream",
     "answer": "krim tangan",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-15T08:37:06.779Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607beb12fde01aa09294",
     "question": "Swamp",
     "answer": "rawa",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:29:02.330Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607beb12fde01aa0928d",
     "question": "Sheet music",
     "answer": "partitur",
     "progression": "good",
-    "nextReviewDate": "2026-09-29T13:13:52.534Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000001"
     ],
@@ -4012,17 +4226,24 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:13:52.534Z"
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607ceb12fde01aa09298",
     "question": "Ozone layer",
     "answer": "lapisan ozon",
     "progression": "good",
-    "nextReviewDate": "2025-11-07T01:38:03.796Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa0929b",
@@ -4049,10 +4270,16 @@
     "question": "Speed way",
     "answer": "jalur cepat",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:29:30.383Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa0929e",
@@ -4084,17 +4311,23 @@
     "question": "Heron",
     "answer": "bangau",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:56:52.123Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092a9",
     "question": "Telephone bill",
     "answer": "tagihan telepon",
     "progression": "normal",
-    "nextReviewDate": "2026-09-28T13:03:01.396Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000006"
     ],
@@ -4102,7 +4335,8 @@
     "interval": 1,
     "easeFactor": 2.5,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:03:01.396Z"
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607ceb12fde01aa092a8",
@@ -4118,8 +4352,8 @@
     "_id": "6876607ceb12fde01aa092a5",
     "question": "Spouting",
     "answer": "**Menyemburkan** — memancarkan cairan dengan deras atau berbicara terus-menerus.\n\n- *Example*: The broken garden pipe was **spouting** water high into the air across the front lawn.",
-    "progression": "retry",
-    "nextReviewDate": "2025-10-24T02:37:23.496Z",
+    "progression": "hard",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -4130,14 +4364,19 @@
       "Contoh Kalimat": "The broken garden pipe was spouting water high into the air across the front lawn.",
       "Common Collocations": "spouting water, spouting nonsense, spouting steam, water spout",
       "Tips Mengingat": "Ingat corong teko yang disebut spout, jadi spouting berarti menyembur deras keluar dari corong."
-    }
+    },
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092a7",
     "question": "Return address",
     "answer": "alamat pengirim",
     "progression": "good",
-    "nextReviewDate": "2026-09-27T16:17:24.222Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -4145,7 +4384,8 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-25T16:17:24.222Z"
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607ceb12fde01aa092a6",
@@ -4162,10 +4402,16 @@
     "question": "Cash register",
     "answer": "mesin kasir pembayaran tunai",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:28:53.894Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092b4",
@@ -4182,10 +4428,16 @@
     "question": "Abdominal muscles",
     "answer": "otot perut",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T11:05:14.540Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092b5",
@@ -4227,7 +4479,7 @@
     "question": "Button",
     "answer": "kancing",
     "progression": "normal",
-    "nextReviewDate": "2026-11-26T07:35:27.014Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
     ],
@@ -4235,24 +4487,31 @@
     "interval": 1,
     "easeFactor": 2.5,
     "lapses": 0,
-    "lastReviewedDate": "2026-11-25T07:35:27.014Z"
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607ceb12fde01aa092bf",
     "question": "To arrive",
     "answer": "tiba, sampai",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-15T08:52:55.239Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092c0",
     "question": "Wedding ceremony",
     "answer": "upacara pernikahan",
     "progression": "good",
-    "nextReviewDate": "2026-11-25T09:22:07.743Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -4260,27 +4519,40 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-11-23T09:22:07.743Z"
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607ceb12fde01aa092bc",
     "question": "Switch",
     "answer": "beralih",
     "progression": "good",
-    "nextReviewDate": "2025-09-09T01:40:47.908Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa092bd",
     "question": "Toilet tank",
     "answer": "tangki toilet",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:47:39.304Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092be",
@@ -4307,7 +4579,7 @@
     "question": "Eye cream",
     "answer": "krim mata",
     "progression": "good",
-    "nextReviewDate": "2026-09-29T13:09:04.874Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000002"
     ],
@@ -4315,7 +4587,8 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:09:04.874Z"
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607ceb12fde01aa092cd",
@@ -4332,10 +4605,16 @@
     "question": "Package",
     "answer": "paket",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:47:49.718Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092cb",
@@ -4357,10 +4636,16 @@
     "question": "Isotherm",
     "answer": "isoterm",
     "progression": "good",
-    "nextReviewDate": "2026-04-13T01:27:21.007Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092d4",
@@ -4381,8 +4666,8 @@
     "_id": "6876607ceb12fde01aa092d6",
     "question": "Dread",
     "answer": "**Sangat cemas / ngeri** — merasa takut atau berat hati menanti sesuatu yang akan datang.\n\n- *Example*: I always **dread** waking up early on rainy Monday mornings for the long commute.",
-    "progression": "retry",
-    "nextReviewDate": "2025-10-24T02:37:14.146Z",
+    "progression": "hard",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -4393,7 +4678,12 @@
       "Contoh Kalimat": "I always dread waking up early on rainy Monday mornings for the long commute.",
       "Common Collocations": "dread the thought, fill with dread, pure dread, dread doing something",
       "Tips Mengingat": "Dread mirip dengan kata dead, rasanya seperti mati kutu atau cemas luar biasa sebelum menghadapi hal yang menakutkan."
-    }
+    },
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092d8",
@@ -4424,8 +4714,8 @@
     "_id": "6876607ceb12fde01aa092da",
     "question": "Lotus root",
     "answer": "**Akar teratai** — rimpang teratai berlubang yang renyah dan sering diolah dalam masakan Asia.\n\n- *Example*: My grandmother always adds thin slices of crunchy **lotus root** to her warm pork soup.",
-    "progression": "retry",
-    "nextReviewDate": "2025-10-24T12:06:40.118Z",
+    "progression": "hard",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000003"
     ],
@@ -4436,7 +4726,12 @@
       "Contoh Kalimat": "My grandmother always adds thin slices of crunchy lotus root to her warm pork soup.",
       "Common Collocations": "sliced lotus root, braised lotus root, crispy lotus root, lotus root soup",
       "Tips Mengingat": "Lotus adalah bunga teratai dan root berarti akar, persis seperti terjemahan langsungnya yaitu akar teratai."
-    }
+    },
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa092db",
@@ -4458,50 +4753,80 @@
     "question": "Dining chair",
     "answer": "kursi makan",
     "progression": "normal",
-    "nextReviewDate": "2025-10-28T11:01:56.479Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa092e2",
     "question": "International mail",
     "answer": "surat internasional",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:57:57.530Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa092e4",
     "question": "Faucet",
     "answer": "keran",
     "progression": "normal",
-    "nextReviewDate": "2026-03-23T01:21:20.047Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092e6",
     "question": "Thigh",
     "answer": "paha",
     "progression": "normal",
-    "nextReviewDate": "2026-03-17T01:15:33.577Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa092ea",
     "question": "Church",
     "answer": "gereja",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-15T08:25:37.327Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa092ec",
@@ -4518,10 +4843,16 @@
     "question": "Fare card",
     "answer": "kartu transportasi",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:24:56.280Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa092ee",
@@ -4548,10 +4879,16 @@
     "question": "Sweat",
     "answer": "keringat",
     "progression": "good",
-    "nextReviewDate": "2025-09-23T01:48:58.412Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa092f4",
@@ -4588,17 +4925,23 @@
     "question": "Airmail",
     "answer": "pos udara",
     "progression": "good",
-    "nextReviewDate": "2026-03-30T01:33:46.325Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092fc",
     "question": "Purpose",
     "answer": "**Tujuan** — alasan atau sasaran utama di balik suatu tindakan atau benda.\n\n- *Example*: The main **purpose** of this morning meeting is to finalize our product launch schedule.",
-    "progression": "retry",
-    "nextReviewDate": "2025-10-24T02:34:39.136Z",
+    "progression": "hard",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000005"
     ],
@@ -4609,24 +4952,35 @@
       "Contoh Kalimat": "The main purpose of this morning meeting is to finalize our product launch schedule.",
       "Common Collocations": "main purpose, sense of purpose, on purpose, serve a purpose",
       "Tips Mengingat": "Bunyinya mirip dengan kata propose atau mengusulkan, karena setiap usulan pasti punya tujuan yang jelas."
-    }
+    },
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa092fe",
     "question": "Pastry",
     "answer": "kue kering",
     "progression": "good",
-    "nextReviewDate": "2025-09-23T01:55:41.078Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa09300",
     "question": "Core",
     "answer": "**Inti / pusat** — bagian paling tengah atau paling pokok, seperti inti bumi atau nilai utama.\n\n- *Example*: Scientists study earthquakes to learn more about the molten iron inside the Earth's **core**.",
-    "progression": "retry",
-    "nextReviewDate": "2025-10-23T12:50:44.188Z",
+    "progression": "hard",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
     ],
@@ -4637,7 +4991,12 @@
       "Contoh Kalimat": "Scientists study earthquakes to learn more about the molten iron inside the Earth's core.",
       "Common Collocations": "Earth's core, core values, apple core, to the core",
       "Tips Mengingat": "Ingat istilah core muscles atau otot inti perut yang ada di tengah tubuh, sama seperti inti bumi di tengah planet."
-    }
+    },
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa09302",
@@ -4662,10 +5021,16 @@
     "question": "Autumn",
     "answer": "musim gugur",
     "progression": "good",
-    "nextReviewDate": "2025-09-10T01:29:18.309Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa09306",
@@ -4750,10 +5115,16 @@
     "question": "Wok",
     "answer": "wajan",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:30:55.064Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa09316",
@@ -4770,10 +5141,16 @@
     "question": "Reciprocal",
     "answer": "timbal balik",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:55:16.127Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa0931a",
@@ -4906,10 +5283,16 @@
     "question": "Sign language",
     "answer": "bahasa isyarat",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:54:24.772Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa09332",
@@ -4931,20 +5314,32 @@
     "question": "Exchanged",
     "answer": "ditukar",
     "progression": "good",
-    "nextReviewDate": "2025-09-09T01:53:05.806Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa09338",
     "question": "Chore",
     "answer": "pekerjaan rumah",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:44:05.007Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa0933a",
@@ -4961,10 +5356,16 @@
     "question": "Evaporated milk",
     "answer": "susu kental",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:31:45.118Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa0933e",
@@ -4991,20 +5392,32 @@
     "question": "Trousers",
     "answer": "celana panjang",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:49:51.340Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa09344",
     "question": "Caterpillar",
     "answer": "ulat bulu",
     "progression": "good",
-    "nextReviewDate": "2025-09-22T01:58:20.219Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607ceb12fde01aa09346",
@@ -5076,10 +5489,16 @@
     "question": "Centipede",
     "answer": "kelabang",
     "progression": "good",
-    "nextReviewDate": "2025-09-09T01:44:32.470Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa09354",
@@ -5096,10 +5515,16 @@
     "question": "Traffic sign",
     "answer": "marka jalan",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T11:05:10.828Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa09356",
@@ -5116,10 +5541,16 @@
     "question": "Tinned food",
     "answer": "makanan dalam kaleng",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:46:39.533Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa09364",
@@ -5146,10 +5577,16 @@
     "question": "Broom",
     "answer": "sapu",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T01:05:31.570Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa0935f",
@@ -5166,20 +5603,32 @@
     "question": "Facsimile",
     "answer": "faksimile",
     "progression": "good",
-    "nextReviewDate": "2026-03-24T10:37:19.669Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607ceb12fde01aa09359",
     "question": "Deli food",
     "answer": "makanan siap saji",
     "progression": "normal",
-    "nextReviewDate": "2026-03-17T10:32:02.077Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa09367",
@@ -5196,10 +5645,16 @@
     "question": "Scraping",
     "answer": "kerokan",
     "progression": "normal",
-    "nextReviewDate": "2025-10-28T11:00:12.096Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09368",
@@ -5216,10 +5671,16 @@
     "question": "One second",
     "answer": "1 detik",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-20T10:48:48.858Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa0936a",
@@ -5236,30 +5697,48 @@
     "question": "Fuel gauge",
     "answer": "indikator bahan bakar",
     "progression": "good",
-    "nextReviewDate": "2025-09-17T01:40:27.317Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa09372",
     "question": "Arrival",
     "answer": "kedatangan",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-15T01:13:42.161Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09373",
     "question": "Flag pole",
     "answer": "tiang bendera",
     "progression": "good",
-    "nextReviewDate": "2025-09-18T01:34:49.479Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09374",
@@ -5276,10 +5755,16 @@
     "question": "Scarab beetle",
     "answer": "kumbang janti",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:46:25.416Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa0937a",
@@ -5329,10 +5814,16 @@
     "question": "Chicken",
     "answer": "daging ayam",
     "progression": "normal",
-    "nextReviewDate": "2025-10-28T11:03:06.616Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa09381",
@@ -5354,10 +5845,16 @@
     "question": "Civil servant",
     "answer": "pegawai negeri",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:28:07.319Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09386",
@@ -5404,27 +5901,39 @@
     "question": "Bus terminal",
     "answer": "terminal bus",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:54:21.575Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09394",
     "question": "Exchange rate",
     "answer": "nilai tukar",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T11:17:56.079Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09390",
     "question": "Foreign affairs",
     "answer": "urusan luar negeri",
     "progression": "good",
-    "nextReviewDate": "2026-09-27T16:17:28.204Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -5432,30 +5941,42 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-25T16:17:28.204Z"
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607deb12fde01aa0938e",
     "question": "Stratosphere",
     "answer": "lapisan stratosfer",
     "progression": "good",
-    "nextReviewDate": "2026-04-14T01:24:43.170Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09396",
     "question": "Sack",
     "answer": "sarung",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:27:57.351Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000007"
     ],
     "dynamicFields": {
       "v1": "hit the sack - pergi tidur"
-    }
+    },
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa09398",
@@ -5472,7 +5993,7 @@
     "question": "Armored car",
     "answer": "mobil pembawa uang",
     "progression": "normal",
-    "nextReviewDate": "2026-09-26T16:16:52.570Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000005"
     ],
@@ -5480,27 +6001,40 @@
     "interval": 1,
     "easeFactor": 2.5,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-25T16:16:52.570Z"
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607deb12fde01aa0939c",
     "question": "Paint",
     "answer": "cat",
     "progression": "good",
-    "nextReviewDate": "2025-09-09T01:34:05.226Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa0939d",
     "question": "Narrow road ahead",
     "answer": "penyempitan kiri kanan",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:55:53.394Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa0939e",
@@ -5555,10 +6089,16 @@
     "question": "Leaf",
     "answer": "daun",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T11:18:51.392Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093a8",
@@ -5610,10 +6150,16 @@
     "question": "Vulture",
     "answer": "burung nazar",
     "progression": "normal",
-    "nextReviewDate": "2025-10-23T11:43:52.003Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa093b4",
@@ -5630,17 +6176,23 @@
     "question": "Lighter",
     "answer": "pemantik",
     "progression": "perfect",
-    "nextReviewDate": "2025-11-23T01:32:17.538Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa093b7",
     "question": "Recipient’s name",
     "answer": "nama penerima",
     "progression": "good",
-    "nextReviewDate": "2026-10-09T14:52:12.758Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -5648,27 +6200,40 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-10-07T14:52:12.758Z"
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607deb12fde01aa093ba",
     "question": "Collar",
     "answer": "kerah",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:49:07.290Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa093bc",
     "question": "Mourn",
     "answer": "berkabung",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:25:56.466Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000007"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093be",
@@ -5710,10 +6275,16 @@
     "question": "Hanging lamp",
     "answer": "lampu gantung",
     "progression": "good",
-    "nextReviewDate": "2026-04-13T01:24:12.439Z",
+    "nextReviewDate": "2026-11-28T15:07:19.993Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T15:07:19.993Z"
   },
   {
     "_id": "6876607deb12fde01aa093c6",
@@ -5758,10 +6329,16 @@
     "question": "Rinse",
     "answer": "membilas",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:43:23.739Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093ce",
@@ -5803,7 +6380,7 @@
     "question": "Envelope",
     "answer": "amplop",
     "progression": "good",
-    "nextReviewDate": "2026-11-27T07:35:30.058Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -5811,17 +6388,24 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-11-25T07:35:30.058Z"
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607deb12fde01aa093d6",
     "question": "Electric clippers",
     "answer": "penggunting elektrik",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:46:49.909Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093d8",
@@ -5837,8 +6421,8 @@
     "_id": "6876607deb12fde01aa093da",
     "question": "Toilet seat",
     "answer": "**Dudukan kloset** — bagian berbentuk cincin tempat duduk pada kloset kamar mandi.\n\n- *Example*: Please remember to put the **toilet seat** down and wash your hands before leaving.",
-    "progression": "retry",
-    "nextReviewDate": "2025-10-24T02:35:38.623Z",
+    "progression": "hard",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
     ],
@@ -5849,17 +6433,28 @@
       "Contoh Kalimat": "Please remember to put the toilet seat down and wash your hands before leaving.",
       "Common Collocations": "lift the toilet seat, put the toilet seat down, heated toilet seat, clean the toilet seat",
       "Tips Mengingat": "Kata seat berarti tempat duduk, jadi toilet seat adalah bagian tempat duduk pada kloset."
-    }
+    },
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093dc",
     "question": "To redial",
     "answer": "memanggil ulang",
     "progression": "normal",
-    "nextReviewDate": "2026-05-26T01:46:13.669Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093e0",
@@ -5906,10 +6501,16 @@
     "question": "Bush",
     "answer": "semak",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:53:56.601Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093e8",
@@ -5936,17 +6537,23 @@
     "question": "Fishing rod",
     "answer": "joran",
     "progression": "normal",
-    "nextReviewDate": "2025-10-28T11:04:18.684Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093ee",
     "question": "Glare",
     "answer": "melotot",
     "progression": "normal",
-    "nextReviewDate": "2026-11-26T07:35:50.923Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -5954,7 +6561,8 @@
     "interval": 1,
     "easeFactor": 2.5,
     "lapses": 0,
-    "lastReviewedDate": "2026-11-25T07:35:50.923Z"
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607deb12fde01aa093f0",
@@ -6001,10 +6609,16 @@
     "question": "Rain",
     "answer": "hujan",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-16T01:26:59.717Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093f6",
@@ -6021,10 +6635,16 @@
     "question": "Business card",
     "answer": "kartu nama",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:47:26.559Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000006"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa093ff",
@@ -6086,10 +6706,16 @@
     "question": "Postcard",
     "answer": "kartu pos",
     "progression": "good",
-    "nextReviewDate": "2025-09-17T12:03:06.904Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa0940a",
@@ -6116,10 +6742,16 @@
     "question": "Tail",
     "answer": "ekor",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:55:40.751Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa0940f",
@@ -6136,30 +6768,48 @@
     "question": "Comb",
     "answer": "sisir",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T01:04:18.753Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09411",
     "question": "Supplier",
     "answer": "pemasok",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:30:35.604Z",
+    "nextReviewDate": "2026-11-28T14:59:18.653Z",
     "categories": [
       "6901a0010000000000000006"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:59:18.653Z"
   },
   {
     "_id": "6876607deb12fde01aa09416",
     "question": "Tape measure",
     "answer": "meteran",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:43:09.611Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09418",
@@ -6244,10 +6894,16 @@
     "question": "Red wine",
     "answer": "anggur merah",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:46:55.689Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa09428",
@@ -6274,20 +6930,32 @@
     "question": "Nausea",
     "answer": "mual",
     "progression": "good",
-    "nextReviewDate": "2025-09-23T02:10:48.358Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa0942e",
     "question": "Switch",
     "answer": "suis",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:57:10.039Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607deb12fde01aa0942b",
@@ -6304,10 +6972,16 @@
     "question": "Nephew",
     "answer": "keponakan laki-laki",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:50:04.754Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09434",
@@ -6324,20 +6998,32 @@
     "question": "Emergency exit",
     "answer": "pintu darurat",
     "progression": "good",
-    "nextReviewDate": "2026-03-30T01:20:59.181Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09438",
     "question": "Spirituality",
     "answer": "kerohanian",
     "progression": "good",
-    "nextReviewDate": "2025-09-10T02:08:56.251Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09437",
@@ -6354,80 +7040,128 @@
     "question": "Saw",
     "answer": "gergaji",
     "progression": "good",
-    "nextReviewDate": "2025-09-09T01:31:03.969Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa0943a",
     "question": "Fumbling",
     "answer": "meraba-raba",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:56:43.406Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09442",
     "question": "Persimmon",
     "answer": "kesemek",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T01:12:52.904Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09446",
     "question": "Safe",
     "answer": "lemari besi",
     "progression": "good",
-    "nextReviewDate": "2025-09-23T11:15:22.578Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09444",
     "question": "Cleaver",
     "answer": "golok",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:51:38.615Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09440",
     "question": "Steak",
     "answer": "daging panggang",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T01:03:12.161Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09445",
     "question": "Shark",
     "answer": "hiu",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-20T10:56:06.772Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09443",
     "question": "Dried tofu",
     "answer": "tahu kering",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T11:19:04.670Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa0944c",
@@ -6454,10 +7188,16 @@
     "question": "White wine",
     "answer": "anggur putih",
     "progression": "good",
-    "nextReviewDate": "2026-04-09T11:04:03.693Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09450",
@@ -6474,10 +7214,16 @@
     "question": "Arrogant",
     "answer": "arogan",
     "progression": "good",
-    "nextReviewDate": "2026-06-02T01:17:44.627Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09456",
@@ -6494,27 +7240,39 @@
     "question": "Ashtray",
     "answer": "bekas abu rokok",
     "progression": "normal",
-    "nextReviewDate": "2026-03-23T01:46:57.232Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa0945d",
     "question": "Nut",
     "answer": "mur",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T11:11:57.601Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa0945e",
     "question": "To get off a bus",
     "answer": "turun bus",
     "progression": "good",
-    "nextReviewDate": "2026-09-27T16:18:20.885Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000005"
     ],
@@ -6522,7 +7280,8 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-25T16:18:20.885Z"
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607eeb12fde01aa0945a",
@@ -6539,20 +7298,32 @@
     "question": "Rhinoplasty",
     "answer": "memancungkan hidung",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:26:42.923Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa0945c",
     "question": "Diarrhea",
     "answer": "diare",
     "progression": "perfect",
-    "nextReviewDate": "2025-11-23T01:23:21.883Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09464",
@@ -6569,20 +7340,32 @@
     "question": "Look",
     "answer": "melihat",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-15T02:00:47.997Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09468",
     "question": "Ionosphere",
     "answer": "lapisan ionosfer",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-15T01:58:49.426Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa0946b",
@@ -6645,10 +7428,16 @@
     "question": "Dairy product",
     "answer": "produk susu",
     "progression": "good",
-    "nextReviewDate": "2026-03-24T09:55:04.106Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09477",
@@ -6705,10 +7494,16 @@
     "question": "Vest",
     "answer": "rompi",
     "progression": "good",
-    "nextReviewDate": "2026-04-13T11:11:52.529Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa09481",
@@ -6745,7 +7540,7 @@
     "question": "Village",
     "answer": "desa",
     "progression": "good",
-    "nextReviewDate": "2026-10-09T14:52:32.325Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000005"
     ],
@@ -6753,7 +7548,8 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-10-07T14:52:32.325Z"
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607eeb12fde01aa09484",
@@ -6780,10 +7576,16 @@
     "question": "Nerves",
     "answer": "saraf",
     "progression": "good",
-    "nextReviewDate": "2025-09-24T01:40:48.816Z",
+    "nextReviewDate": "2026-11-28T16:21:15.921Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T16:21:15.921Z"
   },
   {
     "_id": "6876607eeb12fde01aa0948d",
@@ -6810,10 +7612,16 @@
     "question": "Moss",
     "answer": "lumut",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:44:58.172Z",
+    "nextReviewDate": "2026-11-28T17:02:54.363Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T17:02:54.363Z"
   },
   {
     "_id": "6876607eeb12fde01aa09491",
@@ -6865,10 +7673,16 @@
     "question": "Dolphin",
     "answer": "lumba-lumba",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-20T00:59:22.568Z",
+    "nextReviewDate": "2026-11-28T17:02:54.363Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-27T17:02:54.363Z"
   },
   {
     "_id": "6876607eeb12fde01aa0949a",
@@ -6915,20 +7729,32 @@
     "question": "Appetite",
     "answer": "nafsu makan",
     "progression": "good",
-    "nextReviewDate": "2025-09-24T01:40:13.240Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094aa",
     "question": "Meadow",
     "answer": "padang rumput",
     "progression": "good",
-    "nextReviewDate": "2025-09-23T02:02:34.977Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094a7",
@@ -6945,30 +7771,48 @@
     "question": "Dawn",
     "answer": "subuh",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:54:50.316Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094ae",
     "question": "Receipt",
     "answer": "tanda terima",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:51:03.727Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000005"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094b5",
     "question": "Mechanic",
     "answer": "montir",
     "progression": "good",
-    "nextReviewDate": "2026-03-24T10:31:33.275Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000006"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094b4",
@@ -7005,10 +7849,16 @@
     "question": "Earth",
     "answer": "bumi",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T00:46:18.269Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094ba",
@@ -7055,10 +7905,16 @@
     "question": "Knife block",
     "answer": "blok pisau",
     "progression": "normal",
-    "nextReviewDate": "2026-03-17T01:37:35.052Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094c3",
@@ -7085,10 +7941,16 @@
     "question": "Peer",
     "answer": "mengamati dengan seksama",
     "progression": "good",
-    "nextReviewDate": "2025-11-07T01:37:09.119Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094cd",
@@ -7143,10 +8005,16 @@
     "question": "Vomiting",
     "answer": "muntah",
     "progression": "good",
-    "nextReviewDate": "2025-09-23T01:53:46.692Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094d4",
@@ -7163,7 +8031,7 @@
     "question": "Dry",
     "answer": "kering",
     "progression": "good",
-    "nextReviewDate": "2026-09-29T13:07:11.295Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -7171,7 +8039,8 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:07:11.295Z"
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607eeb12fde01aa094d9",
@@ -7268,7 +8137,7 @@
     "question": "Fat free milk",
     "answer": "susu tanpa lemak",
     "progression": "good",
-    "nextReviewDate": "2026-09-27T16:18:16.272Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000004"
     ],
@@ -7276,7 +8145,8 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-25T16:18:16.272Z"
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607eeb12fde01aa094ec",
@@ -7343,10 +8213,16 @@
     "question": "Lamb",
     "answer": "daging domba muda",
     "progression": "normal",
-    "nextReviewDate": "2025-09-20T00:55:50.522Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094f5",
@@ -7363,10 +8239,16 @@
     "question": "Scrub",
     "answer": "menggosok",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:26:26.714Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000007"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607eeb12fde01aa094f2",
@@ -7393,7 +8275,7 @@
     "question": "Bicycle shed",
     "answer": "gudang sepeda",
     "progression": "normal",
-    "nextReviewDate": "2026-09-28T13:10:10.453Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000005"
     ],
@@ -7401,7 +8283,8 @@
     "interval": 1,
     "easeFactor": 2.5,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:10:10.453Z"
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607feb12fde01aa09502",
@@ -7433,10 +8316,16 @@
     "question": "Sarong",
     "answer": "sarung",
     "progression": "good",
-    "nextReviewDate": "2026-04-20T01:34:03.201Z",
+    "nextReviewDate": "2026-11-29T06:17:36.109Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T06:17:36.109Z"
   },
   {
     "_id": "6876607feb12fde01aa09504",
@@ -7513,10 +8402,16 @@
     "question": "Screw",
     "answer": "sekrup",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:45:37.494Z",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z"
   },
   {
     "_id": "6876607feb12fde01aa09517",
@@ -7552,8 +8447,8 @@
     "_id": "6876607feb12fde01aa09520",
     "question": "Hair dresser",
     "answer": "**Penata atau tukang potong rambut** — Orang yang bekerja di salon untuk memotong dan menata rambut.\n\n- *Example*: I booked an appointment with my favorite **hair dresser** before attending the wedding this weekend.",
-    "progression": "retry",
-    "nextReviewDate": "2025-10-24T02:38:25.179Z",
+    "progression": "hard",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000002"
     ],
@@ -7564,7 +8459,12 @@
       "Contoh Kalimat": "I booked an appointment with my favorite hair dresser before attending the wedding this weekend.",
       "Common Collocations": "book a hair dresser, experienced hair dresser, visit the hair dresser, local hair dresser",
       "Tips Mengingat": "Gabungan kata hair yang berarti rambut dan dresser yang berarti penata, jadi orang yang menata rambut Anda."
-    }
+    },
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z"
   },
   {
     "_id": "6876607feb12fde01aa0951d",
@@ -7586,10 +8486,16 @@
     "question": "Language",
     "answer": "bahasa",
     "progression": "perfect",
-    "nextReviewDate": "2025-08-21T00:53:30.890Z",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z"
   },
   {
     "_id": "6876607feb12fde01aa09527",
@@ -7614,10 +8520,16 @@
     "question": "Ladybug",
     "answer": "kumbang kecil",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:29:59.836Z",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z"
   },
   {
     "_id": "6876607feb12fde01aa09528",
@@ -7654,7 +8566,7 @@
     "question": "Nature",
     "answer": "alam",
     "progression": "good",
-    "nextReviewDate": "2026-09-29T13:10:58.808Z",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000008"
     ],
@@ -7662,7 +8574,8 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-09-27T13:10:58.808Z"
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607feb12fde01aa0952e",
@@ -7679,7 +8592,7 @@
     "question": "Preserved duck egg",
     "answer": "telur asin",
     "progression": "normal",
-    "nextReviewDate": "2026-10-13T05:38:28.480Z",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000004"
     ],
@@ -7687,7 +8600,8 @@
     "interval": 1,
     "easeFactor": 2.5,
     "lapses": 0,
-    "lastReviewedDate": "2026-10-12T05:38:28.480Z"
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607feb12fde01aa09536",
@@ -7764,10 +8678,16 @@
     "question": "Equator",
     "answer": "garis khatulistiwa",
     "progression": "good",
-    "nextReviewDate": "2025-08-05T01:03:19.466Z",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z"
   },
   {
     "_id": "6876607feb12fde01aa0953e",
@@ -7804,7 +8724,7 @@
     "question": "Hairpin",
     "answer": "jepit rambut",
     "progression": "good",
-    "nextReviewDate": "2026-11-27T07:34:23.822Z",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000002"
     ],
@@ -7812,27 +8732,40 @@
     "interval": 2,
     "easeFactor": 2.55,
     "lapses": 0,
-    "lastReviewedDate": "2026-11-25T07:34:23.822Z"
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z",
+    "dynamicFields": {}
   },
   {
     "_id": "6876607feb12fde01aa09548",
     "question": "Boys dormitory",
     "answer": "asrama putra",
     "progression": "perfect",
-    "nextReviewDate": "2025-11-23T01:37:31.284Z",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z"
   },
   {
     "_id": "6876607feb12fde01aa0954a",
     "question": "Chapstick",
     "answer": "pelembab bibir",
     "progression": "normal",
-    "nextReviewDate": "2025-09-19T11:26:05.218Z",
+    "nextReviewDate": "2026-11-29T07:11:38.951Z",
     "categories": [
       "6901a0010000000000000002"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 0,
+    "interval": 0,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-28T07:11:38.951Z"
   },
   {
     "_id": "6876607feb12fde01aa0954d",
@@ -9488,10 +10421,16 @@
     "question": "Ritual",
     "answer": "ritual",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T01:01:57.399Z",
+    "nextReviewDate": "2026-11-28T14:58:53.644Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:58:53.644Z"
   },
   {
     "_id": "68766080eb12fde01aa09674",
@@ -9543,10 +10482,16 @@
     "question": "Bench",
     "answer": "bangku",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:30:01.243Z",
+    "nextReviewDate": "2026-11-28T14:59:15.608Z",
     "categories": [
       "6901a0010000000000000001"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:59:15.608Z"
   },
   {
     "_id": "68766080eb12fde01aa0967a",
@@ -9914,10 +10859,16 @@
     "question": "Judge",
     "answer": "hakim",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:30:38.267Z",
+    "nextReviewDate": "2026-11-28T14:59:21.798Z",
     "categories": [
       "6901a0010000000000000006"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:59:21.798Z"
   },
   {
     "_id": "68766081eb12fde01aa096c0",
@@ -10124,11 +11075,17 @@
     "_id": "68766081eb12fde01aa096e2",
     "question": "Harp",
     "answer": "harpa",
-    "progression": "good",
-    "nextReviewDate": "2025-08-04T01:02:12.008Z",
+    "progression": "normal",
+    "nextReviewDate": "2026-11-27T14:59:00.334Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:59:00.334Z"
   },
   {
     "_id": "68766081eb12fde01aa096e6",
@@ -10408,10 +11365,16 @@
     "question": "Conversation",
     "answer": "percakapan",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T01:02:34.806Z",
+    "nextReviewDate": "2026-11-28T14:59:07.423Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:59:07.423Z"
   },
   {
     "_id": "68766081eb12fde01aa0971e",
@@ -10694,10 +11657,16 @@
     "question": "Monsoon",
     "answer": "angin musim, monsun",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:29:51.628Z",
+    "nextReviewDate": "2026-11-28T14:59:11.581Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:59:11.581Z"
   },
   {
     "_id": "68766081eb12fde01aa09752",
@@ -11538,10 +12507,16 @@
     "question": "Newspaper stand",
     "answer": "kios koran",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T01:01:54.370Z",
+    "nextReviewDate": "2026-11-28T14:58:51.730Z",
     "categories": [
       "6901a0010000000000000008"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:58:51.730Z"
   },
   {
     "_id": "68766082eb12fde01aa097e8",
@@ -11833,10 +12808,16 @@
     "question": "Shrimp",
     "answer": "udang",
     "progression": "good",
-    "nextReviewDate": "2025-08-04T10:30:42.027Z",
+    "nextReviewDate": "2026-11-28T14:59:24.943Z",
     "categories": [
       "6901a0010000000000000003"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 2,
+    "easeFactor": 2.55,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:59:24.943Z"
   },
   {
     "_id": "68766082eb12fde01aa0982a",
@@ -11892,11 +12873,17 @@
     "_id": "68766082eb12fde01aa0982c",
     "question": "Wax apple",
     "answer": "jambu air",
-    "progression": "good",
-    "nextReviewDate": "2025-08-04T01:02:20.428Z",
+    "progression": "normal",
+    "nextReviewDate": "2026-11-27T14:59:05.041Z",
     "categories": [
       "6901a0010000000000000004"
-    ]
+    ],
+    "dynamicFields": {},
+    "repetitions": 1,
+    "interval": 1,
+    "easeFactor": 2.5,
+    "lapses": 0,
+    "lastReviewedDate": "2026-11-26T14:59:05.041Z"
   },
   {
     "_id": "68766083eb12fde01aa09834",
