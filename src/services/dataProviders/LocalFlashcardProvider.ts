@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
-import { IFlashcardDataProvider } from './types';
+import {
+  BulkFlashcardReviewResult,
+  BulkFlashcardReviewUpdate,
+  IFlashcardDataProvider,
+} from './types';
 import { Flashcard, Progression } from '@/types/flashcard';
 import {
   FLASHCARDS_DATA,
@@ -80,8 +84,58 @@ export class LocalFlashcardProvider implements IFlashcardDataProvider {
       return await this.addFlashcard(newCard);
     }
 
-    const current = FLASHCARDS_DATA[index];
-    const updatedLocalItem: LocalFlashcard = {
+    const updatedLocalItem = this.applyUpdatesToLocalItem(
+      FLASHCARDS_DATA[index],
+      updates,
+    );
+
+    // Update in-memory array
+    FLASHCARDS_DATA[index] = updatedLocalItem;
+    this.persistToFile();
+
+    return this.mapLocalToFlashcard(updatedLocalItem);
+  }
+
+  public async bulkUpdateFlashcards(
+    updates: BulkFlashcardReviewUpdate[],
+  ): Promise<BulkFlashcardReviewResult> {
+    const indexById = new Map<string, number>();
+    for (let i = 0; i < FLASHCARDS_DATA.length; i += 1) {
+      indexById.set(FLASHCARDS_DATA[i]._id, i);
+    }
+
+    const updatedIds: string[] = [];
+    const notFoundIds: string[] = [];
+    const updatedFlashcards: Flashcard[] = [];
+
+    for (const { id, patch } of updates) {
+      const index = indexById.get(id);
+      if (index === undefined) {
+        notFoundIds.push(id);
+        continue;
+      }
+
+      const updatedLocalItem = this.applyUpdatesToLocalItem(
+        FLASHCARDS_DATA[index],
+        patch,
+      );
+      FLASHCARDS_DATA[index] = updatedLocalItem;
+      updatedIds.push(id);
+      updatedFlashcards.push(this.mapLocalToFlashcard(updatedLocalItem));
+    }
+
+    if (updatedIds.length > 0) {
+      this.persistToFile();
+    }
+
+    return { updatedIds, notFoundIds, updatedFlashcards };
+  }
+
+  private applyUpdatesToLocalItem(
+    current: LocalFlashcard,
+    updates: Partial<Flashcard>,
+  ): LocalFlashcard {
+    return {
       ...current,
       question: updates.question !== undefined ? updates.question : current.question,
       answer: updates.answer !== undefined ? updates.answer : current.answer,
@@ -117,12 +171,6 @@ export class LocalFlashcardProvider implements IFlashcardDataProvider {
             : undefined
           : current.lastReviewedDate,
     };
-
-    // Update in-memory array
-    FLASHCARDS_DATA[index] = updatedLocalItem;
-    this.persistToFile();
-
-    return this.mapLocalToFlashcard(updatedLocalItem);
   }
 
   public async deleteFlashcard(id: string): Promise<Flashcard | null> {

@@ -11,6 +11,7 @@ import React, {
 } from 'react';
 import { Flashcard, FlashcardCategory } from '../types/flashcard';
 import { DataSource } from '@/types/dataSource';
+import { BulkFlashcardReviewUpdate } from '@/services/dataProviders/types';
 import useDataSource from '@/hooks/useDataSource';
 import useFlashcards from '@/hooks/useFlashcards';
 import { useFlashcardCategories } from '@/hooks/useFlashcardCategories';
@@ -22,6 +23,7 @@ type AppContextType = {
   handleRefetchFlashCards: () => Promise<void>;
   addFlashcard: (flashcard: Flashcard) => Promise<void>;
   updateFlashcard: (id: string, flashcard: Partial<Flashcard>) => Promise<void>;
+  applyBulkFlashcardPatches: (updates: BulkFlashcardReviewUpdate[]) => void;
   deleteFlashcard: (id: string) => Promise<void>;
   loading: boolean;
   loadingAction: boolean;
@@ -137,6 +139,24 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     [apiDeleteFlashcard, dataSource],
   );
 
+  const applyBulkFlashcardPatches = useCallback(
+    (updates: BulkFlashcardReviewUpdate[]) => {
+      if (updates.length === 0) return;
+      const patchById = new Map<string, Partial<Flashcard>>();
+      for (const { id, patch } of updates) {
+        patchById.set(id, patch);
+      }
+      setFlashcards((prev) =>
+        prev.map((card) => {
+          if (!card._id) return card;
+          const patch = patchById.get(card._id);
+          return patch ? { ...card, ...patch } : card;
+        }),
+      );
+    },
+    [],
+  );
+
   // Wrap updateFlashcard to try direct update first, then queue if it fails
   const updateFlashcard = useCallback(async (id: string, updates: Partial<Flashcard>) => {
     try {
@@ -157,6 +177,7 @@ export const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
         handleRefetchFlashCards,
         addFlashcard,
         updateFlashcard,
+        applyBulkFlashcardPatches,
         deleteFlashcard,
         loading,
         loadingAction,

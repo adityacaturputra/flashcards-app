@@ -1,8 +1,25 @@
-import { IFlashcardDataProvider } from './types';
+import {
+  BulkFlashcardReviewResult,
+  BulkFlashcardReviewUpdate,
+  IFlashcardDataProvider,
+} from './types';
 import { Flashcard } from '@/types/flashcard';
 import FlashcardModel from '@/models/FlashcardModel';
 import dbConnect from '@/lib/dbConnect';
 import mongoose from 'mongoose';
+
+function sanitizeMongoPatch(patch: Partial<Flashcard>): Record<string, unknown> {
+  const sanitized: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(patch)) {
+    if (key === '_id' || value === undefined) continue;
+    if (key === 'nextReviewDate' || key === 'lastReviewedDate') {
+      sanitized[key] = value ? new Date(value as string | Date) : value;
+    } else {
+      sanitized[key] = value;
+    }
+  }
+  return sanitized;
+}
 
 function mapMongoDocToFlashcard(
   doc: Record<string, unknown> & { _id?: unknown; categories?: unknown[] },
@@ -74,6 +91,70 @@ export class MongoFlashcardProvider implements IFlashcardDataProvider {
         categories?: unknown[];
       },
     );
+  }
+
+  public async bulkUpdateFlashcards(
+    updates: BulkFlashcardReviewUpdate[],
+  ): Promise<BulkFlashcardReviewResult> {
+    await dbConnect();
+    const notFoundIds: string[] = [];
+    const validIds: string[] = [];
+    const bulkOps: Array<{
+      updateOne: {
+        filter: { _id: mongoose.Types.ObjectId };
+        update: { $set: Record<string, unknown> };
+      };
+    }> = [];
+
+    for (const { id, patch } of updates) {
+      if (!mongoose.isValidObjectId(id)) {
+        notFoundIds.push(id);
+        continue;
+      }
+      const setPayload = sanitizeMongoPatch(patch);
+      if (Object.keys(setPayload).length === 0) continue;
+
+      validIds.push(id);
+      bulkOps.push({
+        updateOne: {
+          filter: { _id: new mongoose.Types.ObjectId(id) },
+          update: { $set: setPayload },
+        },
+      });
+    }
+
+    if (bulkOps.length === 0) {
+      return { updatedIds: [], notFoundIds, updatedFlashcards: [] };
+    }
+
+    await FlashcardModel.bulkWrite(bulkOps, { ordered: false });
+
+    const docs = await FlashcardModel.find({
+      _id: { $in: validIds.map((id) => new mongoose.Types.ObjectId(id)) },
+    }).lean();
+
+    const updatedFlashcards = docs.map((doc) =>
+      mapMongoDocToFlashcard(
+        doc as Record<string, unknown> & {
+          _id?: unknown;
+          categories?: unknown[];
+        },
+      ),
+    );
+
+    const foundIdSet = new Set(
+      updatedFlashcards.map((card) => card._id).filter(Boolean) as string[],
+    );
+    const updatedIds: string[] = [];
+    for (const id of validIds) {
+      if (foundIdSet.has(id)) {
+        updatedIds.push(id);
+      } else {
+        notFoundIds.push(id);
+      }
+    }
+
+    return { updatedIds, notFoundIds, updatedFlashcards };
   }
 
   public async deleteFlashcard(id: string): Promise<Flashcard | null> {

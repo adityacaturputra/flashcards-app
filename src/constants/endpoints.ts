@@ -43,6 +43,13 @@ export const API_ENDPOINTS = {
     const source = typeof params === 'string' ? params : params.source;
     return buildUrl(API_PATHS.FLASHCARDS_BULK, { [SOURCE_QUERY_PARAM]: source });
   },
+  FLASHCARDS_BULK_REVIEW: (params?: BulkQueryParams | DataSource) => {
+    if (!params) return API_PATHS.FLASHCARDS_BULK_REVIEW;
+    const source = typeof params === 'string' ? params : params.source;
+    return buildUrl(API_PATHS.FLASHCARDS_BULK_REVIEW, {
+      [SOURCE_QUERY_PARAM]: source,
+    });
+  },
   FLASHCARDS_DELETE_BY_DATE: API_PATHS.FLASHCARDS_DELETE_BY_DATE,
   FLASHCARDS_DELETE_BY_TEXT: API_PATHS.FLASHCARDS_DELETE_BY_TEXT,
   FLASHCARD_CATEGORIES: (params?: CategoryQueryParams | DataSource) => {

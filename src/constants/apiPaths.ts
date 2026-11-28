@@ -8,6 +8,7 @@ export const API_PATHS = {
   BASE: API_BASE,
   FLASHCARDS: `${API_BASE}/flashcards`,
   FLASHCARDS_BULK: `${API_BASE}/flashcards/bulk`,
+  FLASHCARDS_BULK_REVIEW: `${API_BASE}/flashcards/bulk-review`,
   FLASHCARDS_DELETE_BY_DATE: `${API_BASE}/flashcards/delete-by-date`,
   FLASHCARDS_DELETE_BY_TEXT: `${API_BASE}/flashcards/delete-by-text`,
   FLASHCARD_CATEGORIES: `${API_BASE}/flashcardCategories`,

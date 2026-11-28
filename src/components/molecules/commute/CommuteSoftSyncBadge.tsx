@@ -41,7 +41,7 @@ export const CommuteSoftSyncBadge: React.FC<CommuteSoftSyncBadgeProps> = ({
           />
         )}
         <span>
-          Soft Anki Sync: {softSync.syncedCount}/{softSync.totalCards} kartu tercatat
+          Selesai didengar: {softSync.listenedCount}/{softSync.totalCards} · Tersinkron Anki: {softSync.syncedCount}
         </span>
       </div>
 
